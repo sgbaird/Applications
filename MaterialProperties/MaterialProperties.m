@@ -19,7 +19,7 @@ Begin["Private`"];
 MaterialProperties[formula_String,property_:"",subproperty_:"",requestedEntries_Integer:1]:=
 Module[{urlRoot,myKey,requestURI,response,maxEntries,numEntries,propertyKey,subpropertyKey,out},
 urlRoot="https://www.materialsproject.org/rest/v2/materials/";
-myKey="JHlWQRu5mpE4FC72";
+myKey="ABC";
 requestURI=URLBuild[{urlRoot,formula,"vasp",property},{"API_KEY"->myKey}];
 response=URLExecute[requestURI,"rawJSON"];
 maxEntries=Length@response;
