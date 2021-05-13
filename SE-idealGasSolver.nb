@@ -1,0 +1,970 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     36065,        962]
+NotebookOptionsPosition[     30800,        867]
+NotebookOutlinePosition[     31295,        885]
+CellTagsIndexPosition[     31252,        882]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Rval", "=", 
+   RowBox[{"QuantityMagnitude", "@", 
+    RowBox[{"UnitConvert", "@", 
+     RowBox[{"Quantity", "[", 
+      RowBox[{"1", ",", "\"\<MolarGasConstant\>\""}], "]"}]}]}]}], 
+  ";"}], "\n", 
+ RowBox[{"idealGasEqn", ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"R", "=", "Rval"}], ",", "eqns"}], "}"}], ",", 
+    RowBox[{"eqns", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"P", "*", "V"}], "\[Equal]", 
+       RowBox[{"n", "*", "R", "*", "T"}]}], "}"}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.8094988432487907`*^9, 3.8094988432580166`*^9}, {
+  3.8094993937808695`*^9, 3.8094993973013105`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"53b53cd7-50da-4070-9025-9bd2e7d082e5"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Pval", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"1.5", ",", "\"\<Atmospheres\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Vval", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"3", ",", "\"\<Liters\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"nval", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"1", ",", "\"\<Moles\>\""}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.809498849314799*^9, 3.8094988493217926`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"f79f828d-ca9d-4983-9cdb-290bb1d17310"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"vars", "=", 
+   RowBox[{"{", 
+    RowBox[{"P", ",", "V", ",", "n", ",", "T"}], "}"}]}], ";"}]], "Input",
+ CellLabel->"In[6]:=",ExpressionUUID->"33f727ff-41bb-4509-8145-daedb9eb3326"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"type", "=", "\"\<IdealGas\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.8094992808202*^9, 3.809499286964542*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"c08d5bad-d043-4faa-87f9-eba8030cee69"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqns", "=", 
+  RowBox[{"Switch", "[", 
+   RowBox[{"type", ",", "\"\<IdealGas\>\"", ",", "idealGasEqn"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{3.809499379452775*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"33bb63e0-89c7-4670-ac94-675c3a2d573a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"P", " ", "V"}], "\[Equal]", 
+   FractionBox[
+    RowBox[{"207861565453831", " ", "n", " ", "T"}], "25000000000000"]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.809499384315469*^9, 3.809499402133423*^9}, 
+   3.8094996168043423`*^9, 3.8096698958285046`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"aa05ad5a-5aa8-4c93-97b7-6bc4a3964d92"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Symbols", " ", "for", " ", "solve"}], ",", 
+    RowBox[{"keep", " ", "unassigned", " ", "throughout"}]}], "*)"}], 
+  RowBox[{"valsTmp", "=", 
+   RowBox[{"{", 
+    RowBox[{"Pval", ",", "Vval", ",", "nval", ",", "T"}], "}"}], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"input", " ", "values"}], ",", 
+     RowBox[{"some", " ", "are", " ", "Symbols"}], ",", 
+     RowBox[{"some", " ", "are", " ", "Quantities"}]}], "*)"}], 
+   RowBox[{"(*", 
+    RowBox[{"units", " ", "with", " ", "magnitude", " ", "1"}], 
+    "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.80949905988978*^9}, {
+   3.809499158892741*^9, 3.809499198244355*^9}, 3.8094993766943254`*^9, {
+   3.809499693003244*^9, 3.8094996933097396`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"305830fc-6128-4e27-b37a-dffb31026b44"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"1.5`", "\"atm\"", "atmospheres", "\"Atmospheres\""},
+    "Quantity"], ",", 
+   TemplateBox[{"3", "\"L\"", "liters", "\"Liters\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"mol\"", "mole", "\"Moles\""},
+    "Quantity"], ",", "T"}], "}"}]], "Output",
+ CellChangeTimes->{3.8094994044339046`*^9, 3.8094996178533115`*^9, 
+  3.8094996937793217`*^9, 3.809669895860503*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"b047922f-827b-4570-9990-c18557751f16"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"outUnits", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Quantity", "[", 
+     RowBox[{"1", ",", "#"}], "]"}], "&"}], "/@", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Atmospheres\>\"", ",", "\"\<Liters\>\"", ",", "\"\<Moles\>\"", ",", 
+     "\"\<KelvinsDifference\>\""}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.8094990607543077`*^9}, 
+   3.8094993745386286`*^9},
+ CellLabel->"In[10]:=",ExpressionUUID->"1a626821-5f7b-400d-b76c-7b44542337f2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"1", "\"atm\"", "atmosphere", "\"Atmospheres\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"L\"", "liter", "\"Liters\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"mol\"", "mole", "\"Moles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"K\"", "kelvin difference", "\"KelvinsDifference\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.809499405026911*^9, 3.8094996180743628`*^9, 
+  3.809499696412941*^9, 3.809669895883537*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"23922881-21bb-4a45-96ad-b2e8682d104a"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SIunits", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Quantity", "[", 
+      RowBox[{"1", ",", "#"}], "]"}], "&"}], "/@", 
+    RowBox[{"QuantityUnit", "@", 
+     RowBox[{"UnitConvert", "@", "outUnits"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "find", " ", "positions", " ", "based", " ", "on", " ", "variable", " ", 
+    "type"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.80949906179714*^9}, {
+  3.8094991280439777`*^9, 3.8094991338053436`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"33b0099d-f0a8-41ff-b6cb-f066cfbf6004"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"quantityIDs", "=", 
+  RowBox[{
+   RowBox[{"Position", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Head", "@", "#"}], "===", "Quantity"}], "&"}], "/@", 
+      "valsTmp"}], ",", "True"}], "]"}], "//", "Flatten"}]}]], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.8094990634775343`*^9}, 
+   3.809499137464628*^9, 3.8094991709794593`*^9},
+ CellLabel->"In[12]:=",ExpressionUUID->"ee44ae9f-d9d5-48ee-9bf0-65e6396be47e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8094991728410015`*^9, 3.8094992020908527`*^9}, 
+   3.809499292866412*^9, 3.809499362993635*^9, 3.809499406463605*^9, 
+   3.809499619445845*^9, 3.8094996977230954`*^9, 3.809669895911539*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"57fbbfd9-9f5f-4ed3-910e-b881ee8b31c3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"symbolIDs", "=", 
+  RowBox[{
+   RowBox[{"Position", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Head", "@", "#"}], "===", "Symbol"}], "&"}], "/@", 
+      "valsTmp"}], ",", "True"}], "]"}], "//", 
+   "Flatten"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "replace", " ", "quantities", " ", "with", " ", "magnitude", " ", "of", 
+     " ", "SI"}], "-", 
+    RowBox[{"converted", " ", "quantities"}]}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.8094990642490287`*^9}, {
+  3.8094991420147457`*^9, 3.8094991716117554`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"523859f8-5947-4f34-b773-b722b4c9435c"],
+
+Cell[BoxData[
+ RowBox[{"{", "4", "}"}]], "Output",
+ CellChangeTimes->{{3.8094991738688354`*^9, 3.8094992029609027`*^9}, 
+   3.8094992934911337`*^9, 3.809499369323415*^9, 3.809499407290721*^9, 
+   3.8094996200053697`*^9, 3.809499698260829*^9, 3.8096698959455047`*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"3530ed89-8762-4198-9282-58392c82445d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rules1", "=", 
+  RowBox[{"MapThread", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"quantityIDs", ",", 
+      RowBox[{"QuantityMagnitude", "@", 
+       RowBox[{"UnitConvert", "@", 
+        RowBox[{"valsTmp", "[", 
+         RowBox[{"[", "quantityIDs", "]"}], "]"}]}]}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.809499064740394*^9}, 
+   3.809499372877987*^9},
+ CellLabel->"In[14]:=",ExpressionUUID->"726b2d49-d606-401e-b3c8-411d679e2cd2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"1", "\[Rule]", "151987.5`"}], ",", 
+   RowBox[{"2", "\[Rule]", 
+    FractionBox["3", "1000"]}], ",", 
+   RowBox[{"3", "\[Rule]", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8094994079231195`*^9, 3.8094996205404606`*^9, 
+  3.8094996987746143`*^9, 3.809669895975505*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"ad40e6d0-f3fe-4965-97d4-db0439c4627b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["quantityIDs"], "Input",
+ CellChangeTimes->{{3.8094991070629187`*^9, 3.8094991219970207`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"869735cc-70b6-41d4-b25c-7e55bbaefb94"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8094991082113085`*^9, 3.8094991488859634`*^9}, 
+   3.8094992048657007`*^9, 3.80949929480254*^9, 3.8094993708218203`*^9, 
+   3.809499408634218*^9, 3.8094996211156588`*^9, 3.8094996993876076`*^9, 
+   3.809669896255536*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"2392ca1a-52e1-4e26-8428-649f0683bf82"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["valsTmp"], "Input",
+ CellChangeTimes->{{3.8094991514689236`*^9, 3.809499152572643*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"bc60383d-b3b1-45cd-b7c6-04df0a4ea98a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"1.5`", "\"atm\"", "atmospheres", "\"Atmospheres\""},
+    "Quantity"], ",", 
+   TemplateBox[{"3", "\"L\"", "liters", "\"Liters\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"mol\"", "mole", "\"Moles\""},
+    "Quantity"], ",", "T"}], "}"}]], "Output",
+ CellChangeTimes->{3.8094991528151464`*^9, 3.809499205649562*^9, 
+  3.8094992956186695`*^9, 3.809499409382681*^9, 3.8094996216948423`*^9, 
+  3.8094997000529003`*^9, 3.8096698962625036`*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"87577460-2da1-4854-a7c9-f6386f5ee3f0"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"vals", "=", 
+   RowBox[{"ReplacePart", "[", 
+    RowBox[{"valsTmp", ",", "rules1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "solve", " ", "for", " ", "unknowns", " ", "using", " ", "SI", " ", 
+     "magnitudes"}], ",", 
+    RowBox[{"no", " ", "units", " ", "in", " ", "output"}]}], "*)"}], 
+  RowBox[{
+   RowBox[{"rules2", "=", 
+    RowBox[{"MapThread", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"vars", "[", 
+         RowBox[{"[", "quantityIDs", "]"}], "]"}], ",", 
+        RowBox[{"vals", "[", 
+         RowBox[{"[", "quantityIDs", "]"}], "]"}]}], "}"}]}], "]"}]}], 
+   ";"}]}]}], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.809499065572814*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"6eae10a7-2c73-422b-9c33-4b3b73e502d1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["eqns"], "Input",
+ CellChangeTimes->{{3.8094993111660976`*^9, 3.8094993118297772`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"a4411070-2c47-4f53-9c5e-62c2ecf13290"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"P", " ", "V"}], "\[Equal]", 
+   FractionBox[
+    RowBox[{"207861565453831", " ", "n", " ", "T"}], "25000000000000"]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.809499411226245*^9, 3.8094996229316597`*^9, 
+  3.809499701773721*^9, 3.8096698962755375`*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"80b51669-4e8b-4c2d-802d-5b09663d0c13"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"unitlessSoln", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"eqns", "/.", "rules2"}], ",", 
+     RowBox[{"vars", "[", 
+      RowBox[{"[", "symbolIDs", "]"}], "]"}]}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "convert", " ", "solution", " ", "to", " ", "output", " ", "units", " ", 
+    "and", " ", "include", " ", "units"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.8094990666237645`*^9}, 
+   3.8094993009656897`*^9},
+ CellLabel->"In[20]:=",ExpressionUUID->"c52dba5c-ec5d-4ca1-aeef-9ad5d74cee13"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"T", "\[Rule]", "54.83968368616898`"}], "}"}]], "Output",
+ CellChangeTimes->{3.809499301284*^9, 3.8094994121017647`*^9, 
+  3.8094996237259083`*^9, 3.8094997023088512`*^9, 3.8096698962985396`*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"b19fd93a-c95a-4e17-9097-e1672863e571"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rules3", "=", 
+  RowBox[{"MapThread", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"vars", "[", 
+       RowBox[{"[", "symbolIDs", "]"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{"vals", "[", 
+        RowBox[{"[", "symbolIDs", "]"}], "]"}], "*", 
+       RowBox[{"SIunits", "[", 
+        RowBox[{"[", "symbolIDs", "]"}], "]"}]}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.8094990672155457`*^9}, 
+   3.8094994400930195`*^9},
+ CellLabel->"In[21]:=",ExpressionUUID->"f510f59f-5ff8-4d46-becc-66c4090d5233"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"T", "\[Rule]", 
+   RowBox[{"T", " ", 
+    RowBox[{"(", 
+     TemplateBox[{"1", "\"K\"", "kelvin difference", "\"KelvinsDifference\""},
+      "Quantity"], ")"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8094994403940077`*^9, 3.809499624495098*^9, 
+  3.8094997029475207`*^9, 3.8096698963085337`*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"a444d8c1-8ef7-4f8e-86ef-65a1f7a7dab8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"vars", "[", 
+  RowBox[{"[", "symbolIDs", "]"}], "]"}]], "Input",
+ CellLabel->"In[22]:=",ExpressionUUID->"98b09ff3-9ea3-4243-abb5-92018f786b44"],
+
+Cell[BoxData[
+ RowBox[{"{", "T", "}"}]], "Output",
+ CellChangeTimes->{3.809499663461564*^9, 3.8094997040689125`*^9, 
+  3.8096698963295403`*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"84685fa6-086d-49d5-bf91-8c3b0c4b649e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"outVals", "=", 
+  RowBox[{"MapThread", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"UnitConvert", "[", 
+      RowBox[{"#1", ",", "#2"}], "]"}], "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"vars", "[", 
+         RowBox[{"[", "symbolIDs", "]"}], "]"}], "/.", "rules3"}], "/.", 
+       "unitlessSoln"}], ",", 
+      RowBox[{"outUnits", "[", 
+       RowBox[{"[", "symbolIDs", "]"}], "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.809499067583935*^9}, 
+   3.8094994372957964`*^9},
+ CellLabel->"In[23]:=",ExpressionUUID->"fc295d27-9539-46a0-a0f2-40d55e57c416"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TemplateBox[{
+   "54.83968368616898`", "\"K\"", "kelvins difference", 
+    "\"KelvinsDifference\""},
+   "Quantity"], "}"}]], "Output",
+ CellChangeTimes->{3.8094994375703287`*^9, 3.8094996416471367`*^9, 
+  3.8094997052275424`*^9, 3.8096698963375373`*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"595a8120-5cfb-4a1f-9e57-626ac6ac590a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"unitSoln", "=", 
+  RowBox[{"MapThread", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"vals", "[", 
+       RowBox[{"[", "symbolIDs", "]"}], "]"}], ",", "outVals"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "output", " ", "a", " ", "solution", " ", "based", " ", "on", " ", 
+    "unitlessQ", " ", "argument"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.8094990684475036`*^9}, 
+   3.8094994336373076`*^9},
+ CellLabel->"In[24]:=",ExpressionUUID->"bead0e80-f8c4-4417-bf07-82e4796e45c7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"T", "\[Rule]", 
+   TemplateBox[{
+    "54.83968368616898`", "\"K\"", "kelvins difference", 
+     "\"KelvinsDifference\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.8094994345960217`*^9, 3.8094996425748177`*^9, 
+  3.809499706637619*^9, 3.8096698963575373`*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"cc86864e-a509-4261-b5f2-5b23b5b892c2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"unitlessQ", "=", "True"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"outsoln", "=", 
+  RowBox[{"If", "[", 
+   RowBox[{"unitlessQ", ",", "unitlessSoln", ",", "unitSoln"}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.8094990303890333`*^9, 3.8094990684475036`*^9}, {
+  3.8094994206532283`*^9, 3.8094994239006467`*^9}, {3.809499719230848*^9, 
+  3.8094997196775064`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"cd052cd2-82ce-455f-b38d-f7f24c37f8ab"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"T", "\[Rule]", "54.83968368616898`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8094990374293103`*^9, {3.8094994173831315`*^9, 3.8094994242776413`*^9}, 
+   3.809499644551941*^9, {3.8094997073486156`*^9, 3.8094997200230255`*^9}, 
+   3.8096698963655033`*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"e76b18b9-5fee-47ac-abbd-ae0b5bc2868e"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"idealGasSolver", "[", 
+   RowBox[{"P1_", ",", "V1_", ",", "n1_", ",", "T1_", ",", 
+    RowBox[{"type_", ":", "\"\<IdealGas\>\""}], ",", 
+    RowBox[{"unitlessQ_", ":", "False"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"eqns", ",", "vars"}], "}"}], ",", 
+    RowBox[{"(*", 
+     RowBox[{"get", " ", "system", " ", "of", " ", "equations"}], "*)"}], 
+    RowBox[{
+     RowBox[{"eqns", "=", 
+      RowBox[{"Switch", "[", 
+       RowBox[{"type", ",", "\"\<IdealGas\>\"", ",", "idealGasEqn"}], "]"}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"vars", "=", 
+      RowBox[{"{", 
+       RowBox[{"P", ",", "V", ",", "n", ",", "T"}], "}"}]}], ";", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"Symbols", " ", "for", " ", "solve"}], ",", 
+       RowBox[{"keep", " ", "unassigned", " ", "throughout"}]}], "*)"}], 
+     RowBox[{"valsTmp", "=", 
+      RowBox[{"{", 
+       RowBox[{"P1", ",", "V1", ",", "n1", ",", "T1"}], "}"}]}], ";", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"input", " ", "values"}], ",", 
+       RowBox[{"some", " ", "are", " ", "Symbols"}], ",", 
+       RowBox[{"some", " ", "are", " ", "Quantities"}]}], "*)"}], 
+     RowBox[{"(*", 
+      RowBox[{"units", " ", "with", " ", "magnitude", " ", "1"}], "*)"}], 
+     RowBox[{"outUnits", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Quantity", "[", 
+         RowBox[{"1", ",", "#"}], "]"}], "&"}], "/@", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Atmospheres\>\"", ",", "\"\<Liters\>\"", ",", "\"\<Moles\>\"", 
+         ",", "\"\<DegreesCelsius\>\""}], "}"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"SIunits", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Quantity", "[", 
+         RowBox[{"1", ",", "#"}], "]"}], "&"}], "/@", 
+       RowBox[{"QuantityUnit", "@", 
+        RowBox[{"UnitConvert", "@", "outUnits"}]}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "find", " ", "positions", " ", "based", " ", "on", " ", "variable", " ",
+        "type"}], "*)"}], 
+     RowBox[{
+      RowBox[{"getIDs", "[", "head_", "]"}], ":=", 
+      RowBox[{
+       RowBox[{"Position", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"Head", "@", "#"}], "===", "head"}], "&"}], "/@", 
+          "valsTmp"}], ",", "True"}], "]"}], "//", "Flatten"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"quantityIDs", "=", 
+      RowBox[{"getIDs", "[", "Quantity", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"symbolIDs", "=", 
+      RowBox[{"getIDs", "[", "Symbol", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{
+       "replace", " ", "quantities", " ", "with", " ", "magnitude", " ", "of",
+         " ", "SI"}], "-", 
+       RowBox[{"converted", " ", "quantities"}]}], "*)"}], 
+     RowBox[{"rules1", "=", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"quantityIDs", ",", 
+          RowBox[{"QuantityMagnitude", "@", 
+           RowBox[{"UnitConvert", "@", 
+            RowBox[{"valsTmp", "[", 
+             RowBox[{"[", "quantityIDs", "]"}], "]"}]}]}]}], "}"}]}], "]"}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"vals", "=", 
+      RowBox[{"ReplacePart", "[", 
+       RowBox[{"valsTmp", ",", "rules1"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{
+       "solve", " ", "for", " ", "unknowns", " ", "using", " ", "SI", " ", 
+        "magnitudes"}], ",", 
+       RowBox[{"no", " ", "units", " ", "in", " ", "output"}]}], "*)"}], 
+     RowBox[{"rules2", "=", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"vars", "[", 
+           RowBox[{"[", "quantityIDs", "]"}], "]"}], ",", 
+          RowBox[{"vals", "[", 
+           RowBox[{"[", "quantityIDs", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"unitlessSoln", "=", 
+      RowBox[{
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"eqns", "/.", "rules2"}], ",", 
+         RowBox[{"vars", "[", 
+          RowBox[{"[", "symbolIDs", "]"}], "]"}]}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "convert", " ", "solution", " ", "to", " ", "output", " ", "units", " ",
+        "and", " ", "include", " ", "units"}], "*)"}], 
+     RowBox[{"rules3", "=", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"vars", "[", 
+           RowBox[{"[", "symbolIDs", "]"}], "]"}], ",", 
+          RowBox[{
+           RowBox[{"vals", "[", 
+            RowBox[{"[", "symbolIDs", "]"}], "]"}], "*", 
+           RowBox[{"SIunits", "[", 
+            RowBox[{"[", "symbolIDs", "]"}], "]"}]}]}], "}"}]}], "]"}]}], ";",
+      "\[IndentingNewLine]", 
+     RowBox[{"outVals", "=", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"UnitConvert", "[", 
+          RowBox[{"#1", ",", "#2"}], "]"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"vars", "[", 
+             RowBox[{"[", "symbolIDs", "]"}], "]"}], "/.", "rules3"}], "/.", 
+           "unitlessSoln"}], ",", 
+          RowBox[{"outUnits", "[", 
+           RowBox[{"[", "symbolIDs", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"unitSoln", "=", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"vals", "[", 
+           RowBox[{"[", "symbolIDs", "]"}], "]"}], ",", "outVals"}], "}"}]}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "output", " ", "a", " ", "solution", " ", "based", " ", "on", " ", 
+       "unitlessQ", " ", "argument"}], "*)"}], 
+     RowBox[{"outsoln", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{"unitlessQ", ",", "unitlessSoln", ",", "unitSoln"}], 
+       "]"}]}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.809499796409333*^9, 3.8094998042394323`*^9}, {
+  3.8095002214730835`*^9, 3.8095002235365667`*^9}, {3.8095002782501154`*^9, 
+  3.809500279174771*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"93ac69d8-7847-41f3-83b3-539b2a0eb2f4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"idealGasSolver", "[", 
+  RowBox[{"Pval", ",", "Vval", ",", "nval", ",", "T"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"idealGasSolver", "[", 
+  RowBox[{
+  "Pval", ",", "Vval", ",", "nval", ",", "T", ",", "\"\<IdealGas\>\"", ",", 
+   "True"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8094989028832407`*^9, 3.809498933909356*^9}, {
+  3.8094998315742073`*^9, 3.809499882664011*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"c4467013-889e-40eb-8abc-d3724573a0d9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"T", "\[Rule]", 
+   TemplateBox[{
+     RowBox[{"-", "218.31031631383098`"}], "\"\[Degree]C\"", 
+     "degrees Celsius", "\"DegreesCelsius\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.809498973770939*^9, 3.809498999217387*^9}, {
+   3.809499831883911*^9, 3.8094998874608183`*^9}, 3.809499973199345*^9, {
+   3.8095002261309614`*^9, 3.8095002465243564`*^9}, {3.8095002828026648`*^9, 
+   3.80950030945294*^9}, 3.8096698963935432`*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"1402256c-20bf-44fb-a0bd-a36390a4cc69"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"T", "\[Rule]", "54.83968368616898`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.809498973770939*^9, 3.809498999217387*^9}, {
+   3.809499831883911*^9, 3.8094998874608183`*^9}, 3.809499973199345*^9, {
+   3.8095002261309614`*^9, 3.8095002465243564`*^9}, {3.8095002828026648`*^9, 
+   3.80950030945294*^9}, 3.809669896415504*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"1e6ed318-5306-4bd7-a41d-006d3e660e07"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Vval2", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"3", ",", "\"\<Liters\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"nval2", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"1", ",", "\"\<Moles\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Tval2", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"55", ",", "\"\<Kelvins\>\""}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.809500569375004*^9, 3.8095005693810043`*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"8fcb8fa7-9462-46cd-b3e6-0baf415768eb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Clear", "[", "P", "]"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "important", " ", "that", " ", "pressure", " ", "input", " ", "is", " ", 
+     "unassigned"}], ",", 
+    RowBox[{"and", " ", "that", " ", "it", " ", "is", " ", "\"\<P\>\""}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"idealGasSolver", "[", 
+    RowBox[{"P1", ",", "V1", ",", "n", ",", "Tval2"}], "]"}], "//", "N"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"P", ",", "V", ",", "n"}], "]"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "output", " ", "in", " ", "units", " ", "based", " ", "on", " ", 
+    "outUnits"}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"idealGasSolver", "[", 
+   RowBox[{
+   "P", ",", "V", ",", "n", ",", "Tval2", ",", "\"\<IdealGas\>\"", ",", 
+    "True"}], "]"}], "//", "N", 
+  RowBox[{"(*", 
+   RowBox[{"output", " ", "SI", " ", "magnitude"}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.809500519402875*^9, 3.8095005466415415`*^9}, {
+  3.809500978733324*^9, 3.8095010449904757`*^9}, {3.809669898542885*^9, 
+  3.809669931239886*^9}},
+ CellLabel->"In[57]:=",ExpressionUUID->"a1156643-d107-437c-843c-bf4449fd6d10"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve", "svars", 
+   "\"Equations may not give solutions for all \\\"solve\\\" variables.\"", 2,
+    58, 13, 17376096035135894497, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.8095009817335987`*^9, 3.8095010455926*^9}, {
+  3.809669896480503*^9, 3.809669931657794*^9}},
+ CellLabel->
+  "During evaluation of \
+In[57]:=",ExpressionUUID->"2a531d8e-6ecd-45de-a690-3f6048d59512"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"P1", "\[Rule]", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{
+      RowBox[{"P1", " ", 
+       RowBox[{"(", 
+        TemplateBox[{"1.`", 
+          
+          RowBox[{"\"kg\"", "\[InvisibleSpace]", "\"/(\"", 
+            "\[InvisibleSpace]", "\"m\"", "\[ThinSpace]", 
+            SuperscriptBox["\"s\"", "2"], "\[InvisibleSpace]", "\")\""}], 
+          "kilograms per meter second squared", 
+          FractionBox["\"Kilograms\"", 
+           RowBox[{"\"Meters\"", " ", 
+             SuperscriptBox["\"Seconds\"", "2"]}]]},
+         "Quantity"], ")"}]}], ",", 
+      TemplateBox[{"1.`", "\"atm\"", "atmospheres", "\"Atmospheres\""},
+       "Quantity"]}], "]"}]}], ",", 
+   RowBox[{"V1", "\[Rule]", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{
+      RowBox[{"V1", " ", 
+       RowBox[{"(", 
+        TemplateBox[{"1.`", 
+          RowBox[{
+            SuperscriptBox["\"m\"", "3"]}], "meters cubed", 
+          SuperscriptBox["\"Meters\"", "3"]},
+         "Quantity"], ")"}]}], ",", 
+      TemplateBox[{"1.`", "\"L\"", "liters", "\"Liters\""},
+       "Quantity"]}], "]"}]}], ",", 
+   RowBox[{"n", "\[Rule]", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{
+      RowBox[{"P", " ", "V", " ", 
+       RowBox[{"(", 
+        TemplateBox[{"0.002186770091685928`", "\"mol\"", "moles", "\"Moles\""},
+         "Quantity"], ")"}]}], ",", 
+      TemplateBox[{"1.`", "\"mol\"", "moles", "\"Moles\""},
+       "Quantity"]}], "]"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.809500522692974*^9, 3.80950058190394*^9}, {
+  3.809500981728598*^9, 3.8095010653595676`*^9}, {3.8096698965905046`*^9, 
+  3.809669931667173*^9}},
+ CellLabel->"Out[58]=",ExpressionUUID->"817e0eaf-dfff-4dad-973f-d022951de232"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve", "svars", 
+   "\"Equations may not give solutions for all \\\"solve\\\" variables.\"", 2,
+    60, 14, 17376096035135894497, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.8095009817335987`*^9, 3.8095010455926*^9}, {
+  3.809669896480503*^9, 3.809669931669181*^9}},
+ CellLabel->
+  "During evaluation of \
+In[57]:=",ExpressionUUID->"f82b8ab8-71ce-4a9a-b869-655dace846be"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"n", "\[Rule]", 
+   RowBox[{"0.002186770091685928`", " ", "P", " ", "V"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.809500522692974*^9, 3.80950058190394*^9}, {
+  3.809500981728598*^9, 3.8095010653595676`*^9}, {3.8096698965905046`*^9, 
+  3.809669931675173*^9}},
+ CellLabel->"Out[60]=",ExpressionUUID->"eeacf079-4d48-440b-8031-503d65617926"]
+}, Open  ]]
+},
+WindowSize->{1140.6, 574.8},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules->{
+ "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"768b4fd8-d827-447b-90ff-db1b8052c1da"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 778, 21, 49, "Input",ExpressionUUID->"53b53cd7-50da-4070-9025-9bd2e7d082e5"],
+Cell[1339, 43, 554, 14, 68, "Input",ExpressionUUID->"f79f828d-ca9d-4983-9cdb-290bb1d17310"],
+Cell[1896, 59, 217, 5, 28, "Input",ExpressionUUID->"33f727ff-41bb-4509-8145-daedb9eb3326"],
+Cell[2116, 66, 227, 4, 28, "Input",ExpressionUUID->"c08d5bad-d043-4faa-87f9-eba8030cee69"],
+Cell[CellGroupData[{
+Cell[2368, 74, 271, 6, 28, "Input",ExpressionUUID->"33bb63e0-89c7-4670-ac94-675c3a2d573a"],
+Cell[2642, 82, 387, 9, 48, "Output",ExpressionUUID->"aa05ad5a-5aa8-4c93-97b7-6bc4a3964d92"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3066, 96, 868, 20, 49, "Input",ExpressionUUID->"305830fc-6128-4e27-b37a-dffb31026b44"],
+Cell[3937, 118, 506, 11, 38, "Output",ExpressionUUID->"b047922f-827b-4570-9990-c18557751f16"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4480, 134, 486, 12, 28, "Input",ExpressionUUID->"1a626821-5f7b-400d-b76c-7b44542337f2"],
+Cell[4969, 148, 588, 13, 38, "Output",ExpressionUUID->"23922881-21bb-4a45-96ad-b2e8682d104a"]
+}, Open  ]],
+Cell[5572, 164, 630, 17, 49, "Input",ExpressionUUID->"33b0099d-f0a8-41ff-b6cb-f066cfbf6004"],
+Cell[CellGroupData[{
+Cell[6227, 185, 483, 12, 28, "Input",ExpressionUUID->"ee44ae9f-d9d5-48ee-9bf0-65e6396be47e"],
+Cell[6713, 199, 374, 6, 32, "Output",ExpressionUUID->"57fbbfd9-9f5f-4ed3-910e-b881ee8b31c3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7124, 210, 723, 20, 49, "Input",ExpressionUUID->"523859f8-5947-4f34-b773-b722b4c9435c"],
+Cell[7850, 232, 345, 5, 32, "Output",ExpressionUUID->"3530ed89-8762-4198-9282-58392c82445d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8232, 242, 567, 15, 28, "Input",ExpressionUUID->"726b2d49-d606-401e-b3c8-411d679e2cd2"],
+Cell[8802, 259, 403, 9, 48, "Output",ExpressionUUID->"ad40e6d0-f3fe-4965-97d4-db0439c4627b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9242, 273, 186, 2, 28, "Input",ExpressionUUID->"869735cc-70b6-41d4-b25c-7e55bbaefb94"],
+Cell[9431, 277, 405, 7, 32, "Output",ExpressionUUID->"2392ca1a-52e1-4e26-8428-649f0683bf82"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9873, 289, 180, 2, 28, "Input",ExpressionUUID->"bc60383d-b3b1-45cd-b7c6-04df0a4ea98a"],
+Cell[10056, 293, 580, 12, 38, "Output",ExpressionUUID->"87577460-2da1-4854-a7c9-f6386f5ee3f0"]
+}, Open  ]],
+Cell[10651, 308, 929, 26, 68, "Input",ExpressionUUID->"6eae10a7-2c73-422b-9c33-4b3b73e502d1"],
+Cell[CellGroupData[{
+Cell[11605, 338, 179, 2, 28, "Input",ExpressionUUID->"a4411070-2c47-4f53-9c5e-62c2ecf13290"],
+Cell[11787, 342, 385, 9, 48, "Output",ExpressionUUID->"80b51669-4e8b-4c2d-802d-5b09663d0c13"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12209, 356, 646, 16, 49, "Input",ExpressionUUID->"c52dba5c-ec5d-4ca1-aeef-9ad5d74cee13"],
+Cell[12858, 374, 313, 5, 32, "Output",ExpressionUUID->"b19fd93a-c95a-4e17-9097-e1672863e571"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13208, 384, 643, 17, 28, "Input",ExpressionUUID->"f510f59f-5ff8-4d46-becc-66c4090d5233"],
+Cell[13854, 403, 418, 9, 38, "Output",ExpressionUUID->"a444d8c1-8ef7-4f8e-86ef-65a1f7a7dab8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14309, 417, 167, 3, 28, "Input",ExpressionUUID->"98b09ff3-9ea3-4243-abb5-92018f786b44"],
+Cell[14479, 422, 222, 4, 32, "Output",ExpressionUUID->"84685fa6-086d-49d5-bf91-8c3b0c4b649e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14738, 431, 662, 18, 28, "Input",ExpressionUUID->"fc295d27-9539-46a0-a0f2-40d55e57c416"],
+Cell[15403, 451, 363, 8, 38, "Output",ExpressionUUID->"595a8120-5cfb-4a1f-9e57-626ac6ac590a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15803, 464, 661, 18, 49, "Input",ExpressionUUID->"bead0e80-f8c4-4417-bf07-82e4796e45c7"],
+Cell[16467, 484, 394, 9, 38, "Output",ExpressionUUID->"cc86864e-a509-4261-b5f2-5b23b5b892c2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16898, 498, 482, 10, 49, "Input",ExpressionUUID->"cd052cd2-82ce-455f-b38d-f7f24c37f8ab"],
+Cell[17383, 510, 376, 7, 32, "Output",ExpressionUUID->"e76b18b9-5fee-47ac-abbd-ae0b5bc2868e"]
+}, Open  ]],
+Cell[17774, 520, 6634, 175, 400, "Input",ExpressionUUID->"93ac69d8-7847-41f3-83b3-539b2a0eb2f4"],
+Cell[CellGroupData[{
+Cell[24433, 699, 487, 10, 49, "Input",ExpressionUUID->"c4467013-889e-40eb-8abc-d3724573a0d9"],
+Cell[24923, 711, 566, 11, 38, "Output",ExpressionUUID->"1402256c-20bf-44fb-a0bd-a36390a4cc69"],
+Cell[25492, 724, 442, 7, 32, "Output",ExpressionUUID->"1e6ed318-5306-4bd7-a41d-006d3e660e07"]
+}, Open  ]],
+Cell[25949, 734, 553, 14, 68, "Input",ExpressionUUID->"8fcb8fa7-9462-46cd-b3e6-0baf415768eb"],
+Cell[CellGroupData[{
+Cell[26527, 752, 1260, 33, 127, "Input",ExpressionUUID->"a1156643-d107-437c-843c-bf4449fd6d10"],
+Cell[27790, 787, 433, 10, 23, "Message",ExpressionUUID->"2a531d8e-6ecd-45de-a690-3f6048d59512"],
+Cell[28226, 799, 1740, 44, 43, "Output",ExpressionUUID->"817e0eaf-dfff-4dad-973f-d022951de232"],
+Cell[29969, 845, 433, 10, 23, "Message",ExpressionUUID->"f82b8ab8-71ce-4a9a-b869-655dace846be"],
+Cell[30405, 857, 379, 7, 55, "Output",ExpressionUUID->"eeacf079-4d48-440b-8031-503d65617926"]
+}, Open  ]]
+}
+]
+*)
+
