@@ -38,6 +38,21 @@ On[Symbolize::boxSymbolExists];
 
 
 (* ::Input::Initialization:: *)
+ParseHKL::usage="ParseHKL[hklIn]";
+Reciprocal::usage="Reciprocal[hklIn";
+AssignAxis::usage="AssignAxis[n,valIn,\[Gamma]]";
+AssignAxes::usage="AssignAxes[\[ScriptCapitalI],\[Gamma]]";
+GetPositions::usage="GetPositions[\[ScriptCapitalI]]";
+OneDimension::usage="OneDimension[\[ScriptCapitalI],\[Gamma]]";
+TwoDimension::usage="TwoDimension[\[ScriptCapitalI],\[Gamma]]";
+MillerToPlane::usage="MillerToPlane[hkl,\[Gamma]]";
+UnitCell::usage="UnitCell[xyz]";
+InterplanarAngle::usage="InterplanarAngle[hkl1,hkl2,lattice]";
+DegenerateMesh::usage="DegenerateMesh[v]";
+TotalIntersectionArea::usage="TotalIntersectionArea[\[ScriptCapitalT],\[ScriptCapitalB]]";
+
+
+(* ::Input::Initialization:: *)
 Begin["`Private`"];
 
 
@@ -53,15 +68,21 @@ Reciprocal[hklIn_]:=1/ParseHKL@hklIn
 
 
 (* ::Input::Initialization:: *)
-AssignAxis[n_,valIn_,\[Gamma]_]:=Module[{},
+AssignAxis[n_,valIn_,\[Gamma]_,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{val,B},
 val=If[Length@valIn==0,valIn,valIn[[n]]];
+B=OptionValue["BasisVectors"];
 (*tri=SASTriangle[a,\[Gamma],b]\[LeftDoubleBracket]1\[RightDoubleBracket];*)
-Switch[n,1,{val,0,0},2,{val,val,0}*{Cos[(*90\[Degree]-*)\[Gamma]],Sin[(*90\[Degree]-*)\[Gamma]],0},3,{0,0,val}]
+If[B===Null,
+Switch[n,1,{val,0,0},2,{val,val,0}*{Cos[(*90\[Degree]-*)\[Gamma]],Sin[(*90\[Degree]-*)\[Gamma]],0},3,{0,0,val}],
+B[[n]]val
+]
 ]
 
 
 (* ::Input::Initialization:: *)
-AssignAxes[\[ScriptCapitalI]_,\[Gamma]_]:=MapThread[AssignAxis[#1,#2,\[Gamma]]&,{{1,2,3},\[ScriptCapitalI]}]
+AssignAxes[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{},
+MapThread[AssignAxis[#1,#2,\[Gamma],"BasisVectors"->OptionValue["BasisVectors"]]&,{{1,2,3},\[ScriptCapitalI]}]
+]
 
 
 (* ::Input::Initialization:: *)
@@ -69,32 +90,50 @@ GetPositions[\[ScriptCapitalI]_]:=Flatten@Position[NumberQ/@\[ScriptCapitalI],#]
 
 
 (* ::Input::Initialization:: *)
-OneDimension[\[ScriptCapitalI]_,\[Gamma]_]:=Module[{p,f,p1,f1,f2,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB]},
+Options[OneDimension]={"BasisVectors"->Null};
+OneDimension[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[]]:=Module[{p,f,p1,f1,f2,f3,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB],B},
+B=OptionValue["BasisVectors"];
+opts="BasisVectors"->B;
 {p,f}=GetPositions@\[ScriptCapitalI];
 p1=p[[1]];
 {f1,f2}=f;
-\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]];
-\[ScriptCapitalA]=AssignAxis[f1,1,\[Gamma]];
-\[ScriptCapitalB]=AssignAxis[f2,1,\[Gamma]];
-InfinitePlane[\[ScriptCapitalO],{\[ScriptCapitalA],\[ScriptCapitalB]}]]
+f3=Complement[Range[3],f];
+If[B===Null,
+\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]],
+\[ScriptCapitalO]=(B[[f3]]\[ScriptCapitalI][[f3]])[[1]]
+];
+\[ScriptCapitalA]=AssignAxis[f1,1,\[Gamma],opts];
+\[ScriptCapitalB]=AssignAxis[f2,1,\[Gamma],opts];
+InfinitePlane[\[ScriptCapitalO],{\[ScriptCapitalA],\[ScriptCapitalB]}]
+]
 
 
 (* ::Input::Initialization:: *)
-TwoDimension[\[ScriptCapitalI]_,\[Gamma]_]:=Module[{p,f,p1,p2,f1,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB]},
+TwoDimension[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{p,f,p1,p2,f1,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB]},
 {p,f}=GetPositions@\[ScriptCapitalI];
 {p1,p2}=p[[ ;;2]];
 f1=f[[1]];
-\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]];
-\[ScriptCapitalA]=AssignAxis[p2,\[ScriptCapitalI],\[Gamma]];
+{f2,f3}=Complement[Range@3,f];
+B=OptionValue["BasisVectors"];
+If[B===Null,
+\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]];\[ScriptCapitalA]=AssignAxis[p2,\[ScriptCapitalI],\[Gamma]],
+\[ScriptCapitalO]=B[[f2]]\[ScriptCapitalI][[f2]];\[ScriptCapitalA]=B[[f3]]\[ScriptCapitalI][[f3]]
+];
 \[ScriptCapitalB]=AssignAxis[f1,1,\[Gamma]];
-InfinitePlane[{0,0,0},{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}]]
+If[B===Null,
+InfinitePlane[{0,0,0},{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}],
+InfinitePlane[\[ScriptCapitalA],{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}]
+]
+]
 
 
 (* ::Input::Initialization:: *)
-MillerToPlane[hkl_,\[Gamma]_.]:=Module[{\[ScriptCapitalI],p1,p,f},
+MillerToPlane[hkl_,\[Gamma]_.,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{\[ScriptCapitalI],p1,p,f,B},
+B=OptionValue["BasisVectors"];
 \[ScriptCapitalI]=Reciprocal[hkl];
 {p,f}=GetPositions@\[ScriptCapitalI];
-Switch[Length@p(*number of real-valued dimensions*),1,OneDimension[\[ScriptCapitalI],\[Gamma]],2,TwoDimension[\[ScriptCapitalI],\[Gamma]],3,InfinitePlane@AssignAxes[\[ScriptCapitalI],\[Gamma]]]]
+Switch[Length@p(*number of real-valued dimensions*),1,OneDimension[\[ScriptCapitalI],\[Gamma],"BasisVectors"->B],2,TwoDimension[\[ScriptCapitalI],\[Gamma],"BasisVectors"->B],3,InfinitePlane@AssignAxes[\[ScriptCapitalI],\[Gamma],"BasisVectors"->B]]
+]
 
 
 (* ::Input::Initialization:: *)
@@ -105,6 +144,7 @@ ReadXYZ[xyzpath_]:=Import[xyzpath,"Table"][[3;;,2;;4]];
 UnitCell[xyz_]:=Module[{\[ScriptCapitalM],\[ScriptP],\[ScriptCapitalC],P,i,\[ScriptCapitalN],\[ScriptCapitalO]},
 \[ScriptCapitalM]=Region`Mesh`MergeCells@ConvexHullMesh@xyz;
 \[ScriptP]=MeshCoordinates@\[ScriptCapitalM];
+\[ScriptP]=\[ScriptP](1+$MachineEpsilon);
 \[ScriptCapitalC]=MeshCells[\[ScriptCapitalM],1][[;;,1]];
 (*\[ScriptM]={\[ScriptCapitalC]\[LeftDoubleBracket]#\[RightDoubleBracket],\[ScriptP]\[LeftDoubleBracket]#\[RightDoubleBracket]}&/@Range@Length@\[ScriptP];
 \[ScriptCapitalN]=Select[\[ScriptM],ContainsAny[#\[LeftDoubleBracket]1\[RightDoubleBracket],{1}]&]\[LeftDoubleBracket];;,2\[RightDoubleBracket];*)
@@ -135,6 +175,9 @@ TotalIntersectionArea[\[ScriptCapitalT]_,\[ScriptCapitalB]_]:=Table[Area@RegionI
 (* ::Input::Initialization:: *)
 End[];
 On[General::spell1];
-Protect@@Names["TeXport`*"];
+Protect@@Names["LatticePlane`*"];
 (*Protect[Evaluate[Context[]<>"*"]];*)
 EndPackage[];
+
+
+
