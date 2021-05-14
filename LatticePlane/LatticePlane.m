@@ -177,7 +177,7 @@ TotalIntersectionArea[\[ScriptCapitalT]_,\[ScriptCapitalB]_]:=Table[Area@RegionI
 
 (* ::Input::Initialization:: *)
 PlaneIntersection::size="Number of points (`1`) is too small";
-PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalR],test,\[ScriptCapitalP]1,\[ScriptCapitalM],\[ScriptCapitalP]crop,p},
+PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalR],test,\[ScriptCapitalP]1,\[ScriptCapitalM],\[ScriptCapitalP]crop,p,np,eps,ids,id,\[ScriptCapitalC],order,dr},
 If[Length@\[ScriptCapitalP]==1,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];(*allow for multiple planes*)
 \[ScriptCapitalB]=BoundingRegion[\[ScriptCapitalU]];(*for cropping the plane*)
 \[ScriptCapitalM]=MeshPrimitives[MeshRegion@\[ScriptCapitalU],2];
