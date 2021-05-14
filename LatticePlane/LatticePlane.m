@@ -50,6 +50,7 @@ UnitCell::usage="UnitCell[xyz]";
 InterplanarAngle::usage="InterplanarAngle[hkl1,hkl2,lattice]";
 DegenerateMesh::usage="DegenerateMesh[v]";
 TotalIntersectionArea::usage="TotalIntersectionArea[\[ScriptCapitalT],\[ScriptCapitalB]]";
+PlaneIntersection::usage="PlaneIntersection[\[ScriptCapitalP],\[ScriptCapitalU]]";
 
 
 (* ::Input::Initialization:: *)
@@ -119,7 +120,7 @@ If[B===Null,
 \[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]];\[ScriptCapitalA]=AssignAxis[p2,\[ScriptCapitalI],\[Gamma]],
 \[ScriptCapitalO]=B[[f2]]\[ScriptCapitalI][[f2]];\[ScriptCapitalA]=B[[f3]]\[ScriptCapitalI][[f3]]
 ];
-\[ScriptCapitalB]=AssignAxis[f1,1,\[Gamma]];
+\[ScriptCapitalB]=AssignAxis[f1,1,\[Gamma],"BasisVectors"->B];
 If[B===Null,
 InfinitePlane[{0,0,0},{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}],
 InfinitePlane[\[ScriptCapitalA],{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}]
@@ -128,11 +129,13 @@ InfinitePlane[\[ScriptCapitalA],{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCap
 
 
 (* ::Input::Initialization:: *)
-MillerToPlane[hkl_,\[Gamma]_.,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{\[ScriptCapitalI],p1,p,f,B},
+Options[MillerToPlane]={"BasisVectors"->Null,"\[Gamma]"->Null};
+MillerToPlane[hkl_,\[Gamma]_:Null,OptionsPattern[]]:=Module[{\[ScriptCapitalI],p1,p,f,B,\[Gamma]1},
+If[\[Gamma]===Null,\[Gamma]1=OptionValue["\[Gamma]"],\[Gamma]1=\[Gamma]];
 B=OptionValue["BasisVectors"];
 \[ScriptCapitalI]=Reciprocal[hkl];
 {p,f}=GetPositions@\[ScriptCapitalI];
-Switch[Length@p(*number of real-valued dimensions*),1,OneDimension[\[ScriptCapitalI],\[Gamma],"BasisVectors"->B],2,TwoDimension[\[ScriptCapitalI],\[Gamma],"BasisVectors"->B],3,InfinitePlane@AssignAxes[\[ScriptCapitalI],\[Gamma],"BasisVectors"->B]]
+Switch[Length@p(*number of real-valued dimensions*),1,OneDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],2,TwoDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],3,InfinitePlane@AssignAxes[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B]]
 ]
 
 
@@ -170,6 +173,40 @@ DegenerateMesh[v_]:=Module[{\[ScriptCapitalR],\[ScriptCapitalN]},\[ScriptCapital
 
 (* ::Input::Initialization:: *)
 TotalIntersectionArea[\[ScriptCapitalT]_,\[ScriptCapitalB]_]:=Table[Area@RegionIntersection[t,b],{t,\[ScriptCapitalT]},{b,\[ScriptCapitalB]}]/. Undefined\[RightArrow]Sequence@@{}//Flatten//Total
+
+
+(* ::Input::Initialization:: *)
+PlaneIntersection::size="Number of points (`1`) is too small";
+PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalR],test,\[ScriptCapitalP]1,\[ScriptCapitalM],\[ScriptCapitalP]crop,p},
+If[Length@\[ScriptCapitalP]==1,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];(*allow for multiple planes*)
+\[ScriptCapitalB]=BoundingRegion[\[ScriptCapitalU]];(*for cropping the plane*)
+\[ScriptCapitalM]=MeshPrimitives[MeshRegion@\[ScriptCapitalU],2];
+\[ScriptCapitalP]crop=RegionIntersection[\[ScriptCapitalP],\[ScriptCapitalB]];
+\[ScriptCapitalR]=Cases[RegionIntersection[\[ScriptCapitalP]crop,#]&/@\[ScriptCapitalM],_Line];(*thread through each facet of \[ScriptCapitalU]*)
+eps=100$MachineEpsilon;
+test=Round[#1,eps]==Round[#2,eps]&;(*test for duplicate vertices*)
+p=DeleteDuplicates[Partition[Flatten[\[ScriptCapitalR][[;;,1]],\[Infinity]],3],test];
+np=Length@p;
+Which[np==3,
+Null,(*do nothing*)
+
+np==4,
+ids={{1,2,3,4},{1,2,4,3},{1,3,2,4}};(*DeleteDuplicates[Permutations@Range@4,Reverse@#1\[Equal]#2&]*)
+id=Sort[{ids,Area@Polygon@p[[#]]&/@ids}\[Transpose],#1[[2]]>#2[[2]]&][[1,1]];(*take the polygon with the biggest area*)
+p=p[[id]],
+
+np>4,
+dr=DimensionReduction[p,2];
+\[ScriptCapitalC]=Region`Mesh`MergeCells@ConvexHullMesh@dr@p;
+order=MeshCells[\[ScriptCapitalC],2][[1,1]];
+p=dr[MeshCoordinates[\[ScriptCapitalC]][[order]],"OriginalVectors"],(*reduced, cyclically ordered points*)
+
+_,
+Message[PlaneIntersection::size,np]
+];
+Polygon@p
+(*Polygon@DeleteDuplicates[Flatten[\[ScriptCapitalR]\[LeftDoubleBracket];;,1,1\[RightDoubleBracket],1],test](*collapse vertices*)*)
+]
 
 
 (* ::Input::Initialization:: *)
