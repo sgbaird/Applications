@@ -21,7 +21,7 @@
 
 (* ::Input::Initialization:: *)
 Notation`AutoLoadNotationPalette=False;
-BeginPackage["LatticePlane`","Notation`"];
+BeginPackage["LatticePlane`","Notation`","NDSolve`FEM`","OpenCascadeLink`"];
 Notation`AutoLoadNotationPalette=True;
 Unprotect@@Names["LatticePlane`*"];
 Unprotect[Evaluate[Context[]<>"*"]];
@@ -51,6 +51,7 @@ InterplanarAngle::usage="InterplanarAngle[hkl1,hkl2,lattice]";
 DegenerateMesh::usage="DegenerateMesh[v]";
 TotalIntersectionArea::usage="TotalIntersectionArea[\[ScriptCapitalT],\[ScriptCapitalB]]";
 PlaneIntersection::usage="PlaneIntersection[\[ScriptCapitalP],\[ScriptCapitalU]]";
+RationalUnitCell::usage="RationalUnitCell[p]";
 
 
 (* ::Input::Initialization:: *)
@@ -73,10 +74,11 @@ AssignAxis[n_,valIn_,\[Gamma]_,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{
 val=If[Length@valIn==0,valIn,valIn[[n]]];
 B=OptionValue["BasisVectors"];
 (*tri=SASTriangle[a,\[Gamma],b]\[LeftDoubleBracket]1\[RightDoubleBracket];*)
-If[B===Null,
+out=If[B===Null,
 Switch[n,1,{val,0,0},2,{val,val,0}*{Cos[(*90\[Degree]-*)\[Gamma]],Sin[(*90\[Degree]-*)\[Gamma]],0},3,{0,0,val}],
 B[[n]]val
-]
+];
+Rationalize[out,0]
 ]
 
 
@@ -117,8 +119,12 @@ f1=f[[1]];
 {f2,f3}=Complement[Range@3,f];
 B=OptionValue["BasisVectors"];
 If[B===Null,
-\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]];\[ScriptCapitalA]=AssignAxis[p2,\[ScriptCapitalI],\[Gamma]],
-\[ScriptCapitalO]=B[[f2]]\[ScriptCapitalI][[f2]];\[ScriptCapitalA]=B[[f3]]\[ScriptCapitalI][[f3]]
+
+\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]];
+\[ScriptCapitalA]=AssignAxis[p2,\[ScriptCapitalI],\[Gamma]],
+
+\[ScriptCapitalO]=B[[f2]]\[ScriptCapitalI][[f2]];
+\[ScriptCapitalA]=B[[f3]]\[ScriptCapitalI][[f3]]
 ];
 \[ScriptCapitalB]=AssignAxis[f1,1,\[Gamma],"BasisVectors"->B];
 If[B===Null,
@@ -132,7 +138,7 @@ InfinitePlane[\[ScriptCapitalA],{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCap
 Options[MillerToPlane]={"BasisVectors"->Null,"\[Gamma]"->Null};
 MillerToPlane[hkl_,\[Gamma]_:Null,OptionsPattern[]]:=Module[{\[ScriptCapitalI],p1,p,f,B,\[Gamma]1},
 If[\[Gamma]===Null,\[Gamma]1=OptionValue["\[Gamma]"],\[Gamma]1=\[Gamma]];
-B=OptionValue["BasisVectors"];
+B=Rationalize[OptionValue["BasisVectors"],0];
 \[ScriptCapitalI]=Reciprocal[hkl];
 {p,f}=GetPositions@\[ScriptCapitalI];
 Switch[Length@p(*number of real-valued dimensions*),1,OneDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],2,TwoDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],3,InfinitePlane@AssignAxes[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B]]
@@ -145,9 +151,9 @@ ReadXYZ[xyzpath_]:=Import[xyzpath,"Table"][[3;;,2;;4]];
 
 (* ::Input::Initialization:: *)
 UnitCell[xyz_]:=Module[{\[ScriptCapitalM],\[ScriptP],\[ScriptCapitalC],P,i,\[ScriptCapitalN],\[ScriptCapitalO]},
-\[ScriptCapitalM]=Region`Mesh`MergeCells@ConvexHullMesh@xyz;
+\[ScriptCapitalM]=Region`Mesh`MergeCells@ConvexHullMesh@Rationalize[xyz,0];
 \[ScriptP]=MeshCoordinates@\[ScriptCapitalM];
-\[ScriptP]=\[ScriptP](1+$MachineEpsilon);
+(*\[ScriptP]=\[ScriptP](1+$MachineEpsilon);*)
 \[ScriptCapitalC]=MeshCells[\[ScriptCapitalM],1][[;;,1]];
 (*\[ScriptM]={\[ScriptCapitalC]\[LeftDoubleBracket]#\[RightDoubleBracket],\[ScriptP]\[LeftDoubleBracket]#\[RightDoubleBracket]}&/@Range@Length@\[ScriptP];
 \[ScriptCapitalN]=Select[\[ScriptM],ContainsAny[#\[LeftDoubleBracket]1\[RightDoubleBracket],{1}]&]\[LeftDoubleBracket];;,2\[RightDoubleBracket];*)
@@ -156,6 +162,14 @@ i=DeleteCases[Flatten[\[ScriptCapitalC][[P]]],1];
 \[ScriptCapitalN]=\[ScriptP][[i]];
 \[ScriptCapitalO]=\[ScriptP][[1]];(*\[ScriptCapitalN]=Nearest[\[ScriptP]\[LeftDoubleBracket]2;;\[RightDoubleBracket],\[ScriptCapitalO],3];*)
 Parallelepiped[\[ScriptCapitalO],\[ScriptCapitalN]]
+]
+
+
+(* ::Input::Initialization:: *)
+RationalUnitCell[p_]:=Module[{\[ScriptCapitalU],pnew},
+pnew=(1+100$MachineEpsilon)p;
+\[ScriptCapitalU]=ConvexHullMesh@pnew;
+Polyhedron[Rationalize[MeshCoordinates@\[ScriptCapitalU],0],MeshCells[\[ScriptCapitalU],2][[;;,1]]]
 ]
 
 
@@ -176,36 +190,14 @@ TotalIntersectionArea[\[ScriptCapitalT]_,\[ScriptCapitalB]_]:=Table[Area@RegionI
 
 
 (* ::Input::Initialization:: *)
-PlaneIntersection::size="Number of points (`1`) is too small";
-PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalR],test,\[ScriptCapitalP]1,\[ScriptCapitalM],\[ScriptCapitalP]crop,p,np,eps,ids,id,\[ScriptCapitalC],order,dr},
-If[Length@\[ScriptCapitalP]==1,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];(*allow for multiple planes*)
+PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalR],test,\[ScriptCapitalP]1,\[ScriptCapitalM],\[ScriptCapitalP]crop,\[ScriptCapitalP]int,p,np,eps,ids,id,\[ScriptCapitalC],order,dr},
+If[Length@\[ScriptCapitalP]==1,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];
 \[ScriptCapitalB]=BoundingRegion[\[ScriptCapitalU]];(*for cropping the plane*)
-\[ScriptCapitalM]=MeshPrimitives[MeshRegion@\[ScriptCapitalU],2];
-\[ScriptCapitalP]crop=RegionIntersection[\[ScriptCapitalP],\[ScriptCapitalB]];
-\[ScriptCapitalR]=Cases[RegionIntersection[\[ScriptCapitalP]crop,#]&/@\[ScriptCapitalM],_Line];(*thread through each facet of \[ScriptCapitalU]*)
-eps=100$MachineEpsilon;
-test=Round[#1,eps]==Round[#2,eps]&;(*test for duplicate vertices*)
-p=DeleteDuplicates[Partition[Flatten[\[ScriptCapitalR][[;;,1]],\[Infinity]],3],test];
-np=Length@p;
-Which[np==3,
-Null,(*do nothing*)
-
-np==4,
-ids={{1,2,3,4},{1,2,4,3},{1,3,2,4}};(*DeleteDuplicates[Permutations@Range@4,Reverse@#1\[Equal]#2&]*)
-id=Sort[{ids,Area@Polygon@p[[#]]&/@ids}\[Transpose],#1[[2]]>#2[[2]]&][[1,1]];(*take the polygon with the biggest area*)
-p=p[[id]],
-
-np>4,
-dr=DimensionReduction[p,2];
-\[ScriptCapitalC]=Region`Mesh`MergeCells@ConvexHullMesh@dr@p;
-order=MeshCells[\[ScriptCapitalC],2][[1,1]];
-p=dr[MeshCoordinates[\[ScriptCapitalC]][[order]],"OriginalVectors"],(*reduced, cyclically ordered points*)
-
-_,
-Message[PlaneIntersection::size,np]
-];
-Polygon@p
-(*Polygon@DeleteDuplicates[Flatten[\[ScriptCapitalR]\[LeftDoubleBracket];;,1,1\[RightDoubleBracket],1],test](*collapse vertices*)*)
+\[ScriptCapitalP]crop=RegionIntersection[#,BoundingRegion@\[ScriptCapitalU]]&/@\[ScriptCapitalP];
+\[ScriptCapitalP]int=RegionIntersection[#,\[ScriptCapitalU]]&/@\[ScriptCapitalP]crop;
+shapes=OpenCascadeShape[#]&/@\[ScriptCapitalP]int;
+bmesh=OpenCascadeShapeSurfaceMeshToBoundaryMesh[#]&/@shapes;
+\[ScriptCapitalP]int=Polygon@#["Coordinates"]&/@bmesh
 ]
 
 
@@ -217,4 +209,35 @@ Protect@@Names["LatticePlane`*"];
 EndPackage[];
 
 
+(* ::Input::Initialization:: *)
+(*PlaneIntersection::size="Number of points (`1`) is too small";
+PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalR],test,\[ScriptCapitalP]1,\[ScriptCapitalM],\[ScriptCapitalP]crop,p,np,eps,ids,id,\[ScriptCapitalC],order,dr},
+If[Length@\[ScriptCapitalP]\[Equal]1,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];(*allow for multiple planes, not fully implemented*)
+(*\[ScriptCapitalB]=BoundingRegion[\[ScriptCapitalU]];(*for cropping the plane*)*)
+\[ScriptCapitalM]=MeshPrimitives[(*DiscretizeRegion@*)\[ScriptCapitalU],2];
+\[ScriptCapitalP]crop=\[ScriptCapitalP];(*RegionIntersection[\[ScriptCapitalP],\[ScriptCapitalB]];*)
+\[ScriptCapitalR]=Cases[RegionIntersection[\[ScriptCapitalP]crop,#]&/@Flatten[MeshPrimitives[DiscretizeRegion@#,2]&/@\[ScriptCapitalM]],_Line];(*thread through each facet of \[ScriptCapitalU] and pick out line intersections*)
+eps=100$MachineEpsilon;
+test=Round[#1,eps]\[Equal]Round[#2,eps]&;(*test for duplicate vertices*)
+p=DeleteDuplicates[Partition[Flatten[\[ScriptCapitalR]\[LeftDoubleBracket];;,1\[RightDoubleBracket],\[Infinity]],3],test];
+np=Length@p;
+Which[np\[Equal]3,
+Null,(*do nothing*)
 
+np\[Equal]4,
+ids={{1,2,3,4},{1,2,4,3},{1,3,2,4}};(*DeleteDuplicates[Permutations@Range@4,Reverse@#1\[Equal]#2&]*)
+id=Sort[{ids,Area@Polygon@p\[LeftDoubleBracket]#\[RightDoubleBracket]&/@ids}\[Transpose],#1\[LeftDoubleBracket]2\[RightDoubleBracket]>#2\[LeftDoubleBracket]2\[RightDoubleBracket]&]\[LeftDoubleBracket]1,1\[RightDoubleBracket];(*take the polygon with the biggest area*)
+p=p\[LeftDoubleBracket]id\[RightDoubleBracket],
+
+np>4,
+dr=DimensionReduction[p,2];
+\[ScriptCapitalC]=Region`Mesh`MergeCells@ConvexHullMesh@dr@p;
+order=MeshCells[\[ScriptCapitalC],2]\[LeftDoubleBracket]1,1\[RightDoubleBracket];
+p=dr[MeshCoordinates[\[ScriptCapitalC]]\[LeftDoubleBracket]order\[RightDoubleBracket],"OriginalVectors"],(*reduced, cyclically ordered points*)
+
+_,
+Message[PlaneIntersection::size,np]
+];
+Polygon@p
+(*Polygon@DeleteDuplicates[Flatten[\[ScriptCapitalR]\[LeftDoubleBracket];;,1,1\[RightDoubleBracket],1],test](*collapse vertices*)*)
+]*)
