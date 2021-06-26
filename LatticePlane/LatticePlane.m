@@ -21,7 +21,7 @@
 
 (* ::Input::Initialization:: *)
 Notation`AutoLoadNotationPalette=False;
-BeginPackage["LatticePlane`","Notation`","NDSolve`FEM`","OpenCascadeLink`"];
+BeginPackage["LatticePlane`","Notation`","NDSolve`FEM`","OpenCascadeLink`"(*,"CifImport`"*),"MaXrd`"];
 Notation`AutoLoadNotationPalette=True;
 Unprotect@@Names["LatticePlane`*"];
 Unprotect[Evaluate[Context[]<>"*"]];
@@ -52,6 +52,19 @@ DegenerateMesh::usage="DegenerateMesh[v]";
 TotalIntersectionArea::usage="TotalIntersectionArea[\[ScriptCapitalT],\[ScriptCapitalB]]";
 PlaneIntersection::usage="PlaneIntersection[\[ScriptCapitalP],\[ScriptCapitalU]]";
 RationalUnitCell::usage="RationalUnitCell[p]";
+QUC::usage="QUC[x]";
+AtomPolygonBallsIntersection::usage="AtomPolygonBallsIntersection[P,c,r]";
+PolygonBallsIntersection::usage="PolygonBallsIntersection[P,c,r]";
+AtomProbabilityIntersection::usage="AtomProbabilityIntersection[\[ScriptCapitalD],P]";
+ProbabilityIntersection::usage="ProbabilityIntersection[\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP]]";
+SetupDensityHKL::usage="SetupDensityHKL[mpid,n,hklMax,radiusFactor]"
+DensityHKL::usage=
+"{\!\(\*SubscriptBox[\(\[ScriptCapitalA]\), \(int, n\)]\),\!\(\*SubscriptBox[\(hkl\), \(list\)]\),\!\(\*SubscriptBox[\(\[ScriptCapitalE]\), \(unique\)]\)}=DensityHKL[mpid,n,hklMax,radiusFactorIn];
+{\!\(\*SubscriptBox[\(\[ScriptCapitalA]\), \(int, n\)]\),\!\(\*SubscriptBox[\(hkl\), \(list\)]\),\!\(\*SubscriptBox[\(\[ScriptCapitalE]\), \(unique\)]\)}=DensityHKL[mpid,n,hklMax,radiusFactorIn,\"Method\"\[Rule]\"PDF\"];"
+PlotSetup::usage="{\!\(\*SubscriptBox[\(hkl\), \(list\)]\),reflectionList,pg}=PlotSetup[mpid,n,hklMax];"
+PlotSymmetrizedHKL::usage="g=PlotSymmetrizedHKL[vals,hkl,o,legendLabel];"
+PlotFullHKL::usage="g=PlotFullHKL[valsIn,hklIn,pg,o,legendLabel];"
+PlotSymmetrizedFullHKL::usage="g=PlotSymmetrizedFullHKL[\!\(\*SubscriptBox[\(\[ScriptCapitalA]\), \(out, n\)]\),\!\(\*SubscriptBox[\(hkl\), \(list\)]\),pg,\!\(\*SubscriptBox[\(\[ScriptCapitalE]\), \(unique\)]\),tag];"
 
 
 (* ::Input::Initialization:: *)
@@ -166,9 +179,11 @@ Parallelepiped[\[ScriptCapitalO],\[ScriptCapitalN]]
 
 
 (* ::Input::Initialization:: *)
-RationalUnitCell[p_]:=Module[{\[ScriptCapitalU],pnew},
-pnew=(1+100$MachineEpsilon)p;
-\[ScriptCapitalU]=ConvexHullMesh@pnew;
+RationalUnitCell[R_,n_]:=Module[{R1,R2,R3,c,\[ScriptCapitalU]pts,\[ScriptCapitalU]},
+{R1,R2,R3}=R(1+100$MachineEpsilon);(*for some reason Kernel aborts unexpectedly without the machine precision factor*)
+c=Floor[n/2](R1+R2+R3);(*corner*)
+\[ScriptCapitalU]pts=#-c&/@(n{{0,0,0},R1,R2,R3,R1+R2,R2+R3,R1+R3,R1+R2+R3});
+\[ScriptCapitalU]=ConvexHullMesh@\[ScriptCapitalU]pts;
 Polyhedron[Rationalize[MeshCoordinates@\[ScriptCapitalU],0],MeshCells[\[ScriptCapitalU],2][[;;,1]]]
 ]
 
@@ -190,7 +205,7 @@ TotalIntersectionArea[\[ScriptCapitalT]_,\[ScriptCapitalB]_]:=Table[Area@RegionI
 
 
 (* ::Input::Initialization:: *)
-PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalR],test,\[ScriptCapitalP]1,\[ScriptCapitalM],\[ScriptCapitalP]crop,\[ScriptCapitalP]int,p,np,eps,ids,id,\[ScriptCapitalC],order,dr},
+PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalM],\[ScriptCapitalP]crop,\[ScriptCapitalP]int,shapes,bmesh},
 If[Length@\[ScriptCapitalP]==1,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];
 \[ScriptCapitalB]=BoundingRegion[\[ScriptCapitalU]];(*for cropping the plane*)
 \[ScriptCapitalP]crop=RegionIntersection[#,BoundingRegion@\[ScriptCapitalU]]&/@\[ScriptCapitalP];
@@ -202,6 +217,157 @@ bmesh=OpenCascadeShapeSurfaceMeshToBoundaryMesh[#]&/@shapes;
 
 
 (* ::Input::Initialization:: *)
+QUC[x_]:=QuantityMagnitude@UnitConvert@x
+
+
+(* ::Input::Initialization:: *)
+IsotropicMultinormal[pts_,r_]:=MapThread[MultinormalDistribution[#1,DiagonalMatrix@ConstantArray[#2,3]]&,{pts,r}]
+
+
+(* ::Input::Initialization:: *)
+SetupDensityHKL::odd="supercell expansion (n) should be odd";
+SetupDensityHKL[mpid_,n_:3,hklMax_:4,radiusFactor_:1/3]:=Module[{pg,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
+
+ImportCrystalData[mpid<>".cif"(*Al_mp-134_conventional_standard.cif*)(*"al.cif"*),mpid,"OverwriteWarning"->False];
+ExpandCrystal[mpid,{n,n,n},"NewLabel"->mpid<>"_2","StoreTemporarily"->False];(*Defaults to 1x1x1*)
+
+{\[ScriptCapitalE],\[ScriptF]tmp}=(Values/@$CrystalData[[mpid<>"_2","AtomData",;;,{"Element","FractionalCoordinates"}]])\[Transpose];
+pg=$CrystalData[[mpid,"SpaceGroup"]];
+R=GetCrystalMetric[mpid,ToCartesian->True];
+\[ScriptF]=\[ScriptF]tmp . R;
+If[!OddQ@n,Message[SetupDensityHKL::odd]];
+{R1,R2,R3}=R;
+\[ScriptCapitalO]=Floor[n/2](R1+R2+R3);
+\[ScriptF]=#-\[ScriptCapitalO]&/@\[ScriptF];
+\[ScriptCapitalE]Unique=DeleteDuplicates@\[ScriptCapitalE];
+rKey=QUC@ElementData[#,"CovalentRadius"]&/@\[ScriptCapitalE]Unique;
+r=radiusFactor*ReplaceAll[\[ScriptCapitalE],Thread[\[ScriptCapitalE]Unique->rKey]]*1*^10(*conversion to Angstroms*);
+\[ScriptCapitalE]Pos=PositionIndex@\[ScriptCapitalE];
+\[ScriptCapitalU]=RationalUnitCell[R,n];
+
+reflectionList=ReflectionList@hklMax;
+hklList=MergeSymmetryEquivalentReflections[pg,reflectionList];
+\[ScriptCapitalP]=MillerToPlane[#,\[Gamma]=0,"BasisVectors"->R]&/@hklList;
+\[ScriptCapitalR]=PlaneIntersection[\[ScriptCapitalP],\[ScriptCapitalU]];
+\[ScriptF]List=\[ScriptF][[#/.\[ScriptCapitalE]Pos]]&/@\[ScriptCapitalE]Unique;
+rList=r[[#/.\[ScriptCapitalE]Pos]]&/@\[ScriptCapitalE]Unique;
+
+\[ScriptCapitalD]=MapThread[Rationalize@IsotropicMultinormal[#1,#2]&,{\[ScriptF]List,rList}];
+(*Subscript[hkl, list2]=DeleteCases[reflectionList,{0,0,0}];*)
+npts=Length@Subscript[hkl, list2];
+\[ScriptCapitalA]Sym=Area@\[ScriptCapitalR]; (*/@\[ScriptCapitalR]*)
+{\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique}
+]
+
+
+(* ::Input::Initialization:: *)
+DistanceRadiusComparison[i_,j_,n_:3.99]:=Thread[#<n j]&/@i
+
+
+(* ::Input::Initialization:: *)
+TruePosition[x_]:=Flatten@Position[#,_?TrueQ]&/@x
+
+
+(* ::Input::Initialization:: *)
+AtomPolygonBallsIntersection[P_,c_,r_]:=Area/@MeshRegion/@DeleteCases[OpenCascadeShapeSurfaceMeshToBoundaryMesh/@OpenCascadeShape/@DeleteCases[(RegionIntersection[P,#]&/@MapThread[Ball[#1,#2]&,{c,r}]),_EmptyRegion],$Failed]
+
+
+(* ::Input::Initialization:: *)
+AtomPolygonBallsMap[P_,c_,r_]:=MapThread[If[#2!={},Flatten@AtomPolygonBallsIntersection[#1,#2,#3],0]&,{P,c,r}];
+
+
+(* ::Input::Initialization:: *)
+PolygonBallsIntersection[P_,c_,r_,n_:3.99]:=Module[{d,TF,ids,c2,r2,\[ScriptCapitalI]b,\[ScriptCapitalA]b},
+d=Table[RegionDistance[i,j],{i,P},{j,#}]&/@c;
+TF=MapThread[DistanceRadiusComparison[#1,#2,n]&,{d,r}];
+ids=TruePosition[#]&/@TF;
+c2=MapThread[#1/.Thread[Range@Length@#2->#2]&,{ids,c}];
+r2=MapThread[#1/.Thread[Range@Length@#2->#2]&,{ids,r}];
+(*{c2,r2}={c,r};*)
+(*{c2,r2,P}*)
+(*\[ScriptCapitalI]b=MapThread[Table[AtomPolygonBallsIntersection[i,#1,#2],{i,P}]&,{c2,r2}];*)
+\[ScriptCapitalI]b=MapThread[AtomPolygonBallsMap[P,#1,#2]&,{c2,r2}];
+(*\[ScriptCapitalI]b=Table[MapThread[If[#1\[LeftDoubleBracket]1\[RightDoubleBracket]\[NotEqual]{},Flatten@AtomPolygonBallsIntersection[{#2},#1\[LeftDoubleBracket]1\[RightDoubleBracket],#1\[LeftDoubleBracket]2\[RightDoubleBracket]],0]&,{i,P}],{i,{c2,r2}\[Transpose]}]*)
+\[ScriptCapitalA]b=Total[#,{2}]&/@\[ScriptCapitalI]b
+]
+
+
+(* ::Input::Initialization:: *)
+AtomProbabilityIntersection[\[ScriptCapitalD]_,P_]:=(*Parallel*)Table[Quiet[NIntegrate[PDF[i,{x,y,z}]/.PDF[0,{x,y,z}]->0(*for region distance filtering*),{x,y,z}\[Element]j,AccuracyGoal->10],{General::munfl,NIntegrate::slwcon,NIntegrate::precw}],{i,\[ScriptCapitalD]},{j,P}]
+
+
+(* ::Input::Initialization:: *)
+ProbabilityIntersection[\[ScriptCapitalD]_,\[ScriptCapitalR]_,\[ScriptCapitalP]_,n_:3.99,radiusFactor_:1/4]:=Module[{\[ScriptF]List,rList,distances,d,id,\[ScriptCapitalD]2,\[ScriptCapitalI]int,\[ScriptCapitalA]int},
+\[ScriptF]List=\[ScriptCapitalD][[;;,;;,1]];
+rList=\[ScriptCapitalD][[;;,;;,2,1,1]][[;;,1]];(*assumes isotropic radius and assumes constant radius for a particular element*)
+d=Table[RegionDistance[i,j],{i,\[ScriptCapitalP]},{j,#}]&/@\[ScriptF]List;
+TF=MapThread[DistanceRadiusComparison[#1,#2,n]&,{d,rList}];
+ids=TruePosition[#]&/@TF;
+\[ScriptCapitalD]2=MapThread[#1/.Thread[Range@Length@#2->#2]&,{ids,\[ScriptCapitalD]}]/.{}->0;
+\[ScriptCapitalI]int=Table[MapThread[Flatten@AtomProbabilityIntersection[#1,{#2}]&,{i,\[ScriptCapitalR]}],{i,\[ScriptCapitalD]2}];
+\[ScriptCapitalA]int=Total[#,{2}]&/@\[ScriptCapitalI]int;
+\[ScriptCapitalA]int=\[ScriptCapitalA]int \[Pi] (1/radiusFactor rList)^2(*weight the probabilities by the area of the atoms*)
+]
+
+
+(* ::Input::Initialization:: *)
+DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor_Real:0.01,radiusFactorIn_Real:{},OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction"}]]:=Module[{radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt},
+method=OptionValue["Method"];
+If[radiusFactorIn=={},Switch[method,"PDF",radiusFactor=1/4,"HardSphere",radiusFactor=1],radiusFactor=radiusFactorIn];
+{\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique}=SetupDensityHKL[mpid,n,hklMax,radiusFactor];
+Switch[method,
+"PDF",\[ScriptCapitalA]out=ProbabilityIntersection[\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],dFactor],
+"HardSphere",\[ScriptCapitalA]out=PolygonBallsIntersection[\[ScriptCapitalR],\[ScriptF]List,rList,dFactor]
+];
+\[ScriptCapitalA]outn=#/\[ScriptCapitalA]Sym&/@\[ScriptCapitalA]out;(*normalize by lattice plane area*)
+\[ScriptCapitalA]outCt=MapThread[#1/(\[Pi] #2^2)&,{\[ScriptCapitalA]outn,rList[[;;,1]]}];
+{\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,hklList,\[ScriptCapitalE]Unique}
+]
+
+
+(* ::Input::Initialization:: *)
+PlotSetup[mpid_,n_:3,hklMax_:4]:=Module[{pg,reflectionList,hklList},
+pg=$CrystalData[[mpid,"SpaceGroup"]];
+reflectionList=ReflectionList@hklMax;
+hklList=MergeSymmetryEquivalentReflections[pg,reflectionList];
+{hklList,reflectionList,pg}
+]
+
+
+(* ::Code::Initialization::Bold:: *)
+PlotSymmetrizedHKL[vals_,hkl_,o_Integer:1,legendLabel_:"\!\(\*FractionBox[SubscriptBox[\(\[ScriptCapitalA]\), \(\[Integral]\)], SubscriptBox[\(\[ScriptCapitalA]\), \(hkl\)]]\)(\!\(\*SuperscriptBox[\(\[CapitalARing]\), \(-2\)]\))"]:=Module[{max,c,g1},
+max=Max@hkl;
+c=ColorData[{"AvocadoColors",{0,Max@vals}}];
+g1=Graphics3D[{Opacity[o],PointSize[0.05],Point[hkl,VertexColors->c/@vals]},Axes->True,BoxRatios->Automatic,AxesLabel->{"h","k","l"},PlotRange->ConstantArray[{0,max},3],ImageSize->Medium];
+Show[Legended[g1,BarLegend[{c,c[[3]]},LegendLabel->legendLabel]],Graphics3D@{FaceForm[None],ConvexHullMesh@hkl}]
+]
+
+
+(* ::Code::Initialization::Bold:: *)
+PlotFullHKL[valsIn_,hklIn_,pg_,o_Integer:0.75,legendLabel_:"\!\(\*FractionBox[SubscriptBox[\(\[ScriptCapitalA]\), \(\[Integral]\)], SubscriptBox[\(\[ScriptCapitalA]\), \(hkl\)]]\)(\!\(\*SuperscriptBox[\(\[CapitalARing]\), \(-2\)]\))"]:=Module[{max,c,\[ScriptR],pi,valsReplace,n,npts,vals2,hklListSub,valsSub,g1},
+max=Max@hklIn;
+c=ColorData[{"AvocadoColors",{0,Max@valsIn}}];
+\[ScriptR]=ReflectionList@max;
+pi=PositionIndex[ToStandardSetting[pg,#]&/@\[ScriptR]];(*degenerate sets*)
+valsReplace=Thread[Keys@PositionIndex[hklIn]->valsIn]/.pi;
+n=Length/@Keys@valsReplace;
+npts=Length@\[ScriptR];
+vals2=Range@npts/.(Thread[Keys@#->Values@#]&/@valsReplace//Flatten);
+{hklListSub,valsSub}=DeleteCases[{\[ScriptR],vals2}\[Transpose],{{x_,y_,z_},_}/;AllTrue[Thread[{x,y,z}>0],TrueQ]]\[Transpose];
+g1=Graphics3D[{Opacity[o],PointSize[0.08],Point[hklListSub,VertexColors->c/@valsSub]},Axes->True,BoxRatios->Automatic,AxesLabel->{"h","k","l"},ViewPoint->{max,0.6max,0.6max},AxesEdge->{{1,-1},{1,-1},{1,-1}}, PlotRange->ConstantArray[{-max,max},3],ImageSize->Medium];
+Show[Legended[g1,BarLegend[{c,c[[3]]},LegendLabel->legendLabel]],Graphics3D@{EdgeForm[White],FaceForm[None],ConvexHullMesh@Permutations[{0,0,0,max,max,max},{3}](*ConvexHullMesh@Complement[hklList,hklListSub]*)}]
+]
+
+
+(* ::Input::Initialization:: *)
+PlotSymmetrizedFullHKL[\[ScriptCapitalA]outNorm:_,hklList:_,pg_,\[ScriptCapitalE]Unique:_,tag_:"\[Integral]"]:=Module[{str,x},
+str[x_]:=StringTemplate["\!\(\*FractionBox[SubscriptBox[\(\[ScriptCapitalA]\), \(`tag`, `element`\)], SubscriptBox[\(\[ScriptCapitalA]\), \(hkl\)]]\)(\!\(\*SuperscriptBox[\(\[CapitalARing]\), \(-2\)]\))"][<|"element"->x,"tag"->tag|>];
+Grid[MapThread[{PlotSymmetrizedHKL[#1,hklList,str[#2]][[1]],PlotFullHKL[#1,hklList,pg,str[#2]]}&,
+{\[ScriptCapitalA]outNorm,\[ScriptCapitalE]Unique}]]
+]
+
+
+(* ::Input::Initialization:: *)
 End[];
 On[General::spell1];
 Protect@@Names["LatticePlane`*"];
@@ -209,35 +375,4 @@ Protect@@Names["LatticePlane`*"];
 EndPackage[];
 
 
-(* ::Input::Initialization:: *)
-(*PlaneIntersection::size="Number of points (`1`) is too small";
-PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalR],test,\[ScriptCapitalP]1,\[ScriptCapitalM],\[ScriptCapitalP]crop,p,np,eps,ids,id,\[ScriptCapitalC],order,dr},
-If[Length@\[ScriptCapitalP]\[Equal]1,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];(*allow for multiple planes, not fully implemented*)
-(*\[ScriptCapitalB]=BoundingRegion[\[ScriptCapitalU]];(*for cropping the plane*)*)
-\[ScriptCapitalM]=MeshPrimitives[(*DiscretizeRegion@*)\[ScriptCapitalU],2];
-\[ScriptCapitalP]crop=\[ScriptCapitalP];(*RegionIntersection[\[ScriptCapitalP],\[ScriptCapitalB]];*)
-\[ScriptCapitalR]=Cases[RegionIntersection[\[ScriptCapitalP]crop,#]&/@Flatten[MeshPrimitives[DiscretizeRegion@#,2]&/@\[ScriptCapitalM]],_Line];(*thread through each facet of \[ScriptCapitalU] and pick out line intersections*)
-eps=100$MachineEpsilon;
-test=Round[#1,eps]\[Equal]Round[#2,eps]&;(*test for duplicate vertices*)
-p=DeleteDuplicates[Partition[Flatten[\[ScriptCapitalR]\[LeftDoubleBracket];;,1\[RightDoubleBracket],\[Infinity]],3],test];
-np=Length@p;
-Which[np\[Equal]3,
-Null,(*do nothing*)
 
-np\[Equal]4,
-ids={{1,2,3,4},{1,2,4,3},{1,3,2,4}};(*DeleteDuplicates[Permutations@Range@4,Reverse@#1\[Equal]#2&]*)
-id=Sort[{ids,Area@Polygon@p\[LeftDoubleBracket]#\[RightDoubleBracket]&/@ids}\[Transpose],#1\[LeftDoubleBracket]2\[RightDoubleBracket]>#2\[LeftDoubleBracket]2\[RightDoubleBracket]&]\[LeftDoubleBracket]1,1\[RightDoubleBracket];(*take the polygon with the biggest area*)
-p=p\[LeftDoubleBracket]id\[RightDoubleBracket],
-
-np>4,
-dr=DimensionReduction[p,2];
-\[ScriptCapitalC]=Region`Mesh`MergeCells@ConvexHullMesh@dr@p;
-order=MeshCells[\[ScriptCapitalC],2]\[LeftDoubleBracket]1,1\[RightDoubleBracket];
-p=dr[MeshCoordinates[\[ScriptCapitalC]]\[LeftDoubleBracket]order\[RightDoubleBracket],"OriginalVectors"],(*reduced, cyclically ordered points*)
-
-_,
-Message[PlaneIntersection::size,np]
-];
-Polygon@p
-(*Polygon@DeleteDuplicates[Flatten[\[ScriptCapitalR]\[LeftDoubleBracket];;,1,1\[RightDoubleBracket],1],test](*collapse vertices*)*)
-]*)
