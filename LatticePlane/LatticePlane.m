@@ -20,21 +20,11 @@
 
 
 (* ::Input::Initialization:: *)
-Notation`AutoLoadNotationPalette=False;
-BeginPackage["LatticePlane`","Notation`","NDSolve`FEM`","OpenCascadeLink`"(*,"CifImport`"*),"MaXrd`"];
-Notation`AutoLoadNotationPalette=True;
+BeginPackage["LatticePlane`","NDSolve`FEM`","OpenCascadeLink`"(*,"CifImport`"*),"MaXrd`"];
 Unprotect@@Names["LatticePlane`*"];
 Unprotect[Evaluate[Context[]<>"*"]];
-(*Unprotect[Evaluate[Context[]<>"*"]];*)
 ClearAll@@Names["LatticePlane`*"];
 ClearAll["LatticePlane`Private`*"];
-
-
-(* ::Input::Initialization:: *)
-Off[General::spell1];
-Off[Symbolize::boxSymbolExists];(*subscripted symbols*)
-Symbolize[ParsedBoxWrapper[SubscriptBox["_","_"]]];(*this is the internal representation of Symbolize suggested by Jason Harris for Mma package, see https://groups.google.com/g/comp.soft-sys.math.mathematica/c/rhIhi-v_D5E?pli=1*)
-On[Symbolize::boxSymbolExists];
 
 
 (* ::Input::Initialization:: *)
@@ -191,7 +181,7 @@ Polyhedron[Rationalize[MeshCoordinates@\[ScriptCapitalU],0],MeshCells[\[ScriptCa
 (* ::Input::Initialization:: *)
 InterplanarAngle[hkl1_,hkl2_,lattice_:"cubic"]:=Module[{h1,k1,l1,h2,k2,l2},
 {h1,k1,l1}=ParseHKL@hkl1/. Indeterminate\[RightArrow]0;
-{h2,k2,l2}=ParseHKL@hkl2/. Indeterminate\[RightArrow]0;Switch[lattice,"cubic",ArcCos[ (h1 h2+k1 k2+l1 l2)/(\:f000h12+k12+l12\:f006 \:f000h22+k22+l22\:f006)],"hexagonal",Null,"tetragonal",Null,"trigonal",Null,"monoclinic",Null,"triclinic",Null,"orthorhombic",Null]]
+{h2,k2,l2}=ParseHKL@hkl2/. Indeterminate\[RightArrow]0;Switch[lattice,"cubic",ArcCos[ (h1 h2+k1 k2+l1 l2)/Sqrt[(h1^2+k1^2+l1^2)(h2^2+k2^2+l2^2)]],"hexagonal",Null,"tetragonal",Null,"trigonal",Null,"monoclinic",Null,"triclinic",Null,"orthorhombic",Null]]
 
 
 (* ::Input::Initialization:: *)
@@ -253,7 +243,6 @@ hklList=MergeSymmetryEquivalentReflections[pg,reflectionList];
 rList=r[[#/.\[ScriptCapitalE]Pos]]&/@\[ScriptCapitalE]Unique;
 
 \[ScriptCapitalD]=MapThread[Rationalize@IsotropicMultinormal[#1,#2]&,{\[ScriptF]List,rList}];
-(*Subscript[hkl, list2]=DeleteCases[reflectionList,{0,0,0}];*)
 npts=Length@Subscript[hkl, list2];
 \[ScriptCapitalA]Sym=Area@\[ScriptCapitalR]; (*/@\[ScriptCapitalR]*)
 {\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique}
