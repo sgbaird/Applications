@@ -21,10 +21,10 @@
 
 (* ::Input::Initialization:: *)
 BeginPackage["LatticePlane`","NDSolve`FEM`","OpenCascadeLink`"(*,"CifImport`"*),"MaXrd`"];
-Unprotect@@Names["LatticePlane`*"];
+Unprotect@@Names[Evaluate[Context[]<>"*"]];
 Unprotect[Evaluate[Context[]<>"*"]];
-ClearAll@@Names["LatticePlane`*"];
-ClearAll["LatticePlane`Private`*"];
+ClearAll@@Names[Evaluate[Context[]<>"*"]];
+ClearAll[Evaluate[Context[]<>"Private`*"]];
 
 
 (* ::Input::Initialization:: *)
@@ -47,7 +47,8 @@ AtomPolygonBallsIntersection::usage="AtomPolygonBallsIntersection[P,c,r]";
 PolygonBallsIntersection::usage="PolygonBallsIntersection[P,c,r]";
 AtomProbabilityIntersection::usage="AtomProbabilityIntersection[\[ScriptCapitalD],P]";
 ProbabilityIntersection::usage="ProbabilityIntersection[\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP]]";
-SetupDensityHKL::usage="SetupDensityHKL[mpid,n,hklMax,radiusFactor]"
+SetupDensityHKL::usage="SetupDensityHKL[mpid,n,hklMax,radiusFactor]";
+GetFullHKL::usage="GetFullHKL[valsIn,hklIn,pg]";
 DensityHKL::usage=
 "{\!\(\*SubscriptBox[\(\[ScriptCapitalA]\), \(int, n\)]\),\!\(\*SubscriptBox[\(hkl\), \(list\)]\),\!\(\*SubscriptBox[\(\[ScriptCapitalE]\), \(unique\)]\)}=DensityHKL[mpid,n,hklMax,radiusFactorIn];
 {\!\(\*SubscriptBox[\(\[ScriptCapitalA]\), \(int, n\)]\),\!\(\*SubscriptBox[\(hkl\), \(list\)]\),\!\(\*SubscriptBox[\(\[ScriptCapitalE]\), \(unique\)]\)}=DensityHKL[mpid,n,hklMax,radiusFactorIn,\"Method\"\[Rule]\"PDF\"];"
@@ -245,7 +246,7 @@ rList=r[[#/.\[ScriptCapitalE]Pos]]&/@\[ScriptCapitalE]Unique;
 \[ScriptCapitalD]=MapThread[Rationalize@IsotropicMultinormal[#1,#2]&,{\[ScriptF]List,rList}];
 npts=Length@Subscript[hkl, list2];
 \[ScriptCapitalA]Sym=Area@\[ScriptCapitalR]; (*/@\[ScriptCapitalR]*)
-{\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique}
+{\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,pg}
 ]
 
 
@@ -300,17 +301,36 @@ ids=TruePosition[#]&/@TF;
 
 
 (* ::Input::Initialization:: *)
-DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor_Real:0.01,radiusFactorIn_Real:{},OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction"}]]:=Module[{radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt},
+GetFullHKL[valsIn_,hklIn_,pg_]:=Module[{max,\[ScriptR],pi,reflectionList,hklList,valsReplace,n,npts,vals2,hklListSub,valsSub},
+max=Max@hklIn;
+\[ScriptR]=ReflectionList@max;
+pi=PositionIndex[ToStandardSetting[pg,#]&/@\[ScriptR]];(*degenerate sets*)
+hklList=MergeSymmetryEquivalentReflections[pg,\[ScriptR]];
+valsReplace=Thread[Keys@PositionIndex[hklList]->valsIn]/.pi;
+n=Length/@Keys@valsReplace;
+npts=Length@\[ScriptR];
+vals2=Range@npts/.(Thread[Keys@#->Values@#]&/@valsReplace//Flatten);
+{\[ScriptR],vals2}
+]
+
+
+(* ::Input::Initialization:: *)
+DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor_:0.01,radiusFactorIn_:0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction"}]]:=Module[{radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
 method=OptionValue["Method"];
-If[radiusFactorIn=={},Switch[method,"PDF",radiusFactor=1/4,"HardSphere",radiusFactor=1],radiusFactor=radiusFactorIn];
-{\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique}=SetupDensityHKL[mpid,n,hklMax,radiusFactor];
+If[radiusFactorIn==0,Switch[method,"PDF",radiusFactor=1/4,"HardSphere",radiusFactor=1],radiusFactor=radiusFactorIn];
+{\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,pg}=SetupDensityHKL[mpid,n,hklMax,radiusFactor];
 Switch[method,
 "PDF",\[ScriptCapitalA]out=ProbabilityIntersection[\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],dFactor],
 "HardSphere",\[ScriptCapitalA]out=PolygonBallsIntersection[\[ScriptCapitalR],\[ScriptF]List,rList,dFactor]
 ];
 \[ScriptCapitalA]outn=#/\[ScriptCapitalA]Sym&/@\[ScriptCapitalA]out;(*normalize by lattice plane area*)
 \[ScriptCapitalA]outCt=MapThread[#1/(\[Pi] #2^2)&,{\[ScriptCapitalA]outn,rList[[;;,1]]}];
-{\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,hklList,\[ScriptCapitalE]Unique}
+outn=GetFullHKL[#,hklList,pg]&/@\[ScriptCapitalA]outn;
+hklFull=outn[[1,1]];(*extract a single hklListSub*)
+\[ScriptCapitalA]fulln=outn[[;;,2]];(*extract just valsSub*)
+outCt=GetFullHKL[#,hklList,pg]&/@\[ScriptCapitalA]outCt;
+\[ScriptCapitalA]fullCt=outCt[[;;,2]];(*extract just valsSub*)
+{\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,hklList,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt,hklFull,\[ScriptCapitalE]Unique}
 ]
 
 
@@ -333,16 +353,10 @@ Show[Legended[g1,BarLegend[{c,c[[3]]},LegendLabel->legendLabel]],Graphics3D@{Fac
 
 
 (* ::Code::Initialization::Bold:: *)
-PlotFullHKL[valsIn_,hklIn_,pg_,o_Integer:0.75,legendLabel_:"\!\(\*FractionBox[SubscriptBox[\(\[ScriptCapitalA]\), \(\[Integral]\)], SubscriptBox[\(\[ScriptCapitalA]\), \(hkl\)]]\)(\!\(\*SuperscriptBox[\(\[CapitalARing]\), \(-2\)]\))"]:=Module[{max,c,\[ScriptR],pi,valsReplace,n,npts,vals2,hklListSub,valsSub,g1},
-max=Max@hklIn;
+PlotFullHKL[valsIn_,hklIn_,pg_,o_Integer:0.75,legendLabel_:"\!\(\*FractionBox[SubscriptBox[\(\[ScriptCapitalA]\), \(\[Integral]\)], SubscriptBox[\(\[ScriptCapitalA]\), \(hkl\)]]\)(\!\(\*SuperscriptBox[\(\[CapitalARing]\), \(-2\)]\))"]:=Module[{c,hklFull,vals2,\[ScriptR],hklListSub,valsSub,g1},
 c=ColorData[{"AvocadoColors",{0,Max@valsIn}}];
-\[ScriptR]=ReflectionList@max;
-pi=PositionIndex[ToStandardSetting[pg,#]&/@\[ScriptR]];(*degenerate sets*)
-valsReplace=Thread[Keys@PositionIndex[hklIn]->valsIn]/.pi;
-n=Length/@Keys@valsReplace;
-npts=Length@\[ScriptR];
-vals2=Range@npts/.(Thread[Keys@#->Values@#]&/@valsReplace//Flatten);
-{hklListSub,valsSub}=DeleteCases[{\[ScriptR],vals2}\[Transpose],{{x_,y_,z_},_}/;AllTrue[Thread[{x,y,z}>0],TrueQ]]\[Transpose];
+{\[ScriptR],vals2}=GetFullHKL[valsIn,hklIn,pg];
+{hklListSub,valsSub}=DeleteCases[{\[ScriptR],vals2}\[Transpose],{{x_,y_,z_},_}/;AllTrue[Thread[{x,y,z}>0],TrueQ]]\[Transpose];(*remove a corner of the cube for visualization*)
 g1=Graphics3D[{Opacity[o],PointSize[0.08],Point[hklListSub,VertexColors->c/@valsSub]},Axes->True,BoxRatios->Automatic,AxesLabel->{"h","k","l"},ViewPoint->{max,0.6max,0.6max},AxesEdge->{{1,-1},{1,-1},{1,-1}}, PlotRange->ConstantArray[{-max,max},3],ImageSize->Medium];
 Show[Legended[g1,BarLegend[{c,c[[3]]},LegendLabel->legendLabel]],Graphics3D@{EdgeForm[White],FaceForm[None],ConvexHullMesh@Permutations[{0,0,0,max,max,max},{3}](*ConvexHullMesh@Complement[hklList,hklListSub]*)}]
 ]
@@ -358,9 +372,8 @@ Grid[MapThread[{PlotSymmetrizedHKL[#1,hklList,str[#2]][[1]],PlotFullHKL[#1,hklLi
 
 (* ::Input::Initialization:: *)
 End[];
-On[General::spell1];
-Protect@@Names["LatticePlane`*"];
-(*Protect[Evaluate[Context[]<>"*"]];*)
+Protect@@Names[Evaluate[Context[]<>"*"]];
+Protect[Evaluate[Context[]<>"*"]];
 EndPackage[];
 
 
