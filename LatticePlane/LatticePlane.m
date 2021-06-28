@@ -116,12 +116,13 @@ InfinitePlane[\[ScriptCapitalO],{\[ScriptCapitalA],\[ScriptCapitalB]}]
 
 
 (* ::Input::Initialization:: *)
-TwoDimension[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{p,f,p1,p2,f1,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB]},
+TwoDimension[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{p,f,p1,p2,f1,f2,f3,B,negQ,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB]},
 {p,f}=GetPositions@\[ScriptCapitalI];
 {p1,p2}=p[[ ;;2]];
 f1=f[[1]];
 {f2,f3}=Complement[Range@3,f];
 B=OptionValue["BasisVectors"];
+
 If[B===Null,
 
 \[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]];
@@ -144,6 +145,8 @@ MillerToPlane[hkl_,\[Gamma]_:Null,OptionsPattern[]]:=Module[{\[ScriptCapitalI],p
 If[\[Gamma]===Null,\[Gamma]1=OptionValue["\[Gamma]"],\[Gamma]1=\[Gamma]];
 B=Rationalize[OptionValue["BasisVectors"],0];
 \[ScriptCapitalI]=Reciprocal[hkl];
+negQ=Negative[\[ScriptCapitalI]/.Indeterminate->0];
+B=MapThread[If[#1,-#2,#2]&,{negQ,B}];
 {p,f}=GetPositions@\[ScriptCapitalI];
 Switch[Length@p(*number of real-valued dimensions*),1,OneDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],2,TwoDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],3,InfinitePlane@AssignAxes[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B]]
 ]
@@ -175,7 +178,7 @@ RationalUnitCell[R_,n_]:=Module[{R1,R2,R3,c,\[ScriptCapitalU]pts,\[ScriptCapital
 c=Floor[n/2](R1+R2+R3);(*corner*)
 \[ScriptCapitalU]pts=#-c&/@(n{{0,0,0},R1,R2,R3,R1+R2,R2+R3,R1+R3,R1+R2+R3});
 \[ScriptCapitalU]=ConvexHullMesh@\[ScriptCapitalU]pts;
-Polyhedron[Rationalize[MeshCoordinates@\[ScriptCapitalU],0],MeshCells[\[ScriptCapitalU],2][[;;,1]]]
+Polyhedron[Rationalize[MeshCoordinates@\[ScriptCapitalU],0],MeshCells[\[ScriptCapitalU],2][[;;,1]]] 
 ]
 
 
@@ -196,14 +199,18 @@ TotalIntersectionArea[\[ScriptCapitalT]_,\[ScriptCapitalB]_]:=Table[Area@RegionI
 
 
 (* ::Input::Initialization:: *)
-PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalB],\[ScriptCapitalM],\[ScriptCapitalP]crop,\[ScriptCapitalP]int,shapes,bmesh},
-If[Length@\[ScriptCapitalP]==1,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];
-\[ScriptCapitalB]=BoundingRegion[\[ScriptCapitalU]];(*for cropping the plane*)
-\[ScriptCapitalP]crop=RegionIntersection[#,BoundingRegion@\[ScriptCapitalU]]&/@\[ScriptCapitalP];
-\[ScriptCapitalP]int=RegionIntersection[#,\[ScriptCapitalU]]&/@\[ScriptCapitalP]crop;
+PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapitalP]1,\[ScriptCapitalB],\[ScriptCapitalM],\[ScriptCapitalP]crop,\[ScriptCapitalP]int,shapes,bmesh,d,order,coords,TF},
+If[Head@\[ScriptCapitalP]===InfinitePlane,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];
+\[ScriptCapitalB]=RegionResize[BoundingRegion[\[ScriptCapitalU]],Scaled@Rationalize[1.1(*100$MachineEpsilon*)]];(*for cropping the plane*)
+\[ScriptCapitalP]crop=RegionIntersection[#,\[ScriptCapitalB]]&/@\[ScriptCapitalP]1;
+\[ScriptCapitalP]int=RegionIntersection[#,\[ScriptCapitalU]]&/@(*\[ScriptCapitalP]1*)\[ScriptCapitalP]crop;
 shapes=OpenCascadeShape[#]&/@\[ScriptCapitalP]int;
 bmesh=OpenCascadeShapeSurfaceMeshToBoundaryMesh[#]&/@shapes;
-\[ScriptCapitalP]int=Polygon@#["Coordinates"]&/@bmesh
+coords=#["Coordinates"]&/@bmesh;
+TF=CoplanarPoints/@coords;
+coords=MapThread[If[#1,#2,DimensionReduction[#2,2][#2,"ReconstructedData"]]&,{TF,coords}];
+{d,order}=(FindShortestTour[#]&/@coords)\[Transpose];
+\[ScriptCapitalP]int=MapThread[Polygon[#1[[#2[[;;-2]]]]]&,{coords,order}]
 ]
 
 
@@ -245,7 +252,7 @@ rList=r[[#/.\[ScriptCapitalE]Pos]]&/@\[ScriptCapitalE]Unique;
 
 \[ScriptCapitalD]=MapThread[Rationalize@IsotropicMultinormal[#1,#2]&,{\[ScriptF]List,rList}];
 npts=Length@Subscript[hkl, list2];
-\[ScriptCapitalA]Sym=Area@\[ScriptCapitalR]; (*/@\[ScriptCapitalR]*)
+\[ScriptCapitalA]Sym=Area/@\[ScriptCapitalR]; (*/@\[ScriptCapitalR]*)
 {\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,pg}
 ]
 
@@ -315,7 +322,8 @@ vals2=Range@npts/.(Thread[Keys@#->Values@#]&/@valsReplace//Flatten);
 
 
 (* ::Input::Initialization:: *)
-DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor_:0.01,radiusFactorIn_:0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction"}]]:=Module[{radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
+DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor_:0.01,radiusFactorIn_:0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction","PrintID"->False}]]:=Module[{method,radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
+If[OptionValue["PrintID"],Print@mpid];
 method=OptionValue["Method"];
 If[radiusFactorIn==0,Switch[method,"PDF",radiusFactor=1/4,"HardSphere",radiusFactor=1],radiusFactor=radiusFactorIn];
 {\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,pg}=SetupDensityHKL[mpid,n,hklMax,radiusFactor];
