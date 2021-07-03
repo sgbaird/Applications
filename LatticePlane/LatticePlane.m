@@ -143,10 +143,13 @@ InfinitePlane[\[ScriptCapitalA],{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCap
 Options[MillerToPlane]={"BasisVectors"->Null,"\[Gamma]"->Null};
 MillerToPlane[hkl_,\[Gamma]_:Null,OptionsPattern[]]:=Module[{\[ScriptCapitalI],p1,p,f,B,\[Gamma]1},
 If[\[Gamma]===Null,\[Gamma]1=OptionValue["\[Gamma]"],\[Gamma]1=\[Gamma]];
-B=Rationalize[OptionValue["BasisVectors"],0];
 \[ScriptCapitalI]=Reciprocal[hkl];
+B=OptionValue["BasisVectors"];
+If[B=!=Null,
+B=Rationalize[B,0];
 negQ=Negative[\[ScriptCapitalI]/.Indeterminate->0];
 B=MapThread[If[#1,-#2,#2]&,{negQ,B}];
+];
 {p,f}=GetPositions@\[ScriptCapitalI];
 Switch[Length@p(*number of real-valued dimensions*),1,OneDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],2,TwoDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],3,InfinitePlane@AssignAxes[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B]]
 ]
@@ -322,9 +325,12 @@ vals2=Range@npts/.(Thread[Keys@#->Values@#]&/@valsReplace//Flatten);
 
 
 (* ::Input::Initialization:: *)
-DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor_:0.01,radiusFactorIn_:0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction","PrintID"->False}]]:=Module[{method,radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
+DensityHKL::mpidNotString="A string was expected for mpid.";
+DensityHKL[mpid_String:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor:(_Real|_Integer):0.01,radiusFactorIn:(_Real|_Integer):0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction","PrintID"->False}]]:=Module[{method,radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
+(*If[Head@mpid=!=String,Message[DensityHKL::mpidNotString];Abort[]];*)
 If[OptionValue["PrintID"],Print@mpid];
 method=OptionValue["Method"];
+Print[method];
 If[radiusFactorIn==0,Switch[method,"PDF",radiusFactor=1/4,"HardSphere",radiusFactor=1],radiusFactor=radiusFactorIn];
 {\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,pg}=SetupDensityHKL[mpid,n,hklMax,radiusFactor];
 Switch[method,
