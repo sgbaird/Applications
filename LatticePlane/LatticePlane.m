@@ -326,7 +326,7 @@ vals2=Range@npts/.(Thread[Keys@#->Values@#]&/@valsReplace//Flatten);
 
 (* ::Input::Initialization:: *)
 DensityHKL::mpidNotString="A string was expected for mpid.";
-DensityHKL[mpid_String:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor:(_Real|_Integer):0.01,radiusFactorIn:(_Real|_Integer):0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction","PrintID"->False}]]:=Module[{method,radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
+DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor:(_Real|_Integer):0.01,radiusFactorIn:(_Real|_Integer):0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction","PrintID"->False}]]:=Module[{method,radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
 (*If[Head@mpid=!=String,Message[DensityHKL::mpidNotString];Abort[]];*)
 If[OptionValue["PrintID"],Print@mpid];
 method=OptionValue["Method"];
