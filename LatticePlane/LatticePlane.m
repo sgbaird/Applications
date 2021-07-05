@@ -227,13 +227,14 @@ IsotropicMultinormal[pts_,r_]:=MapThread[MultinormalDistribution[#1,DiagonalMatr
 
 (* ::Input::Initialization:: *)
 SetupDensityHKL::odd="supercell expansion (n) should be odd";
-SetupDensityHKL[mpid_,n_:3,hklMax_:4,radiusFactor_:1/3]:=Module[{pg,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
+SetupDensityHKL[mpid_,n_:3,hklMax_:4,radiusFactor_:1/3]:=Module[{CrystalData,pg,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
 
-ImportCrystalData[mpid<>".cif"(*Al_mp-134_conventional_standard.cif*)(*"al.cif"*),mpid,"OverwriteWarning"->False];
-ExpandCrystal[mpid,{n,n,n},"NewLabel"->mpid<>"_2","StoreTemporarily"->False];(*Defaults to 1x1x1*)
+ImportCrystalData[mpid<>".cif"(*Al_mp-134_conventional_standard.cif*)(*"al.cif"*),mpid,"OverwriteWarning"->False,"DataFile"->mpid<>".m"];
+ExpandCrystal[mpid,{n,n,n},"NewLabel"->mpid<>"_2","StoreTemporarily"->False,"DataFile"->mpid<>".m"];(*Defaults to 1x1x1*)
 
-{\[ScriptCapitalE],\[ScriptF]tmp}=(Values/@$CrystalData[[mpid<>"_2","AtomData",;;,{"Element","FractionalCoordinates"}]])\[Transpose];
-pg=$CrystalData[[mpid,"SpaceGroup"]];
+CrystalData=Import[mpid<>".m"];
+{\[ScriptCapitalE],\[ScriptF]tmp}=(Values/@CrystalData[[mpid<>"_2","AtomData",;;,{"Element","FractionalCoordinates"}]])\[Transpose];
+pg=CrystalData[[mpid,"SpaceGroup"]];
 R=GetCrystalMetric[mpid,ToCartesian->True];
 \[ScriptF]=\[ScriptF]tmp . R;
 If[!OddQ@n,Message[SetupDensityHKL::odd]];
@@ -326,11 +327,11 @@ vals2=Range@npts/.(Thread[Keys@#->Values@#]&/@valsReplace//Flatten);
 
 (* ::Input::Initialization:: *)
 DensityHKL::mpidNotString="A string was expected for mpid.";
-DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor:(_Real|_Integer):0.01,radiusFactorIn:(_Real|_Integer):0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction","PrintID"->False}]]:=Module[{method,radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
+DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor:(_Real|_Integer):0.01,radiusFactorIn:(_Real|_Integer):0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction","PrintID"->False,"PrintMethod"->False}]]:=Module[{method,radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
 (*If[Head@mpid=!=String,Message[DensityHKL::mpidNotString];Abort[]];*)
 If[OptionValue["PrintID"],Print@mpid];
 method=OptionValue["Method"];
-Print[method];
+If[OptionValue["PrintMethod"],Print@method];
 If[radiusFactorIn==0,Switch[method,"PDF",radiusFactor=1/4,"HardSphere",radiusFactor=1],radiusFactor=radiusFactorIn];
 {\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,pg}=SetupDensityHKL[mpid,n,hklMax,radiusFactor];
 Switch[method,
