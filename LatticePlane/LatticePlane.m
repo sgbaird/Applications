@@ -227,22 +227,27 @@ IsotropicMultinormal[pts_,r_]:=MapThread[MultinormalDistribution[#1,DiagonalMatr
 
 (* ::Input::Initialization:: *)
 SetupDensityHKL::odd="supercell expansion (n) should be odd";
-SetupDensityHKL[mpid_,n_:3,hklMax_:4,radiusFactor_:1/3]:=Module[{CrystalData,pg,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
+SetupDensityHKL[mpid_,n_:3,hklMax_:4,radiusFactor_:1/3]:=Module[{CrystalData,pg,latticeParameters,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
 
 ImportCrystalData[mpid<>".cif"(*Al_mp-134_conventional_standard.cif*)(*"al.cif"*),mpid,"OverwriteWarning"->False,"DataFile"->mpid<>".m"];
-ExpandCrystal[mpid,{n,n,n},"NewLabel"->mpid<>"_2","StoreTemporarily"->False,"DataFile"->mpid<>".m"];(*Defaults to 1x1x1*)
+ExpandCrystal[mpid,{n,n,n},"NewLabel"->mpid<>"_2","StoreTemporarily"->True,"DataFile"->mpid<>".m"];(*Defaults to 1x1x1*)
 
 CrystalData=Import[mpid<>".m"];
 {\[ScriptCapitalE],\[ScriptF]tmp}=(Values/@CrystalData[[mpid<>"_2","AtomData",;;,{"Element","FractionalCoordinates"}]])\[Transpose];
 pg=CrystalData[[mpid,"SpaceGroup"]];
-R=GetCrystalMetric[mpid,ToCartesian->True];
+latticeParameters=Values@CrystalData[[mpid,"LatticeParameters"]];
+R=GetCrystalMetric[Sequence@@latticeParameters,ToCartesian->True];
+(*R=GetCrystalMetric[mpid,ToCartesian\[Rule]True];*)
 \[ScriptF]=\[ScriptF]tmp . R;
 If[!OddQ@n,Message[SetupDensityHKL::odd]];
 {R1,R2,R3}=R;
 \[ScriptCapitalO]=Floor[n/2](R1+R2+R3);
 \[ScriptF]=#-\[ScriptCapitalO]&/@\[ScriptF];
 \[ScriptCapitalE]Unique=DeleteDuplicates@\[ScriptCapitalE];
-rKey=QUC@ElementData[#,"CovalentRadius"]&/@\[ScriptCapitalE]Unique;
+
+covalentRadius=<|"H"->3.1`2.*^-11,"He"->2.8`2.*^-11,"Li"->1.28`3.*^-10,"Be"->9.6`2.*^-11,"B"->8.5`2.*^-11,"C"->7.6`2.*^-11,"N"->7.1`2.*^-11,"O"->6.6`2.*^-11,"F"->5.7`2.*^-11,"Ne"->5.8`2.*^-11,"Na"->1.66`3.*^-10,"Mg"->1.41`3.*^-10,"Al"->1.21`3.*^-10,"Si"->1.11`3.*^-10,"P"->1.07`3.*^-10,"S"->1.05`3.*^-10,"Cl"->1.02`3.*^-10,"Ar"->1.06`3.*^-10,"K"->2.03`3.*^-10,"Ca"->1.76`3.*^-10,"Sc"->1.7`3.*^-10,"Ti"->1.6`3.*^-10,"V"->1.53`3.*^-10,"Cr"->1.39`3.*^-10,"Mn"->1.39`3.*^-10,"Fe"->1.32`3.*^-10,"Co"->1.26`3.*^-10,"Ni"->1.24`3.*^-10,"Cu"->1.32`3.*^-10,"Zn"->1.22`3.*^-10,"Ga"->1.22`3.*^-10,"Ge"->1.2`3.*^-10,"As"->1.19`3.*^-10,"Se"->1.2`3.*^-10,"Br"->1.2`3.*^-10,"Kr"->1.16`3.*^-10,"Rb"->2.2`3.*^-10,"Sr"->1.95`3.*^-10,"Y"->1.9`3.*^-10,"Zr"->1.75`3.*^-10,"Nb"->1.64`3.*^-10,"Mo"->1.54`3.*^-10,"Tc"->1.47`3.*^-10,"Ru"->1.46`3.*^-10,"Rh"->1.42`3.*^-10,"Pd"->1.39`3.*^-10,"Ag"->1.45`3.*^-10,"Cd"->1.44`3.*^-10,"In"->1.42`3.*^-10,"Sn"->1.39`3.*^-10,"Sb"->1.39`3.*^-10,"Te"->1.38`3.*^-10,"I"->1.39`3.*^-10,"Xe"->1.4`3.*^-10,"Cs"->2.44`3.*^-10,"Ba"->2.15`3.*^-10,"La"->2.07`3.*^-10,"Ce"->2.04`3.*^-10,"Pr"->2.03`3.*^-10,"Nd"->2.01`3.*^-10,"Pm"->1.99`3.*^-10,"Sm"->1.98`3.*^-10,"Eu"->1.98`3.*^-10,"Gd"->1.96`3.*^-10,"Tb"->1.94`3.*^-10,"Dy"->1.92`3.*^-10,"Ho"->1.92`3.*^-10,"Er"->1.89`3.*^-10,"Tm"->1.9`3.*^-10,"Yb"->1.87`3.*^-10,"Lu"->1.87`3.*^-10,"Hf"->1.75`3.*^-10,"Ta"->1.7`3.*^-10,"W"->1.62`3.*^-10,"Re"->1.51`3.*^-10,"Os"->1.44`3.*^-10,"Ir"->1.41`3.*^-10,"Pt"->1.36`3.*^-10,"Au"->1.36`3.*^-10,"Hg"->1.32`3.*^-10,"Tl"->1.45`3.*^-10,"Pb"->1.46`3.*^-10,"Bi"->1.48`3.*^-10,"Po"->1.4`3.*^-10,"At"->1.5`3.*^-10,"Rn"->1.5`3.*^-10,"Fr"->2.6`3.*^-10,"Ra"->2.21`3.*^-10,"Ac"->2.15`3.*^-10,"Th"->2.06`3.*^-10,"Pa"->2.`3.*^-10,"U"->1.96`3.*^-10,"Np"->1.9`3.*^-10,"Pu"->1.87`3.*^-10,"Am"->1.8`3.*^-10,"Cm"->1.69`3.*^-10|>; (*produced via Association[ElementData[#,"Abbreviation"]\[Rule]QUC@ElementData[#,"CovalentRadius"]&/@Range@96]*)
+
+rKey=covalentRadius[#]&/@\[ScriptCapitalE]Unique;
 r=radiusFactor*ReplaceAll[\[ScriptCapitalE],Thread[\[ScriptCapitalE]Unique->rKey]]*1*^10(*conversion to Angstroms*);
 \[ScriptCapitalE]Pos=PositionIndex@\[ScriptCapitalE];
 \[ScriptCapitalU]=RationalUnitCell[R,n];
