@@ -230,13 +230,13 @@ SetupDensityHKL::odd="supercell expansion (n) should be odd";
 SetupDensityHKL[mpid_,n_:3,hklMax_:4,radiusFactor_:1/3]:=Module[{CrystalData,pg,latticeParameters,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
 
 ImportCrystalData[mpid<>".cif"(*Al_mp-134_conventional_standard.cif*)(*"al.cif"*),mpid,"OverwriteWarning"->False,"DataFile"->mpid<>".m"];
-ExpandCrystal[mpid,{n,n,n},"NewLabel"->mpid<>"_2","StoreTemporarily"->True,"DataFile"->mpid<>".m"];(*Defaults to 1x1x1*)
+ExpandCrystal[mpid,{n,n,n},"NewLabel"->mpid<>"_2","DataFile"->mpid<>".m"];(*Defaults to 1x1x1*)
 
 CrystalData=Import[mpid<>".m"];
 {\[ScriptCapitalE],\[ScriptF]tmp}=(Values/@CrystalData[[mpid<>"_2","AtomData",;;,{"Element","FractionalCoordinates"}]])\[Transpose];
 pg=CrystalData[[mpid,"SpaceGroup"]];
 latticeParameters=Values@CrystalData[[mpid,"LatticeParameters"]];
-R=GetCrystalMetric[Sequence@@latticeParameters,ToCartesian->True];
+R=GetCrystalMetric[latticeParameters,ToCartesian->True];
 (*R=GetCrystalMetric[mpid,ToCartesian\[Rule]True];*)
 \[ScriptF]=\[ScriptF]tmp . R;
 If[!OddQ@n,Message[SetupDensityHKL::odd]];
