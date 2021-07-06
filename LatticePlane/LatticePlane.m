@@ -226,16 +226,653 @@ IsotropicMultinormal[pts_,r_]:=MapThread[MultinormalDistribution[#1,DiagonalMatr
 
 
 (* ::Input::Initialization:: *)
+Clear@ImportCrystalData2
+ImportCrystalData2::subdataInteger="\"\!\(\*
+StyleBox[\"ExtractSubdata\", \"Program\"]\)\" must be a positive integer.";
+ImportCrystalData2::subdataLength="The \!\(\*
+StyleBox[\".\", \"Program\"]\)\!\(\*
+StyleBox[\"cif\", \"Program\"]\) file has a subdata length of `1`.";
+ImportCrystalData2::latticeParameters="No lattice parameters were located, or they have an invalid form.";
+ImportCrystalData2::atomData="No atom data was located.";
+ImportCrystalData2::SG="Could not determine space group. 'P1' will be used.";
+ImportCrystalData2::cell="Could not work out the unit cell properly.";
+ImportCrystalData2::notMaXrd="Data collected using `1` radiation. Errors may occur.";
+ImportCrystalData2::modulation="Modulated structure detected. Errors may occur.";
+ImportCrystalData2::SpecialLabel="\[LeftGuillemet]`1`\[RightGuillemet] is a reserved label and should not be used.";
+
+Options@ImportCrystalData2={
+"DataFile"->"CrystalData2.m",
+"ExtractSubdata"->1,
+"IgnoreIonCharge"->False,
+"Notes"-><||>,
+"RoundAnglesThreshold"->0.001,
+"Units"->True,
+"OverwriteWarning"->True
+};
+
+SyntaxInformation@ImportCrystalData2={
+"ArgumentsPattern"->{___,OptionsPattern[]}
+};
+
+
+(* ::Input::Initialization:: *)
+ImportCrystalData2[
+{CrystalName_String,
+ChemicalFormula:_?StringQ:"",
+Z:_?IntegerQ:0,
+SpaceGroup_:1,
+Wavelength:_?NumericQ:-1
+},
+GetLatticeParameters_List,
+AtomData_List,
+OptionsPattern[]
+]:=Block[
+{choice,name,sg,cell,\[Delta],fr,latticeItem,\[Lambda],itemAtomData,item,dataFile=OptionValue["DataFile"],temp},
+
+(*---* Check if name already exists *---*)
+If[CrystalName==="",
+name="ImportedCrystal_"<>DateString["ISODate"],name=CrystalName];
+(*If[TrueQ@OptionValue["OverwriteWarning"],
+	If[KeyExistsQ[$CrystalData,name],
+	choice=ChoiceDialog["\[LeftGuillemet]"<>name<>
+"\[RightGuillemet] already exists in $CrystalData.\nDo you want to overwrite this entry?"]];
+	If[!choice,Return[]]
+];*)
+
+(*--- Space Group *---*)
+sg=InputCheck["GetPointSpaceGroupCrystal",SpaceGroup];
+sg=ToStandardSetting@sg;
+
+(*---* Lattice parameters *---*)
+If[!AllTrue[GetLatticeParameters,NumericQ[#]&]||
+Length@GetLatticeParameters!=6,
+Message[ImportCrystalData::latticeParameters]];
+
+	(* Optional: Round angles *)
+	cell=GetLatticeParameters;
+	\[Delta]=OptionValue["RoundAnglesThreshold"];
+	Do[
+	fr=FractionalPart@cell[[i]];
+	If[fr>0.5,fr=1-fr];
+	If[fr<=\[Delta],cell[[i]]=Round@cell[[i]]],
+	{i,4,6}];
+
+	(* Optional: Use units *)
+	If[OptionValue["Units"],
+	Do[
+	Which[
+	i<=3,cell[[i]]=Quantity[cell[[i]],"Angstroms"],
+	i>=4,cell[[i]]=Quantity[cell[[i]],"Degrees"]],
+	{i,6}]];
+
+	(* Prepare association entry *)
+	latticeItem=Association@
+	Thread[{"a","b","c","\[Alpha]","\[Beta]","\[Gamma]"}->cell];
+
+(*---* Wavelength *---*)
+	(* Optional: Use units *)
+	If[OptionValue["Units"],
+	\[Lambda]=Quantity[Wavelength,"Angstroms"],
+	\[Lambda]=Wavelength];
+
+(*---* Atom data *---*)
+If[AtomData==={},
+itemAtomData={<||>},
+
+itemAtomData=Table[
+DeleteMissing@Part[AtomData[[i]],{
+"Element",
+"OccupationFactor",
+"SiteSymmetryMultiplicity",
+"SiteSymmetryOrder",
+"FractionalCoordinates",
+"DisplacementParameters",
+"Type"}],
+{i,Length@AtomData}];
+
+Do[
+If[KeyExistsQ[First@itemAtomData,k],
+itemAtomData=MapAt[
+ToExpression,itemAtomData,{All,Key[k]}]],
+	{k,{
+	"OccupationFactor",
+	"SiteSymmetryMultiplicity",
+	"SiteSymmetryOrder",
+	"DisplacementParameters"}}
+];
+
+	(* Checking strings in coordinates *)
+	Do[itemAtomData[[i,"FractionalCoordinates"]]=itemAtomData[[i,"FractionalCoordinates"]]/.x_String:>ToExpression[x],
+	{i,Length@itemAtomData}]
+];
+
+(*---* Preparing item *---*)
+item=<|
+	"ChemicalFormula"->ChemicalFormula,
+	"FormulaUnits"->Z,
+	"SpaceGroup"->sg,
+	"LatticeParameters"->latticeItem,
+	"Wavelength"->\[Lambda],
+	"AtomData"->itemAtomData,
+	"Notes"->OptionValue["Notes"]
+	|>;
+
+(* Delete certain keys *)
+	If[item["ChemicalFormula"]==="",
+	KeyDropFrom[item,"ChemicalFormula"]];
+
+	If[item["Notes"]===<||>,
+	KeyDropFrom[item,"Notes"]];
+
+	If[!Positive@item["Wavelength"],
+	KeyDropFrom[item,"Wavelength"]];
+
+	If[Z===0,
+	KeyDropFrom[item,"FormulaUnits"]];
+
+	(* If all occupation factors = 1, delete column *)
+	temp=item[["AtomData",All,"OccupationFactor"]];
+	If[AllTrue[N@temp,#==1.&],
+	item[["AtomData",All]]=KeyDrop[
+	item[["AtomData",All]],"OccupationFactor"]];
+
+	(* If all displacement parameters = 0, delete column *)
+	temp=item[["AtomData",All,"DisplacementParameters"]];
+	If[AllTrue[N@temp,#==0.&],
+	item[["AtomData",All]]=KeyDrop[
+	item[["AtomData",All]],
+	{"DisplacementParameters","Type"}]];
+
+
+(*InputCheck["Update$CrystalDataFile",dataFile,name,item];
+InputCheck["ShallowDisplayCrystal",name]*)
+item
+]
+
+
+(* ::Input::Initialization:: *)
+ImportCrystalData2[ciffile_,Name_String:"",OptionsPattern[]]:=Block[{
+(* A. Input check and setup *)name,specialLabels=Join[{"Void"},{"H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca","Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Ga","Ge","As","Se","Br","Kr","Rb","Sr","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","In","Sn","Sb","Te","I","Xe","Cs","Ba","La","Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Tl","Pb","Bi","Po","At","Rn","Fr","Ra","Ac","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn","Nh","Fl","Mc","Lv","Ts","Og"}],import,sub,endstring,enc,left,mid,right,
+modulationQ=False,
+(* B. Lattice parameters *)cell,x,X,multipleQ,parts,coordCount,
+(* C. Atom data *)atomdata,atomtags,c,
+(* D. Anisotropic displacement parameters (ADPs) *)anisodata,anisoOrder,P,atomoverview,tags,labels,disp,item,
+(* E. Misc data labels (wavelength, formula units) *)\[Lambda],Z,
+(* F. Chemical formula *)formula,chemicalformula,L,l,r,checkParentheses,
+(* G. Space group *)sgTags,sgData,sg,
+(* H. Adding item to dataset *)options,
+(* Misc *)temp},
+
+(*---* A. Input check and setup *---*)
+If[Name=="",name=FileBaseName[ciffile],name=Name];
+If[MemberQ[specialLabels,name],
+Message[ImportCrystalData2::SpecialLabel,name];Abort[]];
+
+(* A.1. Check file *)
+import=Check[Import[ciffile,"String"],Abort[]];
+sub=OptionValue["ExtractSubdata"];
+	If[!(IntegerQ[#]&&Positive[#]&@sub),
+	Message[ImportCrystalData2::subdataInteger];
+	Abort[]];
+
+(* A.2. Auxiliary variables *)
+endstring={"loop_","\n\n",";","#",EndOfString};
+enc={"'","\""};(* annotation/enclosing marks *)
+{left,mid,right}={"\!\(\*SubscriptBox[\(","\), \(","\)]\)"};
+
+(* A.3. Check radiation type *)
+temp=StringCases[import,
+Shortest[{
+"_diffrn_radiation_type","_diffrn_radiation_probe"}
+~~Whitespace~~{"",enc}~~t:LetterCharacter..~~"\n"]:>t];
+If[MemberQ[temp,#],Message[ImportCrystalData2::notMaXrd,#]]
+&/@{"neutron","electron"};
+
+(* A.4. Check for modulation *)
+temp=If[StringContainsQ[import,"_space_group_ssg_name"],
+modulationQ=True;
+Message[ImportCrystalData2::modulation]];
+
+(*---* B. Lattice parameters *---*)
+(* B.1. Extracting lattice parameters *)
+cell=StringCases[import,Shortest[
+x:("_cell_"~~{"length","angle"}~~__~~
+{DigitCharacter,"."}..)~~
+{"(",Whitespace}]:>ToLowerCase@x,
+IgnoreCase->True];
+
+	(* Check *)
+	If[cell=={},
+	Message[ImportCrystalData2::latticeParameters];
+	Abort[]];
+
+(* B.2. Check for multiplue structures *)
+	cell=StringSplit[cell,Whitespace];
+	Which[
+	Length@cell>6,
+		multipleQ=True;parts=Length[cell]/6,
+	Length@cell==6,
+		multipleQ=False;parts=1,
+	True,
+		Message[ImportCrystalData2::cell];
+		Return@cell
+	];
+
+	(* Correct ordering *)
+	cell=Partition[cell,
+	Length@cell/Quotient[Length@cell,6]];
+
+	Do[
+	X=cell[[i]];
+	x=X[[All,1]];
+	P=FindPermutation[x,{
+	"_cell_length_a",
+	"_cell_length_b",
+	"_cell_length_c",
+	"_cell_angle_alpha",
+	"_cell_angle_beta",
+	"_cell_angle_gamma"}];
+	cell[[i]]=Permute[X,P],
+	{i,Length@cell}];
+
+	cell=cell[[All,All,2]];
+
+(* B.3. Check subdata extraction *)
+	(* Verify with fractional coordinates *)
+	coordCount=StringCount[import,"_atom_site_fract_x"];
+	If[coordCount===0,
+	Message[ImportCrystalData2::atomData];Abort[]];	
+	
+	parts=Min[parts,coordCount];
+
+	If[(multipleQ&&sub>parts)||(!multipleQ&&sub!=1),
+	Message[ImportCrystalData2::subdataLength,parts];
+	Abort[]];
+
+	If[!IntegerQ[parts],
+	Message[ImportCrystalData2::subdataInteger];
+	Return@parts];
+
+	(* Extract subdata *)
+	cell=ToExpression@cell[[sub]];
+
+
+(*---* C. Atom data *---*)
+Label["AtomData"];
+
+(* C.1. Extracting relevant data block *)
+	(* Fractional coordinates *)
+	(* Occupation factor *)
+	(* Site symmetry multiplicity *)
+
+	(* Extracting _atom_site loop *)
+	atomdata=StringCases[import,Shortest[
+labels:(Whitespace~~"_atom_site_"~~__~~"\n")~~data:(StartOfLine~~Whitespace...~~LetterCharacter~~__~~"\n")
+~~{endstring,"_atom_site_aniso","_"~~Except["a"]}]:>{labels,data}];
+
+		(* No data? *)
+		If[atomdata=={},
+		Message[ImportCrystalData2::atomData];
+		Abort[]];
+
+		(* Delete cases containing anisotropy data *)
+		atomdata=DeleteCases[atomdata,
+		x_/;StringContainsQ[x[[1]],"aniso"]];
+
+	(* Specify sub-data *)
+	atomdata=atomdata[[sub]];
+
+(* C.2. Organising data *)
+atomtags=Flatten@StringCases[atomdata[[1]],
+"_atom_site_"~~{WordCharacter,"_"}..];
+
+atomdata=StringDelete[atomdata[[2]],"("~~DigitCharacter..~~")"];
+atomdata=Partition[StringSplit@atomdata,Length@atomtags];
+atomdata=DeleteCases[atomdata,x_/;Length[x]!=Length[atomtags]];
+atomdata=Association@Thread[atomtags->Transpose@atomdata];
+
+(* C.3 Fixing entries *)
+(* If 'site_type_symbol' is missing, copy 'site_label' *)
+If[!KeyExistsQ[atomdata,"_atom_site_type_symbol"],
+AppendTo[atomdata,
+"_atom_site_type_symbol"->atomdata["_atom_site_label"]]];
+
+(* Process and check elements *)
+temp=atomdata["_atom_site_type_symbol"];
+temp=InputCheck["InterpretElement",temp];
+
+(* Optional: Clear any ion charges *)
+If[OptionValue["IgnoreIonCharge"],
+temp=StringDelete[temp,{"+","-",DigitCharacter}]];
+
+(* Update 'atomdata' with 'temp' *)
+atomdata["_atom_site_type_symbol"]=temp;
+
+
+(*---* D. Anisotropic displacement parameters *---*)
+(* D.1. If missing, use default values for ADP *)
+L=Length@First@atomdata;
+If[!KeyExistsQ[atomdata,"_atom_site_adp_type"],
+AppendTo[atomdata,"_atom_site_adp_type"->ConstantArray["Uiso",L]]];
+If[!KeyExistsQ[atomdata,"_atom_site_U_iso_or_equiv"],
+AppendTo[atomdata,"_atom_site_U_iso_or_equiv"->ConstantArray[0,L]]];
+
+(* D.2. Anisotropic displacement parameters *)
+anisodata=StringCases[import,
+Shortest["loop_"~~Whitespace~~
+x:("_atom_site_aniso"~~__)~~endstring]:>x];
+
+	(* Check *)
+	If[anisodata==={},
+	Goto["OrganiseAtomdata"],
+	anisodata=anisodata[[sub]]];
+
+(* D.3. Noting the order (permutation) *)
+anisoOrder=Flatten@StringCases[anisodata,"U_"~~DigitCharacter..];
+P=FindPermutation[{"U_11","U_22","U_33","U_12","U_13","U_23"},anisoOrder];
+
+	(* Nothing there to extract? *)
+	temp=Flatten@StringCases[anisodata,
+	Shortest["_atom_site_aniso_"~~x__~~Whitespace]:>x];
+	c=Flatten@Quiet@Position[temp,
+	x_/;StringContainsQ[x,"U"]];
+
+(* D.4. Extracting relevant data and trimming *)
+anisodata=StringCases[anisodata,
+Shortest["_atom_site_aniso"~~__~~EndOfLine]~~Whitespace~~(* Last line *)
+x:(WordCharacter~~__):>x(* Content *)];
+
+(* Check if there is any actual data *)
+If[anisodata==={},Goto["OrganiseAtomdata"]];
+anisodata=StringSplit[First@anisodata,Whitespace];
+anisodata=StringReplace[anisodata,x__~~"("~~__~~")":>x];
+anisodata=Partition[anisodata,Length@temp];
+
+(* Correcting parameter order *)
+anisodata[[All,c]]=Permute[#,P]&/@anisodata[[All,c]];
+
+(* Associating each atom with values *)
+anisodata=Association[
+Table[anisodata[[i,1]]->anisodata[[i,c]],
+{i,Length@anisodata}]];
+
+(* D.5. Organising the atom data *)
+Label["OrganiseAtomdata"];
+atomoverview={};
+tags={
+"_atom_site_occupancy",
+"_atom_site_site_symmetry_multiplicity",
+"_atom_site_site_symmetry_order"};
+labels={
+"OccupationFactor",
+"SiteSymmetryMultiplicity",
+"SiteSymmetryOrder"};
+
+Do[
+item=<||>;
+AppendTo[item,
+"Element"->atomdata[["_atom_site_type_symbol",i]]];
+Do[
+If[KeyExistsQ[atomdata,tags[[j]]],
+AppendTo[item,labels[[j]]->
+atomdata[[tags[[j]],i]]]],
+{j,Length@tags}];
+
+AppendTo[item,"FractionalCoordinates"->
+Evaluate[atomdata[["_atom_site_fract_"<>#,i]]&/@{"x","y","z"}]];
+If[StringTake[
+atomdata[["_atom_site_adp_type",i]],-3]==="ani",
+disp=Part[anisodata,atomdata[["_atom_site_label",i]]],
+disp=atomdata[["_atom_site_U_iso_or_equiv",i]]];
+
+AppendTo[item,"DisplacementParameters"->disp];
+AppendTo[item,"Type"->atomdata[["_atom_site_adp_type",i]]];
+AppendTo[atomoverview,item],{i,Length@First@atomdata}];
+
+
+(*---* E. Misc data labels *---*)
+(* E.1. Wavelength *)
+\[Lambda]=StringCases[import,Shortest["_diffrn_radiation_wavelength"~~
+Whitespace~~x:{DigitCharacter,"."}..~~Whitespace]:>x];
+
+If[\[Lambda]=={},\[Lambda]=-1,
+If[Length@\[Lambda]>1,
+\[Lambda]=ToExpression@\[Lambda][[sub]],
+\[Lambda]=ToExpression@First@\[Lambda]]];
+
+(* E.2. Forumla units (Z) *)
+Z=StringCases[import,Shortest["_cell_formula_units_Z"~~
+Whitespace~~z:DigitCharacter]:>z];
+
+If[Z==={},Z=0,Z=ToExpression@First@Z];
+
+
+(*---* F. Chemical formula *---*)
+(* F.1. Extracting formula *)
+formula=StringCases[import,
+Shortest[#~~{Whitespace,"\n"}..~~{"'","\""}~~f__~~
+{"'","\""}~~{Whitespace,"\n"}..]:>f]&/@{
+(* Prioritised order *)
+"_chemical_formula_iupac",
+"_chemical_formula_structural",
+"_chemical_formula_sum"};
+
+formula=Select[Flatten@formula,!StringContainsQ[#,{",","?"}]&];
+formula=StringDelete[formula,{"\r","~"}];
+
+(* F.2. Check for simplest formula *)
+temp=Select[formula,!StringContainsQ[#,"("]&];
+If[temp=!={},formula={First@temp}];
+
+(* F.3. Misc treatmeant and possible subdata selection *)
+If[formula==={}||formula==={""},
+chemicalformula="";Goto["SpaceGroup"]];
+
+formula={StringDelete[StringTrim@First@formula,{"'","\""}]};
+
+If[formula==={""},
+chemicalformula="";Goto["SpaceGroup"],
+formula=StringSplit@formula];
+
+If[Length@formula>1,
+formula=formula[[sub]],
+formula=Flatten@formula];
+
+(* F.4. Loop for formatting the chemical formula *)
+Label["FormatFormula"];
+If[AnyTrue[formula,StringContainsQ[#,{"(",")"}]&],
+{l,r}=Flatten@Position[StringPosition[
+formula,{"(",")"}],{{_,_}}];
+	checkParentheses=True];
+
+chemicalformula={};
+Do[
+temp=Flatten@StringCases[formula[[i]],
+x:LetterCharacter..~~
+y:({DigitCharacter,"."})..:>{x,y}];
+Which[
+temp=={},AppendTo[chemicalformula,formula[[i]]],
+temp[[2]]=="1",AppendTo[chemicalformula,temp[[1]]],
+True,AppendTo[chemicalformula,left<>temp[[1]]<>mid<>temp[[2]]<>right]],
+{i,Length@formula}];
+
+chemicalformula=StringDelete[chemicalformula,{"(",")"}];
+
+(* Adding back parentheses *)
+If[checkParentheses,
+chemicalformula[[l]]="("<>chemicalformula[[l]];
+chemicalformula[[r]]=chemicalformula[[r]]<>")"
+];
+
+chemicalformula=StringJoin@chemicalformula;
+
+
+(*---* G. Space group *---*)
+Label["SpaceGroup"];
+
+(* G.1. Prioritised list of data labels *)
+sgTags={
+"_space_group_name_Hall",
+"_space_group_name_H-M_alt",
+"_space_group_IT_number",
+"_symmetry_space_group_name_Hall",
+"_symmetry_space_group_name_H-M",
+"_symmetry_Int_Tables_number"};
+
+(* G.2. Extract space group sections from imported data *)
+sgData=StringCases[import,Shortest[sgTags~~__~~"loop_"]];
+If[Length[sgData]>0,sgData=sgData[[sub]]];
+sgData=StringTrim@StringDelete[sgData,"loop_"];
+
+(* G.3. Make association of tags and corresponding info *)
+sgData=StringCases[sgData,t:sgTags~~Whitespace~~sg:Shortest[Except[WhitespaceCharacter]~~__]~~{"\n",EndOfString}:>{t->sg}];
+sgData=Association@Flatten@sgData;
+sgData=DeleteCases[sgData,"?"];
+
+(* G.4. Go through priority order and validate *)
+Do[
+sg=sgData[sgTags[[i]]];
+sg=Quiet@InputCheck["InterpretSpaceGroup",sg,False];
+If[sg=!=Null,Break[]],
+{i,Length@sgTags}];
+
+(* G.5. For modulated structures *)
+If[sg===Null&&modulationQ,
+sg=StringCases[import,
+"_space_group_ssg_name"~~Whitespace~~
+{"'","\""}~~sg__~~{"'","\""}~~"\n":>sg];
+sg=StringCases[sg,Shortest[StartOfString~~___
+~~sg:(LetterCharacter~~__)~~"("]:>sg];
+If[sg=!={},sg=Quiet@InputCheck["InterpretSpaceGroup",
+First@Flatten@sg,False]]
+];
+
+(* G.6. If missing space group, display message and use 'P1' *)
+If[sg===Null,Message[ImportCrystalData2::SG];sg="P1"];
+
+
+(*---* H. Adding item to dataset *---*)
+options=Thread[#->OptionValue[#],String]&/@(
+First/@Options@ImportCrystalData2);
+
+ImportCrystalData2[
+{name,chemicalformula,Z,sg,\[Lambda]},
+cell,atomoverview,
+options]
+]
+
+
+(* ::Input::Initialization:: *)
+Clear@ExpandCrystal2
+ExpandCrystal2::InvalidSize="The structure size must be a list of three natural numbers.";
+ExpandCrystal2::DuplicateLabel="The new label must be different from the input.";
+
+Options@ExpandCrystal2={
+"DataFile"->FileNameJoin[{"CrystalData2.m"}],
+"ExpandIntoNegative"->False,
+"FirstTransformTo"->False,
+"IgnoreSymmetry"->False,
+"IncludeBoundary"->True,
+"NewLabel"->"",
+"StoreTemporarily"->False
+};
+
+SyntaxInformation@ExpandCrystal2={
+"ArgumentsPattern"->{_,_.,OptionsPattern[]}
+};
+
+
+(* ::Input::Initialization:: *)
+ExpandCrystal2[crystalData_,structureSize_List:{1,1,1},
+OptionsPattern[]]:=Block[{crystalCopy=crystalData,
+dataFile=OptionValue["DataFile"],
+newLabel=OptionValue["NewLabel"],
+changeCell=OptionValue["FirstTransformTo"],
+storeTempQ=TrueQ@OptionValue["StoreTemporarily"],
+ignoreSymmetryQ=TrueQ@OptionValue["IgnoreSymmetry"],
+atomData,coordinates,spaceGroup,generated,
+copyTranslations,mid,atomDataMapUnitCell,
+cutoffFunction,atomDataMapExpanded,lengths,
+newAtomData
+},
+
+(* Input check and data acquisition *)
+If[
+AllTrue[structureSize,Positive[#]&&IntegerQ[#]&]\[Nand]
+Length[structureSize]===3,
+Message[ExpandCrystal::InvalidSize];Abort[]];
+
+(* Expand asymmetric unit to unit cell *)
+atomData=crystalData["AtomData"];
+coordinates=atomData[[All,"FractionalCoordinates"]];
+spaceGroup=crystalData["SpaceGroup"];
+
+(* Optional: Ignory symmetry and simply copy content as is *)
+generated=N@If[ignoreSymmetryQ,
+Partition[coordinates,1],
+SymmetryEquivalentPositions[spaceGroup,#]&/@coordinates
+];
+
+(* Generate full content of the unit cell *)
+atomDataMapUnitCell=Association@Thread[
+Range@Length@atomData->generated];
+
+(* Copy by translation *)
+copyTranslations=InputCheck["GenerateTargetPositions",structureSize+1];
+atomDataMapExpanded=Flatten[
+Outer[Plus,copyTranslations,#,1],
+1]&/@atomDataMapUnitCell;
+
+(* Optional: Complete the outer boundary *)
+cutoffFunction=If[TrueQ@OptionValue["IncludeBoundary"],
+Greater,GreaterEqual];
+
+(* Delete atoms whose coordinates are outside *)
+atomDataMapExpanded=DeleteCases[atomDataMapExpanded,{x_,y_,z_}/;
+Or@@MapThread[cutoffFunction,{{x,y,z},structureSize}],
+{2}];
+
+(* Optional: Center translations around origin *)
+If[TrueQ@OptionValue["ExpandIntoNegative"],
+mid=\[LeftFloor]structureSize/2.\[RightFloor];
+atomDataMapExpanded=Map[#-mid&,atomDataMapExpanded,{2}];
+];
+
+(* Create new atom data structure *)
+lengths=Values[Length/@atomDataMapExpanded];
+newAtomData=Table[
+ConstantArray[atomData[[i]],lengths[[i]]],
+{i,Length@atomData}];
+
+newAtomData[[All,All,"FractionalCoordinates"]]=
+Values@atomDataMapExpanded;
+newAtomData=Flatten[newAtomData,1];
+
+(* Create new crystal entry *)
+crystalCopy["AtomData"]=newAtomData;
+AssociateTo[crystalCopy,"Notes"-><|
+"StructureSize"->structureSize,
+"UnitCellAtomsCount"->Total[Length/@generated],
+"AsymmetricUnitAtomsCount"->Length@atomDataMapUnitCell
+|>];
+
+crystalCopy
+
+]
+
+
+(* ::Input::Initialization:: *)
 SetupDensityHKL::odd="supercell expansion (n) should be odd";
-SetupDensityHKL[mpid_,n_:3,hklMax_:4,radiusFactor_:1/3]:=Module[{CrystalData,pg,latticeParameters,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
+SetupDensityHKL[mpid_,n_:3,hklMax_:4,radiusFactor_:1/3]:=Module[{crystalData,pg,latticeParameters,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
 
-ImportCrystalData[mpid<>".cif"(*Al_mp-134_conventional_standard.cif*)(*"al.cif"*),mpid,"OverwriteWarning"->False,"DataFile"->mpid<>".m"];
-ExpandCrystal[mpid,{n,n,n},"NewLabel"->mpid<>"_2","DataFile"->mpid<>".m"];(*Defaults to 1x1x1*)
+crystalData=ImportCrystalData2[mpid<>".cif","TestInput","OverwriteWarning"->False];
+(*ExpandCrystal[mpid,{n,n,n},"NewLabel"\[Rule]mpid<>"_2","DataFile"\[Rule]mpid<>".m"];(*Defaults to 1x1x1*)*)
+crystalData=ExpandCrystal2[crystalData,{n,n,n}];
 
-CrystalData=Import[mpid<>".m"];
-{\[ScriptCapitalE],\[ScriptF]tmp}=(Values/@CrystalData[[mpid<>"_2","AtomData",;;,{"Element","FractionalCoordinates"}]])\[Transpose];
-pg=CrystalData[[mpid,"SpaceGroup"]];
-latticeParameters=Values@CrystalData[[mpid,"LatticeParameters"]];
+(*CrystalData=Import[mpid<>".m"];*)
+{\[ScriptCapitalE],\[ScriptF]tmp}=(Values/@crystalData[[(*mpid<>"_2",*)"AtomData",;;,{"Element","FractionalCoordinates"}]])\[Transpose];
+pg=crystalData[[(*mpid,*)"SpaceGroup"]];
+latticeParameters=Values@crystalData[[(*mpid,*)"LatticeParameters"]];
 R=GetCrystalMetric[latticeParameters,ToCartesian->True];
 (*R=GetCrystalMetric[mpid,ToCartesian\[Rule]True];*)
 \[ScriptF]=\[ScriptF]tmp . R;
