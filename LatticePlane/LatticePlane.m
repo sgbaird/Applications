@@ -865,7 +865,7 @@ crystalCopy
 SetupDensityHKL::odd="supercell expansion (n) should be odd";
 SetupDensityHKL[mpid_,n_:3,hklMax_:4,radiusFactor_:1/3]:=Module[{crystalData,pg,latticeParameters,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
 
-crystalData=ImportCrystalData2[mpid<>".cif",mpid,"OverwriteWarning"->False,"DataFile"->mpid<>".m"];
+crystalData=ImportCrystalData2[mpid<>".cif",mpid,"OverwriteWarning"->False];
 (*ExpandCrystal[mpid,{n,n,n},"NewLabel"\[Rule]mpid<>"_2","DataFile"\[Rule]mpid<>".m"];(*Defaults to 1x1x1*)*)
 crystalData=ExpandCrystal2[crystalData,{n,n,n}];
 
