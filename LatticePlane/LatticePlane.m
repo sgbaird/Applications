@@ -43,6 +43,8 @@ TotalIntersectionArea::usage="TotalIntersectionArea[\[ScriptCapitalT],\[ScriptCa
 PlaneIntersection::usage="PlaneIntersection[\[ScriptCapitalP],\[ScriptCapitalU]]";
 RationalUnitCell::usage="RationalUnitCell[p]";
 QUC::usage="QUC[x]";
+ImportCrystalData2::usage="ImportCrystalData2[ciffile,name]";
+ExpandCrystal2::usage="ExpandCrystal2[crystalData,{n,n,n}]";
 AtomPolygonBallsIntersection::usage="AtomPolygonBallsIntersection[P,c,r]";
 PolygonBallsIntersection::usage="PolygonBallsIntersection[P,c,r]";
 AtomProbabilityIntersection::usage="AtomProbabilityIntersection[\[ScriptCapitalD],P]";
@@ -226,7 +228,6 @@ IsotropicMultinormal[pts_,r_]:=MapThread[MultinormalDistribution[#1,DiagonalMatr
 
 
 (* ::Input::Initialization:: *)
-Clear@ImportCrystalData2
 ImportCrystalData2::subdataInteger="\"\!\(\*
 StyleBox[\"ExtractSubdata\", \"Program\"]\)\" must be a positive integer.";
 ImportCrystalData2::subdataLength="The \!\(\*
@@ -763,7 +764,6 @@ options]
 
 
 (* ::Input::Initialization:: *)
-Clear@ExpandCrystal2
 ExpandCrystal2::InvalidSize="The structure size must be a list of three natural numbers.";
 ExpandCrystal2::DuplicateLabel="The new label must be different from the input.";
 
@@ -940,7 +940,7 @@ AtomProbabilityIntersection[\[ScriptCapitalD]_,P_]:=(*Parallel*)Table[Quiet[NInt
 
 
 (* ::Input::Initialization:: *)
-ProbabilityIntersection[\[ScriptCapitalD]_,\[ScriptCapitalR]_,\[ScriptCapitalP]_,n_:3.99,radiusFactor_:1/4]:=Module[{\[ScriptF]List,rList,distances,d,id,\[ScriptCapitalD]2,\[ScriptCapitalI]int,\[ScriptCapitalA]int},
+ProbabilityIntersection[\[ScriptCapitalD]_,\[ScriptCapitalR]_,\[ScriptCapitalP]_,n:(_Real|_Integer):3.99,radiusFactor:(_Real|_Integer):1/4]:=Module[{\[ScriptF]List,rList,distances,d,id,\[ScriptCapitalD]2,\[ScriptCapitalI]int,ids,\[ScriptCapitalA]int},
 \[ScriptF]List=\[ScriptCapitalD][[;;,;;,1]];
 rList=\[ScriptCapitalD][[;;,;;,2,1,1]][[;;,1]];(*assumes isotropic radius and assumes constant radius for a particular element*)
 d=Table[RegionDistance[i,j],{i,\[ScriptCapitalP]},{j,#}]&/@\[ScriptF]List;
@@ -948,6 +948,8 @@ TF=MapThread[DistanceRadiusComparison[#1,#2,n]&,{d,rList}];
 ids=TruePosition[#]&/@TF;
 \[ScriptCapitalD]2=MapThread[#1/.Thread[Range@Length@#2->#2]&,{ids,\[ScriptCapitalD]}]/.{}->0;
 \[ScriptCapitalI]int=Table[MapThread[Flatten@AtomProbabilityIntersection[#1,{#2}]&,{i,\[ScriptCapitalR]}],{i,\[ScriptCapitalD]2}];
+ids=Position[\[ScriptCapitalI]int,Except[_Real|_Integer],{3},Heads->False];
+ReplacePart[\[ScriptCapitalI]int,ids->0];
 \[ScriptCapitalA]int=Total[#,{2}]&/@\[ScriptCapitalI]int;
 \[ScriptCapitalA]int=\[ScriptCapitalA]int \[Pi] (1/radiusFactor rList)^2(*weight the probabilities by the area of the atoms*)
 ]
