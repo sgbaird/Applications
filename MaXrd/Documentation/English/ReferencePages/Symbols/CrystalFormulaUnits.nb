@@ -1,0 +1,1277 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     44503,       1268]
+NotebookOptionsPosition[     35716,       1074]
+NotebookOutlinePosition[     37925,       1131]
+CellTagsIndexPosition[     37839,       1126]
+WindowTitle->CrystalFormulaUnits
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"CrystalDensity\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/CrystalDensity"], "\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$CrystalData"], "\<\"BraggAngle\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/BraggAngle"], "\<\"GetCrystalMetric\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetCrystalMetric"], "\<\"ImportCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ImportCrystalData"], "\<\"GetElements\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetElements"], "\<\"GetLaueClass\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetLaueClass"], "\<\"AttenuationCoefficient\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/AttenuationCoefficient"], "\<\"GetSymmetryData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetSymmetryData"], "\<\"UnitCellTransformation\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/UnitCellTransformation"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/CrystalFormulaUnits\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/CrystalFormulaUnits"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+CrystalFormulaUnits.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$12937], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/CrystalFormulaUnits", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["CrystalFormulaUnits", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["CrystalFormulaUnits"]], 
+         "paclet:MaXrd/ref/CrystalFormulaUnits"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["crystal", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]calculates the number of formula units ",
+     Cell[BoxData[
+      StyleBox["Z", "TI"]], "InlineFormula"],
+     " for the crystal."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1510921936],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "If the key ",
+ Cell[BoxData["\"\<FormulaUnits\>\""], "InlineFormula"],
+ " is contained in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " for the given crystal, it will be returned. If not, the function will look \
+for the key ",
+ Cell[BoxData["\"\<MassDensity\>\""], "InlineFormula"],
+ " and calculate Z from:"
+}], "Notes",
+ CellID->144274847],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   RowBox[{"Z", "=", 
+    FractionBox[
+     RowBox[{"\[Rho]", " ", "V", " ", 
+      SubscriptBox["N", "A"]}], "M"]}],
+   FontWeight->"Plain"], TraditionalForm]], "Input",
+ TextAlignment->Center,
+ CellID->937301987],
+
+Cell[TextData[{
+ "where ",
+ Cell[BoxData[
+  FormBox["\[Rho]", TraditionalForm]], "InlineMath"],
+ " is the stored mass density, ",
+ Cell[BoxData[
+  FormBox["M", TraditionalForm]], "InlineMath"],
+ " is the molar mass per formula unit, ",
+ Cell[BoxData[
+  FormBox["V", TraditionalForm]], "InlineMath"],
+ " is the unit cell volume and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["N", "A"], TraditionalForm]], "InlineMath"],
+ " is Avogadro's number.\[LineSeparator]If neither key exist, the function \
+will count the symmetry-generated atoms and compare with the chemical formula \
+in order to find the factor ",
+ Cell[BoxData[
+  FormBox["Z", TraditionalForm]], "InlineMath"],
+ ".\[LineSeparator]Should this procedure fail, the density is calculated with \
+",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalDensity"]], "paclet:MaXrd/ref/CrystalDensity"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  FormBox["Z", TraditionalForm]], "InlineMath"],
+ " found with the formula above."
+}], "Notes",
+ CellID->1153012519],
+
+Cell["Options:", "Notes",
+ CellID->476888868],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<IgnoreHydrogen\>\"", 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[
+    "whether to ignore hydrogen when validating element matching", 
+     "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->1494978625],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->70852577],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1113321201],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalFormulaUnits", "[", "\"\<Silicon\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1720949978],
+
+Cell[BoxData["8"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1685184348]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalFormulaUnits", "[", "\"\<Aluminium\>\"", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1559060350],
+
+Cell[BoxData["4"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1879000200]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalFormulaUnits", "[", "\"\<PrussianBlue\>\"", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->344904968],
+
+Cell[BoxData["1"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1609332265]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalFormulaUnits", "[", "\"\<Ice\>\"", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->818716989],
+
+Cell[BoxData["12"], "Output",
+ CellLabel->"Out[4]=",
+ CellID->490843890]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell["\<\
+If the crystal has an unordered structure, it may contain atoms with \
+occupation factors less than one. In such cases, the calculated number of \
+formula units per unit cell may be non-integer.\
+\>", "ExampleText",
+ CellID->58551019],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ImportCrystalData", "@", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "$MaXrdPath", ",", "\"\<ExampleFiles\>\"", ",", "\"\<CIF\>\"", ",", 
+     "\"\<Yoderite.cif\>\""}], "}"}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1340875753],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"ChemicalFormula\"\>", 
+    "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(Si\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(Al\\), \
+\\(2.84\\)]\\)Mg\\!\\(\\*SubscriptBox[\\(Fe\\), \
+\\(.16\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(10\\)]\\)\"\>"}], ",", 
+   RowBox[{"\<\"SpaceGroup\"\>", 
+    "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)/m\"\>"}], ",", 
+   RowBox[{"\<\"LatticeParameters\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"a\"\>", "\[Rule]", 
+       TemplateBox[{
+        "8.022`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"b\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.816`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"c\"\>", "\[Rule]", 
+       TemplateBox[{
+        "7.25`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"\[Alpha]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Beta]\"\>", "\[Rule]", 
+       TemplateBox[{"104.9`", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Gamma]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"AtomData\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftSkeleton]", "16", "\[RightSkeleton]"}], "}"}]}]}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1937715362]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalFormulaUnits", "[", "\"\<Yoderite\>\"", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1105946259],
+
+Cell[BoxData["1.7484307734378857`"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->592582379]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"IgnoreHydrogen\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[TextData[{
+ "By default, this option is set to ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["True"]], "paclet:ref/True"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". The function always checks if the elements that appear in the chemical \
+formula of a crystal match the elements appearing in the atom data list."
+}], "ExampleText",
+ CellID->547492154],
+
+Cell[TextData[{
+ "An example where hydrogen is found in the chemical formula, but missing in \
+the atom data, is ",
+ Cell[BoxData["\"\<PrussianBlue\>\""], "InlineFormula"],
+ ":"
+}], "ExampleText",
+ CellID->734874313],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$CrystalData", "[", 
+  RowBox[{"\"\<PrussianBlue\>\"", ",", "\"\<ChemicalFormula\>\""}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1336220335],
+
+Cell[BoxData["\<\"\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(18\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(28\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(Fe\\), \\(7\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(18\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(14\\)]\\)\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->766548766]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$CrystalData", "[", 
+  RowBox[{"[", 
+   RowBox[{
+   "\"\<PrussianBlue\>\"", ",", "\"\<AtomData\>\"", ",", "All", ",", 
+    "\"\<Element\>\""}], "]"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->2003887459],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"O-2\"\>", ",", "\<\"O-2\"\>", ",", "\<\"Fe+2\"\>", 
+   ",", "\<\"C+2\"\>", ",", "\<\"C+2\"\>", ",", "\<\"O-2\"\>", 
+   ",", "\<\"O-2\"\>", ",", "\<\"Fe+3\"\>", ",", "\<\"Fe+2\"\>", 
+   ",", "\<\"Fe+3\"\>", ",", "\<\"N-3\"\>", ",", "\<\"N-3\"\>", 
+   ",", "\<\"C+2\"\>", ",", "\<\"N-3\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->630711809]
+}, Open  ]],
+
+Cell[TextData[{
+ "The numbers indicate ions (which is ignored in the checking procedure). \
+Note the absence of hydrogen here. If we set the option to ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["False"]], "paclet:ref/False"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", an error message will be generated and the function aborts:"
+}], "ExampleText",
+ CellID->1186004079],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalFormulaUnits", "[", "\"\<PrussianBlue\>\"", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1235427707],
+
+Cell[BoxData["1"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->394092271]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalFormulaUnits", "[", 
+  RowBox[{"\"\<PrussianBlue\>\"", ",", 
+   RowBox[{"\"\<IgnoreHydrogen\>\"", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->568366509],
+
+Cell[BoxData[
+ TemplateBox[{
+  "CrystalFormulaUnits", "mismatch", "\"Element mismatch detected.\"", 2, 4, 
+   5, 26480536245853424211, "Local", "MaXrd`CrystalFormulaUnits"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[4]:=",
+ CellID->669231349],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[4]=",
+ CellID->1399423304]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->421662977],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"CrystalFormulaUnits", "::", "mismatch"}], "=", 
+    "\"\<Element mismatch detected.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "CrystalFormulaUnits"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"\"\<IgnoreHydrogen\>\"", "\[Rule]", "True"}], 
+     "\[IndentingNewLine]", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "CrystalFormulaUnits"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1973224073],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CrystalFormulaUnits", "[", "\[IndentingNewLine]", 
+   RowBox[{"crystal_String", ",", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "data", ",", "\[IndentingNewLine]", "\[Rho]", ",", "f", ",", "fWithoutH",
+       ",", "m", ",", "V", ",", "NA", ",", "\[IndentingNewLine]", "X", ",", 
+      "XwithoutH", ",", "o", ",", "xyz", ",", "M", ",", "Z", ",", 
+      "\[IndentingNewLine]", "temp"}], "}"}], ",", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", "Input", " ", "check", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"\"\<CrystalQ\>\"", ",", "crystal"}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"data", "=", 
+      RowBox[{"$CrystalData", "[", "crystal", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Return", " ", "Z", " ", "if", " ", "contained", " ", 
+       RowBox[{"in", " ", "'"}], 
+       RowBox[{"$CrystalData", "'"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{"data", "[", "\"\<FormulaUnits\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MissingQ", "[", "temp", "]"}]}], ",", 
+       RowBox[{"Return", "@", "temp"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Lookup", " ", "density"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"\[Rho]", "=", 
+      RowBox[{"Lookup", "[", 
+       RowBox[{"data", ",", "\"\<MassDensity\>\"", ",", 
+        RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Calculations", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Chemical", " ", "formula"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"f", "=", 
+      RowBox[{"Sort", "@", 
+       RowBox[{"GetElements", "[", 
+        RowBox[{"crystal", ",", 
+         RowBox[{"\"\<Tally\>\"", "\[Rule]", "True"}]}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Atomic", " ", "mass", " ", "of", " ", "one", " ", "unit"}], 
+      " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"m", "=", 
+      RowBox[{"MapAt", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"$PeriodicTable", "[", 
+          RowBox[{"#", ",", "\"\<StandardAtomicWeight\>\""}], "]"}], "&"}], 
+        ",", "f", ",", 
+        RowBox[{"{", 
+         RowBox[{"All", ",", "1"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"m", "=", 
+      RowBox[{"Total", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Times", "@@", "#"}], "&"}], "/@", "m"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"Volume", " ", "[", 
+        RowBox[{"cubic", " ", "centimeters"}], "]"}], " ", "and", " ", 
+       RowBox[{"Avogadro", "'"}], "s", " ", "constant"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"V", "=", 
+      RowBox[{
+       RowBox[{"Sqrt", "@", 
+        RowBox[{"Det", "@", 
+         RowBox[{"GetCrystalMetric", "[", "crystal", "]"}]}]}], "*", 
+       RowBox[{"Power", "[", 
+        RowBox[{"10", ",", 
+         RowBox[{"-", "24"}]}], "]"}]}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"NA", "=", "6.022140857*^23"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"Positive", "@", "\[Rho]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"--", 
+         RowBox[{"*", " ", 
+          RowBox[{"A", ".", " ", "Calculate"}], " ", "Z", " ", "from", " ", 
+          "mass", " ", "denisty", " ", "*", "--"}]}], "*)"}], 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+        "Calculate", " ", "formula", " ", "units", " ", "from", " ", 
+         "density"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"QuantityQ", "@", "\[Rho]"}], ",", 
+          RowBox[{"\[Rho]", "=", 
+           RowBox[{"QuantityMagnitude", "@", "\[IndentingNewLine]", "\t", 
+            RowBox[{"UnitConvert", "[", 
+             RowBox[{"\[Rho]", ",", 
+              RowBox[{"\"\<Grams\>\"", "/", 
+               RowBox[{"\"\<Centimeters\>\"", "^", "3"}]}]}], "]"}]}]}]}], 
+         "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+         "Calculate", " ", "formula", " ", "units", " ", "from", " ", 
+          "density"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+        RowBox[{"Return", "[", 
+         RowBox[{"\[Rho]", "*", "V", "*", 
+          RowBox[{"NA", "/", "m"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"--", 
+          RowBox[{"*", " ", 
+           RowBox[{"B", ".", " ", "Calculate"}], " ", "Z", " ", "by", " ", 
+           "counting", " ", "symmetry"}]}], "-", 
+         RowBox[{"generated", " ", "atoms", " ", "*", "--"}]}], "*)"}], 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Elements", ",", " ", 
+         RowBox[{
+         "occupation", " ", "factors", " ", "and", " ", "coordinates"}]}], 
+        " ", "*)"}], "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"X", ",", "o", ",", "xyz"}], "}"}], "=", 
+         RowBox[{"Transpose", "@", 
+          RowBox[{"Values", "@", 
+           RowBox[{"data", "\[LeftDoubleBracket]", 
+            RowBox[{
+            "\"\<AtomData\>\"", ",", "All", ",", "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{
+              "\"\<Element\>\"", ",", "\"\<OccupationFactor\>\"", ",", 
+               "\"\<FractionalCoordinates\>\""}], "}"}]}], 
+            "\[RightDoubleBracket]"}]}]}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"X", "=", 
+         RowBox[{"StringDelete", "[", 
+          RowBox[{"X", ",", 
+           RowBox[{"{", 
+            RowBox[{"DigitCharacter", ",", "\"\<+\>\"", ",", "\"\<-\>\""}], 
+            "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"XwithoutH", "=", 
+         RowBox[{"DeleteCases", "[", 
+          RowBox[{"X", ",", "\"\<H\>\""}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"o", "=", 
+         RowBox[{"o", "/.", 
+          RowBox[{"_Missing", "\[Rule]", "1."}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"fWithoutH", "=", 
+         RowBox[{"Sort", "@", 
+          RowBox[{"DeleteCases", "[", 
+           RowBox[{
+            RowBox[{"f", "\[LeftDoubleBracket]", 
+             RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+            "\"\<H\>\""}], "]"}]}]}], ";", "\[IndentingNewLine]", "\t", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Check", ":", " ", 
+          RowBox[{
+          "Compare", " ", "formula", " ", "and", " ", "atom", " ", "data"}]}],
+          " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"TrueQ", "@", 
+            RowBox[{"OptionValue", "[", "\"\<IgnoreHydrogen\>\"", "]"}]}]}], 
+          ",", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"fWithoutH", "=", "f"}], ";", 
+           RowBox[{"XwithoutH", "=", "X"}]}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Sort", "@", 
+            RowBox[{"DeleteDuplicates", "@", "XwithoutH"}]}], "=!=", 
+           "fWithoutH"}], ",", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"CrystalFormulaUnits", "::", "mismatch"}], "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+         "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Site", " ", "multiplicities"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"M", "=", 
+         RowBox[{"o", "*", 
+          RowBox[{"(", 
+           RowBox[{"Length", "/@", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+               "SymmetryEquivalentPositions", "[", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"data", "[", "\"\<SpaceGroup\>\"", "]"}], ",", "#"}],
+                 "]"}], "&"}], "/@", "xyz"}], ")"}]}], ")"}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", "Counting", " ", "*)"}], "\[IndentingNewLine]", 
+        "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"Transpose", "/@", 
+          RowBox[{"GatherBy", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", 
+             RowBox[{"{", 
+              RowBox[{"X", ",", "M"}], "}"}], "]"}], ",", "First"}], 
+           "]"}]}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"Sort", "[", 
+          RowBox[{"temp", "/.", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x_List", ",", "m_List"}], "}"}], "/;", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Depth", "[", "x", "]"}], "===", "2"}]}], 
+            "\[RuleDelayed]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"First", "@", "x"}], ",", 
+              RowBox[{"Round", "@", 
+               RowBox[{"Total", "@", "m"}]}]}], "}"}]}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+         "Check", " ", "if", " ", "hydrogen", " ", "is", " ", "ignored"}], 
+         " ", "*)"}], "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"MemberQ", "[", 
+            RowBox[{"f", ",", 
+             RowBox[{"{", 
+              RowBox[{"\"\<H\>\"", ",", "_"}], "}"}]}], "]"}], "&&", 
+           RowBox[{"(", 
+            RowBox[{"!", 
+             RowBox[{"MemberQ", "[", 
+              RowBox[{"temp", ",", 
+               RowBox[{"{", 
+                RowBox[{"\"\<H\>\"", ",", "_"}], "}"}]}], "]"}]}], ")"}]}], 
+          ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{
+           RowBox[{"f", "=", 
+            RowBox[{"DeleteCases", "[", 
+             RowBox[{"f", ",", 
+              RowBox[{"{", 
+               RowBox[{"\"\<H\>\"", ",", "_"}], "}"}]}], "]"}]}], ";", 
+           "\[IndentingNewLine]", "\t", 
+           RowBox[{"temp", "=", 
+            RowBox[{"DeleteCases", "[", 
+             RowBox[{"temp", ",", 
+              RowBox[{"{", 
+               RowBox[{"\"\<H\>\"", ",", "_"}], "}"}]}], "]"}]}]}]}], "]"}], 
+        ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Check", " ", "agreement", " ", 
+          RowBox[{"of", " ", "'"}], 
+          RowBox[{"Z", "'"}]}], " ", "*)"}], " ", "\[IndentingNewLine]", "\t", 
+        RowBox[{"Z", "=", 
+         RowBox[{
+          RowBox[{"temp", "\[LeftDoubleBracket]", 
+           RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}], "/", 
+          RowBox[{"f", "\[LeftDoubleBracket]", 
+           RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+          RowBox[{"a", ".", " ", "Common"}], " ", "integer", " ", "factor"}], 
+         " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"MatchQ", "[", 
+           RowBox[{
+            RowBox[{"DeleteDuplicates", "@", "Z"}], ",", 
+            RowBox[{"{", "_Integer", "}"}]}], "]"}], ",", 
+          "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"Return", "@", 
+           RowBox[{"First", "@", "Z"}]}], ",", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"(*", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"b", ".", " ", "Calculate"}], " ", "density"}], ",", " ", 
+            RowBox[{"then", " ", "find", " ", "Z"}]}], " ", "*)"}], 
+          "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"\[Rho]", "=", 
+            RowBox[{"CrystalDensity", "[", 
+             RowBox[{"crystal", ",", 
+              RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]}], ";", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Z", "=", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"\[Rho]", "*", "V", "*", "NA"}], ")"}], "/", 
+             RowBox[{"(", "m", ")"}]}]}], ";", "\[IndentingNewLine]", "\t\t", 
+           
+           RowBox[{"Return", "@", "Z"}]}]}], "\[IndentingNewLine]", "\t", 
+         "]"}]}]}], "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->387034290]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalDensity"]], "paclet:MaXrd/ref/CrystalDensity"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetElements"]], "paclet:MaXrd/ref/GetElements"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLaueClass"]], "paclet:MaXrd/ref/GetLaueClass"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AttenuationCoefficient"]], 
+    "paclet:MaXrd/ref/AttenuationCoefficient"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryData"]], "paclet:MaXrd/ref/GetSymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["UnitCellTransformation"]], 
+    "paclet:MaXrd/ref/UnitCellTransformation"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->564408896]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"CrystalFormulaUnits",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 14, 2.156604}", 
+    "history" -> {"0.8", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "CrystalFormulaUnits[crystal] calculates the number of formula units Z \
+for the crystal.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "CrystalFormulaUnits", "titlemodifier" -> "", "windowtitle" -> 
+    "CrystalFormulaUnits", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/CrystalFormulaUnits", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9069, 271, 266, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"c04e76a3-c019-4962-a105-821d3a9f23a6",
+   CellTags->"PrimaryExamplesSection",
+   CellID->70852577]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 37642, 1119}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[591, 21, 4552, 108, 70, "AnchorBarGrid",ExpressionUUID->"b1e7b911-d24d-41f2-a4d3-75de6c6dffb7",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5168, 133, 176, 6, 70, "ObjectNameGrid",ExpressionUUID->"75cce99f-a21b-48d5-92fb-d520a2252d7f"],
+Cell[5347, 141, 620, 19, 70, "Usage",ExpressionUUID->"fa9ba3b3-5422-4a8b-9092-4e350b01f3a4",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6004, 165, 642, 19, 70, "NotesSection",ExpressionUUID->"fdd6718c-029d-40f6-b5d0-579bca2e8299",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1510921936],
+Cell[6649, 186, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"cda46e50-007e-49b4-b058-6f72da231379"],
+Cell[6683, 188, 494, 15, 70, "Notes",ExpressionUUID->"fe09825c-933a-4898-8661-b261f9e7c194",
+ CellID->144274847],
+Cell[7180, 205, 250, 9, 70, "Input",ExpressionUUID->"77b51a4a-75dc-42cc-a7d2-724749ef231c",
+ CellID->937301987],
+Cell[7433, 216, 1075, 32, 70, "Notes",ExpressionUUID->"e69564c0-1507-4cf7-92c3-2466ca101f9e",
+ CellID->1153012519],
+Cell[8511, 250, 45, 1, 70, "Notes",ExpressionUUID->"b89f8aa2-12a4-4ce6-86b8-6e62e06d721e",
+ CellID->476888868],
+Cell[8559, 253, 439, 11, 70, "3ColumnTableMod",ExpressionUUID->"77c67a22-655e-482a-a63e-667ee136003c",
+ CellID->1494978625],
+Cell[9001, 266, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"041d04e8-8c9b-4ed3-935e-49b10e0d46c5"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9069, 271, 266, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"c04e76a3-c019-4962-a105-821d3a9f23a6",
+ CellTags->"PrimaryExamplesSection",
+ CellID->70852577],
+Cell[CellGroupData[{
+Cell[9360, 285, 196, 6, 70, "ExampleSection",ExpressionUUID->"460e0f1c-e754-4519-a0c1-90e1ecbd2872",
+ CellID->1113321201],
+Cell[CellGroupData[{
+Cell[9581, 295, 130, 3, 70, "Input",ExpressionUUID->"b31f4ce2-2ec1-4f38-bcbd-3318ddd20ff7",
+ CellID->1720949978],
+Cell[9714, 300, 72, 2, 70, "Output",ExpressionUUID->"41d9f847-8423-4f0f-ad46-fb18d49a8dcc",
+ CellID->1685184348]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9823, 307, 132, 3, 70, "Input",ExpressionUUID->"9ade6fa3-5c56-454f-9c90-d1524f45a3f7",
+ CellID->1559060350],
+Cell[9958, 312, 72, 2, 70, "Output",ExpressionUUID->"1ae22217-ae86-4354-b56f-3abf6f9d34b1",
+ CellID->1879000200]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10067, 319, 134, 3, 70, "Input",ExpressionUUID->"4dcc9875-efca-4a5f-86e7-636bc6dba4df",
+ CellID->344904968],
+Cell[10204, 324, 72, 2, 70, "Output",ExpressionUUID->"3f6c017c-b1a2-4a82-b9bf-de57e2c69b17",
+ CellID->1609332265]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10313, 331, 125, 3, 70, "Input",ExpressionUUID->"ba8648be-52f4-433d-9def-c3cdb10f8365",
+ CellID->818716989],
+Cell[10441, 336, 72, 2, 70, "Output",ExpressionUUID->"e20ea27d-64d5-4f88-bcf9-a9caf3072188",
+ CellID->490843890]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10562, 344, 187, 6, 70, "ExampleSection",ExpressionUUID->"a95b860f-2123-4614-8273-4ff89b016ea6",
+ CellID->1293636265],
+Cell[10752, 352, 244, 5, 70, "ExampleText",ExpressionUUID->"24ae4a6a-e748-437b-b35b-0e21b5bba045",
+ CellID->58551019],
+Cell[CellGroupData[{
+Cell[11021, 361, 285, 8, 70, "Input",ExpressionUUID->"abd55e6c-ff80-4256-b21b-c2b09335fd2f",
+ CellID->1340875753],
+Cell[11309, 371, 1941, 48, 70, "Output",ExpressionUUID->"a230082d-ccaa-4b34-a663-b381f7968e6a",
+ CellID->1937715362]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13287, 424, 131, 3, 70, "Input",ExpressionUUID->"5ac589de-b43c-4da5-b76f-eb4c107bd5d4",
+ CellID->1105946259],
+Cell[13421, 429, 89, 2, 70, "Output",ExpressionUUID->"642d70e4-ec5b-424a-89a1-66d67df40caf",
+ CellID->592582379]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13559, 437, 189, 6, 70, "ExampleSection",ExpressionUUID->"4a54974d-e33c-43f1-a694-d81b264e8bae",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[13773, 447, 206, 6, 70, "ExampleSubsection",ExpressionUUID->"122c2abd-5253-4f60-87e3-d4d62933ee43",
+ CellID->1757724783],
+Cell[13982, 455, 396, 11, 70, "ExampleText",ExpressionUUID->"ecb35e53-6c82-4957-9f72-ec2af11f9f63",
+ CellID->547492154],
+Cell[14381, 468, 216, 6, 70, "ExampleText",ExpressionUUID->"48110404-3b28-4528-9a52-ea7ff475609b",
+ CellID->734874313],
+Cell[CellGroupData[{
+Cell[14622, 478, 176, 5, 70, "Input",ExpressionUUID->"3acab7d8-25ef-40a0-98df-f0dce5c14501",
+ CellID->1336220335],
+Cell[14801, 485, 299, 5, 70, "Output",ExpressionUUID->"deff87fd-e04f-430b-8f4d-8e4358167231",
+ CellID->766548766]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15137, 495, 235, 7, 70, "Input",ExpressionUUID->"bcbc5f3a-1318-4f96-8656-d6e13368761b",
+ CellID->2003887459],
+Cell[15375, 504, 396, 8, 70, "Output",ExpressionUUID->"87a2a47c-be5f-42d3-9d2d-cc6f7a8bb2f9",
+ CellID->630711809]
+}, Open  ]],
+Cell[15786, 515, 412, 11, 70, "ExampleText",ExpressionUUID->"2a0eb437-90dd-4805-991a-8880d1223c9c",
+ CellID->1186004079],
+Cell[CellGroupData[{
+Cell[16223, 530, 135, 3, 70, "Input",ExpressionUUID->"53918e05-a2c0-436a-b4a2-31d04048dfaa",
+ CellID->1235427707],
+Cell[16361, 535, 71, 2, 70, "Output",ExpressionUUID->"d9cfc7b7-d800-4f07-937c-3ef76df08f6e",
+ CellID->394092271]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16469, 542, 212, 5, 70, "Input",ExpressionUUID->"c2e0356b-ea59-48e2-92ee-2ee325a87502",
+ CellID->568366509],
+Cell[16684, 549, 279, 6, 70, "Message",ExpressionUUID->"fc8728e1-8658-4b5e-93f3-66a43f66a767",
+ CellID->669231349],
+Cell[16966, 557, 79, 2, 70, "Output",ExpressionUUID->"9cbbbb32-dfc8-49d7-8d1b-238ea1ba78f0",
+ CellID->1399423304]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17106, 566, 235, 8, 70, "ExampleSection",ExpressionUUID->"e9339689-7297-4302-ab3c-b5018a5087d3",
+ CellID->421662977],
+Cell[17344, 576, 909, 26, 70, "Input",ExpressionUUID->"ef64df80-2c0a-4508-88dd-6b986c695964",
+ InitializationCell->False,
+ CellID->1973224073],
+Cell[18256, 604, 13563, 325, 70, "Input",ExpressionUUID->"428c8b02-599d-4a70-a79c-5a512719ba83",
+ InitializationCell->False,
+ CellID->387034290]
+}, Closed]],
+Cell[31834, 932, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"7c0c5aa5-12f2-48bf-8d7d-54cd65b80fb0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31902, 937, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"ef0f45f7-bc42-48e7-ab5d-0bb76f0c50d9",
+ CellID->1255426704],
+Cell[32055, 946, 3182, 100, 70, "SeeAlso",ExpressionUUID->"1d23c720-2dd6-415f-9dd4-76b3c30dbc08",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35274, 1051, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"7e87c191-1a07-47a2-a586-e7d50732c3c0",
+ CellID->38303248],
+Cell[35433, 1060, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"6da4bab8-04ad-4a59-a0d5-ce240218a39a"],
+Cell[35467, 1062, 207, 7, 70, "MoreAbout",ExpressionUUID->"1ee88174-8e17-49ad-803f-b4320c096251",
+ CellID->564408896]
+}, Open  ]],
+Cell[35689, 1072, 23, 0, 70, "FooterCell",ExpressionUUID->"e8f96e60-67c1-4d6e-8aee-172abdb74c2f"]
+}
+]
+*)
+
+(* End of internal cache information *)

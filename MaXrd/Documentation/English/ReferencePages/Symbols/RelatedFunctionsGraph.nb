@@ -1,0 +1,2414 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     94433,       2405]
+NotebookOptionsPosition[     84978,       2198]
+NotebookOutlinePosition[     87227,       2256]
+CellTagsIndexPosition[     87141,       2251]
+WindowTitle->RelatedFunctionsGraph
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"$GroupSymbolRedirect\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$GroupSymbolRedirect"], "\<\"$MaXrdPath\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdPath"], "\<\"$MaXrdFunctions\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdFunctions"], "\<\"$MaXrdVersion\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdVersion"], "\<\"$TransformationMatrices\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$TransformationMatrices"], "\<\"InputCheck\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/InputCheck"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/RelatedFunctionsGraph\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/RelatedFunctionsGraph"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+RelatedFunctionsGraph.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$33705], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/RelatedFunctionsGraph", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["RelatedFunctionsGraph", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["RelatedFunctionsGraph"]], 
+         "paclet:MaXrd/ref/RelatedFunctionsGraph"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["f", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns a graph showing the closest related functions \
+to ",
+     Cell[BoxData[
+      StyleBox["f", "TI"]], "InlineFormula"],
+     " in the ",
+     Cell[BoxData["MaXrd`"], "InlineFormula"],
+     "-context."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->2116217722],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "Input ",
+ Cell[BoxData[
+  StyleBox["f", "TI"]], "InlineFormula"],
+ " may be a symbol or a string."
+}], "Notes",
+ CellID->2065610929],
+
+Cell["\<\
+The function will return an empty list if related functions cannot be found \
+or no other functions depend on it.\
+\>", "Notes",
+ CellID->1067943069],
+
+Cell["\<\
+The direction of the arrow shows where the function is applied.\
+\>", "Notes",
+ CellID->734379717],
+
+Cell["Options:", "Notes",
+ CellID->371065972],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<DirectOnly\>\"", 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[TextData[{
+     "wheter to only display functions that ",
+     Cell[BoxData[
+      StyleBox["f", "TI"]], "InlineFormula"],
+     " applies explicitly"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Limit\>\"", "10", Cell[
+    "maximum number of functions in the graph", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<ShowDependent\>\"", 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[TextData[{
+     "wheter to show which functions are dependent on ",
+     Cell[BoxData[
+      StyleBox["f", "TI"]], "InlineFormula"]
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True}}}},
+ CellID->1202211238],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(7)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->647092040],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->818727872],
+
+Cell[TextData[{
+ "The arrows originate from a function that is applied in the targeted \
+function. In this example, we see that ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["UnitCellTransformation"]], 
+    "paclet:MaXrd/ref/UnitCellTransformation"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " makes use of the functions ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryData"]], "paclet:MaXrd/ref/GetSymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLatticeParameters"]], 
+    "paclet:MaXrd/ref/GetLatticeParameters"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " and others."
+}], "ExampleText",
+ CellID->2069733463],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RelatedFunctionsGraph", "[", "\"\<UnitCellTransformation\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1320626680],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsGroupBox[{
+     GraphicsComplexBox[{{0.5867821225815377, 1.7706890050760427`}, {
+      0.8990023685701796, 0.9128709291792206}, {0.10843295355882332`, 
+      1.3693063938279875`}, {0., 0.7543525559673411}, {0.31222024597050335`, 
+      0.21357122666394557`}, {0.8990023684472244, 0.}, {1.4857844909814788`, 
+      0.21357122650587845`}, {1.7980047370976573`, 0.7543525557251674}, {
+      1.6895717837044897`, 1.369306393615025}, {1.2112226147899, 
+      1.7706890049919368`}}, 
+      {RGBColor[0.5, 0., 0.], Arrowheads[{{0.035116182476780194`, 0.7}}], 
+       ArrowBox[{1, 2}], ArrowBox[{3, 2}], ArrowBox[{4, 2}], ArrowBox[{5, 2}],
+        ArrowBox[{5, 1}], ArrowBox[{6, 2}], ArrowBox[{7, 2}], 
+       ArrowBox[{8, 2}], ArrowBox[{9, 2}], ArrowBox[{10, 2}]}], {
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.2667821225815377, 1.7206890050760426}, \
+{0.9067821225815378, 1.8206890050760427}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetCrystalMetric\"", "paclet:MaXrd/ref/GetCrystalMetric"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.5867821225815377, 1.7706890050760427}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.45900236857017956, 0.8628709291792206}, \
+{1.3390023685701795, 0.9628709291792207}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"UnitCellTransformation\"", 
+            "paclet:MaXrd/ref/UnitCellTransformation"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.8990023685701796, 0.9128709291792206}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.2915670464411767, 1.3193063938279874}, \
+{0.5084329535588233, 1.4193063938279875}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetLatticeParameters\"", 
+            "paclet:MaXrd/ref/GetLatticeParameters"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.10843295355882332, 1.3693063938279875}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.3, 0.704352555967341}, {0.3, 0.8043525559673411}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetSymmetryData\"", "paclet:MaXrd/ref/GetSymmetryData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0., 0.7543525559673411}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.11222024597050334, 0.16357122666394558}, \
+{0.5122202459705034, 0.26357122666394556}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"InputCheck\"", "paclet:MaXrd/ref/InputCheck"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.31222024597050335, 0.21357122666394557}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.5590023684472243, -0.05}, {1.2390023684472244, 0.05}], \
+
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"ToStandardSetting\"", "paclet:MaXrd/ref/ToStandardSetting"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.8990023684472244, 0.}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.2457844909814788, 0.16357122650587846}, \
+{1.7257844909814788, 0.26357122650587844}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$CrystalData\"", "paclet:MaXrd/ref/$CrystalData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.4857844909814788, 0.21357122650587845}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.5580047370976573, 0.7043525557251673}, \
+{2.0380047370976575, 0.8043525557251674}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$SpaceGroups\"", "paclet:MaXrd/ref/$SpaceGroups"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.7980047370976573, 0.7543525557251674}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.2295717837044897, 1.3193063936150249}, \
+{2.1495717837044896, 1.419306393615025}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"$TransformationMatrices\"", 
+            "paclet:MaXrd/ref/$TransformationMatrices"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.6895717837044897, 1.369306393615025}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.9512226147898999, 1.7206890049919368}, \
+{1.4712226147899, 1.8206890049919369}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"$GroupSymbolRedirect\"", 
+            "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.2112226147899, 1.7706890049919368}]}}}}],
+   Annotation[#, 
+    VertexCoordinateRules -> {{0.5867821225815377, 1.7706890050760427`}, {
+     0.8990023685701796, 0.9128709291792206}, {0.10843295355882332`, 
+     1.3693063938279875`}, {0., 0.7543525559673411}, {0.31222024597050335`, 
+     0.21357122666394557`}, {0.8990023684472244, 0.}, {1.4857844909814788`, 
+     0.21357122650587845`}, {1.7980047370976573`, 0.7543525557251674}, {
+     1.6895717837044897`, 1.369306393615025}, {1.2112226147899, 
+     1.7706890049919368`}}]& ],
+  AspectRatio->Automatic,
+  FrameTicks->None,
+  ImageSize->Large,
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->518695503]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Limit\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell["\<\
+By default, the graph will be limited to ten connections. Look for ten arrows \
+in the following graph:\
+\>", "ExampleText",
+ CellID->687216101],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RelatedFunctionsGraph", "[", "StructureFactor", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->27134111],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsGroupBox[{
+     GraphicsComplexBox[{{1.0765969066430576`, 1.0765969066630785`}, {
+      0.6646011071062503, 0.6646011072187572}, {1.6148953599846076`, 
+      1.2995674265212733`}, {0.6306558667816611, 2.153193813286115}, {
+      8.008482765831104*^-11, 1.5225379466694813`}, {0., 
+      0.6306558668500177}, {0.6306558665883193, 1.201267973982567*^-10}, {
+      1.522537946407784, 0.}, {2.153193813165988, 0.6306558665600046}, {
+      1.299567426718763, 1.614895359914533}}, 
+      {RGBColor[0.5, 0., 0.], Arrowheads[{{0.03295608249326353, 0.7}}], 
+       ArrowBox[{1, 2}], ArrowBox[{3, 2}], ArrowBox[{3, 1}], ArrowBox[{4, 2}],
+        ArrowBox[{5, 2}], ArrowBox[{6, 2}], ArrowBox[{7, 2}], 
+       ArrowBox[{8, 2}], ArrowBox[{9, 2}], ArrowBox[{10, 1}]}], {
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.5765969066430576, 1.0265969066630785}, \
+{1.5765969066430576, 1.1265969066630785}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetAtomicScatteringFactor\"", 
+            "paclet:MaXrd/ref/GetAtomicScatteringFactor"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.0765969066430576, 1.0765969066630785}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.3646011071062503, 0.6146011072187572}, \
+{0.9646011071062504, 0.7146011072187572}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"StructureFactor\"", "paclet:MaXrd/ref/StructureFactor"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.6646011071062503, 0.6646011072187572}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.2948953599846076, 1.2495674265212733}, \
+{1.9348953599846077, 1.3495674265212734}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetCrystalMetric\"", "paclet:MaXrd/ref/GetCrystalMetric"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.6148953599846076, 1.2995674265212733}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.3306558667816611, 2.103193813286115}, \
+{0.9306558667816611, 2.2031938132861146}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetSymmetryData\"", "paclet:MaXrd/ref/GetSymmetryData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.6306558667816611, 2.153193813286115}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.41999999991991516, 1.4725379466694812}, \
+{0.4200000000800848, 1.5725379466694813}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetSymmetryOperations\"", 
+            "paclet:MaXrd/ref/GetSymmetryOperations"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {8.008482765831104*^-11, 1.5225379466694813}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.2, 0.5806558668500177}, {0.2, 0.6806558668500178}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"InputCheck\"", "paclet:MaXrd/ref/InputCheck"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0., 0.6306558668500177}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.09065586658831926, -0.049999999879873205}, \
+{1.1706558665883193, 0.0500000001201268}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"SymmetryEquivalentPositions\"", 
+            "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.6306558665883193, 1.201267973982567*^-10}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.1825379464077839, -0.05}, {1.862537946407784, 0.05}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"SystematicAbsentQ\"", "paclet:MaXrd/ref/SystematicAbsentQ"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.522537946407784, 0.}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.9131938131659878, 0.5806558665600046}, \
+{2.393193813165988, 0.6806558665600047}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$CrystalData\"", "paclet:MaXrd/ref/$CrystalData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {2.153193813165988, 0.6306558665600046}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.079567426718763, 1.564895359914533}, \
+{1.5195674267187629, 1.664895359914533}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"GetElements\"", "paclet:MaXrd/ref/GetElements"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.299567426718763, 1.614895359914533}]}}}}],
+   Annotation[#, 
+    VertexCoordinateRules -> {{1.0765969066430576`, 1.0765969066630785`}, {
+     0.6646011071062503, 0.6646011072187572}, {1.6148953599846076`, 
+     1.2995674265212733`}, {0.6306558667816611, 2.153193813286115}, {
+     8.008482765831104*^-11, 1.5225379466694813`}, {0., 0.6306558668500177}, {
+     0.6306558665883193, 1.201267973982567*^-10}, {1.522537946407784, 0.}, {
+     2.153193813165988, 0.6306558665600046}, {1.299567426718763, 
+     1.614895359914533}}]& ],
+  AspectRatio->Automatic,
+  FrameTicks->None,
+  ImageSize->Large,
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1998510158]
+}, Open  ]],
+
+Cell["\<\
+This limit exists to keep the graphs from becoming \[OpenCurlyDoubleQuote]too \
+messy\[CloseCurlyDoubleQuote]. Consider the cases where we limit the graph to \
+20 connections, or even including all found connections:\
+\>", "ExampleText",
+ CellID->1642968976],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RelatedFunctionsGraph", "[", 
+  RowBox[{"StructureFactor", ",", 
+   RowBox[{"\"\<Limit\>\"", "\[Rule]", "20"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->732542949],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsGroupBox[{
+     GraphicsComplexBox[{{0.9535247013274558, 1.9934621292767647`}, {
+      1.601239810795153, 1.522869556145746}, {0.9535247012429436, 
+      1.0522769831310481`}, {1.3538346538967183`, 0.761434778072873}, {
+      1.8486449674884715`, 0.7614347780062266}, {2.248954920220594, 
+      1.052276982956566}, {2.4018597161927295`, 1.522869556001964}, {
+      2.2489549203896195`, 1.993462129102282}, {1.8486449677619607`, 
+      2.284304334196403}, {1.1064294972717712`, 3.045739112380353}, {
+      0.3058095918597583, 2.464054702407783}, {0., 1.5228695562895262`}, {
+      1.1064294969982837`, 0.}}, 
+      {RGBColor[0.5, 0., 0.], Arrowheads[{{0.028755923830888586`, 0.7}}], 
+       ArrowBox[{1, 2}], ArrowBox[{3, 2}], ArrowBox[{3, 1}], ArrowBox[{4, 2}],
+        ArrowBox[{5, 2}], ArrowBox[{6, 2}], ArrowBox[{6, 1}], 
+       ArrowBox[{6, 3}], ArrowBox[{6, 4}], ArrowBox[{7, 2}], ArrowBox[{8, 2}],
+        ArrowBox[{9, 2}], ArrowBox[{9, 1}], ArrowBox[{9, 3}], 
+       ArrowBox[{9, 10}], ArrowBox[{10, 1}], ArrowBox[{11, 1}], 
+       ArrowBox[{11, 10}], ArrowBox[{12, 1}], ArrowBox[{13, 4}]}], {
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.4535247013274558, 1.9434621292767646}, \
+{1.453524701327456, 2.0434621292767647}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetAtomicScatteringFactor\"", 
+            "paclet:MaXrd/ref/GetAtomicScatteringFactor"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.9535247013274558, 1.9934621292767647}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.301239810795153, 1.4728695561457459}, \
+{1.9012398107951531, 1.572869556145746}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"StructureFactor\"", "paclet:MaXrd/ref/StructureFactor"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.601239810795153, 1.522869556145746}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.6335247012429437, 1.002276983131048}, \
+{1.2735247012429436, 1.1022769831310482}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetCrystalMetric\"", "paclet:MaXrd/ref/GetCrystalMetric"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.9535247012429436, 1.0522769831310481}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.0538346538967183, 0.7114347780728729}, \
+{1.6538346538967184, 0.811434778072873}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetSymmetryData\"", "paclet:MaXrd/ref/GetSymmetryData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.3538346538967183, 0.761434778072873}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.4286449674884716, 0.7114347780062266}, \
+{2.2686449674884717, 0.8114347780062267}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetSymmetryOperations\"", 
+            "paclet:MaXrd/ref/GetSymmetryOperations"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.8486449674884715, 0.7614347780062266}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{2.0489549202205937, 1.0022769829565659}, \
+{2.448954920220594, 1.102276982956566}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"InputCheck\"", "paclet:MaXrd/ref/InputCheck"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {2.248954920220594, 1.052276982956566}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.8618597161927295, 1.472869556001964}, \
+{2.9418597161927296, 1.572869556001964}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"SymmetryEquivalentPositions\"", 
+            "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {2.4018597161927295, 1.522869556001964}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.9089549203896194, 1.943462129102282}, \
+{2.5889549203896194, 2.043462129102282}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"SystematicAbsentQ\"", "paclet:MaXrd/ref/SystematicAbsentQ"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {2.2489549203896195, 1.993462129102282}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.6086449677619608, 2.2343043341964033}, \
+{2.0886449677619607, 2.334304334196403}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$CrystalData\"", "paclet:MaXrd/ref/$CrystalData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.8486449677619607, 2.284304334196403}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.8864294972717712, 2.9957391123803534}, \
+{1.3264294972717712, 3.095739112380353}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"GetElements\"", "paclet:MaXrd/ref/GetElements"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.1064294972717712, 3.045739112380353}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.025809591859758285, 2.414054702407783}, \
+{0.5858095918597583, 2.514054702407783}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"$PeriodicTable\"", "paclet:MaXrd/ref/$PeriodicTable"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.3058095918597583, 2.464054702407783}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.18, 1.4728695562895262}, {0.18, 1.5728695562895263}], \
+
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$MaXrdPath\"", "paclet:MaXrd/ref/$MaXrdPath"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0., 1.5228695562895262}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.7664294969982837, -0.05}, {1.4464294969982838, 0.05}], \
+
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"ToStandardSetting\"", "paclet:MaXrd/ref/ToStandardSetting"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.1064294969982837, 0.}]}}}}],
+   Annotation[#, 
+    VertexCoordinateRules -> {{0.9535247013274558, 1.9934621292767647`}, {
+     1.601239810795153, 1.522869556145746}, {0.9535247012429436, 
+     1.0522769831310481`}, {1.3538346538967183`, 0.761434778072873}, {
+     1.8486449674884715`, 0.7614347780062266}, {2.248954920220594, 
+     1.052276982956566}, {2.4018597161927295`, 1.522869556001964}, {
+     2.2489549203896195`, 1.993462129102282}, {1.8486449677619607`, 
+     2.284304334196403}, {1.1064294972717712`, 3.045739112380353}, {
+     0.3058095918597583, 2.464054702407783}, {0., 1.5228695562895262`}, {
+     1.1064294969982837`, 0.}}]& ],
+  AspectRatio->Automatic,
+  FrameTicks->None,
+  ImageSize->Large,
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1676665598]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RelatedFunctionsGraph", "[", 
+  RowBox[{"StructureFactor", ",", 
+   RowBox[{"\"\<Limit\>\"", "\[Rule]", "Infinity"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1413021396],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsGroupBox[{GraphicsComplexBox[CompressedData["
+1:eJxTTMoPSmViYGAQBmIQfeB3w9U/Nm/t5a9InghqfGMfU8v+/c+5h/YlZ3cU
+x57/ZD+xlAHMN7l3asWr5Mf2NUfTLmfvfmb/dZIEUP0f+z9+e3UjWa7Z+6zr
+dlq57qf9jrCsvamnPtrf+vfoxfNV9+wtcp4U/tTcbr/NL5ezYsYXewYoOCal
+Crbvwh6FBXvffrWv6OUD80+4TL2Sa/LV/lzt1m0Tcj7az1qfX2Wk+9k+hM09
+eOX3z/bqXv6rH9l9sD9wR0DsX8JX+y8nAsDuAZnJIXPO9rHkiddu9z/C7Zlm
+z9v1bPd3+w7+UB2fqcfsjzgl2MWe+m2vd2Tur6zF9+0PqEwDu2/njltgfg33
+LLB/vuSsBKuHhM9f+0tuzGD3AQDj1Jzu
+      "], 
+      {RGBColor[0.5, 0., 0.], Arrowheads[{{0.03492392878474471, 0.7}}], 
+       ArrowBox[{1, 2}], ArrowBox[{3, 2}], ArrowBox[{3, 1}], 
+       ArrowBox[{3, 17}], ArrowBox[{3, 18}], ArrowBox[{4, 2}], 
+       ArrowBox[{4, 7}], ArrowBox[{4, 8}], ArrowBox[{5, 2}], ArrowBox[{5, 7}],
+        ArrowBox[{5, 8}], ArrowBox[{5, 13}], ArrowBox[{6, 2}], 
+       ArrowBox[{6, 1}], ArrowBox[{6, 3}], ArrowBox[{6, 4}], ArrowBox[{6, 5}],
+        ArrowBox[{6, 18}], ArrowBox[{6, 7}], ArrowBox[{6, 8}], 
+       ArrowBox[{7, 2}], ArrowBox[{7, 17}], ArrowBox[{7, 18}], 
+       ArrowBox[{8, 2}], ArrowBox[{9, 2}], ArrowBox[{9, 1}], ArrowBox[{9, 3}],
+        ArrowBox[{9, 10}], ArrowBox[{9, 4}], ArrowBox[{9, 6}], 
+       ArrowBox[{9, 17}], ArrowBox[{9, 18}], ArrowBox[{9, 8}], 
+       ArrowBox[{9, 19}], ArrowBox[{10, 1}], ArrowBox[{10, 17}], 
+       ArrowBox[{10, 18}], ArrowBox[{11, 1}], ArrowBox[{11, 10}], 
+       ArrowBox[{11, 6}], ArrowBox[{11, 17}], ArrowBox[{11, 18}], 
+       ArrowBox[{12, 1}], ArrowBox[{12, 9}], ArrowBox[{12, 11}], 
+       ArrowBox[{12, 14}], ArrowBox[{12, 15}], ArrowBox[{12, 16}], 
+       ArrowBox[{13, 4}], ArrowBox[{13, 6}], ArrowBox[{14, 4}], 
+       ArrowBox[{14, 6}], ArrowBox[{15, 4}], ArrowBox[{15, 6}], 
+       ArrowBox[{15, 13}], ArrowBox[{16, 4}], ArrowBox[{16, 5}], 
+       ArrowBox[{16, 6}], ArrowBox[{16, 13}], ArrowBox[{16, 19}], 
+       ArrowBox[{17, 6}], ArrowBox[{18, 17}], ArrowBox[{19, 13}]}], {
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.4136947793957617, 0.8407865436764302}, \
+{1.4136947793957617, 0.9407865436764303}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetAtomicScatteringFactor\"", 
+            "paclet:MaXrd/ref/GetAtomicScatteringFactor"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.9136947793957617, 0.8907865436764303}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.2565171074667137, 1.1256262321840411}, \
+{0.8565171074667137, 1.2256262321840412}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"StructureFactor\"", "paclet:MaXrd/ref/StructureFactor"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.5565171074667137, 1.1756262321840412}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.23651710741556048, 0.5559468552329634}, \
+{0.8765171074155604, 0.6559468552329635}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetCrystalMetric\"", "paclet:MaXrd/ref/GetCrystalMetric"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.5565171074155605, 0.6059468552329634}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.41037856377931475, 1.7315730873346045}, \
+{1.0103785637793148, 1.8315730873346046}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetSymmetryData\"", "paclet:MaXrd/ref/GetSymmetryData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.7103785637793147, 1.7815730873346045}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.07598459752324366, 1.5551418876112562}, \
+{0.7640154024767563, 1.6551418876112562}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetSymmetryOperations\"", 
+            "paclet:MaXrd/ref/GetSymmetryOperations"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.3440154024767563, 1.6051418876112562}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.9119134329832559, 0.42918126814691465}, \
+{1.3119134329832558, 0.5291812681469147}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"InputCheck\"", "paclet:MaXrd/ref/InputCheck"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.1119134329832558, 0.47918126814691464}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.44951577157427647, 1.2372238510362144}, \
+{0.6304842284257236, 1.3372238510362144}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"SymmetryEquivalentPositions\"", 
+            "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.09048422842572357, 1.2872238510362144}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.34, 0.8407865437584738}, {0.34, 0.9407865437584739}], \
+
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"SystematicAbsentQ\"", "paclet:MaXrd/ref/SystematicAbsentQ"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0., 0.8907865437584739}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.1305421690936426, 0.8407865435943866}, \
+{1.6105421690936426, 0.9407865435943867}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$CrystalData\"", "paclet:MaXrd/ref/$CrystalData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.3705421690936426, 0.8907865435943867}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.1053000549341767, 1.0390051972454446}, \
+{1.5453000549341767, 1.1390051972454447}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"GetElements\"", "paclet:MaXrd/ref/GetElements"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.3253000549341767, 1.0890051972454446}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.9185344679514811, 1.197964215567113}, \
+{1.4785344679514811, 1.2979642155671132}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"$PeriodicTable\"", "paclet:MaXrd/ref/$PeriodicTable"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.198534467951481, 1.2479642155671131}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.8353528873239653, 1.2861798154781325}, \
+{1.1953528873239652, 1.3861798154781326}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$MaXrdPath\"", "paclet:MaXrd/ref/$MaXrdPath"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.0153528873239652, 1.3361798154781326}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.37037856361934224, -0.04999999994523115}, \
+{1.0503785636193423, 0.05000000005476886}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"ToStandardSetting\"", "paclet:MaXrd/ref/ToStandardSetting"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.7103785636193423, 5.476885611699345*^-11}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.8770109949322231, -0.05}, {1.357010994932223, 0.05}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$PointGroups\"", "paclet:MaXrd/ref/$PointGroups"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.1170109949322231, 0.}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.243374156250624, 0.12643119969045197}, \
+{1.723374156250624, 0.22643119969045195}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$SpaceGroups\"", "paclet:MaXrd/ref/$SpaceGroups"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.483374156250624, 0.17643119969045196}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.4769053303302033, 0.444349236242729}, \
+{1.9969053303302033, 0.544349236242729}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"$GroupSymbolRedirect\"", 
+            "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.7369053303302033, 0.494349236242729}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.28951577164547093, 0.4443492364644829}, \
+{0.4704842283545291, 0.5443492364644829}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"CrystalFormulaUnits\"", "paclet:MaXrd/ref/CrystalFormulaUnits"},
+           
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.09048422835452907, 0.49434923646448287}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.06401540234846781, 0.12643119984391088}, \
+{0.6240154023484679, 0.22643119984391086}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"CrystalDensity\"", "paclet:MaXrd/ref/CrystalDensity"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.34401540234846784, 0.17643119984391087}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.5873895587915234, 0.8407865435123432}, \
+{2.0673895587915236, 0.9407865435123433}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"GetLaueClass\"", "paclet:MaXrd/ref/GetLaueClass"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.8273895587915234, 0.8907865435123432}]}}}}],
+   Annotation[#, VertexCoordinateRules -> CompressedData["
+1:eJxTTMoPSmViYGAQBmIQfeB3w9U/Nm/t5a9InghqfGMfU8v+/c+5h/YlZ3cU
+x57/ZD+xlAHMN7l3asWr5Mf2NUfTLmfvfmb/dZIEUP0f+z9+e3UjWa7Z+6zr
+dlq57qf9jrCsvamnPtrf+vfoxfNV9+wtcp4U/tTcbr/NL5ezYsYXewYoOCal
+Crbvwh6FBXvffrWv6OUD80+4TL2Sa/LV/lzt1m0Tcj7az1qfX2Wk+9k+hM09
+eOX3z/bqXv6rH9l9sD9wR0DsX8JX+y8nAsDuAZnJIXPO9rHkiddu9z/C7Zlm
+z9v1bPd3+w7+UB2fqcfsjzgl2MWe+m2vd2Tur6zF9+0PqEwDu2/njltgfg33
+LLB/vuSsBKuHhM9f+0tuzGD3AQDj1Jzu
+     "]]& ],
+  AspectRatio->Automatic,
+  FrameTicks->None,
+  ImageSize->Large,
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->837772151]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"DirectOnly\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1295379749],
+
+Cell[TextData[{
+ "It is often the case that the function returns chains connection various \
+functions in the ",
+ Cell[BoxData["MaXrd`"], "InlineFormula"],
+ "-context. If we only want to see the functions that are used explicitly in \
+the function, set ",
+ Cell[BoxData["\"\<DirectOnly\>\""], "InlineFormula"],
+ " to ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["True"]], "paclet:ref/True"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "ExampleText",
+ CellID->1940512160],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RelatedFunctionsGraph", "[", "\"\<ReflectionList\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->716128294],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsGroupBox[{
+     GraphicsComplexBox[{{1.4212000304840664`, 1.2307953303647652`}, {
+      0.8058023653814426, 1.5860953380318306`}, {1.7765000380129856`, 
+      0.6153976651823826}, {0.7106000153157112, 2.461590660665723}, {0., 
+      1.2307953304923793`}, {1.7765000382340195`, 1.8461929954195337`}, {
+      0.7106000150946771, 1.914211011921907*^-10}, {2.1318000455419046`, 
+      0.}, {2.842400060968133, 1.2307953301095371`}}, 
+      {RGBColor[0.5, 0., 0.], Arrowheads[{{0.029588660233192447`, 0.7}}], 
+       ArrowBox[{1, 2}], ArrowBox[{3, 2}], ArrowBox[{3, 1}], ArrowBox[{4, 2}],
+        ArrowBox[{5, 2}], ArrowBox[{6, 1}], ArrowBox[{6, 3}], 
+       ArrowBox[{7, 3}], ArrowBox[{8, 3}], ArrowBox[{9, 3}]}], {
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.1012000304840663, 1.1807953303647651}, \
+{1.7412000304840665, 1.2807953303647652}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetCrystalMetric\"", "paclet:MaXrd/ref/GetCrystalMetric"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.4212000304840664, 1.2307953303647652}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.5258023653814425, 1.5360953380318305}, \
+{1.0858023653814426, 1.6360953380318306}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"ReflectionList\"", "paclet:MaXrd/ref/ReflectionList"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.8058023653814426, 1.5860953380318306}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.5765000380129857, 0.5653976651823825}, \
+{1.9765000380129856, 0.6653976651823826}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"InputCheck\"", "paclet:MaXrd/ref/InputCheck"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.7765000380129856, 0.6153976651823826}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.030600015315711104, 2.4115906606657234}, \
+{1.3906000153157112, 2.511590660665723}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"MergeSymmetryEquivalentReflections\"", 
+            "paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.7106000153157112, 2.461590660665723}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.34, 1.1807953304923793}, {0.34, 1.2807953304923794}], \
+
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"SystematicAbsentQ\"", "paclet:MaXrd/ref/SystematicAbsentQ"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0., 1.2307953304923793}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.5365000382340195, 1.7961929954195337}, \
+{2.0165000382340192, 1.8961929954195338}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$CrystalData\"", "paclet:MaXrd/ref/$CrystalData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.7765000382340195, 1.8461929954195337}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.33060001509467707, -0.0499999998085789}, \
+{1.090600015094677, 0.050000000191421104}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"CrystalFormulaUnits\"", "paclet:MaXrd/ref/CrystalFormulaUnits"},
+           
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.7106000150946771, 1.914211011921907*^-10}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.7918000455419045, -0.05}, {2.4718000455419045, 0.05}], \
+
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"ToStandardSetting\"", "paclet:MaXrd/ref/ToStandardSetting"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {2.1318000455419046, 0.}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{2.562400060968133, 1.180795330109537}, \
+{3.1224000609681326, 1.2807953301095372}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"$PeriodicTable\"", "paclet:MaXrd/ref/$PeriodicTable"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {2.842400060968133, 1.2307953301095371}]}}}}],
+   Annotation[#, 
+    VertexCoordinateRules -> {{1.4212000304840664`, 1.2307953303647652`}, {
+     0.8058023653814426, 1.5860953380318306`}, {1.7765000380129856`, 
+     0.6153976651823826}, {0.7106000153157112, 2.461590660665723}, {0., 
+     1.2307953304923793`}, {1.7765000382340195`, 1.8461929954195337`}, {
+     0.7106000150946771, 1.914211011921907*^-10}, {2.1318000455419046`, 0.}, {
+     2.842400060968133, 1.2307953301095371`}}]& ],
+  AspectRatio->Automatic,
+  FrameTicks->None,
+  ImageSize->Large,
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->187832264]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RelatedFunctionsGraph", "[", 
+  RowBox[{"\"\<ReflectionList\>\"", ",", 
+   RowBox[{"\"\<DirectOnly\>\"", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1935877679],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsGroupBox[{
+     GraphicsComplexBox[{{1.269867544451131*^-10, 1.4142135625318282`}, {
+      0.7071067812659142, 0.7071067812976606}, {0., 
+      1.9047974308961102`*^-10}, {1.4142135623413488`, 0.}, {
+      1.414213562595322, 1.4142135623413479`}}, 
+      {RGBColor[0.5, 0., 0.], Arrowheads[{{0.03789428479308933, 0.7}}], 
+       ArrowBox[{1, 2}], ArrowBox[{3, 2}], ArrowBox[{4, 2}], 
+       ArrowBox[{5, 2}]}], {
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.31999999987301325, 1.3642135625318281}, \
+{0.32000000012698676, 1.4642135625318282}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetCrystalMetric\"", "paclet:MaXrd/ref/GetCrystalMetric"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.269867544451131*^-10, 1.4142135625318282}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.42710678126591417, 0.6571067812976605}, \
+{0.9871067812659142, 0.7571067812976606}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"ReflectionList\"", "paclet:MaXrd/ref/ReflectionList"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.7071067812659142, 0.7071067812976606}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.2, -0.04999999980952026}, \
+{0.2, 0.050000000190479746}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"InputCheck\"", "paclet:MaXrd/ref/InputCheck"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0., 1.9047974308961102*^-10}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.7342135623413487, -0.05}, {2.094213562341349, 0.05}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"MergeSymmetryEquivalentReflections\"", 
+            "paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.4142135623413488, 0.}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.074213562595322, 1.3642135623413478}, \
+{1.7542135625953221, 1.464213562341348}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"SystematicAbsentQ\"", "paclet:MaXrd/ref/SystematicAbsentQ"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.414213562595322, 1.4142135623413479}]}}}}],
+   Annotation[#, 
+    VertexCoordinateRules -> {{1.269867544451131*^-10, 1.4142135625318282`}, {
+     0.7071067812659142, 0.7071067812976606}, {0., 
+     1.9047974308961102`*^-10}, {1.4142135623413488`, 0.}, {1.414213562595322,
+      1.4142135623413479`}}]& ],
+  AspectRatio->Automatic,
+  FrameTicks->None,
+  ImageSize->Large,
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->995624399]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"ShowDependent\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->973292781],
+
+Cell[TextData[{
+ "By setting the option ",
+ Cell[BoxData[
+  RowBox[{"\"\<ShowDependent\>\"", "\[Rule]", "True"}]], "InlineFormula"],
+ ", we can \[OpenCurlyDoubleQuote]flip\[CloseCurlyDoubleQuote] the question: \
+Which functions depend on ",
+ Cell[BoxData[
+  StyleBox["f", "TI"]], "InlineFormula"],
+ "?"
+}], "ExampleText",
+ CellID->1068446036],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RelatedFunctionsGraph", "[", 
+  RowBox[{"\"\<ToStandardSetting\>\"", ",", 
+   RowBox[{"\"\<ShowDependent\>\"", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1051086967],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsGroupBox[{
+     GraphicsComplexBox[{{1., 0.8660254038592663}, {0.5000000000518421, 
+      1.732050807673636}, {0., 0.8660254039490595}, {0.4999999998963157, 
+      1.3468981485686982`*^-10}, {1.4999999998703948`, 0.}, {2., 
+      0.86602540367968}, {1.5000000001814473`, 1.7320508075389462`}}, 
+      {RGBColor[0.5, 0., 0.], Arrowheads[{{0.03384563758389261, 0.7}}], 
+       ArrowBox[{1, 2}], ArrowBox[{1, 3}], ArrowBox[{1, 4}], ArrowBox[{1, 5}],
+        ArrowBox[{1, 6}], ArrowBox[{1, 7}]}], {
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.6599999999999999, 0.8160254038592663}, \
+{1.34, 0.9160254038592663}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"ToStandardSetting\"", "paclet:MaXrd/ref/ToStandardSetting"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1., 0.8660254038592663}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.2000000000518421, 1.682050807673636}, \
+{0.8000000000518421, 1.782050807673636}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetSymmetryData\"", "paclet:MaXrd/ref/GetSymmetryData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.5000000000518421, 1.732050807673636}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.34, 0.8160254039490594}, {0.34, 0.9160254039490595}], \
+
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"ImportCrystalData\"", "paclet:MaXrd/ref/ImportCrystalData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0., 0.8660254039490595}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.2999999998963157, -0.04999999986531019}, \
+{0.6999999998963158, 0.05000000013468982}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"InputCheck\"", "paclet:MaXrd/ref/InputCheck"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.4999999998963157, 1.3468981485686982*^-10}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.8199999998703947, -0.05}, {2.179999999870395, 0.05}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"MergeSymmetryEquivalentReflections\"", 
+            "paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.4999999998703948, 0.}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.72, 0.8160254036796799}, \
+{2.2800000000000002, 0.91602540367968}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"ReflectionList\"", "paclet:MaXrd/ref/ReflectionList"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {2., 0.86602540367968}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.0600000001814474, 1.6820508075389462}, \
+{1.9400000001814472, 1.7820508075389463}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"UnitCellTransformation\"", 
+            "paclet:MaXrd/ref/UnitCellTransformation"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.5000000001814473, 1.7320508075389462}]}}}}],
+   Annotation[#, 
+    VertexCoordinateRules -> {{1., 0.8660254038592663}, {0.5000000000518421, 
+     1.732050807673636}, {0., 0.8660254039490595}, {0.4999999998963157, 
+     1.3468981485686982`*^-10}, {1.4999999998703948`, 0.}, {2., 
+     0.86602540367968}, {1.5000000001814473`, 1.7320508075389462`}}]& ],
+  AspectRatio->Automatic,
+  FrameTicks->None,
+  ImageSize->Large,
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->672056977]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373],
+
+Cell[TextData[{
+ "Some functions will not return any graph, meaning they do not depend on any \
+other ",
+ Cell[BoxData["MaXrd`"], "InlineFormula"],
+ "-functions;"
+}], "ExampleText",
+ CellID->1002610224],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RelatedFunctionsGraph", "[", "\"\<$MaXrdPath\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1004896690],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1735640704]
+}, Open  ]],
+
+Cell["It is likely that other functions depend on it:", "ExampleText",
+ CellID->1276449119],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RelatedFunctionsGraph", "[", 
+  RowBox[{"\"\<$MaXrdPath\>\"", ",", 
+   RowBox[{"\"\<ShowDependent\>\"", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1551672606],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsGroupBox[{
+     GraphicsComplexBox[{{1., 0.9510565163395498}, {0.6909830056762916, 
+      1.9021130326513518`}, {0.19098300566727566`, 1.538841768690138}, {0., 
+      0.951056516429343}, {0.190983005561718, 0.36327126413424926`}, {
+      0.6909830055054951, 8.32428570518573*^-11}, {1.3090169942383099`, 0.}, {
+      1.8090169942799448`, 0.3632712639163167}, {2., 0.9510565161599626}, {
+      1.8090169944910621`, 1.5388417684722047`}, {1.309016994579905, 
+      1.9021130325681086`}}, 
+      {RGBColor[0.5, 0., 0.], Arrowheads[{{0.03384563758389261, 0.7}}], 
+       ArrowBox[{1, 2}], ArrowBox[{1, 3}], ArrowBox[{1, 4}], ArrowBox[{1, 5}],
+        ArrowBox[{1, 6}], ArrowBox[{1, 7}], ArrowBox[{1, 8}], 
+       ArrowBox[{1, 9}], ArrowBox[{1, 10}], ArrowBox[{1, 11}]}], {
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.8200000000000001, 0.9010565163395498}, \
+{1.18, 1.0010565163395497}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$MaXrdPath\"", "paclet:MaXrd/ref/$MaXrdPath"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1., 0.9510565163395498}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.25098300567629156, 1.8521130326513517}, \
+{1.1309830056762915, 1.9521130326513518}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"AttenuationCoefficient\"", 
+            "paclet:MaXrd/ref/AttenuationCoefficient"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.6909830056762916, 1.9021130326513518}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.30901699433272434, 1.4888417686901378}, \
+{0.6909830056672757, 1.588841768690138}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetAtomicScatteringFactor\"", 
+            "paclet:MaXrd/ref/GetAtomicScatteringFactor"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.19098300566727566, 1.538841768690138}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.5, 0.9010565164293429}, {0.5, 1.001056516429343}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"GetScatteringCrossSection\"", 
+            "paclet:MaXrd/ref/GetScatteringCrossSection"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0., 0.951056516429343}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{-0.229016994438282, 0.31327126413424927}, \
+{0.610983005561718, 0.41327126413424925}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"RelatedFunctionsGraph\"", 
+            "paclet:MaXrd/ref/RelatedFunctionsGraph"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.190983005561718, 0.36327126413424926}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{0.4509830055054951, -0.049999999916757146}, \
+{0.9309830055054951, 0.05000000008324286}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$CrystalData\"", "paclet:MaXrd/ref/$CrystalData"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {0.6909830055054951, 8.32428570518573*^-11}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.0290169942383098, -0.05}, {1.5890169942383099, 0.05}], \
+
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"$PeriodicTable\"", "paclet:MaXrd/ref/$PeriodicTable"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.3090169942383099, 0.}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.5690169942799448, 0.3132712639163167}, \
+{2.0490169942799445, 0.4132712639163167}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$PointGroups\"", "paclet:MaXrd/ref/$PointGroups"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.8090169942799448, 0.3632712639163167}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.76, 0.9010565161599625}, {2.24, 1.0010565161599625}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          TemplateBox[{"\"$SpaceGroups\"", "paclet:MaXrd/ref/$SpaceGroups"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {2., 0.9510565161599626}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.3490169944910622, 1.4888417684722046}, \
+{2.269016994491062, 1.5888417684722047}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"$TransformationMatrices\"", 
+            "paclet:MaXrd/ref/$TransformationMatrices"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.8090169944910621, 1.5388417684722047}]}}, 
+      {GrayLevel[1], EdgeForm[None], 
+       RectangleBox[{1.029016994579905, 1.8521130325681086}, \
+{1.589016994579905, 1.9521130325681086}], 
+       {GrayLevel[0], InsetBox[
+         StyleBox[
+          
+          TemplateBox[{
+           "\"$MaXrdChangelog\"", "paclet:MaXrd/ref/$MaXrdChangelog"},
+           "HyperlinkPaclet"], "Program",
+          StripOnInput->False,
+          FontSize->11], {1.309016994579905, 1.9021130325681086}]}}}}],
+   Annotation[#, 
+    VertexCoordinateRules -> {{1., 0.9510565163395498}, {0.6909830056762916, 
+     1.9021130326513518`}, {0.19098300566727566`, 1.538841768690138}, {0., 
+     0.951056516429343}, {0.190983005561718, 0.36327126413424926`}, {
+     0.6909830055054951, 8.32428570518573*^-11}, {1.3090169942383099`, 0.}, {
+     1.8090169942799448`, 0.3632712639163167}, {2., 0.9510565161599626}, {
+     1.8090169944910621`, 1.5388417684722047`}, {1.309016994579905, 
+     1.9021130325681086`}}]& ],
+  AspectRatio->Automatic,
+  FrameTicks->None,
+  ImageSize->Large,
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->774671001]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Interactive Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1653164318],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"RelatedFunctionsGraph", "[", 
+    RowBox[{"StructureFactorTable", ",", 
+     RowBox[{"\"\<Limit\>\"", "\[Rule]", "n"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "7"}], "}"}], ",", "1", ",", "60", ",", "1"}], 
+    "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->918441626]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->987488955],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "RelatedFunctionsGraph"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<Limit\>\"", "\[Rule]", "10"}], ",", "\[IndentingNewLine]", 
+      
+      RowBox[{"\"\<DirectOnly\>\"", "\[Rule]", "False"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<ShowDependent\>\"", "\[Rule]", "False"}]}], 
+     "\[IndentingNewLine]", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetAttributes", "[", 
+    RowBox[{"RelatedFunctionsGraph", ",", "HoldFirst"}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "RelatedFunctionsGraph"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1065716842],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"RelatedFunctionsGraph", "[", 
+    RowBox[{"function_", ",", 
+     RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+      "f", ",", "allf", ",", "deffile", ",", "import", ",", 
+       "\[IndentingNewLine]", "finddepf", ",", "data", ",", "d", ",", "main", 
+       ",", "g", ",", "done", ",", "new", ",", "x", ",", "X", ",", "c", ",", 
+       "part"}], "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Loading", " ", "data"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"f", "=", 
+       RowBox[{"ToString", "@", 
+        RowBox[{"HoldForm", "@", "function"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"allf", "=", 
+       RowBox[{"First", "/@", 
+        RowBox[{"Cases", "[", 
+         RowBox[{"$MaXrdFunctions", ",", "_Hyperlink", ",", "Infinity"}], 
+         "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"deffile", "=", 
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "$MaXrdPath", ",", "\"\<Core\>\"", ",", "\"\<Definitions.m\>\""}], 
+         "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"import", "=", 
+       RowBox[{"StringJoin", "@", 
+        RowBox[{"Check", "[", 
+         RowBox[{
+          RowBox[{"Import", "[", 
+           RowBox[{"deffile", ",", "\"\<Text\>\""}], "]"}], ",", 
+          RowBox[{"Abort", "[", "]"}]}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Optional", ":", " ", 
+        RowBox[{"Show", " ", "all", " ", "functions", " ", "depedent", " ", 
+         RowBox[{"on", " ", "'"}], 
+         RowBox[{"f", "'"}]}]}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"OptionValue", "[", "\"\<ShowDependent\>\"", "]"}], ",", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{
+         RowBox[{"data", "=", 
+          RowBox[{"StringCases", "[", 
+           RowBox[{"import", ",", 
+            RowBox[{
+             RowBox[{"Shortest", "[", "\[IndentingNewLine]", "\t", 
+              RowBox[{
+               RowBox[{"c", ":", 
+                RowBox[{"(", "allf", ")"}]}], "~~", 
+               RowBox[{"{", 
+                RowBox[{"\"\<[\>\"", ",", "\"\<:=\>\""}], "}"}], "~~", "d__", 
+               "~~", "\"\<End[];\>\""}], "]"}], "\[RuleDelayed]", 
+             RowBox[{"{", 
+              RowBox[{"c", ",", "d"}], "}"}]}]}], "]"}]}], ";", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{"x", "=", 
+          RowBox[{"Reap", "@", 
+           RowBox[{"Do", "[", "\[IndentingNewLine]", "\t", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"c", "=", 
+               RowBox[{"data", "\[LeftDoubleBracket]", 
+                RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+              "\[IndentingNewLine]", "\t", 
+              RowBox[{"d", "=", 
+               RowBox[{"Sort", "@", 
+                RowBox[{"DeleteDuplicates", "@", 
+                 RowBox[{"StringCases", "[", 
+                  RowBox[{
+                   RowBox[{"data", "\[LeftDoubleBracket]", 
+                    RowBox[{"i", ",", "2"}], "\[RightDoubleBracket]"}], ",", 
+                   "allf"}], "]"}]}]}]}], ";", "\[IndentingNewLine]", "\t", 
+              RowBox[{"d", "=", 
+               RowBox[{"DeleteCases", "[", 
+                RowBox[{"d", ",", "c"}], "]"}]}], ";", "\[IndentingNewLine]", 
+              "\t", 
+              RowBox[{"Sow", "[", 
+               RowBox[{"c", "\[Rule]", "d"}], "]"}]}], ",", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"Length", "@", "data"}]}], "}"}]}], "]"}]}]}], ";", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{"x", "=", 
+          RowBox[{"x", "\[LeftDoubleBracket]", 
+           RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{"part", "=", 
+          RowBox[{"First", "/@", 
+           RowBox[{"Position", "[", 
+            RowBox[{"x", ",", "f"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+         "\t", 
+         RowBox[{"g", "=", 
+          RowBox[{"First", "/@", 
+           RowBox[{
+           "x", "\[LeftDoubleBracket]", "part", "\[RightDoubleBracket]"}]}]}],
+          ";", "\[IndentingNewLine]", "\t", 
+         RowBox[{"g", "=", 
+          RowBox[{"DeleteCases", "[", 
+           RowBox[{"g", ",", "f"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         "\t\t", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+           RowBox[{"If", " ", "none"}], ",", " ", 
+           RowBox[{"return", " ", "empty", " ", "list"}]}], " ", "*)"}], 
+         "\[IndentingNewLine]", "\t\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"g", "\[Equal]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"Return", "[", 
+            RowBox[{"{", "}"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+         "\t", 
+         RowBox[{"g", "=", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"f", "\[Rule]", "#"}], "&"}], "/@", "g"}]}], ";", 
+         "\[IndentingNewLine]", "\t\t", 
+         RowBox[{"Goto", "[", "\"\<GraphDataGenerated\>\"", "]"}]}]}], 
+       "\[IndentingNewLine]", "\t", "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "Function", " ", "for", " ", "finding", " ", "related", " ", 
+        "functions"}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"finddepf", "[", "F_", "]"}], ":=", 
+       RowBox[{"(", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"data", "=", 
+          RowBox[{"StringCases", "[", "\[IndentingNewLine]", 
+           RowBox[{"import", ",", 
+            RowBox[{
+             RowBox[{"Shortest", "[", "\[IndentingNewLine]", 
+              RowBox[{
+              "\"\<Begin[\\\"`Private`\\\"];\>\"", "~~", "Whitespace", "~~", 
+               "\[IndentingNewLine]", 
+               "\"\<(* ::Input::Initialization:: *)\\n\>\"", "~~", 
+               "\[IndentingNewLine]", "F", "~~", 
+               RowBox[{"{", 
+                RowBox[{"\"\<[\>\"", ",", "\"\<:=\>\""}], "}"}], "~~", "d__", 
+               "~~", "\"\<End[];\>\""}], "]"}], "\[IndentingNewLine]", 
+             "\[RuleDelayed]", "d"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+          "Check", " ", "if", " ", "anything", " ", "is", " ", "found"}], " ",
+           "*)"}], "\[IndentingNewLine]", "\t", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"data", "\[Equal]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"Return", "[", 
+            RowBox[{"{", "}"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+         "\[IndentingNewLine]", 
+         RowBox[{"d", "=", 
+          RowBox[{"DeleteDuplicates", "@", 
+           RowBox[{"Flatten", "@", 
+            RowBox[{"Sort", "@", 
+             RowBox[{"StringCases", "[", 
+              RowBox[{
+               RowBox[{"First", "@", "data"}], ",", 
+               RowBox[{"{", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"\"\<\\\"\>\"", "~~", "allf", "~~", "\"\<\\\"\>\""}],
+                  ",", "\[IndentingNewLine]", 
+                 RowBox[{"allf", "~~", "\"\<::\>\""}], ",", 
+                 "\[IndentingNewLine]", "allf"}], "}"}]}], "]"}]}]}]}]}], ";",
+          "\[IndentingNewLine]", 
+         RowBox[{"d", "=", 
+          RowBox[{"DeleteCases", "[", 
+           RowBox[{"d", ",", "F"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"d", "=", 
+          RowBox[{"DeleteCases", "[", 
+           RowBox[{"d", ",", 
+            RowBox[{"x_", "/;", 
+             RowBox[{"StringContainsQ", "[", 
+              RowBox[{"x", ",", 
+               RowBox[{"{", 
+                RowBox[{"\"\<\\\"\>\"", ",", "\"\<::\>\""}], "}"}]}], 
+              "]"}]}]}], "]"}]}]}], "\[IndentingNewLine]", ")"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", "Seed", " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"main", "=", 
+       RowBox[{"finddepf", "@", "f"}]}], ";", "\[IndentingNewLine]", "\t", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"main", "\[Equal]", 
+         RowBox[{"{", "}"}]}], ",", 
+        RowBox[{"Return", "[", 
+         RowBox[{"{", "}"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", "Loop", " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"g", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"done", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"new", "=", 
+       RowBox[{"{", "f", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"new", "\[NotEqual]", 
+         RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"x", "=", 
+          RowBox[{"First", "@", "new"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"X", "=", 
+          RowBox[{"finddepf", "@", "x"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"g", "=", 
+          RowBox[{"DeleteDuplicates", "@", 
+           RowBox[{"Join", "[", 
+            RowBox[{"g", ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"#", "\[Rule]", "x"}], "&"}], "/@", "X"}]}], "]"}]}]}],
+          ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"done", ",", "x"}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"new", "=", 
+          RowBox[{"Join", "[", 
+           RowBox[{"new", ",", "X"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"new", "=", 
+          RowBox[{"Complement", "[", 
+           RowBox[{"new", ",", "done"}], "]"}]}]}]}], "\[IndentingNewLine]", 
+       "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Label", "[", "\"\<GraphDataGenerated\>\"", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"g", "=", 
+       RowBox[{"DeleteDuplicatesBy", "[", 
+        RowBox[{"g", ",", "Sort"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Optional", ":", " ", 
+        RowBox[{"Only", " ", "directly", " ", "connected"}]}], " ", "*)"}], 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"OptionValue", "[", "\"\<DirectOnly\>\"", "]"}], ",", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"g", "=", 
+         RowBox[{"DeleteCases", "[", 
+          RowBox[{"g", ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"a_", "\[Rule]", "b_"}], ")"}], "/;", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"a", "\[NotEqual]", "f"}], "&&", 
+              RowBox[{"b", "\[NotEqual]", "f"}]}], ")"}]}]}], "]"}]}]}], 
+       "]"}], ";", "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Optional", ":", " ", 
+        RowBox[{"Limiting", " ", "graph"}]}], " ", "*)"}], 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{"g", "=", 
+       RowBox[{"Take", "[", 
+        RowBox[{"g", ",", 
+         RowBox[{"UpTo", "@", 
+          RowBox[{"OptionValue", "[", "\"\<Limit\>\"", "]"}]}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", "Plot", " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"A", ".", " ", "Older"}], " ", "than", " ", "version", " ", 
+        "12"}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"$VersionNumber", "<", "12."}], ",", "\[IndentingNewLine]", 
+        RowBox[{"GraphPlot", "[", 
+         RowBox[{"g", ",", "\[IndentingNewLine]", 
+          RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"MultiedgeStyle", "\[Rule]", "False"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"SelfLoopStyle", "\[Rule]", "None"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"VertexLabeling", "\[Rule]", "True"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"VertexRenderingFunction", "\[Rule]", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"{", "\[IndentingNewLine]", 
+              RowBox[{"White", ",", 
+               RowBox[{"EdgeForm", "[", "]"}], ",", 
+               RowBox[{"Rectangle", "[", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"#", "-", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"0.02", "*", 
+                    RowBox[{"StringLength", "@", "#2"}]}], ",", "0.05"}], 
+                   "}"}]}], ",", 
+                 RowBox[{"#", "+", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"0.02", "*", 
+                    RowBox[{"StringLength", "@", "#2"}]}], ",", "0.05"}], 
+                   "}"}]}]}], "]"}], ",", "Black", ",", "\[IndentingNewLine]", 
+               RowBox[{"Text", "[", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   RowBox[{"Hyperlink", "[", 
+                    RowBox[{"#2", ",", " ", 
+                    RowBox[{"\"\<paclet:MaXrd/ref/\>\"", "<>", "#2"}]}], 
+                    "]"}], ",", "\[IndentingNewLine]", "11", ",", 
+                   "\"\<Program\>\""}], "]"}], ",", "\[IndentingNewLine]", 
+                 "#1"}], "]"}]}], "\[IndentingNewLine]", "}"}], "&"}], 
+            ")"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Method", "\[Rule]", "\"\<RadialDrawing\>\""}]}], "]"}], 
+        ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+          RowBox[{"B", ".", " ", "Version"}], " ", "12", " ", "and", " ", 
+          "above"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"GraphPlot", "[", 
+         RowBox[{"g", ",", "\[IndentingNewLine]", 
+          RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"VertexLabels", "\[Rule]", "None"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"MultiedgeStyle", "\[Rule]", "False"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"EdgeShapeFunction", "\[Rule]", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Arrowheads", "[", 
+                RowBox[{"{", 
+                 RowBox[{"{", 
+                  RowBox[{"Automatic", ",", "0.5"}], "}"}], "}"}], "]"}], ",", 
+               RowBox[{"Arrow", "[", "#1", "]"}]}], "}"}], "&"}], ")"}]}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"SelfLoopStyle", "\[Rule]", "None"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"VertexShapeFunction", "\[Rule]", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"{", "\[IndentingNewLine]", 
+              RowBox[{"White", ",", 
+               RowBox[{"EdgeForm", "[", "]"}], ",", 
+               RowBox[{"Rectangle", "[", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"#", "-", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"0.02", "*", 
+                    RowBox[{"StringLength", "@", "#2"}]}], ",", "0.05"}], 
+                   "}"}]}], ",", 
+                 RowBox[{"#", "+", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"0.02", "*", 
+                    RowBox[{"StringLength", "@", "#2"}]}], ",", "0.05"}], 
+                   "}"}]}]}], "]"}], ",", "Black", ",", "\[IndentingNewLine]", 
+               RowBox[{"Text", "[", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"Style", "[", 
+                  RowBox[{
+                   RowBox[{"Hyperlink", "[", 
+                    RowBox[{"#2", ",", " ", 
+                    RowBox[{"\"\<paclet:MaXrd/ref/\>\"", "<>", "#2"}]}], 
+                    "]"}], ",", "\[IndentingNewLine]", "11", ",", 
+                   "\"\<Program\>\""}], "]"}], ",", "\[IndentingNewLine]", 
+                 "#1"}], "]"}]}], "\[IndentingNewLine]", "}"}], "&"}], 
+            ")"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Method", "\[Rule]", "\"\<RadialDrawing\>\""}]}], "]"}]}], 
+       "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1489347514]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$GroupSymbolRedirect"]], 
+    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdPath"]], "paclet:MaXrd/ref/$MaXrdPath"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdFunctions"]], "paclet:MaXrd/ref/$MaXrdFunctions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdVersion"]], "paclet:MaXrd/ref/$MaXrdVersion"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$TransformationMatrices"]], 
+    "paclet:MaXrd/ref/$TransformationMatrices"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1431618375]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"RelatedFunctionsGraph",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 15, 58.317361}", 
+    "history" -> {"0.7", "2.2.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", "status" -> 
+    "None", "summary" -> 
+    "RelatedFunctionsGraph[f] returns a graph showing the closest related \
+functions to f in the MaXrd`-context.", "synonyms" -> {}, "tabletags" -> {}, 
+    "title" -> "RelatedFunctionsGraph", "titlemodifier" -> "", "windowtitle" -> 
+    "RelatedFunctionsGraph", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/RelatedFunctionsGraph", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7874, 236, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"4e4a4097-5b60-421e-a900-92b69f99b339",
+   CellTags->"PrimaryExamplesSection",
+   CellID->647092040]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 86943, 2244}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[593, 21, 4140, 100, 70, "AnchorBarGrid",ExpressionUUID->"3eed5a8f-38f5-42ae-9941-23aa4d59e2af",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4758, 125, 178, 6, 70, "ObjectNameGrid",ExpressionUUID->"eaafe5f4-d5de-40bd-89d1-cc7eb79cb805"],
+Cell[4939, 133, 694, 22, 70, "Usage",ExpressionUUID->"50f59234-2211-47dc-b99f-e09254394bb8",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5670, 160, 642, 19, 70, "NotesSection",ExpressionUUID->"c8dcdc72-4c6e-4197-a372-553ecb1a4866",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->2116217722],
+Cell[6315, 181, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"e9d6c75c-4b79-472a-8dae-49a2b8c39a98"],
+Cell[6349, 183, 150, 6, 70, "Notes",ExpressionUUID->"16d2c834-68bb-4c4a-aa8d-c9e47afb24b2",
+ CellID->2065610929],
+Cell[6502, 191, 159, 4, 70, "Notes",ExpressionUUID->"0fbd556b-c2a4-40f2-884d-635b204deae2",
+ CellID->1067943069],
+Cell[6664, 197, 108, 3, 70, "Notes",ExpressionUUID->"ccddc177-5fe6-4544-b996-766b39a1b252",
+ CellID->734379717],
+Cell[6775, 202, 45, 1, 70, "Notes",ExpressionUUID->"4aa9d946-2c17-4ae6-9993-6b8066d56e7d",
+ CellID->371065972],
+Cell[6823, 205, 980, 24, 70, "3ColumnTableMod",ExpressionUUID->"21e678e8-789a-4763-80ef-7b5a276c16a1",
+ CellID->1202211238],
+Cell[7806, 231, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"3d1b8bdf-323b-4542-a8b8-47f2a870de2f"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7874, 236, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"4e4a4097-5b60-421e-a900-92b69f99b339",
+ CellTags->"PrimaryExamplesSection",
+ CellID->647092040],
+Cell[CellGroupData[{
+Cell[8166, 250, 195, 6, 70, "ExampleSection",ExpressionUUID->"24e3e102-9488-4953-b6ee-2ab5e37e3c4b",
+ CellID->818727872],
+Cell[8364, 258, 981, 34, 70, "ExampleText",ExpressionUUID->"da640004-39fd-4a06-95fa-d1aa798e5d25",
+ CellID->2069733463],
+Cell[CellGroupData[{
+Cell[9370, 296, 150, 4, 70, "Input",ExpressionUUID->"bfdb51b7-657d-4404-bbab-d50b61642dc3",
+ CellID->1320626680],
+Cell[9523, 302, 5865, 135, 70, "Output",ExpressionUUID->"bf572c07-857a-4ba8-aa24-aac0f3ee369c",
+ CellID->518695503]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15437, 443, 189, 6, 70, "ExampleSection",ExpressionUUID->"404c3e83-295d-4f26-86c8-9854d69f8d9e",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[15651, 453, 197, 6, 70, "ExampleSubsection",ExpressionUUID->"d4ff13a9-37ae-4522-a3ad-1d7d20015fcb",
+ CellID->1757724783],
+Cell[15851, 461, 154, 4, 70, "ExampleText",ExpressionUUID->"2078881d-2e22-4087-ae70-c3a844b9190b",
+ CellID->687216101],
+Cell[CellGroupData[{
+Cell[16030, 469, 130, 3, 70, "Input",ExpressionUUID->"8f06b6fd-ac03-41d1-91f2-cb0cc1c8c5de",
+ CellID->27134111],
+Cell[16163, 474, 5850, 133, 70, "Output",ExpressionUUID->"277d82d0-ea95-44b3-b1d9-487ce13266fc",
+ CellID->1998510158]
+}, Open  ]],
+Cell[22028, 610, 268, 5, 70, "ExampleText",ExpressionUUID->"9ad66fa2-cfcf-4d45-95f2-040db82d2fca",
+ CellID->1642968976],
+Cell[CellGroupData[{
+Cell[22321, 619, 197, 5, 70, "Input",ExpressionUUID->"28023b5d-5955-41b5-9d3a-0f33f5c5b435",
+ CellID->732542949],
+Cell[22521, 626, 7614, 173, 70, "Output",ExpressionUUID->"e8676424-bd4a-404d-807d-5303fb6d8daf",
+ CellID->1676665598]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30172, 804, 204, 5, 70, "Input",ExpressionUUID->"0f131db9-1a38-468d-936d-18134820c048",
+ CellID->1413021396],
+Cell[30379, 811, 10928, 246, 70, "Output",ExpressionUUID->"6eee8c38-2ecb-4638-a483-1ff20954b34f",
+ CellID->837772151]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[41356, 1063, 202, 6, 70, "ExampleSubsection",ExpressionUUID->"5c4562cf-4042-4085-b3dd-19a3965d8347",
+ CellID->1295379749],
+Cell[41561, 1071, 516, 16, 70, "ExampleText",ExpressionUUID->"7e470da2-6fb6-4177-97af-321e15eae003",
+ CellID->1940512160],
+Cell[CellGroupData[{
+Cell[42102, 1091, 141, 4, 70, "Input",ExpressionUUID->"18f88e6e-879a-46ea-a4cd-d0442952e52d",
+ CellID->716128294],
+Cell[42246, 1097, 5326, 123, 70, "Output",ExpressionUUID->"5f85396e-556a-493b-b5fe-c8e0e2a5fccf",
+ CellID->187832264]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47609, 1225, 212, 5, 70, "Input",ExpressionUUID->"b4b75ecd-ef39-4ef9-9e59-05f3952afd57",
+ CellID->1935877679],
+Cell[47824, 1232, 3072, 74, 70, "Output",ExpressionUUID->"b1a3822a-08d0-4afc-bf53-d7b18cd4bb29",
+ CellID->995624399]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[50945, 1312, 204, 6, 70, "ExampleSubsection",ExpressionUUID->"1734b50d-a684-4bda-8e08-e77655874ad3",
+ CellID->973292781],
+Cell[51152, 1320, 342, 10, 70, "ExampleText",ExpressionUUID->"a4f0b8a4-bae3-46c8-be69-a958cc2832c3",
+ CellID->1068446036],
+Cell[CellGroupData[{
+Cell[51519, 1334, 218, 5, 70, "Input",ExpressionUUID->"d72a696a-7b53-4cc7-a4fc-95ae2bcec94a",
+ CellID->1051086967],
+Cell[51740, 1341, 4052, 97, 70, "Output",ExpressionUUID->"809da1f2-8029-42f0-b70b-1aaf967981a0",
+ CellID->672056977]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[55853, 1445, 197, 6, 70, "ExampleSection",ExpressionUUID->"19396664-04ac-4ffb-97af-0ce4145f6f94",
+ CellID->1305812373],
+Cell[56053, 1453, 202, 6, 70, "ExampleText",ExpressionUUID->"5c52c4cb-06b2-46e5-a44c-2abdd8be4a62",
+ CellID->1002610224],
+Cell[CellGroupData[{
+Cell[56280, 1463, 135, 3, 70, "Input",ExpressionUUID->"1f5cd4d0-a327-43b8-8458-11e220934686",
+ CellID->1004896690],
+Cell[56418, 1468, 89, 3, 70, "Output",ExpressionUUID->"f322be83-8e8c-4781-980f-a5db8e2c8791",
+ CellID->1735640704]
+}, Open  ]],
+Cell[56522, 1474, 91, 1, 70, "ExampleText",ExpressionUUID->"a94c7f16-21d8-455c-9bb6-33362f7deaa7",
+ CellID->1276449119],
+Cell[CellGroupData[{
+Cell[56638, 1479, 211, 5, 70, "Input",ExpressionUUID->"e6965f74-345f-4c0c-a42d-fdf4a8c9ce54",
+ CellID->1551672606],
+Cell[56852, 1486, 6263, 144, 70, "Output",ExpressionUUID->"e3e4208d-4813-4022-a0e8-207f86f5baf8",
+ CellID->774671001]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[63164, 1636, 202, 6, 70, "ExampleSection",ExpressionUUID->"765054d8-31ce-4e5a-b3cf-0f8222d0a23b",
+ CellID->1653164318],
+Cell[63369, 1644, 444, 13, 70, "Input",ExpressionUUID->"9f02567d-6479-40fa-8cef-d73f7e1fe4d3",
+ CellID->918441626]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[63850, 1662, 235, 8, 70, "ExampleSection",ExpressionUUID->"7ba959e2-ed73-412a-b83f-308e2028c72a",
+ CellID->987488955],
+Cell[64088, 1672, 1091, 30, 70, "Input",ExpressionUUID->"d7d8d004-e630-4ddf-899b-5bd24d4948fb",
+ InitializationCell->False,
+ CellID->1065716842],
+Cell[65182, 1704, 17194, 389, 70, "Input",ExpressionUUID->"b0885c6e-b17e-4775-a632-7044a11bc434",
+ InitializationCell->False,
+ CellID->1489347514]
+}, Closed]],
+Cell[82391, 2096, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"da598477-7d16-4249-93a2-e2f2dd33addf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82459, 2101, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"6a45c1b8-7e3b-4b73-a959-7095dc33e809",
+ CellID->1255426704],
+Cell[82612, 2110, 1886, 60, 70, "SeeAlso",ExpressionUUID->"0210fd2b-a3ce-49b5-b924-5677c6d0814b",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[84535, 2175, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"c2833513-0671-42c0-a087-7704454160a9",
+ CellID->38303248],
+Cell[84694, 2184, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"eb0746bc-26bf-422b-bb9f-dbf7cf558d30"],
+Cell[84728, 2186, 208, 7, 70, "MoreAbout",ExpressionUUID->"78fd7a68-a0fc-442d-94aa-fe69ea8c616f",
+ CellID->1431618375]
+}, Open  ]],
+Cell[84951, 2196, 23, 0, 70, "FooterCell",ExpressionUUID->"0b755727-acac-4891-9138-55ef646409d3"]
+}
+]
+*)
+
+(* End of internal cache information *)

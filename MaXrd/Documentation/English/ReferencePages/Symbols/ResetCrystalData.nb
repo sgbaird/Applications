@@ -1,0 +1,513 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17060,        504]
+NotebookOptionsPosition[     12213,        394]
+NotebookOutlinePosition[     14391,        451]
+CellTagsIndexPosition[     14306,        446]
+WindowTitle->ResetCrystalData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$CrystalData"], "\<\"ImportCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ImportCrystalData"], "\<\"ExportCrystalData\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/ExportCrystalData"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/ResetCrystalData\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/ResetCrystalData"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+ResetCrystalData.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$34369], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/ResetCrystalData", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ResetCrystalData", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["ResetCrystalData"]], "paclet:MaXrd/ref/ResetCrystalData"},
+        
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", "]"}]], "InlineFormula"],
+     " \[LineSeparator]resets ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " to demo content."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->803247637],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "This function copies the supporting file ",
+ StyleBox["CrystalDataDemo.m", "InlineCode"],
+ " to the ",
+ StyleBox["UserData", "InlineCode"],
+ " directory as ",
+ StyleBox["CrystalData.m", "InlineCode"],
+ " and sets ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " to the contents of this file. The keys are returned."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1100830017],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1078476814],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ResetCrystalData", "[", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->829080794],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Aluminium\"\>", ",", "\<\"Austenite\"\>", 
+   ",", "\<\"CalciumFluoride\"\>", ",", "\<\"Cobalt(II)Fluoride\"\>", 
+   ",", "\<\"Copper\"\>", ",", "\<\"CopperTungstenOxide\"\>", 
+   ",", "\<\"Corundum\"\>", ",", "\<\"Diamond\"\>", ",", "\<\"Ferrite\"\>", 
+   ",", "\<\"GalliumArsenide\"\>", ",", "\<\"Germanium\"\>", 
+   ",", "\<\"Glycyl-L-alanine\"\>", ",", "\<\"Ice\"\>", 
+   ",", "\<\"LanthanumHexaboride\"\>", ",", "\<\"LithiumCobaltate\"\>", 
+   ",", "\<\"LithiumManganesePhosphate\"\>", ",", "\<\"ManganeseSilicon\"\>", 
+   ",", "\<\"Nickel\"\>", ",", "\<\"OxalicAcid\"\>", 
+   ",", "\<\"Perovskite\"\>", ",", "\<\"Polonium\"\>", 
+   ",", "\<\"PrussianBlue\"\>", ",", "\<\"Quartz\"\>", ",", "\<\"Silicon\"\>",
+    ",", "\<\"Silver\"\>", ",", "\<\"Sodalite\"\>", 
+   ",", "\<\"SodiumChloride\"\>", ",", "\<\"Sphalerite\"\>", 
+   ",", "\<\"Tungsten\"\>", ",", "\<\"Zinc\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->82547741]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1592531934],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ResetCrystalData", "::", "DemoDataNotFound"}], "=", 
+    "\"\<Demo data not found.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "ResetCrystalData"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->394278366],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ResetCrystalData", "[", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"demoFile", ",", "newDataFile"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"demoFile", "=", 
+      RowBox[{"FileNameJoin", "[", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{
+        "$MaXrdPath", ",", "\"\<Core\>\"", ",", "\"\<Data\>\"", ",", 
+         "\"\<CrystalDataDemo.m\>\""}], "}"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"FileExistsQ", "@", "demoFile"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ResetCrystalData", "::", "DemoDataNotFound"}], "]"}], ";", 
+        RowBox[{"Return", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"newDataFile", "=", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+        "$MaXrdPath", ",", "\"\<UserData\>\"", ",", "\"\<CrystalData.m\>\""}],
+         "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"CopyFile", "[", 
+      RowBox[{"demoFile", ",", "newDataFile", ",", 
+       RowBox[{"OverwriteTarget", "\[Rule]", "True"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"$CrystalData", "=", 
+      RowBox[{"Import", "@", "newDataFile"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Keys", "@", "$CrystalData"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1649446367]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ExportCrystalData"]], "paclet:MaXrd/ref/ExportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1197832218]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ResetCrystalData",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 16, 1.314677}", 
+    "history" -> {"2.0", "2.1.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", "status" -> 
+    "None", "summary" -> 
+    "ResetCrystalData[] resets $CrystalData to demo content.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "ResetCrystalData", 
+    "titlemodifier" -> "", "windowtitle" -> "ResetCrystalData", "type" -> 
+    "Symbol", "uri" -> "MaXrd/ref/ResetCrystalData", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6545, 200, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"1a9273b4-2175-4243-9465-51b5256927e6",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1100830017]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 14107, 439}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[588, 21, 3805, 94, 70, "AnchorBarGrid",ExpressionUUID->"bd6729e3-9c9e-49c1-b9a1-195399461621",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4418, 119, 173, 6, 70, "ObjectNameGrid",ExpressionUUID->"236acb32-04c3-4aaf-82c2-8cae9fbd3379"],
+Cell[4594, 127, 679, 22, 70, "Usage",ExpressionUUID->"7030e043-b256-426f-9d81-b0ff2e7b7935",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5310, 154, 629, 19, 70, "NotesSection",ExpressionUUID->"31054294-521f-4258-8d6b-f16c436c9b7a",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->803247637],
+Cell[5942, 175, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"25c9df33-d8c1-4dcf-9fea-826a7c610c9a"],
+Cell[5976, 177, 498, 16, 70, "Notes",ExpressionUUID->"fcc1ff99-23a5-4e7a-82c0-ef2907b45268",
+ CellID->1067943069],
+Cell[6477, 195, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"2f4c8222-9303-44f7-b4f8-a72bf99475c4"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6545, 200, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"1a9273b4-2175-4243-9465-51b5256927e6",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1100830017],
+Cell[CellGroupData[{
+Cell[6838, 214, 196, 6, 70, "ExampleSection",ExpressionUUID->"7fc9e13f-2667-4709-ae0e-467c58306c04",
+ CellID->1078476814],
+Cell[CellGroupData[{
+Cell[7059, 224, 107, 3, 70, "Input",ExpressionUUID->"6e43511f-c9e1-47ed-91bd-083dd3a20467",
+ CellID->829080794],
+Cell[7169, 229, 983, 17, 70, "Output",ExpressionUUID->"5e7682ff-c594-499a-80b3-14b8dae6cc02",
+ CellID->82547741]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8201, 252, 236, 8, 70, "ExampleSection",ExpressionUUID->"1bc5bd6f-fc2b-48e3-98e6-432cc7883360",
+ CellID->1592531934],
+Cell[8440, 262, 536, 15, 70, "Input",ExpressionUUID->"9b9a6d33-0b32-4243-abf3-e3f5c5890d02",
+ InitializationCell->False,
+ CellID->394278366],
+Cell[8979, 279, 1614, 42, 70, "Input",ExpressionUUID->"d993dbb7-8abc-4299-94fb-1e94936c0cd2",
+ InitializationCell->False,
+ CellID->1649446367]
+}, Closed]],
+Cell[10608, 324, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"599ff853-8c5e-4410-9860-586885380b41"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10676, 329, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"d01596e3-f4f8-4519-997b-9604af890950",
+ CellID->1255426704],
+Cell[10829, 338, 904, 28, 70, "SeeAlso",ExpressionUUID->"20a08198-9e1e-4fdf-a5c4-d7830b0cbac1",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11770, 371, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"276f135e-b82c-45fd-9181-cd4c96d6c590",
+ CellID->38303248],
+Cell[11929, 380, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"dd02e2b0-3e7d-4712-ac36-15016b69d12e"],
+Cell[11963, 382, 208, 7, 70, "MoreAbout",ExpressionUUID->"e0d994c6-55b7-4b5a-9bca-e9763010cc66",
+ CellID->1197832218]
+}, Open  ]],
+Cell[12186, 392, 23, 0, 70, "FooterCell",ExpressionUUID->"2ceeee72-5694-4056-aaf2-232e9484ce62"]
+}
+]
+*)
+
+(* End of internal cache information *)

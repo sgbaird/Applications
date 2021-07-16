@@ -1,0 +1,719 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     22100,        710]
+NotebookOptionsPosition[     13325,        521]
+NotebookOutlinePosition[     15721,        582]
+CellTagsIndexPosition[     15678,        579]
+WindowTitle->Tutorials and references in the MaXrd package
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD PACKAGE OVERVIEW", "PacletNameCell"], Cell[TextData[Cell[
+    BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"MaXrd/tutorial/TutorialsMainPage\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["MaXrd/tutorial/TutorialsMainPage"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/MaXrd/tutorial/\
+TutorialsMainPage.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$56457], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "MaXrd/tutorial/TutorialsMainPage", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Tutorials and references in the ",
+ StyleBox["MaXrd",
+  FontSlant->"Italic"],
+ " package"
+}], "TOCDocumentTitle",
+ CellID->509267359],
+
+Cell[CellGroupData[{
+
+Cell["Demonstrations", "TOCChapter",
+ CellID->165482212],
+
+Cell[CellGroupData[{
+
+Cell["Computations in crystallography", "TOCSection",
+ CellID->338542636],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Basic computations"]], 
+   "paclet:MaXrd/tutorial/BasicComputations"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->1958517875],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Unit cell volume"]], 
+   "paclet:MaXrd/tutorial/BasicComputations#1917736857"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->180583909],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Conversion from crystal to Cartesian coordinates"]], 
+   "paclet:MaXrd/tutorial/BasicComputations#1414705525"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->679365352],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Distance between two points (bond distances)"]], 
+   "paclet:MaXrd/tutorial/BasicComputations#1880299559"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->2070403612]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Symmetry calculations"]], 
+   "paclet:MaXrd/tutorial/SymmetryCalculations"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->1473393171],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Working with symmetry equivalent positions"]], 
+   "paclet:MaXrd/tutorial/SymmetryCalculations#761365812"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->685091440],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Working with symmetry equivalent reflections"]], 
+   "paclet:MaXrd/tutorial/SymmetryCalculations#1225706792"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->1672000513]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Computations on reflections"]], 
+   "paclet:MaXrd/tutorial/ComputationsOnReflections"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->1489100996],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Generating lists of reflections"]], 
+   "paclet:MaXrd/tutorial/ComputationsOnReflections#452856133"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->546017634],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Formatting the reflections"]], 
+   "paclet:MaXrd/tutorial/ComputationsOnReflections#138763261"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->720751007],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Working with formatted strings"]], 
+   "paclet:MaXrd/tutorial/ComputationsOnReflections#1476721470"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->996265132]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Working with crystal data", "TOCSection",
+ CellID->616394625],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Importing crystal data"]], 
+   "paclet:MaXrd/tutorial/ImportingCrystalData"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->1854405569],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Storing crystal data"]], 
+   "paclet:MaXrd/tutorial/ImportingCrystalData#838308732"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->564229272],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Importing data manually"]], 
+   "paclet:MaXrd/tutorial/ImportingCrystalData#1068372883"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->1732009594],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Importing data from CIF files"]], 
+   "paclet:MaXrd/tutorial/ImportingCrystalData#1880140157"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->1861072999]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Applying crystal data"]], 
+   "paclet:MaXrd/tutorial/ApplyingCrystalData"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->954575638],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["2D simulation of reciprocal space"]], 
+   "paclet:MaXrd/tutorial/ApplyingCrystalData#1321285995"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->661329531],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Atomic scattering factors"]], 
+   "paclet:MaXrd/tutorial/ApplyingCrystalData#1803163375"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->689460450],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Structure factors"]], 
+   "paclet:MaXrd/tutorial/ApplyingCrystalData#188407737"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->1483749971],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Unit cell transformation"]], 
+   "paclet:MaXrd/tutorial/ApplyingCrystalData#624426137"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->1595974543]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Using the rotation options"]], 
+   "paclet:MaXrd/tutorial/UsingRotationMaps"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->726240804],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Anchors"]], 
+   "paclet:MaXrd/tutorial/UsingRotationMaps#1783646765"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->1779626927],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["A practical example"]], 
+   "paclet:MaXrd/tutorial/UsingRotationMaps#314884389"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->37526673],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["The common auxiliary function"]], 
+   "paclet:MaXrd/tutorial/UsingRotationMaps#2139507492"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->1498084540]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Help for ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " beginners"
+}], "TOCChapter",
+ CellID->948368212],
+
+Cell[CellGroupData[{
+
+Cell["Associations", "TOCSection",
+ CellID->1221342184],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["The association structure of crystallographic data"]], 
+   "paclet:MaXrd/tutorial/TheAssociationStructureOfCrystallographicData"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->1136360016],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Examples of queries"]], 
+   "paclet:MaXrd/tutorial/TheAssociationStructureOfCrystallographicData#\
+1477290045"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->322618472],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Auxiliary tools"]], 
+   "paclet:MaXrd/tutorial/TheAssociationStructureOfCrystallographicData#\
+938345198"},
+  "RefLink",
+  BaseStyle->"TOCSubsubsection"]], "TOCSubsubsection",
+ CellID->1872195356]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conditions", "TOCSection",
+ CellID->729251478],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Quick guide to conditions"]], 
+   "paclet:MaXrd/tutorial/QuickGuideToConditions"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->409973445]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["References and tables", "TOCChapter",
+ CellID->768438878],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Formulas in crystallography"]], 
+   "paclet:MaXrd/tutorial/FormulasInCrystallography"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection",
+ CellID->642976882],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Metric"]], 
+   "paclet:MaXrd/tutorial/FormulasInCrystallography#2094065685"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->650067713],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Transformations"]], 
+   "paclet:MaXrd/tutorial/FormulasInCrystallography#1009956380"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->1438740102],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Interplanar spacing"]], 
+   "paclet:MaXrd/tutorial/FormulasInCrystallography#1028107788"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->239029094],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Reciprocal space"]], 
+   "paclet:MaXrd/tutorial/FormulasInCrystallography#2061967728"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->1567562968],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Unit conversions"]], 
+   "paclet:MaXrd/tutorial/FormulasInCrystallography#1527015657"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->224665720],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Scattering"]], 
+   "paclet:MaXrd/tutorial/FormulasInCrystallography#1353088845"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->680504614]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData[
+     Cell[
+     "References", "TOCSection", ExpressionUUID -> 
+      "031ac73e-c73a-40fc-9990-1314ad4a35e8"]]], 
+   "paclet:MaXrd/tutorial/References"},
+  "RefLink",
+  BaseStyle->"TOCSection"]], "TOCSection",
+ CellID->1707339665],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Crystal data"]], "paclet:MaXrd/tutorial/References#746296040"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->1356567014],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData[{"Data from ", 
+      StyleBox[
+      "International Tables for Crystallography", FontSlant -> "Italic"]}]], 
+   "paclet:MaXrd/tutorial/References#1837080108"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->2135407746],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Data from miscellaneous sources"]], 
+   "paclet:MaXrd/tutorial/References#1666510947"},
+  "RefLink",
+  BaseStyle->"TOCSubsection"]], "TOCSubsection",
+ CellID->1051278358]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Tutorials and references in the MaXrd package",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 18, 5.229350}", 
+    "history" -> {"XX", "2.1.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Package Overview", "language" -> "en", "paclet" -> "MaXrd Package",
+     "status" -> "None", "summary" -> 
+    "Demonstrations Help for Mathematica beginners References and tables", 
+    "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$56371, "title" -> 
+    "Tutorials and references in the MaXrd package", "titlemodifier" -> "", 
+    "windowtitle" -> "Tutorials and references in the MaXrd package", "type" -> 
+    "Overview", "uri" -> "MaXrd/tutorial/TutorialsMainPage"}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TOCSubsubsection"], 
+    CellGroupingRules -> {"SectionGrouping", 69}], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[617, 21, 2328, 54, 70, "AnchorBarGrid",ExpressionUUID->"7e88bd82-f0e8-448f-9fe3-a0caede963ab",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2970, 79, 151, 6, 70, "TOCDocumentTitle",ExpressionUUID->"38587889-c742-4d61-a740-1f4900bd637b",
+ CellID->509267359],
+Cell[CellGroupData[{
+Cell[3146, 89, 56, 1, 70, "TOCChapter",ExpressionUUID->"e312dc6e-6e21-469c-847f-c4883fcda253",
+ CellID->165482212],
+Cell[CellGroupData[{
+Cell[3227, 94, 73, 1, 70, "TOCSection",ExpressionUUID->"23bdbe5c-4c6b-4015-b83c-98b580427d7d",
+ CellID->338542636],
+Cell[CellGroupData[{
+Cell[3325, 99, 205, 7, 70, "TOCSubsection",ExpressionUUID->"87b4341c-be0a-40a1-a001-46f681119b2a",
+ CellID->1958517875],
+Cell[3533, 108, 219, 7, 70, "TOCSubsubsection",ExpressionUUID->"9ce0fbe6-0300-48bd-bf25-56b859f1a9aa",
+ CellID->180583909],
+Cell[3755, 117, 251, 7, 70, "TOCSubsubsection",ExpressionUUID->"4953c54c-697b-43e1-83ea-2afd7c307778",
+ CellID->679365352],
+Cell[4009, 126, 248, 7, 70, "TOCSubsubsection",ExpressionUUID->"d7fad53d-875b-4a17-835b-76cf809e19f3",
+ CellID->2070403612]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4294, 138, 211, 7, 70, "TOCSubsection",ExpressionUUID->"fd66d07d-b960-4a33-bf5e-0f10140740e9",
+ CellID->1473393171],
+Cell[4508, 147, 247, 7, 70, "TOCSubsubsection",ExpressionUUID->"fadc59c9-9241-430f-a23c-7c5d2bbf2faa",
+ CellID->685091440],
+Cell[4758, 156, 251, 7, 70, "TOCSubsubsection",ExpressionUUID->"d3962c55-838c-4a64-b5c8-04343085f572",
+ CellID->1672000513]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5046, 168, 222, 7, 70, "TOCSubsection",ExpressionUUID->"156b9bf2-e81f-4399-9d4f-c371ead42b24",
+ CellID->1489100996],
+Cell[5271, 177, 241, 7, 70, "TOCSubsubsection",ExpressionUUID->"0318ae47-7884-40d3-8d06-562f75982435",
+ CellID->546017634],
+Cell[5515, 186, 236, 7, 70, "TOCSubsubsection",ExpressionUUID->"229a1688-b1ab-4ba6-b7ed-24287bdfea6d",
+ CellID->720751007],
+Cell[5754, 195, 241, 7, 70, "TOCSubsubsection",ExpressionUUID->"318b922e-42a4-4ea4-89c8-4c23f293159d",
+ CellID->996265132]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6044, 208, 67, 1, 70, "TOCSection",ExpressionUUID->"280a5eaa-9426-4da5-9077-9ba9f644e658",
+ CellID->616394625],
+Cell[CellGroupData[{
+Cell[6136, 213, 212, 7, 70, "TOCSubsection",ExpressionUUID->"1a4e34d5-86d1-4ec7-82ae-9203c6bf1de7",
+ CellID->1854405569],
+Cell[6351, 222, 225, 7, 70, "TOCSubsubsection",ExpressionUUID->"8eaba9fb-7d05-4b8f-ba0c-0548bfe30e95",
+ CellID->564229272],
+Cell[6579, 231, 230, 7, 70, "TOCSubsubsection",ExpressionUUID->"a7db5859-79d1-4e3c-8125-2cc1a78bbb8d",
+ CellID->1732009594],
+Cell[6812, 240, 236, 7, 70, "TOCSubsubsection",ExpressionUUID->"088b3c0d-5774-4596-b711-365f82b5e296",
+ CellID->1861072999]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7085, 252, 209, 7, 70, "TOCSubsection",ExpressionUUID->"efab546f-bf16-41a2-8c49-47e8805bdda2",
+ CellID->954575638],
+Cell[7297, 261, 238, 7, 70, "TOCSubsubsection",ExpressionUUID->"e9de0fee-1559-4972-b360-a27e54f00be8",
+ CellID->661329531],
+Cell[7538, 270, 230, 7, 70, "TOCSubsubsection",ExpressionUUID->"53c5f0a4-16c4-43dd-bbe1-3abbe8bccf0b",
+ CellID->689460450],
+Cell[7771, 279, 222, 7, 70, "TOCSubsubsection",ExpressionUUID->"0f1ae2f8-0072-48cd-85b7-8436b6265a50",
+ CellID->1483749971],
+Cell[7996, 288, 229, 7, 70, "TOCSubsubsection",ExpressionUUID->"4611bc93-7bb6-4691-ad4a-c61b550b8c18",
+ CellID->1595974543]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8262, 300, 212, 7, 70, "TOCSubsection",ExpressionUUID->"f48c5c7e-424d-43ac-8560-93d4877c3de3",
+ CellID->726240804],
+Cell[8477, 309, 211, 7, 70, "TOCSubsubsection",ExpressionUUID->"802eb6c2-aa4a-43ef-8b40-b385edf4d750",
+ CellID->1779626927],
+Cell[8691, 318, 220, 7, 70, "TOCSubsubsection",ExpressionUUID->"0ee631d1-6c84-47df-b3ae-260b89e1916b",
+ CellID->37526673],
+Cell[8914, 327, 233, 7, 70, "TOCSubsubsection",ExpressionUUID->"4a1c4e20-b23c-460f-9381-4193a0ad2dc7",
+ CellID->1498084540]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9208, 341, 130, 6, 70, "TOCChapter",ExpressionUUID->"377b7986-87cf-45ba-8ba0-ca0b55649c8c",
+ CellID->948368212],
+Cell[CellGroupData[{
+Cell[9363, 351, 55, 1, 70, "TOCSection",ExpressionUUID->"3d7abed4-3a29-4575-a429-d1f2b96c1bb7",
+ CellID->1221342184],
+Cell[CellGroupData[{
+Cell[9443, 356, 265, 7, 70, "TOCSubsection",ExpressionUUID->"b63bab30-0b28-4e10-a45d-08d167dd3a6e",
+ CellID->1136360016],
+Cell[9711, 365, 252, 8, 70, "TOCSubsubsection",ExpressionUUID->"274e3851-46ff-4fc7-81a3-ac77a7abeec6",
+ CellID->322618472],
+Cell[9966, 375, 248, 8, 70, "TOCSubsubsection",ExpressionUUID->"9983187d-d3a9-4d0e-b81c-60a5babd2658",
+ CellID->1872195356]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10263, 389, 52, 1, 70, "TOCSection",ExpressionUUID->"fb3ca8a2-077c-4606-a35b-da81f51c9fae",
+ CellID->729251478],
+Cell[10318, 392, 216, 7, 70, "TOCSubsection",ExpressionUUID->"05b9a08f-4292-4d48-af65-fccaf04fbd7b",
+ CellID->409973445]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10583, 405, 63, 1, 70, "TOCChapter",ExpressionUUID->"fb7ee85e-1528-441c-ab2b-128c88f07cac",
+ CellID->768438878],
+Cell[CellGroupData[{
+Cell[10671, 410, 215, 7, 70, "TOCSection",ExpressionUUID->"ebc627b7-be46-4a16-a7b7-caa174d35407",
+ CellID->642976882],
+Cell[10889, 419, 211, 7, 70, "TOCSubsection",ExpressionUUID->"227a6470-7ac6-4af0-a228-b45347591f53",
+ CellID->650067713],
+Cell[11103, 428, 221, 7, 70, "TOCSubsection",ExpressionUUID->"6bbadd83-c9ea-4bed-92e3-f15f52330853",
+ CellID->1438740102],
+Cell[11327, 437, 224, 7, 70, "TOCSubsection",ExpressionUUID->"02a64768-673d-400c-9ec1-7745fa962713",
+ CellID->239029094],
+Cell[11554, 446, 222, 7, 70, "TOCSubsection",ExpressionUUID->"30ad3bf9-b61e-46dc-930d-79f3b81d8d96",
+ CellID->1567562968],
+Cell[11779, 455, 221, 7, 70, "TOCSubsection",ExpressionUUID->"d0675b5b-a7dd-424b-8e21-f5d4b9e7a696",
+ CellID->224665720],
+Cell[12003, 464, 215, 7, 70, "TOCSubsection",ExpressionUUID->"8096d1ad-8508-42e4-bd1d-e7a07f98e390",
+ CellID->680504614]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12255, 476, 281, 10, 70, "TOCSection",ExpressionUUID->"d448eeb0-ac8c-4963-922b-9ec313fd7267",
+ CellID->1707339665],
+Cell[12539, 488, 198, 6, 70, "TOCSubsection",ExpressionUUID->"40e5b869-6598-47f7-8640-1c9b0f5fe647",
+ CellID->1356567014],
+Cell[12740, 496, 294, 9, 70, "TOCSubsection",ExpressionUUID->"141b0952-8cee-493d-9513-d65be4d7fdf4",
+ CellID->2135407746],
+Cell[13037, 507, 222, 7, 70, "TOCSubsection",ExpressionUUID->"9634ede3-b604-4499-84e0-1dd16f8d1a77",
+ CellID->1051278358]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[13298, 519, 23, 0, 70, "FooterCell",ExpressionUUID->"eb9648be-f15d-45e2-9cc6-4dcf438aadbe"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,2621 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     91793,       2612]
+NotebookOptionsPosition[     78652,       2324]
+NotebookOutlinePosition[     80979,       2383]
+CellTagsIndexPosition[     80893,       2378]
+WindowTitle->ExpandCrystal
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$CrystalData"], "\<\"CrystalPlot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/CrystalPlot"], "\<\"EmbedStructure\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/EmbedStructure"], "\<\"SynthesiseStructure\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SynthesiseStructure"], "\<\"DistortStructure\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/DistortStructure"], \
+"\<\"SimulateDiffractionPattern\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SimulateDiffractionPattern"], \
+"\<\"SymmetryEquivalentPositions\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentPositions"], \
+"\<\"UnitCellTransformation\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/UnitCellTransformation"], "\<\"DomainPlot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/DomainPlot"], "\<\"InputCheck\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/InputCheck"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/ExpandCrystal\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/ExpandCrystal"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+ExpandCrystal.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$18637], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/ExpandCrystal", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ExpandCrystal", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["ExpandCrystal"]], "paclet:MaXrd/ref/ExpandCrystal"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["crystal", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]expands the asymmetric unit of ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " to the complete the unit cell."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["ExpandCrystal"]], "paclet:MaXrd/ref/ExpandCrystal"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["crystal", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["A", "TI"], ",", 
+          StyleBox["B", "TI"], ",", 
+          StyleBox["C", "TI"]}], "}"}]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]completes the unit cell of ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " and expands it to a structure of ",
+     Cell[BoxData[
+      StyleBox[
+       RowBox[{"A", "\[Times]", "B", "\[Times]", "C"}], "TI"]], 
+      "InlineFormula"],
+     " unit cells."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1691014474],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["Options:", "Notes",
+ CellID->1067943069],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<DataFile\>\"", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+      "$MaXrdPath", ",", "\"\<UserData\>\"", ",", "\"\<CrystalData.m\>\""}], 
+      "}"}], "]"}], Cell["path to data file", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<ExpandIntoNegative\>\"", 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[TextData[{
+     "whether to place the origin at the middle of the new structure (True) \
+or at the ",
+     Cell[BoxData[
+      FormBox[
+       RowBox[{"(", 
+        RowBox[{"0", ",", "0", ",", "0"}]}], TraditionalForm]], "InlineMath"],
+     
+     StyleBox[")",
+      Deletable->True],
+     " corner (False)"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<FirstTransformTo\>\"", 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[TextData[{
+     "apply",
+     " ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["UnitCellTransformation"]], 
+        "paclet:MaXrd/ref/UnitCellTransformation"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " ",
+     "before",
+     " ",
+     "expanding"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<IgnoreSymmetry\>\"", 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[
+    "whether to skip symmetry expansion of coordinates", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<IncludeBoundary\>\"", 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[
+    "include atoms generated on the outer boundary", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<NewLabel\>\"", "\"\<\>\"", Cell[
+    "set a custom crystal label", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<StoreTemporarily\>\"", 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[TextData[{
+     "wheter",
+     " ",
+     "to",
+     " ",
+     "store",
+     " ",
+     "the",
+     " ",
+     "new",
+     " ",
+     "crystal",
+     " ",
+     "in",
+     " ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " ",
+     "or",
+     " ",
+     "temporarily"
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, 
+   "Rows" -> {None, None, None, None, None, None, {None}}},
+ GridBoxDividers->{
+  "Rows" -> {{True, True, True, True, True, True, True, True}}}},
+ CellID->1156542953],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(8)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1081680120],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1348704985],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"example", "=", 
+  RowBox[{"ExpandCrystal", "[", 
+   RowBox[{"\"\<SodiumChloride\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "3", ",", "2"}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1063979777],
+
+Cell[BoxData["\<\"SodiumChloride_4x3x2\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1619885683]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalPlot", "[", "example", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1344989026],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 0, 0], Arrow3DBox[Line3DBox[{{0, 0, 0}, {5.64, 0., 0.}}]]}, 
+   {RGBColor[0, 1, 0], Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 5.64, 0.}}]]}, 
+   {RGBColor[0, 0, 1], Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 0., 5.64}}]]}, 
+   {GrayLevel[0], Line3DBox[{{0., 5.64, 0.}, {5.64, 5.64, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{5.64, 0., 0.}, {5.64, 5.64, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{5.64, 0., 0.}, {5.64, 0., 5.64}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 5.64, 0.}, {0., 5.64, 5.64}}]}, 
+   {GrayLevel[0], Line3DBox[{{5.64, 5.64, 0.}, {5.64, 5.64, 5.64}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 5.64}, {5.64, 0., 5.64}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 5.64}, {0., 5.64, 5.64}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 5.64, 5.64}, {5.64, 5.64, 5.64}}]}, 
+   {GrayLevel[0], Line3DBox[{{5.64, 0., 5.64}, {5.64, 5.64, 5.64}}]}, 
+   {RGBColor[0.658708, 0.492173, 0.842842], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJyFljFKBEEQRQeFDTzAhLImhYFBw8JkwlxBYyPBWC9hvDcw8RImJl5iD7Gx
+uaI0Tb/6f3tAZLurf9Xvql/VV4/P909n0zS9/f6dT/7bf31fP+w3a/0/2qfd
+6XNzOlfXef5493H5etwm/Lqu8cPgB/C9P+IyDsat+c9pv8dp/uu69jOnuHrc
+MPjky9+bdff33SS+dd3do+YbiW+P0/jWdc03DN9I/nv8xu//fDH5LaaeislX
+SfH09pH4ubrR+duk/DFuXa+zrRdXd5pHrkfmQed/TuecHxcv/Z/mMSceo33a
+uXPkSx3Rjnypo2pPHWlc8o0UL3VEfBe35htpnzrq/ReT35Lip45or/NBHbX7
+rR/vkXVKHel8+Dmg+53vr8Qf9V2Nz37m++NIl7o+vF51//U6IP5IHxqffCPx
+1XnL96fr1d8r8UfxEn/EQ+NTZ8XklzqKpCPaa50X669+txeH95fP3WD+NR1V
+e+pIz9d5Jb7WedMR8dkvWAcaP98X+br5TR31+PkdQB0Rn3ypI+LrftrqUuPn
+fJOv7k8l6aiPh30uv2+IT77UEfE130h8tf5Kqov+flhfJd0r7fV8YlxL0lFd
+p15o3+dzQXxbYx+w57tsMe+yBfXT/Or3Ae3pl3NsMXNswfnmV88B2gfipO4X
+ow+ux/oDCBGNDw==
+     "], 1.66]}, 
+   {RGBColor[0.412698, 0.932689, 0.166398], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJyNljFKBEEQRQeFDTzAhDImjYFBw8JkwlxBYyPBWC9hvCcw8hImJl7CQ2xs
+7iIUTb//i3ZgWabmT1X9qvrVc/X4fP90Nk3T2+l3fvodvn6uHw67jf8TrtFz
+4rL3jncfl6/HRd4Pu39/TvzNCb4k+CJ5ZPF8XVoezJvxwu6fzxK/j9vi9Djm
+NW/k2+Mb3/3fdZPWy/NtfuMKP+Qbds+3JHyL8O3zJN8iefV41qEKr7D7PlbJ
+s/czJ/aMn87NSAfZXPu8FvE/mrtsjrK+ZX1gnGyOR/lm8enf62AePvd603vy
+pY7injry75Mv99G8UUf0n+Xn+bJP80YdeXxJ8KxDFV7UEfG+fzXpW9ORr6/u
+I+4dr6PWj7DTf9Yn9sPriHtT++rrvRO+o/3o9zh1VERH9J/NjZ9v6oh7TueM
+fBkv8L7PWqdsv9Mf+fq6al7Z3Pt5zHRSEjzjVeHldVRER8QzH+ro9uL7/eVz
+Pzz/wh546oh5h53+s70QdvrP9kvYPV7rSL7/Pb/7/Hl+VtER/Y/2Gv1n+5F8
+vd6Ib3z9PquYP/LV7yTqiP6zfe356vlBHXl8SfCsQxVefu6q1I945uPrt4pe
+wk5dEN/3reH7PtNeYOf315p8r62o+yJ4xvX7ccV9i+vPtxV9WgTPuH5PrtJf
+2sP/L6mFiDE=
+     "], 1.02]}},
+  ControllerMethod -> Automatic,
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  Axes->False,
+  AxesEdge->Automatic,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  BoxRatios->Automatic,
+  BoxStyle->{},
+  Boxed->False,
+  ClipPlanes->None,
+  ClipPlanesStyle->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  ControllerLinking->False,
+  ControllerPath->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FaceGrids->None,
+  FaceGridsStyle->{},
+  FormatType->TraditionalForm,
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Lighting->"Neutral",
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotationAction->"Fit",
+  SphericalRegion->True,
+  Ticks->Automatic,
+  TicksStyle->{},
+  TouchscreenAutoZoom->False,
+  ViewAngle->Automatic,
+  ViewCenter->Automatic,
+  ViewMatrix->Automatic,
+  ViewPoint->{1.3, -2.4, 2.},
+  ViewProjection->Automatic,
+  ViewRange->All,
+  ViewVector->Automatic,
+  ViewVertical->{0, 0, 1}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->906960638]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$CrystalData", "[", 
+  RowBox[{"example", ",", "\"\<Notes\>\""}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1273554630],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"StructureSize\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "3", ",", "2"}], "}"}]}], ",", 
+   RowBox[{"\<\"UnitCellAtomsCount\"\>", "\[Rule]", "8"}], ",", 
+   RowBox[{"\<\"AsymmetricUnitAtomsCount\"\>", "\[Rule]", "2"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->202299179]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(6)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"ExpandIntoNegative\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->856730099],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"crystal", "=", "\"\<Silicon\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"CrystalPlot", "[", 
+    RowBox[{
+     RowBox[{"ExpandCrystal", "[", 
+      RowBox[{"crystal", ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "3", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"\"\<ExpandIntoNegative\>\"", "\[Rule]", "tf"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ViewPoint", "\[Rule]", "Above"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"tf", ",", 
+     RowBox[{"{", 
+      RowBox[{"False", ",", "True"}], "}"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1646386456],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   Graphics3DBox[{
+     {RGBColor[1, 0, 0], 
+      Arrow3DBox[Line3DBox[{{0, 0, 0}, {5.43088, 0., 0.}}]]}, 
+     {RGBColor[0, 1, 0], 
+      Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 5.43088, 0.}}]]}, 
+     {RGBColor[0, 0, 1], 
+      Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 0., 5.43088}}]]}, 
+     {GrayLevel[0], Line3DBox[{{0., 5.43088, 0.}, {5.43088, 5.43088, 0.}}]}, 
+     {GrayLevel[0], Line3DBox[{{5.43088, 0., 0.}, {5.43088, 5.43088, 0.}}]}, 
+     {GrayLevel[0], Line3DBox[{{5.43088, 0., 0.}, {5.43088, 0., 5.43088}}]}, 
+     {GrayLevel[0], Line3DBox[{{0., 5.43088, 0.}, {0., 5.43088, 5.43088}}]}, 
+     {GrayLevel[0], 
+      Line3DBox[{{5.43088, 5.43088, 0.}, {5.43088, 5.43088, 5.43088}}]}, 
+     {GrayLevel[0], Line3DBox[{{0., 0., 5.43088}, {5.43088, 0., 5.43088}}]}, 
+     {GrayLevel[0], Line3DBox[{{0., 0., 5.43088}, {0., 5.43088, 5.43088}}]}, 
+     {GrayLevel[0], 
+      Line3DBox[{{0., 5.43088, 5.43088}, {5.43088, 5.43088, 5.43088}}]}, 
+     {GrayLevel[0], 
+      Line3DBox[{{5.43088, 0., 5.43088}, {5.43088, 5.43088, 5.43088}}]}, 
+     {RGBColor[0.941176, 0.784314, 0.627451], Opacity[1.], 
+      SphereBox[CompressedData["
+1:eJyFky9IQ1EchS8zGExDgwiCg+kQBME0LD6DINrWdSJo9A+IbTIQZhOTRZGV
+2bZmEAzDqtUkyIoIVru48hm+y+WFx+V3OPC+e37nlnYPa3uFEML68BsZfmeh
+dlN9/Fzxedece25VxrK8OXXiO+h/XRQL49l2s3HyvRH+T3SfKV9q5j+X2VOv
+fjQZ8aGba7+99Nu4L0Xc6Obv9q/euh/TEcfp4LbY2SpHXPit4zd/a2Z09nWi
+EvGjm7/Tft+cOl+I+NHNf71zXP15mY/4HwZr9dXlxYgTv3X8zM7d+ebtw7n7
+ns7LObo/qT2l9gGP7wGPeZnNy+x7w2kudN8Dn3mZnQc87g8c7g9+9we/+8P/
+3B909wdO9wfd/TG3+533Htx798f/c4/dn9Q7Sb0HeNwfeNwf/O4PfvcHTvcH
+3f2B0/1Bd3/g8R7gcd7MzpvZe4PTuaJ7D/icN7P3+QesNM1H
+       "], 1.11]}},
+    ControllerMethod -> Automatic,
+    AlignmentPoint->Center,
+    AspectRatio->Automatic,
+    Axes->False,
+    AxesEdge->Automatic,
+    AxesLabel->None,
+    AxesOrigin->Automatic,
+    AxesStyle->{},
+    Background->None,
+    BaseStyle->{},
+    BaselinePosition->Automatic,
+    BoxRatios->Automatic,
+    BoxStyle->{},
+    Boxed->False,
+    ClipPlanes->None,
+    ClipPlanesStyle->Automatic,
+    ColorOutput->Automatic,
+    ContentSelectable->Automatic,
+    ControllerLinking->False,
+    ControllerPath->Automatic,
+    CoordinatesToolOptions:>Automatic,
+    DisplayFunction->Identity,
+    Epilog->{},
+    FaceGrids->None,
+    FaceGridsStyle->{},
+    FormatType->TraditionalForm,
+    ImageMargins->0.,
+    ImagePadding->All,
+    ImageSize->Automatic,
+    ImageSizeRaw->Automatic,
+    LabelStyle->{},
+    Lighting->"Neutral",
+    Method->Automatic,
+    PlotLabel->None,
+    PlotRange->All,
+    PlotRangePadding->Automatic,
+    PlotRegion->Automatic,
+    PreserveImageOptions->Automatic,
+    Prolog->{},
+    RotationAction->"Fit",
+    SphericalRegion->True,
+    Ticks->Automatic,
+    TicksStyle->{},
+    TouchscreenAutoZoom->False,
+    ViewAngle->Automatic,
+    ViewCenter->Automatic,
+    ViewMatrix->Automatic,
+    ViewPoint->Above,
+    ViewProjection->Automatic,
+    ViewRange->All,
+    ViewVector->Automatic,
+    ViewVertical->{0, 0, 1}], ",", 
+   Graphics3DBox[{
+     {RGBColor[1, 0, 0], 
+      Arrow3DBox[Line3DBox[{{0, 0, 0}, {5.43088, 0., 0.}}]]}, 
+     {RGBColor[0, 1, 0], 
+      Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 5.43088, 0.}}]]}, 
+     {RGBColor[0, 0, 1], 
+      Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 0., 5.43088}}]]}, 
+     {GrayLevel[0], Line3DBox[{{0., 5.43088, 0.}, {5.43088, 5.43088, 0.}}]}, 
+     {GrayLevel[0], Line3DBox[{{5.43088, 0., 0.}, {5.43088, 5.43088, 0.}}]}, 
+     {GrayLevel[0], Line3DBox[{{5.43088, 0., 0.}, {5.43088, 0., 5.43088}}]}, 
+     {GrayLevel[0], Line3DBox[{{0., 5.43088, 0.}, {0., 5.43088, 5.43088}}]}, 
+     {GrayLevel[0], 
+      Line3DBox[{{5.43088, 5.43088, 0.}, {5.43088, 5.43088, 5.43088}}]}, 
+     {GrayLevel[0], Line3DBox[{{0., 0., 5.43088}, {5.43088, 0., 5.43088}}]}, 
+     {GrayLevel[0], Line3DBox[{{0., 0., 5.43088}, {0., 5.43088, 5.43088}}]}, 
+     {GrayLevel[0], 
+      Line3DBox[{{0., 5.43088, 5.43088}, {5.43088, 5.43088, 5.43088}}]}, 
+     {GrayLevel[0], 
+      Line3DBox[{{5.43088, 0., 5.43088}, {5.43088, 5.43088, 5.43088}}]}, 
+     {RGBColor[0.941176, 0.784314, 0.627451], Opacity[1.], 
+      SphereBox[CompressedData["
+1:eJyFkjFLglEUhi82NolLS4Mgtju1eUdxdFdBqLEaws1wyi3clXCpTfcg6MP/
+4BotEfgjJIfvcXg+Lt9wOZz3Hu59zjlvfXTfu6mEEDrHc3Y8d9nfrFqpZcSn
+0Ftcf/y2B9PJ474bTvrrtLl9vjqP5NyjkxN5J49feR33EZ2YvxupI1qnnnfM
+bX5y85Obn9z8/Gd++Mwpvuh+zP8SPzfDh4tofnTz365ah8l7vcCPbv51Nt+t
+vy8L/OOfZfWt3yhwUm+der3T9h5S83Z/qT3o3eRcvQfuU/P2Pu0b85flqWh+
++8e+KatL5fxj/8Bh/3Bv/xDtH/6zf9DtH+7tH3T7Bz77Bw77h3r7h3r7h//s
+H3T7B277B93+8dzNX7YP83tPnpf57Z/UnlL7gMd9wGNecvOSu284zYXuPqgz
+L7nn8Q/Yyejj
+       "], 1.11]}},
+    ControllerMethod -> Automatic,
+    AlignmentPoint->Center,
+    AspectRatio->Automatic,
+    Axes->False,
+    AxesEdge->Automatic,
+    AxesLabel->None,
+    AxesOrigin->Automatic,
+    AxesStyle->{},
+    Background->None,
+    BaseStyle->{},
+    BaselinePosition->Automatic,
+    BoxRatios->Automatic,
+    BoxStyle->{},
+    Boxed->False,
+    ClipPlanes->None,
+    ClipPlanesStyle->Automatic,
+    ColorOutput->Automatic,
+    ContentSelectable->Automatic,
+    ControllerLinking->False,
+    ControllerPath->Automatic,
+    CoordinatesToolOptions:>Automatic,
+    DisplayFunction->Identity,
+    Epilog->{},
+    FaceGrids->None,
+    FaceGridsStyle->{},
+    FormatType->TraditionalForm,
+    ImageMargins->0.,
+    ImagePadding->All,
+    ImageSize->Automatic,
+    ImageSizeRaw->Automatic,
+    LabelStyle->{},
+    Lighting->"Neutral",
+    Method->Automatic,
+    PlotLabel->None,
+    PlotRange->All,
+    PlotRangePadding->Automatic,
+    PlotRegion->Automatic,
+    PreserveImageOptions->Automatic,
+    Prolog->{},
+    RotationAction->"Fit",
+    SphericalRegion->True,
+    Ticks->Automatic,
+    TicksStyle->{},
+    TouchscreenAutoZoom->False,
+    ViewAngle->Automatic,
+    ViewCenter->Automatic,
+    ViewMatrix->Automatic,
+    ViewPoint->Above,
+    ViewProjection->Automatic,
+    ViewRange->All,
+    ViewVector->Automatic,
+    ViewVertical->{0, 0, 1}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1350081527]
+}, Open  ]],
+
+Cell["Note how the origin is different in the two cases.", "ExampleText",
+ CellID->495039477]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"FirstTransformTo\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[TextData[{
+ "In this example, we will work with the monoclinic crystal ",
+ StyleBox["oxalic acid",
+  FontSlant->"Italic"],
+ ", which has quite many choices for unit cell transformation:"
+}], "ExampleText",
+ CellID->1517531199],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"crystal", "=", "\"\<OxalicAcid\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"spcgr", "=", 
+  RowBox[{"$CrystalData", "[", 
+   RowBox[{"crystal", ",", "\"\<SpaceGroup\>\""}], "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1218477208],
+
+Cell[BoxData["\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)/n\"\>"], \
+"Output",
+ CellLabel->"Out[1]=",
+ CellID->1349705800]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "@", 
+  RowBox[{"Values", "@", 
+   RowBox[{
+    RowBox[{"GetSymmetryData", "[", 
+     RowBox[{"spcgr", ",", 
+      RowBox[{"\"\<UseMainEntry\>\"", "\[Rule]", "True"}]}], "]"}], 
+    "\[LeftDoubleBracket]", 
+    RowBox[{
+    "\"\<AlternativeSettings\>\"", ",", "All", ",", "\"\<Name\>\"", ",", 
+     "\"\<HermannMauguinFull\>\""}], "\[RightDoubleBracket]"}]}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1737308207],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"P 1 21/n 1\"\>"},
+     {"\<\"P 1 21/a 1\"\>"},
+     {"\<\"B 1 21/d 1\"\>"},
+     {"\<\"B 1 21/a 1\"\>"},
+     {"\<\"P 1 1 21/a\"\>"},
+     {"\<\"P 1 1 21/n\"\>"},
+     {"\<\"P 1 1 21/b\"\>"},
+     {"\<\"C 1 1 21/d\"\>"},
+     {"\<\"C 1 1 21/a\"\>"},
+     {"\<\"P 21/b 1 1\"\>"},
+     {"\<\"P 21/n 1 1\"\>"},
+     {"\<\"P 21/c 1 1\"\>"},
+     {"\<\"A 21/d 1 1\"\>"},
+     {"\<\"A 21/b 1 1\"\>"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellLabel->"Out[2]//TableForm=",
+ CellID->1884427805]
+}, Open  ]],
+
+Cell["\<\
+We will just complete the unit cell, but perform a unit cell transformation \
+before hand:\
+\>", "ExampleText",
+ CellID->622659190],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ExpandCrystal", "[", 
+  RowBox[{"\"\<OxalicAcid\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"\"\<FirstTransformTo\>\"", "\[Rule]", "\"\<P 1 21/a 1\>\""}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->2061521791],
+
+Cell[BoxData["\<\"OxalicAcid_1x1x1\"\>"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1611266099]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalPlot", "[", "\"\<OxalicAcid_1x1x1\>\"", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->390564574],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 0, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {11.892717883887414`, 0., 0.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 3.6081, 0.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    Arrow3DBox[
+     Line3DBox[{{0, 0, 0}, {-1.406830759479753, 0., 5.956519400974165}}]]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{0., 3.6081, 0.}, {11.892717883887414`, 3.6081, 0.}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{11.892717883887414`, 0., 0.}, {11.892717883887414`, 3.6081, 
+     0.}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{11.892717883887414`, 0., 0.}, {10.485887124407661`, 0., 
+     5.956519400974165}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{0., 3.6081, 0.}, {-1.406830759479753, 3.6081, 
+     5.956519400974165}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{11.892717883887414`, 3.6081, 0.}, {10.485887124407661`, 
+     3.6081, 5.956519400974165}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{-1.406830759479753, 0., 5.956519400974165}, {
+     10.485887124407661`, 0., 5.956519400974165}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{-1.406830759479753, 0., 
+     5.956519400974165}, {-1.406830759479753, 3.6081, 5.956519400974165}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{-1.406830759479753, 3.6081, 5.956519400974165}, {
+     10.485887124407661`, 3.6081, 5.956519400974165}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{10.485887124407661`, 0., 5.956519400974165}, {
+     10.485887124407661`, 3.6081, 5.956519400974165}}]}, 
+   {RGBColor[0.4, 0.4, 0.4], Opacity[1.], 
+    SphereBox[{{10.013928408830811`, 0.19772387999999996`, 
+     5.381715278780158}, {6.418317657520556, 2.0017738799999996`, 
+     0.5748041221940069}, {0.47195871557685065`, 3.4103761199999996`, 
+     0.5748041221940069}, {4.067569466887103, 1.6063261199999999`, 
+     5.381715278780158}}, 0.76]}, 
+   {RGBColor[0.800498, 0.201504, 0.192061], Opacity[1.], 
+    SphereBox[{{8.813627992879002, 3.3916139999999997`, 5.5794717228925}, {
+     7.618618073472365, 1.587564, 0.3770476780816646}, {1.6722591315286575`, 
+     0.21648599999999998`, 0.3770476780816646}, {2.8672690509352963`, 
+     2.020536, 5.5794717228925}, {10.416990049378038`, 0.8316670499999999, 
+     4.430459130444584}, {6.01525601697333, 2.63571705, 1.526060270529581}, {
+     0.068897075029623, 2.77643295, 1.526060270529581}, {4.470631107434331, 
+     0.9723829499999999, 4.430459130444584}, {9.233189480691546, 2.21934231, 
+     2.1967643550792717`}, {7.199056585659821, 0.41529230999999994`, 
+     3.759755045894893}, {1.2526976437161146`, 1.3887576899999998`, 
+     3.759755045894893}, {3.28683053874784, 3.1928076899999995`, 
+     2.1967643550792717`}}, 0.66]}, 
+   {RGBColor[0.65, 0.7, 0.7], Opacity[1.], 
+    SphereBox[{{8.184987442921013, 1.7870919299999999`, 
+     1.0304778563685304`}, {8.247258623430355, 3.5911419299999996`, 
+     4.926041544605634}, {2.300899681486648, 1.8210080699999998`, 
+     4.926041544605634}, {2.238628500977306, 0.01695807, 
+     1.0304778563685304`}, {6.423771312037544, 0.57260547, 
+     4.046263629081751}, {10.008474754313823`, 2.3766554699999998`, 
+     1.9102557718924147`}, {4.062115812370117, 3.03549453, 
+     1.9102557718924147`}, {0.4774123700938373, 1.2314445299999999`, 
+     4.046263629081751}, {9.369225424744204, 1.62653148, 2.708429371622953}, {
+     7.063020641607164, 3.43058148, 3.248090029351212}, {1.1166616996634569`, 
+     1.98156852, 3.248090029351212}, {3.4228664828004964`, 
+     0.17751851999999999`, 2.708429371622953}}, 0.31]}},
+  ControllerMethod -> Automatic,
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  Axes->False,
+  AxesEdge->Automatic,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  BoxRatios->Automatic,
+  BoxStyle->{},
+  Boxed->False,
+  ClipPlanes->None,
+  ClipPlanesStyle->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  ControllerLinking->False,
+  ControllerPath->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FaceGrids->None,
+  FaceGridsStyle->{},
+  FormatType->TraditionalForm,
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Lighting->"Neutral",
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotationAction->"Fit",
+  SphericalRegion->True,
+  Ticks->Automatic,
+  TicksStyle->{},
+  TouchscreenAutoZoom->False,
+  ViewAngle->Automatic,
+  ViewCenter->Automatic,
+  ViewMatrix->Automatic,
+  ViewPoint->{1.3, -2.4, 2.},
+  ViewProjection->Automatic,
+  ViewRange->All,
+  ViewVector->Automatic,
+  ViewVertical->{0, 0, 1}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->1882976594]
+}, Open  ]],
+
+Cell["\<\
+If we were to just fill the unit cell corresponding to the original space \
+group, it would look different:\
+\>", "ExampleText",
+ CellID->2089705316],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalPlot", "[", 
+  RowBox[{"\"\<OxalicAcid\>\"", ",", 
+   RowBox[{"\"\<StructureSize\>\"", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1"}], "}"}]}]}], "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->854415702],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 0, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {6.1204, 0., 0.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 3.6081, 0.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    Arrow3DBox[
+     Line3DBox[{{0, 0, 0}, {-3.3867483868917443`, 0., 
+      11.574276976290406`}}]]}, 
+   {GrayLevel[0], Line3DBox[{{0., 3.6081, 0.}, {6.1204, 3.6081, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{6.1204, 0., 0.}, {6.1204, 3.6081, 0.}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{6.1204, 0., 0.}, {2.7336516131082558`, 0., 
+     11.574276976290406`}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{0., 3.6081, 0.}, {-3.3867483868917443`, 3.6081, 
+     11.574276976290406`}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{6.1204, 3.6081, 0.}, {2.7336516131082558`, 3.6081, 
+     11.574276976290406`}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{-3.3867483868917443`, 0., 11.574276976290406`}, {
+     2.7336516131082558`, 0., 11.574276976290406`}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{-3.3867483868917443`, 0., 
+     11.574276976290406`}, {-3.3867483868917443`, 3.6081, 
+     11.574276976290406`}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{-3.3867483868917443`, 3.6081, 11.574276976290406`}, {
+     2.7336516131082558`, 3.6081, 11.574276976290406`}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{2.7336516131082558`, 0., 11.574276976290406`}, {
+     2.7336516131082558`, 3.6081, 11.574276976290406`}}]}, 
+   {RGBColor[0.4, 0.4, 0.4], Opacity[1.], 
+    SphereBox[{{5.669470997429832, 0.19772387999999996`, 
+     0.5914455534884397}, {1.817754809124296, 2.0017738799999996`, 
+     5.195692934656763}, {-2.9358193843215763`, 3.4103761199999996`, 
+     10.982831422801967`}, {0.9158968039839601, 1.6063261199999999`, 
+     6.378584041633642}}, 0.76]}, 
+   {RGBColor[0.800498, 0.201504, 0.192061], Opacity[1.], 
+    SphereBox[{{0.017432483901332785`, 3.3916139999999997`, 
+     1.7141504201886089`}, {1.349393322652795, 1.587564, 4.072988067956594}, {
+     2.716219129206923, 0.21648599999999998`, 9.860126556101797}, {
+     1.3842582904554601`, 2.020536, 7.501288908333812}, {4.651038343233207, 
+     0.8316670499999999, 0.41783139884408366`}, {2.83618746332092, 2.63571705,
+      5.369307089301119}, {-1.917386730124952, 2.77643295, 
+     11.156445577446322`}, {-0.10253585021266431`, 0.9723829499999999, 
+     6.204969886989287}, {2.7492608103594858`, 2.21934231, 
+     2.083369855732273}, {4.737964996194641, 0.41529230999999994`, 
+     3.70376863241293}, {-0.015609197251230444`, 1.3887576899999998`, 
+     9.490907120558132}, {-2.0043133830863855`, 3.1928076899999995`, 
+     7.870508343877475}}, 0.66]}, 
+   {RGBColor[0.65, 0.7, 0.7], Opacity[1.], 
+    SphereBox[{{1.855141914898435, 1.7870919299999999`, 
+     3.3715868831933955`}, {-0.488316108344307, 3.5911419299999996`, 
+     2.4155516049518075`}, {0.8785096982098208, 1.8210080699999998`, 
+     8.202690093097011}, {3.2219677214525624`, 0.01695807, 
+     9.158725371338598}, {-0.925391492825417, 0.57260547, 
+     4.392438112502209}, {2.2922172993795447`, 2.3766554699999998`, 
+     1.3947003756429939`}, {3.659043105933672, 3.03549453, 
+     7.1818388637881965`}, {0.44143431372871067`, 1.2314445299999999`, 
+     10.179576600647412`}, {3.2159562955163477`, 1.62653148, 
+     1.8333654730444002`}, {4.271269511037779, 3.43058148, 
+     3.9537730151008024`}, {-0.4823046824080923, 1.98156852, 
+     9.740911503246005}, {-1.5376178979295243`, 0.17751851999999999`, 
+     7.620503961189603}}, 0.31]}},
+  ControllerMethod -> Automatic,
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  Axes->False,
+  AxesEdge->Automatic,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  BoxRatios->Automatic,
+  BoxStyle->{},
+  Boxed->False,
+  ClipPlanes->None,
+  ClipPlanesStyle->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  ControllerLinking->False,
+  ControllerPath->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FaceGrids->None,
+  FaceGridsStyle->{},
+  FormatType->TraditionalForm,
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Lighting->"Neutral",
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotationAction->"Fit",
+  SphericalRegion->True,
+  Ticks->Automatic,
+  TicksStyle->{},
+  TouchscreenAutoZoom->False,
+  ViewAngle->Automatic,
+  ViewCenter->Automatic,
+  ViewMatrix->Automatic,
+  ViewPoint->{1.3, -2.4, 2.},
+  ViewProjection->Automatic,
+  ViewRange->All,
+  ViewVector->Automatic,
+  ViewVertical->{0, 0, 1}]], "Output",
+ CellLabel->"Out[5]=",
+ CellID->1926462334]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"IgnoreSymmetry\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->624510057],
+
+Cell[TextData[{
+ "This option can be useful if you have customised a structure's unit cell \
+and want to expand it without invoking the underlying symmetry operations. \
+The crystal will essentially have ",
+ Cell[BoxData[
+  FormBox["P1", TraditionalForm]], "InlineMath"],
+ " symmetry in the expansion process."
+}], "ExampleText",
+ CellID->1608400043],
+
+Cell["\<\
+For this demonstration, we will use the following customised cell:\
+\>", "ExampleText",
+ CellID->174500352],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalPlot", "@", 
+  RowBox[{"ExpandCrystal", "[", 
+   RowBox[{"\"\<PrussianBlue\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+    RowBox[{"\"\<IncludeBoundary\>\"", "\[Rule]", "False"}], ",", 
+    RowBox[{"\"\<NewLabel\>\"", "\[Rule]", "\"\<CustomCell\>\""}]}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->127795605],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 0, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {10.166, 0., 0.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 10.166, 0.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 0., 10.166}}]]}, 
+   {GrayLevel[0], Line3DBox[{{0., 10.166, 0.}, {10.166, 10.166, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{10.166, 0., 0.}, {10.166, 10.166, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{10.166, 0., 0.}, {10.166, 0., 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 10.166, 0.}, {0., 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{10.166, 10.166, 0.}, {10.166, 10.166, 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 10.166}, {10.166, 0., 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 10.166}, {0., 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{0., 10.166, 10.166}, {10.166, 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{10.166, 0., 10.166}, {10.166, 10.166, 10.166}}]}, 
+   {RGBColor[0.800498, 0.201504, 0.192061], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJxTTMoPSmViYGBQAGJmIP7pd6bKUITRYZHrts9/Q0Tg9GND5qkf+RUwxGE0
+rfT5f3vw/4YpKwYtI1CTzs8vB6fRxQnx0cVxyZNrD4z2tlmQc2oqO9xfDFAg
+lyuzUey+DIY4DBCrD12eWH0wdTB5mDhMHbp5hNSh20dIHcxcWPyj+x8W/+ji
+MEArfQDE8vbZ
+     "], 0.66]}, 
+   {RGBColor[0.878431, 0.4, 0.2], Opacity[1.], 
+    SphereBox[{{5.083, 0., 0.}, {0., 5.083, 0.}, {0., 0., 5.083}, {0., 5.083, 
+     5.083}, {5.083, 0., 5.083}, {5.083, 5.083, 0.}, {5.083, 5.083, 5.083}, {
+     0., 0., 0.}}, 1.32]}, 
+   {RGBColor[0.4, 0.4, 0.4], Opacity[1.], SphereBox[CompressedData["
+1:eJxTTMoPSmViYGCQAGJmIF6cxTr9hhunAwMa+Hj15ex+NhkMcRiglb4axqTt
+JRv/2S9y3fb5b4gIXF0R66mY83UKDujiMECsPnR5YvXB1MHkYeIwdejmEVKH
+bh8hdTBzYeGH7h9Y+KGLw2ha6QMA4Uu+DQ==
+     "], 0.76]}, 
+   {RGBColor[0.291989, 0.437977, 0.888609], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJxTTMoPSmViYGCQAGJmIDb46B6Y7sfgsMh12+e/ISJwOswzRT7FUQFDHEbT
+Sp/wLJVpU6I54OIMUGBlFzXHsEYGQxwGiNWHLk+sPpg6mDxMHKYO3TxC6tDt
+I6QOZi4s/ND9Dws/dHEYoJU+AA2Iojs=
+     "], 0.71]}},
+  ControllerMethod -> Automatic,
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  Axes->False,
+  AxesEdge->Automatic,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  BoxRatios->Automatic,
+  BoxStyle->{},
+  Boxed->False,
+  ClipPlanes->None,
+  ClipPlanesStyle->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  ControllerLinking->False,
+  ControllerPath->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FaceGrids->None,
+  FaceGridsStyle->{},
+  FormatType->TraditionalForm,
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Lighting->"Neutral",
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotationAction->"Fit",
+  SphericalRegion->True,
+  Ticks->Automatic,
+  TicksStyle->{},
+  TouchscreenAutoZoom->False,
+  ViewAngle->Automatic,
+  ViewCenter->Automatic,
+  ViewMatrix->Automatic,
+  ViewPoint->{1.3, -2.4, 2.},
+  ViewProjection->Automatic,
+  ViewRange->All,
+  ViewVector->Automatic,
+  ViewVertical->{0, 0, 1}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->309997473]
+}, Open  ]],
+
+Cell[TextData[{
+ "Of course, with the asymmetric unit available we can use ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ExpandCrystal"]], "paclet:MaXrd/ref/ExpandCrystal"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " normally, but if we want to expand our custom cell by simple translations, \
+we would set ",
+ Cell[BoxData["\"\<IgnoreSymmetry\>\""], "InlineFormula"],
+ " to ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["True"]], "paclet:ref/True"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". Then we avoid overlapping atoms and the procedure should be much faster."
+}], "ExampleText",
+ CellID->230644647],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalPlot", "@", 
+  RowBox[{"ExpandCrystal", "[", 
+   RowBox[{"\"\<CustomCell\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "2", ",", "1"}], "}"}], ",", 
+    RowBox[{"\"\<IgnoreSymmetry\>\"", "\[Rule]", "True"}]}], "]"}]}]], "Input",\
+
+ CellLabel->"In[2]:=",
+ CellID->844377582],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 0, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {10.166, 0., 0.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 10.166, 0.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 0., 10.166}}]]}, 
+   {GrayLevel[0], Line3DBox[{{0., 10.166, 0.}, {10.166, 10.166, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{10.166, 0., 0.}, {10.166, 10.166, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{10.166, 0., 0.}, {10.166, 0., 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 10.166, 0.}, {0., 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{10.166, 10.166, 0.}, {10.166, 10.166, 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 10.166}, {10.166, 0., 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 10.166}, {0., 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{0., 10.166, 10.166}, {10.166, 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{10.166, 0., 10.166}, {10.166, 10.166, 10.166}}]}, 
+   {RGBColor[0.800498, 0.201504, 0.192061], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJydlz1oFFEUhUeDCDabIojFElSWoBbCxptGRIJoJSiENIJFCEgiKAoKggQs
+7AWLNFaSwjJgoYWWWgU7m1QqWFuIIKSQJJCcGeZ77+y8uLAM8+XsmXN/ZrJ7
+avHB3J3DVVVt7L7Hdt9bN748HU4cml279v7Pv/mJ+ij+aPnlr5Vn52u+cOvu
+3LFXZxK9OPU/h2Orv3snE7049Z8+3v78ZHo60YtTz7wul871eerFXX2uDuaV
+D/Xirj5XB/OyfnJXn6uDed386C9+8++P7c2ZI/Y483z9wuO1s/acnH/vj68s
+9XqT9ZF8c+rD1yvrw5rrnHpx6p2vjsrjrkdOfVcdzMvPk7v6XD30c/1l/3l9
+d2QenpO7/K4e9tv1l/3p8nX94OfJqb9+6fW9jdWj9f1S7b/I946DWq/7iPr2
+/TeYfTf/7cXDi+cSf3Lq6U8u/eT9/tvj3/uJPzn19CeX/sTl02+uLg4Tf3Lq
+6U8uvet3V5/cfPL6MPqw83F9dXW7fuf1YfRh9OV76eou3dc8T/tXumeu7tL9
+y/O0f8onP3L5iWvu1Lf3YVBfl/7k1NOfnHlUD/O062z02hPq2/vT5KE/OfX0
+J+e+lPa9zePA88jz+O8+tnkcuL953vi4HF1zcLnz+rR+cTd/d9+4vXZzzevD
+zpt6fc+t8CLX9drfi5v/H+R5fRh91Hr9fmAecuqZhzyvD6Nv8uh7OvOQU888
+5Hl9GH2TR79/mIeceuYhz+vD6MPOn7ncvnTN2e0R63N7V7ovqifvH8Y/jH/Y
+fezaIzcf6t3cSvfR7ZHbF9WV9w/jH8Y/7D7q1TXnrvnQZ/TzKJ1/6XMqz9M9
+cvMfPbe0r/QZ/RxJ51b6fMnzxmcHTqhdqQ==
+     "], 0.66]}, 
+   {RGBColor[0.878431, 0.4, 0.2], Opacity[1.], SphereBox[CompressedData["
+1:eJyNkzEKAjEQRYNeIRcQrK3mANtY2YknEITtLGwFz+AVPIS3srIWXJAY8jMv
+2UCK+fsz8+fvzOp43p8WIYTddJfTfWyf788hDkGO4r94PSQ8xcoveco34Nuf
+fxnvr+ttU+lRXPmqR3Gfb8A37I98ovrUB/nU85t8Ij/KfjS/QX6D/IZ+k0/t
+/ur65GvbD83TnzMfJ59ihZc+qJ5Y4T5fdWfc57Oudv1cx/+vEeZGcdI7X9fc
++tp/z/eEa37F2z5F6LuOFSe9vePPPe1V3oMSN+DrvHNeqjP3u+6jz1c9rLv3
+vten7rXPz++++XvHAA==
+     "], 1.32]}, 
+   {RGBColor[0.4, 0.4, 0.4], Opacity[1.], SphereBox[CompressedData["
+1:eJydlrErhVEYxi+i7N+iDIgSUvTu7sKiDDKalMKiUBYxWSwyURZRkk2J/8Ei
+gzKalMEgM1F679f5nfPc73DrDvfX4/G8533uuV/vwursYmutVrv8ebf9vM9W
+2g+fpjrrNbzITydvPj7n+uvO/TP1ztN6E3pr6KdPNruuz4eiPOTUMw95Wm9C
+X+Z5f3w93u/ojvKQU8885Gm9CX2ZZ+bo8blvZCzKQ04985Cn9Sb0JvfPXKov
+VXtWPeJ8qne5ffF50v4m/E34m+xjVY/UfqhXe8vto+qR6ovPlfY34W/C32Qf
+/VW156r90Kf5fRTvP/eeSvO4R2r/zfcWnyt9mt8j8d5y75c0L322WhZuN66+
+Jn550fAjdz/n60sHb1s7o5Heuesfdk/3RoYH6/Qnp57+5K5fa7+bv9/uifzJ
+qac/uev3BuoXL8vjkT859fQnZw/UHtQ5qf2k9Sb0JvejzlXNrc47rTehN6HP
+76WaO7evaR6fX27P1Ny5/Uvz+Pw8n/uRh/dI0dg79WEf+hv/l/7k1NOfnHl8
+HuYJ5yz13hPqw/6UeehPTj39ydmX3HMPuf15H2lu/z7HkNufzzfNSx+Vo2oP
+KndaH8/vXO1ffW9Ur9Ve03qT+6Y+fO4o7zvn4fe+wPNoEXHqw9//IuLUh89z
+RcSpZ16Vyz/731PvXM2n5mBe96HeuZpPzcG8nJ9czafmYF61P/o7/wYSYITQ
+
+     "], 0.76]}, 
+   {RGBColor[0.291989, 0.437977, 0.888609], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJydlkErRGEYhW9sWLNRCjVFFjJ6VxaMhTQpRbJgQRqZoixsp/wAWShRsrK0
+tPAb/A9rStbKFO+93ef7ztxvTE3TnB7nnvd7jzt36vBs62ggy7Kn7nuw+57/
+XNs83sgaj6svX9/bo/mn6+ft6/fOxVyuf6wMvd61ZwLedfI7zdZEa2Uy4F0n
+31m7Gq6vLwS86+SZV+Xy7/735F1X86k5mNd9yLuu5lNzMC/np67mU3Mwr9of
+/V0fua/d3uwN5Xz296L++1nLefchX75+rTF9ujz2djIb+FMnT3/qzi8u7T7U
+O+OBP3Xy9Kfu/P7z58Flsx74UydPf+rOq/OuOie1nzhvgje5H3Wuam513nHe
+BG+CT++lmju1r3E9PL/Unqm5U/sX18Pz83zuR939XPe9ky/3oZZfl/7UydOf
+OvP4PMxTnrPgvSfky/0p8tCfOnn6U2dfUs+9rFvf+4jr9u9zLOvW9/nG9cJH
+5ajag8od58P5XVf7V/83qtdqr3He5L7J++98hhd1v175uaD4/aAe503wlvP+
+/MQ81MkzD/U4b4Iv8vhzCvNQJ8881OO8Cb7I489/zEOdPPNQj/MmeJP7Zy7V
+l6o9qx5xPtW71L74PHF/E/4m/E32sapHaj/k1d5S+6h6pPric8X9Tfib8DfZ
+R39V7blqP/TpfT8K9596n4rrYY/U/nvvLTxX+vS+j4R7S72/xPXC5wcNdfG/
+
+     "], 0.71]}},
+  ControllerMethod -> Automatic,
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  Axes->False,
+  AxesEdge->Automatic,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  BoxRatios->Automatic,
+  BoxStyle->{},
+  Boxed->False,
+  ClipPlanes->None,
+  ClipPlanesStyle->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  ControllerLinking->False,
+  ControllerPath->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FaceGrids->None,
+  FaceGridsStyle->{},
+  FormatType->TraditionalForm,
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Lighting->"Neutral",
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotationAction->"Fit",
+  SphericalRegion->True,
+  Ticks->Automatic,
+  TicksStyle->{},
+  TouchscreenAutoZoom->False,
+  ViewAngle->Automatic,
+  ViewCenter->Automatic,
+  ViewMatrix->Automatic,
+  ViewPoint->{1.3, -2.4, 2.},
+  ViewProjection->Automatic,
+  ViewRange->All,
+  ViewVector->Automatic,
+  ViewVertical->{0, 0, 1}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1000321749]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"IncludeBoundary\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1221581201],
+
+Cell["\<\
+First, let us see an example where atoms generated on the outer boundaries \
+are used (default setting):\
+\>", "ExampleText",
+ CellID->559358234],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ExpandCrystal", "[", 
+  RowBox[{"\"\<PrussianBlue\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"\"\<IncludeBoundary\>\"", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->168413833],
+
+Cell[BoxData["\<\"PrussianBlue_1x1x1\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->488192236]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalPlot", "[", "\"\<PrussianBlue_1x1x1\>\"", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->183679816],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 0, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {10.166, 0., 0.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 10.166, 0.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 0., 10.166}}]]}, 
+   {GrayLevel[0], Line3DBox[{{0., 10.166, 0.}, {10.166, 10.166, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{10.166, 0., 0.}, {10.166, 10.166, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{10.166, 0., 0.}, {10.166, 0., 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 10.166, 0.}, {0., 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{10.166, 10.166, 0.}, {10.166, 10.166, 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 10.166}, {10.166, 0., 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 10.166}, {0., 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{0., 10.166, 10.166}, {10.166, 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{10.166, 0., 10.166}, {10.166, 10.166, 10.166}}]}, 
+   {RGBColor[0.800498, 0.201504, 0.192061], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJxTTMoPSmViYGCwA2JmIP7pd6bKUITRYZHrts9/Q0Tg9GND5qkf+RUwxGE0
+rfT5f3vw/4YpKwYtI1CTzs8vB6fRxQnx0cVxyZNrD4z2tlmQc2oqO9xfDFAg
+lyuzUey+DIY4DBCrD12eWH0wdTB5mDhMHbp5hNSh20dIHcxcdPdCaBUH7P5U
+wXA/ujiqPhUM/YTso5W5uPyBy1yYebD8gZ4+YPkDXRwGaKUPXR7mbnRzYeLo
+5qKLo5YPKg7EqkN3H7p+XO5DNx9dHl2cWHOp7W9S3YVLHwDDmB2o
+     "], 0.66]}, 
+   {RGBColor[0.878431, 0.4, 0.2], Opacity[1.], SphereBox[CompressedData["
+1:eJxTTMoPSmViYGCQBmJmIF7kuu3z3xARBwYcgFh5dHUQvooDdnUqDuh87Oai
+q0PXj06Tbz9x5qG7g1J5XO7AxcdN44ofXOGKi489/BE0sebh0odLHgDyeOao
+
+     "], 1.32]}, 
+   {RGBColor[0.4, 0.4, 0.4], Opacity[1.], SphereBox[CompressedData["
+1:eJxTTMoPSmViYGAwA2JmIF6cxTr9hhunAwMa+Hj15ex+NhkMcRiglT50+UWu
+2z7/DVFxQDcXJo5uLro4TB9MnFh16O5D14/Lfejmo8ujixNrLrX9Taq7cOmr
+YUzaXrLxnz1EXARufxHrqZjzdQoO6OIwQKw+dHli9cHUoYabiANMHbp5hNSh
+20dIHcxcdPfCwg+7P1Uw3I8ujqpPBUM/IftoZS4uf+AyF2YeavpCxDdquhTB
+oGmlDwDCrfeZ
+     "], 0.76]}, 
+   {RGBColor[0.291989, 0.437977, 0.888609], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJxTTMoPSmViYGAwA2JmIDb46B6Y7sfgsMh12+e/ISJwOswzRT7FUQFDHEbT
+Sp/wLJVpU6I54OIMUGBlFzXHsEYGQxwGiNWHLk+sPpg6mDxMHKYO3TxC6tDt
+I6QOZi66eyG0igN2f6pguB9dHFWfCoZ+QvbRylxc/sBlLsw8WPpCTx+w9IUu
+DgO00ocuD3M3urkwcXRz0cVR85eKA7Hq0N2Hrh+X+9DNR5dHFyfWXGr7m1R3
+4dIHAPKeuJM=
+     "], 0.71]}},
+  ControllerMethod -> Automatic,
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  Axes->False,
+  AxesEdge->Automatic,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  BoxRatios->Automatic,
+  BoxStyle->{},
+  Boxed->False,
+  ClipPlanes->None,
+  ClipPlanesStyle->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  ControllerLinking->False,
+  ControllerPath->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FaceGrids->None,
+  FaceGridsStyle->{},
+  FormatType->TraditionalForm,
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Lighting->"Neutral",
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotationAction->"Fit",
+  SphericalRegion->True,
+  Ticks->Automatic,
+  TicksStyle->{},
+  TouchscreenAutoZoom->False,
+  ViewAngle->Automatic,
+  ViewCenter->Automatic,
+  ViewMatrix->Automatic,
+  ViewPoint->{1.3, -2.4, 2.},
+  ViewProjection->Automatic,
+  ViewRange->All,
+  ViewVector->Automatic,
+  ViewVertical->{0, 0, 1}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1666219031]
+}, Open  ]],
+
+Cell["\<\
+Now if we were to generate the atoms according to the space group symmetry, \
+but now include the boundaries:\
+\>", "ExampleText",
+ CellID->756806518],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ExpandCrystal", "[", 
+  RowBox[{"\"\<PrussianBlue\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"\"\<IncludeBoundary\>\"", "\[Rule]", "False"}]}], "]"}]], "Input",\
+
+ CellLabel->"In[3]:=",
+ CellID->1309551132],
+
+Cell[BoxData["\<\"PrussianBlue_1x1x1\"\>"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1645511614]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalPlot", "[", "\"\<PrussianBlue_1x1x1\>\"", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->928446688],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 0, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {10.166, 0., 0.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 10.166, 0.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 0., 10.166}}]]}, 
+   {GrayLevel[0], Line3DBox[{{0., 10.166, 0.}, {10.166, 10.166, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{10.166, 0., 0.}, {10.166, 10.166, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{10.166, 0., 0.}, {10.166, 0., 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 10.166, 0.}, {0., 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{10.166, 10.166, 0.}, {10.166, 10.166, 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 10.166}, {10.166, 0., 10.166}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 10.166}, {0., 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{0., 10.166, 10.166}, {10.166, 10.166, 10.166}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{10.166, 0., 10.166}, {10.166, 10.166, 10.166}}]}, 
+   {RGBColor[0.800498, 0.201504, 0.192061], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJxTTMoPSmViYGBQAGJmIP7pd6bKUITRYZHrts9/Q0Tg9GND5qkf+RUwxGE0
+rfT5f3vw/4YpKwYtI1CTzs8vB6fRxQnx0cVxyZNrD4z2tlmQc2oqO9xfDFAg
+lyuzUey+DIY4DBCrD12eWH0wdTB5mDhMHbp5hNSh20dIHcxcWPyj+x8W/+ji
+MEArfQDE8vbZ
+     "], 0.66]}, 
+   {RGBColor[0.878431, 0.4, 0.2], Opacity[1.], 
+    SphereBox[{{5.083, 0., 0.}, {0., 5.083, 0.}, {0., 0., 5.083}, {0., 5.083, 
+     5.083}, {5.083, 0., 5.083}, {5.083, 5.083, 0.}, {5.083, 5.083, 5.083}, {
+     0., 0., 0.}}, 1.32]}, 
+   {RGBColor[0.4, 0.4, 0.4], Opacity[1.], SphereBox[CompressedData["
+1:eJxTTMoPSmViYGCQAGJmIF6cxTr9hhunAwMa+Hj15ex+NhkMcRiglb4axqTt
+JRv/2S9y3fb5b4gIXF0R66mY83UKDujiMECsPnR5YvXB1MHkYeIwdejmEVKH
+bh8hdTBzYeGH7h9Y+KGLw2ha6QMA4Uu+DQ==
+     "], 0.76]}, 
+   {RGBColor[0.291989, 0.437977, 0.888609], Opacity[1.], 
+    SphereBox[CompressedData["
+1:eJxTTMoPSmViYGCQAGJmIDb46B6Y7sfgsMh12+e/ISJwOswzRT7FUQFDHEbT
+Sp/wLJVpU6I54OIMUGBlFzXHsEYGQxwGiNWHLk+sPpg6mDxMHKYO3TxC6tDt
+I6QOZi4s/ND9Dws/dHEYoJU+AA2Iojs=
+     "], 0.71]}},
+  ControllerMethod -> Automatic,
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  Axes->False,
+  AxesEdge->Automatic,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  BoxRatios->Automatic,
+  BoxStyle->{},
+  Boxed->False,
+  ClipPlanes->None,
+  ClipPlanesStyle->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  ControllerLinking->False,
+  ControllerPath->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FaceGrids->None,
+  FaceGridsStyle->{},
+  FormatType->TraditionalForm,
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Lighting->"Neutral",
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotationAction->"Fit",
+  SphericalRegion->True,
+  Ticks->Automatic,
+  TicksStyle->{},
+  TouchscreenAutoZoom->False,
+  ViewAngle->Automatic,
+  ViewCenter->Automatic,
+  ViewMatrix->Automatic,
+  ViewPoint->{1.3, -2.4, 2.},
+  ViewProjection->Automatic,
+  ViewRange->All,
+  ViewVector->Automatic,
+  ViewVertical->{0, 0, 1}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->584414371]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"NewLabel\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1171579887],
+
+Cell[TextData[{
+ "When a crystal is \"expanded\", a copy of the original crystal data is \
+added to the ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " hash table with the key (label) being the original label concatenated with \
+the designated structure size, for instance:"
+}], "ExampleText",
+ CellID->1628453087],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ExpandCrystal", "[", 
+  RowBox[{"\"\<GalliumArsenide\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->42662205],
+
+Cell[BoxData["\<\"GalliumArsenide_2x3x4\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->327711847]
+}, Open  ]],
+
+Cell["The user can specify a custom title with this option:", "ExampleText",
+ CellID->1308090371],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"new", "=", 
+  RowBox[{"ExpandCrystal", "[", 
+   RowBox[{"\"\<GalliumArsenide\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "3", ",", "4"}], "}"}], ",", 
+    RowBox[{"\"\<NewLabel\>\"", "\[Rule]", "\"\<SomeCustomTitle\>\""}]}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->250172788],
+
+Cell[BoxData["\<\"SomeCustomTitle\"\>"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1588202526]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"KeyExistsQ", "[", 
+  RowBox[{"$CrystalData", ",", "new"}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1328463426],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->792841591]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"StoreTemporarily\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->465601466],
+
+Cell[TextData[{
+ "With this option set to ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["True"]], "paclet:ref/True"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", the new, expanded structure is not stored in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ":"
+}], "ExampleText",
+ CellID->1882503901],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"new", "=", 
+  RowBox[{"ExpandCrystal", "[", 
+   RowBox[{"\"\<Silicon\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "4", ",", "6"}], "}"}], ",", 
+    RowBox[{"\"\<StoreTemporarily\>\"", "\[Rule]", "True"}]}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2108617100],
+
+Cell[BoxData["\<\"Silicon_3x4x6\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1401079749]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"KeyExistsQ", "[", 
+  RowBox[{"$CrystalData", ",", "new"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->427034459],
+
+Cell[BoxData["False"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->352361872]
+}, Open  ]],
+
+Cell["It is actually stored in a temporary association:", "ExampleText",
+ CellID->1398623748],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"KeyExistsQ", "[", 
+  RowBox[{"MaXrd`Private`$TempCrystalData", ",", "new"}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1005111232],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1764812921]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->422887447],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ExpandCrystal", "::", "InvalidSize"}], "=", 
+   "\"\<The structure size must be a list of three natural numbers.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ExpandCrystal", "::", "DuplicateLabel"}], "=", 
+    "\"\<The new label must be different from the input.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "ExpandCrystal"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<DataFile\>\"", "\[Rule]", 
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "$MaXrdPath", ",", "\"\<UserData\>\"", ",", 
+          "\"\<CrystalData.m\>\""}], "}"}], "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<ExpandIntoNegative\>\"", "\[Rule]", "False"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<FirstTransformTo\>\"", "\[Rule]", "False"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<IgnoreSymmetry\>\"", "\[Rule]", "False"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<IncludeBoundary\>\"", "\[Rule]", "True"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<NewLabel\>\"", "\[Rule]", "\"\<\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<StoreTemporarily\>\"", "\[Rule]", "False"}]}], 
+     "\[IndentingNewLine]", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "ExpandCrystal"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", "_.", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1604607626],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ExpandCrystal", "[", 
+   RowBox[{"crystal_String", ",", 
+    RowBox[{"structureSize_List", ":", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], ",", "\[IndentingNewLine]", 
+    
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"crystalDataOriginal", "=", "$CrystalData"}], ",", 
+      RowBox[{"dataFile", "=", 
+       RowBox[{"OptionValue", "[", "\"\<DataFile\>\"", "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"newLabel", "=", 
+       RowBox[{"OptionValue", "[", "\"\<NewLabel\>\"", "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"changeCell", "=", 
+       RowBox[{"OptionValue", "[", "\"\<FirstTransformTo\>\"", "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"storeTempQ", "=", 
+       RowBox[{"TrueQ", "@", 
+        RowBox[{"OptionValue", "[", "\"\<StoreTemporarily\>\"", "]"}]}]}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"ignoreSymmetryQ", "=", 
+       RowBox[{"TrueQ", "@", 
+        RowBox[{"OptionValue", "[", "\"\<IgnoreSymmetry\>\"", "]"}]}]}], ",", 
+      "\[IndentingNewLine]", "crystalData", ",", "crystalCopy", ",", 
+      "atomData", ",", "coordinates", ",", "spaceGroup", ",", "generated", 
+      ",", "\[IndentingNewLine]", "copyTranslations", ",", "mid", ",", 
+      "atomDataMapUnitCell", ",", "\[IndentingNewLine]", "cutoffFunction", 
+      ",", "atomDataMapExpanded", ",", "lengths", ",", "\[IndentingNewLine]", 
+      "newAtomData"}], "\[IndentingNewLine]", "}"}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "Input", " ", "check", " ", "and", " ", "data", " ", "acquisition"}], 
+     " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"AllTrue", "[", 
+         RowBox[{"structureSize", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Positive", "[", "#", "]"}], "&&", 
+            RowBox[{"IntegerQ", "[", "#", "]"}]}], "&"}]}], "]"}], "\[Nand]", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Length", "[", "structureSize", "]"}], "===", "3"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ExpandCrystal", "::", "InvalidSize"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"\"\<CrystalQ\>\"", ",", "crystal"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"crystalData", "=", 
+      RowBox[{"crystalCopy", "=", 
+       RowBox[{"$CrystalData", "[", "crystal", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"crystal", "===", "newLabel"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"ExpandCrystal", "::", "DuplicateLabel"}], ",", 
+          "newLabel"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"newLabel", "===", "\"\<\>\""}], ",", 
+       RowBox[{"newLabel", "=", 
+        RowBox[{"crystal", "<>", "\"\<_\>\"", "<>", 
+         RowBox[{"StringJoin", "@", 
+          RowBox[{"Riffle", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"ToString", "/@", "structureSize"}], ",", "\"\<x\>\""}], 
+           "]"}]}]}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{"Transform", " ", "cell", " ", "beforehand"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"changeCell", "=!=", "False"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"InputCheck", "[", 
+         RowBox[{"\"\<InterpretSpaceGroup\>\"", ",", "changeCell"}], "]"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"AssociateTo", "[", 
+         RowBox[{"$CrystalData", ",", 
+          RowBox[{"newLabel", "\[Rule]", "crystalCopy"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"UnitCellTransformation", "[", 
+         RowBox[{"newLabel", ",", "changeCell"}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"crystalData", "=", 
+         RowBox[{"crystalCopy", "=", 
+          RowBox[{"$CrystalData", "[", "newLabel", "]"}]}]}]}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Expand", " ", "asymmetric", " ", "unit", " ", "to", " ", "unit", " ", 
+       "cell"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"atomData", "=", 
+      RowBox[{"crystalData", "[", "\"\<AtomData\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"coordinates", "=", 
+      RowBox[{"atomData", "\[LeftDoubleBracket]", 
+       RowBox[{"All", ",", "\"\<FractionalCoordinates\>\""}], 
+       "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"spaceGroup", "=", 
+      RowBox[{"crystalData", "[", "\"\<SpaceGroup\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{
+       "Ignory", " ", "symmetry", " ", "and", " ", "simply", " ", "copy", " ",
+         "content", " ", "as", " ", "is"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"generated", "=", 
+      RowBox[{"N", "@", 
+       RowBox[{"If", "[", 
+        RowBox[{"ignoreSymmetryQ", ",", "\[IndentingNewLine]", 
+         RowBox[{"Partition", "[", 
+          RowBox[{"coordinates", ",", "1"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"SymmetryEquivalentPositions", "[", 
+            RowBox[{"spaceGroup", ",", "#"}], "]"}], "&"}], "/@", 
+          "coordinates"}]}], "\[IndentingNewLine]", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Generate", " ", "full", " ", "content", " ", "of", " ", "the", " ", 
+       "unit", " ", "cell"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"atomDataMapUnitCell", "=", 
+      RowBox[{"Association", "@", 
+       RowBox[{"Thread", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Range", "@", 
+          RowBox[{"Length", "@", "atomData"}]}], "\[Rule]", "generated"}], 
+        "]"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Copy", " ", "by", " ", "translation"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"copyTranslations", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{"\"\<GenerateTargetPositions\>\"", ",", 
+        RowBox[{"structureSize", "+", "1"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"atomDataMapExpanded", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Flatten", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Outer", "[", 
+           RowBox[{"Plus", ",", "copyTranslations", ",", "#", ",", "1"}], 
+           "]"}], ",", "\[IndentingNewLine]", "1"}], "]"}], "&"}], "/@", 
+       "atomDataMapUnitCell"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{"Complete", " ", "the", " ", "outer", " ", "boundary"}]}], " ",
+       "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"cutoffFunction", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"TrueQ", "@", 
+         RowBox[{"OptionValue", "[", "\"\<IncludeBoundary\>\"", "]"}]}], ",", 
+        "\[IndentingNewLine]", "Greater", ",", "GreaterEqual"}], "]"}]}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Delete", " ", "atoms", " ", "whose", " ", "coordinates", " ", "are", 
+       " ", "outside"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"atomDataMapExpanded", "=", 
+      RowBox[{"DeleteCases", "[", 
+       RowBox[{"atomDataMapExpanded", ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"x_", ",", "y_", ",", "z_"}], "}"}], "/;", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Or", "@@", 
+          RowBox[{"MapThread", "[", 
+           RowBox[{"cutoffFunction", ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", 
+              "structureSize"}], "}"}]}], "]"}]}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", "2", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{
+       "Center", " ", "translations", " ", "around", " ", "origin"}]}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"TrueQ", "@", 
+        RowBox[{"OptionValue", "[", "\"\<ExpandIntoNegative\>\"", "]"}]}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"mid", "=", 
+         RowBox[{"\[LeftFloor]", 
+          RowBox[{"structureSize", "/", "2."}], "\[RightFloor]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"atomDataMapExpanded", "=", 
+         RowBox[{"Map", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"#", "-", "mid"}], "&"}], ",", "atomDataMapExpanded", ",", 
+           RowBox[{"{", "2", "}"}]}], "]"}]}], ";"}]}], "\[IndentingNewLine]",
+       "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Create", " ", "new", " ", "atom", " ", "data", " ", "structure"}], " ",
+       "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"lengths", "=", 
+      RowBox[{"Values", "[", 
+       RowBox[{"Length", "/@", "atomDataMapExpanded"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"newAtomData", "=", 
+      RowBox[{"Table", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"ConstantArray", "[", 
+         RowBox[{
+          RowBox[{
+          "atomData", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+          ",", 
+          RowBox[{
+          "lengths", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}],
+          "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", 
+          RowBox[{"Length", "@", "atomData"}]}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"newAtomData", "\[LeftDoubleBracket]", 
+       RowBox[{"All", ",", "All", ",", "\"\<FractionalCoordinates\>\""}], 
+       "\[RightDoubleBracket]"}], "=", "\[IndentingNewLine]", 
+      RowBox[{"Values", "@", "atomDataMapExpanded"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"newAtomData", "=", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"newAtomData", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]",
+      "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Create", " ", "new", " ", "crystal", " ", "entry"}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"crystalCopy", "[", "\"\<AtomData\>\"", "]"}], "=", 
+      "newAtomData"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"AssociateTo", "[", 
+      RowBox[{"crystalCopy", ",", 
+       RowBox[{"\"\<Notes\>\"", "\[Rule]", 
+        RowBox[{"<|", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"\"\<StructureSize\>\"", "\[Rule]", "structureSize"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"\"\<UnitCellAtomsCount\>\"", "\[Rule]", 
+           RowBox[{"Total", "[", 
+            RowBox[{"Length", "/@", "generated"}], "]"}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"\"\<AsymmetricUnitAtomsCount\>\"", "\[Rule]", 
+           RowBox[{"Length", "@", "atomDataMapUnitCell"}]}]}], 
+         "\[IndentingNewLine]", "|>"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+      "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{
+       "If", " ", "temporary", " ", "storage", " ", "was", " ", "used"}], ",",
+        " ", 
+       RowBox[{
+       "reset", " ", "pointer", " ", "to", " ", "original", " ", 
+        "$CrystalData"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{"storeTempQ", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"MaXrd`Private`$TempCrystalData", "=", 
+         RowBox[{"<|", 
+          RowBox[{"newLabel", "\[Rule]", "crystalCopy"}], "|>"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"$CrystalData", "=", "crystalDataOriginal"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+        "InputCheck", "[", "\"\<Update$CrystalDataAutoCompletion\>\"", 
+         "]"}]}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"InputCheck", "[", 
+        RowBox[{
+        "\"\<Update$CrystalDataFile\>\"", ",", "dataFile", ",", "newLabel", 
+         ",", "crystalCopy"}], "]"}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "newLabel"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->540731156]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalPlot"]], "paclet:MaXrd/ref/CrystalPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["EmbedStructure"]], "paclet:MaXrd/ref/EmbedStructure"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SynthesiseStructure"]], "paclet:MaXrd/ref/SynthesiseStructure"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DistortStructure"]], "paclet:MaXrd/ref/DistortStructure"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SimulateDiffractionPattern"]], 
+    "paclet:MaXrd/ref/SimulateDiffractionPattern"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentPositions"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["UnitCellTransformation"]], 
+    "paclet:MaXrd/ref/UnitCellTransformation"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DomainPlot"]], "paclet:MaXrd/ref/DomainPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->994788810]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ExpandCrystal",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 14, 50.588884}", 
+    "history" -> {"1.2", "2.4.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", "status" -> 
+    "None", "summary" -> 
+    "ExpandCrystal[crystal] expands the asymmetric unit of crystal to the \
+complete the unit cell. ExpandCrystal[crystal, {A, B, C}] completes the unit \
+cell of crystal and expands it to a structure of A*B*C unit cells.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "ExpandCrystal", 
+    "titlemodifier" -> "", "windowtitle" -> "ExpandCrystal", "type" -> 
+    "Symbol", "uri" -> "MaXrd/ref/ExpandCrystal", "WorkflowDockedCell" -> ""},
+   "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10260, 310, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"3589a4a5-609a-4d29-a564-6f1321a22599",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1081680120]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 80693, 2371}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 4542, 108, 70, "AnchorBarGrid",ExpressionUUID->"1d821b6a-7c5f-4f2a-9422-5825b720715c",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5152, 133, 170, 6, 70, "ObjectNameGrid",ExpressionUUID->"29c07390-9713-4102-9a5d-0e37076559b5"],
+Cell[5325, 141, 1406, 43, 70, "Usage",ExpressionUUID->"a8ab6788-1ba8-40c4-aaf5-9d4f4a52c9a2",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6768, 189, 642, 19, 70, "NotesSection",ExpressionUUID->"b7d96eea-2293-4da5-885f-9be989aba66c",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1691014474],
+Cell[7413, 210, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"9b7ecedc-65ac-4377-992c-ceb666976fca"],
+Cell[7447, 212, 46, 1, 70, "Notes",ExpressionUUID->"95a1d061-1d7b-48a7-b2de-06f52daad547",
+ CellID->1067943069],
+Cell[7496, 215, 2693, 88, 70, "3ColumnTableMod",ExpressionUUID->"77bf4e7f-c181-482a-88df-5fb088e51b38",
+ CellID->1156542953],
+Cell[10192, 305, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"c770bcf6-d0c9-4cb9-9f3e-2efa8e86cdd8"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10260, 310, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"3589a4a5-609a-4d29-a564-6f1321a22599",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1081680120],
+Cell[CellGroupData[{
+Cell[10553, 324, 196, 6, 70, "ExampleSection",ExpressionUUID->"f1a11562-2014-452b-bde4-6d039a7e6a98",
+ CellID->1348704985],
+Cell[CellGroupData[{
+Cell[10774, 334, 245, 7, 70, "Input",ExpressionUUID->"f041bf10-0cc4-420e-bd49-8f1d993bb75f",
+ CellID->1063979777],
+Cell[11022, 343, 99, 2, 70, "Output",ExpressionUUID->"97edb19f-2bc0-419f-991d-bae32133c730",
+ CellID->1619885683]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11158, 350, 114, 3, 70, "Input",ExpressionUUID->"abf6cc44-e903-48a2-8b56-74ae79393de9",
+ CellID->1344989026],
+Cell[11275, 355, 3763, 97, 70, "Output",ExpressionUUID->"f887c278-87b1-4cdc-a66a-35b3fb4706f9",
+ CellID->906960638]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15075, 457, 150, 4, 70, "Input",ExpressionUUID->"750e15b7-173d-4e81-a3cc-2d9792bf95bf",
+ CellID->1273554630],
+Cell[15228, 463, 391, 10, 70, "Output",ExpressionUUID->"9e4a17c5-0138-4659-be5c-d012ae2c89bf",
+ CellID->202299179]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15668, 479, 189, 6, 70, "ExampleSection",ExpressionUUID->"dc5be9e6-cd7f-48a8-bcea-3a3d234df9f7",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[15882, 489, 209, 6, 70, "ExampleSubsection",ExpressionUUID->"c7599975-db11-4ed1-9bb8-b0a3524defde",
+ CellID->856730099],
+Cell[CellGroupData[{
+Cell[16116, 499, 756, 21, 70, "Input",ExpressionUUID->"7e1fb00a-1040-41cf-b96f-e2b930e3d1b4",
+ CellID->1646386456],
+Cell[16875, 522, 6007, 168, 70, "Output",ExpressionUUID->"5db8fede-1574-4588-a70c-39ab898d99ed",
+ CellID->1350081527]
+}, Open  ]],
+Cell[22897, 693, 93, 1, 70, "ExampleText",ExpressionUUID->"3f11649e-8edb-4325-8805-28cf107e2f5c",
+ CellID->495039477]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[23027, 699, 208, 6, 70, "ExampleSubsection",ExpressionUUID->"0d0ead61-2a63-44c4-9a0e-3621c79b45da",
+ CellID->1757724783],
+Cell[23238, 707, 231, 6, 70, "ExampleText",ExpressionUUID->"e7d82faa-cb99-4888-81bc-74920934923a",
+ CellID->1517531199],
+Cell[CellGroupData[{
+Cell[23494, 717, 279, 8, 70, "Input",ExpressionUUID->"b2ae9a5f-9306-422b-8bd7-312f8912e331",
+ CellID->1218477208],
+Cell[23776, 727, 126, 3, 70, "Output",ExpressionUUID->"6c0d223b-1917-4a76-8411-44665f898be1",
+ CellID->1349705800]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23939, 735, 451, 12, 70, "Input",ExpressionUUID->"f27d5d71-2b77-4e74-b338-26e39c7723d4",
+ CellID->1737308207],
+Cell[24393, 749, 892, 30, 70, "Output",ExpressionUUID->"72ed21e9-b461-41fb-bd82-80a49d82d291",
+ CellID->1884427805]
+}, Open  ]],
+Cell[25300, 782, 141, 4, 70, "ExampleText",ExpressionUUID->"f9fcee49-e652-46a9-af4e-278abc3e5ef0",
+ CellID->622659190],
+Cell[CellGroupData[{
+Cell[25466, 790, 292, 8, 70, "Input",ExpressionUUID->"dce281bb-ef2f-497d-a60a-b37a59d37e25",
+ CellID->2061521791],
+Cell[25761, 800, 95, 2, 70, "Output",ExpressionUUID->"d21b8ffa-9d21-49ae-aef6-3b35ae5e6b97",
+ CellID->1611266099]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25893, 807, 130, 3, 70, "Input",ExpressionUUID->"e67a253d-8fa1-479c-9c21-647239ed9431",
+ CellID->390564574],
+Cell[26026, 812, 4751, 119, 70, "Output",ExpressionUUID->"0d83d0ea-2689-444e-84b4-9a136f9982b0",
+ CellID->1882976594]
+}, Open  ]],
+Cell[30792, 934, 159, 4, 70, "ExampleText",ExpressionUUID->"2dfdc5e6-eff7-461c-960b-a5f8ca036b51",
+ CellID->2089705316],
+Cell[CellGroupData[{
+Cell[30976, 942, 258, 7, 70, "Input",ExpressionUUID->"b8da7e2d-c753-4df6-96cc-8eb273101cd6",
+ CellID->854415702],
+Cell[31237, 951, 4752, 120, 70, "Output",ExpressionUUID->"e3908c83-e3f9-4060-b4c5-2c14179d525a",
+ CellID->1926462334]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[36038, 1077, 205, 6, 70, "ExampleSubsection",ExpressionUUID->"35b69a8b-9422-44f5-aeaa-6a1498270fe6",
+ CellID->624510057],
+Cell[36246, 1085, 350, 8, 70, "ExampleText",ExpressionUUID->"a6df18c4-8516-4c23-a1b7-508805fde184",
+ CellID->1608400043],
+Cell[36599, 1095, 117, 3, 70, "ExampleText",ExpressionUUID->"95583fc1-98f9-48a4-b2fe-2ee6537912ca",
+ CellID->174500352],
+Cell[CellGroupData[{
+Cell[36741, 1102, 390, 10, 70, "Input",ExpressionUUID->"87d9a697-d3c7-46f5-b49f-7b8d50f7ef2a",
+ CellID->127795605],
+Cell[37134, 1114, 3325, 95, 70, "Output",ExpressionUUID->"f519a257-7dff-4abc-8ebe-a2ccf728598f",
+ CellID->309997473]
+}, Open  ]],
+Cell[40474, 1212, 686, 20, 70, "ExampleText",ExpressionUUID->"a9d9c20c-acf9-440c-aac6-070d3ad521c8",
+ CellID->230644647],
+Cell[CellGroupData[{
+Cell[41185, 1236, 311, 9, 70, "Input",ExpressionUUID->"469f629f-5fe5-4b71-b4bb-726a3e964106",
+ CellID->844377582],
+Cell[41499, 1247, 5360, 130, 70, "Output",ExpressionUUID->"d8e865fd-5467-426a-99da-7a4ae12c905c",
+ CellID->1000321749]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[46908, 1383, 207, 6, 70, "ExampleSubsection",ExpressionUUID->"4736eb49-0e3a-4813-99ec-a4c0761d39fa",
+ CellID->1221581201],
+Cell[47118, 1391, 155, 4, 70, "ExampleText",ExpressionUUID->"1d25d726-ec65-4502-a315-2802af8d2297",
+ CellID->559358234],
+Cell[CellGroupData[{
+Cell[47298, 1399, 275, 7, 70, "Input",ExpressionUUID->"b90f3144-1d88-4046-9f2d-6d18388f04fd",
+ CellID->168413833],
+Cell[47576, 1408, 96, 2, 70, "Output",ExpressionUUID->"dff7cab9-57ca-42f1-8488-e2970679449e",
+ CellID->488192236]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47709, 1415, 132, 3, 70, "Input",ExpressionUUID->"b2750c01-d599-4ac9-95b7-8133797ea826",
+ CellID->183679816],
+Cell[47844, 1420, 3611, 101, 70, "Output",ExpressionUUID->"95610d3b-0457-4dbf-8e41-f7a150b9d5d7",
+ CellID->1666219031]
+}, Open  ]],
+Cell[51470, 1524, 160, 4, 70, "ExampleText",ExpressionUUID->"00bf8ecd-083c-451d-9118-41f9a33e828a",
+ CellID->756806518],
+Cell[CellGroupData[{
+Cell[51655, 1532, 279, 8, 70, "Input",ExpressionUUID->"e30a4dec-cbaa-4ee5-b04d-0aa2dfcc8c06",
+ CellID->1309551132],
+Cell[51937, 1542, 97, 2, 70, "Output",ExpressionUUID->"6df7ad45-9d22-4117-a65b-750155ecb2e7",
+ CellID->1645511614]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52071, 1549, 132, 3, 70, "Input",ExpressionUUID->"34112024-c9cf-4b30-b8bd-55c9d8b3ba12",
+ CellID->928446688],
+Cell[52206, 1554, 3325, 95, 70, "Output",ExpressionUUID->"0c7f9b29-0e46-4db3-b817-96853570beee",
+ CellID->584414371]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[55580, 1655, 200, 6, 70, "ExampleSubsection",ExpressionUUID->"c4e0f9ab-4999-4563-9598-303a9df30423",
+ CellID->1171579887],
+Cell[55783, 1663, 446, 12, 70, "ExampleText",ExpressionUUID->"fd57aaf1-e569-417e-b9a6-abda029bb275",
+ CellID->1628453087],
+Cell[CellGroupData[{
+Cell[56254, 1679, 212, 6, 70, "Input",ExpressionUUID->"62ac9544-80b2-4c42-865a-2340494f88f7",
+ CellID->42662205],
+Cell[56469, 1687, 99, 2, 70, "Output",ExpressionUUID->"a7492e52-6536-48fc-9104-f16c1deaee5e",
+ CellID->327711847]
+}, Open  ]],
+Cell[56583, 1692, 97, 1, 70, "ExampleText",ExpressionUUID->"9ec8402d-f037-42b4-a26b-391f26d12164",
+ CellID->1308090371],
+Cell[CellGroupData[{
+Cell[56705, 1697, 323, 9, 70, "Input",ExpressionUUID->"fb281846-b56a-493b-b630-116730450f20",
+ CellID->250172788],
+Cell[57031, 1708, 94, 2, 70, "Output",ExpressionUUID->"4b611ba1-5069-41f2-bc1a-e038b266afd1",
+ CellID->1588202526]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57162, 1715, 143, 4, 70, "Input",ExpressionUUID->"e78df49d-64c4-4308-a3db-37e6c1e0ecd6",
+ CellID->1328463426],
+Cell[57308, 1721, 74, 2, 70, "Output",ExpressionUUID->"b217ee7a-a59f-4bb0-8d14-9bf3385e99fa",
+ CellID->792841591]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[57431, 1729, 207, 6, 70, "ExampleSubsection",ExpressionUUID->"c8570f7c-e82e-4927-a680-cbf96557c0fa",
+ CellID->465601466],
+Cell[57641, 1737, 467, 17, 70, "ExampleText",ExpressionUUID->"df5ea750-ade8-44ab-bb94-c324e58eeb38",
+ CellID->1882503901],
+Cell[CellGroupData[{
+Cell[58133, 1758, 305, 9, 70, "Input",ExpressionUUID->"03596987-666c-4263-8b6a-888eea0f0e96",
+ CellID->2108617100],
+Cell[58441, 1769, 92, 2, 70, "Output",ExpressionUUID->"09e6e68c-7332-47ba-ac16-1b8cd76bc83c",
+ CellID->1401079749]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58570, 1776, 142, 4, 70, "Input",ExpressionUUID->"a8c37b85-d5a8-4b70-a79c-eac83742441c",
+ CellID->427034459],
+Cell[58715, 1782, 75, 2, 70, "Output",ExpressionUUID->"f43379ee-8619-43d7-a1e5-6df33bfd56cb",
+ CellID->352361872]
+}, Open  ]],
+Cell[58805, 1787, 93, 1, 70, "ExampleText",ExpressionUUID->"371e0672-c751-4d11-a1cf-fbc8acf3b52b",
+ CellID->1398623748],
+Cell[CellGroupData[{
+Cell[58923, 1792, 161, 4, 70, "Input",ExpressionUUID->"c2fdc5aa-c21b-47b0-802c-883bcd3b616e",
+ CellID->1005111232],
+Cell[59087, 1798, 75, 2, 70, "Output",ExpressionUUID->"0a8c4ee0-bfda-4279-a98e-43a9dd22485b",
+ CellID->1764812921]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[59223, 1807, 235, 8, 70, "ExampleSection",ExpressionUUID->"5d9874c4-d2cf-447e-aa9c-2ddca9e1b373",
+ CellID->422887447],
+Cell[59461, 1817, 1896, 49, 70, "Input",ExpressionUUID->"59d413ed-cfdc-4428-bc4e-c9020e207a1c",
+ InitializationCell->False,
+ CellID->1604607626],
+Cell[61360, 1868, 13358, 310, 70, "Input",ExpressionUUID->"85ebc7e4-9259-4657-8ba2-20a875b11327",
+ InitializationCell->False,
+ CellID->540731156]
+}, Closed]],
+Cell[74733, 2181, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"758de745-c0e2-4001-984a-3c11a2a128ec"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74801, 2186, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"eed53a2d-00b8-4d74-ba39-6b5a0255d78f",
+ CellID->1255426704],
+Cell[74954, 2195, 3219, 101, 70, "SeeAlso",ExpressionUUID->"b745a363-a971-432e-a2af-6e3275edd0d4",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78210, 2301, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"53bffc14-10ac-41e9-a8a2-56df98a7d511",
+ CellID->38303248],
+Cell[78369, 2310, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"65734081-1526-4bdd-8d80-d9e93400bd75"],
+Cell[78403, 2312, 207, 7, 70, "MoreAbout",ExpressionUUID->"1666063c-f541-4310-8ab7-3ae6d0c1a223",
+ CellID->994788810]
+}, Open  ]],
+Cell[78625, 2322, 23, 0, 70, "FooterCell",ExpressionUUID->"ce3eef73-8ef2-4871-a840-03fa50ac67b4"]
+}
+]
+*)
+
+(* End of internal cache information *)

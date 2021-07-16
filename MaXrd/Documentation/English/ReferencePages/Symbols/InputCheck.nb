@@ -1,0 +1,4588 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    170825,       4579]
+NotebookOptionsPosition[    153003,       4195]
+NotebookOutlinePosition[    155298,       4254]
+CellTagsIndexPosition[    155211,       4249]
+WindowTitle->InputCheck
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Using the rotation options\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/tutorial/UsingRotationMaps"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"Tutorials"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"GetAtomicScatteringFactors\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetAtomicScatteringFactors"], \
+"\<\"AttenuationCoefficient\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/AttenuationCoefficient"], "\<\"BraggAngle\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/BraggAngle"], "\<\"CrystalDensity\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/CrystalDensity"], "\<\"GetCrystalMetric\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetCrystalMetric"], "\<\"DarwinWidth\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/DarwinWidth"], "\<\"ExtinctionLength\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ExtinctionLength"], "\<\"InterplanarSpacing\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/InterplanarSpacing"], "\<\"GetLatticeParameters\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetLatticeParameters"], \
+"\<\"SymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentReflections"], \
+"\<\"MergeSymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"], \
+"\<\"$GroupSymbolRedirect\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$GroupSymbolRedirect"], "\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/$CrystalData"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/InputCheck\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/InputCheck"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/InputCheck.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$28541], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/InputCheck", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["InputCheck", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["snippet", "TI"], ",", 
+        StyleBox["input", "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]runs a global code ",
+     Cell[BoxData[
+      StyleBox["snippet", "TI"]], "InlineFormula"],
+     " on zero or more ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"],
+     " parameters."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["input", "TI"], ",", 
+        SubscriptBox[
+         StyleBox["label", "TI"], 
+         StyleBox["1", "TR"]], ",", 
+        StyleBox["\[Ellipsis]", "TR"], ",", 
+        SubscriptBox[
+         StyleBox["label", "TI"], 
+         StyleBox["n", "TI"]]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]checks reflection or coordinate ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"],
+     " according to each ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["label", "TI"], 
+       StyleBox["i", "TI"]]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1267467922],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["\<\
+This function is used to check input for other functions, and will throw \
+error messages and abort the operations when necessary.\
+\>", "Notes",
+ CellID->1871022088],
+
+Cell[TextData[{
+ "The following ",
+ Cell[BoxData[
+  StyleBox["snippet", "TI"]], "InlineFormula"],
+ "s are available:"
+}], "Notes",
+ CellID->1609912826],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<CrystalEntityQ\>\"", Cell[
+    "returns error if input is not a crystal entity", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<CrystalQ\>\"", Cell[TextData[{
+     "check if ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"],
+     " exists in ",
+     StyleBox[ButtonBox["$CrystalData",
+      BaseStyle->"Link",
+      ButtonData->"paclet:MaXrd/ref/$CrystalData"], "InlineCode"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<FilterSpecialLabels\>\"", Cell[
+    TextData[{
+     "filters chemical elements and ",
+     StyleBox["\"Void\"", "InlineCode"],
+     " through input"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GenerateTargetPositions\>\"", 
+    Cell["\<\
+generates general lattice coordinates for a given structure size\
+\>", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GetCentringVectors\>\"", Cell[
+    TextData[{
+     "returns the centring vectors for centring type ",
+     StyleBox["\"P\"", "InlineCode"],
+     ", ",
+     StyleBox["\"F\"", "InlineCode"],
+     ", ",
+     StyleBox["\"I\"", "InlineCode"],
+     ", ",
+     StyleBox["\"R\"", "InlineCode"],
+     ", ",
+     StyleBox["\"A\"", "InlineCode"],
+     ", ",
+     StyleBox["\"B\"", "InlineCode"],
+     ", ",
+     StyleBox["\"C\"", "InlineCode"],
+     " or ",
+     StyleBox["\"H\"", "InlineCode"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GetCrystalFamilyMetric\>\"", Cell[
+    "returns metric for dummy cell of the given crystal family", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GetCrystalFormulaUnits\>\"", Cell[
+    TextData[{
+     "returns the value if stored with ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"],
+     "; queries user if not"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GetCrystalSpaceGroup\>\"", Cell[
+    TextData[{
+     "returns the space group of ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"],
+     " (validity is checked)"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GetCrystalWavelength\>\"", Cell["\<\
+extracts the wavelength of crystal; returns error if not available\
+\>", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GetEnergyWavelength\>\"", Cell[
+    "returns the input converted to \[ARing]ngstr\[ODoubleDot]ms", 
+     "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GetPointSpaceGroupCrystal\>\"", Cell[
+    TextData[{
+     "returns the ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"],
+     " if point- or space gorup, or returns the space group of ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<GetReciprocalImageOrientation\>\"", 
+    Cell["obtain reciprocal layer specification (for simulations)", 
+     "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<HandleSpecialLabels\>\"", Cell[
+    TextData[{
+     "filters and builds entities of chemical elements and ",
+     StyleBox["\"Void\"", "InlineCode"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<InterpretElement\>\"", Cell["\<\
+returns the chemical element (or ion) as interpreted from input\
+\>", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<InterpretSpaceGroup\>\"", Cell[
+    "interprets and returns space group symbol of input", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<PadDomain\>\"", Cell[
+    "returns an internally padded version of a domain", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<PointGroupQ\>\"", Cell[
+    "checks whether input is a point group", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<PointSpaceGroupQ\>\"", Cell[TextData[{
+     "checks wheter input is a point group ",
+     StyleBox["or",
+      FontSlant->"Italic"],
+     " a space group"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Polarisation\>\"", Cell["\<\
+returns the polarisation factor based in inputted type label and scattering \
+angle\
+\>", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<ProcessWavelength\>\"", Cell[
+    TextData[{
+     "combines \"",
+     StyleBox["GetCrystalWavelength\"", "InlineCode"],
+     " and \"",
+     StyleBox["GetEnergyWavelength\"", "InlineCode"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<RotationTransformation\>\"", Cell[
+    "returns a transformation function (for crystal blocks)", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<ShallowDisplayCrystal\>\"", Cell[
+    "returns a short summary formatted description of a crystal", 
+     "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    "\"\<Update$CrystalDataAutoCompletion\>\"", Cell[
+    "updates the auto completion list of available crystals", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Update$CrystalDataFile\>\"", Cell[
+    TextData[{
+     "adds new data to ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " and updates the data file"
+    }], "TableText"]}
+  }]], "2ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, 
+   "Rows" -> {
+    None, None, None, None, None, None, None, None, None, None, None, None, 
+     None, None, None, None, None, None, None, None, None, None, None, {
+     None}}},
+ GridBoxDividers->{
+  "Rows" -> {{
+     True, True, True, True, True, True, True, True, True, True, True, True, 
+      True, True, True, True, True, True, True, True, True, True, True, True, 
+      True}}}},
+ CellID->222684676],
+
+Cell["\<\
+When working with a reflection or coordinate tuples, the following labels are \
+recognised by the function.\
+\>", "Notes",
+ CellID->221498276],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<1hkl\>\"", Cell[TextData[{
+     "checks if only one reflection is contained in ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<1xyz\>\"", Cell[TextData[{
+     "checks if only one coordinate is contained in ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Integer\>\"", Cell[
+    "checks whether all indices are integers", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Mutliple\>\"", Cell[TextData[{
+     "checks if at least two entries are contained in ",
+     Cell[BoxData[
+      StyleBox["input", "TI"]], "InlineFormula"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<StringSymbol\>\"", Cell[TextData[{
+     "checks if the heads of the indices are either ",
+     StyleBox["Integer", "InlineCode"],
+     ", ",
+     StyleBox["String", "InlineCode"],
+     " or ",
+     StyleBox["Symbol", "InlineCode"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<WrapSingle\>\"", Cell[TextData[{
+     "returns single reflections ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        StyleBox["h", "TI"], ",", 
+        StyleBox["k", "TI"], ",", 
+        StyleBox["l", "TI"]}], "}"}]], "InlineFormula"],
+     " as ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{
+         StyleBox["h", "TI"], ",", 
+         StyleBox["k", "TI"], ",", 
+         StyleBox["l", "TI"]}], "}"}], "}"}]], "InlineFormula"]
+    }], "TableText"]}
+  }]], "2ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "Rows" -> {None, None, None, None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True, True, True, True}}}},
+ CellID->1183224025],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Dimensions"]], "paclet:ref/Dimensions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " of ",
+ Cell[BoxData[
+  StyleBox["input", "TI"]], "InlineFormula"],
+ " will always be checked if the head is ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["List"]], "paclet:ref/List"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1298381760],
+
+Cell[TextData[{
+ "When using the ",
+ Cell[BoxData["\"\<EnergyWavelength\>\""], "InlineFormula"],
+ " label, inputted numbers that are 5 or smaller will be interpreted as \
+having \[ARing]ngstr\[ODoubleDot]m as unit; numbers up to 250 are considered \
+to be in kiloelectronvolts; larger numbers are considered to be in \
+electronvolts."
+}], "Notes",
+ CellID->1980014868],
+
+Cell[TextData[{
+ "The ",
+ StyleBox["\"RotationTransformation\"", "InlineCode"],
+ " module supports four types of ",
+ StyleBox["anchor references",
+  FontSlant->"Italic"],
+ ". Here are descriptions of where the rotation anchors are placed:"
+}], "Notes",
+ CellID->283416834],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<Host\>\"", Cell[
+    "origin of the host structure", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Domain\>\"", Cell["\<\
+origin of each domain's cell that is closest to the host's origin\
+\>", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<DomainCentroid\>\"", Cell[
+    "centroid of each domain", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Unit\>\"", Cell[
+    "origin of each unit", "TableText"]}
+  }]], "2ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "Rows" -> {None, None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True, True}}}},
+ CellID->1473782279],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(10)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1443070461],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(9)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Checking tuples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1809017597],
+
+Cell["Basic checks of the dimensions of input:", "ExampleText",
+ CellID->1837160032],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1367903769],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "InvalidTuple", 
+   "\"Reflections (and coordinates) must be on a \
+{\\!\\(\\*\\nStyleBox[\\\"h\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"k\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"l\\\", \\\"TI\\\"]\\)} (or \
+{\\!\\(\\*\\nStyleBox[\\\"x\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"y\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"z\\\", \\\"TI\\\"]\\)}) form\"", 
+   2, 1, 1, 26775511822436251483, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->794902605],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->432314248]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", 
+    RowBox[{"{", "2", "}"}], ",", "3"}], "}"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1815249394],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "InvalidTuple", 
+   "\"Reflections (and coordinates) must be on a \
+{\\!\\(\\*\\nStyleBox[\\\"h\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"k\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"l\\\", \\\"TI\\\"]\\)} (or \
+{\\!\\(\\*\\nStyleBox[\\\"x\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"y\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"z\\\", \\\"TI\\\"]\\)}) form\"", 
+   2, 2, 2, 26775511822436251483, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1394884042],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1884603242]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "5"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"6", ",", "7", ",", "8"}], "}"}]}], "}"}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->461672276],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "InvalidTuple", 
+   "\"Reflections (and coordinates) must be on a \
+{\\!\\(\\*\\nStyleBox[\\\"h\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"k\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"l\\\", \\\"TI\\\"]\\)} (or \
+{\\!\\(\\*\\nStyleBox[\\\"x\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"y\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"z\\\", \\\"TI\\\"]\\)}) form\"", 
+   2, 3, 3, 26775511822436251483, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[3]:=",
+ CellID->1892393033],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1216893561]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->467526121],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5", ",", "6"}], "}"}]}], "}"}], ",", 
+   "\"\<1hkl\>\""}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1466599491],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "SingleTupleExpected", 
+   "\"Only one \\!\\(\\*RowBox[{\\\"\\\\\\\"reflection\\\\\\\"\\\"}]\\) \
+expected.\"", 2, 1, 4, 26775511822436251483, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->2071145711],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1183530554]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5", ",", "6.0"}], "}"}]}], "}"}], ",", 
+   "\"\<Integer\>\""}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->320344971],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "IntegerExpected", 
+   "\"One or more indices are not integers.\"", 2, 2, 5, 26775511822436251483,
+    "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1251631147],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1562365264]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"2", "/", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1.2", ",", "3.4", ",", "5.6"}], "}"}]}], "}"}], ",", 
+   "\"\<StringSymbol\>\""}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->296424568],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "InvalidInputType", 
+   "\"Head of indices must be either Integer, String or Symbol.\"", 2, 3, 6, 
+   26775511822436251483, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[3]:=",
+ CellID->1484014596],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->958238714]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1993136983],
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->81829532],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", "\"\<WrapSingle\>\""}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->919410244],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->583840801]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5", ",", "6"}], "}"}]}], "}"}], ",", 
+   "\"\<WrapSingle\>\""}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1383130743],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5", ",", "6"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1181569721]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Snippet examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(6)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->417524222],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"\"\<GetCentringVectors\>\"", ",", "\"\<R\>\""}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->384054987],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["2", "3"], ",", 
+     FractionBox["1", "3"], ",", 
+     FractionBox["1", "3"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "3"], ",", 
+     FractionBox["2", "3"], ",", 
+     FractionBox["2", "3"]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1575633488]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1117509503],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"\"\<GetEnergyWavelength\>\"", ",", 
+   TemplateBox[{
+    "24.5", "\"keV\"", "kiloelectronvolts", "\"Kiloelectronvolts\""},
+    "Quantity"]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->544578231],
+
+Cell[BoxData[
+ TemplateBox[{
+  "0.5060579591836735`", "\"\[CapitalARing]\"", 
+   "\[ARing]ngstr\[ODoubleDot]ms", "\"Angstroms\""},
+  "Quantity"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->989087980]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->92703433],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"\"\<InterpretElement\>\"", ",", "\"\<he\>\""}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1138377229],
+
+Cell[BoxData["\<\"He\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->2041059921]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"\"\<InterpretElement\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Ca2+\>\"", ",", "\"\<Ca+2\>\"", ",", "\"\<fe+3\>\"", ",", 
+     "\"\<FE3+\>\"", ",", "\"\<k+\>\"", ",", "\"\<K-1\>\""}], "}"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1889735775],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Ca2+\"\>", ",", "\<\"Ca2+\"\>", ",", "\<\"Fe3+\"\>", 
+   ",", "\<\"Fe3+\"\>", ",", "\<\"K1+\"\>", ",", "\<\"K1-\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1404914664]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"\"\<InterpretElement\>\"", ",", "\"\<Fx01\>\""}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->2118692029],
+
+Cell[BoxData["\<\"F\"\>"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->62486888]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{"\"\<InterpretElement\>\"", ",", "\"\<Je2+\>\""}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->334541063],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "ElementError", 
+   "\"The element \[LeftGuillemet]\\!\\(\\*RowBox[{\\\"\\\\\\\"Je2+\\\\\\\"\\\
+\"}]\\)\[RightGuillemet] cannot be interpreted.\"", 2, 4, 7, 
+   26775511822436251483, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[4]:=",
+ CellID->432340259],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[4]=",
+ CellID->1405555212]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->2081050686],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputCheck", "[", 
+  RowBox[{
+  "\"\<GetCrystalFamilyMetric\>\"", ",", "\"\<Hexagonal\>\"", ",", 
+   "\"\<2D\>\""}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->537426626],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1.`", ",", 
+     RowBox[{"-", "0.5`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.8660254037844386`"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1199856089]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1593279856],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"domain1", "=", 
+  RowBox[{"ConstructDomains", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"7", ",", "7", ",", "1"}], "}"}], ",", "3", ",", "25"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->685727073],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"7", ",", "7", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "2", ",", "2", ",", "2", ",", "2", ",", "3", ",", "1",
+      ",", "1", ",", "1", ",", "3", ",", "1", ",", "2", ",", "3", ",", "3", 
+     ",", "1", ",", "1", ",", "3", ",", "2", ",", "1", ",", "2", ",", "1", 
+     ",", "1", ",", "3", ",", "2", ",", "2", ",", "2", ",", "1", ",", "2", 
+     ",", "1", ",", "3", ",", "3", ",", "1", ",", "2", ",", "1", ",", "3", 
+     ",", "3", ",", "3", ",", "1", ",", "1", ",", "1", ",", "1", ",", "3", 
+     ",", "3", ",", "3", ",", "3", ",", "3", ",", "1", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->435726054]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"R1", "=", 
+   RowBox[{"InputCheck", "[", 
+    RowBox[{"\"\<RotationTransformation\>\"", ",", "domain1", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "\"\<Domain\>\"", ",", 
+       
+       RowBox[{"<|", 
+        RowBox[{"3", "\[Rule]", 
+         RowBox[{"23.5", "\[Degree]"}]}], "|>"}]}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->324919468],
+
+Cell[BoxData["MaXrd`Private`R$4121"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->905036467]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"R1", "[", "3", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->2128016662],
+
+Cell[BoxData[
+ RowBox[{"TransformationFunction", "[", 
+  RowBox[{"(", 
+   TagBox[GridBox[{
+      {"0.917060074385124`", 
+       RowBox[{"-", "0.3987490689252462`"}], "0.1658798512297519`"},
+      {"0.3987490689252462`", "0.917060074385124`", 
+       RowBox[{"-", "0.7974981378504924`"}]},
+      {"0", "0", "1.`"}
+     },
+     AutoDelete->False,
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {-2 -> True}, 
+       "Rows" -> {{False}}, "RowsIndexed" -> {-2 -> True}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    #& ], ")"}], "]"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->527829054]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"domain2", "=", 
+   RowBox[{"ConstructDomains", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"7", ",", "7", ",", "7"}], "}"}], ",", "3", ",", "250"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R2", "=", 
+   RowBox[{"InputCheck", "[", 
+    RowBox[{"\"\<RotationTransformation\>\"", ",", "domain", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "\"\<Unit\>\"", ",", 
+       RowBox[{"<|", 
+        RowBox[{"1", "\[Rule]", 
+         RowBox[{"45", "\[Degree]"}]}], "|>"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"R2", "[", 
+  RowBox[{"1", ",", 
+   RowBox[{"{", 
+    RowBox[{"2.5", ",", "3.5"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1159887342],
+
+Cell[BoxData[
+ RowBox[{"TransformationFunction", "[", 
+  RowBox[{"(", 
+   TagBox[GridBox[{
+      {"0.7071067811865476`", 
+       RowBox[{"-", "0.7071067811865475`"}], "3.207106781186547`"},
+      {"0.7071067811865475`", "0.7071067811865476`", 
+       RowBox[{"-", "0.7426406871192848`"}]},
+      {"0", "0", "1.`"}
+     },
+     AutoDelete->False,
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {-2 -> True}, 
+       "Rows" -> {{False}}, "RowsIndexed" -> {-2 -> True}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    #& ], ")"}], "]"}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->883838968]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1574356691],
+
+Cell[TextData[{
+ "The last parameter specifies whether it is intended for direct space (",
+ StyleBox["DIFFUSE",
+  FontSlant->"Italic"],
+ ") or reciprocal space (",
+ StyleBox["DISCUS",
+  FontSlant->"Italic"],
+ ") reference."
+}], "ExampleText",
+ CellID->704249145],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{
+   "\"\<GetReciprocalImageOrientation\>\"", ",", "\"\<Quartz\>\"", ",", 
+    "\"\<hk0\>\"", ",", "7.5", ",", 
+    RowBox[{"{", 
+     RowBox[{"500", ",", "500"}], "}"}], ",", "True"}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1895227847],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"  13.6349,     4.9907,  0.\"\>"},
+     {"\<\"  13.6349,   -18.6256,  0.,  500\"\>"},
+     {"\<\" -13.6349,    18.6256,  0.,  500\"\>"},
+     {"\<\"  13.6349,     4.9907,  0.,  1\"\>"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellLabel->"Out[1]//TableForm=",
+ CellID->2074471308]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{
+   "\"\<GetReciprocalImageOrientation\>\"", ",", "\"\<Quartz\>\"", ",", 
+    "\"\<hk0\>\"", ",", "7.5", ",", 
+    RowBox[{"{", 
+     RowBox[{"500", ",", "500"}], "}"}], ",", "False"}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->826492967],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"  -7.5000,    -7.5000,  0.\"\>"},
+     {"\<\"   7.5000,    -7.5000,  0.\"\>"},
+     {"\<\"  -7.5000,     7.5000,  0.\"\>"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellLabel->"Out[2]//TableForm=",
+ CellID->1144228770]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->13108794],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidLabel"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is not a recognised check label.\
+\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidTuple"}], "=", 
+   "\"\<Reflections (and coordinates) must be on a {\!\(\*StyleBox[\"h\", \
+\"TI\"]\), \!\(\*StyleBox[\"k\", \"TI\"]\), \!\(\*StyleBox[\"l\", \"TI\"]\)} \
+(or {\!\(\*StyleBox[\"x\", \"TI\"]\), \!\(\*StyleBox[\"y\", \"TI\"]\), \
+\!\(\*StyleBox[\"z\", \"TI\"]\)}) form\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "SingleTupleExpected"}], "=", 
+   "\"\<Only one `1` expected.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "IntegerExpected"}], "=", 
+   "\"\<One or more indices are not integers.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidInputType"}], "=", 
+   "\"\<Head of indices must be either Integer, String or Symbol.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"InputCheck", "::", "MultipleTuplesExpected"}], "=", 
+    "\"\<At least two reflections are required to make comparisons.\>\""}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "EnergyUnitExpected"}], "=", 
+   "\"\<Input does not have a unit compatible with energy or \
+wavelength.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidEnergyInput"}], "=", 
+   "\"\<Input must be an energy or wavelength compatible Quantity, or a \
+number.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"InputCheck", "::", "EnergyMustBePositive"}], "=", 
+    "\"\<The wavelength/energy must be positive.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidCrystalEntity"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is not a valid crystal entity.\>\
+\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "NotIn$CrystalData"}], "=", 
+   "\"\<No data found on \[LeftGuillemet]`1`\[RightGuillemet].\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "NoWavelengthIncluded"}], "=", 
+   "\"\<No wavelength was found for crystal \[LeftGuillemet]`1`\
+\[RightGuillemet].\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidUserInput"}], "=", 
+   "\"\<Invalid user input.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"InputCheck", "::", "InvalidPolarisationSetting"}], "=", 
+    "\"\<Invalid polarisation setting.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidPointOrSpaceGroup"}], "=", 
+   "\"\<Unable to interpret \[LeftGuillemet]`1`\[RightGuillemet] as a point- \
+or space group.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidPointGroup"}], "=", 
+   "\"\<Unable to interpret \[LeftGuillemet]`1`\[RightGuillemet] as a point \
+group.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidSpaceGroup"}], "=", 
+   "\"\<Unable to interpret \[LeftGuillemet]`1`\[RightGuillemet] as a space \
+group.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidSpaceGroupNumber"}], "=", 
+   "\"\<Valid space group numbers are between 1 and 230.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidSpaceGroupInCrystal"}], "=", 
+   "\"\<Crystal entry \[LeftGuillemet]`1`\[RightGuillemet] has invalid space \
+group \[LeftGuillemet]`2`\[RightGuillemet].\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"InputCheck", "::", "InvalidSymmetryObject"}], "=", 
+    "\"\<Unable to interpret \[LeftGuillemet]`1`\[RightGuillemet] as a point \
+group, space group or a crystal.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidCentring"}], "=", 
+   "\"\<Invalid space group centring.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "ElementNumber"}], "=", 
+   "\"\<Element number `1` is out of range.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "ElementFailed"}], "=", 
+   "\"\<Unable to interpret \[LeftGuillemet]`1`\[RightGuillemet] as a \
+chemical element.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"InputCheck", "::", "ElementError"}], "=", 
+    "\"\<The element \[LeftGuillemet]`1`\[RightGuillemet] cannot be \
+interpreted.\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidCrystalFamily"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is not a valid crystal family.\>\
+\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"InputCheck", "::", "InvalidDimension"}], "=", 
+    "\"\<Dimension must be either \\\"2D\\\" or \\\"3D\\\".\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "DomainSizeError"}], "=", 
+   "\"\<Discrepancy between given domain size and length.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidRotationPoint"}], "=", 
+   "\"\<Invalid rotation point.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "::", "InvalidRotationReference"}], "=", 
+   "\"\<Reference for rotation anchor must either be \\\"Host\\\", \\\"Domain\
+\\\", \\\"DomainCentroid\\\" or \\\"Unit\\\".\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"InputCheck", "::", "InvalidRotationMap"}], "=", 
+    "\"\<Values of `1`D rotation maps must be `2`.\>\""}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "InputCheck"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", "__", "}"}]}], "\[IndentingNewLine]", "}"}]}], 
+  ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->269053285],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"input_List", ",", 
+    RowBox[{"labels___", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"SubsetQ", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<1hkl\>\"", ",", "\"\<1xyz\>\"", ",", "\"\<Integer\>\"", ",", 
+           "\"\<Multiple\>\"", ",", "\"\<StringSymbol\>\"", ",", 
+           "\"\<WrapSingle\>\""}], "}"}], ",", 
+         RowBox[{"{", "#", "}"}]}], "]"}], "&"}], ")"}]}]}], 
+   "\[IndentingNewLine]", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"check", ",", "hkl", ",", "temp"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Check", " ", "labels"}], " ", "*)"}], "\[IndentingNewLine]", 
+    "\t", 
+    RowBox[{
+     RowBox[{"check", "=", 
+      RowBox[{"{", "labels", "}"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"temp", "=", 
+         RowBox[{
+         "check", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], 
+        ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"MemberQ", "[", 
+            RowBox[{
+             RowBox[{"{", "\[IndentingNewLine]", 
+              RowBox[{
+              "\"\<1hkl\>\"", ",", "\"\<1xyz\>\"", ",", "\"\<Integer\>\"", 
+               ",", "\"\<Multiple\>\"", ",", "\[IndentingNewLine]", 
+               "\"\<StringSymbol\>\"", ",", "\"\<WrapSingle\>\""}], "}"}], 
+             ",", "temp"}], "]"}]}], ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{
+             RowBox[{"InputCheck", "::", "InvalidLabel"}], ",", "temp"}], 
+            "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", 
+         RowBox[{"Length", "@", "check"}]}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Dimensions", " ", "check", " ", 
+       RowBox[{"(", 
+        RowBox[{"always", " ", "required"}], ")"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Single", " ", 
+        RowBox[{"reflection", "/", "coordinate"}]}], " ", "*)"}], 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"MatchQ", "[", 
+        RowBox[{"input", ",", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x1_", ",", "x2_", ",", "x3_"}], "}"}], "/;", 
+          RowBox[{"!", 
+           RowBox[{"AnyTrue", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}], ",", "ListQ"}], 
+            "]"}]}]}]}], "]"}], ",", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"hkl", "=", 
+        RowBox[{"{", "input", "}"}]}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Multiple", " ", 
+         RowBox[{"reflections", "/", "coordinates"}]}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"AllTrue", "[", 
+        RowBox[{"input", ",", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"MatchQ", "[", 
+           RowBox[{"#", ",", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x1_", ",", "x2_", ",", "x3_"}], "}"}], "/;", 
+             RowBox[{"!", 
+              RowBox[{"AnyTrue", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}], ",", "ListQ"}], 
+               "]"}]}]}]}], "]"}], "&"}]}], "]"}], ",", "\[IndentingNewLine]",
+        "\t\t", 
+       RowBox[{"hkl", "=", "input"}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"None", " ", "of", " ", "the", " ", "above"}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t", "True", ",", "\[IndentingNewLine]", 
+       "\t\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"InputCheck", "::", "InvalidTuple"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "\t", "]"}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Single", " ", 
+       RowBox[{"reflection", "/", "coordinates"}], " ", "check"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"check", ",", "\"\<1hkl\>\""}], "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Length", "@", "hkl"}], "\[NotEqual]", "1"}], ",", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{
+            RowBox[{"InputCheck", "::", "SingleTupleExpected"}], ",", 
+            "\"\<reflection\>\""}], "]"}], ";", "\[IndentingNewLine]", "\t", 
+          RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"check", ",", "\"\<1xyz\>\""}], "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Length", "@", "hkl"}], "\[NotEqual]", "1"}], ",", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{
+            RowBox[{"InputCheck", "::", "SingleTupleExpected"}], ",", 
+            "\"\<coordinate\>\""}], "]"}], ";", "\[IndentingNewLine]", "\t", 
+          RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Multiple", " ", "reflections", " ", "check"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"check", ",", "\"\<Multiple\>\""}], "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Length", "@", "hkl"}], "<", "2"}], ",", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{"InputCheck", "::", "MultipleTuplesExpected"}], "]"}], ";",
+           "\[IndentingNewLine]", "\t", 
+          RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Integer", " ", "check"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"check", ",", "\"\<Integer\>\""}], "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"AllTrue", "[", 
+           RowBox[{
+            RowBox[{"Flatten", "@", "hkl"}], ",", "IntegerQ"}], "]"}]}], ",", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{"InputCheck", "::", "IntegerExpected"}], "]"}], ";", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"Check", " ", "if", " ", "Integer"}], ",", " ", 
+       RowBox[{"String", " ", "or", " ", "Symbol"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"check", ",", "\"\<StringSymbol\>\""}], "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"ContainsAll", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"Integer", ",", "String", ",", "Symbol", ",", "Times"}], 
+             "}"}], ",", "\[IndentingNewLine]", "\t", 
+            RowBox[{"Head", "/@", 
+             RowBox[{"Flatten", "@", "hkl"}]}]}], "]"}]}], ",", 
+         "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{"InputCheck", "::", "InvalidInputType"}], "]"}], ";", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Wrap", " ", "single", " ", "reflections"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"check", ",", "\"\<WrapSingle\>\""}], "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"MatchQ", "[", 
+          RowBox[{"input", ",", "\[IndentingNewLine]", "\t", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"_", "?", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"!", 
+                 RowBox[{"ListQ", "[", "#", "]"}]}], "&"}], ")"}]}], ",", 
+             RowBox[{"_", "?", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"!", 
+                 RowBox[{"ListQ", "[", "#", "]"}]}], "&"}], ")"}]}], ",", 
+             RowBox[{"_", "?", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"!", 
+                 RowBox[{"ListQ", "[", "#", "]"}]}], "&"}], ")"}]}]}], 
+            "}"}]}], "]"}], ",", "\[IndentingNewLine]", "\t", 
+         RowBox[{"Return", "[", 
+          RowBox[{"{", "input", "}"}], "]"}], ",", "\[IndentingNewLine]", 
+         "\t", 
+         RowBox[{"Return", "[", "input", "]"}]}], "\[IndentingNewLine]", "\t",
+         "]"}]}], "\[IndentingNewLine]", "\t", "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1525484060],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<CrystalEntityQ\>\"", ",", "input_"}], "]"}], ":=", 
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"input", "===", "\"\<Void\>\""}], ",", 
+      RowBox[{"Return", "[", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"MemberQ", "[", 
+       RowBox[{
+        RowBox[{"Keys", "@", "$PeriodicTable"}], ",", "input"}], "]"}], ",", 
+      RowBox[{"Return", "[", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"MemberQ", "[", 
+       RowBox[{
+        RowBox[{"Keys", "@", "$CrystalData"}], ",", "input"}], "]"}], ",", 
+      RowBox[{"Return", "[", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Message", "[", 
+     RowBox[{
+      RowBox[{"InputCheck", "::", "InvalidCrystalEntity"}], ",", "input"}], 
+     "]"}], ";"}], "\[IndentingNewLine]", ")"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[3]:=",
+ CellID->3334887],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<CrystalQ\>\"", ",", "input_"}], "]"}], ":=", 
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Check", " ", "if", " ", "entry", " ", "exists", " ", 
+     RowBox[{"in", " ", "'"}], 
+     RowBox[{"$CrystalData", "'"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"MissingQ", "@", 
+      RowBox[{"$CrystalData", "[", "input", "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Message", "[", 
+       RowBox[{
+        RowBox[{"InputCheck", "::", "NotIn$CrystalData"}], ",", "input"}], 
+       "]"}], ";", 
+      RowBox[{"Abort", "[", "]"}]}]}], "]"}], "\[IndentingNewLine]", 
+   ")"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[4]:=",
+ CellID->214870987],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<FilterSpecialLabels\>\"", ",", "input_List"}], "]"}], ":=", 
+  RowBox[{"Intersection", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"{", "\"\<Void\>\"", "}"}], ",", 
+      RowBox[{"Keys", "@", "$PeriodicTable"}]}], "]"}], ",", "input"}], 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[5]:=",
+ CellID->1416667902],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<GenerateTargetPositions\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"X_", ",", "Y_", ",", "Z_"}], "}"}]}], "]"}], ":=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"i", ",", "j", ",", "k"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "0.", ",", 
+        RowBox[{
+         RowBox[{"N", "@", "X"}], "-", "1"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"j", ",", "0.", ",", 
+        RowBox[{
+         RowBox[{"N", "@", "Y"}], "-", "1"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "0.", ",", 
+        RowBox[{
+         RowBox[{"N", "@", "Z"}], "-", "1"}]}], "}"}]}], "]"}], ",", "2"}], 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[6]:=",
+ CellID->786234625],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<GetCentringVectors\>\"", ",", "centring_String"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "vectors", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Which", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"centring", "===", "\"\<P\>\""}], ",", 
+       RowBox[{"vectors", "=", 
+        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"centring", "===", "\"\<F\>\""}], ",", 
+       RowBox[{"vectors", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"1", "/", "2"}], ",", 
+            RowBox[{"1", "/", "2"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"1", "/", "2"}], ",", 
+            RowBox[{"1", "/", "2"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"1", "/", "2"}], ",", "0", ",", 
+            RowBox[{"1", "/", "2"}]}], "}"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"centring", "===", "\"\<I\>\""}], ",", 
+       RowBox[{"vectors", "=", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "/", "2"}], ",", 
+           RowBox[{"1", "/", "2"}], ",", 
+           RowBox[{"1", "/", "2"}]}], "}"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"centring", "===", "\"\<R\>\""}], ",", 
+       RowBox[{"vectors", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"2", "/", "3"}], ",", 
+            RowBox[{"1", "/", "3"}], ",", 
+            RowBox[{"1", "/", "3"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"1", "/", "3"}], ",", 
+            RowBox[{"2", "/", "3"}], ",", 
+            RowBox[{"2", "/", "3"}]}], "}"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"centring", "===", "\"\<A\>\""}], ",", 
+       RowBox[{"vectors", "=", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", 
+           RowBox[{"1", "/", "2"}], ",", 
+           RowBox[{"1", "/", "2"}]}], "}"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"centring", "===", "\"\<B\>\""}], ",", 
+       RowBox[{"vectors", "=", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "/", "2"}], ",", "0", ",", 
+           RowBox[{"1", "/", "2"}]}], "}"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"centring", "===", "\"\<C\>\""}], ",", 
+       RowBox[{"vectors", "=", 
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"1", "/", "2"}], ",", 
+           RowBox[{"1", "/", "2"}], ",", "0"}], "}"}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"centring", "===", "\"\<H\>\""}], ",", 
+       RowBox[{"vectors", "=", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"2", "/", "3"}], ",", 
+            RowBox[{"1", "/", "3"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"1", "/", "3"}], ",", 
+            RowBox[{"2", "/", "3"}], ",", "0"}], "}"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", "True", ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"InputCheck", "::", "InvalidCentring"}], "]"}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"Abort", "[", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"PrependTo", "[", 
+      RowBox[{"vectors", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[7]:=",
+ CellID->778462384],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{
+   "\"\<GetCrystalFamilyMetric\>\"", ",", "family_", ",", "dimension_"}], 
+   "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "M", ",", "a", ",", "b", ",", "c", ",", "\[Alpha]", ",", "\[Beta]", ",", 
+      "\[Gamma]"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Input", " ", "checks"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\<Cubic\>\"", ",", "\"\<Hexagonal\>\"", ",", 
+            "\"\<Tetragonal\>\"", ",", "\"\<Orthorhombic\>\"", ",", 
+            "\"\<Monoclinic\>\"", ",", "\"\<Triclinic\>\""}], "}"}], ",", 
+          "\[IndentingNewLine]", "family"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"InputCheck", "::", "InvalidCrystalFamily"}], ",", 
+          "family"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"\"\<2D\>\"", ",", "\"\<3D\>\""}], "}"}], ",", 
+          "dimension"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"InputCheck", "::", "InvalidDimension"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", "Metric", " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"M", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", 
+          RowBox[{"b", " ", 
+           RowBox[{"Cos", "[", "\[Gamma]", "]"}]}], ",", 
+          RowBox[{"c", " ", 
+           RowBox[{"Cos", "[", "\[Beta]", "]"}]}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"b", " ", 
+           RowBox[{"Sin", "[", "\[Gamma]", "]"}]}], ",", 
+          RowBox[{"c", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"Cos", "[", "\[Alpha]", "]"}], "-", 
+             RowBox[{
+              RowBox[{"Cos", "[", "\[Beta]", "]"}], " ", 
+              RowBox[{"Cos", "[", "\[Gamma]", "]"}]}]}], ")"}], " ", 
+           RowBox[{"Csc", "[", "\[Gamma]", "]"}]}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", 
+          RowBox[{"c", " ", "*", 
+           RowBox[{"Sqrt", "[", 
+            RowBox[{"1", "-", 
+             SuperscriptBox[
+              RowBox[{"Cos", "[", "\[Beta]", "]"}], "2"], "-", 
+             RowBox[{
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Cos", "[", "\[Alpha]", "]"}], "-", 
+                 RowBox[{
+                  RowBox[{"Cos", "[", "\[Beta]", "]"}], " ", 
+                  RowBox[{"Cos", "[", "\[Gamma]", "]"}]}]}], ")"}], "2"], " ", 
+              SuperscriptBox[
+               RowBox[{"Csc", "[", "\[Gamma]", "]"}], "2"]}]}], "]"}]}]}], 
+         "}"}]}], "}"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     
+     RowBox[{"M", "=", 
+      RowBox[{"N", "[", 
+       RowBox[{"M", "/.", 
+        RowBox[{"Which", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"family", "===", "\"\<Cubic\>\""}], ",", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"a", "\[Rule]", "1."}], ",", 
+            RowBox[{"b", "\[Rule]", "1."}], ",", 
+            RowBox[{"c", "\[Rule]", "1."}], ",", "\[IndentingNewLine]", 
+            RowBox[{"\[Alpha]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Beta]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Gamma]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}]}], "\[IndentingNewLine]", "}"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"family", "===", "\"\<Hexagonal\>\""}], ",", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"a", "\[Rule]", "1."}], ",", 
+            RowBox[{"b", "\[Rule]", "1."}], ",", 
+            RowBox[{"c", "\[Rule]", "1."}], ",", "\[IndentingNewLine]", 
+            RowBox[{"\[Alpha]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Beta]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Gamma]", "\[Rule]", 
+             RowBox[{"120", "\[Degree]"}]}]}], "\[IndentingNewLine]", "}"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"family", "===", "\"\<Tetragonal\>\""}], ",", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"a", "\[Rule]", "1."}], ",", 
+            RowBox[{"b", "\[Rule]", "1."}], ",", 
+            RowBox[{"c", "\[Rule]", "1.61803"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"\[Alpha]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Beta]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Gamma]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}]}], "\[IndentingNewLine]", "}"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"family", "===", "\"\<Orthorhombic\>\""}], ",", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"a", "\[Rule]", "1.7"}], ",", 
+            RowBox[{"b", "\[Rule]", "1.2"}], ",", 
+            RowBox[{"c", "\[Rule]", "0.85"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"\[Alpha]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Beta]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Gamma]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}]}], "\[IndentingNewLine]", "}"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"family", "===", "\"\<Monoclinic\>\""}], ",", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"a", "\[Rule]", "1."}], ",", 
+            RowBox[{"b", "\[Rule]", "0.7"}], ",", 
+            RowBox[{"c", "\[Rule]", "1.2"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"\[Alpha]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Beta]", "\[Rule]", 
+             RowBox[{"72.", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Gamma]", "\[Rule]", 
+             RowBox[{"90", "\[Degree]"}]}]}], "\[IndentingNewLine]", "}"}], 
+          ",", "\[IndentingNewLine]", 
+          RowBox[{"family", "===", "\"\<Triclinic\>\""}], ",", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"a", "\[Rule]", "1.3"}], ",", 
+            RowBox[{"b", "\[Rule]", "0.8"}], ",", 
+            RowBox[{"c", "\[Rule]", "0.9"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"\[Alpha]", "\[Rule]", 
+             RowBox[{"66.", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Beta]", "\[Rule]", 
+             RowBox[{"77.", "\[Degree]"}]}], ",", 
+            RowBox[{"\[Gamma]", "\[Rule]", 
+             RowBox[{"88.", "\[Degree]"}]}]}], "\[IndentingNewLine]", "}"}]}],
+          "\[IndentingNewLine]", "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"dimension", "===", "\"\<2D\>\""}], ",", 
+       RowBox[{"M", "\[LeftDoubleBracket]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "2"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "2"}], "}"}]}], "\[RightDoubleBracket]"}], ",", 
+       "M"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[8]:=",
+ CellID->1146910364],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<GetCrystalFormulaUnits\>\"", ",", "input_String"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "output", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "Check", " ", "if", " ", "crystal", " ", "entry", " ", "exists"}], " ", 
+     "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"\"\<CrystalQ\>\"", ",", "input"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Return", " ", "crystal", " ", "wavelength", " ", "if", " ", 
+       "attached"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"KeyExistsQ", "[", 
+        RowBox[{
+         RowBox[{"$CrystalData", "[", "input", "]"}], ",", 
+         "\"\<FormulaUnits\>\""}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"$CrystalData", "[", 
+        RowBox[{"input", ",", "\"\<FormulaUnits\>\""}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"If", " ", "not"}], ",", " ", 
+         RowBox[{"query", " ", "user", " ", "manually"}]}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"output", "=", 
+        RowBox[{"ToExpression", "@", 
+         RowBox[{"InputString", "[", "\[IndentingNewLine]", 
+          RowBox[{
+          "\"\<Cannot determine the number of formula units \>\"", "<>", 
+           "\[IndentingNewLine]", "\"\<for \[LeftGuillemet]\>\"", "<>", 
+           "input", "<>", "\"\<\[RightGuillemet].\>\"", "<>", "\"\<\\n\>\"", "<>",
+            "\[IndentingNewLine]", 
+           "\"\<Please enter that number or the density below.\>\""}], 
+          "]"}]}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"NumericQ", "@", "output"}]}], ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"InputCheck", "::", "InvalidUserInput"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}], ",", "\[IndentingNewLine]", "output"}],
+       "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[9]:=",
+ CellID->309272276],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<GetCrystalSpaceGroup\>\"", ",", "input_String"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "sg", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "Check", " ", "if", " ", "crystal", " ", "entry", " ", "exists"}], " ", 
+     "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"\"\<CrystalQ\>\"", ",", "input"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Check", " ", "if", " ", "space", " ", "group", " ", "of", " ", 
+       "crystal", " ", "is", " ", "valid"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"sg", "=", 
+      RowBox[{"$CrystalData", "[", 
+       RowBox[{"input", ",", "\"\<SpaceGroup\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"KeyExistsQ", "[", 
+         RowBox[{"$GroupSymbolRedirect", ",", "sg"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"InputCheck", "::", "InvalidSpaceGroupInCrystal"}], ",", 
+          "input", ",", "sg"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Return", "@", "sg"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[10]:=",
+ CellID->1028716992],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<GetCrystalWavelength\>\"", ",", "input_String", ",", 
+    RowBox[{"abortQ_", ":", "True"}]}], "]"}], ":=", 
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"Check", " ", "if", " ", "crystal", " ", "entry", " ", "exists"}],
+     " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"InputCheck", "[", 
+     RowBox[{"\"\<CrystalQ\>\"", ",", "input"}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "Return", " ", "crystal", " ", "wavelength", " ", "if", " ", 
+      "attached"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"KeyExistsQ", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"$CrystalData", "[", "input", "]"}], ",", 
+        "\"\<Wavelength\>\""}], "]"}], ",", "\[IndentingNewLine]", "\t", 
+      RowBox[{"Return", "@", 
+       RowBox[{"$CrystalData", "[", "\[IndentingNewLine]", "\t", 
+        RowBox[{"input", ",", "\"\<Wavelength\>\""}], "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"If", " ", "not"}], ",", " ", 
+        RowBox[{
+         RowBox[{"abort", " ", "OR", " ", 
+          RowBox[{"return", " ", "'"}]}], "-", 
+         RowBox[{"1", "'"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{"abortQ", ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Message", "[", 
+          RowBox[{
+           RowBox[{"InputCheck", "::", "NoWavelengthIncluded"}], ",", 
+           "input"}], "]"}], ";", 
+         RowBox[{"Abort", "[", "]"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Return", "[", 
+         RowBox[{"-", "1"}], "]"}]}], "\[IndentingNewLine]", "]"}]}], "]"}]}],
+    ")"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[11]:=",
+ CellID->255642547],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Converts", " ", "to", " ", 
+    RowBox[{"wavelength", " ", "[", "\[ARing]ngstr\[ODoubleDot]ms", "]"}]}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"InputCheck", "[", 
+    RowBox[{"\"\<GetEnergyWavelength\>\"", ",", "input_", ",", 
+     RowBox[{"unitsQ_", ":", "True"}]}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"hcKeV", "=", "12.398420"}], ",", "\[Lambda]"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Only", " ", "exception"}], " ", "*)"}], "\[IndentingNewLine]", 
+     
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"input", "===", 
+         RowBox[{"-", "1"}]}], ",", 
+        RowBox[{"Return", "[", 
+         RowBox[{"-", "1"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Check", " ", "if", " ", "positive"}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"!", 
+         RowBox[{"Positive", "@", "input"}]}], ",", 
+        RowBox[{
+         RowBox[{"Message", "[", 
+          RowBox[{"InputCheck", "::", "EnergyMustBePositive"}], "]"}], ";", 
+         RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Which", "[", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"A", ".", " ", "Number"}], " ", "input"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"NumericQ", "@", "input"}], ",", "\[IndentingNewLine]", "\t", 
+        
+        RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+         RowBox[{"(*", " ", 
+          RowBox[{"1.", " ", "Assume", " ", "\[ARing]ngstr\[ODoubleDot]ms"}], 
+          " ", "*)"}], "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"input", " ", "\[LessEqual]", " ", "5.0"}], ",", 
+          RowBox[{"\[Lambda]", "=", 
+           RowBox[{"N", "@", "input"}]}], ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"(*", " ", 
+           RowBox[{"2.", " ", "Assume", " ", "kilo", " ", "electronvolt"}], 
+           " ", "*)"}], "\[IndentingNewLine]", "\t", 
+          RowBox[{"input", " ", "\[LessEqual]", " ", "250.0"}], ",", 
+          RowBox[{"\[Lambda]", "=", 
+           RowBox[{"hcKeV", "/", "input"}]}], ",", "\[IndentingNewLine]", 
+          "\t", 
+          RowBox[{"(*", " ", 
+           RowBox[{"3.", " ", "Assume", " ", "electronvolts"}], " ", "*)"}], 
+          "\[IndentingNewLine]", "\t", "True", ",", 
+          RowBox[{"\[Lambda]", "=", 
+           RowBox[{"1000", "*", 
+            RowBox[{"hcKeV", "/", "input"}]}]}]}], "\[IndentingNewLine]", 
+         "\t", "]"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+          RowBox[{"B", ".", " ", "Quantity"}], " ", "input"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{"QuantityQ", "[", "input", "]"}], " ", ",", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+         "Convert", " ", "wavelength", " ", "or", " ", "energy", " ", "to", 
+          " ", "\[ARing]ngstr\[ODoubleDot]ms"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"UnitDimensions", "[", "input", "]"}], "===", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"\"\<LengthUnit\>\"", ",", "1"}], "}"}], "}"}]}], ",", 
+          "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"\[Lambda]", "=", 
+            RowBox[{"UnitConvert", "[", 
+             RowBox[{"input", ",", "\"\<Angstroms\>\""}], "]"}]}], ";", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"If", "[", 
+            RowBox[{"unitsQ", ",", 
+             RowBox[{"Return", "@", "\[Lambda]"}], ",", 
+             RowBox[{"Return", "@", 
+              RowBox[{"QuantityMagnitude", "@", "\[Lambda]"}]}]}], "]"}]}], 
+          ",", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+          RowBox[{"CompatibleUnitQ", "[", 
+           RowBox[{"input", ",", "\"\<Joules\>\""}], "]"}], ",", "\t\t", 
+          "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"\[Lambda]", "=", 
+           RowBox[{"hcKeV", "/", 
+            RowBox[{"QuantityMagnitude", "@", "\[IndentingNewLine]", "\t\t", 
+             RowBox[{"UnitConvert", "[", 
+              RowBox[{"input", ",", "\"\<Kiloelectronvols\>\""}], "]"}]}]}]}],
+           ",", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", "True", 
+          ",", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{"InputCheck", "::", "EnergyUnitExpected"}], "]"}], ";", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "\t", 
+         "]"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+          RowBox[{"C", ".", " ", "None"}], " ", "of", " ", "the", " ", 
+          "above"}], " ", "*)"}], "\[IndentingNewLine]", "True", ",", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{
+         RowBox[{"Message", "[", 
+          RowBox[{"InputCheck", "::", "InvalidEnergyInput"}], "]"}], ";", 
+         RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Set", " ", "in", " ", "Quantity", " ", "if", " ", "desired"}],
+        " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{"unitsQ", ",", "\[IndentingNewLine]", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{"\[Lambda]", ",", "\"\<Angstroms\>\""}], "]"}], ",", 
+        "\[IndentingNewLine]", "\[Lambda]"}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[12]:=",
+ CellID->1616993429],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<GetPointSpaceGroupCrystal\>\"", ",", "input_"}], "]"}], ":=", 
+  
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"$CrystalDataCombined", ",", "sg"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+     "Check", " ", "if", " ", "space", " ", "group", " ", "number", " ", "is",
+       " ", "given"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "\[LessEqual]", "input", "\[LessEqual]", "230"}], ")"}],
+         "&&", 
+        RowBox[{"IntegerQ", "@", "input"}]}], ",", 
+       RowBox[{"Return", "@", 
+        RowBox[{"$SpaceGroups", "\[LeftDoubleBracket]", 
+         RowBox[{"input", ",", "\"\<Name\>\"", ",", "\"\<Symbol\>\""}], 
+         "\[RightDoubleBracket]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+        "If", " ", "actual", " ", "input", " ", "is", " ", "a", " ", 
+         "point"}], "-", " ", 
+        RowBox[{"or", " ", "space", " ", "group"}]}], ",", " ", 
+       RowBox[{"return", " ", "it"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"KeyExistsQ", "[", 
+        RowBox[{"$GroupSymbolRedirect", ",", "input"}], "]"}], ",", 
+       RowBox[{"Return", "@", "input"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Check", " ", "if", " ", "crystal", " ", "entry", " ", "exists"}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"AssociationQ", "@", "MaXrd`Private`$TempCrystalData"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"$CrystalDataCombined", "=", 
+        RowBox[{"Join", "[", "\[IndentingNewLine]", 
+         RowBox[{"$CrystalData", ",", "MaXrd`Private`$TempCrystalData"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"$CrystalDataCombined", "=", "$CrystalData"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MissingQ", "@", 
+        RowBox[{"$CrystalDataCombined", "[", "input", "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"InputCheck", "::", "InvalidSymmetryObject"}], ",", 
+          "input"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Check", " ", "if", " ", "space", " ", "group", " ", "of", " ", 
+       "crystal", " ", "exists"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"sg", "=", 
+      RowBox[{"$CrystalDataCombined", "[", 
+       RowBox[{"input", ",", "\"\<SpaceGroup\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"KeyExistsQ", "[", 
+         RowBox[{"$GroupSymbolRedirect", ",", "sg"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"InputCheck", "::", "InvalidSpaceGroupInCrystal"}], ",", 
+          "input", ",", "sg"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Return", "@", "sg"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[13]:=",
+ CellID->403008418],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{
+   "\"\<GetReciprocalImageOrientation\>\"", ",", "\[IndentingNewLine]", 
+    "latticeInput_", ",", "hklPlane_", ",", "indexLimit_", ",", 
+    RowBox[{"{", 
+     RowBox[{"width_", ",", "height_"}], "}"}], ",", "directSpaceQ_"}], 
+   "\[IndentingNewLine]", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"hkl", "=", "hklPlane"}], ",", "\[IndentingNewLine]", 
+      "abscissaIndex", ",", "ordinateIndex", ",", "planeConstant", ",", 
+      "planeIndex", ",", "\[IndentingNewLine]", 
+      RowBox[{"bottomLeft", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], ",", 
+      RowBox[{"bottomRight", "=", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], ",", 
+      RowBox[{"topRight", "=", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1"}], "}"}]}], ",", 
+      RowBox[{"topLeft", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", "\[IndentingNewLine]", 
+      "M", ",", "\[Xi]", ",", "imageOrientation"}], "\[IndentingNewLine]", 
+     "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"StringQ", "@", "hkl"}], ",", 
+       RowBox[{"hkl", "=", 
+        RowBox[{"MillerNotationToList", "@", "hkl"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"abscissaIndex", ",", "ordinateIndex", ",", "planeConstant"}], 
+       "}"}], "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"#1", ",", "#2", ",", 
+          RowBox[{
+          "hkl", "\[LeftDoubleBracket]", "#3", "\[RightDoubleBracket]"}]}], 
+         "}"}], "&"}], "@@", 
+       RowBox[{"Flatten", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Position", "[", 
+           RowBox[{"hkl", ",", "#"}], "]"}], "&"}], "/@", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<h\>\"", ",", "\"\<k\>\"", ",", "\"\<l\>\"", ",", "_Integer"}], 
+          "}"}]}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"planeIndex", "=", 
+      RowBox[{"First", "@", 
+       RowBox[{"Complement", "[", 
+        RowBox[{
+         RowBox[{"Range", "@", "3"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"abscissaIndex", ",", "ordinateIndex"}], "}"}]}], "]"}]}]}],
+      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"TrueQ", "@", "directSpaceQ"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"a", ".", " ", "Direct"}], " ", "space", " ", "vectors", " ", 
+         RowBox[{"(", "uvw", ")"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"M", "=", 
+         RowBox[{"GetCrystalMetric", "[", 
+          RowBox[{"latticeInput", ",", 
+           RowBox[{"\"\<ToCartesian\>\"", "\[Rule]", "True"}]}], "]"}]}], ";",
+         "\[IndentingNewLine]", 
+        RowBox[{"\[Xi]", "=", 
+         RowBox[{"2", "*", 
+          RowBox[{"indexLimit", "/", 
+           RowBox[{"Max", "@", "M"}]}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"M", "=", 
+         RowBox[{"M", "[", 
+          RowBox[{"[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"abscissaIndex", ",", "ordinateIndex"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"abscissaIndex", ",", "ordinateIndex"}], "}"}]}], "]"}], 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"imageOrientation", "=", 
+         RowBox[{"\[Xi]", "*", 
+          RowBox[{"{", 
+           RowBox[{"bottomRight", ",", "topLeft", ",", "topRight"}], 
+           "}"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"imageOrientation", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", ".", "M"}], "&"}], "/@", "imageOrientation"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"imageOrientation", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Insert", "[", 
+            RowBox[{"#", ",", 
+             RowBox[{"N", "@", "planeConstant"}], ",", "planeIndex"}], "]"}], 
+           "&"}], "/@", "imageOrientation"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"imageOrientation", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Append", "[", 
+            RowBox[{"#1", ",", "#2"}], "]"}], "&"}], "@@@", 
+          RowBox[{"Transpose", "[", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"imageOrientation", ",", 
+             RowBox[{"{", 
+              RowBox[{"width", ",", "height", ",", "1"}], "}"}]}], "}"}], 
+           "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"PrependTo", "[", 
+         RowBox[{"imageOrientation", ",", 
+          RowBox[{"imageOrientation", "\[LeftDoubleBracket]", 
+           RowBox[{"3", ",", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], 
+           "\[RightDoubleBracket]"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"b", ".", " ", "Corners"}], " ", "in", " ", "reciprocal", 
+         " ", "space"}], " ", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"imageOrientation", "=", 
+         RowBox[{"indexLimit", "*", 
+          RowBox[{"{", 
+           RowBox[{"bottomLeft", ",", "bottomRight", ",", "topLeft"}], 
+           "}"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"imageOrientation", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"N", "@", 
+            RowBox[{"Insert", "[", 
+             RowBox[{"#", ",", "planeConstant", ",", "planeIndex"}], "]"}]}], 
+           "&"}], "/@", "imageOrientation"}]}]}]}], "\[IndentingNewLine]", 
+      "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"imageOrientation", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"MapAt", "[", 
+         RowBox[{"#", ",", "imageOrientation", ",", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"All", ",", 
+            RowBox[{"{", 
+             RowBox[{"abscissaIndex", ",", "ordinateIndex"}], "}"}]}], 
+           "}"}]}], "]"}], "&"}], "[", 
+       RowBox[{
+        RowBox[{"DecimalForm", "[", "\[IndentingNewLine]", 
+         RowBox[{"#", ",", 
+          RowBox[{"{", 
+           RowBox[{"7", ",", "4"}], "}"}], ",", 
+          RowBox[{"NumberPadding", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"\"\< \>\"", ",", "\"\<0\>\""}], "}"}]}]}], "]"}], "&"}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"imageOrientation", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{"ToString", ",", "imageOrientation", ",", 
+        RowBox[{"{", "2", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"imageOrientation", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"StringRiffle", "[", 
+         RowBox[{"#", ",", "\"\<,  \>\""}], "]"}], "&"}], "/@", 
+       "imageOrientation"}]}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[14]:=",
+ CellID->199058688],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<HandleSpecialLabels\>\"", ",", "input_List"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "specialLabels", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"specialLabels", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{"\"\<FilterSpecialLabels\>\"", ",", "input"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"SynthesiseStructure", "/@", "specialLabels"}], ";", 
+     "\[IndentingNewLine]", "specialLabels"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[15]:=",
+ CellID->1947330837],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<InterpretElement\>\"", ",", "input_"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"elementsIn", "=", "input"}], ",", "pertiodicTable", ",", 
+      "elementsRead", ",", "elementsReadNeutral", ",", "temp"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", 
+      RowBox[{"A", ".", " ", "Input"}], " ", "number", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"A", 
+      RowBox[{".1", ".", " ", "Check"}], " ", "whether", " ", "number", " ", 
+      "is", " ", "a", " ", "string"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"StringQ", "@", "elementsIn"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"StringMatchQ", "[", 
+          RowBox[{"elementsIn", ",", "NumberString"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"elementsIn", "=", 
+          RowBox[{"ToExpression", "@", "elementsIn"}]}]}], "]"}]}], "]"}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"A", 
+       RowBox[{".2", ".", " ", "Check"}], " ", "if", " ", "valid", " ", 
+       "integer", " ", 
+       RowBox[{"(", 
+        RowBox[{"in", " ", "the", " ", "periodic", " ", "table"}], ")"}]}], 
+      " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"NumericQ", "@", "elementsIn"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1", "\[LessEqual]", "elementsIn", "\[LessEqual]", 
+            RowBox[{"Length", "@", "$PeriodicTable"}]}], ")"}], "&&", 
+          RowBox[{"IntegerQ", "@", "elementsIn"}]}], ",", 
+         RowBox[{"Return", "[", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"Keys", "@", "$PeriodicTable"}], ")"}], 
+           "\[LeftDoubleBracket]", "elementsIn", "\[RightDoubleBracket]"}], 
+          "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{
+            RowBox[{"InputCheck", "::", "ElementNumber"}], ",", 
+            RowBox[{"ToString", "@", "elementsIn"}]}], "]"}], ";", 
+          RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+      "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", 
+       RowBox[{"B", ".", " ", "Process"}], " ", "single", " ", "string", " ", 
+       "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"B", 
+       RowBox[{".1", ".", " ", "Wrap"}], " ", "string"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"StringQ", "@", "elementsIn"}], ",", 
+       RowBox[{"elementsIn", "=", 
+        RowBox[{"{", "elementsIn", "}"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", 
+       RowBox[{"C", ".", " ", "Process"}], " ", "list", " ", "of", " ", 
+       "strings", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"C", 
+       RowBox[{".1", ".", " ", "Check"}], " ", "if", " ", "input", " ", "is", 
+       " ", "a", " ", "list", " ", "of", " ", "strings"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"ListQ", "@", "elementsIn"}]}], ",", 
+       RowBox[{"Goto", "[", "\"\<Failed\>\"", "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"AllTrue", "[", 
+         RowBox[{"elementsIn", ",", "StringQ"}], "]"}]}], ",", 
+       RowBox[{"Goto", "[", "\"\<Failed\>\"", "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"C", 
+       RowBox[{".2", ".", " ", "Set"}], " ", "of", " ", "valid", " ", 
+       "symbols", " ", "from", " ", "the", " ", "periodic", " ", "table"}], 
+      " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"pertiodicTable", "=", 
+      RowBox[{"Keys", "@", "$PeriodicTable"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"C", 
+        RowBox[{".3", ".", " ", "Find"}], " ", 
+        RowBox[{"(", "possible", ")"}], " ", "matches"}], ",", " ", 
+       RowBox[{"and", " ", "establish", " ", "order"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"elementsRead", "=", 
+      RowBox[{"StringCases", "[", 
+       RowBox[{"elementsIn", ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"StartOfString", "~~", 
+          RowBox[{"a", ":", "LetterCharacter"}], "~~", 
+          RowBox[{"{", 
+           RowBox[{"\"\<\>\"", ",", 
+            RowBox[{"b", ":", "LetterCharacter"}]}], "}"}], "~~", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"\"\<\>\"", ",", 
+            RowBox[{
+             RowBox[{"n1", ":", 
+              RowBox[{"DigitCharacter", "..."}]}], "~~", 
+             RowBox[{"pm", ":", 
+              RowBox[{"{", 
+               RowBox[{"\"\<+\>\"", ",", "\"\<-\>\""}], "}"}]}], "~~", 
+             RowBox[{"n2", ":", 
+              RowBox[{"DigitCharacter", "..."}]}]}]}], "}"}]}], 
+         "\[IndentingNewLine]", "\[RuleDelayed]", 
+         RowBox[{
+          RowBox[{"ToUpperCase", "[", "a", "]"}], "<>", 
+          RowBox[{"ToLowerCase", "[", "b", "]"}], "<>", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"n1", "===", "\"\<\>\""}], ")"}], "&&", 
+             RowBox[{"(", 
+              RowBox[{"n2", "===", "\"\<\>\""}], ")"}]}], ",", "\"\<1\>\"", 
+            ",", "\"\<\>\""}], "]"}], "<>", "n1", "<>", "n2", "<>", 
+          "pm"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"Check", " ", "for", " ", "non"}], "-", "elements"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MemberQ", "[", 
+        RowBox[{"elementsRead", ",", 
+         RowBox[{"{", "}"}]}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"InputCheck", "::", "ElementError"}], ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"Part", "[", 
+           RowBox[{"elementsIn", ",", 
+            RowBox[{
+             RowBox[{"Position", "[", 
+              RowBox[{"elementsRead", ",", 
+               RowBox[{"{", "}"}]}], "]"}], "\[LeftDoubleBracket]", 
+             RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}], "]"}]}], 
+         "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Separate", " ", "element", " ", "symbol", " ", "and", " ", "charge", 
+       " ", 
+       RowBox[{"(", 
+        RowBox[{"if", " ", "any"}], ")"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"elementsRead", "=", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{
+        RowBox[{"StringCases", "[", 
+         RowBox[{
+          RowBox[{"Flatten", "@", "elementsRead"}], ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{
+           RowBox[{"StartOfString", "~~", 
+            RowBox[{"a", ":", 
+             RowBox[{"LetterCharacter", ".."}]}], "~~", "b___"}], 
+           "\[IndentingNewLine]", "\t", "\[RuleDelayed]", 
+           RowBox[{"{", 
+            RowBox[{"a", ",", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"b", "===", "\"\<\>\""}], ",", "\"\<&\>\"", ",", "b"}],
+               "]"}]}], "}"}]}]}], "]"}], ",", "1"}], "]"}]}], 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"'", "&"}], "'"}], " ", "should", " ", "be", " ", "deleted", 
+       " ", "later"}], " ", "*)"}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"elementsReadNeutral", "=", 
+      RowBox[{"elementsRead", "\[LeftDoubleBracket]", 
+       RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"C", 
+       RowBox[{".4", ".", " ", "Remove"}], " ", "second", " ", "character", 
+       " ", "if", " ", "not", " ", "applicable"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"elementsReadNeutral", "=", 
+      RowBox[{"elementsReadNeutral", "/.", 
+       RowBox[{
+        RowBox[{"s_String", "/;", "\[IndentingNewLine]", 
+         RowBox[{"!", 
+          RowBox[{"MemberQ", "[", 
+           RowBox[{"pertiodicTable", ",", "s"}], "]"}]}]}], "\[RuleDelayed]", 
+        
+        RowBox[{"StringTake", "[", 
+         RowBox[{"s", ",", "1"}], "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Special", " ", 
+       RowBox[{"case", ":", " ", "deuterium"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"elementsReadNeutral", "=", 
+      RowBox[{"elementsReadNeutral", "/.", 
+       RowBox[{"\"\<D\>\"", "\[Rule]", "\"\<H\>\""}]}]}], ";", 
+     "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"C", 
+       RowBox[{".5", ".", " ", "Final"}], " ", "validity", " ", "check"}], 
+      " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"Complement", "[", 
+       RowBox[{"elementsReadNeutral", ",", "pertiodicTable"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"temp", "=!=", 
+        RowBox[{"{", "}"}]}], ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"InputCheck", "::", "ElementError"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Part", "[", 
+           RowBox[{"elementsIn", ",", 
+            RowBox[{
+             RowBox[{"Position", "[", 
+              RowBox[{"elementsReadNeutral", ",", "\[IndentingNewLine]", 
+               RowBox[{"First", "@", "temp"}]}], "]"}], 
+             "\[LeftDoubleBracket]", 
+             RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}], "]"}]}], 
+         "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"C", 
+       RowBox[{".6", ".", " ", "Concatenate"}], " ", "elements", " ", "and", 
+       " ", "charge"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"elementsRead", "\[LeftDoubleBracket]", 
+       RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], "=", 
+      "elementsReadNeutral"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"elementsRead", "=", 
+      RowBox[{"elementsRead", "/.", 
+       RowBox[{"\"\<1\>\"", "\[Rule]", "\"\<\>\""}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"elementsRead", "=", 
+      RowBox[{"StringDelete", "[", 
+       RowBox[{
+        RowBox[{"StringJoin", "/@", "elementsRead"}], ",", "\"\<&\>\""}], 
+       "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Goto", "[", "\"\<Done\>\"", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", 
+       RowBox[{"D", ".", " ", "Post"}], " ", "process", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"a", ".", " ", "Unable"}], " ", "to", " ", "determine", " ", 
+       "chemical", " ", "element"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Label", "[", "\"\<Failed\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Message", "[", 
+      RowBox[{
+       RowBox[{"InputCheck", "::", "\"\<ElementFailed\>\""}], ",", 
+       RowBox[{"ToString", "@", "input"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Abort", "[", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"b", ".", " ", "Return"}], " ", "string", " ", 
+       RowBox[{"(", 
+        RowBox[{"or", " ", "list", " ", "of", " ", "strings"}], ")"}]}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Label", "[", "\"\<Done\>\"", "]"}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"StringQ", "@", "input"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+       "elementsRead", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+        ",", "elementsRead"}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[16]:=",
+ CellID->1138597179],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<InterpretSpaceGroup\>\"", ",", "input_", ",", 
+    RowBox[{"abortQ_", ":", "True"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"sg", "=", "input"}], ",", "o", ",", "regex", ",", "temp"}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", 
+      RowBox[{"A", ".", " ", "Input"}], " ", "number", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"A", 
+      RowBox[{".1", ".", " ", "Check"}], " ", "whether", " ", "number", " ", 
+      "is", " ", "a", " ", "string"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"StringQ", "@", "sg"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"StringMatchQ", "[", 
+          RowBox[{
+           RowBox[{"StringTrim", "@", "sg"}], ",", "NumberString"}], "]"}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"sg", "=", 
+          RowBox[{"ToExpression", "@", "sg"}]}]}], "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"A", 
+       RowBox[{".2", ".", " ", "Check"}], " ", "if", " ", "valid", " ", 
+       "integer", " ", 
+       RowBox[{"(", 
+        RowBox[{
+        "a", " ", "canonical", " ", "space", " ", "group", " ", "number"}], 
+        ")"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"NumericQ", "@", "sg"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1", "\[LessEqual]", "sg", "\[LessEqual]", "230"}], ")"}], 
+          "&&", 
+          RowBox[{"IntegerQ", "@", "sg"}]}], ",", 
+         RowBox[{"Return", "@", 
+          RowBox[{"$SpaceGroups", "\[LeftDoubleBracket]", 
+           RowBox[{"sg", ",", "\"\<Name\>\"", ",", "\"\<Symbol\>\""}], 
+           "\[RightDoubleBracket]"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{"InputCheck", "::", "InvalidSpaceGroupNumber"}], "]"}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{"abortQ", ",", 
+            RowBox[{"Abort", "[", "]"}], ",", 
+            RowBox[{"Return", "@", "Null"}]}], "]"}]}]}], "]"}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", 
+       RowBox[{"B", ".", " ", "Process"}], " ", "string", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"B", 
+       RowBox[{".1", ".", " ", "Check"}], " ", "if", " ", "string"}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"StringQ", "@", "sg"}]}], ",", 
+       RowBox[{"Goto", "[", "\"\<Failed\>\"", "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"sg", "=", 
+      RowBox[{"StringTrim", "@", "sg"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"B", ".2", " ", "Process", " ", "any", " ", "annotations"}], 
+      " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"StringContainsQ", "[", 
+        RowBox[{"sg", ",", "\"\<origin\>\"", ",", 
+         RowBox[{"IgnoreCase", "\[Rule]", "True"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"regex", "=", 
+         RowBox[{
+         "RegularExpression", "[", "\"\< \\\\(origin.+(\\\\d)\\\\)\>\"", 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"o", "=", 
+         RowBox[{"StringCases", "[", 
+          RowBox[{"sg", ",", 
+           RowBox[{"regex", "\[Rule]", "\"\<$1\>\""}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"o", "===", 
+           RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{"Manual", " ", "input", " ", "required"}], " ", "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"o", "=", 
+            RowBox[{"ChoiceDialog", "[", 
+             RowBox[{
+              RowBox[{
+              "\"\<Information on cell origin detected.\>\"", "<>", 
+               "\[IndentingNewLine]", "\"\<\\n\>\"", "<>", 
+               "\"\<Please confirm the cell origin.\>\""}], ",", 
+              RowBox[{"{", 
+               RowBox[{"1", ",", "2"}], "}"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"WindowTitle", "\[Rule]", "\"\<Cell origin\>\""}]}], 
+             "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"sg", "=", 
+            RowBox[{"StringDelete", "[", 
+             RowBox[{"sg", ",", 
+              RowBox[{
+              "Whitespace", "~~", "\"\<(\>\"", "~~", "__", "~~", 
+               "\"\<)\>\""}]}], "]"}]}]}], ",", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{"Rebuild", " ", "space", " ", "group", " ", "symbol"}], 
+           " ", "*)"}], "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"o", "=", 
+            RowBox[{"First", "@", "o"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"sg", "=", 
+            RowBox[{"StringReplace", "[", 
+             RowBox[{"sg", ",", 
+              RowBox[{"regex", "\[Rule]", "\"\<:$1\>\""}]}], "]"}]}]}]}], 
+         "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"B", ".3", " ", "Tidy", " ", "string"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"sg", "=", 
+      RowBox[{"Fold", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"StringReplace", "[", 
+          RowBox[{"#1", ",", "#2"}], "]"}], "&"}], ",", "sg", ",", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", 
+          RowBox[{"B", ".4", 
+           RowBox[{".1", ".", " ", "Remove"}], " ", "any", " ", "_enclosing", 
+           "_", " ", "quotation", " ", "marks"}], " ", "*)"}], 
+         "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", 
+          RowBox[{"Note", ":", " ", 
+           RowBox[{
+           "Some", " ", "Hall", " ", "symbols", " ", "contain", " ", "double",
+             " ", "quotation", " ", "marks"}]}], " ", "*)"}], 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"StartOfString", "~~", 
+            RowBox[{"{", 
+             RowBox[{"\"\<'\>\"", ",", "\"\<\\\"\>\""}], "}"}], "~~", 
+            "main__", "~~", 
+            RowBox[{"{", 
+             RowBox[{"\"\<'\>\"", ",", "\"\<\\\"\>\""}], "}"}], "~~", 
+            "EndOfString"}], "\[RuleDelayed]", "main"}], ",", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{
+           "B", ".4", ".2", " ", "Uppercase", " ", "centring", " ", "1"}], 
+           " ", "*)"}], "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"StartOfString", "~~", 
+            RowBox[{"first", ":", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\"\<-\>\"", "~~", "_"}], ",", "_"}], "}"}]}], "~~", 
+            "rest__", "~~", "EndOfString"}], "\[RuleDelayed]", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"ToUpperCase", "@", "first"}], "~~", 
+            RowBox[{"ToLowerCase", "@", "rest"}]}]}], ",", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{"B", ".4", 
+            RowBox[{".3", ".", " ", "Fix"}], " ", "boxes"}], " ", "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+            "\"\<overscriptbox\>\"", "\[Rule]", "\"\<OverscriptBox\>\""}], 
+            ",", "\[IndentingNewLine]", 
+            RowBox[{
+            "\"\<subscriptbox\>\"", "\[Rule]", "\"\<SubscriptBox\>\""}]}], 
+           "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{
+           "B", ".4", ".4", " ", "Uppercase", " ", "centring", " ", "2"}], 
+           " ", "*)"}], "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"\"\<Box[\\(\>\"", "~~", "c_"}], "\[RuleDelayed]", 
+           RowBox[{"\"\<Box[\\(\>\"", "<>", 
+            RowBox[{"ToUpperCase", "[", "c", "]"}]}]}], ",", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{"B", ".4", ".5", " ", "Screw", " ", "axes"}], " ", "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"a", ":", "DigitCharacter"}], "~~", "\"\<(\>\"", "~~", 
+            RowBox[{"b", ":", "DigitCharacter"}], "~~", "\"\<)\>\""}], 
+           "\[RuleDelayed]", 
+           RowBox[{"a", "<>", "b"}]}], ",", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(*", " ", 
+           RowBox[{"B", ".4", 
+            RowBox[{".6", ".", " ", "Miscellaneous"}], " ", "replacements"}], 
+           " ", "*)"}], "\[IndentingNewLine]", 
+          RowBox[{"\"\<;\>\"", "\[Rule]", "\"\< \>\""}]}], 
+         "\[IndentingNewLine]", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"sg", "=", 
+      RowBox[{"StringTrim", "@", "sg"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", 
+       RowBox[{"C", ".", " ", "Check"}], " ", "symbol", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"C", 
+       RowBox[{".1", ".", " ", "Check"}], " ", "centring", " ", "symbol"}], 
+      " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<P\>\"", ",", "\"\<I\>\"", ",", "\"\<F\>\"", ",", "\"\<R\>\"", 
+            ",", "\"\<A\>\"", ",", "\"\<B\>\"", ",", "\"\<C\>\"", ",", 
+            "\"\<H\>\"", ",", "\"\<\\!\>\"", ",", "\"\<-\>\""}], "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"StringTake", "[", 
+           RowBox[{"sg", ",", "1"}], "]"}]}], "]"}]}], ",", 
+       RowBox[{"Goto", "[", "\"\<Failed\>\"", "]"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"C", ".2", " ", "Check", " ", "if", " ", "found", " ", 
+       RowBox[{"by", " ", "'"}], 
+       RowBox[{"$GroupSymbolRedirect", "'"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"$GroupSymbolRedirect", "[", "sg", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MissingQ", "@", "temp"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"KeyExistsQ", "[", 
+           RowBox[{"temp", ",", "\"\<PointGroupNumber\>\""}], "]"}], ",", 
+          RowBox[{"Goto", "[", "\"\<Failed\>\"", "]"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"sg", "=", 
+         RowBox[{"temp", "\[LeftDoubleBracket]", 
+          RowBox[{"\"\<Name\>\"", ",", "\"\<Symbol\>\""}], 
+          "\[RightDoubleBracket]"}]}], ";", 
+        RowBox[{"Goto", "[", "\"\<SpaceGroupFound\>\"", "]"}]}]}], "]"}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Exception", ":", " ", 
+       RowBox[{"Old", " ", 
+        RowBox[{"symbols", "?"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"sg", "===", "\"\<Fm3m\>\""}], ",", 
+       RowBox[{
+        RowBox[{"sg", "=", "\"\<Fm-3m\>\""}], ";", 
+        RowBox[{"Goto", "[", "\"\<SpaceGroupFound\>\"", "]"}]}]}], "]"}], ";",
+      "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"sg", "===", "\"\<Im3m\>\""}], ",", 
+       RowBox[{
+        RowBox[{"sg", "=", "\"\<Im-3m\>\""}], ";", 
+        RowBox[{"Goto", "[", "\"\<SpaceGroupFound\>\"", "]"}]}]}], "]"}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "C", ".3", " ", "Delete", " ", "whitespace", " ", "and", " ", "check", 
+       " ", "again"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringDelete", "[", 
+       RowBox[{"sg", ",", "Whitespace"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"$GroupSymbolRedirect", "[", "temp", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MissingQ", "@", "temp"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"sg", "=", 
+         RowBox[{"temp", "\[LeftDoubleBracket]", 
+          RowBox[{"\"\<Name\>\"", ",", "\"\<Symbol\>\""}], 
+          "\[RightDoubleBracket]"}]}], ";", 
+        RowBox[{"Goto", "[", "\"\<SpaceGroupFound\>\"", "]"}]}]}], "]"}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", 
+       RowBox[{"D", ".", " ", "Post"}], " ", "process", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"a", ".", " ", "Unable"}], " ", "to", " ", "determine", " ", 
+       "space", " ", "group"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Label", "[", "\"\<Failed\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Message", "[", 
+      RowBox[{
+       RowBox[{"InputCheck", "::", "InvalidSpaceGroup"}], ",", "input"}], 
+      "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{"abortQ", ",", 
+       RowBox[{"Abort", "[", "]"}], ",", 
+       RowBox[{"Return", "@", "Null"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"b", ".", " ", "Return"}], " ", "non"}], "-", 
+       RowBox[{"ambiguous", " ", "output"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"Label", "[", "\"\<SpaceGroupFound\>\"", "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ToStandardSetting", "[", "sg", "]"}]}]}], "\[IndentingNewLine]",
+    "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[17]:=",
+ CellID->176009036],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "[", 
+    RowBox[{"\"\<PadDomain\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"X_", ",", "Y_", ",", "Z_"}], "}"}], ",", "domain_List"}], 
+      "}"}], ",", 
+     RowBox[{"padding_Integer", ":", "1"}]}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+      "newSize", ",", "\[IndentingNewLine]", "contentPositions", ",", 
+       "contentMap", ",", "\[IndentingNewLine]", "voidPositions", ",", 
+       "voidMap", ",", "\[IndentingNewLine]", "joined"}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"padding", "\[LessEqual]", "0"}], ",", 
+        RowBox[{"Return", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"X", ",", "Y", ",", "Z"}], "}"}], ",", "domain"}], "}"}], 
+         "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"newSize", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"padding", "+", "1"}], ")"}], 
+         RowBox[{"{", 
+          RowBox[{"X", ",", "Y", ",", "Z"}], "}"}]}], "-", "padding"}]}], ";",
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"contentPositions", "=", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"i", ",", "j", ",", "k"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "0.", ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"padding", "+", "1"}], ")"}], "*", "X"}], "-", "1"}], 
+             ",", 
+             RowBox[{"padding", "+", "1"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"j", ",", "0.", ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"padding", "+", "1"}], ")"}], "*", "Y"}], "-", "1"}], 
+             ",", 
+             RowBox[{"padding", "+", "1"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"k", ",", "0.", ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"padding", "+", "1"}], ")"}], "*", "Z"}], "-", "1"}], 
+             ",", 
+             RowBox[{"padding", "+", "1"}]}], "}"}]}], "\[IndentingNewLine]", 
+          "]"}], ",", "2"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"contentMap", "=", 
+       RowBox[{"AssociationThread", "[", 
+        RowBox[{"contentPositions", "\[Rule]", "domain"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"voidPositions", "=", 
+       RowBox[{"Complement", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"InputCheck", "[", 
+          RowBox[{"\"\<GenerateTargetPositions\>\"", ",", "newSize"}], "]"}], 
+         ",", "\[IndentingNewLine]", "contentPositions"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"voidMap", "=", 
+       RowBox[{"AssociationThread", "[", 
+        RowBox[{"voidPositions", "\[Rule]", "0"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"joined", "=", 
+       RowBox[{"Join", "[", 
+        RowBox[{"contentMap", ",", "voidMap"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"newSize", ",", 
+        RowBox[{"Values", "@", 
+         RowBox[{"KeySortBy", "[", 
+          RowBox[{"joined", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+              "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+              "&"}], ",", 
+             RowBox[{
+              RowBox[{
+              "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+              "&"}], ",", 
+             RowBox[{
+              RowBox[{
+              "#", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], 
+              "&"}]}], "}"}]}], "]"}]}]}], "}"}]}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[18]:=",
+ CellID->1098886133],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<PointGroupQ\>\"", ",", "input_String"}], "]"}], ":=", 
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Check", " ", "if", " ", "valid", " ", "space", " ", "group", " ", 
+     "string"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"!", 
+      RowBox[{"MemberQ", "[", 
+       RowBox[{"$PointGroups", ",", "input", ",", "Infinity"}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Message", "[", 
+       RowBox[{
+        RowBox[{"InputCheck", "::", "InvalidPointGroup"}], ",", "input"}], 
+       "]"}], ";", 
+      RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}], 
+   ")"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[19]:=",
+ CellID->619873131],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<PointSpaceGroupQ\>\"", ",", "input_String"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Check", " ", "if", " ", "valid", " ", "point"}], "-", " ", 
+    RowBox[{"or", " ", "space", " ", "group", " ", "string"}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\t", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"$GroupSymbolRedirect", ",", "input"}], "]"}]}], ",", 
+    "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"Message", "[", 
+      RowBox[{
+       RowBox[{"InputCheck", "::", "InvalidPointOrSpaceGroup"}], ",", 
+       "input"}], "]"}], ";", 
+     RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "\t", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[20]:=",
+ CellID->764541120],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<Polarisation\>\"", ",", "type_String", ",", 
+    RowBox[{"scatteringAngle_", ":", "0"}]}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Which", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"type", "===", "\"\<sigma\>\""}], "||", 
+     RowBox[{"type", "===", "\"\<\[Sigma]\>\""}]}], ",", "1", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"type", "===", "\"\<pi\>\""}], "||", 
+     RowBox[{"type", "===", "\"\<\[Pi]\>\""}]}], ",", 
+    RowBox[{"Abs", "@", 
+     RowBox[{"Cos", "[", "scatteringAngle", "]"}]}], ",", 
+    "\[IndentingNewLine]", "True", ",", 
+    RowBox[{
+     RowBox[{"Message", "[", 
+      RowBox[{"InputCheck", "::", "InvalidPolarisationSetting"}], "]"}], ";", 
+     
+     RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",\
+
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[21]:=",
+ CellID->1247943839],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{
+   "\"\<ProcessWavelength\>\"", ",", "crystal_String", ",", "wavelength_", 
+    ",", 
+    RowBox[{"abortQ_", ":", "True"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[Lambda]", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\[Lambda]", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"N", "@", "wavelength"}], "===", 
+         RowBox[{"-", "1."}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"InputCheck", "[", 
+         RowBox[{
+         "\"\<GetCrystalWavelength\>\"", ",", "crystal", ",", "abortQ"}], 
+         "]"}], ",", "wavelength"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"\"\<GetEnergyWavelength\>\"", ",", "\[Lambda]", ",", "False"}],
+       "]"}]}]}], "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[22]:=",
+ CellID->1866805471],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<RotationTransformation\>\"", ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"A_Integer", ",", "B_Integer", ",", "C_Integer"}], "}"}], ",", 
+      "domains_List"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "AnchorShift_List", ",", "\[IndentingNewLine]", "anchorReference_String",
+       ",", "\[IndentingNewLine]", "rotations_", ",", "\[IndentingNewLine]", 
+      RowBox[{"rotationAxes_", ":", 
+       RowBox[{"IdentityMatrix", "@", "3"}]}]}], "\[IndentingNewLine]", "}"}],
+     ",", "\[IndentingNewLine]", 
+    RowBox[{"force3Dinterpretation_", ":", "False"}]}], "\[IndentingNewLine]",
+    "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "twoDimensionalQ", ",", "coordinates", ",", "\[IndentingNewLine]", 
+      "\[Zeta]", ",", "R", ",", "\[IndentingNewLine]", "uniqueDomains", ",", 
+      RowBox[{"anchorShift", "=", "AnchorShift"}], ",", "anchors", ",", 
+      "coordinatesGrouped", ",", "\[IndentingNewLine]", "domainAnchors", ",", 
+      "zeroRotation", ",", "zeroAnchor"}], "\[IndentingNewLine]", "}"}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Preparations", " ", "and", " ", "checks"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "@", "domains"}], "\[NotEqual]", 
+        RowBox[{"A", "*", "B", "*", "C"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"InputCheck", "::", "DomainSizeError"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"uniqueDomains", "=", 
+      RowBox[{"DeleteDuplicates", "@", "domains"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"twoDimensionalQ", "=", 
+      RowBox[{"(", 
+       RowBox[{"C", "===", "1"}], ")"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{"force3Dinterpretation", ",", 
+       RowBox[{"twoDimensionalQ", "=", "False"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{"twoDimensionalQ", ",", 
+       RowBox[{"anchorShift", "=", 
+        RowBox[{"anchorShift", "\[LeftDoubleBracket]", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "2"}], "}"}], "\[RightDoubleBracket]"}]}]}], 
+      "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{"twoDimensionalQ", ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"MatchQ", "[", 
+           RowBox[{"anchorShift", ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"_", "?", "NumericQ"}], ",", 
+              RowBox[{"_", "?", "NumericQ"}]}], "}"}]}], "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{"InputCheck", "::", "InvalidRotationPoint"}], "]"}], ";", 
+          RowBox[{"Abort", "[", "]"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"MatchQ", "[", 
+           RowBox[{"anchorShift", ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"_", "?", "NumericQ"}], ",", 
+              RowBox[{"_", "?", "NumericQ"}], ",", 
+              RowBox[{"_", "?", "NumericQ"}]}], "}"}]}], "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Message", "[", 
+           RowBox[{"InputCheck", "::", "InvalidRotationPoint"}], "]"}], ";", 
+          RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+      "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"AssociationQ", "@", "rotations"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{"twoDimensionalQ", ",", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"AnyTrue", "[", 
+            RowBox[{
+             RowBox[{"Values", "@", "rotations"}], ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"!", 
+               RowBox[{"NumericQ", "[", "#", "]"}]}], "&"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Message", "[", 
+             RowBox[{
+              RowBox[{"InputCheck", "::", "InvalidRotationMap"}], ",", 
+              "\"\<2\>\"", ",", "\"\<scalars\>\""}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Abort", "[", "]"}]}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"AnyTrue", "[", 
+            RowBox[{
+             RowBox[{"Values", "@", "rotations"}], ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"!", 
+               RowBox[{"MatchQ", "[", 
+                RowBox[{"#", ",", 
+                 RowBox[{"ConstantArray", "[", 
+                  RowBox[{
+                   RowBox[{"_", "?", "NumericQ"}], ",", "3"}], "]"}]}], 
+                "]"}]}], "&"}]}], "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Message", "[", 
+             RowBox[{
+              RowBox[{"InputCheck", "::", "InvalidRotationMap"}], ",", 
+              "\"\<3\>\"", ",", "\"\<lists of three numbers\>\""}], "]"}], 
+            ";", 
+            RowBox[{"Abort", "[", "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+        "]"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MemberQ", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<Host\>\"", ",", "\"\<Domain\>\"", ",", 
+            "\"\<DomainCentroid\>\"", ",", "\"\<Unit\>\""}], "}"}], ",", 
+          "anchorReference"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"InputCheck", "::", "InvalidRotationReference"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Rotation", " ", "anchor", " ", "and", " ", "reference", " ", "for", 
+       " ", "domains"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"anchorReference", "===", "\"\<Domain\>\""}], "||", 
+        RowBox[{"anchorReference", "===", "\"\<DomainCentroid\>\""}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"coordinates", "=", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"i", ",", "j", ",", "k"}], "}"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "0.", ",", 
+               RowBox[{"A", "-", "1"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", "0.", ",", 
+               RowBox[{"B", "-", "1"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"k", ",", "0.", ",", 
+               RowBox[{"C", "-", "1"}]}], "}"}]}], "]"}], ",", "2"}], "]"}]}],
+         ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{"twoDimensionalQ", ",", 
+          RowBox[{"coordinates", "=", 
+           RowBox[{"coordinates", "\[LeftDoubleBracket]", 
+            RowBox[{"All", ",", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", "2"}], "}"}]}], "\[RightDoubleBracket]"}]}]}],
+          "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"coordinatesGrouped", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Pick", "[", 
+            RowBox[{"coordinates", ",", "domains", ",", "#"}], "]"}], "&"}], "/@",
+           "uniqueDomains"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"domainAnchors", "=", 
+         RowBox[{
+          RowBox[{"<|", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"\"\<Domain\>\"", "\[Rule]", 
+             RowBox[{"Flatten", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"TakeSmallestBy", "[", 
+                  RowBox[{"#", ",", "Norm", ",", "1"}], "]"}], "&"}], "/@", 
+                "coordinatesGrouped"}], ",", "1"}], "]"}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"\"\<DomainCentroid\>\"", "\[Rule]", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"#", "+", 
+                 RowBox[{"If", "[", 
+                  RowBox[{"twoDimensionalQ", ",", 
+                   RowBox[{"{", 
+                    RowBox[{"0.5", ",", "0.5"}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"0.5", ",", "0.5", ",", "0.5"}], "}"}]}], "]"}]}],
+                 "\[IndentingNewLine]", "&"}], "/@", 
+               RowBox[{"Map", "[", 
+                RowBox[{"Mean", ",", 
+                 RowBox[{"Transpose", "/@", "coordinatesGrouped"}], ",", 
+                 RowBox[{"{", "2", "}"}]}], "]"}]}], ")"}]}]}], 
+           "\[IndentingNewLine]", "|>"}], "@", "anchorReference"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "+", "anchorShift"}], "&"}], "/@", "domainAnchors"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"anchors", "=", 
+         RowBox[{"N", "@", 
+          RowBox[{"Association", "@", 
+           RowBox[{"Thread", "[", 
+            RowBox[{"uniqueDomains", "\[Rule]", "domainAnchors"}], 
+            "]"}]}]}]}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Rotation", " ", "transformation", " ", 
+       RowBox[{"function", " ", "'"}], 
+       RowBox[{"R", "'"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"zeroRotation", ",", "zeroAnchor"}], "}"}], "=", 
+      RowBox[{"If", "[", 
+       RowBox[{"twoDimensionalQ", ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"0.", ",", 
+          RowBox[{"{", 
+           RowBox[{"0.", ",", "0."}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0.", ",", "0.", ",", "0."}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0.", ",", "0.", ",", "0."}], "}"}]}], "}"}]}], "]"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\[Zeta]", "[", "d_", "]"}], ":=", 
+      RowBox[{"N", "@", 
+       RowBox[{"Lookup", "[", 
+        RowBox[{"rotations", ",", "d", ",", "zeroRotation"}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Which", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"anchorReference", "===", "\"\<Host\>\""}], "&&", 
+        "twoDimensionalQ"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"R", "[", "d_", "]"}], ":=", 
+        RowBox[{"Chop", "@", 
+         RowBox[{"RotationTransform", "[", 
+          RowBox[{
+           RowBox[{"\[Zeta]", "@", "d"}], ",", "anchorShift"}], "]"}]}]}], 
+       ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"anchorReference", "===", "\"\<Host\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"R", "[", "d_", "]"}], ":=", 
+         RowBox[{"Chop", "[", 
+          RowBox[{"Composition", "@@", 
+           RowBox[{"MapThread", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"RotationTransform", "[", 
+               RowBox[{"#1", ",", "#2", ",", "anchorShift"}], "]"}], "&"}], 
+             ",", "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\[Zeta]", "@", "d"}], ",", "rotationAxes"}], "}"}]}], 
+            "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"R", "[", 
+          RowBox[{"d_", ",", "p_"}], "]"}], ":=", 
+         RowBox[{"Chop", "[", 
+          RowBox[{"Composition", "@@", 
+           RowBox[{"MapThread", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"RotationTransform", "[", 
+               RowBox[{"#1", ",", "#2", ",", "anchorShift"}], "]"}], "&"}], 
+             ",", "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"!", 
+                  RowBox[{"AssociationQ", "@", "rotations"}]}], ",", "d", ",", 
+                 RowBox[{"\[Zeta]", "@", "d"}]}], "]"}], ",", 
+               "rotationAxes"}], "}"}]}], "]"}]}], "]"}]}]}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"anchorReference", "===", "\"\<Unit\>\""}], "&&", 
+        "twoDimensionalQ"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"R", "[", 
+         RowBox[{"d_", ",", "p_"}], "]"}], ":=", 
+        RowBox[{"Chop", "@", 
+         RowBox[{"RotationTransform", "[", 
+          RowBox[{
+           RowBox[{"\[Zeta]", "@", "d"}], ",", 
+           RowBox[{"p", "+", "anchorShift"}]}], "]"}]}]}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"anchorReference", "===", "\"\<Unit\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"R", "[", 
+         RowBox[{"d_", ",", "p_"}], "]"}], ":=", 
+        RowBox[{"Chop", "[", 
+         RowBox[{"Composition", "@@", 
+          RowBox[{"MapThread", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"RotationTransform", "[", 
+              RowBox[{"#1", ",", "#2", ",", 
+               RowBox[{"p", "+", "anchorShift"}]}], "]"}], "&"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"!", 
+                 RowBox[{"AssociationQ", "@", "rotations"}]}], ",", "d", ",", 
+                
+                RowBox[{"\[Zeta]", "@", "d"}]}], "]"}], ",", "rotationAxes"}],
+              "}"}]}], "]"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "twoDimensionalQ", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"R", "[", "d_", "]"}], ":=", 
+        RowBox[{"Chop", "@", 
+         RowBox[{"RotationTransform", "[", 
+          RowBox[{
+           RowBox[{"\[Zeta]", "@", "d"}], ",", 
+           RowBox[{
+            RowBox[{"Lookup", "[", 
+             RowBox[{"anchors", ",", "d", ",", "zeroAnchor"}], "]"}], "+", 
+            "anchorShift"}]}], "]"}]}]}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", "True", ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"R", "[", 
+         RowBox[{"d_", ",", "p_"}], "]"}], ":=", 
+        RowBox[{"Chop", "[", 
+         RowBox[{"Composition", "@@", 
+          RowBox[{"MapThread", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"RotationTransform", "[", 
+              RowBox[{"#1", ",", "#2", ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Lookup", "[", 
+                 RowBox[{"anchors", ",", "d", ",", "zeroAnchor"}], "]"}], "+",
+                 "anchorShift"}]}], "]"}], "&"}], ",", "\[IndentingNewLine]", 
+            
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"\[Zeta]", "@", "d"}], ",", "rotationAxes"}], "}"}]}], 
+           "]"}]}], "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "R"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[23]:=",
+ CellID->663468427],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InputCheck", "[", 
+   RowBox[{"\"\<ShallowDisplayCrystal\>\"", ",", "crystal_String"}], "]"}], ":=", 
+  RowBox[{"KeyValueMap", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"#1", "===", "\"\<AtomData\>\""}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"\"\<AtomData\>\"", "\[Rule]", 
+        RowBox[{"Shallow", "[", 
+         RowBox[{"#2", ",", "1"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"#1", "\[Rule]", "#2"}]}], "]"}], "&"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"$CrystalData", "@", "crystal"}]}], "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[24]:=",
+ CellID->1178757365],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "InputCheck", "[", "\"\<Update$CrystalDataAutoCompletion\>\"", "]"}], ":=", 
+  
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"FE`Evaluate", "[", 
+       RowBox[{"FEPrivate`AddSpecialArgCompletion", "[", "#", "]"}], "]"}], 
+      "&"}], "[", "\[IndentingNewLine]", 
+     RowBox[{"\"\<$CrystalData\>\"", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Keys", "@", "$CrystalData"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<AtomData\>\"", ",", "\"\<ChemicalFormula\>\"", ",", 
+          "\"\<FormulaUnits\>\"", ",", "\[IndentingNewLine]", 
+          "\"\<LatticeParameters\>\"", ",", "\"\<Notes\>\"", ",", 
+          "\"\<SpaceGroup\>\"", ",", "\"\<Wavelength\>\""}], "}"}]}], 
+       "\[IndentingNewLine]", "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"$CrystalData", "=", 
+     RowBox[{"KeySort", "@", "$CrystalData"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Keys", "@", "$CrystalData"}]}], "\[IndentingNewLine]", 
+   ")"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[25]:=",
+ CellID->838389980],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"InputCheck", "[", 
+    RowBox[{
+    "\"\<Update$CrystalDataFile\>\"", ",", "\[IndentingNewLine]", 
+     "dataFile_String", ",", "newStructureLabel_String", ",", "hostCopy_"}], 
+    "]"}], ":=", 
+   RowBox[{"(", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"FileExistsQ", "@", "dataFile"}]}], ",", 
+       RowBox[{"$CrystalData", "=", 
+        RowBox[{"<|", "|>"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"AssociateTo", "[", 
+      RowBox[{"$CrystalData", ",", 
+       RowBox[{"newStructureLabel", "\[Rule]", "hostCopy"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+     "InputCheck", "[", "\"\<Update$CrystalDataAutoCompletion\>\"", "]"}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"Export", "[", 
+      RowBox[{"dataFile", ",", "$CrystalData"}], "]"}], ";"}], 
+    "\[IndentingNewLine]", ")"}]}], ";"}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[26]:=",
+ CellID->1180185893]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetAtomicScatteringFactors"]], 
+    "paclet:MaXrd/ref/GetAtomicScatteringFactors"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AttenuationCoefficient"]], 
+    "paclet:MaXrd/ref/AttenuationCoefficient"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalDensity"]], "paclet:MaXrd/ref/CrystalDensity"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DarwinWidth"]], "paclet:MaXrd/ref/DarwinWidth"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ExtinctionLength"]], "paclet:MaXrd/ref/ExtinctionLength"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InterplanarSpacing"]], "paclet:MaXrd/ref/InterplanarSpacing"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLatticeParameters"]], 
+    "paclet:MaXrd/ref/GetLatticeParameters"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentReflections"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentReflections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["MergeSymmetryEquivalentReflections"]], 
+    "paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$GroupSymbolRedirect"]], 
+    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Tutorials"
+}], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Using the rotation options"]], 
+   "paclet:MaXrd/tutorial/UsingRotationMaps"},
+  "RefLink",
+  BaseStyle->"Tutorials"]], "Tutorials",
+ CellID->341631938],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->4928809]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"InputCheck",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 15, 35.098712}", 
+    "history" -> {"0.7", "2.4.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", "status" -> 
+    "None", "summary" -> 
+    "InputCheck[snippet, input] runs a global code snippet on zero or more \
+input parameters. InputCheck[input, label1, ..., labeln] checks reflection or \
+coordinate input according to each labeli.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "InputCheck", "titlemodifier" -> "", 
+    "windowtitle" -> "InputCheck", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/InputCheck", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[18629, 517, 269, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9d784fb7-0ddf-4ad4-9d35-24fc2afb841c",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1443070461]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 155011, 4242}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 5614, 133, 70, "AnchorBarGrid",ExpressionUUID->"5306b41c-8e1f-4cd0-8310-89e6f688990c",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[6221, 158, 167, 6, 70, "ObjectNameGrid",ExpressionUUID->"66e23f19-79d9-4ed7-8e28-0d1d4068e9db"],
+Cell[6391, 166, 1560, 50, 70, "Usage",ExpressionUUID->"893c59f1-bd47-4b6a-b183-85513afa0f81",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7988, 221, 630, 19, 70, "NotesSection",ExpressionUUID->"4da48e5b-4ad9-47da-bc3c-da20d85692ea",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1267467922],
+Cell[8621, 242, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"99f8d16f-f364-4e6d-996f-aa68a6360014"],
+Cell[8655, 244, 176, 4, 70, "Notes",ExpressionUUID->"890c427b-353b-4a76-a7f9-8ff17ee16bb9",
+ CellID->1871022088],
+Cell[8834, 250, 151, 6, 70, "Notes",ExpressionUUID->"e0f6f3c2-c74f-43f3-952b-f0a1c9a783a5",
+ CellID->1609912826],
+Cell[8988, 258, 5695, 138, 70, "2ColumnTableMod",ExpressionUUID->"c90eed15-483d-422e-aa8a-e5ad84d42b42",
+ CellID->222684676],
+Cell[14686, 398, 152, 4, 70, "Notes",ExpressionUUID->"2a7d6aa7-d20d-47ec-aac7-4a9a04bf325f",
+ CellID->221498276],
+Cell[14841, 404, 1869, 48, 70, "2ColumnTableMod",ExpressionUUID->"55d1a7e9-d7c7-4f33-b2f2-72fe0ac8baa7",
+ CellID->1183224025],
+Cell[16713, 454, 484, 19, 70, "Notes",ExpressionUUID->"17b965b5-753a-463b-882a-ce0dd7e3c999",
+ CellID->1298381760],
+Cell[17200, 475, 368, 8, 70, "Notes",ExpressionUUID->"f57b610f-6e20-4f50-8ccb-20899b946077",
+ CellID->1980014868],
+Cell[17571, 485, 272, 8, 70, "Notes",ExpressionUUID->"07c07218-9394-41ad-91f8-19f8a62782d7",
+ CellID->283416834],
+Cell[17846, 495, 712, 15, 70, "2ColumnTableMod",ExpressionUUID->"b69129da-a796-4714-a709-c0b213cbca5e",
+ CellID->1473782279],
+Cell[18561, 512, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"1c6953a3-9eed-4080-95f6-5c0512b76a12"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[18629, 517, 269, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9d784fb7-0ddf-4ad4-9d35-24fc2afb841c",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1443070461],
+Cell[CellGroupData[{
+Cell[18923, 531, 187, 6, 70, "ExampleSection",ExpressionUUID->"d32aa218-8776-4eb1-b3a5-9e7064349b08",
+ CellID->1293636265],
+Cell[CellGroupData[{
+Cell[19135, 541, 203, 6, 70, "ExampleSubsection",ExpressionUUID->"226432bd-4e0e-4f00-a2cf-b69147426477",
+ CellID->1809017597],
+Cell[19341, 549, 84, 1, 70, "ExampleText",ExpressionUUID->"5208f216-100a-48c8-b454-eefe22313c8b",
+ CellID->1837160032],
+Cell[CellGroupData[{
+Cell[19450, 554, 174, 5, 70, "Input",ExpressionUUID->"1fc38579-6b76-4eb4-b61d-91bdfb44da85",
+ CellID->1367903769],
+Cell[19627, 561, 593, 11, 70, "Message",ExpressionUUID->"fd0806e2-6293-4eb4-92b2-0843fec91001",
+ CellID->794902605],
+Cell[20223, 574, 78, 2, 70, "Output",ExpressionUUID->"0c97a244-5c4c-4942-a274-8730a3449394",
+ CellID->432314248]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20338, 581, 189, 6, 70, "Input",ExpressionUUID->"7cbf4b51-bf09-4ca6-9d25-175092acc578",
+ CellID->1815249394],
+Cell[20530, 589, 594, 11, 70, "Message",ExpressionUUID->"cd4d0a5e-7ad5-4d4a-ae4e-f93b0df78867",
+ CellID->1394884042],
+Cell[21127, 602, 79, 2, 70, "Output",ExpressionUUID->"91343aa7-43af-4284-8557-4d85074aa147",
+ CellID->1884603242]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21243, 609, 336, 11, 70, "Input",ExpressionUUID->"9cf040ee-0a26-4a0f-be60-0a3865553f0b",
+ CellID->461672276],
+Cell[21582, 622, 594, 11, 70, "Message",ExpressionUUID->"178da28c-ce0b-4b61-b979-bcc42ba8d04b",
+ CellID->1892393033],
+Cell[22179, 635, 79, 2, 70, "Output",ExpressionUUID->"71947a02-26d3-44fe-a5f5-309d62573cc2",
+ CellID->1216893561]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22295, 642, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"c7d3fe21-134e-432c-9490-0927d006e07c",
+ CellID->467526121],
+Cell[CellGroupData[{
+Cell[22445, 649, 320, 11, 70, "Input",ExpressionUUID->"a536bc2e-11f1-49c8-ab71-02e5e3a13128",
+ CellID->1466599491],
+Cell[22768, 662, 324, 7, 70, "Message",ExpressionUUID->"e0d28a55-e741-4a8c-a5db-fdfc09fb48a6",
+ CellID->2071145711],
+Cell[23095, 671, 79, 2, 70, "Output",ExpressionUUID->"f31136b7-cb50-4ec6-8ac1-6778f3620168",
+ CellID->1183530554]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23211, 678, 324, 11, 70, "Input",ExpressionUUID->"0b45d67f-c2ee-4bab-b9d3-abcd2c6998c4",
+ CellID->320344971],
+Cell[23538, 691, 284, 7, 70, "Message",ExpressionUUID->"3aa02610-3f18-4763-8231-cd08213bf28d",
+ CellID->1251631147],
+Cell[23825, 700, 79, 2, 70, "Output",ExpressionUUID->"079186fe-9ea8-4d74-85ec-9be3b5c52b4d",
+ CellID->1562365264]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23941, 707, 361, 12, 70, "Input",ExpressionUUID->"a81bdb5d-aecc-455d-b57d-c1e691635018",
+ CellID->296424568],
+Cell[24305, 721, 305, 7, 70, "Message",ExpressionUUID->"c2455610-a155-4a9a-8f65-6d89acedf0b7",
+ CellID->1484014596],
+Cell[24613, 730, 78, 2, 70, "Output",ExpressionUUID->"ff3a9600-d983-40ae-9051-817cf6829678",
+ CellID->958238714]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24740, 738, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"3f60d30f-250c-400c-adc4-876ddab6785b",
+ CellID->1993136983],
+Cell[24869, 743, 162, 5, 70, "Input",ExpressionUUID->"3d7926da-409f-4699-a09c-8b4c45f735bc",
+ CellID->81829532],
+Cell[CellGroupData[{
+Cell[25056, 752, 208, 7, 70, "Input",ExpressionUUID->"731d4f42-b00c-4ea2-9617-4dab7993f965",
+ CellID->919410244],
+Cell[25267, 761, 150, 5, 70, "Output",ExpressionUUID->"558d4735-48dd-4dc2-8515-494881290115",
+ CellID->583840801]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25454, 771, 326, 11, 70, "Input",ExpressionUUID->"15b0eb10-37bb-4cf2-a744-28ee89f7b102",
+ CellID->1383130743],
+Cell[25783, 784, 235, 8, 70, "Output",ExpressionUUID->"58ded3e0-970d-4a28-b78b-91d0e5c13fd9",
+ CellID->1181569721]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[26079, 799, 203, 6, 70, "ExampleSubsection",ExpressionUUID->"bb8f21d4-5c10-4542-8b06-8d806459db23",
+ CellID->417524222],
+Cell[CellGroupData[{
+Cell[26307, 809, 162, 4, 70, "Input",ExpressionUUID->"3037dcdc-4553-4fc5-9e59-8782603ec784",
+ CellID->384054987],
+Cell[26472, 815, 448, 16, 70, "Output",ExpressionUUID->"35cb0141-0667-4fce-9270-a9167eb36043",
+ CellID->1575633488]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26957, 836, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"c60eeaa5-45cc-4bb3-a2ff-c9af8fea5b51",
+ CellID->1117509503],
+Cell[CellGroupData[{
+Cell[27108, 843, 255, 7, 70, "Input",ExpressionUUID->"bed650f3-c1f7-4d61-9d39-27771586bd30",
+ CellID->544578231],
+Cell[27366, 852, 199, 6, 70, "Output",ExpressionUUID->"f8eb11b2-747e-4478-a26a-ea96d9b40579",
+ CellID->989087980]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27614, 864, 124, 3, 70, "ExampleDelimiter",ExpressionUUID->"4ba517cd-be8b-4015-b9e1-62fa8d47bbc1",
+ CellID->92703433],
+Cell[CellGroupData[{
+Cell[27763, 871, 162, 4, 70, "Input",ExpressionUUID->"ca9c3ce0-d4fa-4c8d-8191-bf2b26f69f0a",
+ CellID->1138377229],
+Cell[27928, 877, 81, 2, 70, "Output",ExpressionUUID->"f8645f79-9070-48e6-a9f2-e7b0fdf5a994",
+ CellID->2041059921]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28046, 884, 319, 9, 70, "Input",ExpressionUUID->"2b2a4896-02ed-45a2-8ed3-a2f0869e10c1",
+ CellID->1889735775],
+Cell[28368, 895, 228, 6, 70, "Output",ExpressionUUID->"d91f8155-ed72-4f7a-9ba6-1523fdef49e2",
+ CellID->1404914664]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28633, 906, 164, 4, 70, "Input",ExpressionUUID->"fdca88b8-c437-45f7-a0e7-f719e9e85282",
+ CellID->2118692029],
+Cell[28800, 912, 78, 2, 70, "Output",ExpressionUUID->"b536f2f2-8c47-4395-b8b0-5bb8baee2011",
+ CellID->62486888]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28915, 919, 163, 4, 70, "Input",ExpressionUUID->"19693f5a-70da-4616-afea-da78df6cbc3d",
+ CellID->334541063],
+Cell[29081, 925, 363, 8, 70, "Message",ExpressionUUID->"497ba196-ba8a-4921-9649-648590733eb5",
+ CellID->432340259],
+Cell[29447, 935, 79, 2, 70, "Output",ExpressionUUID->"a320da8e-6e03-483d-a417-0b9e10a539ac",
+ CellID->1405555212]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29575, 943, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"896abac3-257e-485a-8586-f9fdbfd0eaa0",
+ CellID->2081050686],
+Cell[CellGroupData[{
+Cell[29726, 950, 200, 6, 70, "Input",ExpressionUUID->"17999fcf-8182-4872-bee0-81b2dea28d54",
+ CellID->537426626],
+Cell[29929, 958, 261, 9, 70, "Output",ExpressionUUID->"e704380a-a7be-42d7-8ad5-9f2d33819746",
+ CellID->1199856089]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30239, 973, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"e21038a9-b324-499d-899a-b08c6b60346c",
+ CellID->1593279856],
+Cell[CellGroupData[{
+Cell[30390, 980, 241, 8, 70, "Input",ExpressionUUID->"99b72f76-d370-4b63-856d-561c18776faa",
+ CellID->685727073],
+Cell[30634, 990, 738, 16, 70, "Output",ExpressionUUID->"a9e3439f-5573-4e6d-91a1-8bd33c9a6983",
+ CellID->435726054]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31409, 1011, 492, 15, 70, "Input",ExpressionUUID->"f2acb12a-5bf0-4adc-9be1-cf5a849d78fd",
+ CellID->324919468],
+Cell[31904, 1028, 90, 2, 70, "Output",ExpressionUUID->"9bfd54aa-0b5a-4af9-82f2-fc22281d0aff",
+ CellID->905036467]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32031, 1035, 99, 3, 70, "Input",ExpressionUUID->"be4d3c2f-7f95-4dc6-9366-b61b42fd0e14",
+ CellID->2128016662],
+Cell[32133, 1040, 649, 17, 70, "Output",ExpressionUUID->"5376d91f-933c-40e7-a9c3-138a65bc94a3",
+ CellID->527829054]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32819, 1062, 819, 25, 70, "Input",ExpressionUUID->"7ba75fc4-a1ff-4d8c-a7d5-02ffcb5336d3",
+ CellID->1159887342],
+Cell[33641, 1089, 650, 17, 70, "Output",ExpressionUUID->"e7ba257c-c219-47a8-8a76-ce01b5d8756f",
+ CellID->883838968]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34340, 1112, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"0d4c2a66-0cc4-46ff-b4c3-eb94a8d60b94",
+ CellID->1574356691],
+Cell[34469, 1117, 262, 9, 70, "ExampleText",ExpressionUUID->"b99dcdbe-7f06-4f69-be4e-824f5b878b58",
+ CellID->704249145],
+Cell[CellGroupData[{
+Cell[34756, 1130, 334, 10, 70, "Input",ExpressionUUID->"4b32ba6c-9f02-416a-bd9f-62ceefca8f9d",
+ CellID->1895227847],
+Cell[35093, 1142, 682, 20, 70, "Output",ExpressionUUID->"4b4fce31-7168-46b5-8fe0-4cab9003a886",
+ CellID->2074471308]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35812, 1167, 334, 10, 70, "Input",ExpressionUUID->"cbf735b4-c425-4535-8165-f9fb6e353922",
+ CellID->826492967],
+Cell[36149, 1179, 621, 19, 70, "Output",ExpressionUUID->"f07568d2-7e44-4c6d-b33c-e078bd8f0f86",
+ CellID->1144228770]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[36843, 1206, 234, 8, 70, "ExampleSection",ExpressionUUID->"786ac796-7413-4a23-af66-e89b243983b6",
+ CellID->13108794],
+Cell[37080, 1216, 6582, 168, 70, "Input",ExpressionUUID->"db3b5e53-d315-4fe4-9f32-4b299d3e598f",
+ InitializationCell->False,
+ CellID->269053285],
+Cell[43665, 1386, 10272, 255, 70, "Input",ExpressionUUID->"ef1b75e0-2065-4ca1-b75b-48ff25bc2b9f",
+ InitializationCell->False,
+ CellID->1525484060],
+Cell[53940, 1643, 1101, 29, 70, "Input",ExpressionUUID->"8366b739-f106-4782-8b8a-f10169461b4d",
+ InitializationCell->False,
+ CellID->3334887],
+Cell[55044, 1674, 867, 24, 70, "Input",ExpressionUUID->"581ec0e6-6471-4ab0-85b7-2cfcd3fa9a41",
+ InitializationCell->False,
+ CellID->214870987],
+Cell[55914, 1700, 493, 14, 70, "Input",ExpressionUUID->"49bc626d-c2ab-4b6f-92c2-9df9f789f253",
+ InitializationCell->False,
+ CellID->1416667902],
+Cell[56410, 1716, 922, 28, 70, "Input",ExpressionUUID->"061cd5ea-424e-442f-bae0-c7f18eaebdf6",
+ InitializationCell->False,
+ CellID->786234625],
+Cell[57335, 1746, 3900, 105, 70, "Input",ExpressionUUID->"2e2d5e0f-8366-40b0-854f-fab0355cebed",
+ InitializationCell->False,
+ CellID->778462384],
+Cell[61238, 1853, 7973, 184, 70, "Input",ExpressionUUID->"188a083a-ec93-4ecf-a8e3-05242b0addda",
+ InitializationCell->False,
+ CellID->1146910364],
+Cell[69214, 2039, 2310, 56, 70, "Input",ExpressionUUID->"16d323de-47fd-489a-a6a2-b17b863f240c",
+ InitializationCell->False,
+ CellID->309272276],
+Cell[71527, 2097, 1541, 41, 70, "Input",ExpressionUUID->"e1cd4595-5c1d-4ab7-bc33-36ca45358030",
+ InitializationCell->False,
+ CellID->1028716992],
+Cell[73071, 2140, 1934, 48, 70, "Input",ExpressionUUID->"e7d4a274-35c7-443c-a992-004d37118b34",
+ InitializationCell->False,
+ CellID->255642547],
+Cell[75008, 2190, 6098, 137, 70, "Input",ExpressionUUID->"9c4c7222-57ba-45a9-8409-ade2b8c1401a",
+ InitializationCell->False,
+ CellID->1616993429],
+Cell[81109, 2329, 3567, 90, 70, "Input",ExpressionUUID->"cb4cd237-4549-4071-89e7-82483f3841f9",
+ InitializationCell->False,
+ CellID->403008418],
+Cell[84679, 2421, 7275, 181, 70, "Input",ExpressionUUID->"e56c2eaf-c4a7-42f5-b5ba-b2e12642719f",
+ InitializationCell->False,
+ CellID->199058688],
+Cell[91957, 2604, 702, 18, 70, "Input",ExpressionUUID->"561d3b9a-7337-4c8d-b81f-0ed4e27213bd",
+ InitializationCell->False,
+ CellID->1947330837],
+Cell[92662, 2624, 13054, 316, 70, "Input",ExpressionUUID->"5850eaa2-d2d0-4321-ac9a-5e1372275c41",
+ InitializationCell->False,
+ CellID->1138597179],
+Cell[105719, 2942, 14693, 350, 70, "Input",ExpressionUUID->"8256a3dd-a362-4569-9aa3-5e3e1b121916",
+ InitializationCell->False,
+ CellID->176009036],
+Cell[120415, 3294, 4371, 115, 70, "Input",ExpressionUUID->"f1e48760-333b-4a95-a2d1-3d90f8671dbe",
+ InitializationCell->False,
+ CellID->1098886133],
+Cell[124789, 3411, 881, 25, 70, "Input",ExpressionUUID->"dde51265-3e59-414b-95d2-38fa25a94db4",
+ InitializationCell->False,
+ CellID->619873131],
+Cell[125673, 3438, 924, 26, 70, "Input",ExpressionUUID->"383ebf3e-6f3a-4dd6-9ed8-64f9891f5aaa",
+ InitializationCell->False,
+ CellID->764541120],
+Cell[126600, 3466, 991, 27, 70, "Input",ExpressionUUID->"4ba2432f-027a-4576-93e5-2fffb93560ef",
+ InitializationCell->False,
+ CellID->1247943839],
+Cell[127594, 3495, 991, 27, 70, "Input",ExpressionUUID->"9ecf733c-95de-43fa-9783-1703fbd1cc93",
+ InitializationCell->False,
+ CellID->1866805471],
+Cell[128588, 3524, 15921, 382, 70, "Input",ExpressionUUID->"053abaa0-3644-4509-8488-29f97a17bec6",
+ InitializationCell->False,
+ CellID->663468427],
+Cell[144512, 3908, 743, 20, 70, "Input",ExpressionUUID->"5a50eee9-287b-419b-b531-f7b2a6b9d66c",
+ InitializationCell->False,
+ CellID->1178757365],
+Cell[145258, 3930, 1208, 30, 70, "Input",ExpressionUUID->"528a1eb7-7282-409c-8ee1-7cb39f188e27",
+ InitializationCell->False,
+ CellID->838389980],
+Cell[146469, 3962, 1079, 29, 70, "Input",ExpressionUUID->"e46c6d38-df7b-466c-a991-dfa48f88b725",
+ InitializationCell->False,
+ CellID->1180185893]
+}, Closed]],
+Cell[147563, 3994, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"af3a6e24-bc76-41d6-925f-82365fc69b5c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[147631, 3999, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"bbc6ca8c-a1a9-4559-a92d-7f0b6fd82c7a",
+ CellID->1255426704],
+Cell[147784, 4008, 4278, 134, 70, "SeeAlso",ExpressionUUID->"b218fd50-fdee-471b-86e0-512765eecf9b",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[152099, 4147, 152, 7, 70, "TutorialsSection",ExpressionUUID->"76416279-f756-4e9d-84c7-df90459271fa",
+ CellID->250839057],
+Cell[152254, 4156, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"eb839dfd-cf35-4d9f-8aee-1c28a1ec76fe"],
+Cell[152288, 4158, 204, 7, 70, "Tutorials",ExpressionUUID->"9ddb7b88-0eeb-447f-9ce1-9f1727fb53ff",
+ CellID->341631938],
+Cell[152495, 4167, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"71547e0f-d4ce-495f-b654-058a46efa14e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[152563, 4172, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"ec444459-1a45-48ce-9bd8-15aba0f61fc1",
+ CellID->38303248],
+Cell[152722, 4181, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"6fd86986-aff5-4dc6-9139-9769ebf9fab0"],
+Cell[152756, 4183, 205, 7, 70, "MoreAbout",ExpressionUUID->"3c781cb4-b32c-400f-8502-60c003a794bc",
+ CellID->4928809]
+}, Open  ]],
+Cell[152976, 4193, 23, 0, 70, "FooterCell",ExpressionUUID->"3e513de2-c816-4455-a063-75710f54b41a"]
+}
+]
+*)
+
+(* End of internal cache information *)

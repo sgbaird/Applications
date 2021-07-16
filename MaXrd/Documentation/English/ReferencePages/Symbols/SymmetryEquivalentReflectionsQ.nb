@@ -1,0 +1,1124 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35755,       1115]
+NotebookOptionsPosition[     26549,        914]
+NotebookOutlinePosition[     28901,        972]
+CellTagsIndexPosition[     28816,        967]
+WindowTitle->SymmetryEquivalentReflectionsQ
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"SymmetryEquivalentReflections\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentReflections"], "\<\"$CrystalData\"\
+\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$CrystalData"], "\<\"ImportCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ImportCrystalData"], "\<\"SystematicAbsentQ\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SystematicAbsentQ"], "\<\"StructureFactor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/StructureFactor"], "\<\"ToStandardSetting\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ToStandardSetting"], "\<\"ReflectionList\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ReflectionList"], \
+"\<\"MergeSymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"], \
+"\<\"GetLaueClass\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetLaueClass"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd/ref/SymmetryEquivalentReflectionsQ\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/SymmetryEquivalentReflectionsQ"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+SymmetryEquivalentReflectionsQ.html"], StandardForm]], "Input", 
+              TextClipboardType -> "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$39269], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/SymmetryEquivalentReflectionsQ", ".html"]], None}]}]},
+       
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["SymmetryEquivalentReflectionsQ", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["SymmetryEquivalentReflectionsQ"]], 
+         "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["group", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["1", "TR"]]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["2", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["2", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["2", "TR"]]}], "}"}], ",", 
+          StyleBox["\[Ellipsis]", "TR"]}], "}"}]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]yields ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["True"]], "paclet:ref/True"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " if all reflections ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["hkl", "TI"], 
+       StyleBox["i", "TI"]]], "InlineFormula"],
+     " are symmetry equivalent in the given point ",
+     Cell[BoxData[
+      StyleBox["group", "TI"]], "InlineFormula"],
+     ", and ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["False"]], "paclet:ref/False"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " otherwise."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1650741004],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The label of crystal (entry) in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " or a space group may be used instead of ",
+ Cell[BoxData[
+  StyleBox["group", "TI"]], "InlineFormula"],
+ "; the Laue class is found automatically."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->662818635],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->995121456],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentReflectionsQ", "[", 
+  RowBox[{"\"\<m\!\(\*OverscriptBox[\(3\), \(_\)]\)m\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3"}], ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "3", ",", "0"}], "}"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->727704819],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1592317819]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentReflectionsQ", "[", 
+  RowBox[{"\"\<2/m\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3"}], ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "3", ",", "0"}], "}"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->670837677],
+
+Cell[BoxData["False"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1422466541]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentReflectionsQ", "[", 
+  RowBox[{"\"\<Fd-3m\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2", ",", "1"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->506118485],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->51452510]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1902417437],
+
+Cell[TextData[{
+ "Entries from ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " may be used directly:"
+}], "ExampleText",
+ CellID->45843476],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentReflectionsQ", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3"}], ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "3", ",", "0"}], "}"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->676950156],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1311300783]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentReflectionsQ", "[", 
+  RowBox[{"\"\<GalliumArsenide\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3"}], ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "3", ",", "0"}], "}"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1577021808],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1360032209]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell[TextData[{
+ "Let us go through the last example in more detail. We inputted the crystal \
+labelled ",
+ Cell[BoxData["\"\<GalliumArsenide\>\""], "InlineFormula"],
+ " and wanted to see whether the two reflections ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox["3", "_"], "\[VeryThinSpace]", "0", "\[VeryThinSpace]", 
+    "2"}], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox["2", "_"], "\[VeryThinSpace]", "3", "\[VeryThinSpace]", 
+    "0"}], TraditionalForm]], "InlineMath"],
+ " were symmetrical equivalent under the symmetry of this crystal.\
+\[LineSeparator]Let us start by finding the space group of this crystal. This \
+can be done either by looking up that key in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ":"
+}], "ExampleText",
+ CellID->1380641436],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$CrystalData", "[", 
+  RowBox[{"\"\<GalliumArsenide\>\"", ",", "\"\<SpaceGroup\>\""}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->360263669],
+
+Cell[BoxData["\<\"F\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>"], \
+"Output",
+ CellLabel->"Out[1]=",
+ CellID->1024495232]
+}, Open  ]],
+
+Cell[TextData[{
+ "\[Ellipsis] or by letting ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryData"]], "paclet:MaXrd/ref/GetSymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " find that key for us:"
+}], "ExampleText",
+ CellID->428064815],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GetSymmetryData", "[", 
+  RowBox[{"\"\<GalliumArsenide\>\"", ",", "\"\<Symbol\>\""}], "]"}]], "Input",\
+
+ CellLabel->"In[2]:=",
+ CellID->1188448529],
+
+Cell[BoxData["\<\"F\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>"], \
+"Output",
+ CellLabel->"Out[2]=",
+ CellID->167482578]
+}, Open  ]],
+
+Cell[TextData[{
+ "In any, case we see that the space group in question is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"F", "\[VeryThinSpace]", 
+    OverscriptBox["4", "_"], "\[VeryThinSpace]", "3", "\[VeryThinSpace]", 
+    "m"}], TraditionalForm]], "InlineMath"],
+ "."
+}], "ExampleText",
+ CellID->1349043229],
+
+Cell[TextData[{
+ "There is a set of symmetry operations linked to every space group. Now we \
+can take one of the reflections, for instance ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox["3", "_"], "\[VeryThinSpace]", "0", "\[VeryThinSpace]", 
+    "2"}], TraditionalForm]], "InlineMath"],
+ ", and generate all symmetry equivalent reflections:"
+}], "ExampleText",
+ CellID->1615340659],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentReflections", "[", 
+  RowBox[{"\"\<F-43m\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "0", ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->2133512658],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "3", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "3"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "3", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1676110876]
+}, Open  ]],
+
+Cell[TextData[{
+ "We see that the other reflection, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox["2", "_"], "\[VeryThinSpace]", "3", "\[VeryThinSpace]", 
+    "0"}], TraditionalForm]], "InlineMath"],
+ ", is the tenth element in that list. Thius, the two reflections are \
+symmetry equivalent."
+}], "ExampleText",
+ CellID->1052329130]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentReflectionsQ", "[", 
+  RowBox[{"\"\<\!\(\*OverscriptBox[\(1\), \(_\)]\)\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1285983698],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "MultipleTuplesExpected", 
+   "\"At least two reflections are required to make comparisons.\"", 2, 1, 17,
+    26775811996559735324, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->70512762],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1844501437]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentReflectionsQ", "[", 
+  RowBox[{"\"\<6/mmm\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "6", ",", "7"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->479081005],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "InvalidTuple", 
+   "\"Reflections (and coordinates) must be on a \
+{\\!\\(\\*\\nStyleBox[\\\"h\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"k\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"l\\\", \\\"TI\\\"]\\)} (or \
+{\\!\\(\\*\\nStyleBox[\\\"x\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"y\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"z\\\", \\\"TI\\\"]\\)}) form\"", 
+   2, 2, 18, 26775811996559735324, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1274717907],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->887000477]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentReflectionsQ", "[", 
+  RowBox[{"\"\<123\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5", ",", "6"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->998258432],
+
+Cell[BoxData[
+ TemplateBox[{
+  "GetSymmetryOperations", "missing", 
+   "\"No data found on \[LeftGuillemet]\\!\\(\\*RowBox[{\\\"\\\\\\\"123\\\\\\\
+\"\\\"}]\\)\[RightGuillemet].\"", 2, 3, 19, 26775811996559735324, "Local", 
+   "MaXrd`GetSymmetryOperations"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[3]:=",
+ CellID->452546014],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1701263271]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1544545457],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "SymmetryEquivalentReflectionsQ"}], "=", 
+   
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", "_"}], "}"}]}], "\[IndentingNewLine]", "}"}]}], 
+  ";"}]], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->234169640],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SymmetryEquivalentReflectionsQ", "[", 
+   RowBox[{"group_String", ",", "hkl_List"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "equiv", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Check", " ", "input"}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Check", "[", 
+      RowBox[{
+       RowBox[{"InputCheck", "[", 
+        RowBox[{"hkl", ",", "\"\<Multiple\>\""}], "]"}], ",", 
+       RowBox[{"Abort", "[", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"Listing", " ", "all", " ", "symmetry"}], "-", 
+       RowBox[{
+       "equivalents", " ", "of", " ", "the", " ", "first", " ", 
+        "reflection"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"equiv", "=", 
+      RowBox[{"SymmetryEquivalentReflections", "[", 
+       RowBox[{"group", ",", 
+        RowBox[{"First", "@", "hkl"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Checking", " ", "if", " ", "all", " ", "given", " ", "reflections", 
+       " ", "are", " ", "symmetry", " ", "equivalent"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"AllTrue", "[", 
+      RowBox[{"hkl", ",", 
+       RowBox[{
+        RowBox[{"MemberQ", "[", 
+         RowBox[{"equiv", ",", "#"}], "]"}], "&"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1499098176]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentReflections"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentReflections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SystematicAbsentQ"]], "paclet:MaXrd/ref/SystematicAbsentQ"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StructureFactor"]], "paclet:MaXrd/ref/StructureFactor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ToStandardSetting"]], "paclet:MaXrd/ref/ToStandardSetting"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReflectionList"]], "paclet:MaXrd/ref/ReflectionList"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["MergeSymmetryEquivalentReflections"]], 
+    "paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLaueClass"]], "paclet:MaXrd/ref/GetLaueClass"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->403668156]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"SymmetryEquivalentReflectionsQ",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 16, 42.437596}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "SymmetryEquivalentReflectionsQ[group, {{h1, k1, l1}, {h2, k2, l2}, ...}] \
+yields True if all reflections hkli are symmetry equivalent in the given \
+point group, and False otherwise.", "synonyms" -> {}, "tabletags" -> {}, 
+    "title" -> "SymmetryEquivalentReflectionsQ", "titlemodifier" -> "", 
+    "windowtitle" -> "SymmetryEquivalentReflectionsQ", "type" -> "Symbol", 
+    "uri" -> "MaXrd/ref/SymmetryEquivalentReflectionsQ", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[8586, 255, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"172a82c9-a344-45ff-8065-2ce7d659eb8f",
+   CellTags->"PrimaryExamplesSection",
+   CellID->662818635]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 28618, 960}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[602, 21, 4575, 110, 70, "AnchorBarGrid",ExpressionUUID->"9391a781-fa7a-49d4-9fde-088e49897bd7",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5202, 135, 187, 6, 70, "ObjectNameGrid",ExpressionUUID->"51aa5d54-59c2-4dcb-b252-e4008fdd5be4"],
+Cell[5392, 143, 2008, 64, 70, "Usage",ExpressionUUID->"7d81efab-0bd5-4d1f-aa01-e813f48b20ea",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7437, 212, 630, 19, 70, "NotesSection",ExpressionUUID->"4f24eaad-74e5-4da1-8f13-d62aae60b057",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1650741004],
+Cell[8070, 233, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"984e48af-2be3-45af-97db-f6fdaffb3e27"],
+Cell[8104, 235, 411, 13, 70, "Notes",ExpressionUUID->"0da0fd38-7f49-43ee-8366-67b9c64cd4f9",
+ CellID->1067943069],
+Cell[8518, 250, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"b24d5d4c-428d-4662-b4a7-15914c2e3525"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8586, 255, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"172a82c9-a344-45ff-8065-2ce7d659eb8f",
+ CellTags->"PrimaryExamplesSection",
+ CellID->662818635],
+Cell[CellGroupData[{
+Cell[8878, 269, 195, 6, 70, "ExampleSection",ExpressionUUID->"64feec7b-97dc-4e81-b748-74955dc7682c",
+ CellID->995121456],
+Cell[CellGroupData[{
+Cell[9098, 279, 417, 13, 70, "Input",ExpressionUUID->"99da75fe-a5f2-4290-abe1-60a214596f83",
+ CellID->727704819],
+Cell[9518, 294, 75, 2, 70, "Output",ExpressionUUID->"0b4fa66c-0fab-4517-a96c-3b44302b200d",
+ CellID->1592317819]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9630, 301, 383, 13, 70, "Input",ExpressionUUID->"f7548eed-25d6-4a1c-a167-8a63dde7d556",
+ CellID->670837677],
+Cell[10016, 316, 76, 2, 70, "Output",ExpressionUUID->"e546c0f3-27be-43dd-82e2-1b13bbc85721",
+ CellID->1422466541]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10129, 323, 359, 11, 70, "Input",ExpressionUUID->"8a8cd6ef-5ef7-4408-a24b-bca2591d2abc",
+ CellID->506118485],
+Cell[10491, 336, 73, 2, 70, "Output",ExpressionUUID->"d16326d7-c278-4080-b8a2-ae6c697fbfe8",
+ CellID->51452510]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10601, 343, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"23706ed8-30b2-4081-a95b-e7b128067b7e",
+ CellID->1902417437],
+Cell[10730, 348, 271, 10, 70, "ExampleText",ExpressionUUID->"6bcfd254-22b3-490c-96b2-d2b77540acc0",
+ CellID->45843476],
+Cell[CellGroupData[{
+Cell[11026, 362, 387, 13, 70, "Input",ExpressionUUID->"34f2a263-5666-4d0d-90f1-e3d25d2d6eb1",
+ CellID->676950156],
+Cell[11416, 377, 75, 2, 70, "Output",ExpressionUUID->"31c5df8d-7732-4e82-8f89-8e01bb7ae4e4",
+ CellID->1311300783]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11528, 384, 396, 13, 70, "Input",ExpressionUUID->"ba6497e6-e75a-465f-a3f3-91a3ded8a7f9",
+ CellID->1577021808],
+Cell[11927, 399, 75, 2, 70, "Output",ExpressionUUID->"d8241a6b-19da-4d09-9e54-5ccf4c4ade33",
+ CellID->1360032209]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12063, 408, 187, 6, 70, "ExampleSection",ExpressionUUID->"fb15ce78-a8e8-4eab-b2d4-8094096bfe5d",
+ CellID->1293636265],
+Cell[12253, 416, 959, 27, 70, "ExampleText",ExpressionUUID->"97d8f02c-052f-49de-90a9-229b9602da46",
+ CellID->1380641436],
+Cell[CellGroupData[{
+Cell[13237, 447, 173, 5, 70, "Input",ExpressionUUID->"c12a9869-a9fa-4363-9470-72b6307a2c43",
+ CellID->360263669],
+Cell[13413, 454, 127, 3, 70, "Output",ExpressionUUID->"091fbe78-6fa0-4cc8-af7e-3f264784d1bc",
+ CellID->1024495232]
+}, Open  ]],
+Cell[13555, 460, 291, 10, 70, "ExampleText",ExpressionUUID->"4305033e-e048-487e-b43c-2a1e49c80dd0",
+ CellID->428064815],
+Cell[CellGroupData[{
+Cell[13871, 474, 172, 5, 70, "Input",ExpressionUUID->"3313b769-058b-425c-915e-2167b308715b",
+ CellID->1188448529],
+Cell[14046, 481, 126, 3, 70, "Output",ExpressionUUID->"95b4f96c-5f24-4f38-83aa-eadaf399ef08",
+ CellID->167482578]
+}, Open  ]],
+Cell[14187, 487, 304, 9, 70, "ExampleText",ExpressionUUID->"8532523b-0bb8-42a0-89ef-ec7c7411286e",
+ CellID->1349043229],
+Cell[14494, 498, 395, 10, 70, "ExampleText",ExpressionUUID->"29f29275-9be1-4cb2-9923-4eb6f6486780",
+ CellID->1615340659],
+Cell[CellGroupData[{
+Cell[14914, 512, 241, 7, 70, "Input",ExpressionUUID->"c21091f6-4dbf-4762-88db-6b24c8ebdf5d",
+ CellID->2133512658],
+Cell[15158, 521, 2257, 76, 70, "Output",ExpressionUUID->"d0733743-9019-4de9-8aa3-74cb09601156",
+ CellID->1676110876]
+}, Open  ]],
+Cell[17430, 600, 346, 10, 70, "ExampleText",ExpressionUUID->"ecb4d4e0-8977-470f-a493-15899af7c748",
+ CellID->1052329130]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17813, 615, 197, 6, 70, "ExampleSection",ExpressionUUID->"abaf4b8a-a9da-49a3-abce-22aa428e50a2",
+ CellID->1305812373],
+Cell[CellGroupData[{
+Cell[18035, 625, 251, 6, 70, "Input",ExpressionUUID->"42ec711b-8b36-4d73-95f0-a0c4840d1cfc",
+ CellID->1285983698],
+Cell[18289, 633, 311, 7, 70, "Message",ExpressionUUID->"d026fa6a-314f-45f2-8cb8-a14f9a5f9e08",
+ CellID->70512762],
+Cell[18603, 642, 79, 2, 70, "Output",ExpressionUUID->"47ee1207-2700-43f2-8658-6707d5c3514b",
+ CellID->1844501437]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18719, 649, 389, 12, 70, "Input",ExpressionUUID->"04cb8a47-7463-4b80-93bd-66795c03448a",
+ CellID->479081005],
+Cell[19111, 663, 595, 11, 70, "Message",ExpressionUUID->"dd561856-782a-46da-8997-1e76c89ee1fd",
+ CellID->1274717907],
+Cell[19709, 676, 78, 2, 70, "Output",ExpressionUUID->"98aed1d2-53ab-450a-94ce-f034d27c5fb6",
+ CellID->887000477]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19824, 683, 334, 10, 70, "Input",ExpressionUUID->"be58a345-15c2-4b44-969f-d770523a0f24",
+ CellID->998258432],
+Cell[20161, 695, 363, 8, 70, "Message",ExpressionUUID->"dbb1e3ce-a35e-4566-a388-9ab8c201bea1",
+ CellID->452546014],
+Cell[20527, 705, 79, 2, 70, "Output",ExpressionUUID->"b838d69e-3ae4-4f9f-b5ad-b6c10e5dabbb",
+ CellID->1701263271]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[20655, 713, 236, 8, 70, "ExampleSection",ExpressionUUID->"ca10294d-da21-4412-bfb5-368ca7fcb89a",
+ CellID->1544545457],
+Cell[20894, 723, 391, 12, 70, "Input",ExpressionUUID->"5fcdf10f-91d6-4927-9ae2-b319da62e458",
+ InitializationCell->False,
+ CellID->234169640],
+Cell[21288, 737, 1626, 42, 70, "Input",ExpressionUUID->"6a1af9a3-8267-4695-b7b2-3a486644f7de",
+ InitializationCell->False,
+ CellID->1499098176]
+}, Closed]],
+Cell[22929, 782, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"c180f2e0-47e8-43c5-ac61-d9815880989a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22997, 787, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"6e19f8b3-afad-4cb4-89b7-ac32af5db5e7",
+ CellID->1255426704],
+Cell[23150, 796, 2920, 90, 70, "SeeAlso",ExpressionUUID->"49ad0057-2d3d-45a7-88dc-911962b29797",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26107, 891, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"fec3b1cc-9bf5-4d27-b38f-4a44313b7fc1",
+ CellID->38303248],
+Cell[26266, 900, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"3e26f93f-30e3-49f3-8af9-5ee911e54402"],
+Cell[26300, 902, 207, 7, 70, "MoreAbout",ExpressionUUID->"20224ccc-2e13-41bc-afdf-706a7a1e0b4c",
+ CellID->403668156]
+}, Open  ]],
+Cell[26522, 912, 23, 0, 70, "FooterCell",ExpressionUUID->"5c789704-adbb-4a52-ab1e-e5958a605132"]
+}
+]
+*)
+
+(* End of internal cache information *)

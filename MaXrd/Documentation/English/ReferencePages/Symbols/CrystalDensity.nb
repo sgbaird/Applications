@@ -1,0 +1,1336 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     48475,       1327]
+NotebookOptionsPosition[     40457,       1150]
+NotebookOutlinePosition[     42626,       1206]
+CellTagsIndexPosition[     42540,       1201]
+WindowTitle->CrystalDensity
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"CrystalFormulaUnits\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/CrystalFormulaUnits"], "\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$CrystalData"], "\<\"BraggAngle\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/BraggAngle"], "\<\"GetCrystalMetric\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetCrystalMetric"], "\<\"ImportCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ImportCrystalData"], "\<\"GetElements\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetElements"], "\<\"GetLaueClass\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetLaueClass"], "\<\"AttenuationCoefficient\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/AttenuationCoefficient"], "\<\"GetSymmetryData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetSymmetryData"], "\<\"UnitCellTransformation\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/UnitCellTransformation"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/CrystalDensity\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/CrystalDensity"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+CrystalDensity.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$12229], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/CrystalDensity", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["CrystalDensity", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["CrystalDensity"]], "paclet:MaXrd/ref/CrystalDensity"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["crystal", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]calculates the mass density of ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1198350094],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "Output will always be given in ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["g",
+     FontSlant->"Plain"], "/", 
+    SuperscriptBox["cm", "3"]}], TraditionalForm]], "InlineMath"],
+ "."
+}], "Notes",
+ CellID->1067943069],
+
+Cell[TextData[{
+ "If the key ",
+ Cell[BoxData["\"\<MassDensity\>\""], "InlineFormula"],
+ " is contained in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " for the crystal, it will be returned. If the number of formula units per \
+unit cell, ",
+ Cell[BoxData[
+  FormBox["Z", TraditionalForm]], "InlineMath"],
+ ", is present in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " for the given crystal, the density is calculated from:"
+}], "Notes",
+ CellID->144274847],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   RowBox[{"\[Rho]", "=", 
+    FractionBox[
+     RowBox[{"Z", " ", "M"}], 
+     RowBox[{"V", " ", 
+      SubscriptBox["N", "A"]}]]}],
+   FontWeight->"Plain"], TraditionalForm]], "Input",
+ TextAlignment->Center,
+ CellID->937301987],
+
+Cell[TextData[{
+ "where ",
+ Cell[BoxData[
+  FormBox["M", TraditionalForm]], "InlineMath"],
+ " is the molar mass per formula unit, ",
+ Cell[BoxData[
+  FormBox["V", TraditionalForm]], "InlineMath"],
+ " is the unit cell volume and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["N", "A"], TraditionalForm]], "InlineMath"],
+ " is Avogadro's number.\[LineSeparator]If not, the density is calculated by \
+dividing the total mass of the stored atomdata by the unit cell volume. Both \
+site multiplicity and occupation factors are considered when counting the \
+number of atoms."
+}], "Notes",
+ CellID->1153012519],
+
+Cell["Options:", "Notes",
+ CellID->676761489],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<Units\>\"", 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[TextData[{
+     "whether to return output as ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Quantity"]], "paclet:ref/Quantity"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"]
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->410498224],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(6)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1568388292],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1687740366],
+
+Cell[TextData[{
+ "There are three ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["SiO", "2"], TraditionalForm]], "InlineMath"],
+ " formula units in the unit cell of quartz, but the function does not \
+require that input."
+}], "ExampleText",
+ CellID->1780914380],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalDensity", "[", "\"\<Quartz\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->273038913],
+
+Cell[BoxData[
+ TemplateBox[{"2.6475549164141436`", 
+   RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+   FractionBox["\"Grams\"", 
+    SuperscriptBox["\"Centimeters\"", "3"]]},
+  "Quantity"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1081815814]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1124312790],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalDensity", "[", "\"\<Zinc\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->616451577],
+
+Cell[BoxData[
+ TemplateBox[{"7.1375400576264445`", 
+   RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+   FractionBox["\"Grams\"", 
+    SuperscriptBox["\"Centimeters\"", "3"]]},
+  "Quantity"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->498637176]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalDensity", "[", "\"\<Nickel\>\"", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->450335195],
+
+Cell[BoxData[
+ TemplateBox[{"8.91124832339679`", 
+   RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+   FractionBox["\"Grams\"", 
+    SuperscriptBox["\"Centimeters\"", "3"]]},
+  "Quantity"]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1840668652]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell["\<\
+The available crystals, sorted from least to highest density:\
+\>", "ExampleText",
+ CellID->1312185555],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sort", "@", 
+  RowBox[{"AssociationMap", "[", 
+   RowBox[{"CrystalDensity", ",", 
+    RowBox[{"Keys", "@", "$CrystalData"}]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->85684955],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Cobalt(II)Fluoride\"\>", "\[Rule]", 
+    TemplateBox[{"0.7994548326309938`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Ice\"\>", "\[Rule]", 
+    TemplateBox[{"0.9209639929512548`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Glycyl-L-alanine\"\>", "\[Rule]", 
+    TemplateBox[{"1.3951467776807247`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"OxalicAcid\"\>", "\[Rule]", 
+    TemplateBox[{"1.6380151950484518`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Corundum\"\>", "\[Rule]", 
+    TemplateBox[{"1.643531632873804`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"PrussianBlue\"\>", "\[Rule]", 
+    TemplateBox[{"1.7120539620813826`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"ManganeseSilicon\"\>", "\[Rule]", 
+    TemplateBox[{"1.9435609191239076`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"SodiumChloride\"\>", "\[Rule]", 
+    TemplateBox[{"2.1636163893703153`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Sodalite\"\>", "\[Rule]", 
+    TemplateBox[{"2.302260417233332`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Silicon\"\>", "\[Rule]", 
+    TemplateBox[{"2.329179143594061`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Quartz\"\>", "\[Rule]", 
+    TemplateBox[{"2.6475549164141436`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Aluminium\"\>", "\[Rule]", 
+    TemplateBox[{"2.697806035349958`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Diamond\"\>", "\[Rule]", 
+    TemplateBox[{"3.5156765845328004`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"LithiumManganesePhosphate\"\>", "\[Rule]", 
+    TemplateBox[{"3.530490712687408`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Perovskite\"\>", "\[Rule]", 
+    TemplateBox[{"4.038732149147626`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Sphalerite\"\>", "\[Rule]", 
+    TemplateBox[{"4.077287004541344`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"LanthanumHexaboride\"\>", "\[Rule]", 
+    TemplateBox[{"4.71020281380231`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"CalciumFluoride\"\>", "\[Rule]", 
+    TemplateBox[{"4.728697130672828`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"LithiumCobaltate\"\>", "\[Rule]", 
+    TemplateBox[{"4.976128707617049`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"GalliumArsenide\"\>", "\[Rule]", 
+    TemplateBox[{"5.3171897047691195`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Germanium\"\>", "\[Rule]", 
+    TemplateBox[{"5.327310035715339`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Zinc\"\>", "\[Rule]", 
+    TemplateBox[{"7.1375400576264445`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"CopperTungstenOxide\"\>", "\[Rule]", 
+    TemplateBox[{"7.7865917877290425`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Ferrite\"\>", "\[Rule]", 
+    TemplateBox[{"7.874219974925922`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Austenite\"\>", "\[Rule]", 
+    TemplateBox[{"8.077564118611265`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Nickel\"\>", "\[Rule]", 
+    TemplateBox[{"8.91124832339679`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Copper\"\>", "\[Rule]", 
+    TemplateBox[{"8.936768807390145`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Polonium\"\>", "\[Rule]", 
+    TemplateBox[{"9.272717103214951`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Silver\"\>", "\[Rule]", 
+    TemplateBox[{"10.207764802243739`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Tungsten\"\>", "\[Rule]", 
+    TemplateBox[{"19.26307312623565`", 
+      RowBox[{"\"g\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"cm\"", "3"]}], "grams per centimeter cubed", 
+      FractionBox["\"Grams\"", 
+       SuperscriptBox["\"Centimeters\"", "3"]]},
+     "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->308447365]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Units\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[TextData[{
+ "Set ",
+ Cell[BoxData[
+  RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]], "InlineFormula"],
+ " if you do not want output to be a quantity. The output is in ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["g",
+     FontSlant->"Plain"], "/", 
+    SuperscriptBox["cm", "3"]}], TraditionalForm]], "InlineMath"],
+ "."
+}], "ExampleText",
+ CellID->1711486417],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalDensity", "[", 
+  RowBox[{"\"\<Quartz\>\"", ",", 
+   RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->863511635],
+
+Cell[BoxData["2.647554852638349`"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1995924250]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CrystalDensity", "[", "\"\<NotACrysalInDatabase\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1071870866],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "crystal", 
+   "\"No data found on \
+\[LeftGuillemet]\\!\\(\\*RowBox[{\\\"\\\\\\\"NotACrysalInDatabase\\\\\\\"\\\"}\
+]\\)\[RightGuillemet].\"", 2, 1, 2, 26434695707905640052, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1254211219],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1975962428]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1761749215],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "CrystalDensity"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"\"\<Units\>\"", "\[Rule]", "True"}], "\[IndentingNewLine]", 
+     "}"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "CrystalDensity"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->705053348],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CrystalDensity", "[", 
+   RowBox[{"crystal_String", ",", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "data", ",", "unitsQ", ",", "Z", ",", "\[IndentingNewLine]", "f", ",", 
+      "m", ",", "V", ",", "NA", ",", "\[IndentingNewLine]", "X", ",", "o", 
+      ",", "xyz", ",", "M", ",", "mass", ",", "\[IndentingNewLine]", "temp"}],
+      "}"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", "Input", " ", "check", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"\"\<CrystalQ\>\"", ",", "crystal"}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"data", "=", 
+      RowBox[{"$CrystalData", "[", "crystal", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"unitsQ", "=", 
+      RowBox[{"OptionValue", "[", "\"\<Units\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Return", " ", "density", " ", "if", " ", "contained", " ", 
+       RowBox[{"in", " ", "'"}], 
+       RowBox[{"$CrystalData", "'"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{"data", "[", "\"\<MassDensity\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MissingQ", "[", "temp", "]"}]}], ",", 
+       RowBox[{"Return", "@", "temp"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Lookup", " ", "formula", " ", "units"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"Z", "=", 
+      RowBox[{"Lookup", "[", 
+       RowBox[{"data", ",", "\"\<FormulaUnits\>\"", ",", 
+        RowBox[{"-", "1"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Calculations", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"--", 
+       RowBox[{"*", " ", "Common", " ", "variables", " ", "*", "--"}]}], 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Volume", ",", " ", 
+       RowBox[{"converted", " ", "to", " ", 
+        SuperscriptBox["cm", "3"]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"V", "=", 
+      RowBox[{"Sqrt", "@", 
+       RowBox[{"Det", "@", 
+        RowBox[{"GetCrystalMetric", "@", "crystal"}]}]}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{"unitsQ", ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"V", "=", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{
+          RowBox[{"V", "*", 
+           RowBox[{"10", "^", 
+            RowBox[{"(", 
+             RowBox[{"-", "24"}], ")"}]}]}], ",", 
+          RowBox[{"\"\<Centimeters\>\"", "^", "3"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"V", "=", 
+        RowBox[{"V", "*", 
+         RowBox[{"10", "^", 
+          RowBox[{"(", 
+           RowBox[{"-", "24"}], ")"}]}]}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Chemical", " ", "formula"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"f", "=", 
+      RowBox[{"Sort", "@", 
+       RowBox[{"GetElements", "[", 
+        RowBox[{"crystal", ",", 
+         RowBox[{"\"\<Tally\>\"", "\[Rule]", "True"}]}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"Positive", "@", "Z"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"--", 
+         RowBox[{"*", " ", 
+          RowBox[{"A", ".", " ", "Calculate"}], " ", "\[Rho]", " ", "from", 
+          " ", "Z", " ", "*", "--"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Atomic", " ", "mass", " ", "of", " ", "one", " ", "unit"}], 
+        " ", "*)"}], "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"m", "=", 
+         RowBox[{"MapAt", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"$PeriodicTable", "[", 
+             RowBox[{"#", ",", "\"\<StandardAtomicWeight\>\""}], "]"}], "&"}],
+            ",", "f", ",", 
+           RowBox[{"{", 
+            RowBox[{"All", ",", "1"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"m", "=", 
+         RowBox[{"Total", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Times", "@@", "#"}], "&"}], "/@", "m"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{"unitsQ", ",", 
+          RowBox[{"m", "=", 
+           RowBox[{"Quantity", "[", 
+            RowBox[{"m", ",", 
+             RowBox[{"\"\<Grams\>\"", "/", "\"\<Moles\>\""}]}], "]"}]}]}], 
+         "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+          RowBox[{"Avogadro", "'"}], "s", " ", "constant"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{"unitsQ", ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"NA", "=", 
+           RowBox[{"UnitConvert", "[", 
+            RowBox[{
+             RowBox[{"Quantity", "[", "\"\<AvogadroConstant\>\"", "]"}], ",", 
+             
+             RowBox[{"\"\<Moles\>\"", "^", 
+              RowBox[{"-", "1"}]}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+          "\t", 
+          RowBox[{"NA", "=", "6.022140857*^23"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Calculating", " ", "\[Rho]"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"Return", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"Z", "*", "m"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{"V", "*", "NA"}], ")"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"--", 
+          RowBox[{"*", " ", 
+           RowBox[{"B", ".", " ", "Calculate"}], " ", "\[Rho]", " ", "from", 
+           " ", "atom", " ", "data"}]}], ",", " ", 
+         RowBox[{
+         "symmetry", " ", "and", " ", "occupation", " ", "*", "--"}]}], 
+        "*)"}], "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Elements", ",", " ", 
+         RowBox[{
+         "occupation", " ", "factors", " ", "and", " ", "coordinates"}]}], 
+        " ", "*)"}], "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"X", ",", "o", ",", "xyz"}], "}"}], "=", 
+         RowBox[{"Transpose", "@", 
+          RowBox[{"Values", "@", 
+           RowBox[{"data", "\[LeftDoubleBracket]", 
+            RowBox[{
+            "\"\<AtomData\>\"", ",", "All", ",", "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{
+              "\"\<Element\>\"", ",", "\"\<OccupationFactor\>\"", ",", 
+               "\"\<FractionalCoordinates\>\""}], "}"}]}], 
+            "\[RightDoubleBracket]"}]}]}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"X", "=", 
+         RowBox[{"StringDelete", "[", 
+          RowBox[{"X", ",", 
+           RowBox[{"{", 
+            RowBox[{"DigitCharacter", ",", "\"\<+\>\"", ",", "\"\<-\>\""}], 
+            "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"o", "=", 
+         RowBox[{"o", "/.", 
+          RowBox[{"_Missing", "\[Rule]", "1."}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Site", " ", "multiplicities"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"M", "=", 
+         RowBox[{"o", "*", 
+          RowBox[{"(", 
+           RowBox[{"Length", "/@", 
+            RowBox[{"(", 
+             RowBox[{
+             "SymmetryEquivalentPositions", "[", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"data", "[", "\"\<SpaceGroup\>\"", "]"}], ",", "xyz"}],
+               "]"}], ")"}]}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", "Counting", " ", "*)"}], "\[IndentingNewLine]", 
+        "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"Transpose", "/@", 
+          RowBox[{"GatherBy", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", 
+             RowBox[{"{", 
+              RowBox[{"X", ",", "M"}], "}"}], "]"}], ",", "First"}], 
+           "]"}]}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"Sort", "[", 
+          RowBox[{"temp", "/.", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x_List", ",", "m_List"}], "}"}], "/;", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Depth", "[", "x", "]"}], "===", "2"}]}], 
+            "\[RuleDelayed]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"First", "@", "x"}], ",", 
+              RowBox[{"Total", "@", "m"}]}], "}"}]}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Total", " ", "atom", " ", "mass"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"mass", "=", 
+         RowBox[{"Total", "[", 
+          RowBox[{"temp", "/.", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"X_String", ",", 
+              RowBox[{"f_", "?", "NumericQ"}]}], "}"}], "\[RuleDelayed]", 
+            "\[IndentingNewLine]", "\t", 
+            RowBox[{"f", "*", 
+             RowBox[{"$PeriodicTable", "[", 
+              RowBox[{"X", ",", "\"\<StandardAtomicWeight\>\""}], "]"}]}]}]}],
+           "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{"unitsQ", ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"mass", "=", 
+           RowBox[{"UnitConvert", "[", 
+            RowBox[{
+             RowBox[{"Quantity", "[", 
+              RowBox[{"mass", ",", "\"\<AtomicMassUnit\>\""}], "]"}], ",", 
+             "\"\<Grams\>\""}], "]"}]}], ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"mass", "=", 
+           RowBox[{"mass", "*", 
+            RowBox[{"(", "1.6605390*^-24", ")"}]}]}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Calculated", " ", "density"}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"Return", "[", 
+         RowBox[{"mass", "/", "V"}], "]"}]}]}], "\[IndentingNewLine]", 
+      "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->16855690]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalFormulaUnits"]], "paclet:MaXrd/ref/CrystalFormulaUnits"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetElements"]], "paclet:MaXrd/ref/GetElements"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLaueClass"]], "paclet:MaXrd/ref/GetLaueClass"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AttenuationCoefficient"]], 
+    "paclet:MaXrd/ref/AttenuationCoefficient"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryData"]], "paclet:MaXrd/ref/GetSymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["UnitCellTransformation"]], 
+    "paclet:MaXrd/ref/UnitCellTransformation"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1888321786]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"CrystalDensity",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 13, 58.687635}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "CrystalDensity[crystal] calculates the mass density of crystal.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "CrystalDensity", 
+    "titlemodifier" -> "", "windowtitle" -> "CrystalDensity", "type" -> 
+    "Symbol", "uri" -> "MaXrd/ref/CrystalDensity", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9190, 281, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"01641a64-d230-4cd7-8b61-7185466bd1e0",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1568388292]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 42341, 1194}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[586, 21, 4542, 108, 70, "AnchorBarGrid",ExpressionUUID->"b190d22a-34f3-480b-b3f1-84fc30d12b6a",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5153, 133, 171, 6, 70, "ObjectNameGrid",ExpressionUUID->"cc0d26d2-cec5-421f-bdd3-c921141ae3f4"],
+Cell[5327, 141, 582, 18, 70, "Usage",ExpressionUUID->"c73e26d1-941b-4107-9c67-e580a1203e6d",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5946, 164, 642, 19, 70, "NotesSection",ExpressionUUID->"35182d81-8f23-4958-b024-b91a7e32cf56",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1198350094],
+Cell[6591, 185, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"b9d6d06c-e548-4663-bc34-e81224c9cdf1"],
+Cell[6625, 187, 245, 10, 70, "Notes",ExpressionUUID->"3b2fc5b3-3dba-4648-9807-f70b976b02c1",
+ CellID->1067943069],
+Cell[6873, 199, 726, 23, 70, "Notes",ExpressionUUID->"87fed4b0-b359-440b-b61c-37ba7297476d",
+ CellID->144274847],
+Cell[7602, 224, 266, 10, 70, "Input",ExpressionUUID->"b9314f2a-94ac-420b-824e-f6d920ee9755",
+ CellID->937301987],
+Cell[7871, 236, 603, 16, 70, "Notes",ExpressionUUID->"a2958c9f-05c7-434f-b6fb-c9b1f920d166",
+ CellID->1153012519],
+Cell[8477, 254, 45, 1, 70, "Notes",ExpressionUUID->"1199e008-696e-4c74-b1a2-b00afb6c0ac1",
+ CellID->676761489],
+Cell[8525, 257, 594, 17, 70, "3ColumnTableMod",ExpressionUUID->"461665cb-31b6-4bfd-9222-256410bb69a5",
+ CellID->410498224],
+Cell[9122, 276, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"400784d6-ab03-4a9d-b73d-9fb85c1cf06c"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9190, 281, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"01641a64-d230-4cd7-8b61-7185466bd1e0",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1568388292],
+Cell[CellGroupData[{
+Cell[9483, 295, 196, 6, 70, "ExampleSection",ExpressionUUID->"99257ec6-ea74-47e0-853f-bda8cdb4e41b",
+ CellID->1687740366],
+Cell[9682, 303, 259, 8, 70, "ExampleText",ExpressionUUID->"ff9b405d-1aab-4431-97d0-c14b7530fb5b",
+ CellID->1780914380],
+Cell[CellGroupData[{
+Cell[9966, 315, 123, 3, 70, "Input",ExpressionUUID->"cd434643-f3d8-402e-baf6-fce6571aeade",
+ CellID->273038913],
+Cell[10092, 320, 337, 8, 70, "Output",ExpressionUUID->"a5412b77-481f-4e66-a70b-c0a07c6a0d5f",
+ CellID->1081815814]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10466, 333, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"f0b3c8f4-4919-411c-abb6-0e75d2495bb2",
+ CellID->1124312790],
+Cell[CellGroupData[{
+Cell[10617, 340, 121, 3, 70, "Input",ExpressionUUID->"7e8b5b19-4739-430f-ab42-f379a68cd431",
+ CellID->616451577],
+Cell[10741, 345, 336, 8, 70, "Output",ExpressionUUID->"a3a04cdc-1e9f-423c-a85a-67d5e14f5844",
+ CellID->498637176]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11114, 358, 123, 3, 70, "Input",ExpressionUUID->"b248021c-ea70-4ad9-ada7-33b8824152ac",
+ CellID->450335195],
+Cell[11240, 363, 335, 8, 70, "Output",ExpressionUUID->"aaa44623-f773-4e65-8749-41a440c35c4a",
+ CellID->1840668652]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11636, 378, 187, 6, 70, "ExampleSection",ExpressionUUID->"6fe497be-fe04-489f-8084-d4262a88aaf2",
+ CellID->1293636265],
+Cell[11826, 386, 113, 3, 70, "ExampleText",ExpressionUUID->"4b22e076-ff70-4af7-ae2f-678896f3c2a2",
+ CellID->1312185555],
+Cell[CellGroupData[{
+Cell[11964, 393, 211, 6, 70, "Input",ExpressionUUID->"c426f69f-76d4-47bc-8e4f-21740087f7d4",
+ CellID->85684955],
+Cell[12178, 401, 10338, 214, 70, "Output",ExpressionUUID->"d1b71783-e953-41e6-8927-4902f4572b3c",
+ CellID->308447365]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[22565, 621, 189, 6, 70, "ExampleSection",ExpressionUUID->"87ccfac1-4f91-4518-b153-e4eaa4ad7b3c",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[22779, 631, 197, 6, 70, "ExampleSubsection",ExpressionUUID->"c99f1af7-f817-461c-ba2d-6e3ec7db069e",
+ CellID->1757724783],
+Cell[22979, 639, 374, 13, 70, "ExampleText",ExpressionUUID->"a2577293-74a0-407b-9a75-d14056df9efb",
+ CellID->1711486417],
+Cell[CellGroupData[{
+Cell[23378, 656, 192, 5, 70, "Input",ExpressionUUID->"76fe1e1f-4d5b-42cd-b474-df00c6a8e329",
+ CellID->863511635],
+Cell[23573, 663, 89, 2, 70, "Output",ExpressionUUID->"8e89ae5e-ce7b-4e7b-bce2-b393391b4671",
+ CellID->1995924250]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[23723, 672, 197, 6, 70, "ExampleSection",ExpressionUUID->"069bd7ce-bdbd-4a99-a6b1-2198eae7ce8b",
+ CellID->1305812373],
+Cell[CellGroupData[{
+Cell[23945, 682, 141, 4, 70, "Input",ExpressionUUID->"230c8482-078a-4a82-92b3-5fb8470fe214",
+ CellID->1071870866],
+Cell[24089, 688, 335, 8, 70, "Message",ExpressionUUID->"037813a9-5097-4fc0-8475-c8d057822f9c",
+ CellID->1254211219],
+Cell[24427, 698, 79, 2, 70, "Output",ExpressionUUID->"62850e35-a8d6-4db0-8668-df634adebcd2",
+ CellID->1975962428]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[24555, 706, 236, 8, 70, "ExampleSection",ExpressionUUID->"cac2ac1b-73b2-47ed-95d3-a19793c2038e",
+ CellID->1761749215],
+Cell[24794, 716, 689, 19, 70, "Input",ExpressionUUID->"1f8c44b5-37ba-4122-b0c3-5cdfad4fef67",
+ InitializationCell->False,
+ CellID->705053348],
+Cell[25486, 737, 11063, 268, 70, "Input",ExpressionUUID->"d7820c4e-6a68-4c51-a82f-6efcb5199163",
+ InitializationCell->False,
+ CellID->16855690]
+}, Closed]],
+Cell[36564, 1008, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"c3f99411-8a74-4160-ad09-2f8ed3226b23"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36632, 1013, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"765806af-70db-4070-8449-18639e0486e4",
+ CellID->1255426704],
+Cell[36785, 1022, 3192, 100, 70, "SeeAlso",ExpressionUUID->"1475a15d-5256-4cbe-89df-7246bf0472cd",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40014, 1127, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"b10f25ba-6b08-42f3-983a-75c7f36ee6ae",
+ CellID->38303248],
+Cell[40173, 1136, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"f1597445-a9a7-42d1-9d8b-6be35d2c75d7"],
+Cell[40207, 1138, 208, 7, 70, "MoreAbout",ExpressionUUID->"4a1a7de9-2ab5-47f3-b007-d4a89e730292",
+ CellID->1888321786]
+}, Open  ]],
+Cell[40430, 1148, 23, 0, 70, "FooterCell",ExpressionUUID->"de878703-0d72-4dce-96fd-e7ee5c42bfb6"]
+}
+]
+*)
+
+(* End of internal cache information *)

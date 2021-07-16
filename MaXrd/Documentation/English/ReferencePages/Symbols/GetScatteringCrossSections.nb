@@ -1,0 +1,1181 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     41217,       1172]
+NotebookOptionsPosition[     32979,        994]
+NotebookOutlinePosition[     35503,       1055]
+CellTagsIndexPosition[     35417,       1050]
+WindowTitle->GetScatteringCrossSections
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"AttenuationCoefficient\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/AttenuationCoefficient"], "\<\"StructureFactor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/StructureFactor"], "\<\"GetAtomicScatteringFactors\"\
+\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetAtomicScatteringFactors"], \
+"\<\"CrystalDensity\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/CrystalDensity"], "\<\"GetElements\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetElements"], "\<\"GetCrystalMetric\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetCrystalMetric"], "\<\"SymmetryEquivalentPositions\
+\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentPositions"], "\<\"InputCheck\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/InputCheck"], "\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/$CrystalData"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/GetScatteringCrossSections\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/GetScatteringCrossSections"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+GetScatteringCrossSections.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$24857], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/GetScatteringCrossSections", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["GetScatteringCrossSections", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["GetScatteringCrossSections"]], 
+         "paclet:MaXrd/ref/GetScatteringCrossSections"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["crystal", "TI"], ",", 
+        StyleBox["\[Lambda]", "TR"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns an association on the form ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["X", "TI"], 
+       StyleBox["\[Rule]",
+        FontSlant->"Plain"], 
+       StyleBox["\[Sigma]", "TI"]}]], "InlineFormula"],
+     " where ",
+     Cell[BoxData[
+      StyleBox["X", "TI"]], "InlineFormula"],
+     " is a chemical element in ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " and ",
+     Cell[BoxData[
+      StyleBox["\[Sigma]", "TR"]], "InlineFormula"],
+     " the corresponding scattering cross section."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["GetScatteringCrossSections"]], 
+         "paclet:MaXrd/ref/GetScatteringCrossSections"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["X", "TI"], ",", 
+        StyleBox["\[Lambda]", "TR"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]returns an association between the chemical element ",
+     Cell[BoxData[
+      StyleBox["X", "TI"]], "InlineFormula"],
+     " and its scattering cross section for the given wavelength ",
+     Cell[BoxData[
+      StyleBox["\[Lambda]", "TR"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->733822078],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["Output is in barns per atom.", "Notes",
+ CellID->1219408203],
+
+Cell[TextData[{
+ "An ",
+ StyleBox["energy quantity",
+  FontSlant->"Italic"],
+ " may be used instead of wavelength, as the input is passed through ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". In either case, input may be a number or a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Quantity"]], "paclet:ref/Quantity"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["\<\
+The following interaction phenomena are considered in the contribution to the \
+overall attenuation of the X-ray beam. The columns denote name of the \
+phenomena, alternative names and short descriptions, respectively.\
+\>", "Notes",
+ CellID->1710490272],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], Cell[TextData[{
+     "Photoelectric scattering (",
+     Cell[BoxData[
+      SubscriptBox["\[Sigma]", "pe"]], "InlineFormula"],
+     ")"
+    }], "TableText"], Cell["photoionisation", "TableText"], Cell[
+    "absorbed photon results in ejected electron", "TableText"]},
+   {Cell["      ", "TableRowIcon"], Cell[TextData[{
+     "Coherent scattering (",
+     Cell[BoxData[
+      SubscriptBox["\[Sigma]", "coh"]], "InlineFormula"],
+     ")"
+    }], "TableText"], Cell[
+    "Rayleigh-, Thompson-, classical- or elastic scattering", "TableText"], 
+    Cell["scattering off bound electrons", "TableText"]},
+   {Cell["      ", "TableRowIcon"], Cell[TextData[{
+     "Incoherent scattering (",
+     Cell[BoxData[
+      SubscriptBox["\[Sigma]", "incoh"]], "InlineFormula"],
+     ")"
+    }], "TableText"], Cell["Compton- or inelastic scattering", "TableText"], 
+    Cell["\<\
+photon energy results in ejected electron as well as scattered photon with \
+less energy\
+\>", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True}}}},
+ CellID->49233058],
+
+Cell["Options:", "Notes",
+ CellID->1548663136],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<PhysicalProcess\>\"", "\"\<\>\"", 
+    Cell["select one type of scattering cross section to consider", 
+     "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Source\>\"", "\"\<xraylib\>\"", Cell[
+    "source (table) of cross sections", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Units\>\"", 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[TextData[{
+     "output as a ",
+     ButtonBox["Quantity ",
+      BaseStyle->"Link",
+      ButtonData->"paclet:ref/Quantity"],
+     "with units"
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True}}}},
+ CellID->618233807],
+
+Cell[TextData[{
+ Cell[BoxData["\"\<PhysicalProcess\>\""], "InlineFormula"],
+ " is by default set to an empty string. By setting it to one type of \
+scattering cross section (see first table), only this cross section will be \
+considered in the calculations."
+}], "Notes",
+ CellID->1752874899],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(6)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->349080225],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->66017971],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GetScatteringCrossSections", "[", 
+  RowBox[{"\"\<GalliumArsenide\>\"", ",", "1.1573"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2091318063],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Ga\"\>", "\[Rule]", 
+    TemplateBox[{"23558.`", "\"b\"", "barns", "\"Barns\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"As\"\>", "\[Rule]", 
+    TemplateBox[{"4235.64`", "\"b\"", "barns", "\"Barns\""},
+     "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->359991085]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1031794289],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GetScatteringCrossSections", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\"\<Al\>\"", ",", "\"\<Mn\>\"", ",", "\"\<Ag\>\""}], "}"}], ",", 
+   "1.1573"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->436165698],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Al\"\>", "\[Rule]", 
+    TemplateBox[{"958.189`", "\"b\"", "barns", "\"Barns\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Mn\"\>", "\[Rule]", 
+    TemplateBox[{"11459.699999999999`", "\"b\"", "barns", "\"Barns\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Ag\"\>", "\[Rule]", 
+    TemplateBox[{"17714.`", "\"b\"", "barns", "\"Barns\""},
+     "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1524384058]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"PhysicalProcess\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1112272356],
+
+Cell["\<\
+With this option, the a single cross section type can be calculated:\
+\>", "ExampleText",
+ CellID->1624495902],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GetScatteringCrossSections", "[", 
+     RowBox[{
+     "\"\<GalliumArsenide\>\"", ",", "1.0", ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<PhysicalProcess\>\"", "\[Rule]", "p"}]}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"p", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Photoelectric\>\"", ",", "\"\<Coherent\>\"", ",", 
+        "\"\<Incoherent\>\"", ",", "\"\<Total\>\""}], "}"}]}], "}"}]}], "]"}],
+   "//", "TableForm"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->759871737],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Ga\"\>", "\[Rule]", 
+         TemplateBox[{"16074.900000000001`", "\"b\"", "barns", "\"Barns\""},
+          "Quantity"]}], ",", 
+        RowBox[{"\<\"As\"\>", "\[Rule]", 
+         TemplateBox[{"19789.600000000002`", "\"b\"", "barns", "\"Barns\""},
+          "Quantity"]}]}], "\[RightAssociation]"}]},
+     {
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Ga\"\>", "\[Rule]", 
+         TemplateBox[{"140.123`", "\"b\"", "barns", "\"Barns\""},
+          "Quantity"]}], ",", 
+        RowBox[{"\<\"As\"\>", "\[Rule]", 
+         TemplateBox[{"164.072`", "\"b\"", "barns", "\"Barns\""},
+          "Quantity"]}]}], "\[RightAssociation]"}]},
+     {
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Ga\"\>", "\[Rule]", 
+         TemplateBox[{"9.6432`", "\"b\"", "barns", "\"Barns\""},
+          "Quantity"]}], ",", 
+        RowBox[{"\<\"As\"\>", "\[Rule]", 
+         TemplateBox[{"10.0145`", "\"b\"", "barns", "\"Barns\""},
+          "Quantity"]}]}], "\[RightAssociation]"}]},
+     {
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Ga\"\>", "\[Rule]", 
+         TemplateBox[{"16224.7`", "\"b\"", "barns", "\"Barns\""},
+          "Quantity"]}], ",", 
+        RowBox[{"\<\"As\"\>", "\[Rule]", 
+         TemplateBox[{"19963.6`", "\"b\"", "barns", "\"Barns\""},
+          "Quantity"]}]}], "\[RightAssociation]"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellLabel->"Out[1]//TableForm=",
+ CellID->316451915]
+}, Open  ]],
+
+Cell["\<\
+There are several equivalent names for the same type of cross section;\
+\>", "ExampleText",
+ CellID->1676165524],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SameQ", "@@", 
+  RowBox[{"Table", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GetScatteringCrossSections", "[", 
+     RowBox[{"\"\<Nickel\>\"", ",", "1.0", ",", 
+      RowBox[{"\"\<PhysicalProcess\>\"", "\[Rule]", "p"}]}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"p", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Incoherent\>\"", ",", "\"\<Compton\>\"", ",", 
+        "\"\<Inelastic\>\""}], "}"}]}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1263984472],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->162985155]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Source\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->647929167],
+
+Cell[TextData[{
+ "Currently, ",
+ Cell[BoxData["\"\<xraylib\>\""], "InlineFormula"],
+ " is the only source of scattering cross sections."
+}], "ExampleText",
+ CellID->677651810]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Units\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1653196224],
+
+Cell[TextData[{
+ "The default setting is ",
+ Cell[BoxData["\"\<True\>\""], "InlineFormula"],
+ ", which returns output as a ",
+ ButtonBox["Quantity",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Quantity"],
+ ". The unit is barn per atom."
+}], "ExampleText",
+ CellID->817307380],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GetScatteringCrossSections", "[", 
+  RowBox[{"\"\<Copper\>\"", ",", "1.54", ",", 
+   RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->616414863],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{"\<\"Cu\"\>", "\[Rule]", "5449.06`"}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->552615613]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->116340157],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"GetScatteringCrossSections", "::", "\"\<invsrc\>\""}], "=", 
+   "\"\<Invalid source.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"GetScatteringCrossSections", "::", "\"\<invelt\>\""}], "=", 
+   "\"\<Invalid element.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"GetScatteringCrossSections", "::", "invproc"}], "=", 
+   "\"\<The scattering process type \[LeftGuillemet]`1`\[RightGuillemet] is \
+not recognised.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"GetScatteringCrossSections", "::", "\"\<invwlrange\>\""}], "=", 
+    "\"\<The wavelength, `1` \[CapitalARing], must be within (0.001 \
+\[LessEqual] \[Lambda] \[LessEqual] 3.000) \[CapitalARing] when using cross \
+sections.\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "GetScatteringCrossSections"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<PhysicalProcess\>\"", "\[Rule]", "\"\<\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<Source\>\"", "\[Rule]", "\"\<xraylib\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<Units\>\"", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
+     "}"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "GetScatteringCrossSections"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", "_", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->131397204],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GetScatteringCrossSections", "[", 
+   RowBox[{"input_", ",", "\[IndentingNewLine]", 
+    RowBox[{"wavelength", ":", 
+     RowBox[{"_", "?", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"NumericQ", "[", "#", "]"}], "||", 
+         RowBox[{"QuantityQ", "[", "#", "]"}]}], "&"}], ")"}]}], ":", 
+     RowBox[{"-", "1"}]}], ",", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"src", ",", "unitsQ", ",", "elements", ",", 
+      RowBox[{"\[Lambda]", "=", "wavelength"}], ",", 
+      RowBox[{"pp", "=", 
+       RowBox[{"OptionValue", "[", "\"\<PhysicalProcess\>\"", "]"}]}], ",", 
+      "column", ",", "\[IndentingNewLine]", "setpos", ",", "\[Sigma]", ",", 
+      "file", ",", "read", ",", "\[Sigma]i"}], "}"}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", "Checks", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Chemical", " ", "element", 
+      RowBox[{"(", "s", ")"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"elements", "=", 
+      RowBox[{"Flatten", "@", 
+       RowBox[{"GetElements", "[", "input", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Data", " ", "source"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"src", "=", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+        "$MaXrdPath", ",", "\"\<Core\>\"", ",", "\"\<Data\>\"", ",", 
+         "\"\<CrossSections\>\"", ",", 
+         RowBox[{"OptionValue", "[", "\"\<Source\>\"", "]"}]}], "}"}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"DirectoryQ", "@", "src"}]}], ",", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"GetScatteringCrossSections", "::", "\"\<invsrc\>\""}], 
+         "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"unitsQ", "=", 
+      RowBox[{"OptionValue", "[", "\"\<Units\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Wavelength", " ", "and", " ", "its", " ", "range"}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"(", 
+         RowBox[{
+         "0.001", "\[LessEqual]", "\[Lambda]", "\[LessEqual]", "3.000"}], 
+         ")"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"GetScatteringCrossSections", "::", "invwlrange"}], ",", 
+          RowBox[{"ToString", "@", "\[Lambda]"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"\[Lambda]", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{
+       "\"\<ProcessWavelength\>\"", ",", "\"\<\>\"", ",", "wavelength"}], 
+       "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Column", " ", "to", " ", "read", " ", "from", " ", 
+       RowBox[{"(", 
+        RowBox[{"cross", " ", "section", " ", "type"}], ")"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"column", "=", 
+      RowBox[{"Which", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"pp", "===", "\"\<\>\""}], ",", "5", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{"\"\<Photoelectric\>\"", ",", "\"\<Photoionisation\>\""}], 
+           "}"}], ",", "pp"}], "]"}], ",", "2", ",", "\[IndentingNewLine]", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\<Coherent\>\"", ",", "\"\<Rayleigh\>\"", ",", 
+            "\"\<Thompson\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<Classical\>\"", ",", "\"\<Elastic\>\""}], "}"}], ",", "pp"}],
+          "]"}], ",", "3", ",", "\[IndentingNewLine]", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\<Incoherent\>\"", ",", "\"\<Compton\>\"", ",", 
+            "\"\<Inelastic\>\""}], "\[IndentingNewLine]", "}"}], ",", "pp"}], 
+         "]"}], ",", "4", ",", "\[IndentingNewLine]", 
+        RowBox[{"pp", "===", "\"\<Total\>\""}], ",", "5", ",", 
+        "\[IndentingNewLine]", "True", ",", 
+        RowBox[{
+         RowBox[{"Message", "[", 
+          RowBox[{
+           RowBox[{"GetScatteringCrossSections", "::", "invproc"}], ",", 
+           "pp"}], "]"}], ";", 
+         RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Read", " ", "from", " ", "file", " ", 
+       "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Stream", " ", "position", " ", "in", " ", "dat", " ", "files"}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"setpos", "=", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"$OperatingSystem", "===", "\"\<Windows\>\""}], ",", "65", 
+         ",", "66"}], "]"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Round", "[", 
+          RowBox[{"1000", "*", "\[Lambda]"}], "]"}], "-", "1"}], ")"}]}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"Extract", " ", "cross", " ", "sections"}], ";", " ", 
+       RowBox[{"\[Sigma]", " ", "=", " ", 
+        RowBox[{"\[Sigma]", 
+         RowBox[{"(", 
+          RowBox[{"element", ",", " ", "wavelength"}], ")"}]}]}]}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"\[Sigma]", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"file", "=", 
+         RowBox[{"OpenRead", "@", 
+          RowBox[{"FileNameJoin", "[", 
+           RowBox[{"{", 
+            RowBox[{"src", ",", 
+             RowBox[{"X", "<>", "\"\<.dat\>\""}]}], "}"}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"SetStreamPosition", "[", 
+         RowBox[{"file", ",", "setpos"}], "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"read", "=", 
+         RowBox[{"Read", "[", 
+          RowBox[{"file", ",", "Record"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"\[Sigma]i", "=", 
+         RowBox[{"ToExpression", "@", 
+          RowBox[{"StringReplace", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"StringSplit", "[", "read", "]"}], 
+             "\[LeftDoubleBracket]", "column", "\[RightDoubleBracket]"}], ",",
+             "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"m__", "~~", "\"\<E\>\"", "~~", 
+              RowBox[{"s", ":", 
+               RowBox[{"{", 
+                RowBox[{"\"\<+\>\"", ",", "\"\<-\>\""}], "}"}]}], "~~", 
+              RowBox[{"e", ":", 
+               RowBox[{"DigitCharacter", ".."}]}]}], "\[RuleDelayed]", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+             "m", "<>", "\"\<*10^(\>\"", "<>", "s", "<>", "e", "<>", 
+              "\"\<)\>\""}]}]}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{"unitsQ", ",", 
+          RowBox[{"\[Sigma]i", "=", 
+           RowBox[{"Quantity", "[", 
+            RowBox[{"\[Sigma]i", ",", "\"\<Barns\>\""}], "]"}]}]}], "]"}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"Close", "[", "file", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"\[Sigma]", ",", 
+          RowBox[{"X", "\[Rule]", "\[Sigma]i"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"X", ",", "elements"}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Output", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Association", "@", "\[Sigma]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->779618512]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AttenuationCoefficient"]], 
+    "paclet:MaXrd/ref/AttenuationCoefficient"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StructureFactor"]], "paclet:MaXrd/ref/StructureFactor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetAtomicScatteringFactors"]], 
+    "paclet:MaXrd/ref/GetAtomicScatteringFactors"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalDensity"]], "paclet:MaXrd/ref/CrystalDensity"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetElements"]], "paclet:MaXrd/ref/GetElements"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentPositions"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1462476745]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"GetScatteringCrossSections",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 15, 19.264410}", 
+    "history" -> {"0.8", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "GetScatteringCrossSections[crystal, \\[Lambda]] returns an association \
+on the form X -> \\[Sigma] where X is a chemical element in crystal and \
+\\[Sigma] the corresponding scattering cross section. \
+GetScatteringCrossSections[X, \\[Lambda]] returns an association between the \
+chemical element X and its scattering cross section for the given wavelength \
+\\[Lambda].", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "GetScatteringCrossSections", "titlemodifier" -> "", "windowtitle" -> 
+    "GetScatteringCrossSections", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/GetScatteringCrossSections", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[11208, 324, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"72289d17-5139-4459-ab10-3ed734c2e539",
+   CellTags->"PrimaryExamplesSection",
+   CellID->349080225]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 35218, 1043}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[598, 21, 4505, 107, 70, "AnchorBarGrid",ExpressionUUID->"09f01604-88f6-40e7-a5eb-bbac162b9ce3",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5128, 132, 183, 6, 70, "ObjectNameGrid",ExpressionUUID->"9f5ccbc2-f5e3-4184-a3c0-572c09ba5b63"],
+Cell[5314, 140, 1794, 54, 70, "Usage",ExpressionUUID->"38f7f3c6-8720-4a9e-8bce-b8f2caac1696",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7145, 199, 641, 19, 70, "NotesSection",ExpressionUUID->"28db93ee-2982-44b1-b678-c9c12eb1114e",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->733822078],
+Cell[7789, 220, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"40de31a7-1857-4bdd-9b1c-453d1fd5ea10"],
+Cell[7823, 222, 66, 1, 70, "Notes",ExpressionUUID->"f81ce82a-733b-4ff5-8fc2-25ae1cfe941e",
+ CellID->1219408203],
+Cell[7892, 225, 567, 20, 70, "Notes",ExpressionUUID->"cbdc9737-7578-4565-8c4d-88ce64ff7751",
+ CellID->1067943069],
+Cell[8462, 247, 264, 5, 70, "Notes",ExpressionUUID->"9c951cb2-f3b9-4416-9c90-7fb44732d8b6",
+ CellID->1710490272],
+Cell[8729, 254, 1230, 30, 70, "3ColumnTableMod",ExpressionUUID->"27503d6e-7e07-4bb0-b118-c2931030a8b2",
+ CellID->49233058],
+Cell[9962, 286, 46, 1, 70, "Notes",ExpressionUUID->"36641432-bbbf-4015-b2ec-719924da78a0",
+ CellID->1548663136],
+Cell[10011, 289, 831, 20, 70, "3ColumnTableMod",ExpressionUUID->"28d0da84-1849-493d-abdb-da9630e51bf8",
+ CellID->618233807],
+Cell[10845, 311, 292, 6, 70, "Notes",ExpressionUUID->"488cc874-5fc9-460d-bc9e-c0914dac73b6",
+ CellID->1752874899],
+Cell[11140, 319, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"bf98b5c0-fa64-4cdf-97ed-2151d1e8b25d"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11208, 324, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"72289d17-5139-4459-ab10-3ed734c2e539",
+ CellTags->"PrimaryExamplesSection",
+ CellID->349080225],
+Cell[CellGroupData[{
+Cell[11500, 338, 194, 6, 70, "ExampleSection",ExpressionUUID->"16616c6a-1456-4983-9531-90436edb87b6",
+ CellID->66017971],
+Cell[CellGroupData[{
+Cell[11719, 348, 173, 4, 70, "Input",ExpressionUUID->"ea15e4c8-88b6-4360-97da-13b7ce8345b4",
+ CellID->2091318063],
+Cell[11895, 354, 378, 10, 70, "Output",ExpressionUUID->"b951a969-3dc1-4a42-b7fa-c349963dbebf",
+ CellID->359991085]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12310, 369, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"fd22c958-f90a-483f-965a-f66a72e772dd",
+ CellID->1031794289],
+Cell[CellGroupData[{
+Cell[12461, 376, 240, 7, 70, "Input",ExpressionUUID->"20475742-e5b3-4daf-b9e9-cc74ec1a70cc",
+ CellID->436165698],
+Cell[12704, 385, 514, 13, 70, "Output",ExpressionUUID->"6871c59b-c64c-4aa8-910a-ff99e8107189",
+ CellID->1524384058]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13279, 405, 189, 6, 70, "ExampleSection",ExpressionUUID->"a5c2bd8f-6c0d-48c5-bc48-76a7833245fb",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[13493, 415, 207, 6, 70, "ExampleSubsection",ExpressionUUID->"72d04558-5956-4ab7-baed-826a6ff325c8",
+ CellID->1112272356],
+Cell[13703, 423, 120, 3, 70, "ExampleText",ExpressionUUID->"7c4965da-b276-44f3-a38b-9f6e46aa537a",
+ CellID->1624495902],
+Cell[CellGroupData[{
+Cell[13848, 430, 617, 17, 70, "Input",ExpressionUUID->"711235c3-18af-44c8-9ac3-e709f2be4d21",
+ CellID->759871737],
+Cell[14468, 449, 2049, 54, 70, "Output",ExpressionUUID->"396147c4-d19d-48eb-aa54-6e692b4d2878",
+ CellID->316451915]
+}, Open  ]],
+Cell[16532, 506, 122, 3, 70, "ExampleText",ExpressionUUID->"3e28c1a1-b01f-45a7-8b3b-f1582cffa55d",
+ CellID->1676165524],
+Cell[CellGroupData[{
+Cell[16679, 513, 546, 15, 70, "Input",ExpressionUUID->"8bcdeb82-c6ad-4d49-8fc0-05d3b129706a",
+ CellID->1263984472],
+Cell[17228, 530, 74, 2, 70, "Output",ExpressionUUID->"b6b90faa-20cd-45bd-841d-f4cf96f9acee",
+ CellID->162985155]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17351, 538, 197, 6, 70, "ExampleSubsection",ExpressionUUID->"98b53687-7794-4a73-a37f-a0e031bdcd06",
+ CellID->647929167],
+Cell[17551, 546, 175, 5, 70, "ExampleText",ExpressionUUID->"4790adda-99bd-4779-9252-534ed5d5b282",
+ CellID->677651810]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17763, 556, 197, 6, 70, "ExampleSubsection",ExpressionUUID->"fde02ebd-ad5f-4ce2-b79c-513b2fae8bb8",
+ CellID->1653196224],
+Cell[17963, 564, 278, 9, 70, "ExampleText",ExpressionUUID->"b25b75e0-d538-4e8b-8cab-e5c4064aa721",
+ CellID->817307380],
+Cell[CellGroupData[{
+Cell[18266, 577, 217, 5, 70, "Input",ExpressionUUID->"4f46b811-2ff0-4f56-83e7-696dede3cca7",
+ CellID->616414863],
+Cell[18486, 584, 176, 5, 70, "Output",ExpressionUUID->"a1ed4db2-c610-4b15-9781-5a0ab42e1931",
+ CellID->552615613]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[18723, 596, 235, 8, 70, "ExampleSection",ExpressionUUID->"a61e9b8e-5c4f-4ddb-9ceb-420f78730adf",
+ CellID->116340157],
+Cell[18961, 606, 1810, 44, 70, "Input",ExpressionUUID->"5b7bb9a2-6458-414a-a8eb-7bce5daa2aff",
+ InitializationCell->False,
+ CellID->131397204],
+Cell[20774, 652, 8592, 206, 70, "Input",ExpressionUUID->"393753ea-aec0-485f-aa3f-7666e85e8efe",
+ InitializationCell->False,
+ CellID->779618512]
+}, Closed]],
+Cell[29381, 861, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"2445328d-958f-432e-8181-74e2a7d6d364"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29449, 866, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"7f2a1a98-4202-4dec-8e62-00ccca57f977",
+ CellID->1255426704],
+Cell[29602, 875, 2897, 91, 70, "SeeAlso",ExpressionUUID->"d7f35f65-4756-42be-8cee-16b8b38d9215",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32536, 971, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"aa2b3ddf-5e2c-42fb-8364-bf460b659cae",
+ CellID->38303248],
+Cell[32695, 980, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"59c8a7da-1fb5-4a42-a3d2-8943965d295e"],
+Cell[32729, 982, 208, 7, 70, "MoreAbout",ExpressionUUID->"7c72f2d3-56a6-4ce3-91fa-b91d5c6a8042",
+ CellID->1462476745]
+}, Open  ]],
+Cell[32952, 992, 23, 0, 70, "FooterCell",ExpressionUUID->"2452e30b-19cf-417c-851f-fa85243b633b"]
+}
+]
+*)
+
+(* End of internal cache information *)

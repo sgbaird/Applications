@@ -1,0 +1,733 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27369,        724]
+NotebookOptionsPosition[     23196,        627]
+NotebookOutlinePosition[     25311,        684]
+CellTagsIndexPosition[     25226,        679]
+WindowTitle->$MaXrdChangelog
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"RelatedFunctionsGraph\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/RelatedFunctionsGraph"], "\<\"$MaXrdFunctions\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdFunctions"], "\<\"$GroupSymbolRedirect\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$GroupSymbolRedirect"], "\<\"$MaXrdVersion\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdVersion"], "\<\"$MaXrdPath\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdPath"], "\<\"InputCheck\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/InputCheck"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/$MaXrdChangelog\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/$MaXrdChangelog"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/$\
+MaXrdChangelog.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$45492], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/$MaXrdChangelog", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["$MaXrdChangelog", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$MaXrdChangelog"]], "paclet:MaXrd/ref/$MaXrdChangelog"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " \[LineSeparator]prints the entry of the change log corresponding to \
+the current version."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1],
+
+Cell["\<\
+The function will open a new notebook and print the change log in there.\
+\>", "ExampleText",
+ CellID->637518614],
+
+Cell[BoxData["$MaXrdChangelog"], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1396148391]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->525734561],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"$MaXrdChangelog", "::", "fileMissing"}], "=", 
+   "\"\<Cannot find the `1` file (`2`).\>\""}], ";"}]], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1060249953],
+
+Cell[BoxData[
+ RowBox[{"$MaXrdChangelog", ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"dir", "=", "$MaXrdPath"}], ",", "\[IndentingNewLine]", 
+      "pacletFile", ",", "packletVersion", ",", "\[IndentingNewLine]", 
+      "packageSymbols", ",", "\[IndentingNewLine]", "changelogFile", ",", 
+      "log", ",", "current", ",", "content", ",", "new", ",", "t", ",", 
+      "title", ",", "post", ",", "\[IndentingNewLine]", "temp"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Load", " ", "current", " ", 
+      RowBox[{"version", " ", "--"}], " ", "could", " ", "be", " ", 
+      "undeployed"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"pacletFile", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"FileNames", "[", 
+         RowBox[{"\"\<PacletInfo.m\>\"", ",", 
+          RowBox[{"{", "#", "}"}]}], "]"}], "\[IndentingNewLine]", "\t", 
+        "&"}], "/@", 
+       RowBox[{"{", 
+        RowBox[{"dir", ",", 
+         RowBox[{"ParentDirectory", "@", "dir"}]}], "}"}]}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"pacletFile", "=", 
+      RowBox[{"Cases", "[", 
+       RowBox[{"pacletFile", ",", "_String", ",", "2", ",", "1"}], "]"}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"pacletFile", "===", 
+        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"$MaXrdChangelog", "::", "fileMissing"}], ",", 
+          "\"\<paclet\>\"", ",", "pacletFile"}], "]"}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"Abort", "[", "]"}]}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"pacletFile", "=", 
+        RowBox[{
+        "pacletFile", "\[LeftDoubleBracket]", "1", 
+         "\[RightDoubleBracket]"}]}]}], "\[IndentingNewLine]", "\t", "]"}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"packletVersion", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Association", "@@", 
+         RowBox[{"Import", "@", "pacletFile"}]}], ")"}], "[", "Version", 
+       "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Latest", " ", "entry", " ", "in", " ", "the", " ", "changelog"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"changelogFile", "=", 
+      RowBox[{
+       RowBox[{"FileNames", "[", 
+        RowBox[{"\"\<Changelog.md\>\"", ",", 
+         RowBox[{"{", "dir", "}"}], ",", "2"}], "]"}], "\[LeftDoubleBracket]",
+        "1", "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"FileExistsQ", "@", "changelogFile"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"$MaXrdChangelog", "::", "fileMissing"}], ",", 
+          "\"\<changelog\>\"", ",", "changelogFile"}], "]"}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"log", "=", 
+      RowBox[{"Import", "[", 
+       RowBox[{"changelogFile", ",", "\"\<Text\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+     RowBox[{"current", "=", 
+      RowBox[{"Check", "[", 
+       RowBox[{
+        RowBox[{"StringCases", "[", 
+         RowBox[{"log", ",", 
+          RowBox[{
+           RowBox[{"Shortest", "[", "\[IndentingNewLine]", 
+            RowBox[{
+            "\"\<## Version \>\"", "~~", "packletVersion", "~~", 
+             "\"\<\\n\>\"", "~~", "news__", "~~", "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{"\"\<\\n\\n\\n##\>\"", ",", "EndOfString"}], "}"}]}], 
+            "]"}], "\[RuleDelayed]", "news"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"Abort", "[", "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", "Content", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"content", "=", 
+      RowBox[{"StringSplit", "[", 
+       RowBox[{
+        RowBox[{"First", "@", "current"}], ",", 
+        RowBox[{"\"\<\\n\>\"", ".."}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{"content", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"StringDrop", "[", 
+         RowBox[{"#", ",", "2"}], "]"}], "&"}], "/@", "content"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"content", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"TextCell", "[", 
+         RowBox[{
+          RowBox[{"Row", "[", 
+           RowBox[{"{", "#", "}"}], "]"}], ",", "\"\<Item\>\""}], "]"}], 
+        "&"}], "/@", "content"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Format", " ", "function", " ", "names"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"packageSymbols", "=", 
+      RowBox[{"First", "/@", 
+       RowBox[{"Cases", "[", "\[IndentingNewLine]", "\t", 
+        RowBox[{
+         RowBox[{"Flatten", "@", 
+          RowBox[{"First", "@", "$MaXrdFunctions"}]}], ",", "_Hyperlink"}], 
+        "]"}]}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"new", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"temp", "=", 
+         RowBox[{"content", "\[LeftDoubleBracket]", 
+          RowBox[{"i", ",", "1", ",", "1", ",", "1"}], 
+          "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"t", "=", 
+         RowBox[{"{", 
+          RowBox[{
+          "StartOfString", ",", "\"\<\>\"", ",", "\"\<.\>\"", ",", 
+           "\"\<,\>\"", ",", "\"\<!\>\""}], "}"}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"new", ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"Row", "@", 
+           RowBox[{"StringSplit", "[", 
+            RowBox[{"temp", ",", 
+             RowBox[{"{", "\[IndentingNewLine]", "\t", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Shortest", "[", 
+                 RowBox[{
+                  RowBox[{"a", ":", "t"}], "~~", "\"\<**\>\"", "~~", "x__", 
+                  "~~", "\"\<**\>\"", "~~", 
+                  RowBox[{"b", ":", "t"}]}], "]"}], "\[RuleDelayed]", 
+                "\[IndentingNewLine]", "\t", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"a", "<>", "x", "<>", "b"}], ",", "Bold"}], "]"}]}],
+                ",", "\[IndentingNewLine]", "\t", 
+               RowBox[{
+                RowBox[{"Shortest", "[", 
+                 RowBox[{
+                  RowBox[{"a", ":", "t"}], "~~", "\"\<_\>\"", "~~", "x__", 
+                  "~~", "\"\<_\>\"", "~~", 
+                  RowBox[{"b", ":", "t"}]}], "]"}], "\[RuleDelayed]", 
+                "\[IndentingNewLine]", "\t", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"a", "<>", "x", "<>", "b"}], ",", "Italic"}], 
+                 "]"}]}], ",", "\[IndentingNewLine]", "\t", 
+               RowBox[{
+                RowBox[{"Shortest", "[", 
+                 RowBox[{
+                  RowBox[{"a", ":", "t"}], "~~", "\"\<*\>\"", "~~", "x__", 
+                  "~~", "\"\<*\>\"", "~~", 
+                  RowBox[{"b", ":", "t"}]}], "]"}], "\[RuleDelayed]", 
+                "\[IndentingNewLine]", "\t", 
+                RowBox[{"Style", "[", 
+                 RowBox[{
+                  RowBox[{"a", "<>", "x", "<>", "b"}], ",", "Italic"}], 
+                 "]"}]}], ",", "\[IndentingNewLine]", "\t", 
+               RowBox[{
+                RowBox[{"Shortest", "[", 
+                 RowBox[{
+                  RowBox[{"a", ":", "t"}], "~~", "\"\<`\>\"", "~~", "x__", 
+                  "~~", "\"\<`\>\"", "~~", 
+                  RowBox[{"b", ":", "t"}]}], "]"}], "\[RuleDelayed]", 
+                "\[IndentingNewLine]", "\t", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"MemberQ", "[", 
+                   RowBox[{"packageSymbols", ",", "x"}], "]"}], ",", 
+                  "\[IndentingNewLine]", "\t", 
+                  RowBox[{"Hyperlink", "[", 
+                   RowBox[{"x", ",", 
+                    RowBox[{"\"\<paclet:/MaXrd/Ref/\>\"", "<>", "x"}]}], 
+                   "]"}], ",", "\[IndentingNewLine]", "\t", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{
+                    RowBox[{"a", "<>", "x", "<>", "b"}], ",", 
+                    "\"\<Program\>\""}], "]"}]}], "]"}]}]}], 
+              "\[IndentingNewLine]", "\t", "}"}]}], "]"}]}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", 
+         RowBox[{"Length", "@", "content"}]}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"new", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"first", "=", 
+           RowBox[{"#", "\[LeftDoubleBracket]", 
+            RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"StringQ", "@", "first"}], "&&", 
+             RowBox[{
+              RowBox[{"StringTake", "[", 
+               RowBox[{"first", ",", "2"}], "]"}], "===", "\"\<# \>\""}]}], 
+            ",", "\[IndentingNewLine]", 
+            RowBox[{"TextCell", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"ReplacePart", "[", 
+               RowBox[{"#", ",", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "1"}], "}"}], "\[Rule]", 
+                 RowBox[{"StringDrop", "[", 
+                  RowBox[{"first", ",", "2"}], "]"}]}]}], "]"}], ",", 
+              "\[IndentingNewLine]", "\"\<Subsubsection\>\""}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"TextCell", "[", 
+             RowBox[{"#", ",", "\"\<Item\>\""}], "]"}]}], 
+           "\[IndentingNewLine]", "]"}]}], ")"}], "&"}], "/@", "new"}]}], ";",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", "Title", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"title", "=", 
+      RowBox[{"TextCell", "@", 
+       RowBox[{"Row", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"#", ",", "\"\<Text\>\"", ",", "\[IndentingNewLine]", 
+            RowBox[{"FontSize", "\[Rule]", "24"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"FontFamily", "\[Rule]", "\"\<Source Sans Pro\>\""}], ",",
+             "\[IndentingNewLine]", "Italic"}], "]"}], "&"}], "/@", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+          "\"\<Changelog for the MaXrd\>\"", ",", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\< package \[LongDash] version \>\"", "<>", 
+            "packletVersion"}]}], "}"}]}], "\[IndentingNewLine]", "]"}]}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Log", " ", "file", " ", "link"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"MaXrd`Private`$changelogFile", "=", "changelogFile"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"post", "=", 
+      RowBox[{"TextCell", "[", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Row", "[", 
+         RowBox[{"{", "\[IndentingNewLine]", "\t", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Mouseover", "[", 
+              RowBox[{"#1", ",", "#2"}], "]"}], "&"}], "@@", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Button", "[", 
+                RowBox[{"\"\<Click here\>\"", ",", "\[IndentingNewLine]", 
+                 RowBox[{"SystemOpen", "@", "MaXrd`Private`$changelogFile"}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{"Appearance", "\[Rule]", "\"\<Frameless\>\""}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"BaseStyle", "\[Rule]", 
+                  RowBox[{"{", 
+                   RowBox[{"\"\<GenericButton\>\"", ",", "#"}], "}"}]}]}], 
+                "]"}], "&"}], "/@", 
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"RGBColor", "[", 
+                 RowBox[{"0.269993", ",", "0.308507", ",", "0.6"}], "]"}], 
+                ",", "\[IndentingNewLine]", 
+                RowBox[{"RGBColor", "[", 
+                 RowBox[{
+                 "0.823529411764706", ",", "0.490196078431373", ",", 
+                  "0.133333333333333"}], "]"}]}], "}"}]}], ")"}]}], ",", 
+           "\[IndentingNewLine]", 
+           "\"\< to see the complete changelog of all versions.\>\""}], 
+          "\[IndentingNewLine]", "\t", "}"}], "]"}], ",", 
+        "\[IndentingNewLine]", "\t", "\"\<Item\>\""}], "\[IndentingNewLine]", 
+       "\t", "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Print", " ", "all", " ", "cells"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"CreateDocument", "[", 
+      RowBox[{
+       RowBox[{"CellGroup", "@", 
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"{", "title", "}"}], ",", "new", ",", 
+          RowBox[{"{", 
+           RowBox[{"Row", "[", 
+            RowBox[{"{", "}"}], "]"}], "}"}], ",", 
+          RowBox[{"{", "post", "}"}]}], "]"}]}], ",", 
+       RowBox[{"CellGrouping", "\[Rule]", "Manual"}]}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1949140912]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SectionFooterSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["RelatedFunctionsGraph"]], 
+    "paclet:MaXrd/ref/RelatedFunctionsGraph"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdFunctions"]], "paclet:MaXrd/ref/$MaXrdFunctions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$GroupSymbolRedirect"]], 
+    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdVersion"]], "paclet:MaXrd/ref/$MaXrdVersion"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdPath"]], "paclet:MaXrd/ref/$MaXrdPath"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"$MaXrdChangelog",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 9.616230}", 
+    "history" -> {"0.7", "1.7.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", "status" -> 
+    "None", "summary" -> 
+    "$MaXrdChangelog prints the entry of the change log corresponding to the \
+current version.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "$MaXrdChangelog", "titlemodifier" -> "", "windowtitle" -> 
+    "$MaXrdChangelog", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/$MaXrdChangelog"}},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5381, 149, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"680de37f-f21a-492f-b7ac-bb27da718a1c",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 25036, 672}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 4112, 100, 70, "AnchorBarGrid",ExpressionUUID->"325220c0-1dd8-4b39-a012-335a4aad5b70",
+ CellID->1],
+Cell[4702, 123, 172, 6, 70, "ObjectNameGrid",ExpressionUUID->"b7a03177-9b03-4ddf-80d9-dafd1788b0c2"],
+Cell[4877, 131, 479, 14, 70, "Usage",ExpressionUUID->"1eea0172-97aa-464a-b450-8d2063def399",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[5381, 149, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"680de37f-f21a-492f-b7ac-bb27da718a1c",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5665, 163, 187, 6, 70, "ExampleSection",ExpressionUUID->"86cd3933-989f-413a-8d25-d6bc76969b02",
+ CellID->1],
+Cell[5855, 171, 123, 3, 70, "ExampleText",ExpressionUUID->"5b7d6992-6876-4474-afc6-531906f9ed31",
+ CellID->637518614],
+Cell[5981, 176, 85, 2, 70, "Input",ExpressionUUID->"3d505bce-dc6c-417b-bdd7-f57c18f85a7a",
+ CellID->1396148391]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6103, 183, 235, 8, 70, "ExampleSection",ExpressionUUID->"afcb0b33-f4c3-4e17-a9b3-4593a699f28e",
+ CellID->525734561],
+Cell[6341, 193, 230, 7, 70, "Input",ExpressionUUID->"da469707-c823-4bce-b3d4-83b12892695e",
+ InitializationCell->False,
+ CellID->1060249953],
+Cell[6574, 202, 14033, 320, 70, "Input",ExpressionUUID->"cb079304-c345-408a-9cb6-0b61870ce7fe",
+ InitializationCell->False,
+ CellID->1949140912]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20656, 528, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"f9983f35-fd5f-4ac3-aedc-ab9631a0eb15"],
+Cell[20690, 530, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"b3a34f49-c5d3-4fe2-90b0-054b37545b00",
+ CellID->1255426704],
+Cell[20843, 539, 1882, 60, 70, "SeeAlso",ExpressionUUID->"e9adec52-8891-415a-af4b-2de4d55930ca",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22762, 604, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"f94b8a37-ea2c-4d3c-a385-c9c3fe6a9a18",
+ CellID->38303248],
+Cell[22921, 613, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"a1c6a769-53b9-455a-b8e6-e6004afd0287"],
+Cell[22955, 615, 199, 7, 70, "MoreAbout",ExpressionUUID->"95b43831-05f8-4fc6-8eb0-74afb09e61f2",
+ CellID->1]
+}, Open  ]],
+Cell[23169, 625, 23, 0, 70, "FooterCell",ExpressionUUID->"9aed625d-8d84-462d-81e0-749da164e9d3"]
+}
+]
+*)
+
+(* End of internal cache information *)

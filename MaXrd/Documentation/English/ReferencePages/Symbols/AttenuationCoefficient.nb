@@ -1,0 +1,1819 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     64443,       1810]
+NotebookOptionsPosition[     52157,       1552]
+NotebookOutlinePosition[     54515,       1611]
+CellTagsIndexPosition[     54429,       1606]
+WindowTitle->AttenuationCoefficient
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"CrystalDensity\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/CrystalDensity"], \
+"\<\"GetAtomicScatteringFactors\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetAtomicScatteringFactors"], \
+"\<\"GetCrystalMetric\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetCrystalMetric"], "\<\"GetElements\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetElements"], "\<\"GetScatteringCrossSections\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetScatteringCrossSections"], "\<\"InputCheck\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/InputCheck"], "\<\"StructureFactor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/StructureFactor"], \
+"\<\"SymmetryEquivalentPositions\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentPositions"], \
+"\<\"$CrystalData\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$CrystalData"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/AttenuationCoefficient\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/AttenuationCoefficient"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+AttenuationCoefficient.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9833], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/AttenuationCoefficient", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["AttenuationCoefficient", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["AttenuationCoefficient"]], 
+         "paclet:MaXrd/ref/AttenuationCoefficient"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["crystal", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns the linear attenuation coefficient for ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     "."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["AttenuationCoefficient"]], 
+         "paclet:MaXrd/ref/AttenuationCoefficient"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["crystal", "TI"], ",", 
+        StyleBox["\[Lambda]", "TR"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]returns the linear attenuation coefficient for ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " at wavelength ",
+     Cell[BoxData[
+      StyleBox["\[Lambda]", "TR"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->940383919],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The wavelength ",
+ Cell[BoxData[
+  StyleBox["\[Lambda]", "TR"]], "InlineFormula"],
+ " may be be omitted if it is contained in the ",
+ Cell[BoxData[
+  StyleBox["crystal", "TI"]], "InlineFormula"],
+ " entry in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". One may also use an ",
+ StyleBox["energy",
+  FontSlant->"Italic"],
+ " quantity instead of wavelength, as the input is passed through ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". In either case, input may be a number or a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Quantity"]], "paclet:ref/Quantity"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1174253239],
+
+Cell["\<\
+The following interaction phenomena are considered in the contribution to the \
+overall attenuation of the X-ray beam. The columns denote name of the \
+phenomena, alternative names and short descriptions, respectively.\
+\>", "Notes",
+ CellID->1710490272],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], Cell[TextData[{
+     "Photoelectric scattering (",
+     Cell[BoxData[
+      SubscriptBox["\[Sigma]", "pe"]], "InlineFormula"],
+     ")"
+    }], "TableText"], Cell["photoionisation", "TableText"], Cell[
+    "absorbed photon results in ejected electron", "TableText"]},
+   {Cell["      ", "TableRowIcon"], Cell[TextData[{
+     "Coherent scattering (",
+     Cell[BoxData[
+      SubscriptBox["\[Sigma]", "coh"]], "InlineFormula"],
+     ")"
+    }], "TableText"], Cell[
+    "Rayleigh-, Thompson-, classical- or elastic scattering", "TableText"], 
+    Cell["scattering off bound electrons", "TableText"]},
+   {Cell["      ", "TableRowIcon"], Cell[TextData[{
+     "Incoherent scattering (",
+     Cell[BoxData[
+      SubscriptBox["\[Sigma]", "incoh"]], "InlineFormula"],
+     ")"
+    }], "TableText"], Cell["Compton- or inelastic scattering", "TableText"], 
+    Cell["\<\
+photon energy results in ejected electron as well as scattered photon with \
+less energy\
+\>", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True}}}},
+ CellID->49233058],
+
+Cell["\<\
+Other effects, such as pair production and photo-disintegration, are not \
+taken into account.\
+\>", "Notes",
+ CellID->1822626567],
+
+Cell[TextData[{
+ "Options from ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetScatteringCrossSections"]], 
+    "paclet:MaXrd/ref/GetScatteringCrossSections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ":"
+}], "Notes",
+ CellID->629474015],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<PhysicalProcess\>\"", "\"\<\>\"", 
+    Cell["select one type of scattering cross section to consider", 
+     "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Source\>\"", "\"\<xraylib\>\"", Cell[
+    TextData[{
+     "source of cross section or ",
+     Cell[BoxData[
+      FormBox[
+       SuperscriptBox["f", "\[Prime]\[Prime]",
+        MultilineFunction->None], TraditionalForm]], "InlineMath"],
+     " data"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Units\>\"", 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[TextData[{
+     "output as a ",
+     ButtonBox["Quantity ",
+      BaseStyle->"Link",
+      ButtonData->"paclet:ref/Quantity"],
+     "with units"
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True}}}},
+ CellID->1523785371],
+
+Cell["Options exclusive to this function:", "Notes",
+ CellID->1548663136],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<Coefficient\>\"", 
+    "\"\<LinearAttenuation\>\"", Cell[
+    "type of coefficient to calculate", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<MassCoefficientMethod\>\"", 
+    "\"\<DivideByDensity\>\"", Cell[TextData[{
+     "whether to use atomic mass formula or divide ",
+     Cell[BoxData[
+      FormBox["\[Mu]", TraditionalForm]], "InlineMath"],
+     " by ",
+     Cell[BoxData[
+      FormBox["\[Rho]", TraditionalForm]], "InlineMath"]
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}},
+ CellID->618233807],
+
+Cell[TextData[{
+ "The following settings are supported for the ",
+ Cell[BoxData["\"\<Coefficient\>\""], "InlineFormula"],
+ " option. ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["N", "A"], TraditionalForm]], "InlineMath"],
+ " is Avogadro's constant, ",
+ Cell[BoxData[
+  FormBox["M", TraditionalForm]], "InlineMath"],
+ " the atomic weight and ",
+ Cell[BoxData[
+  FormBox["\[Sigma]", TraditionalForm]], "InlineMath"],
+ " the total cross section [1, p. 213]:"
+}], "Notes",
+ CellID->1547272125],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<LinearAttenuation\>\"", "\[Mu]", 
+    Cell[TextData[Cell[BoxData[
+     RowBox[{
+      SubscriptBox["\[Sigma]", "tot"], "=", 
+      RowBox[{
+       SubscriptBox["\[Sigma]", "pe"], "+", 
+       SubscriptBox["\[Sigma]", "coh"], "+", 
+       SubscriptBox["\[Sigma]", "incoh"]}]}]], "InlineFormula"]], 
+     "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<MassAbsorption\>\"", 
+    RowBox[{"\[Mu]", "/", "\[Rho]"}], Cell[TextData[Cell[BoxData[
+     FormBox[
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["N", "A"], "/", "M"}], ")"}], "\[Sigma]"}], 
+      TraditionalForm]], "InlineMath"]], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}},
+ CellID->1446604628],
+
+Cell[TextData[{
+ "The following settings are supported for the ",
+ Cell[BoxData["\"\<MassCoefficientMethod\>\""], "InlineFormula"],
+ ":"
+}], "Notes",
+ CellID->1084821645],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<DivideByDensity\>\"", Cell[
+    TextData[{
+     "calculate ",
+     Cell[BoxData[
+      FormBox["\[Mu]", TraditionalForm]], "InlineMath"],
+     " then divide by ",
+     Cell[BoxData[
+      FormBox["\[Rho]", TraditionalForm]], "InlineMath"]
+    }], "TableText"]}
+  }]], "2ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->1700788839],
+
+Cell[TextData[{
+ "If the name of the input source is contained both in the directory for the \
+atomic scattering factors and the cross sections, the data from the cross \
+sections will be used.\[LineSeparator]The imaginary part of the atomic \
+scattering factor (",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["f", "\[Prime]\[Prime]",
+    MultilineFunction->None], TraditionalForm]], "InlineMath"],
+ ") can be used to calculate the photoelectric scattering cross section (",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Sigma]", "pe"], TraditionalForm]], "InlineMath"],
+ ") with the following relation [2]:"
+}], "Notes",
+ CellID->1616764625],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["f", "\[Prime]\[Prime]",
+     MultilineFunction->None], "(", "E", ")"}], "=", 
+   FractionBox[
+    RowBox[{"E", " ", 
+     RowBox[{
+      SubscriptBox["\[Sigma]", "pe"], "(", "E", ")"}]}], 
+    RowBox[{"2", " ", "h", " ", "c", " ", 
+     SubscriptBox["r", "e"]}]]}], TraditionalForm]], "Input",
+ FontWeight->"Plain",
+ CellID->1969985330],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(8)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1700368360],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1526135891],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AttenuationCoefficient", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "1.1573"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->694277380],
+
+Cell[BoxData[
+ TemplateBox[{"64.50908064808958`", 
+   RowBox[{"\"/\"", "\[InvisibleSpace]", "\"cm\""}], "reciprocal centimeters", 
+   FractionBox["1", "\"Centimeters\""]},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1148816148]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1993867123],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cif", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "$MaXrdPath", ",", "\"\<ExampleFiles\>\"", ",", "\"\<CIF\>\"", ",", 
+      "\"\<Ferrocene.cif\>\""}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ImportCrystalData", "@", "cif"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1777196472],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"ChemicalFormula\"\>", 
+    "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(10\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(10\\)]\\)Fe\"\>"}], ",", 
+   RowBox[{"\<\"FormulaUnits\"\>", "\[Rule]", "2"}], ",", 
+   RowBox[{"\<\"SpaceGroup\"\>", 
+    "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)/n\"\>"}], ",", 
+   RowBox[{"\<\"LatticeParameters\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"a\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.9285`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"b\"\>", "\[Rule]", 
+       TemplateBox[{
+        "7.612`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"c\"\>", "\[Rule]", 
+       TemplateBox[{
+        "9.041`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"\[Alpha]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Beta]\"\>", "\[Rule]", 
+       TemplateBox[{"93.156`", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Gamma]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"Wavelength\"\>", "\[Rule]", 
+    TemplateBox[{
+     "0.69804`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+      "\"Angstroms\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"AtomData\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftSkeleton]", "11", "\[RightSkeleton]"}], "}"}]}]}], "}"}]],
+  "Output",
+ CellLabel->"Out[1]=",
+ CellID->14282953]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AttenuationCoefficient", "[", "\"\<Ferrocene\>\"", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1982197250],
+
+Cell[BoxData[
+ TemplateBox[{"16.86144646475711`", 
+   RowBox[{"\"/\"", "\[InvisibleSpace]", "\"cm\""}], "reciprocal centimeters", 
+   FractionBox["1", "\"Centimeters\""]},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->651678644]
+}, Open  ]],
+
+Cell[TextData[{
+ "If ",
+ Cell[BoxData["\"\<Units\>\""], "InlineFormula"],
+ " is set to ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["False"]], "paclet:ref/False"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", the returned number has units of reciprocal centimeters:"
+}], "ExampleText",
+ CellID->1838912588],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AttenuationCoefficient", "[", 
+  RowBox[{"\"\<Ferrocene\>\"", ",", 
+   RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1413782592],
+
+Cell[BoxData["16.86144646475711`"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1647640415]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Coefficient\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[TextData[{
+ "The default output coefficient is the ",
+ StyleBox["linear attenuation coefficient",
+  FontSlant->"Italic"],
+ ", but the ",
+ StyleBox["mass absorption coefficient",
+  FontSlant->"Italic"],
+ " can be calculate by dividing the linear coefficient by the mass density of \
+the crystal:"
+}], "ExampleText",
+ CellID->815635903],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AttenuationCoefficient", "[", 
+  RowBox[{"\"\<GalliumArsenide\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"1.18667*^-2", ",", "\"\<Megaelectronvolts\>\""}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"\"\<Coefficient\>\"", "\[Rule]", "\"\<MassAbsorption\>\""}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->355650698],
+
+Cell[BoxData[
+ TemplateBox[{"88.9799668107443`", 
+   RowBox[{
+     SuperscriptBox["\"cm\"", "2"], "\[NegativeMediumSpace]", "\"/\"", 
+     "\[InvisibleSpace]", "\"g\""}], "centimeters squared per gram", 
+   FractionBox[
+    SuperscriptBox["\"Centimeters\"", "2"], "\"Grams\""]},
+  "Quantity"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1948247547]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"PhysicalProcess\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1295379749],
+
+Cell["\<\
+With this option, the attenuation contribution of a single cross section type \
+can be calculated:\
+\>", "ExampleText",
+ CellID->1624495902],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"AttenuationCoefficient", "[", 
+    RowBox[{"\"\<GalliumArsenide\>\"", ",", "1.0", ",", "\[IndentingNewLine]", 
+     RowBox[{"\"\<PhysicalProcess\>\"", "\[Rule]", "p"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"p", ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Photoelectric\>\"", ",", "\"\<Coherent\>\"", ",", 
+       "\"\<Incoherent\>\"", ",", "\"\<Total\>\""}], "}"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->759871737],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"793.9545248975207`", 
+     RowBox[{"\"/\"", "\[InvisibleSpace]", "\"cm\""}], 
+     "reciprocal centimeters", 
+     FractionBox["1", "\"Centimeters\""]},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"6.734152064052233`", 
+     RowBox[{"\"/\"", "\[InvisibleSpace]", "\"cm\""}], 
+     "reciprocal centimeters", 
+     FractionBox["1", "\"Centimeters\""]},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"0.43517461177704947`", 
+     RowBox[{"\"/\"", "\[InvisibleSpace]", "\"cm\""}], 
+     "reciprocal centimeters", 
+     FractionBox["1", "\"Centimeters\""]},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"801.1226849209929`", 
+     RowBox[{"\"/\"", "\[InvisibleSpace]", "\"cm\""}], 
+     "reciprocal centimeters", 
+     FractionBox["1", "\"Centimeters\""]},
+    "QuantityPostfix"]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1198581223]
+}, Open  ]],
+
+Cell["\<\
+There are several equivalent names for the same type of cross section;\
+\>", "ExampleText",
+ CellID->1676165524],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SameQ", "@@", 
+  RowBox[{"Table", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"AttenuationCoefficient", "[", 
+     RowBox[{"\"\<Nickel\>\"", ",", "1.0", ",", 
+      RowBox[{"\"\<PhysicalProcess\>\"", "\[Rule]", "p"}]}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"p", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Incoherent\>\"", ",", "\"\<Compton\>\"", ",", 
+        "\"\<Inelastic\>\""}], "}"}]}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1263984472],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->390481182]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Source\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->647929167],
+
+Cell[TextData[{
+ "Currently, ",
+ Cell[BoxData["\"\<xraylib\>\""], "InlineFormula"],
+ " is the only source of scattering cross sections. By setting the source to \
+one of the atomic scattering factor sources, the imaginary part of the atomic \
+scattering factor (",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["f", "\[Prime]\[Prime]",
+    MultilineFunction->None], TraditionalForm]], "InlineMath"],
+ ") will be used to calculate the attenuation due to photoelectric absorption."
+}], "ExampleText",
+ CellID->677651810],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AttenuationCoefficient", "[", 
+  RowBox[{"\"\<GalliumArsenide\>\"", ",", "1.0", ",", 
+   RowBox[{"\"\<Source\>\"", "\[Rule]", "\"\<CromerLiberman\>\""}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1599760575],
+
+Cell[BoxData[
+ TemplateBox[{"796.7490395439332`", 
+   RowBox[{"\"/\"", "\[InvisibleSpace]", "\"cm\""}], "reciprocal centimeters", 
+   FractionBox["1", "\"Centimeters\""]},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1827476266]
+}, Open  ]],
+
+Cell[TextData[{
+ "Only the photoelectric contribution will be considered, no matter what \
+setting for ",
+ Cell[BoxData["\"\<PhysicalProcess\>\""], "InlineFormula"],
+ " is given."
+}], "ExampleText",
+ CellID->7171638]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Units\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1653196224],
+
+Cell[TextData[{
+ "The default setting is ",
+ Cell[BoxData["\"\<True\>\""], "InlineFormula"],
+ ", which returns output as a ",
+ ButtonBox["Quantity",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Quantity"],
+ "."
+}], "ExampleText",
+ CellID->817307380],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AttenuationCoefficient", "[", 
+  RowBox[{"\"\<Copper\>\"", ",", "1.54", ",", 
+   RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->616414863],
+
+Cell[BoxData["461.49266638418146`"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1866025604]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373],
+
+Cell[TextData[{
+ "The sources calculating the atomic scattering factor have a common upper \
+truncation limit at ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Lambda]", "=", 
+    RowBox[{"2.5`", " ", "\[CapitalARing]"}]}], TraditionalForm]], 
+  "InlineMath"],
+ " in this package. No common ",
+ StyleBox["lower limit",
+  FontSlant->"Italic"],
+ " has been made. For instance, the wavelength ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Lambda]", "=", 
+    RowBox[{"0.15", " ", "\[CapitalARing]"}]}], TraditionalForm]], 
+  "InlineMath"],
+ " is out of range for the source ",
+ Cell[BoxData["\"\<CromerLiberman\>\""], "InlineFormula"],
+ ";"
+}], "ExampleText",
+ CellID->757412278],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AttenuationCoefficient", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "0.15", ",", 
+   RowBox[{"\"\<Source\>\"", "\[Rule]", "\"\<CromerLiberman\>\""}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->326381480],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InterpolatingFunction", "dmval", 
+   "\"Input value \\!\\(\\*RowBox[{\\\"{\\\", \\\"0.15`\\\", \\\"}\\\"}]\\) \
+lies outside the range of data in the interpolating function. Extrapolation \
+will be used.\"", 2, 1, 1, 26423739896804836793, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->67122436],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InterpolatingFunction", "dmval", 
+   "\"Input value \\!\\(\\*RowBox[{\\\"{\\\", \\\"0.15`\\\", \\\"}\\\"}]\\) \
+lies outside the range of data in the interpolating function. Extrapolation \
+will be used.\"", 2, 1, 2, 26423739896804836793, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->697867177],
+
+Cell[BoxData[
+ TemplateBox[{"0.11117425683729723`", 
+   RowBox[{"\"/\"", "\[InvisibleSpace]", "\"cm\""}], "reciprocal centimeters", 
+   FractionBox["1", "\"Centimeters\""]},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1645447572]
+}, Open  ]],
+
+Cell[TextData[{
+ "\[Ellipsis] but is valid for the source ",
+ Cell[BoxData["\"\<Sasaki\>\""], "InlineFormula"],
+ ":"
+}], "ExampleText",
+ CellID->1311844891],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AttenuationCoefficient", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "0.15", ",", 
+   RowBox[{"\"\<Source\>\"", "\[Rule]", "\"\<Sasaki\>\""}]}], "]"}]], "Input",\
+
+ CellLabel->"In[2]:=",
+ CellID->1097327756],
+
+Cell[BoxData[
+ TemplateBox[{"0.10555365682928539`", 
+   RowBox[{"\"/\"", "\[InvisibleSpace]", "\"cm\""}], "reciprocal centimeters", 
+   FractionBox["1", "\"Centimeters\""]},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1890420185]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1993819761],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"AttenuationCoefficient", "::", "invalidSource"}], "=", 
+   "\"\<The source \[LeftGuillemet]`1`\[RightGuillemet] is invalid.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AttenuationCoefficient", "::", "invcoeff"}], "=", 
+   "\"\<The \[LeftGuillemet]`1`\[RightGuillemet] coefficient is not \
+recognised.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"AttenuationCoefficient", "::", "peOnly"}], "=", 
+   "\"\<Only the photoelectric cross section is related to \
+\!\(\*StyleBox[FormBox[SuperscriptBox[\"f\", \
+\"\[Prime]\[Prime]\",MultilineFunction->None],TraditionalForm], \
+\"TI\"]\).\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"AttenuationCoefficient", "::", "asfLambda"}], "=", 
+    "\"\<The wavelength, `1` \[CapitalARing], must be smaller than 2.5 \
+\[CapitalARing] when using \!\(TraditionalForm\`\*SuperscriptBox[\(f\), \(\
+\[DoublePrime]\)]\).\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "AttenuationCoefficient"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<Coefficient\>\"", "\[Rule]", "\"\<LinearAttenuation\>\""}],
+       ",", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<MassCoefficientMethod\>\"", "\[Rule]", "\"\<DivideByDensity\>\""}],
+       ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", "GetScatteringCrossSections", " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<PhysicalProcess\>\"", "\[Rule]", "\"\<\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<Source\>\"", "\[Rule]", "\"\<xraylib\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<Units\>\"", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
+     "}"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "AttenuationCoefficient"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", "_.", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->163687090],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AttenuationCoefficient", "[", "\[IndentingNewLine]", 
+   RowBox[{"crystal_String", ",", "\[IndentingNewLine]", 
+    RowBox[{"lambda", ":", 
+     RowBox[{"_", "?", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"NumericQ", "[", "#", "]"}], "||", 
+         RowBox[{"QuantityQ", "[", "#", "]"}]}], "&"}], ")"}]}], ":", 
+     RowBox[{"-", "1"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"\[Lambda]", ",", 
+      RowBox[{"unitsQ", "=", 
+       RowBox[{"TrueQ", "@", 
+        RowBox[{"OptionValue", "[", "\"\<Units\>\"", "]"}]}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"coeff", "=", 
+       RowBox[{"OptionValue", "[", "\"\<Coefficient\>\"", "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"mcMethod", "=", 
+       RowBox[{"OptionValue", "[", "\"\<MassCoefficientMethod\>\"", "]"}]}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"source", "=", 
+       RowBox[{"OptionValue", "[", "\"\<Source\>\"", "]"}]}], ",", 
+      RowBox[{"pp", "=", 
+       RowBox[{"OptionValue", "[", "\"\<PhysicalProcess\>\"", "]"}]}], ",", 
+      "csDir", ",", "asfFile", ",", "\[IndentingNewLine]", "V", ",", 
+      "\[Sigma]", ",", "\[CapitalSigma]", ",", "column", ",", "atomdata", ",",
+       "r", ",", "siteM", ",", "\[IndentingNewLine]", "fpp", ",", "re", ",", 
+      "\[Mu]", ",", "\[Rho]"}], "\[IndentingNewLine]", "}"}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", "Checking", " ", "input", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"\"\<CrystalQ\>\"", ",", "crystal"}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"\[Lambda]", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{"\"\<ProcessWavelength\>\"", ",", "crystal", ",", "lambda"}], 
+       "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"csDir", "=", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", "\[IndentingNewLine]", "\t", 
+        RowBox[{
+        "$MaXrdPath", ",", "\"\<Core\>\"", ",", "\"\<Data\>\"", ",", 
+         "\"\<CrossSections\>\"", ",", "source"}], "}"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"asfFile", "=", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+        "$MaXrdPath", ",", "\"\<Core\>\"", ",", "\"\<Data\>\"", ",", 
+         "\[IndentingNewLine]", "\t", "\"\<AtomicScatteringFactor\>\"", ",", 
+         "\"\<AnomalousCorrections\>\"", ",", 
+         RowBox[{"source", "<>", "\"\<.m\>\""}]}], "}"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"DirectoryQ", "[", "csDir", "]"}], "\[Nor]", 
+        RowBox[{"FileExistsQ", "[", "asfFile", "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"AttenuationCoefficient", "::", "invalidSource"}], ",", 
+          "source"}], "]"}], ";", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Processing", " ", "cross", " ", "section", " ", "type"}], " ", 
+      "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", "\[IndentingNewLine]", "\t", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"a", ".", " ", 
+         RowBox[{"Select", " ", "'"}]}], 
+        RowBox[{"PhysicalProcess", "'"}], " ", "manually"}], " ", "*)"}], 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{
+       RowBox[{"pp", "=!=", "\"\<\>\""}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"column", "=", 
+        RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"MemberQ", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", "\t", 
+             RowBox[{
+             "\"\<Photoelectric\>\"", ",", "\"\<Photoionisation\>\""}], "}"}],
+             ",", "pp"}], "]"}], ",", "2", ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"MemberQ", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", "\t", 
+             RowBox[{
+             "\"\<Coherent\>\"", ",", "\"\<Rayleigh\>\"", ",", 
+              "\"\<Thompson\>\"", ",", "\[IndentingNewLine]", "\t", 
+              "\"\<Classical\>\"", ",", "\"\<Elastic\>\""}], "}"}], ",", 
+            "pp"}], "]"}], ",", "3", ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"MemberQ", "[", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", "\t", 
+             RowBox[{
+             "\"\<Incoherent\>\"", ",", "\"\<Compton\>\"", ",", 
+              "\"\<Inelastic\>\""}], "\[IndentingNewLine]", "\t", "}"}], ",", 
+            "pp"}], "]"}], ",", "4", ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"pp", "===", "\"\<Total\>\""}], ",", "5", ",", 
+          "\[IndentingNewLine]", "\t", "True", ",", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{
+             RowBox[{"AttenuationCoefficient", "::", "invproc"}], ",", "pp"}],
+             "]"}], ";", 
+           RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "\t", 
+         "]"}]}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"b", ".", " ", "Select"}], " ", "automatically", " ", 
+         "based", " ", "on", " ", "coefficient", " ", "type"}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"column", "=", 
+        RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"MemberQ", "[", "\[IndentingNewLine]", "\t", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<LinearAttenuation\>\"", ",", "\"\<MassAbsorption\>\""}], 
+             "}"}], ",", "\[IndentingNewLine]", "\t", "coeff"}], "]"}], ",", 
+          "\[IndentingNewLine]", "\t", "5", ",", 
+          RowBox[{"(*", " ", 
+           RowBox[{"Total", " ", "=", " ", 
+            RowBox[{"ph", ".", "el", ".", " ", 
+             RowBox[{"+", " ", 
+              RowBox[{"Ray", ".", " ", 
+               RowBox[{"+", " ", 
+                RowBox[{"Comp", "."}]}]}]}]}]}], " ", "*)"}], 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", "True", ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{
+             RowBox[{"AttenuationCoefficient", "::", "invcoeff"}], ",", 
+             "coeff"}], "]"}], ";", "\[IndentingNewLine]", "\t", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}]}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Calculations", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Auxiliary", " ", "variables"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"V", "=", 
+      RowBox[{"Sqrt", "@", 
+       RowBox[{"Det", "@", 
+        RowBox[{"GetCrystalMetric", "@", "crystal"}]}]}]}], ";", 
+     "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Calculation", " ", "method"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"DirectoryQ", "@", "csDir"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"a", ".", " ", "Using"}], " ", "cross", " ", "sections"}], 
+        " ", "*)"}], "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"\[Sigma]", "=", 
+         RowBox[{"Normal", "@", 
+          RowBox[{"GetScatteringCrossSections", "[", 
+           RowBox[{
+           "crystal", ",", "\[Lambda]", ",", "\[IndentingNewLine]", "\t", 
+            RowBox[{"\"\<PhysicalProcess\>\"", "\[Rule]", "pp"}], ",", 
+            RowBox[{"\"\<Source\>\"", "\[Rule]", "source"}], ",", 
+            RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+         "Multiplying", " ", "atoms", " ", "with", " ", "corresponding", " ", 
+          "cross", " ", "sections"}], " ", "*)"}], "\[IndentingNewLine]", 
+        "\t\t", 
+        RowBox[{"atomdata", "=", 
+         RowBox[{"Values", "@", 
+          RowBox[{"$CrystalData", "\[LeftDoubleBracket]", 
+           RowBox[{
+           "crystal", ",", "\"\<AtomData\>\"", ",", "All", ",", 
+            "\[IndentingNewLine]", "\t", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<Element\>\"", ",", "\"\<FractionalCoordinates\>\"", ",", 
+              "\"\<OccupationFactor\>\""}], "}"}]}], 
+           "\[RightDoubleBracket]"}]}]}], ";", "\[IndentingNewLine]", "\t\t", 
+        
+        RowBox[{
+         RowBox[{"atomdata", "\[LeftDoubleBracket]", 
+          RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], "=", 
+         RowBox[{"StringDelete", "[", 
+          RowBox[{
+           RowBox[{"atomdata", "\[LeftDoubleBracket]", 
+            RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"{", 
+            RowBox[{"\"\<+\>\"", ",", "\"\<-\>\"", ",", "DigitCharacter"}], 
+            "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"atomdata", "=", 
+         RowBox[{"atomdata", "/.", 
+          RowBox[{"Join", "[", "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"\[Sigma]", ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Missing", "[", 
+               RowBox[{"\"\<KeyAbsent\>\"", ",", "\"\<OccupationFactor\>\""}],
+                "]"}], "\[Rule]", "1"}], "}"}]}], "]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"r", "=", 
+         RowBox[{"atomdata", "\[LeftDoubleBracket]", 
+          RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}]}], ";", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"siteM", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"Length", "@", 
+            RowBox[{
+            "SymmetryEquivalentPositions", "[", "\[IndentingNewLine]", "\t\t", 
+             RowBox[{"crystal", ",", 
+              RowBox[{
+              "r", "\[LeftDoubleBracket]", "a", "\[RightDoubleBracket]"}], 
+              ",", 
+              RowBox[{"\"\<UseCentring\>\"", "\[Rule]", "True"}]}], "]"}]}], 
+           ",", 
+           RowBox[{"{", 
+            RowBox[{"a", ",", 
+             RowBox[{"Length", "@", "r"}]}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{
+         RowBox[{"atomdata", "\[LeftDoubleBracket]", 
+          RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}], "=", 
+         "siteM"}], ";", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"\[CapitalSigma]", "=", 
+         RowBox[{"Total", "[", 
+          RowBox[{"Times", "@@@", "atomdata"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"\[Mu]", "=", 
+         RowBox[{"\[CapitalSigma]", "/", "V"}]}]}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"b", ".", " ", "Using"}], " ", "f"}], "-", "double", "-", 
+         "prime"}], " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Check", " ", "wavelength"}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t\t", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"\[Lambda]", ">", "2.5"}], ",", "\[IndentingNewLine]", 
+          "\t\t", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{
+             RowBox[{"AttenuationCoefficient", "::", "asfLambda"}], ",", 
+             RowBox[{"ToString", "@", "\[Lambda]"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", "\t\t", 
+           RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]",
+         "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"column", "=", "3"}], ";", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Force", " ", 
+          RowBox[{"p", ".", "e", ".", " ", "cross"}], " ", "section", " ", 
+          "only"}], " ", "*)"}], "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"re", "=", "2.81794032*^-15"}], ";", "\[IndentingNewLine]", 
+        "\t\t", 
+        RowBox[{"fpp", "=", 
+         RowBox[{"Im", "@", 
+          RowBox[{"StructureFactor", "[", 
+           RowBox[{"crystal", ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "\[Lambda]", ",", 
+            "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"\"\<AbsoluteValue\>\"", "\[Rule]", "False"}], ",", 
+            "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"\"\<f1f2Source\>\"", "\[Rule]", "source"}]}], "]"}]}]}], 
+        ";", "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"(*", " ", 
+         RowBox[{"(", 
+          RowBox[{
+          "See", " ", "formula", " ", "in", " ", "documentation", " ", "page",
+            " ", "details"}], ")"}], " ", "*)"}], "\[IndentingNewLine]", 
+        "\t\t", 
+        RowBox[{"\[Mu]", "=", 
+         RowBox[{"2", "*", "re", "*", 
+          RowBox[{"\[Lambda]", "/", "V"}], "*", 
+          RowBox[{"Abs", "[", "fpp", "]"}], "*", 
+          RowBox[{"Power", "[", 
+           RowBox[{"10", ",", "18"}], "]"}]}]}]}]}], "\[IndentingNewLine]", 
+      "\t", "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Normalise", " ", "by", " ", "mass", " ", 
+       RowBox[{"density", "?"}]}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"coeff", "===", "\"\<MassAbsorption\>\""}], "&&", 
+        RowBox[{"mcMethod", "===", "\"\<DivideByDensity\>\""}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"\[Rho]", "=", 
+         RowBox[{"CrystalDensity", "[", 
+          RowBox[{"crystal", ",", 
+           RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{"unitsQ", ",", "\[IndentingNewLine]", "\t", 
+          RowBox[{"Return", "@", 
+           RowBox[{"Quantity", "[", 
+            RowBox[{
+             RowBox[{"\[Mu]", "/", "\[Rho]"}], ",", 
+             RowBox[{
+              RowBox[{"\"\<Centimeters\>\"", "^", "2"}], "/", 
+              "\"\<Grams\>\""}]}], "]"}]}], ",", "\[IndentingNewLine]", "\t", 
+          
+          RowBox[{"Return", "[", 
+           RowBox[{"\[Mu]", "/", "\[Rho]"}], "]"}]}], "]"}]}]}], 
+      "\[IndentingNewLine]", "\t", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Output", " ", "linear", " ", "coefficient"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{"unitsQ", ",", 
+       RowBox[{"Quantity", "[", 
+        RowBox[{"\[Mu]", ",", 
+         RowBox[{"\"\<Centimeters\>\"", "^", 
+          RowBox[{"(", 
+           RowBox[{"-", "1"}], ")"}]}]}], "]"}], ",", "\[Mu]"}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->162369823]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalDensity"]], "paclet:MaXrd/ref/CrystalDensity"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetAtomicScatteringFactors"]], 
+    "paclet:MaXrd/ref/GetAtomicScatteringFactors"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetElements"]], "paclet:MaXrd/ref/GetElements"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetScatteringCrossSections"]], 
+    "paclet:MaXrd/ref/GetScatteringCrossSections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StructureFactor"]], "paclet:MaXrd/ref/StructureFactor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentPositions"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->221240269],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Links"
+}], "RelatedLinksSection",
+ WholeCellGroupOpener->True,
+ CellID->1584193535],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "[1] E. Prince, ",
+ StyleBox["Mathematical, Physical and Chemical Tables",
+  FontSlant->"Italic"],
+ ", 3rd ed., International Tables for Crystallography. Kluwer Academic \
+Publishers, 2004, volume C. Website: ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["http://it.iucr.org/C/"]], "http://it.iucr.org/C/"},
+   "WebLink",
+   BaseStyle->{"RelatedLinks"}]]],
+ "."
+}], "RelatedLinks",
+ CellID->1998586493],
+
+Cell[TextData[{
+ "[2] Chantler, C. T. (2000). J. Phys. Chem. Ref. Data 29(4), 597\[Dash]1056 \
+(",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["https://doi.org/10.1063/1.1321055"]], 
+    "https://doi.org/10.1063/1.1321055"},
+   "WebLink",
+   BaseStyle->{"RelatedLinks"}]]],
+ ")"
+}], "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"AttenuationCoefficient",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 13, 26.463641}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "AttenuationCoefficient[crystal] returns the linear attenuation \
+coefficient for crystal. AttenuationCoefficient[crystal, \\[Lambda]] returns \
+the linear attenuation coefficient for crystal at wavelength \\[Lambda].", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "AttenuationCoefficient", 
+    "titlemodifier" -> "", "windowtitle" -> "AttenuationCoefficient", "type" -> 
+    "Symbol", "uri" -> "MaXrd/ref/AttenuationCoefficient", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[15157, 452, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9e84def5-4072-4c94-8e5a-49ad7bb4844d",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1700368360]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 54229, 1599}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[594, 21, 4484, 107, 70, "AnchorBarGrid",ExpressionUUID->"f23bffcf-af50-41b5-9cdf-291b6ec35828",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5103, 132, 179, 6, 70, "ObjectNameGrid",ExpressionUUID->"c8bdc4b2-9cb2-4220-b678-b68afd3f9d3c"],
+Cell[5285, 140, 1270, 39, 70, "Usage",ExpressionUUID->"fbc12df9-af8c-4526-ba81-423eb288cb70",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6592, 184, 641, 19, 70, "NotesSection",ExpressionUUID->"1ee607e3-d7ef-4fcb-a0c0-a503329ae309",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->940383919],
+Cell[7236, 205, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"9cc2b42f-0874-4846-9d37-c4511c621643"],
+Cell[7270, 207, 961, 33, 70, "Notes",ExpressionUUID->"7ddab07f-bac7-4104-92ae-2dfc6cb4ddb4",
+ CellID->1174253239],
+Cell[8234, 242, 264, 5, 70, "Notes",ExpressionUUID->"b30c310d-35d3-4f7f-8768-528d4aedd0bb",
+ CellID->1710490272],
+Cell[8501, 249, 1230, 30, 70, "3ColumnTableMod",ExpressionUUID->"bc8fc0af-d7cf-473d-a63c-04feafa2e8fc",
+ CellID->49233058],
+Cell[9734, 281, 140, 4, 70, "Notes",ExpressionUUID->"f8bc3b8c-0df3-48af-8967-e9a3babf2561",
+ CellID->1822626567],
+Cell[9877, 287, 278, 11, 70, "Notes",ExpressionUUID->"1c762c64-2cf6-4191-affe-1c35d1dbe689",
+ CellID->629474015],
+Cell[10158, 300, 1013, 27, 70, "3ColumnTableMod",ExpressionUUID->"3a351280-4bcc-442f-a541-92e31bb14d59",
+ CellID->1523785371],
+Cell[11174, 329, 73, 1, 70, "Notes",ExpressionUUID->"c0ce63c6-49aa-434f-8c54-5f142ee31be1",
+ CellID->1548663136],
+Cell[11250, 332, 723, 17, 70, "3ColumnTableMod",ExpressionUUID->"5a234e17-07cc-4791-9dd5-e89640b80e65",
+ CellID->618233807],
+Cell[11976, 351, 490, 15, 70, "Notes",ExpressionUUID->"437e1563-db4a-4cfb-aa07-3da2ad922a7c",
+ CellID->1547272125],
+Cell[12469, 368, 889, 22, 70, "3ColumnTableMod",ExpressionUUID->"b5edd0aa-bebc-4a9e-9f21-c3c09c292e36",
+ CellID->1446604628],
+Cell[13361, 392, 170, 5, 70, "Notes",ExpressionUUID->"6528989c-4635-430f-a090-c562f94f41e8",
+ CellID->1084821645],
+Cell[13534, 399, 502, 14, 70, "2ColumnTableMod",ExpressionUUID->"bed7d6e9-1820-4e42-b49d-992ff91672a5",
+ CellID->1700788839],
+Cell[14039, 415, 641, 15, 70, "Notes",ExpressionUUID->"52220ba5-357e-42b4-bd94-2dee2cb90c66",
+ CellID->1616764625],
+Cell[14683, 432, 403, 13, 70, "Input",ExpressionUUID->"711030b1-d458-4c70-b944-5520a44d3d40",
+ CellID->1969985330],
+Cell[15089, 447, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"37941a2e-949a-490e-890a-fd5fad34ded5"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[15157, 452, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9e84def5-4072-4c94-8e5a-49ad7bb4844d",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1700368360],
+Cell[CellGroupData[{
+Cell[15450, 466, 196, 6, 70, "ExampleSection",ExpressionUUID->"e992b045-22b7-43fd-9580-c46fd7f9bf18",
+ CellID->1526135891],
+Cell[CellGroupData[{
+Cell[15671, 476, 160, 4, 70, "Input",ExpressionUUID->"afbd1b41-a1f1-4e85-89d7-3b835a51f374",
+ CellID->694277380],
+Cell[15834, 482, 248, 6, 70, "Output",ExpressionUUID->"06daf424-761d-4b42-b68d-ec66339553d5",
+ CellID->1148816148]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16119, 493, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"8e118d74-279a-4d67-9362-be7a40d4aa5d",
+ CellID->1993867123],
+Cell[CellGroupData[{
+Cell[16270, 500, 365, 10, 70, "Input",ExpressionUUID->"04279364-6923-4708-aed4-53a129d9c821",
+ CellID->1777196472],
+Cell[16638, 512, 2091, 52, 70, "Output",ExpressionUUID->"43a0d05a-4244-408c-b6de-e6e11e985ade",
+ CellID->14282953]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18766, 569, 135, 3, 70, "Input",ExpressionUUID->"79967944-4242-4b18-b931-84933ae27db0",
+ CellID->1982197250],
+Cell[18904, 574, 247, 6, 70, "Output",ExpressionUUID->"5c695aa3-81cb-4b7a-9135-53940c512f02",
+ CellID->651678644]
+}, Open  ]],
+Cell[19166, 583, 345, 12, 70, "ExampleText",ExpressionUUID->"9284f737-1249-4254-9d1c-ef0bd5bede93",
+ CellID->1838912588],
+Cell[CellGroupData[{
+Cell[19536, 599, 204, 5, 70, "Input",ExpressionUUID->"0820732a-086b-4fde-b5f5-98918d63f482",
+ CellID->1413782592],
+Cell[19743, 606, 89, 2, 70, "Output",ExpressionUUID->"e696325e-95e9-4574-ba48-4a918bdfc872",
+ CellID->1647640415]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19893, 615, 189, 6, 70, "ExampleSection",ExpressionUUID->"82d431c6-3ef6-4b17-a27f-b6713c354e21",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[20107, 625, 203, 6, 70, "ExampleSubsection",ExpressionUUID->"48d9d81f-7ad9-486c-b5f8-6d2d08afcfae",
+ CellID->1757724783],
+Cell[20313, 633, 339, 10, 70, "ExampleText",ExpressionUUID->"bb210aec-067f-49e5-933e-c135e774af83",
+ CellID->815635903],
+Cell[CellGroupData[{
+Cell[20677, 647, 390, 9, 70, "Input",ExpressionUUID->"50fced75-aca0-4abd-9685-c6243fab8bbd",
+ CellID->355650698],
+Cell[21070, 658, 348, 9, 70, "Output",ExpressionUUID->"cd28d826-5be3-41c1-91b5-1a1da47e1591",
+ CellID->1948247547]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[21467, 673, 207, 6, 70, "ExampleSubsection",ExpressionUUID->"1cc446b3-1853-4aea-a61d-120170d8ebcd",
+ CellID->1295379749],
+Cell[21677, 681, 150, 4, 70, "ExampleText",ExpressionUUID->"d9af0cd7-f4d0-49bf-8fcb-199c6582b7ed",
+ CellID->1624495902],
+Cell[CellGroupData[{
+Cell[21852, 689, 564, 15, 70, "Input",ExpressionUUID->"58737e4d-94e5-42b5-a682-666ecd044ef4",
+ CellID->759871737],
+Cell[22419, 706, 899, 24, 70, "Output",ExpressionUUID->"a3d20630-bb8e-4dc6-adf5-2e69626170b0",
+ CellID->1198581223]
+}, Open  ]],
+Cell[23333, 733, 122, 3, 70, "ExampleText",ExpressionUUID->"83ac904d-4fec-4b8e-b227-1925b6c31ac0",
+ CellID->1676165524],
+Cell[CellGroupData[{
+Cell[23480, 740, 542, 15, 70, "Input",ExpressionUUID->"50cbb595-41ca-4db4-9780-1fce4ea3809b",
+ CellID->1263984472],
+Cell[24025, 757, 74, 2, 70, "Output",ExpressionUUID->"c4e72e0d-f8a7-4ef2-9c4d-339797e7e666",
+ CellID->390481182]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[24148, 765, 197, 6, 70, "ExampleSubsection",ExpressionUUID->"70d58f10-77f5-45e7-b146-ecd4edb64abe",
+ CellID->647929167],
+Cell[24348, 773, 516, 12, 70, "ExampleText",ExpressionUUID->"00cce599-2459-4139-b13d-062b6ac2d70f",
+ CellID->677651810],
+Cell[CellGroupData[{
+Cell[24889, 789, 243, 6, 70, "Input",ExpressionUUID->"d5ed2836-3f03-44c8-802e-e9f45561c6f2",
+ CellID->1599760575],
+Cell[25135, 797, 248, 6, 70, "Output",ExpressionUUID->"56b67fee-b127-49aa-950a-06859511fdae",
+ CellID->1827476266]
+}, Open  ]],
+Cell[25398, 806, 216, 6, 70, "ExampleText",ExpressionUUID->"bfa7e0e4-2a8d-497a-bbfb-d7203f349e0c",
+ CellID->7171638]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[25651, 817, 197, 6, 70, "ExampleSubsection",ExpressionUUID->"a650f4b3-f688-421b-8428-474e10325101",
+ CellID->1653196224],
+Cell[25851, 825, 251, 9, 70, "ExampleText",ExpressionUUID->"27428e2c-c325-42eb-97c1-0c6b02a779db",
+ CellID->817307380],
+Cell[CellGroupData[{
+Cell[26127, 838, 213, 5, 70, "Input",ExpressionUUID->"40f61958-70c4-4a9b-a0fb-11cb824494df",
+ CellID->616414863],
+Cell[26343, 845, 90, 2, 70, "Output",ExpressionUUID->"90db8c3f-2838-4c54-82fe-8fb2f762d16a",
+ CellID->1866025604]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[26494, 854, 197, 6, 70, "ExampleSection",ExpressionUUID->"bfb265dd-bf54-4c55-9375-43ac7efb884f",
+ CellID->1305812373],
+Cell[26694, 862, 669, 21, 70, "ExampleText",ExpressionUUID->"ff1d54c4-a2aa-4ccf-b511-bc8a4ed59cfd",
+ CellID->757412278],
+Cell[CellGroupData[{
+Cell[27388, 887, 235, 6, 70, "Input",ExpressionUUID->"d22ce541-a7a3-4290-a8a5-cde52adff119",
+ CellID->326381480],
+Cell[27626, 895, 384, 8, 70, "Message",ExpressionUUID->"f900cc53-67fb-4f39-9003-003d5c675565",
+ CellID->67122436],
+Cell[28013, 905, 385, 8, 70, "Message",ExpressionUUID->"3ed13260-d8a4-40fd-a2bb-4dd811c583e9",
+ CellID->697867177],
+Cell[28401, 915, 250, 6, 70, "Output",ExpressionUUID->"1f765ba7-a446-4b43-82d9-c9bedb50caf7",
+ CellID->1645447572]
+}, Open  ]],
+Cell[28666, 924, 156, 5, 70, "ExampleText",ExpressionUUID->"964a1269-efd4-458c-af4f-f772e1066e68",
+ CellID->1311844891],
+Cell[CellGroupData[{
+Cell[28847, 933, 227, 6, 70, "Input",ExpressionUUID->"48022d11-68d2-4c2c-90aa-5acd4b911496",
+ CellID->1097327756],
+Cell[29077, 941, 250, 6, 70, "Output",ExpressionUUID->"576f74fb-64e3-4023-9460-73a954068041",
+ CellID->1890420185]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[29376, 953, 236, 8, 70, "ExampleSection",ExpressionUUID->"56f3ca5b-72a5-4bee-bb32-9b97228c6bed",
+ CellID->1993819761],
+Cell[29615, 963, 2324, 56, 70, "Input",ExpressionUUID->"2f6fe123-7cbd-4dbf-8235-5b0171cf0c75",
+ InitializationCell->False,
+ CellID->163687090],
+Cell[31942, 1021, 15563, 349, 70, "Input",ExpressionUUID->"da2ef110-18f3-4170-84cf-b6991286286a",
+ InitializationCell->False,
+ CellID->162369823]
+}, Closed]],
+Cell[47520, 1373, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"9162e66a-18b2-43a5-8f5d-dd43df48f27f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47588, 1378, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"9e9c7339-2426-437b-9006-6e143004bd01",
+ CellID->1255426704],
+Cell[47741, 1387, 2905, 91, 70, "SeeAlso",ExpressionUUID->"2cd440ba-a536-40b4-83c0-0481f4427252",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50683, 1483, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"493dbffe-036f-4c4e-a665-12cbc50a2491",
+ CellID->38303248],
+Cell[50842, 1492, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"f32208f7-e91c-4f9c-8319-bbc0eab22539"],
+Cell[50876, 1494, 207, 7, 70, "MoreAbout",ExpressionUUID->"fd341433-c631-4c84-95d6-7743252071c6",
+ CellID->221240269],
+Cell[51086, 1503, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"95153127-3cd6-47fa-ba01-99ae87805b2d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51154, 1508, 160, 7, 70, "RelatedLinksSection",ExpressionUUID->"3d4fa68e-1f13-4d32-9a29-e2b84e7ba00b",
+ CellID->1584193535],
+Cell[51317, 1517, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"0cbaa668-3787-4b42-9914-48e15a2ab65d"],
+Cell[51351, 1519, 431, 14, 70, "RelatedLinks",ExpressionUUID->"e1d96620-97ba-4059-b9ae-c8fec4558109",
+ CellID->1998586493],
+Cell[51785, 1535, 330, 12, 70, "RelatedLinks",ExpressionUUID->"96b9d263-b717-4ba8-94d7-454e4a225020",
+ CellID->1038487239]
+}, Open  ]],
+Cell[52130, 1550, 23, 0, 70, "FooterCell",ExpressionUUID->"aaf2e2d8-e4f9-42c8-ad14-d4e1f61536bd"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,2669 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     98391,       2660]
+NotebookOptionsPosition[     81411,       2296]
+NotebookOutlinePosition[     83598,       2353]
+CellTagsIndexPosition[     83512,       2348]
+WindowTitle->$SpaceGroups
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"$PointGroups\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$PointGroups"], "\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$CrystalData"], "\<\"GetSymmetryData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetSymmetryData"], "\<\"ImportCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ImportCrystalData"], "\<\"GetLaueClass\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetLaueClass"], "\<\"ToStandardSetting\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ToStandardSetting"], \
+"\<\"UnitCellTransformation\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/UnitCellTransformation"], "\<\"GetSymmetryOperations\
+\"\>":>Documentation`HelpLookup["paclet:MaXrd/ref/GetSymmetryOperations"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/$SpaceGroups\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/$SpaceGroups"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/$SpaceGroups.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$49918], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/$SpaceGroups", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["$SpaceGroups", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " \[LineSeparator]is an association containing data on the ",
+     StyleBox["230",
+      Deletable->True],
+     " crystallographic space groups."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->412503731],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Keys"]], "paclet:ref/Keys"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " of ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " are the plain string versions of the short Hermann\[Dash]Mauguin. The ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Values"]], "paclet:ref/Values"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " are associations organised in the following structure:"
+}], "Notes",
+ CellID->179929223],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], Cell[TextData[{
+     "Name\n\tSymbol (default symbol used in ",
+     StyleBox["International Tables for Crystallography, volume A",
+      FontSlant->"Italic"],
+     ")\n\tShort Hermann\[Dash]Mauguin symbol in string format\n\tFull \
+Hermann\[Dash]Mauguin symbol in string format\n\tSchoenflies symbol\n\tHall \
+symbol in string format\nSpace group number\nLaue class\nCrystal system\n\
+Properties\n\tCentrosymmetric?\n\tSohncke group?\nSymmetry operations\n\
+Special positions\n\tMultiplicity\n\tWyckoff letter\n\tSite symmetry\n\t\
+Coordinates"
+    }], "TableText"]}
+  }]], "1ColumnTableMod",
+ CellID->514678747],
+
+Cell["\<\
+Many space groups have multiple representations (various cell choices, \
+different permutations or choices of unique axis, etc.). This information is \
+stored in an additional sub-association;\
+\>", "Notes",
+ CellID->140258260],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], Cell["\<\
+\[Ellipsis]
+Alternative settings
+\tSymbol of first alternative setting
+\t\tName
+\t\t\t\[Ellipsis]
+\t\tSetting
+\t\tOrigin shift (if applicable)
+\t\tSymmetry operations
+\t\tSpecial positions
+\tSymbol of second alternative setting
+\t\t\[Ellipsis]
+\t\[Ellipsis]\
+\>", "TableText"]}
+  }]], "1ColumnTableMod",
+ CellID->679177210],
+
+Cell[TextData[{
+ "Under ",
+ Cell[BoxData["\"\<Name\>\""], "InlineFormula"],
+ ", alternative symbols may appear, such as ",
+ StyleBox["Fd-3m:2", "InlineCode"],
+ " which symbolises the space group ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+   "F", "\[NegativeVeryThinSpace]\[VeryThinSpace]", "d", "\[VeryThinSpace]", 
+    OverscriptBox["3", "_"], "\[VeryThinSpace]", "m"}], TraditionalForm]], 
+  "InlineMath"],
+ " with the second origin choice."
+}], "Notes",
+ CellID->218458520],
+
+Cell[TextData[{
+ "Not all alternative settings contain data on ",
+ StyleBox["special positions",
+  FontSlant->"Italic"],
+ "; only those listed in the ",
+ StyleBox["International Tables for Crystallograph, vol. A",
+  FontSlant->"Italic"],
+ "."
+}], "Notes",
+ CellID->243190154],
+
+Cell[TextData[{
+ "The first sub-entry, ",
+ Cell[BoxData["\"\<Symbol\>\""], "InlineFormula"],
+ ", in the ",
+ Cell[BoxData["\"\<Name\>\""], "InlineFormula"],
+ " entry is the formatted version of the symbol."
+}], "Notes",
+ CellID->1844769680],
+
+Cell[TextData[{
+ "The space groups numbered ",
+ Cell[BoxData[
+  FormBox["39", TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  FormBox["41", TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  FormBox["64", TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  FormBox["67", TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox["68", TraditionalForm]], "InlineMath"],
+ " also have an ",
+ Cell[BoxData["\"\<OldSymbol\>\""], "InlineFormula"],
+ " entry that designates the symbol used with the old glide plane \
+convention."
+}], "Notes",
+ CellID->1360605513],
+
+Cell[TextData[{
+ "Hall symbols for the multiple cells of tetragonal, trigonal and hexagonal \
+space groups are not found in the ",
+ StyleBox["International Tables for Crystallography",
+  FontSlant->"Italic"],
+ "; this data has been collected from Grosse-Kunstleve's ",
+ Cell[BoxData[
+  SuperscriptBox["cctbx", Cell[BoxData[
+    TemplateBox[{
+      Cell[
+       TextData[
+        StyleBox[
+         RowBox[{"[", "2", "]"}], FontSlant -> "Plain"]]], 
+      "https://cci.lbl.gov/cctbx/multiple_cell.html"},
+     "WebLink",
+     BaseStyle->{"Notes", FontSlant -> "Plain"}]]]]],
+  FontSlant->"Italic"],
+ ".\[LineSeparator]The ",
+ Cell[BoxData["HallString"], "InlineFormula"],
+ " entries for multiple cells in the tetragonal space groups are based on the \
+chosen directions ",
+ StyleBox["a-b,a+b,c", "InlineCode"],
+ ", while the alternative ",
+ Cell[BoxData["HallStringAlt"], "InlineFormula"],
+ " is based on ",
+ StyleBox["a+b,-a+b,c", "InlineCode"],
+ ".\[LineSeparator]In the same manner, for the trigonal tiple cells the ",
+ Cell[BoxData["HallString"], "InlineFormula"],
+ " is based on ",
+ StyleBox["a-b,a+2b,c", "InlineCode"],
+ ", while ",
+ Cell[BoxData["HallStringAlt2"], "InlineFormula"],
+ " corresponds to ",
+ StyleBox["2a+b,-a+b,c", "InlineCode"],
+ " and ",
+ Cell[BoxData["HallStringAlt3"], "InlineFormula"],
+ " to ",
+ StyleBox["a+2b,-2a-b,c", "InlineCode"],
+ ".\[LineSeparator]Finally, for the hexagonal triple cells, ",
+ Cell[BoxData["HallString"], "InlineFormula"],
+ " is based on ",
+ StyleBox["a-b,a+2b,c", "InlineCode"],
+ "; ",
+ Cell[BoxData["HallStringAlt2"], "InlineFormula"],
+ " on ",
+ StyleBox["2a+b,-a+b,c", "InlineCode"],
+ " and ",
+ Cell[BoxData["HallStringAlt3"], "InlineFormula"],
+ " on ",
+ StyleBox["a+2b,-2a-b,c", "InlineCode"],
+ "."
+}], "Notes",
+ CellID->1733277047],
+
+Cell[TextData[{
+ "The following space groups settings are not found in the ",
+ StyleBox["International Tables for Crystallography, vol. A",
+  FontSlant->"Italic"],
+ " (even as ",
+ StyleBox["unconventional cells",
+  FontSlant->"Italic"],
+ "):"
+}], "Notes",
+ CellID->1386224567],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], Cell["1", "TableText"], "P1", 
+    RowBox[{
+    "A1", ",", " ", "B1", ",", " ", "C1", ",", " ", "F1", ",", " ", "I1"}]},
+   {Cell["      ", "TableRowIcon"], Cell["2", "TableText"], 
+    RowBox[{"P", 
+     OverscriptBox["1", "_"]}], 
+    RowBox[{
+     RowBox[{"A", 
+      OverscriptBox["1", "_"]}], ",", " ", 
+     RowBox[{"B", 
+      OverscriptBox["1", "_"]}], ",", " ", 
+     RowBox[{"C", 
+      OverscriptBox["1", "_"]}], ",", " ", 
+     RowBox[{"F", 
+      OverscriptBox["1", "_"]}], ",", " ", 
+     RowBox[{"I", 
+      OverscriptBox["1", "_"]}]}]},
+   {Cell["      ", "TableRowIcon"], Cell["3", "TableText"], "P2", 
+    RowBox[{"B121", ",", " ", "C112", ",", " ", "A211"}]},
+   {Cell["      ", "TableRowIcon"], Cell["4", "TableText"], 
+    SubscriptBox["P2", "1"], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["B12", "1"], "1"}], ",", " ", 
+     SubscriptBox["C112", "1"], ",", " ", 
+     RowBox[{
+      SubscriptBox["A2", "1"], "11"}]}]},
+   {Cell["      ", "TableRowIcon"], Cell["5", "TableText"], "C2", 
+    RowBox[{"F121", ",", " ", "F112", ",", " ", "A211"}]},
+   {Cell["      ", "TableRowIcon"], Cell["6", "TableText"], "Pm", 
+    RowBox[{"B1m1", ",", " ", "C11m", ",", " ", "Am11"}]},
+   {Cell["      ", "TableRowIcon"], Cell["7", "TableText"], "Pc", 
+    RowBox[{
+    "B1d1", ",", " ", "B1a1", ",", " ", "C11a", ",", " ", "C11d", ",", " ", 
+     "Ad11", ",", " ", "Ab11"}]},
+   {Cell["      ", "TableRowIcon"], Cell["8", "TableText"], "Cm", 
+    RowBox[{"F1m1", ",", " ", "F11m", ",", " ", "Fm11"}]},
+   {Cell["      ", "TableRowIcon"], Cell["9", "TableText"], "Cc", 
+    RowBox[{"F1d1", ",", " ", "F11d", ",", " ", "Fd11"}]},
+   {Cell["      ", "TableRowIcon"], Cell["10", "TableText"], 
+    RowBox[{"P2", "/", "m"}], 
+    RowBox[{
+     RowBox[{"B12", "/", "m1"}], ",", " ", 
+     RowBox[{"C112", "/", "m"}], ",", " ", 
+     RowBox[{"A2", "/", "m11"}]}]},
+   {Cell["      ", "TableRowIcon"], Cell["11", "TableText"], 
+    RowBox[{
+     SubscriptBox["P2", "1"], "/", "m"}], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["B12", "1"], "/", "m1"}], ",", " ", 
+     RowBox[{
+      SubscriptBox["C112", "1"], "/", "m"}], ",", " ", 
+     RowBox[{
+      SubscriptBox["A2", "1"], "/", "m11"}]}]},
+   {Cell["      ", "TableRowIcon"], Cell["12", "TableText"], 
+    RowBox[{"C2", "/", "m"}], 
+    RowBox[{
+     RowBox[{"F12", "/", "m1"}], ",", " ", 
+     RowBox[{"F112", "/", "m"}], ",", " ", 
+     RowBox[{"F2", "/", "m11"}]}]},
+   {Cell["      ", "TableRowIcon"], Cell["13", "TableText"], 
+    RowBox[{"P2", "/", "c"}], 
+    RowBox[{
+     RowBox[{"B12", "/", "d1"}], ",", " ", 
+     RowBox[{"B12", "/", "a1"}], ",", " ", 
+     RowBox[{"C112", "/", "d"}], ",", " ", 
+     RowBox[{"C112", "/", "a"}], ",", " ", 
+     RowBox[{"A2", "/", "b11"}], ",", " ", 
+     RowBox[{"A2", "/", "d11"}]}]},
+   {Cell["      ", "TableRowIcon"], Cell["14", "TableText"], 
+    RowBox[{"P21", "/", "c"}], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["B12", "1"], "/", "d1"}], ",", " ", 
+     RowBox[{
+      SubscriptBox["B12", "1"], "/", "a1"}], ",", " ", 
+     RowBox[{
+      SubscriptBox["C112", "1"], "/", "d"}], ",", " ", 
+     RowBox[{
+      SubscriptBox["A2", "1"], "/", "b11"}], ",", " ", 
+     RowBox[{
+      SubscriptBox["A2", "1"], "/", "d11"}]}]},
+   {Cell["      ", "TableRowIcon"], Cell["15", "TableText"], 
+    RowBox[{"C2", "/", "c"}], 
+    RowBox[{
+     RowBox[{"F12", "/", "d1"}], ",", " ", 
+     RowBox[{"F112", "/", "d"}], ",", " ", 
+     RowBox[{"F2", "/", "d11"}]}]},
+   {Cell["      ", "TableRowIcon"], Cell["75\[Dash]142", "TableText"], Cell[
+    "(tetragonal)", "TableText"], 
+    RowBox[{"P", "\[Rule]", 
+     RowBox[{
+      RowBox[{"C", " ", "and", " ", "I"}], "\[Rule]", "F"}]}]},
+   {Cell["      ", "TableRowIcon"], Cell["143\[Dash]165", "TableText"], Cell[
+    "(hexagonal lattice)", "TableText"], 
+    RowBox[{"H", " ", "centring"}]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, 
+   "Rows" -> {
+    None, None, None, None, None, None, None, None, None, None, None, None, 
+     None, None, None, None, {None}}},
+ GridBoxDividers->{
+  "Rows" -> {{
+     True, True, True, True, True, True, True, True, True, True, True, True, 
+      True, True, True, True, True, True}}}},
+ CellID->1693595967],
+
+Cell[TextData[{
+ "The properties ",
+ Cell[BoxData["\"\<CentrosymmetricQ\>\""], "InlineFormula"],
+ " and ",
+ Cell[BoxData["\"\<SohnckeGroupQ\>\""], "InlineFormula"],
+ " have Boolean values. ",
+ StyleBox["Centric",
+  FontSlant->"Italic"],
+ " is synonymous with ",
+ StyleBox["centrosymmetric",
+  FontSlant->"Italic"],
+ "\[NonBreakingSpace]in this sense, and a space group that is a ",
+ StyleBox["Sohncke group",
+  FontSlant->"Italic"],
+ " can also be said to be ",
+ StyleBox["chiral",
+  FontSlant->"Italic"],
+ "."
+}], "Notes",
+ CellID->1920989807],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " is loaded from:"
+}], "Notes",
+ CellID->1980952874],
+
+Cell[BoxData[
+ RowBox[{"FileNameJoin", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "$MaXrdPath", ",", "\"\<Core\>\"", ",", "\"\<Data\>\"", ",", 
+    "\"\<MaXrdSpaceGroups.m\>\""}], "}"}], "]"}]], "Input",
+ CellID->414830283],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(15)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->872994401],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->808621303],
+
+Cell["\<\
+The association has 230 space group entries, ordered from least to highest \
+symmetry.\
+\>", "ExampleText",
+ CellID->1050148055],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "@", "$SpaceGroups"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->56068559],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"P1\"\>", ",", "\<\"P-1\"\>", ",", "\<\"P2\"\>", 
+   ",", "\<\"P21\"\>", ",", "\<\"C2\"\>", ",", "\<\"Pm\"\>", 
+   ",", "\<\"Pc\"\>", ",", "\<\"Cm\"\>", ",", "\<\"Cc\"\>", 
+   ",", "\<\"P2/m\"\>", ",", "\<\"P21/m\"\>", ",", "\<\"C2/m\"\>", 
+   ",", "\<\"P2/c\"\>", ",", "\<\"P21/c\"\>", ",", "\<\"C2/c\"\>", 
+   ",", "\<\"P222\"\>", ",", "\<\"P2221\"\>", ",", "\<\"P21212\"\>", 
+   ",", "\<\"P212121\"\>", ",", "\<\"C2221\"\>", ",", "\<\"C222\"\>", 
+   ",", "\<\"F222\"\>", ",", "\<\"I222\"\>", ",", "\<\"I212121\"\>", 
+   ",", "\<\"Pmm2\"\>", ",", "\<\"Pmc21\"\>", ",", "\<\"Pcc2\"\>", 
+   ",", "\<\"Pma2\"\>", ",", "\<\"Pca21\"\>", ",", "\<\"Pnc2\"\>", 
+   ",", "\<\"Pmn21\"\>", ",", "\<\"Pba2\"\>", ",", "\<\"Pna21\"\>", 
+   ",", "\<\"Pnn2\"\>", ",", "\<\"Cmm2\"\>", ",", "\<\"Cmc21\"\>", 
+   ",", "\<\"Ccc2\"\>", ",", "\<\"Amm2\"\>", ",", "\<\"Aem2\"\>", 
+   ",", "\<\"Ama2\"\>", ",", "\<\"Aea2\"\>", ",", "\<\"Fmm2\"\>", 
+   ",", "\<\"Fdd2\"\>", ",", "\<\"Imm2\"\>", ",", "\<\"Iba2\"\>", 
+   ",", "\<\"Ima2\"\>", ",", "\<\"Pmmm\"\>", ",", "\<\"Pnnn\"\>", 
+   ",", "\<\"Pccm\"\>", ",", "\<\"Pban\"\>", ",", "\<\"Pmma\"\>", 
+   ",", "\<\"Pnna\"\>", ",", "\<\"Pmna\"\>", ",", "\<\"Pcca\"\>", 
+   ",", "\<\"Pbam\"\>", ",", "\<\"Pccn\"\>", ",", "\<\"Pbcm\"\>", 
+   ",", "\<\"Pnnm\"\>", ",", "\<\"Pmmn\"\>", ",", "\<\"Pbcn\"\>", 
+   ",", "\<\"Pbca\"\>", ",", "\<\"Pnma\"\>", ",", "\<\"Cmcm\"\>", 
+   ",", "\<\"Cmce\"\>", ",", "\<\"Cmmm\"\>", ",", "\<\"Cccm\"\>", 
+   ",", "\<\"Cmme\"\>", ",", "\<\"Ccce\"\>", ",", "\<\"Fmmm\"\>", 
+   ",", "\<\"Fddd\"\>", ",", "\<\"Immm\"\>", ",", "\<\"Ibam\"\>", 
+   ",", "\<\"Ibca\"\>", ",", "\<\"Imma\"\>", ",", "\<\"P4\"\>", 
+   ",", "\<\"P41\"\>", ",", "\<\"P42\"\>", ",", "\<\"P43\"\>", 
+   ",", "\<\"I4\"\>", ",", "\<\"I41\"\>", ",", "\<\"P-4\"\>", 
+   ",", "\<\"I-4\"\>", ",", "\<\"P4/m\"\>", ",", "\<\"P42/m\"\>", 
+   ",", "\<\"P4/n\"\>", ",", "\<\"P42/n\"\>", ",", "\<\"I4/m\"\>", 
+   ",", "\<\"I41/a\"\>", ",", "\<\"P422\"\>", ",", "\<\"P4212\"\>", 
+   ",", "\<\"P4122\"\>", ",", "\<\"P41212\"\>", ",", "\<\"P4222\"\>", 
+   ",", "\<\"P42212\"\>", ",", "\<\"P4322\"\>", ",", "\<\"P43212\"\>", 
+   ",", "\<\"I422\"\>", ",", "\<\"I4122\"\>", ",", "\<\"P4mm\"\>", 
+   ",", "\<\"P4bm\"\>", ",", "\<\"P42cm\"\>", ",", "\<\"P42nm\"\>", 
+   ",", "\<\"P4cc\"\>", ",", "\<\"P4nc\"\>", ",", "\<\"P42mc\"\>", 
+   ",", "\<\"P42bc\"\>", ",", "\<\"I4mm\"\>", ",", "\<\"I4cm\"\>", 
+   ",", "\<\"I41md\"\>", ",", "\<\"I41cd\"\>", ",", "\<\"P-42m\"\>", 
+   ",", "\<\"P-42c\"\>", ",", "\<\"P-421m\"\>", ",", "\<\"P-421c\"\>", 
+   ",", "\<\"P-4m2\"\>", ",", "\<\"P-4c2\"\>", ",", "\<\"P-4b2\"\>", 
+   ",", "\<\"P-4n2\"\>", ",", "\<\"I-4m2\"\>", ",", "\<\"I-4c2\"\>", 
+   ",", "\<\"I-42m\"\>", ",", "\<\"I-42d\"\>", ",", "\<\"P4/mmm\"\>", 
+   ",", "\<\"P4/mcc\"\>", ",", "\<\"P4/nbm\"\>", ",", "\<\"P4/nnc\"\>", 
+   ",", "\<\"P4/mbm\"\>", ",", "\<\"P4/mnc\"\>", ",", "\<\"P4/nmm\"\>", 
+   ",", "\<\"P4/ncc\"\>", ",", "\<\"P42/mmc\"\>", ",", "\<\"P42/mcm\"\>", 
+   ",", "\<\"P42/nbc\"\>", ",", "\<\"P42/nnm\"\>", ",", "\<\"P42/mbc\"\>", 
+   ",", "\<\"P42/mnm\"\>", ",", "\<\"P42/nmc\"\>", ",", "\<\"P42/ncm\"\>", 
+   ",", "\<\"I4/mmm\"\>", ",", "\<\"I4/mcm\"\>", ",", "\<\"I41/amd\"\>", 
+   ",", "\<\"I41/acd\"\>", ",", "\<\"P3\"\>", ",", "\<\"P31\"\>", 
+   ",", "\<\"P32\"\>", ",", "\<\"R3\"\>", ",", "\<\"P-3\"\>", 
+   ",", "\<\"R-3\"\>", ",", "\<\"P312\"\>", ",", "\<\"P321\"\>", 
+   ",", "\<\"P3112\"\>", ",", "\<\"P3121\"\>", ",", "\<\"P3212\"\>", 
+   ",", "\<\"P3221\"\>", ",", "\<\"R32\"\>", ",", "\<\"P3m1\"\>", 
+   ",", "\<\"P31m\"\>", ",", "\<\"P3c1\"\>", ",", "\<\"P31c\"\>", 
+   ",", "\<\"R3m\"\>", ",", "\<\"R3c\"\>", ",", "\<\"P-31m\"\>", 
+   ",", "\<\"P-31c\"\>", ",", "\<\"P-3m1\"\>", ",", "\<\"P-3c1\"\>", 
+   ",", "\<\"R-3m\"\>", ",", "\<\"R-3c\"\>", ",", "\<\"P6\"\>", 
+   ",", "\<\"P61\"\>", ",", "\<\"P65\"\>", ",", "\<\"P62\"\>", 
+   ",", "\<\"P64\"\>", ",", "\<\"P63\"\>", ",", "\<\"P-6\"\>", 
+   ",", "\<\"P6/m\"\>", ",", "\<\"P63/m\"\>", ",", "\<\"P622\"\>", 
+   ",", "\<\"P6122\"\>", ",", "\<\"P6522\"\>", ",", "\<\"P6222\"\>", 
+   ",", "\<\"P6422\"\>", ",", "\<\"P6322\"\>", ",", "\<\"P6mm\"\>", 
+   ",", "\<\"P6cc\"\>", ",", "\<\"P63cm\"\>", ",", "\<\"P63mc\"\>", 
+   ",", "\<\"P-6m2\"\>", ",", "\<\"P-6c2\"\>", ",", "\<\"P-62m\"\>", 
+   ",", "\<\"P-62c\"\>", ",", "\<\"P6/mmm\"\>", ",", "\<\"P6/mcc\"\>", 
+   ",", "\<\"P63/mcm\"\>", ",", "\<\"P63/mmc\"\>", ",", "\<\"P23\"\>", 
+   ",", "\<\"F23\"\>", ",", "\<\"I23\"\>", ",", "\<\"P213\"\>", 
+   ",", "\<\"I213\"\>", ",", "\<\"Pm-3\"\>", ",", "\<\"Pn-3\"\>", 
+   ",", "\<\"Fm-3\"\>", ",", "\<\"Fd-3\"\>", ",", "\<\"Im-3\"\>", 
+   ",", "\<\"Pa-3\"\>", ",", "\<\"Ia-3\"\>", ",", "\<\"P432\"\>", 
+   ",", "\<\"P4232\"\>", ",", "\<\"F432\"\>", ",", "\<\"F4132\"\>", 
+   ",", "\<\"I432\"\>", ",", "\<\"P4332\"\>", ",", "\<\"P4132\"\>", 
+   ",", "\<\"I4132\"\>", ",", "\<\"P-43m\"\>", ",", "\<\"F-43m\"\>", 
+   ",", "\<\"I-43m\"\>", ",", "\<\"P-43n\"\>", ",", "\<\"F-43c\"\>", 
+   ",", "\<\"I-43d\"\>", ",", "\<\"Pm-3m\"\>", ",", "\<\"Pn-3n\"\>", 
+   ",", "\<\"Pm-3n\"\>", ",", "\<\"Pn-3m\"\>", ",", "\<\"Fm-3m\"\>", 
+   ",", "\<\"Fm-3c\"\>", ",", "\<\"Fd-3m\"\>", ",", "\<\"Fd-3c\"\>", 
+   ",", "\<\"Im-3m\"\>", ",", "\<\"Ia-3d\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1740913374]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomChoice", "@", 
+  RowBox[{"Keys", "@", "$SpaceGroups"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->53774917],
+
+Cell[BoxData["\<\"Pbam\"\>"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1878860032]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->143090119],
+
+Cell["What is space group #169?", "ExampleText",
+ CellID->1881429040],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$SpaceGroups", "[", 
+  RowBox[{"[", "169", "]"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->22039968],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Name\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Symbol\"\>", 
+       "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(1\\)]\\)\"\>"}], 
+      ",", 
+      RowBox[{"\<\"HermannMauguinShort\"\>", "\[Rule]", "\<\"P 61\"\>"}], ",", 
+      RowBox[{"\<\"HermannMauguinFull\"\>", "\[Rule]", "\<\"P 61\"\>"}], ",", 
+      
+      RowBox[{"\<\"SchoenfliesSymbol\"\>", 
+       "\[Rule]", "\<\"\\!\\(\\*SubsuperscriptBox[\\(C\\), \\(6\\), \
+\\(2\\)]\\)\"\>"}], ",", 
+      RowBox[{"\<\"HallString\"\>", "\[Rule]", "\<\"P 61\"\>"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"SpaceGroupNumber\"\>", "\[Rule]", "169"}], ",", 
+   RowBox[{"\<\"LaueClass\"\>", "\[Rule]", "\<\"6/m\"\>"}], ",", 
+   RowBox[{"\<\"CrystalSystem\"\>", "\[Rule]", "\<\"Hexagonal\"\>"}], ",", 
+   RowBox[{"\<\"Properties\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"CentrosymmetricQ\"\>", "\[Rule]", "False"}], ",", 
+      RowBox[{"\<\"SohnckeGroupQ\"\>", "\[Rule]", "True"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"Setting\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"SymmetryOperations\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", 
+          FractionBox["1", "3"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", 
+          FractionBox["2", "3"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", 
+          FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", 
+          FractionBox["5", "6"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", 
+          FractionBox["1", "6"]}], "}"}]}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"SpecialPositions\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftAssociation]", 
+      RowBox[{
+       RowBox[{"\<\"Multiplicity\"\>", "\[Rule]", "6"}], ",", 
+       RowBox[{"\<\"WyckoffLetter\"\>", "\[Rule]", "\<\"a\"\>"}], ",", 
+       RowBox[{"\<\"SiteSymmetry\"\>", "\[Rule]", "\<\"1\"\>"}], ",", 
+       RowBox[{"\<\"Coordinates\"\>", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"\<\"x\"\>", ",", "\<\"y\"\>", ",", "\<\"z\"\>"}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "\<\"y\"\>"}], ",", 
+            RowBox[{"\<\"x\"\>", "-", "\<\"y\"\>"}], ",", 
+            RowBox[{
+             FractionBox["1", "3"], "+", "\<\"z\"\>"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "\<\"x\"\>"}], "+", "\<\"y\"\>"}], ",", 
+            RowBox[{"-", "\<\"x\"\>"}], ",", 
+            RowBox[{
+             FractionBox["2", "3"], "+", "\<\"z\"\>"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "\<\"x\"\>"}], ",", 
+            RowBox[{"-", "\<\"y\"\>"}], ",", 
+            RowBox[{
+             FractionBox["1", "2"], "+", "\<\"z\"\>"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"\<\"y\"\>", ",", 
+            RowBox[{
+             RowBox[{"-", "\<\"x\"\>"}], "+", "\<\"y\"\>"}], ",", 
+            RowBox[{
+             FractionBox["5", "6"], "+", "\<\"z\"\>"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\<\"x\"\>", "-", "\<\"y\"\>"}], ",", "\<\"x\"\>", ",", 
+            RowBox[{
+             FractionBox["1", "6"], "+", "\<\"z\"\>"}]}], "}"}]}], "}"}]}]}], 
+      "\[RightAssociation]"}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1784751743]
+}, Open  ]],
+
+Cell[TextData[{
+ "What number in the ",
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{
+    StyleBox[
+     RowBox[{
+     "International", " ", "Tables", " ", "for", " ", "Crystallography"}],
+     FontSlant->"Italic"], 
+    StyleBox[",",
+     FontSlant->"Italic"], 
+    RowBox[{
+     StyleBox["volume",
+      FontSlant->"Italic"], 
+     StyleBox[" ",
+      FontSlant->"Italic"], 
+     SuperscriptBox[
+      RowBox[{
+       StyleBox["A",
+        FontSlant->"Italic"], " "}], 
+      RowBox[{"[", "1", "]"}]]}]}], "ExampleText"]], "InlineFormula"],
+ " is the space group ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "\[VeryThinSpace]", 
+    RowBox[{
+    "4", "\[NegativeMediumSpace]", "/", "\[NegativeMediumSpace]", "n"}], 
+    "\[ThinSpace]", "b", "\[VeryThinSpace]", "m"}], TraditionalForm]], 
+  "InlineMath"],
+ "?"
+}], "ExampleText",
+ CellID->1666356016],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$SpaceGroups", "[", 
+  RowBox[{"\"\<P4/nbm\>\"", ",", "\"\<SpaceGroupNumber\>\""}], "]"}]], "Input",\
+
+ CellLabel->"In[2]:=",
+ CellID->1033489258],
+
+Cell[BoxData["125"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1734441234]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(12)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Extracting data",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->29022063],
+
+Cell["A random space group:", "ExampleText",
+ CellID->1832563767],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$SpaceGroups", "//", "RandomChoice"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->162371106],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Name\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Symbol\"\>", 
+       "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)22\"\>"}], 
+      ",", 
+      RowBox[{"\<\"HermannMauguinShort\"\>", "\[Rule]", "\<\"I 41 2 2\"\>"}], 
+      ",", 
+      RowBox[{"\<\"HermannMauguinFull\"\>", "\[Rule]", "\<\"I 41 2 2\"\>"}], 
+      ",", 
+      RowBox[{"\<\"SchoenfliesSymbol\"\>", 
+       "\[Rule]", "\<\"\\!\\(\\*SubsuperscriptBox[\\(D\\), \\(4\\), \\(10\\)]\
+\\)\"\>"}], ",", 
+      RowBox[{"\<\"HallString\"\>", "\[Rule]", "\<\"I 4bw 2bw\"\>"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"SpaceGroupNumber\"\>", "\[Rule]", "98"}], ",", 
+   RowBox[{"\<\"LaueClass\"\>", "\[Rule]", "\<\"4/mmm\"\>"}], ",", 
+   RowBox[{"\<\"CrystalSystem\"\>", "\[Rule]", "\<\"Tetragonal\"\>"}], ",", 
+   RowBox[{"\<\"Properties\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"CentrosymmetricQ\"\>", "\[Rule]", "False"}], ",", 
+      RowBox[{"\<\"SohnckeGroupQ\"\>", "\[Rule]", "True"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"Setting\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"SymmetryOperations\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "4"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox["1", "2"], ",", "0", ",", 
+          FractionBox["3", "4"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox["1", "2"], ",", "0", ",", 
+          FractionBox["3", "4"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "4"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1054817576]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->131950682],
+
+Cell["The desired information can be extracted easily:", "ExampleText",
+ CellID->1780359115],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$SpaceGroups", "[", 
+   RowBox[{"\"\<P21/c\>\"", ",", "\"\<AlternativeSettings\>\""}], "]"}], "//",
+   "Keys"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->319961904],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"UniqueAxisB_CellChoice2\"\>", 
+   ",", "\<\"UniqueAxisB_CellChoice3\"\>", 
+   ",", "\<\"UniqueAxisC_CellChoice1\"\>", 
+   ",", "\<\"UniqueAxisC_CellChoice2\"\>", 
+   ",", "\<\"UniqueAxisC_CellChoice3\"\>", 
+   ",", "\<\"UniqueAxisA_CellChoice1\"\>", 
+   ",", "\<\"UniqueAxisA_CellChoice2\"\>", 
+   ",", "\<\"UniqueAxisA_CellChoice3\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->708112991]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$SpaceGroups", "[", 
+  RowBox[{"[", 
+   RowBox[{"\"\<P63/mcm\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<SpaceGroupNumber\>\"", ",", "\"\<CrystalSystem\>\""}], 
+     "}"}]}], "]"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1738482346],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"SpaceGroupNumber\"\>", "\[Rule]", "193"}], ",", 
+   RowBox[{"\<\"CrystalSystem\"\>", "\[Rule]", "\<\"Hexagonal\"\>"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->313518623]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "@", 
+  RowBox[{"$SpaceGroups", "[", 
+   RowBox[{"[", 
+    RowBox[{"230", ",", "\"\<SymmetryOperations\>\""}], "]"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->697450758],
+
+Cell[BoxData["48"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->313657499]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1305698061],
+
+Cell["Enantiomorphic space groups:", "ExampleText",
+ CellID->835118897],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Select", "[", "\[IndentingNewLine]", 
+    RowBox[{"$SpaceGroups", ",", 
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"\"\<Properties\>\"", ",", "\"\<SohnckeGroupQ\>\""}], "]"}], 
+      "&"}]}], "]"}], "[", 
+   RowBox[{"[", "\[IndentingNewLine]", 
+    RowBox[{"All", ",", "\"\<Name\>\"", ",", "\"\<Symbol\>\""}], "]"}], "]"}],
+   "//", "Values"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->512917380],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"P1\"\>", ",", "\<\"P2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"C2\"\>", ",", "\<\"P222\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P222\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(C222\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"C222\"\>", ",", "\<\"F222\"\>", ",", "\<\"I222\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)\"\>", ",", "\<\"P4\"\>",
+    ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)\"\>", 
+   ",", "\<\"I4\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"P422\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P42\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(1\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(3\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"I422\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)22\"\>", 
+   ",", "\<\"P3\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(2\\)]\\)\"\>", 
+   ",", "\<\"R3\"\>", ",", "\<\"P312\"\>", ",", "\<\"P321\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)12\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)21\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(2\\)]\\)12\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(2\\)]\\)21\"\>", 
+   ",", "\<\"R32\"\>", ",", "\<\"P6\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(5\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(2\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(4\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)\"\>", 
+   ",", "\<\"P622\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(1\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(5\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(2\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(4\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)22\"\>", 
+   ",", "\<\"P23\"\>", ",", "\<\"F23\"\>", ",", "\<\"I23\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)3\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I2\\), \\(1\\)]\\)3\"\>", 
+   ",", "\<\"P432\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)32\"\>", 
+   ",", "\<\"F432\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(F4\\), \\(1\\)]\\)32\"\>", 
+   ",", "\<\"I432\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(3\\)]\\)32\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(1\\)]\\)32\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)32\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->709805521]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->848827274],
+
+Cell["All tetragonal space groups:", "ExampleText",
+ CellID->506127097],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "@", 
+  RowBox[{"Select", "[", 
+   RowBox[{"$SpaceGroups", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "\"\<CrystalSystem\>\"", "]"}], "]"}], "\[Equal]", 
+      "\"\<Tetragonal\>\""}], "&"}]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1679774227],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"P4\"\>", ",", "\<\"P41\"\>", ",", "\<\"P42\"\>", 
+   ",", "\<\"P43\"\>", ",", "\<\"I4\"\>", ",", "\<\"I41\"\>", 
+   ",", "\<\"P-4\"\>", ",", "\<\"I-4\"\>", ",", "\<\"P4/m\"\>", 
+   ",", "\<\"P42/m\"\>", ",", "\<\"P4/n\"\>", ",", "\<\"P42/n\"\>", 
+   ",", "\<\"I4/m\"\>", ",", "\<\"I41/a\"\>", ",", "\<\"P422\"\>", 
+   ",", "\<\"P4212\"\>", ",", "\<\"P4122\"\>", ",", "\<\"P41212\"\>", 
+   ",", "\<\"P4222\"\>", ",", "\<\"P42212\"\>", ",", "\<\"P4322\"\>", 
+   ",", "\<\"P43212\"\>", ",", "\<\"I422\"\>", ",", "\<\"I4122\"\>", 
+   ",", "\<\"P4mm\"\>", ",", "\<\"P4bm\"\>", ",", "\<\"P42cm\"\>", 
+   ",", "\<\"P42nm\"\>", ",", "\<\"P4cc\"\>", ",", "\<\"P4nc\"\>", 
+   ",", "\<\"P42mc\"\>", ",", "\<\"P42bc\"\>", ",", "\<\"I4mm\"\>", 
+   ",", "\<\"I4cm\"\>", ",", "\<\"I41md\"\>", ",", "\<\"I41cd\"\>", 
+   ",", "\<\"P-42m\"\>", ",", "\<\"P-42c\"\>", ",", "\<\"P-421m\"\>", 
+   ",", "\<\"P-421c\"\>", ",", "\<\"P-4m2\"\>", ",", "\<\"P-4c2\"\>", 
+   ",", "\<\"P-4b2\"\>", ",", "\<\"P-4n2\"\>", ",", "\<\"I-4m2\"\>", 
+   ",", "\<\"I-4c2\"\>", ",", "\<\"I-42m\"\>", ",", "\<\"I-42d\"\>", 
+   ",", "\<\"P4/mmm\"\>", ",", "\<\"P4/mcc\"\>", ",", "\<\"P4/nbm\"\>", 
+   ",", "\<\"P4/nnc\"\>", ",", "\<\"P4/mbm\"\>", ",", "\<\"P4/mnc\"\>", 
+   ",", "\<\"P4/nmm\"\>", ",", "\<\"P4/ncc\"\>", ",", "\<\"P42/mmc\"\>", 
+   ",", "\<\"P42/mcm\"\>", ",", "\<\"P42/nbc\"\>", ",", "\<\"P42/nnm\"\>", 
+   ",", "\<\"P42/mbc\"\>", ",", "\<\"P42/mnm\"\>", ",", "\<\"P42/nmc\"\>", 
+   ",", "\<\"P42/ncm\"\>", ",", "\<\"I4/mmm\"\>", ",", "\<\"I4/mcm\"\>", 
+   ",", "\<\"I41/amd\"\>", ",", "\<\"I41/acd\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->707265679]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Alternative settings",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->2033786758],
+
+Cell["All space groups with alternative setting entries:", "ExampleText",
+ CellID->830594517],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "@", 
+  RowBox[{"Select", "[", 
+   RowBox[{"$SpaceGroups", ",", 
+    RowBox[{
+     RowBox[{"KeyExistsQ", "[", 
+      RowBox[{"#", ",", "\"\<AlternativeSettings\>\""}], "]"}], "&"}]}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->246361665],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"P1\"\>", ",", "\<\"P-1\"\>", ",", "\<\"P2\"\>", 
+   ",", "\<\"P21\"\>", ",", "\<\"C2\"\>", ",", "\<\"Pm\"\>", 
+   ",", "\<\"Pc\"\>", ",", "\<\"Cm\"\>", ",", "\<\"Cc\"\>", 
+   ",", "\<\"P2/m\"\>", ",", "\<\"P21/m\"\>", ",", "\<\"C2/m\"\>", 
+   ",", "\<\"P2/c\"\>", ",", "\<\"P21/c\"\>", ",", "\<\"C2/c\"\>", 
+   ",", "\<\"P2221\"\>", ",", "\<\"P21212\"\>", ",", "\<\"C2221\"\>", 
+   ",", "\<\"C222\"\>", ",", "\<\"Pmm2\"\>", ",", "\<\"Pmc21\"\>", 
+   ",", "\<\"Pcc2\"\>", ",", "\<\"Pma2\"\>", ",", "\<\"Pca21\"\>", 
+   ",", "\<\"Pnc2\"\>", ",", "\<\"Pmn21\"\>", ",", "\<\"Pba2\"\>", 
+   ",", "\<\"Pna21\"\>", ",", "\<\"Pnn2\"\>", ",", "\<\"Cmm2\"\>", 
+   ",", "\<\"Cmc21\"\>", ",", "\<\"Ccc2\"\>", ",", "\<\"Amm2\"\>", 
+   ",", "\<\"Aem2\"\>", ",", "\<\"Ama2\"\>", ",", "\<\"Aea2\"\>", 
+   ",", "\<\"Fmm2\"\>", ",", "\<\"Fdd2\"\>", ",", "\<\"Imm2\"\>", 
+   ",", "\<\"Iba2\"\>", ",", "\<\"Ima2\"\>", ",", "\<\"Pnnn\"\>", 
+   ",", "\<\"Pccm\"\>", ",", "\<\"Pban\"\>", ",", "\<\"Pmma\"\>", 
+   ",", "\<\"Pnna\"\>", ",", "\<\"Pmna\"\>", ",", "\<\"Pcca\"\>", 
+   ",", "\<\"Pbam\"\>", ",", "\<\"Pccn\"\>", ",", "\<\"Pbcm\"\>", 
+   ",", "\<\"Pnnm\"\>", ",", "\<\"Pmmn\"\>", ",", "\<\"Pbcn\"\>", 
+   ",", "\<\"Pbca\"\>", ",", "\<\"Pnma\"\>", ",", "\<\"Cmcm\"\>", 
+   ",", "\<\"Cmce\"\>", ",", "\<\"Cmmm\"\>", ",", "\<\"Cccm\"\>", 
+   ",", "\<\"Cmme\"\>", ",", "\<\"Ccce\"\>", ",", "\<\"Fddd\"\>", 
+   ",", "\<\"Ibam\"\>", ",", "\<\"Ibca\"\>", ",", "\<\"Imma\"\>", 
+   ",", "\<\"P4\"\>", ",", "\<\"P41\"\>", ",", "\<\"P42\"\>", 
+   ",", "\<\"P43\"\>", ",", "\<\"I4\"\>", ",", "\<\"I41\"\>", 
+   ",", "\<\"P-4\"\>", ",", "\<\"I-4\"\>", ",", "\<\"P4/m\"\>", 
+   ",", "\<\"P42/m\"\>", ",", "\<\"P4/n\"\>", ",", "\<\"P42/n\"\>", 
+   ",", "\<\"I4/m\"\>", ",", "\<\"I41/a\"\>", ",", "\<\"P422\"\>", 
+   ",", "\<\"P4212\"\>", ",", "\<\"P4122\"\>", ",", "\<\"P41212\"\>", 
+   ",", "\<\"P4222\"\>", ",", "\<\"P42212\"\>", ",", "\<\"P4322\"\>", 
+   ",", "\<\"P43212\"\>", ",", "\<\"I422\"\>", ",", "\<\"I4122\"\>", 
+   ",", "\<\"P4mm\"\>", ",", "\<\"P4bm\"\>", ",", "\<\"P42cm\"\>", 
+   ",", "\<\"P42nm\"\>", ",", "\<\"P4cc\"\>", ",", "\<\"P4nc\"\>", 
+   ",", "\<\"P42mc\"\>", ",", "\<\"P42bc\"\>", ",", "\<\"I4mm\"\>", 
+   ",", "\<\"I4cm\"\>", ",", "\<\"I41md\"\>", ",", "\<\"I41cd\"\>", 
+   ",", "\<\"P-42m\"\>", ",", "\<\"P-42c\"\>", ",", "\<\"P-421m\"\>", 
+   ",", "\<\"P-421c\"\>", ",", "\<\"P-4m2\"\>", ",", "\<\"P-4c2\"\>", 
+   ",", "\<\"P-4b2\"\>", ",", "\<\"P-4n2\"\>", ",", "\<\"I-4m2\"\>", 
+   ",", "\<\"I-4c2\"\>", ",", "\<\"I-42m\"\>", ",", "\<\"I-42d\"\>", 
+   ",", "\<\"P4/mmm\"\>", ",", "\<\"P4/mcc\"\>", ",", "\<\"P4/nbm\"\>", 
+   ",", "\<\"P4/nnc\"\>", ",", "\<\"P4/mbm\"\>", ",", "\<\"P4/mnc\"\>", 
+   ",", "\<\"P4/nmm\"\>", ",", "\<\"P4/ncc\"\>", ",", "\<\"P42/mmc\"\>", 
+   ",", "\<\"P42/mcm\"\>", ",", "\<\"P42/nbc\"\>", ",", "\<\"P42/nnm\"\>", 
+   ",", "\<\"P42/mbc\"\>", ",", "\<\"P42/mnm\"\>", ",", "\<\"P42/nmc\"\>", 
+   ",", "\<\"P42/ncm\"\>", ",", "\<\"I4/mmm\"\>", ",", "\<\"I4/mcm\"\>", 
+   ",", "\<\"I41/amd\"\>", ",", "\<\"I41/acd\"\>", ",", "\<\"P3\"\>", 
+   ",", "\<\"P31\"\>", ",", "\<\"P32\"\>", ",", "\<\"R3\"\>", 
+   ",", "\<\"P-3\"\>", ",", "\<\"R-3\"\>", ",", "\<\"P312\"\>", 
+   ",", "\<\"P321\"\>", ",", "\<\"P3112\"\>", ",", "\<\"P3121\"\>", 
+   ",", "\<\"P3212\"\>", ",", "\<\"P3221\"\>", ",", "\<\"R32\"\>", 
+   ",", "\<\"P3m1\"\>", ",", "\<\"P31m\"\>", ",", "\<\"P3c1\"\>", 
+   ",", "\<\"P31c\"\>", ",", "\<\"R3m\"\>", ",", "\<\"R3c\"\>", 
+   ",", "\<\"P-31m\"\>", ",", "\<\"P-31c\"\>", ",", "\<\"P-3m1\"\>", 
+   ",", "\<\"P-3c1\"\>", ",", "\<\"R-3m\"\>", ",", "\<\"R-3c\"\>", 
+   ",", "\<\"Pn-3\"\>", ",", "\<\"Fd-3\"\>", ",", "\<\"Pn-3n\"\>", 
+   ",", "\<\"Pn-3m\"\>", ",", "\<\"Fd-3m\"\>", ",", "\<\"Fd-3c\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1270503589]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->864565128],
+
+Cell["\<\
+Total number of entries (including alternative settings). Note that in any \
+case, the trivial symmetry operation is always present.\
+\>", "ExampleText",
+ CellID->424536980],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Count", "[", 
+  RowBox[{"$SpaceGroups", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", "Infinity"}], 
+  "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->849447227],
+
+Cell[BoxData["688"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->159683704]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1573447490],
+
+Cell[TextData[{
+ "All space group symbols (including the alternative settings) for space \
+group #33 (",
+ Cell[BoxData[
+  SubscriptBox["Pna2", "1"]], "ExampleText", "InlineFormula"],
+ "):"
+}], "ExampleText",
+ CellID->871750694],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$SpaceGroups", "[", 
+  RowBox[{"[", 
+   RowBox[{"33", ",", "\"\<Name\>\"", ",", "\"\<HermannMauguinFull\>\""}], 
+   "]"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->16878047],
+
+Cell[BoxData["\<\"P n a 21\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1927786677]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "@", 
+  RowBox[{"Normal", "@", "\[IndentingNewLine]", 
+   RowBox[{"$SpaceGroups", "[", 
+    RowBox[{"[", 
+     RowBox[{
+     "33", ",", "\"\<AlternativeSettings\>\"", ",", "All", ",", 
+      "\"\<Name\>\"", ",", "\"\<HermannMauguinFull\>\""}], "]"}], 
+    "]"}]}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1979961598],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      RowBox[{"\<\"AxisPermutationBA-C\"\>", 
+       "\[Rule]", "\<\"P b n 21\"\>"}]},
+     {
+      RowBox[{"\<\"AxisPermutationCAB\"\>", "\[Rule]", "\<\"P 21 n b\"\>"}]},
+     {
+      RowBox[{"\<\"AxisPermutation-CBA\"\>", 
+       "\[Rule]", "\<\"P 21 c n\"\>"}]},
+     {
+      RowBox[{"\<\"AxisPermutationBCA\"\>", "\[Rule]", "\<\"P c 21 n\"\>"}]},
+     {
+      RowBox[{"\<\"AxisPermutationA-CB\"\>", "\[Rule]", "\<\"P n 21 a\"\>"}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellLabel->"Out[2]//TableForm=",
+ CellID->424938590]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->413753200],
+
+Cell["A space group with eleven alternative settings:", "ExampleText",
+ CellID->397983414],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"Keys", "@", "$SpaceGroups"}], ")"}], "[", 
+  RowBox[{"[", "68", "]"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->411952839],
+
+Cell[BoxData["\<\"Ccce\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1945203551]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "@", 
+  RowBox[{"$SpaceGroups", "[", 
+   RowBox[{"[", 
+    RowBox[{"68", ",", "\"\<AlternativeSettings\>\""}], "]"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->92553963],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"OriginChoice2\"\>", 
+   ",", "\<\"OriginChoice1_AxisPermutationBA-C\"\>", 
+   ",", "\<\"OriginChoice2_AxisPermutationBA-C\"\>", 
+   ",", "\<\"OriginChoice1_AxisPermutationCAB\"\>", 
+   ",", "\<\"OriginChoice2_AxisPermutationCAB\"\>", 
+   ",", "\<\"OriginChoice1_AxisPermutation-CBA\"\>", 
+   ",", "\<\"OriginChoice2_AxisPermutation-CBA\"\>", 
+   ",", "\<\"OriginChoice1_AxisPermutationBCA\"\>", 
+   ",", "\<\"OriginChoice2_AxisPermutationBCA\"\>", 
+   ",", "\<\"OriginChoice1_AxisPermutationA-CB\"\>", 
+   ",", "\<\"OriginChoice2_AxisPermutationA-CB\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->151637296]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1383803550],
+
+Cell["\<\
+Which orthorhombic space groups have an alternative origin choice?\
+\>", "ExampleText",
+ CellID->338367840],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "@", 
+  RowBox[{"Select", "[", 
+   RowBox[{"$SpaceGroups", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", "\"\<CrystalSystem\>\"", "]"}], "\[Equal]", 
+       "\"\<Orthorhombic\>\""}], "&&", "\[IndentingNewLine]", 
+      RowBox[{"KeyExistsQ", "[", 
+       RowBox[{
+        RowBox[{"#", "[", "\"\<Setting\>\"", "]"}], ",", 
+        "\"\<CellOrigin\>\""}], "]"}]}], "&"}]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->832189817],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Pnnn\"\>", ",", "\<\"Pban\"\>", ",", "\<\"Pmmn\"\>", 
+   ",", "\<\"Ccce\"\>", ",", "\<\"Fddd\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->2038287946]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Tables and overview",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1862875170],
+
+Cell["Ranges for the seven crystal systems:", "ExampleText",
+ CellID->865226468],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"systems", "=", 
+  RowBox[{"DeleteDuplicates", "@", 
+   RowBox[{"Values", "@", 
+    RowBox[{"$SpaceGroups", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "\"\<CrystalSystem\>\""}], "]"}], 
+     "]"}]}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->275599407],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Triclinic\"\>", ",", "\<\"Monoclinic\"\>", 
+   ",", "\<\"Orthorhombic\"\>", ",", "\<\"Tetragonal\"\>", 
+   ",", "\<\"Trigonal\"\>", ",", "\<\"Hexagonal\"\>", ",", "\<\"Cubic\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->340407422]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"grouped", "=", 
+   RowBox[{"GroupBy", "[", 
+    RowBox[{"$SpaceGroups", ",", 
+     RowBox[{
+      RowBox[{"#", "[", "\"\<CrystalSystem\>\"", "]"}], "&"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->52293052],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"firstlast", "=", 
+  RowBox[{"Values", "@", 
+   RowBox[{"grouped", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{"-", "1"}]}], "}"}], ",", "\"\<SpaceGroupNumber\>\""}], "]"}],
+     "]"}]}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->310657702],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"P1\"\>", "\[Rule]", "1"}], ",", 
+     RowBox[{"\<\"P-1\"\>", "\[Rule]", "2"}]}], "\[RightAssociation]"}], ",", 
+   
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"P2\"\>", "\[Rule]", "3"}], ",", 
+     RowBox[{"\<\"C2/c\"\>", "\[Rule]", "15"}]}], "\[RightAssociation]"}], 
+   ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"P222\"\>", "\[Rule]", "16"}], ",", 
+     RowBox[{"\<\"Imma\"\>", "\[Rule]", "74"}]}], "\[RightAssociation]"}], 
+   ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"P4\"\>", "\[Rule]", "75"}], ",", 
+     RowBox[{"\<\"I41/acd\"\>", "\[Rule]", "142"}]}], "\[RightAssociation]"}],
+    ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"P3\"\>", "\[Rule]", "143"}], ",", 
+     RowBox[{"\<\"R-3c\"\>", "\[Rule]", "167"}]}], "\[RightAssociation]"}], 
+   ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"P6\"\>", "\[Rule]", "168"}], ",", 
+     RowBox[{"\<\"P63/mmc\"\>", "\[Rule]", "194"}]}], "\[RightAssociation]"}],
+    ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"P23\"\>", "\[Rule]", "195"}], ",", 
+     RowBox[{"\<\"Ia-3d\"\>", "\[Rule]", "230"}]}], "\[RightAssociation]"}]}],
+   "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1747060573]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fl", "=", 
+  RowBox[{"Values", "@", "firstlast"}]}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->2029678902],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"16", ",", "74"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"75", ",", "142"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"143", ",", "167"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"168", ",", "194"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"195", ",", "230"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->334802080]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "@", 
+  RowBox[{"Partition", "[", 
+   RowBox[{
+    RowBox[{"Flatten", "@", 
+     RowBox[{"Riffle", "[", 
+      RowBox[{"systems", ",", "fl"}], "]"}]}], ",", "3"}], "]"}]}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->1673537877],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Triclinic\"\>", "1", "2"},
+    {"\<\"Monoclinic\"\>", "3", "15"},
+    {"\<\"Orthorhombic\"\>", "16", "74"},
+    {"\<\"Tetragonal\"\>", "75", "142"},
+    {"\<\"Trigonal\"\>", "143", "167"},
+    {"\<\"Hexagonal\"\>", "168", "194"},
+    {"\<\"Cubic\"\>", "195", "230"}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellLabel->"Out[5]//TableForm=",
+ CellID->1138096089]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->90448182],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"KeyValueMap", "[", 
+     RowBox[{"List", ",", "\[IndentingNewLine]", 
+      RowBox[{"Keys", "/@", 
+       RowBox[{"GroupBy", "[", 
+        RowBox[{
+         RowBox[{"$SpaceGroups", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "\"\<CrystalSystem\>\""}], "]"}], "]"}], ",", 
+         RowBox[{"#", "&"}]}], "]"}]}]}], "]"}], "/.", 
+    RowBox[{"Normal", "@", 
+     RowBox[{"$SpaceGroups", "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "\"\<Name\>\"", ",", "\"\<Symbol\>\""}], "]"}], 
+      "]"}]}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->189380768],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Triclinic\"\>", 
+     RowBox[{"{", 
+      RowBox[{"\<\"P1\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\"\>"}], "}"}]},
+    {"\<\"Monoclinic\"\>", 
+     RowBox[{"{", 
+      RowBox[{"\<\"P2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"C2\"\>", ",", "\<\"Pm\"\>", ",", "\<\"Pc\"\>", 
+       ",", "\<\"Cm\"\>", ",", "\<\"Cc\"\>", ",", "\<\"P2/m\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)/m\"\>", 
+       ",", "\<\"C2/m\"\>", ",", "\<\"P2/c\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)/c\"\>", 
+       ",", "\<\"C2/c\"\>"}], "}"}]},
+    {"\<\"Orthorhombic\"\>", 
+     RowBox[{"{", 
+      RowBox[{"\<\"P222\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P222\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(C222\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"C222\"\>", ",", "\<\"F222\"\>", ",", "\<\"I222\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"Pmm2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(Pmc2\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"Pcc2\"\>", ",", "\<\"Pma2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(Pca2\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"Pnc2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(Pmn2\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"Pba2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(Pna2\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"Pnn2\"\>", ",", "\<\"Cmm2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(Cmc2\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"Ccc2\"\>", ",", "\<\"Amm2\"\>", ",", "\<\"Aem2\"\>", 
+       ",", "\<\"Ama2\"\>", ",", "\<\"Aea2\"\>", ",", "\<\"Fmm2\"\>", 
+       ",", "\<\"Fdd2\"\>", ",", "\<\"Imm2\"\>", ",", "\<\"Iba2\"\>", 
+       ",", "\<\"Ima2\"\>", ",", "\<\"Pmmm\"\>", ",", "\<\"Pnnn\"\>", 
+       ",", "\<\"Pccm\"\>", ",", "\<\"Pban\"\>", ",", "\<\"Pmma\"\>", 
+       ",", "\<\"Pnna\"\>", ",", "\<\"Pmna\"\>", ",", "\<\"Pcca\"\>", 
+       ",", "\<\"Pbam\"\>", ",", "\<\"Pccn\"\>", ",", "\<\"Pbcm\"\>", 
+       ",", "\<\"Pnnm\"\>", ",", "\<\"Pmmn\"\>", ",", "\<\"Pbcn\"\>", 
+       ",", "\<\"Pbca\"\>", ",", "\<\"Pnma\"\>", ",", "\<\"Cmcm\"\>", 
+       ",", "\<\"Cmce\"\>", ",", "\<\"Cmmm\"\>", ",", "\<\"Cccm\"\>", 
+       ",", "\<\"Cmme\"\>", ",", "\<\"Ccce\"\>", ",", "\<\"Fmmm\"\>", 
+       ",", "\<\"Fddd\"\>", ",", "\<\"Immm\"\>", ",", "\<\"Ibam\"\>", 
+       ",", "\<\"Ibca\"\>", ",", "\<\"Imma\"\>"}], "}"}]},
+    {"\<\"Tetragonal\"\>", 
+     RowBox[{"{", 
+      RowBox[{"\<\"P4\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(3\\)]\\)\"\>", 
+       ",", "\<\"I4\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"P4/m\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/m\"\>", 
+       ",", "\<\"P4/n\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/n\"\>", 
+       ",", "\<\"I4/m\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)/a\"\>", 
+       ",", "\<\"P422\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P42\\), \\(1\\)]\\)2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(1\\)]\\)22\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)22\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(3\\)]\\)22\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+       ",", "\<\"I422\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)22\"\>", 
+       ",", "\<\"P4mm\"\>", ",", "\<\"P4bm\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)cm\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)nm\"\>", 
+       ",", "\<\"P4cc\"\>", ",", "\<\"P4nc\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)mc\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)bc\"\>", 
+       ",", "\<\"I4mm\"\>", ",", "\<\"I4cm\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)md\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)cd\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)2m\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)2c\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)m\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)c\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)m2\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)c2\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)b2\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)n2\"\>", 
+       ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)m2\"\>", 
+       ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)c2\"\>", 
+       ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)2m\"\>", 
+       ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)2d\"\>", 
+       ",", "\<\"P4/mmm\"\>", ",", "\<\"P4/mcc\"\>", ",", "\<\"P4/nbm\"\>", 
+       ",", "\<\"P4/nnc\"\>", ",", "\<\"P4/mbm\"\>", ",", "\<\"P4/mnc\"\>", 
+       ",", "\<\"P4/nmm\"\>", ",", "\<\"P4/ncc\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/mmc\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/mcm\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/nbc\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/nnm\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/mbc\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/mnm\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/nmc\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/ncm\"\>", 
+       ",", "\<\"I4/mmm\"\>", ",", "\<\"I4/mcm\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)/amd\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)/acd\"\>"}], 
+      "}"}]},
+    {"\<\"Trigonal\"\>", 
+     RowBox[{"{", 
+      RowBox[{"\<\"P3\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(2\\)]\\)\"\>", 
+       ",", "\<\"R3\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"R\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"P312\"\>", ",", "\<\"P321\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)12\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)21\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(2\\)]\\)12\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(2\\)]\\)21\"\>", 
+       ",", "\<\"R32\"\>", ",", "\<\"P3m1\"\>", ",", "\<\"P31m\"\>", 
+       ",", "\<\"P3c1\"\>", ",", "\<\"P31c\"\>", ",", "\<\"R3m\"\>", 
+       ",", "\<\"R3c\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)1m\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)1c\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m1\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)c1\"\>", 
+       ",", "\<\"R\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+       ",", "\<\"R\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)c\"\>"}], 
+      "}"}]},
+    {"\<\"Hexagonal\"\>", 
+     RowBox[{"{", 
+      RowBox[{"\<\"P6\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(1\\)]\\)\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(5\\)]\\)\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(2\\)]\\)\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(4\\)]\\)\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"P6/m\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)/m\"\>", 
+       ",", "\<\"P622\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(1\\)]\\)22\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(5\\)]\\)22\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(2\\)]\\)22\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(4\\)]\\)22\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)22\"\>", 
+       ",", "\<\"P6mm\"\>", ",", "\<\"P6cc\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)cm\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)mc\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)m2\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)c2\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)2m\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)2c\"\>", 
+       ",", "\<\"P6/mmm\"\>", ",", "\<\"P6/mcc\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)/mcm\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)/mmc\"\>"}], 
+      "}"}]},
+    {"\<\"Cubic\"\>", 
+     RowBox[{"{", 
+      RowBox[{"\<\"P23\"\>", ",", "\<\"F23\"\>", ",", "\<\"I23\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)3\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I2\\), \\(1\\)]\\)3\"\>", 
+       ",", "\<\"Pm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"Pn\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"Im\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"Pa\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"Ia\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       ",", "\<\"P432\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)32\"\>", 
+       ",", "\<\"F432\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(F4\\), \\(1\\)]\\)32\"\>", 
+       ",", "\<\"I432\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(3\\)]\\)32\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(1\\)]\\)32\"\>", 
+       ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)32\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>", 
+       ",", "\<\"F\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>", 
+       ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>", 
+       ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3n\"\>", 
+       ",", "\<\"F\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3c\"\>", 
+       ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3d\"\>", 
+       ",", "\<\"Pm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+       ",", "\<\"Pn\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)n\"\>", 
+       ",", "\<\"Pm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)n\"\>", 
+       ",", "\<\"Pn\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+       ",", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+       ",", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)c\"\>", 
+       ",", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+       ",", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)c\"\>", 
+       ",", "\<\"Im\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+       ",", "\<\"Ia\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)d\"\>"}], 
+      "}"}]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1316639258]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1629414947],
+
+Cell["\<\
+Make a list of associations between a space group symbol and the symbols of \
+its alternative settings:\
+\>", "ExampleText",
+ CellID->865547685],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"alternatives", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{"Quiet", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"#", "\[Rule]", 
+          RowBox[{"Values", "@", 
+           RowBox[{"$SpaceGroups", "[", 
+            RowBox[{"[", 
+             RowBox[{
+             "#", ",", "\"\<AlternativeSettings\>\"", ",", "All", ",", 
+              "\"\<Name\>\"", ",", "\"\<Symbol\>\""}], "]"}], "]"}]}]}], 
+         "\[IndentingNewLine]", "}"}], "&"}], "/@", 
+       RowBox[{"Keys", "@", "$SpaceGroups"}]}], "]"}], "\[IndentingNewLine]", 
+     "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"_Values", "\[Rule]", 
+        RowBox[{"{", "}"}]}], ",", 
+       RowBox[{"Missing", "\[Rule]", "Nothing"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1498649998],
+
+Cell[TextData[{
+ "Browse through the list using ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Manipulate"]], "paclet:ref/Manipulate"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ":"
+}], "ExampleText",
+ CellID->882589291],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Row", "[", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"Spacer", "[", "35", "]"}], ",", 
+      RowBox[{"alternatives", "[", 
+       RowBox[{"[", "n", "]"}], "]"}]}], "}"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "230", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->441392051]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->728083931],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"$SpaceGroups", "::", "symbol"}], "=", 
+   "\"\<No data found on \[LeftGuillemet]`1`\[RightGuillemet].\>\""}], 
+  ";"}]], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->2127504271],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$SpaceGroups", ":=", 
+   RowBox[{"$SpaceGroups", "=", 
+    RowBox[{"Import", "[", 
+     RowBox[{
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+        "$MaXrdPath", ",", "\"\<Core\>\"", ",", "\"\<Data\>\"", ",", 
+         "\"\<SpaceGroups.m\>\""}], "}"}], "]"}], ",", "\"\<Package\>\""}], 
+     "]"}]}]}], ";"}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1361560147]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$PointGroups"]], "paclet:MaXrd/ref/$PointGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryData"]], "paclet:MaXrd/ref/GetSymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLaueClass"]], "paclet:MaXrd/ref/GetLaueClass"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ToStandardSetting"]], "paclet:MaXrd/ref/ToStandardSetting"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["UnitCellTransformation"]], 
+    "paclet:MaXrd/ref/UnitCellTransformation"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryOperations"]], 
+    "paclet:MaXrd/ref/GetSymmetryOperations"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1221721305],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Links"
+}], "RelatedLinksSection",
+ WholeCellGroupOpener->True,
+ CellID->1584193535],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "[1] T. Hahn, ",
+ StyleBox["Space-Group Symmetry",
+  FontSlant->"Italic"],
+ ", 5th ed., International Tables for Crystallography. Kluwer Academic \
+Publishers, 2002, volume A. Website: ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["http://it.iucr.org/A/"]], "http://it.iucr.org/A/"},
+   "WebLink",
+   BaseStyle->{"RelatedLinks"}]]],
+ "."
+}], "RelatedLinks",
+ CellID->1038487239],
+
+Cell[TextData[{
+ "[2] R.W. Grosse-Kunstleve, ",
+ StyleBox["cctbx - Multiple cell C or F and triple cell H settings",
+  FontSlant->"Italic"],
+ ", Oct. 2001. [Online]. ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["https://cci.lbl.gov/cctbx/multiple_cell.html"]], 
+    "https://cci.lbl.gov/cctbx/multiple_cell.html"},
+   "WebLink",
+   BaseStyle->{"RelatedLinks"}]]],
+ " (accessed 2017\[Dash]11\[Dash]28)."
+}], "RelatedLinks",
+ CellID->1636590303]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"$SpaceGroups",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 30.749421}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "$SpaceGroups is an association containing data on the 230 \
+crystallographic space groups.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "$SpaceGroups", "titlemodifier" -> "", "windowtitle" -> "$SpaceGroups", 
+    "type" -> "Symbol", "uri" -> "MaXrd/ref/$SpaceGroups", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[17372, 527, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"297708cc-cf7a-4e16-9e5b-afa978350b9a",
+   CellTags->"PrimaryExamplesSection",
+   CellID->872994401]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 83313, 2341}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[584, 21, 4315, 104, 70, "AnchorBarGrid",ExpressionUUID->"18eec7c9-5cd9-4265-8f75-2462ae1a7053",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4924, 129, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"15d6978a-d02f-47ab-af45-a803d70aa8b1"],
+Cell[5096, 137, 525, 16, 70, "Usage",ExpressionUUID->"aabc5bfc-c763-4307-9388-793a11641c64",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5658, 158, 629, 19, 70, "NotesSection",ExpressionUUID->"2bfa3530-241d-4bc8-9235-efa0ee2a959d",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->412503731],
+Cell[6290, 179, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"a73c240c-2c74-4316-9209-ffb695e5217f"],
+Cell[6324, 181, 683, 24, 70, "Notes",ExpressionUUID->"2aeccd75-49e2-4129-b476-5a495b20e7f7",
+ CellID->179929223],
+Cell[7010, 207, 672, 13, 70, "1ColumnTableMod",ExpressionUUID->"40f06db5-acd4-4d1b-8513-29bd8d8c0ad8",
+ CellID->514678747],
+Cell[7685, 222, 237, 5, 70, "Notes",ExpressionUUID->"47f0d54f-cf42-43c6-8a6c-572f5ff7c252",
+ CellID->140258260],
+Cell[7925, 229, 392, 16, 70, "1ColumnTableMod",ExpressionUUID->"e2fcface-2e4b-41fb-8bfb-24030466d64f",
+ CellID->679177210],
+Cell[8320, 247, 474, 14, 70, "Notes",ExpressionUUID->"16eec289-46f5-4805-90a1-b6486516228f",
+ CellID->218458520],
+Cell[8797, 263, 275, 9, 70, "Notes",ExpressionUUID->"2eed3abe-fd19-4fd2-921a-505414836682",
+ CellID->243190154],
+Cell[9075, 274, 239, 7, 70, "Notes",ExpressionUUID->"d4848d79-a3bc-405c-9e12-515ea568ef13",
+ CellID->1844769680],
+Cell[9317, 283, 590, 21, 70, "Notes",ExpressionUUID->"ef7ad0c4-a151-4716-975f-14d621cdbc31",
+ CellID->1360605513],
+Cell[9910, 306, 1784, 52, 70, "Notes",ExpressionUUID->"e50d1a64-a770-418b-a53f-7891264506f6",
+ CellID->1733277047],
+Cell[11697, 360, 276, 9, 70, "Notes",ExpressionUUID->"d8bc804c-a4f7-4636-904f-7d3db23ccd21",
+ CellID->1386224567],
+Cell[11976, 371, 4312, 109, 70, "3ColumnTableMod",ExpressionUUID->"b4ed9698-ed39-4496-9ebc-a708098be3d8",
+ CellID->1693595967],
+Cell[16291, 482, 544, 19, 70, "Notes",ExpressionUUID->"1b8c7afc-61c6-4ee5-90a5-692b190efcf9",
+ CellID->1920989807],
+Cell[16838, 503, 243, 9, 70, "Notes",ExpressionUUID->"e29ed9a7-2bbc-486f-b190-fe9c195f0015",
+ CellID->1980952874],
+Cell[17084, 514, 217, 6, 70, "Input",ExpressionUUID->"882eb7ea-eb04-43e3-bb8f-be4e17dcec75",
+ CellID->414830283],
+Cell[17304, 522, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"d711c063-9b1e-4572-938e-fde8ffa58b9e"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17372, 527, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"297708cc-cf7a-4e16-9e5b-afa978350b9a",
+ CellTags->"PrimaryExamplesSection",
+ CellID->872994401],
+Cell[CellGroupData[{
+Cell[17665, 541, 195, 6, 70, "ExampleSection",ExpressionUUID->"813a7fef-5135-4040-b843-288560aa0173",
+ CellID->808621303],
+Cell[17863, 549, 138, 4, 70, "ExampleText",ExpressionUUID->"13d6aa6e-0771-4afa-8590-b86fb13c49ce",
+ CellID->1050148055],
+Cell[CellGroupData[{
+Cell[18026, 557, 105, 3, 70, "Input",ExpressionUUID->"ccc3c279-ef63-4882-8720-023db276531a",
+ CellID->56068559],
+Cell[18134, 562, 5335, 80, 70, "Output",ExpressionUUID->"3ba55160-ddd8-45a5-a00d-e0b423ae6241",
+ CellID->1740913374]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23506, 647, 139, 4, 70, "Input",ExpressionUUID->"20d2c937-c2ba-42c2-8677-01413d6ef8be",
+ CellID->53774917],
+Cell[23648, 653, 83, 2, 70, "Output",ExpressionUUID->"735cb618-c28c-4880-822b-f1492bd617a6",
+ CellID->1878860032]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23768, 660, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"cb538fdb-0fff-4945-b56f-2febfc59b32a",
+ CellID->143090119],
+Cell[23896, 665, 69, 1, 70, "ExampleText",ExpressionUUID->"5cac4545-a7fc-47e7-ae70-707a2ec6fe45",
+ CellID->1881429040],
+Cell[CellGroupData[{
+Cell[23990, 670, 132, 4, 70, "Input",ExpressionUUID->"536b4888-3e9c-4eb8-a257-8b9aaeffab1d",
+ CellID->22039968],
+Cell[24125, 676, 6113, 161, 70, "Output",ExpressionUUID->"e6a5f43e-b5a4-4e04-b54b-c49457ee90fa",
+ CellID->1784751743]
+}, Open  ]],
+Cell[30253, 840, 844, 31, 70, "ExampleText",ExpressionUUID->"63a7ed89-84cc-4b17-8724-b5c8271e86fd",
+ CellID->1666356016],
+Cell[CellGroupData[{
+Cell[31122, 875, 170, 5, 70, "Input",ExpressionUUID->"e8952536-c0fd-4b59-9f13-61c14ce86ca6",
+ CellID->1033489258],
+Cell[31295, 882, 74, 2, 70, "Output",ExpressionUUID->"c0e0ff3b-e7c7-4955-a0e7-85038356e5b1",
+ CellID->1734441234]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31430, 891, 188, 6, 70, "ExampleSection",ExpressionUUID->"27b70960-6188-4ad7-9a73-4649749d9c5a",
+ CellID->1293636265],
+Cell[CellGroupData[{
+Cell[31643, 901, 201, 6, 70, "ExampleSubsection",ExpressionUUID->"f12dd667-528f-4430-9631-517cedeca1d4",
+ CellID->29022063],
+Cell[31847, 909, 65, 1, 70, "ExampleText",ExpressionUUID->"97d237ab-8b10-45ef-97d3-631ea37b7e9d",
+ CellID->1832563767],
+Cell[CellGroupData[{
+Cell[31937, 914, 115, 3, 70, "Input",ExpressionUUID->"e253c9a8-8ffe-417b-a76d-0d84068edd44",
+ CellID->162371106],
+Cell[32055, 919, 5576, 156, 70, "Output",ExpressionUUID->"3eaf1a1f-3c03-401a-9ea9-5f49be19aff2",
+ CellID->1054817576]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37668, 1080, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"d29e9c97-458e-426c-90de-d03c310c35a9",
+ CellID->131950682],
+Cell[37796, 1085, 92, 1, 70, "ExampleText",ExpressionUUID->"1dfdea16-bbe7-4cce-9176-e391964c0176",
+ CellID->1780359115],
+Cell[CellGroupData[{
+Cell[37913, 1090, 200, 6, 70, "Input",ExpressionUUID->"89092463-68f9-4e6f-8739-d30430283634",
+ CellID->319961904],
+Cell[38116, 1098, 444, 11, 70, "Output",ExpressionUUID->"0ffcfd29-df59-4f3a-8b4c-a0c912d1f829",
+ CellID->708112991]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38597, 1114, 270, 8, 70, "Input",ExpressionUUID->"1871f13d-009f-4631-a689-197cf9f9f605",
+ CellID->1738482346],
+Cell[38870, 1124, 275, 7, 70, "Output",ExpressionUUID->"00f5f65d-ffe3-4a50-b774-1214b1fe0873",
+ CellID->313518623]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39182, 1136, 216, 7, 70, "Input",ExpressionUUID->"da8101af-39ae-4622-a5ad-b756d26cf6b5",
+ CellID->697450758],
+Cell[39401, 1145, 72, 2, 70, "Output",ExpressionUUID->"bc8ca669-4782-4788-ad87-30bdf1aae8f1",
+ CellID->313657499]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39522, 1153, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"15c26ef5-89cd-4519-9c90-0b0f6adaab23",
+ CellID->1305698061],
+Cell[39651, 1158, 71, 1, 70, "ExampleText",ExpressionUUID->"88bc77aa-b960-406a-8cd8-bf02b4ba45ff",
+ CellID->835118897],
+Cell[CellGroupData[{
+Cell[39747, 1163, 455, 13, 70, "Input",ExpressionUUID->"1083b310-a1ab-4ed1-846b-44a14206464d",
+ CellID->512917380],
+Cell[40205, 1178, 3595, 66, 70, "Output",ExpressionUUID->"f128c89b-ff6b-4547-a510-2e166a3cb193",
+ CellID->709805521]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43849, 1250, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"8fe0e658-391a-4d63-9040-42b201328cd0",
+ CellID->848827274],
+Cell[43977, 1255, 71, 1, 70, "ExampleText",ExpressionUUID->"5bca6a6e-7084-4fba-a210-284e6708875d",
+ CellID->506127097],
+Cell[CellGroupData[{
+Cell[44073, 1260, 321, 10, 70, "Input",ExpressionUUID->"b15bcd8d-bae1-41d6-a0a6-5ea36bf2ffe4",
+ CellID->1679774227],
+Cell[44397, 1272, 1686, 26, 70, "Output",ExpressionUUID->"42cc7610-8170-4846-80aa-74a9fe1d37e1",
+ CellID->707265679]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[46144, 1305, 208, 6, 70, "ExampleSubsection",ExpressionUUID->"265d45fe-d589-468e-920b-ffff0b11932b",
+ CellID->2033786758],
+Cell[46355, 1313, 93, 1, 70, "ExampleText",ExpressionUUID->"4356fcea-f5ad-4a31-81ef-66ff0c299cdd",
+ CellID->830594517],
+Cell[CellGroupData[{
+Cell[46473, 1318, 280, 9, 70, "Input",ExpressionUUID->"95d053b4-f12d-4e43-8f36-4010d0ec8f8f",
+ CellID->246361665],
+Cell[46756, 1329, 3851, 59, 70, "Output",ExpressionUUID->"d561ce2e-8472-4bfb-b42a-6a196ea79534",
+ CellID->1270503589]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50644, 1393, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"e394656e-2cdf-4ad6-8b96-108a335bc932",
+ CellID->864565128],
+Cell[50772, 1398, 183, 4, 70, "ExampleText",ExpressionUUID->"776a785a-08ea-44ca-ba09-d7ddfabc2a9e",
+ CellID->424536980],
+Cell[CellGroupData[{
+Cell[50980, 1406, 403, 13, 70, "Input",ExpressionUUID->"71af6779-fcfa-4963-ab5c-45d18b594ed4",
+ CellID->849447227],
+Cell[51386, 1421, 73, 2, 70, "Output",ExpressionUUID->"bb1171e7-1bb5-45c8-9e3c-40fd6d3ed914",
+ CellID->159683704]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51508, 1429, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"6d950bab-19f2-4b79-8076-9e363d674777",
+ CellID->1573447490],
+Cell[51637, 1434, 227, 7, 70, "ExampleText",ExpressionUUID->"aeba88d2-2a23-447a-a4b3-393c7f63bd1b",
+ CellID->871750694],
+Cell[CellGroupData[{
+Cell[51889, 1445, 205, 6, 70, "Input",ExpressionUUID->"9bd25548-5f4f-4fe4-b753-dbe3fb065e5f",
+ CellID->16878047],
+Cell[52097, 1453, 87, 2, 70, "Output",ExpressionUUID->"542188fb-b9a7-4b91-afb7-898939fe48b5",
+ CellID->1927786677]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52221, 1460, 356, 10, 70, "Input",ExpressionUUID->"c157c9bf-d04a-4858-a30e-d3400781cc8e",
+ CellID->1979961598],
+Cell[52580, 1472, 929, 28, 70, "Output",ExpressionUUID->"2e270394-fdf0-4927-875f-6644113bde27",
+ CellID->424938590]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53558, 1506, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"26b86d57-6517-4bd0-83c2-246bb8836d27",
+ CellID->413753200],
+Cell[53686, 1511, 90, 1, 70, "ExampleText",ExpressionUUID->"02624778-13b9-4a33-b384-18e05c3c4f23",
+ CellID->397983414],
+Cell[CellGroupData[{
+Cell[53801, 1516, 182, 6, 70, "Input",ExpressionUUID->"29b01247-f7c2-4c04-a49e-0f8d782abb7d",
+ CellID->411952839],
+Cell[53986, 1524, 83, 2, 70, "Output",ExpressionUUID->"1657900a-a74d-478b-a800-efae0949c02d",
+ CellID->1945203551]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54106, 1531, 213, 7, 70, "Input",ExpressionUUID->"bb5140ef-b2cf-47a8-86ec-3ddada04400f",
+ CellID->92553963],
+Cell[54322, 1540, 662, 14, 70, "Output",ExpressionUUID->"c180b06c-c986-4029-8992-b746f0006b51",
+ CellID->151637296]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55033, 1560, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"45739421-2f5a-4aed-ab95-674b611c36a3",
+ CellID->1383803550],
+Cell[55162, 1565, 117, 3, 70, "ExampleText",ExpressionUUID->"ae6e9b68-eec4-4ba2-9589-606b6098b4dc",
+ CellID->338367840],
+Cell[CellGroupData[{
+Cell[55304, 1572, 490, 14, 70, "Input",ExpressionUUID->"5656bb90-573a-4f8a-b665-2767e3b55800",
+ CellID->832189817],
+Cell[55797, 1588, 206, 5, 70, "Output",ExpressionUUID->"2a4fa0e2-022e-487f-bf63-d9a7f9fb2aa0",
+ CellID->2038287946]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[56064, 1600, 207, 6, 70, "ExampleSubsection",ExpressionUUID->"7a12793a-ff25-43d3-a4c9-9dfbc24752c3",
+ CellID->1862875170],
+Cell[56274, 1608, 80, 1, 70, "ExampleText",ExpressionUUID->"56bcda00-5aa9-4731-8592-c4b8509fc4af",
+ CellID->865226468],
+Cell[CellGroupData[{
+Cell[56379, 1613, 287, 9, 70, "Input",ExpressionUUID->"5b21a725-d107-49f9-a4ed-cd0bb90870b7",
+ CellID->275599407],
+Cell[56669, 1624, 289, 7, 70, "Output",ExpressionUUID->"a1adcef1-ebc0-4535-98b5-9fc9a6e069bd",
+ CellID->340407422]
+}, Open  ]],
+Cell[56973, 1634, 262, 9, 70, "Input",ExpressionUUID->"9748a7ef-fad5-421a-9493-d62bae2c02f0",
+ CellID->52293052],
+Cell[CellGroupData[{
+Cell[57260, 1647, 333, 11, 70, "Input",ExpressionUUID->"3bf666f7-3dfe-4006-9f0b-2b9b8864487a",
+ CellID->310657702],
+Cell[57596, 1660, 1397, 39, 70, "Output",ExpressionUUID->"00b0e4fa-04ed-4ca7-ba0a-61013d51c9b5",
+ CellID->1747060573]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59030, 1704, 130, 4, 70, "Input",ExpressionUUID->"f2fad1be-b7ae-4a73-ae9d-1fbd2c28b356",
+ CellID->2029678902],
+Cell[59163, 1710, 527, 18, 70, "Output",ExpressionUUID->"e924ce31-3e31-4639-a078-154c5477f67e",
+ CellID->334802080]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59727, 1733, 262, 8, 70, "Input",ExpressionUUID->"e45db804-d856-474b-86c2-d2a7c9ec9740",
+ CellID->1673537877],
+Cell[59992, 1743, 733, 21, 70, "Output",ExpressionUUID->"9e2de375-b180-4dbc-9360-4a1f6036bed0",
+ CellID->1138096089]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60762, 1769, 124, 3, 70, "ExampleDelimiter",ExpressionUUID->"57d09838-1c03-4079-b238-bb24f5b4d2e1",
+ CellID->90448182],
+Cell[CellGroupData[{
+Cell[60911, 1776, 724, 20, 70, "Input",ExpressionUUID->"21b1808d-3cc0-49c8-bddf-68f42a4302ad",
+ CellID->189380768],
+Cell[61638, 1798, 12438, 214, 70, "Output",ExpressionUUID->"241fa000-3a5c-4e20-b74e-12f8b475c43a",
+ CellID->1316639258]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74125, 2018, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"a687e8de-c352-4b44-8b36-c352828194a9",
+ CellID->1629414947],
+Cell[74254, 2023, 154, 4, 70, "ExampleText",ExpressionUUID->"e1c2695e-c797-4f7b-b36f-e0139c480f3b",
+ CellID->865547685],
+Cell[74411, 2029, 889, 26, 70, "Input",ExpressionUUID->"1ffc5aee-72b5-4db3-a627-a7d4a3c0a817",
+ CellID->1498649998],
+Cell[75303, 2057, 258, 10, 70, "ExampleText",ExpressionUUID->"2115194b-a934-4181-8c67-5e724028048a",
+ CellID->882589291],
+Cell[75564, 2069, 401, 12, 70, "Input",ExpressionUUID->"ebccd7a6-ded8-4785-a96b-42a01dca9e87",
+ CellID->441392051]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[76026, 2088, 235, 8, 70, "ExampleSection",ExpressionUUID->"2bce1f8d-eda6-439c-8e32-f60730fb0464",
+ CellID->728083931],
+Cell[76264, 2098, 248, 8, 70, "Input",ExpressionUUID->"b2e3f49e-5ee6-47c1-8d8b-4a9ecf7afbca",
+ InitializationCell->False,
+ CellID->2127504271],
+Cell[76515, 2108, 498, 15, 70, "Input",ExpressionUUID->"5fba2fe1-7c38-4934-a075-375416cd93e8",
+ InitializationCell->False,
+ CellID->1361560147]
+}, Closed]],
+Cell[77028, 2126, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"72b3a552-58a6-4db2-a8f1-cb0d0c63494f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77096, 2131, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"a16a5af0-08e1-4f59-afdf-97d9412b8a83",
+ CellID->1255426704],
+Cell[77249, 2140, 2548, 80, 70, "SeeAlso",ExpressionUUID->"e8daa3ad-4d7e-4cc0-bbd5-610b4551eb33",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79834, 2225, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"855752b3-a7ca-4cf0-be4b-66ae18dc1b9c",
+ CellID->38303248],
+Cell[79993, 2234, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"5cb781a6-4488-4d41-a60b-0fc34409eefc"],
+Cell[80027, 2236, 208, 7, 70, "MoreAbout",ExpressionUUID->"e6e03d60-7af2-4339-9e11-5de5f4487038",
+ CellID->1221721305],
+Cell[80238, 2245, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"c476786e-00ed-4c1d-b048-8c15f6b94f88"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[80306, 2250, 160, 7, 70, "RelatedLinksSection",ExpressionUUID->"dc716992-d672-460b-b135-0d6be0ef4fef",
+ CellID->1584193535],
+Cell[80469, 2259, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"82e54f6b-8e8d-4620-aae0-f0f55817f8ca"],
+Cell[80503, 2261, 407, 14, 70, "RelatedLinks",ExpressionUUID->"79cb9bb6-667d-47f9-97e0-ec56742f043e",
+ CellID->1038487239],
+Cell[80913, 2277, 456, 14, 70, "RelatedLinks",ExpressionUUID->"2d3e0394-0335-4ea7-9555-db89bf6e6b66",
+ CellID->1636590303]
+}, Open  ]],
+Cell[81384, 2294, 23, 0, 70, "FooterCell",ExpressionUUID->"761eceb3-6882-4cfc-96fc-c0e1e89ecaff"]
+}
+]
+*)
+
+(* End of internal cache information *)

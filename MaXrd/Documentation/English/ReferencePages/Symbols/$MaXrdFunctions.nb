@@ -1,0 +1,845 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28555,        836]
+NotebookOptionsPosition[     22159,        693]
+NotebookOutlinePosition[     24351,        750]
+CellTagsIndexPosition[     24266,        745]
+WindowTitle->$MaXrdFunctions
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"RelatedFunctionsGraph\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/RelatedFunctionsGraph"], "\<\"$GroupSymbolRedirect\"\
+\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$GroupSymbolRedirect"], "\<\"$MaXrdChangelog\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdChangelog"], "\<\"$MaXrdPath\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdPath"], "\<\"$MaXrdVersion\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdVersion"], "\<\"InputCheck\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/InputCheck"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/$MaXrdFunctions\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/$MaXrdFunctions"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/$\
+MaXrdFunctions.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$46141], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/$MaXrdFunctions", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["$MaXrdFunctions", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$MaXrdFunctions"]], "paclet:MaXrd/ref/$MaXrdFunctions"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " \[LineSeparator]returns a list of all functions associated with the ",
+     Cell[BoxData["MaXrd`"], "InlineFormula"],
+     " context."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1470193501],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["All functions are hyperlinks.", "Notes",
+ CellID->1067943069],
+
+Cell["The functions are displayed in three columns.", "Notes",
+ CellID->1029908884],
+
+Cell[TextData[{
+ "A similar output can be generated with: ",
+ Cell[BoxData[
+  RowBox[{"?", "MaXrd`*"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->991971785],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->595328925],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->566931102],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$MaXrdFunctions"], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1367015491],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{
+      "\"AttenuationCoefficient\"", 
+       "paclet:/MaXrd/Ref/AttenuationCoefficient"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"MillerNotationToString\"", 
+       "paclet:/MaXrd/Ref/MillerNotationToString"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"BraggAngle\"", "paclet:/MaXrd/Ref/BraggAngle"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"ReciprocalSpaceSimulation\"", 
+       "paclet:/MaXrd/Ref/ReciprocalSpaceSimulation"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"ConstructDomains\"", "paclet:/MaXrd/Ref/ConstructDomains"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"ReflectionList\"", "paclet:/MaXrd/Ref/ReflectionList"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"CrystalDensity\"", "paclet:/MaXrd/Ref/CrystalDensity"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"RelatedFunctionsGraph\"", "paclet:/MaXrd/Ref/RelatedFunctionsGraph"},
+      
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"CrystalFormulaUnits\"", "paclet:/MaXrd/Ref/CrystalFormulaUnits"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"ResetCrystalData\"", "paclet:/MaXrd/Ref/ResetCrystalData"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"CrystalPlot\"", "paclet:/MaXrd/Ref/CrystalPlot"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"SimulateDiffractionPattern\"", 
+       "paclet:/MaXrd/Ref/SimulateDiffractionPattern"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"DarwinWidth\"", "paclet:/MaXrd/Ref/DarwinWidth"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"StructureFactor\"", "paclet:/MaXrd/Ref/StructureFactor"},
+      
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"DistortStructure\"", "paclet:/MaXrd/Ref/DistortStructure"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"StructureFactorTable\"", "paclet:/MaXrd/Ref/StructureFactorTable"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"DomainPlot\"", "paclet:/MaXrd/Ref/DomainPlot"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"SymmetryEquivalentPositions\"", 
+       "paclet:/MaXrd/Ref/SymmetryEquivalentPositions"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"EmbedStructure\"", "paclet:/MaXrd/Ref/EmbedStructure"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"SymmetryEquivalentReflections\"", 
+       "paclet:/MaXrd/Ref/SymmetryEquivalentReflections"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"EquivalentIsotropicADP\"", 
+       "paclet:/MaXrd/Ref/EquivalentIsotropicADP"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"SymmetryEquivalentReflectionsQ\"", 
+       "paclet:/MaXrd/Ref/SymmetryEquivalentReflectionsQ"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"ExpandCrystal\"", "paclet:/MaXrd/Ref/ExpandCrystal"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"SynthesiseStructure\"", "paclet:/MaXrd/Ref/SynthesiseStructure"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"ExportCrystalData\"", "paclet:/MaXrd/Ref/ExportCrystalData"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"SystematicAbsentQ\"", "paclet:/MaXrd/Ref/SystematicAbsentQ"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"ExtinctionLength\"", "paclet:/MaXrd/Ref/ExtinctionLength"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"ToStandardSetting\"", "paclet:/MaXrd/Ref/ToStandardSetting"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"GetAtomicScatteringFactors\"", 
+       "paclet:/MaXrd/Ref/GetAtomicScatteringFactors"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"UnitCellTransformation\"", 
+       "paclet:/MaXrd/Ref/UnitCellTransformation"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"GetCrystalMetric\"", "paclet:/MaXrd/Ref/GetCrystalMetric"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"$CrystalData\"", "paclet:/MaXrd/Ref/$CrystalData"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"GetElements\"", "paclet:/MaXrd/Ref/GetElements"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"$GroupSymbolRedirect\"", "paclet:/MaXrd/Ref/$GroupSymbolRedirect"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"GetLatticeParameters\"", "paclet:/MaXrd/Ref/GetLatticeParameters"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"$LaueClasses\"", "paclet:/MaXrd/Ref/$LaueClasses"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"GetLaueClass\"", "paclet:/MaXrd/Ref/GetLaueClass"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"$MaXrdChangelog\"", "paclet:/MaXrd/Ref/$MaXrdChangelog"},
+      
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"GetScatteringCrossSections\"", 
+       "paclet:/MaXrd/Ref/GetScatteringCrossSections"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"$MaXrdFunctions\"", "paclet:/MaXrd/Ref/$MaXrdFunctions"},
+      
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"GetSymmetryData\"", "paclet:/MaXrd/Ref/GetSymmetryData"},
+      
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"$MaXrdPath\"", "paclet:/MaXrd/Ref/$MaXrdPath"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"GetSymmetryOperations\"", "paclet:/MaXrd/Ref/GetSymmetryOperations"},
+      
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"$MaXrdVersion\"", "paclet:/MaXrd/Ref/$MaXrdVersion"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"ImportCrystalData\"", "paclet:/MaXrd/Ref/ImportCrystalData"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"$PeriodicTable\"", "paclet:/MaXrd/Ref/$PeriodicTable"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{"\"InputCheck\"", "paclet:/MaXrd/Ref/InputCheck"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"$PointGroups\"", "paclet:/MaXrd/Ref/$PointGroups"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"InterplanarSpacing\"", "paclet:/MaXrd/Ref/InterplanarSpacing"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{"\"$SpaceGroups\"", "paclet:/MaXrd/Ref/$SpaceGroups"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"MergeSymmetryEquivalentReflections\"", 
+       "paclet:/MaXrd/Ref/MergeSymmetryEquivalentReflections"},
+      "HyperlinkPaclet"], 
+     TemplateBox[{
+      "\"$TransformationMatrices\"", 
+       "paclet:/MaXrd/Ref/$TransformationMatrices"},
+      "HyperlinkPaclet"]},
+    {
+     TemplateBox[{
+      "\"MillerNotationToList\"", "paclet:/MaXrd/Ref/MillerNotationToList"},
+      "HyperlinkPaclet"], ""}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->207315739]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Count", "[", 
+  RowBox[{
+   RowBox[{"Flatten", "@", 
+    RowBox[{"First", "@", "$MaXrdFunctions"}]}], ",", "_Hyperlink"}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->115545125],
+
+Cell[BoxData["53"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1638951822]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell["\<\
+A list of all the functions as strings may be extracted as follows:\
+\>", "ExampleText",
+ CellID->1623009592],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"functions", "=", 
+  RowBox[{"Sort", "@", 
+   RowBox[{
+    RowBox[{"Cases", "[", 
+     RowBox[{
+      RowBox[{"Flatten", "@", 
+       RowBox[{
+       "$MaXrdFunctions", "\[LeftDoubleBracket]", "1", 
+        "\[RightDoubleBracket]"}]}], ",", "_Hyperlink"}], "]"}], 
+    "\[LeftDoubleBracket]", 
+    RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1366236827],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"AttenuationCoefficient\"\>", ",", "\<\"BraggAngle\"\>", 
+   ",", "\<\"ConstructDomains\"\>", ",", "\<\"CrystalDensity\"\>", 
+   ",", "\<\"CrystalFormulaUnits\"\>", ",", "\<\"CrystalPlot\"\>", 
+   ",", "\<\"DarwinWidth\"\>", ",", "\<\"DistortStructure\"\>", 
+   ",", "\<\"DomainPlot\"\>", ",", "\<\"EmbedStructure\"\>", 
+   ",", "\<\"EquivalentIsotropicADP\"\>", ",", "\<\"ExpandCrystal\"\>", 
+   ",", "\<\"ExportCrystalData\"\>", ",", "\<\"ExtinctionLength\"\>", 
+   ",", "\<\"GetAtomicScatteringFactors\"\>", ",", "\<\"GetCrystalMetric\"\>",
+    ",", "\<\"GetElements\"\>", ",", "\<\"GetLatticeParameters\"\>", 
+   ",", "\<\"GetLaueClass\"\>", ",", "\<\"GetScatteringCrossSections\"\>", 
+   ",", "\<\"GetSymmetryData\"\>", ",", "\<\"GetSymmetryOperations\"\>", 
+   ",", "\<\"ImportCrystalData\"\>", ",", "\<\"InputCheck\"\>", 
+   ",", "\<\"InterplanarSpacing\"\>", 
+   ",", "\<\"MergeSymmetryEquivalentReflections\"\>", 
+   ",", "\<\"MillerNotationToList\"\>", ",", "\<\"MillerNotationToString\"\>",
+    ",", "\<\"ReciprocalSpaceSimulation\"\>", ",", "\<\"ReflectionList\"\>", 
+   ",", "\<\"RelatedFunctionsGraph\"\>", ",", "\<\"ResetCrystalData\"\>", 
+   ",", "\<\"SimulateDiffractionPattern\"\>", ",", "\<\"StructureFactor\"\>", 
+   ",", "\<\"StructureFactorTable\"\>", 
+   ",", "\<\"SymmetryEquivalentPositions\"\>", 
+   ",", "\<\"SymmetryEquivalentReflections\"\>", 
+   ",", "\<\"SymmetryEquivalentReflectionsQ\"\>", 
+   ",", "\<\"SynthesiseStructure\"\>", ",", "\<\"SystematicAbsentQ\"\>", 
+   ",", "\<\"ToStandardSetting\"\>", ",", "\<\"UnitCellTransformation\"\>", 
+   ",", "\<\"$CrystalData\"\>", ",", "\<\"$GroupSymbolRedirect\"\>", 
+   ",", "\<\"$LaueClasses\"\>", ",", "\<\"$MaXrdChangelog\"\>", 
+   ",", "\<\"$MaXrdFunctions\"\>", ",", "\<\"$MaXrdPath\"\>", 
+   ",", "\<\"$MaXrdVersion\"\>", ",", "\<\"$PeriodicTable\"\>", 
+   ",", "\<\"$PointGroups\"\>", ",", "\<\"$SpaceGroups\"\>", 
+   ",", "\<\"$TransformationMatrices\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->984795862]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "@", "functions"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1766318117],
+
+Cell[BoxData["53"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1294600808]
+}, Open  ]],
+
+Cell["Alternative way of obtaining the same list:", "ExampleText",
+ CellID->484643425],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"functions", "===", 
+  RowBox[{"Names", "[", "\"\<MaXrd`*\>\"", "]"}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->448338129],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1380381764]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->133803840],
+
+Cell[BoxData[
+ RowBox[{"$MaXrdFunctions", ":=", 
+  RowBox[{"$MaXrdFunctions", "=", "\[IndentingNewLine]", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "subContexts", ",", "packagefunctions", ",", "packagef", ",", 
+       "hyperlinks"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"subContexts", "=", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Contexts", "[", "\"\<MaXrd`*\>\"", "]"}], ",", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"StringContainsQ", "[", 
+            RowBox[{"#", ",", "\"\<Private\>\""}], "]"}]}], "&"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"packagefunctions", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"#", "\[Rule]", 
+          RowBox[{"Names", "[", 
+           RowBox[{"#", "<>", "\"\<*\>\""}], "]"}]}], "&"}], "/@", 
+        "subContexts"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"packagef", "=", 
+       RowBox[{"Sort", "@", 
+        RowBox[{"Flatten", "@", 
+         RowBox[{"packagefunctions", "\[LeftDoubleBracket]", 
+          RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}]}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"hyperlinks", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Hyperlink", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{"\"\<paclet:/MaXrd/Ref/\>\"", "<>", "#"}]}], "]"}], "&"}], 
+        "/@", "packagef"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Multicolumn", "[", 
+       RowBox[{"hyperlinks", ",", "2"}], "]"}]}]}], "\[IndentingNewLine]", 
+    "]"}]}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[1]:=",
+ CellID->1495756646]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["RelatedFunctionsGraph"]], 
+    "paclet:MaXrd/ref/RelatedFunctionsGraph"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$GroupSymbolRedirect"]], 
+    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdChangelog"]], "paclet:MaXrd/ref/$MaXrdChangelog"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdPath"]], "paclet:MaXrd/ref/$MaXrdPath"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdVersion"]], "paclet:MaXrd/ref/$MaXrdVersion"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->26089575]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"$MaXrdFunctions",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 11.847509}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "$MaXrdFunctions returns a list of all functions associated with the \
+MaXrd` context.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "$MaXrdFunctions", "titlemodifier" -> "", "windowtitle" -> 
+    "$MaXrdFunctions", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/$MaXrdFunctions", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6506, 195, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"0cf37b5c-1524-464e-8f6d-76fe1bf76365",
+   CellTags->"PrimaryExamplesSection",
+   CellID->595328925]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 24068, 738}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 4106, 100, 70, "AnchorBarGrid",ExpressionUUID->"3f6ad856-8ee1-48c0-87d9-059a0337f9a4",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4718, 125, 172, 6, 70, "ObjectNameGrid",ExpressionUUID->"10afb568-b050-4e10-b4f2-c4a5c762a32a"],
+Cell[4893, 133, 522, 15, 70, "Usage",ExpressionUUID->"835d6025-3878-4877-b40f-3f79bb35f96a",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5452, 153, 630, 19, 70, "NotesSection",ExpressionUUID->"bc6a9451-e5b1-482a-a2a1-7d80cdbc6803",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1470193501],
+Cell[6085, 174, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"4f11bd56-c80d-480d-8ea1-4f2567a2a826"],
+Cell[6119, 176, 67, 1, 70, "Notes",ExpressionUUID->"d68a124b-91cb-44bf-ad87-2e81fe52182f",
+ CellID->1067943069],
+Cell[6189, 179, 83, 1, 70, "Notes",ExpressionUUID->"b2a3c8ae-6401-4ba9-a786-54bb9737bea4",
+ CellID->1029908884],
+Cell[6275, 182, 160, 6, 70, "Notes",ExpressionUUID->"69f3e843-3931-47d1-8936-6fae6ac9fc90",
+ CellID->991971785],
+Cell[6438, 190, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"acaed64d-1604-48b7-a994-4c5f76616619"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6506, 195, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"0cf37b5c-1524-464e-8f6d-76fe1bf76365",
+ CellTags->"PrimaryExamplesSection",
+ CellID->595328925],
+Cell[CellGroupData[{
+Cell[6798, 209, 195, 6, 70, "ExampleSection",ExpressionUUID->"898551ee-394f-4d0b-818d-65a1adbd1772",
+ CellID->566931102],
+Cell[CellGroupData[{
+Cell[7018, 219, 85, 2, 70, "Input",ExpressionUUID->"4bd58f27-386a-4960-8c7f-aa623dbc5d79",
+ CellID->1367015491],
+Cell[7106, 223, 6696, 191, 70, "Output",ExpressionUUID->"857d1b81-1a10-4cdc-bf60-3d5c9fc2ba65",
+ CellID->207315739]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13839, 419, 209, 7, 70, "Input",ExpressionUUID->"2420bc68-7323-4dee-9146-646f40496374",
+ CellID->115545125],
+Cell[14051, 428, 73, 2, 70, "Output",ExpressionUUID->"61791c61-6cc8-4c59-90d4-23fd0337ba84",
+ CellID->1638951822]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14173, 436, 187, 6, 70, "ExampleSection",ExpressionUUID->"268cbc00-1c54-45d2-bb7f-6b83dfd2d180",
+ CellID->1293636265],
+Cell[14363, 444, 119, 3, 70, "ExampleText",ExpressionUUID->"cc60d7c2-afe7-4126-b35f-5f8f2d327a78",
+ CellID->1623009592],
+Cell[CellGroupData[{
+Cell[14507, 451, 432, 13, 70, "Input",ExpressionUUID->"20284c4f-1be5-41b7-896c-19abd29e1568",
+ CellID->1366236827],
+Cell[14942, 466, 2048, 33, 70, "Output",ExpressionUUID->"81fc81b7-0082-4964-8b19-f46465ee6f90",
+ CellID->984795862]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17027, 504, 106, 3, 70, "Input",ExpressionUUID->"877abb17-ae47-40c2-8136-38ad2ce7a1ff",
+ CellID->1766318117],
+Cell[17136, 509, 73, 2, 70, "Output",ExpressionUUID->"75a0b434-7f53-4428-aa1f-66926c292f94",
+ CellID->1294600808]
+}, Open  ]],
+Cell[17224, 514, 86, 1, 70, "ExampleText",ExpressionUUID->"59edb13b-122e-4332-bf7f-4d1783f2a908",
+ CellID->484643425],
+Cell[CellGroupData[{
+Cell[17335, 519, 148, 4, 70, "Input",ExpressionUUID->"a60a52b2-44c9-4767-98b2-f6994273d8ad",
+ CellID->448338129],
+Cell[17486, 525, 75, 2, 70, "Output",ExpressionUUID->"f827764a-24a0-4281-b075-db866294d017",
+ CellID->1380381764]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17610, 533, 235, 8, 70, "ExampleSection",ExpressionUUID->"899dfaf2-bb81-4e41-9283-fd35a4f12a54",
+ CellID->133803840],
+Cell[17848, 543, 1715, 45, 70, "Input",ExpressionUUID->"bf8acf6e-107d-463e-bdcc-8b70ed9bb1ff",
+ InitializationCell->False,
+ CellID->1495756646]
+}, Closed]],
+Cell[19578, 591, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"802f1f87-448e-4d1f-b058-6189ff7a2e1b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19646, 596, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"280d9058-0251-4601-bb66-a9306f040dcd",
+ CellID->1255426704],
+Cell[19799, 605, 1882, 60, 70, "SeeAlso",ExpressionUUID->"18e7c48a-6078-4cc3-b555-e8b8027cc311",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21718, 670, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"75112349-8458-40dc-b383-fe6c381301af",
+ CellID->38303248],
+Cell[21877, 679, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"bce7a6ff-733a-44df-8741-41e4e56a6ade"],
+Cell[21911, 681, 206, 7, 70, "MoreAbout",ExpressionUUID->"b2933ed3-c92b-4947-9bfd-c30e5cf295af",
+ CellID->26089575]
+}, Open  ]],
+Cell[22132, 691, 23, 0, 70, "FooterCell",ExpressionUUID->"babe25a7-e47e-4f2f-8d85-d94bc62fa931"]
+}
+]
+*)
+
+(* End of internal cache information *)

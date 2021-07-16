@@ -1,0 +1,1428 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     49546,       1419]
+NotebookOptionsPosition[     40097,       1212]
+NotebookOutlinePosition[     42303,       1270]
+CellTagsIndexPosition[     42217,       1265]
+WindowTitle->$CrystalData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"$PeriodicTable\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$PeriodicTable"], "\<\"$TransformationMatrices\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$TransformationMatrices"], \
+"\<\"ImportCrystalData\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ImportCrystalData"], "\<\"ResetCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ResetCrystalData"], "\<\"CrystalPlot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/CrystalPlot"], "\<\"GetCrystalMetric\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetCrystalMetric"], "\<\"CrystalDensity\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/CrystalDensity"], "\<\"ExportCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ExportCrystalData"], "\<\"GetAtomicScatteringFactors\
+\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetAtomicScatteringFactors"], "\<\"StructureFactor\"\
+\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/StructureFactor"], "\<\"StructureFactorTable\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/StructureFactorTable"], "\<\"ExtinctionLength\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ExtinctionLength"], "\<\"GetLaueClass\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetLaueClass"], "\<\"GetLatticeParameters\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/GetLatticeParameters"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/$CrystalData\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/$CrystalData"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/$CrystalData.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$43360], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/$CrystalData", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["$CrystalData", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " \[LineSeparator]is an association containing data on crystals or \
+compounds for calculation purposes."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->581959814],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Keys"]], "paclet:ref/Keys"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " of ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " are strings labelling the crystal, compound or experiment. The ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Values"]], "paclet:ref/Values"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " are themselves associations organised in the following structure (items in \
+bold are required):"
+}], "Notes",
+ CellID->179929223],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], Cell[TextData[{
+     "Chemical formula (in string format)\nWavelength\nNumber of formula \
+units per unit cell\n",
+     StyleBox["Space group",
+      FontWeight->"Bold"],
+     "\n",
+     StyleBox["Lattice parameters",
+      FontWeight->"Bold"],
+     "\n",
+     StyleBox["Atom data",
+      FontWeight->"Bold"],
+     " (list)\n\t",
+     StyleBox["Element",
+      FontWeight->"Bold"],
+     "\n\tOccupation factor\n\t",
+     StyleBox["Fractional coordinates",
+      FontWeight->"Bold"],
+     "\n\t(An)isotropic displacement parameters (ADPs)\n\tADP type\n\
+Additional notes (if any)"
+    }], "TableText"]}
+  }]], "1ColumnTableMod",
+ CellID->514678747],
+
+Cell[TextData[{
+ "To find out which ",
+ StyleBox["cif",
+  FontSlant->"Italic"],
+ " data labels are used in the import process, please see the details of ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1465903827],
+
+Cell[TextData[{
+ "There are 30 data entries included in this package. Use ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " to add additional data."
+}], "Notes",
+ CellID->816483028],
+
+Cell[TextData[{
+ "Supported ",
+ StyleBox["thermal parameter types",
+  FontSlant->"Italic"],
+ " are ",
+ Cell[BoxData["\"\<U\>\""], "InlineFormula"],
+ " and ",
+ Cell[BoxData["\"\<B\>\""], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->2036437554],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " is loaded from:"
+}], "Notes",
+ CellID->1980952874],
+
+Cell[BoxData[
+ RowBox[{"FileNameJoin", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "$MaXrdPath", ",", "\"\<UserData\>\"", ",", "\"\<CrystalData.m\>\""}], 
+   "}"}], "]"}]], "Input",
+ CellID->414830283],
+
+Cell[TextData[{
+ "To remove entries from $CrystalData, one can use ",
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["KeyDropFrom"]], "paclet:ref/KeyDropFrom"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}], "[", 
+   RowBox[{
+    TemplateBox[{
+      Cell[
+       TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+     "RefLink",
+     BaseStyle->{"InlineFormula"}], ",", 
+    StyleBox["crystal", "TI"]}], "]"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1711199123],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(7)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1358065460],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1549985904],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "@", "$CrystalData"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->997421414],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Aluminium\"\>", ",", "\<\"Austenite\"\>", 
+   ",", "\<\"CalciumFluoride\"\>", ",", "\<\"Cobalt(II)Fluoride\"\>", 
+   ",", "\<\"Copper\"\>", ",", "\<\"CopperTungstenOxide\"\>", 
+   ",", "\<\"Corundum\"\>", ",", "\<\"Diamond\"\>", ",", "\<\"Ferrite\"\>", 
+   ",", "\<\"GalliumArsenide\"\>", ",", "\<\"Germanium\"\>", 
+   ",", "\<\"Glycyl-L-alanine\"\>", ",", "\<\"Ice\"\>", 
+   ",", "\<\"LanthanumHexaboride\"\>", ",", "\<\"LithiumCobaltate\"\>", 
+   ",", "\<\"LithiumManganesePhosphate\"\>", ",", "\<\"ManganeseSilicon\"\>", 
+   ",", "\<\"Nickel\"\>", ",", "\<\"OxalicAcid\"\>", 
+   ",", "\<\"Perovskite\"\>", ",", "\<\"Polonium\"\>", 
+   ",", "\<\"PrussianBlue\"\>", ",", "\<\"Quartz\"\>", ",", "\<\"Silicon\"\>",
+    ",", "\<\"Silver\"\>", ",", "\<\"Sodalite\"\>", 
+   ",", "\<\"SodiumChloride\"\>", ",", "\<\"Sphalerite\"\>", 
+   ",", "\<\"Tungsten\"\>", ",", "\<\"Zinc\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1505173571]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->2105753191],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "@", 
+  RowBox[{"Normal", "@", 
+   RowBox[{"RandomChoice", "@", "$CrystalData"}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->832763026],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      RowBox[{"\<\"ChemicalFormula\"\>", 
+       "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(LiCoO\\), \
+\\(2\\)]\\)\"\>"}]},
+     {
+      RowBox[{"\<\"SpaceGroup\"\>", 
+       "\[Rule]", "\<\"R\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}]},
+     {
+      RowBox[{"\<\"LatticeParameters\"\>", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"a\"\>", "\[Rule]", 
+          
+          TemplateBox[{
+           "2.83339708`", "\"\[CapitalARing]\"", 
+            "\[ARing]ngstr\[ODoubleDot]ms", "\"Angstroms\""},
+           "Quantity"]}], ",", 
+         RowBox[{"\<\"b\"\>", "\[Rule]", 
+          
+          TemplateBox[{
+           "2.83339708`", "\"\[CapitalARing]\"", 
+            "\[ARing]ngstr\[ODoubleDot]ms", "\"Angstroms\""},
+           "Quantity"]}], ",", 
+         RowBox[{"\<\"c\"\>", "\[Rule]", 
+          
+          TemplateBox[{
+           "14.0925022`", "\"\[CapitalARing]\"", 
+            "\[ARing]ngstr\[ODoubleDot]ms", "\"Angstroms\""},
+           "Quantity"]}], ",", 
+         RowBox[{"\<\"\[Alpha]\"\>", "\[Rule]", 
+          TemplateBox[{"90", 
+            RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+            "\"AngularDegrees\""},
+           "QuantityPostfix"]}], ",", 
+         RowBox[{"\<\"\[Beta]\"\>", "\[Rule]", 
+          TemplateBox[{"90", 
+            RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+            "\"AngularDegrees\""},
+           "QuantityPostfix"]}], ",", 
+         RowBox[{"\<\"\[Gamma]\"\>", "\[Rule]", 
+          TemplateBox[{"120", 
+            RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+            "\"AngularDegrees\""},
+           "QuantityPostfix"]}]}], "\[RightAssociation]"}]}]},
+     {
+      RowBox[{"\<\"AtomData\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\[LeftAssociation]", 
+          RowBox[{
+           RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"Li\"\>"}], ",", 
+           RowBox[{"\<\"OccupationFactor\"\>", "\[Rule]", "1"}], ",", 
+           RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"0.333333`", ",", "0.666667`", ",", "0.166667`"}], 
+             "}"}]}], ",", 
+           RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Uiso\"\>"}]}], 
+          "\[RightAssociation]"}], ",", 
+         RowBox[{"\[LeftAssociation]", 
+          RowBox[{
+           RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"Co\"\>"}], ",", 
+           RowBox[{"\<\"OccupationFactor\"\>", "\[Rule]", "1"}], ",", 
+           RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"0.333333`", ",", "0.666667`", ",", "0.666667`"}], 
+             "}"}]}], ",", 
+           RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Uiso\"\>"}]}], 
+          "\[RightAssociation]"}], ",", 
+         RowBox[{"\[LeftAssociation]", 
+          RowBox[{
+           RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"O\"\>"}], ",", 
+           RowBox[{"\<\"OccupationFactor\"\>", "\[Rule]", "1"}], ",", 
+           RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"0.`", ",", "0.`", ",", "0.739815`"}], "}"}]}], ",", 
+           RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Uiso\"\>"}]}], 
+          "\[RightAssociation]"}]}], "}"}]}]},
+     {
+      RowBox[{"\<\"Notes\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"doi: 10.17188/1200264\"\>", "}"}]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellLabel->"Out[1]//TableForm=",
+ CellID->439363342]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell["Overview of available crystals:", "ExampleText",
+ CellID->738372461],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Multicolumn", "[", 
+  RowBox[{
+   RowBox[{"Keys", "@", "$CrystalData"}], ",", "2"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1369306613],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Aluminium\"\>", "\<\"LithiumManganesePhosphate\"\>"},
+    {"\<\"Austenite\"\>", "\<\"ManganeseSilicon\"\>"},
+    {"\<\"CalciumFluoride\"\>", "\<\"Nickel\"\>"},
+    {"\<\"Cobalt(II)Fluoride\"\>", "\<\"OxalicAcid\"\>"},
+    {"\<\"Copper\"\>", "\<\"Perovskite\"\>"},
+    {"\<\"CopperTungstenOxide\"\>", "\<\"Polonium\"\>"},
+    {"\<\"Corundum\"\>", "\<\"PrussianBlue\"\>"},
+    {"\<\"Diamond\"\>", "\<\"Quartz\"\>"},
+    {"\<\"Ferrite\"\>", "\<\"Silicon\"\>"},
+    {"\<\"GalliumArsenide\"\>", "\<\"Silver\"\>"},
+    {"\<\"Germanium\"\>", "\<\"Sodalite\"\>"},
+    {"\<\"Glycyl-L-alanine\"\>", "\<\"SodiumChloride\"\>"},
+    {"\<\"Ice\"\>", "\<\"Sphalerite\"\>"},
+    {"\<\"LanthanumHexaboride\"\>", "\<\"Tungsten\"\>"},
+    {"\<\"LithiumCobaltate\"\>", "\<\"Zinc\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->2019834621]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1779470918],
+
+Cell["Overview of the crystals' space groups:", "ExampleText",
+ CellID->81940905],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sg", "=", 
+   RowBox[{"$CrystalData", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", "\"\<SpaceGroup\>\""}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Multicolumn", "[", 
+  RowBox[{
+   RowBox[{"Normal", "@", "sg"}], ",", "2"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->632737607],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"\<\"Aluminium\"\>", 
+      "\[Rule]", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}], 
+     RowBox[{"\<\"LithiumManganesePhosphate\"\>", "\[Rule]", "\<\"Pbnm\"\>"}]},
+    {
+     RowBox[{"\<\"Austenite\"\>", 
+      "\[Rule]", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}], 
+     RowBox[{"\<\"ManganeseSilicon\"\>", 
+      "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)3\"\>"}]},
+    {
+     RowBox[{"\<\"CalciumFluoride\"\>", 
+      "\[Rule]", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}], 
+     RowBox[{"\<\"Nickel\"\>", 
+      "\[Rule]", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}]},
+    {
+     RowBox[{"\<\"Cobalt(II)Fluoride\"\>", 
+      "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/mnm\"\>"}], 
+     
+     RowBox[{"\<\"OxalicAcid\"\>", 
+      "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)/n\"\>"}]},
+    {
+     RowBox[{"\<\"Copper\"\>", 
+      "\[Rule]", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}], 
+     RowBox[{"\<\"Perovskite\"\>", "\[Rule]", "\<\"Pbnm\"\>"}]},
+    {
+     RowBox[{"\<\"CopperTungstenOxide\"\>", 
+      "\[Rule]", "\<\"P\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\"\>"}], 
+     RowBox[{"\<\"Polonium\"\>", 
+      "\[Rule]", "\<\"Pm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}]},
+    {
+     RowBox[{"\<\"Corundum\"\>", 
+      "\[Rule]", "\<\"R\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)c\"\>"}], 
+     RowBox[{"\<\"PrussianBlue\"\>", 
+      "\[Rule]", "\<\"Pm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}]},
+    {
+     RowBox[{"\<\"Diamond\"\>", 
+      "\[Rule]", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m:2\"\>"}], 
+     RowBox[{"\<\"Quartz\"\>", 
+      "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)21\"\>"}]},
+    {
+     RowBox[{"\<\"Ferrite\"\>", 
+      "\[Rule]", "\<\"Im\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}], 
+     RowBox[{"\<\"Silicon\"\>", 
+      "\[Rule]", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m:2\"\>"}]},
+    {
+     RowBox[{"\<\"GalliumArsenide\"\>", 
+      "\[Rule]", "\<\"F\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>"}], 
+     RowBox[{"\<\"Silver\"\>", 
+      "\[Rule]", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}]},
+    {
+     RowBox[{"\<\"Germanium\"\>", 
+      "\[Rule]", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m:2\"\>"}], 
+     RowBox[{"\<\"Sodalite\"\>", 
+      "\[Rule]", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3n\"\>"}]},
+    {
+     RowBox[{"\<\"Glycyl-L-alanine\"\>", 
+      "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)\"\>"}], 
+     RowBox[{"\<\"SodiumChloride\"\>", 
+      "\[Rule]", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}]},
+    {
+     RowBox[{"\<\"Ice\"\>", 
+      "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)cm\"\>"}], 
+     RowBox[{"\<\"Sphalerite\"\>", 
+      "\[Rule]", "\<\"F\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>"}]},
+    {
+     RowBox[{"\<\"LanthanumHexaboride\"\>", 
+      "\[Rule]", "\<\"Pm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}], 
+     RowBox[{"\<\"Tungsten\"\>", 
+      "\[Rule]", "\<\"Im\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}]},
+    {
+     RowBox[{"\<\"LithiumCobaltate\"\>", 
+      "\[Rule]", "\<\"R\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}], 
+     RowBox[{"\<\"Zinc\"\>", 
+      "\[Rule]", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)/mmc\"\>"}]}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->282322697]
+}, Open  ]],
+
+Cell["We can show the crystal systems instead:", "ExampleText",
+ CellID->1263899616],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"overview", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"GetSymmetryData", "[", 
+      RowBox[{"#", ",", "\"\<CrystalSystem\>\""}], "]"}], "&"}], "/@", 
+    "sg"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Multicolumn", "[", 
+  RowBox[{
+   RowBox[{"Normal", "@", "overview"}], ",", "2"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1216512333],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"\<\"Aluminium\"\>", "\[Rule]", "\<\"Cubic\"\>"}], 
+     RowBox[{"\<\"LithiumManganesePhosphate\"\>", 
+      "\[Rule]", "\<\"Orthorhombic\"\>"}]},
+    {
+     RowBox[{"\<\"Austenite\"\>", "\[Rule]", "\<\"Cubic\"\>"}], 
+     RowBox[{"\<\"ManganeseSilicon\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"CalciumFluoride\"\>", "\[Rule]", "\<\"Cubic\"\>"}], 
+     RowBox[{"\<\"Nickel\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"Cobalt(II)Fluoride\"\>", "\[Rule]", "\<\"Tetragonal\"\>"}], 
+     
+     RowBox[{"\<\"OxalicAcid\"\>", "\[Rule]", "\<\"Monoclinic\"\>"}]},
+    {
+     RowBox[{"\<\"Copper\"\>", "\[Rule]", "\<\"Cubic\"\>"}], 
+     RowBox[{"\<\"Perovskite\"\>", "\[Rule]", "\<\"Orthorhombic\"\>"}]},
+    {
+     RowBox[{"\<\"CopperTungstenOxide\"\>", "\[Rule]", "\<\"Triclinic\"\>"}], 
+     
+     RowBox[{"\<\"Polonium\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"Corundum\"\>", "\[Rule]", "\<\"Trigonal\"\>"}], 
+     RowBox[{"\<\"PrussianBlue\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"Diamond\"\>", "\[Rule]", "\<\"Cubic\"\>"}], 
+     RowBox[{"\<\"Quartz\"\>", "\[Rule]", "\<\"Trigonal\"\>"}]},
+    {
+     RowBox[{"\<\"Ferrite\"\>", "\[Rule]", "\<\"Cubic\"\>"}], 
+     RowBox[{"\<\"Silicon\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"GalliumArsenide\"\>", "\[Rule]", "\<\"Cubic\"\>"}], 
+     RowBox[{"\<\"Silver\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"Germanium\"\>", "\[Rule]", "\<\"Cubic\"\>"}], 
+     RowBox[{"\<\"Sodalite\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"Glycyl-L-alanine\"\>", "\[Rule]", "\<\"Orthorhombic\"\>"}], 
+     
+     RowBox[{"\<\"SodiumChloride\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"Ice\"\>", "\[Rule]", "\<\"Hexagonal\"\>"}], 
+     RowBox[{"\<\"Sphalerite\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"LanthanumHexaboride\"\>", "\[Rule]", "\<\"Cubic\"\>"}], 
+     RowBox[{"\<\"Tungsten\"\>", "\[Rule]", "\<\"Cubic\"\>"}]},
+    {
+     RowBox[{"\<\"LithiumCobaltate\"\>", "\[Rule]", "\<\"Trigonal\"\>"}], 
+     RowBox[{"\<\"Zinc\"\>", "\[Rule]", "\<\"Hexagonal\"\>"}]}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->481109352]
+}, Open  ]],
+
+Cell["A tally of the crystal systems in our data:", "ExampleText",
+ CellID->36406440],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "@", 
+  RowBox[{"Tally", "@", 
+   RowBox[{"Values", "@", "overview"}]}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->90274454],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Cubic\"\>", "19"},
+    {"\<\"Tetragonal\"\>", "1"},
+    {"\<\"Triclinic\"\>", "1"},
+    {"\<\"Trigonal\"\>", "3"},
+    {"\<\"Orthorhombic\"\>", "3"},
+    {"\<\"Hexagonal\"\>", "2"},
+    {"\<\"Monoclinic\"\>", "1"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellLabel->"Out[3]//TableForm=",
+ CellID->769226260]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1153617642],
+
+Cell["\<\
+Selecting those crystals with at least one atom having anisotropic \
+displacement parameters:\
+\>", "ExampleText",
+ CellID->1369343978],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"Keys", "@", "$CrystalData"}], ",", 
+   RowBox[{
+    RowBox[{"ContainsAny", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<Bani\>\"", ",", "\"\<Uani\>\""}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"$CrystalData", "\[LeftDoubleBracket]", 
+       RowBox[{
+       "#", ",", "\"\<AtomData\>\"", ",", "All", ",", "\"\<Type\>\""}], 
+       "\[RightDoubleBracket]"}]}], "]"}], "&"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1037868570],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Cobalt(II)Fluoride\"\>", ",", "\<\"CopperTungstenOxide\"\>", 
+   ",", "\<\"Corundum\"\>", ",", "\<\"OxalicAcid\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->998193243]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->89538559],
+
+Cell["Overview of the atomic elements involved:", "ExampleText",
+ CellID->7362099],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"chem", "=", 
+   RowBox[{"GetElements", "@", 
+    RowBox[{"$CrystalData", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "\"\<ChemicalFormula\>\""}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Multicolumn", "[", 
+  RowBox[{
+   RowBox[{"Normal", "@", "chem"}], ",", "2"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->255229548],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"\<\"Aluminium\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Al\"\>", "}"}]}], 
+     RowBox[{"\<\"LithiumManganesePhosphate\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Li\"\>", ",", "\<\"Mn\"\>", ",", "\<\"P\"\>", 
+        ",", "\<\"O\"\>"}], "}"}]}]},
+    {
+     RowBox[{"\<\"Austenite\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Fe\"\>", "}"}]}], 
+     RowBox[{"\<\"ManganeseSilicon\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Mn\"\>", ",", "\<\"Si\"\>"}], "}"}]}]},
+    {
+     RowBox[{"\<\"CalciumFluoride\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Ca\"\>", ",", "\<\"F\"\>"}], "}"}]}], 
+     RowBox[{"\<\"Nickel\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Ni\"\>", "}"}]}]},
+    {
+     RowBox[{"\<\"Cobalt(II)Fluoride\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Co\"\>", ",", "\<\"F\"\>"}], "}"}]}], 
+     RowBox[{"\<\"OxalicAcid\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"C\"\>", ",", "\<\"H\"\>", ",", "\<\"O\"\>"}], "}"}]}]},
+    {
+     RowBox[{"\<\"Copper\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Cu\"\>", "}"}]}], 
+     RowBox[{"\<\"Perovskite\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Ca\"\>", ",", "\<\"Ti\"\>", ",", "\<\"O\"\>"}], "}"}]}]},
+    {
+     RowBox[{"\<\"CopperTungstenOxide\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Cu\"\>", ",", "\<\"W\"\>", ",", "\<\"O\"\>"}], "}"}]}], 
+     RowBox[{"\<\"Polonium\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Po\"\>", "}"}]}]},
+    {
+     RowBox[{"\<\"Corundum\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Al\"\>", ",", "\<\"O\"\>"}], "}"}]}], 
+     RowBox[{"\<\"PrussianBlue\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"C\"\>", ",", "\<\"H\"\>", ",", "\<\"Fe\"\>", 
+        ",", "\<\"N\"\>", ",", "\<\"O\"\>"}], "}"}]}]},
+    {
+     RowBox[{"\<\"Diamond\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"C\"\>", "}"}]}], 
+     RowBox[{"\<\"Quartz\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Si\"\>", ",", "\<\"O\"\>"}], "}"}]}]},
+    {
+     RowBox[{"\<\"Ferrite\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Fe\"\>", "}"}]}], 
+     RowBox[{"\<\"Silicon\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Si\"\>", "}"}]}]},
+    {
+     RowBox[{"\<\"GalliumArsenide\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Ga\"\>", ",", "\<\"As\"\>"}], "}"}]}], 
+     RowBox[{"\<\"Silver\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Ag\"\>", "}"}]}]},
+    {
+     RowBox[{"\<\"Germanium\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Ge\"\>", "}"}]}], 
+     RowBox[{"\<\"Sodalite\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Na\"\>", ",", "\<\"Al\"\>", ",", "\<\"Si\"\>", 
+        ",", "\<\"O\"\>", ",", "\<\"Cl\"\>"}], "}"}]}]},
+    {
+     RowBox[{"\<\"Glycyl-L-alanine\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"C\"\>", ",", "\<\"H\"\>", ",", "\<\"N\"\>", 
+        ",", "\<\"O\"\>"}], "}"}]}], 
+     RowBox[{"\<\"SodiumChloride\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Na\"\>", ",", "\<\"Cl\"\>"}], "}"}]}]},
+    {
+     RowBox[{"\<\"Ice\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"H\"\>", ",", "\<\"O\"\>"}], "}"}]}], 
+     RowBox[{"\<\"Sphalerite\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"S\"\>", ",", "\<\"Zn\"\>"}], "}"}]}]},
+    {
+     RowBox[{"\<\"LanthanumHexaboride\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"La\"\>", ",", "\<\"B\"\>"}], "}"}]}], 
+     RowBox[{"\<\"Tungsten\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"W\"\>", "}"}]}]},
+    {
+     RowBox[{"\<\"LithiumCobaltate\"\>", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Li\"\>", ",", "\<\"Co\"\>", ",", "\<\"O\"\>"}], "}"}]}], 
+     RowBox[{"\<\"Zinc\"\>", "\[Rule]", 
+      RowBox[{"{", "\<\"Zn\"\>", "}"}]}]}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1677605919]
+}, Open  ]],
+
+Cell["A set of the elements used, sorted by atomic number:", "ExampleText",
+ CellID->1179847271],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SortBy", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"DeleteDuplicates", "@", 
+    RowBox[{"Flatten", "@", 
+     RowBox[{"Values", "@", "chem"}]}]}], ",", 
+   RowBox[{
+    RowBox[{"$PeriodicTable", "[", 
+     RowBox[{"#", ",", "\"\<AtomicNumber\>\""}], "]"}], "&"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->910430436],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"H\"\>", ",", "\<\"Li\"\>", ",", "\<\"B\"\>", ",", "\<\"C\"\>", 
+   ",", "\<\"N\"\>", ",", "\<\"O\"\>", ",", "\<\"F\"\>", ",", "\<\"Na\"\>", 
+   ",", "\<\"Al\"\>", ",", "\<\"Si\"\>", ",", "\<\"P\"\>", ",", "\<\"S\"\>", 
+   ",", "\<\"Cl\"\>", ",", "\<\"Ca\"\>", ",", "\<\"Ti\"\>", ",", "\<\"Mn\"\>",
+    ",", "\<\"Fe\"\>", ",", "\<\"Co\"\>", ",", "\<\"Ni\"\>", 
+   ",", "\<\"Cu\"\>", ",", "\<\"Zn\"\>", ",", "\<\"Ga\"\>", ",", "\<\"Ge\"\>",
+    ",", "\<\"As\"\>", ",", "\<\"Ag\"\>", ",", "\<\"La\"\>", ",", "\<\"W\"\>",
+    ",", "\<\"Po\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->2023551967]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1318092278],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"$CrystalData", "::", "type"}], "=", 
+   "\"\<The atomic displacement type \[LeftGuillemet]`1`\[RightGuillemet] is \
+not recognised.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"$CrystalData", "::", "missing"}], "=", 
+   "\"\<Could not find \[LeftGuillemet]`1`\[RightGuillemet].\>\""}], 
+  ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1840949632],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$CrystalData", ":=", 
+   RowBox[{"$CrystalData", "=", 
+    RowBox[{"Import", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+        "$MaXrdPath", ",", "\"\<UserData\>\"", ",", "\"\<CrystalData.m\>\""}],
+         "}"}], "]"}], ",", "\"\<Package\>\""}], "]"}]}]}], ";"}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->2043562695]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$PeriodicTable"]], "paclet:MaXrd/ref/$PeriodicTable"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$TransformationMatrices"]], 
+    "paclet:MaXrd/ref/$TransformationMatrices"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ResetCrystalData"]], "paclet:MaXrd/ref/ResetCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalPlot"]], "paclet:MaXrd/ref/CrystalPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalDensity"]], "paclet:MaXrd/ref/CrystalDensity"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ExportCrystalData"]], "paclet:MaXrd/ref/ExportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetAtomicScatteringFactors"]], 
+    "paclet:MaXrd/ref/GetAtomicScatteringFactors"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StructureFactor"]], "paclet:MaXrd/ref/StructureFactor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StructureFactorTable"]], 
+    "paclet:MaXrd/ref/StructureFactorTable"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ExtinctionLength"]], "paclet:MaXrd/ref/ExtinctionLength"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLaueClass"]], "paclet:MaXrd/ref/GetLaueClass"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLatticeParameters"]], 
+    "paclet:MaXrd/ref/GetLatticeParameters"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353,
+ $CellContext`ExpressionUUID -> "3f2cde6a-ae92-4a5c-83f6-63ca2d3de5a5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1636450418]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"$CrystalData",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 1.259964}", 
+    "history" -> {"0.7", "2.1.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", "status" -> 
+    "None", "summary" -> 
+    "$CrystalData is an association containing data on crystals or compounds \
+for calculation purposes.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "$CrystalData", "titlemodifier" -> "", "windowtitle" -> "$CrystalData", 
+    "type" -> "Symbol", "uri" -> "MaXrd/ref/$CrystalData", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10344, 325, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"f7ee0eb2-7595-4782-bf7c-1aff98119548",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1358065460]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 42017, 1258}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[584, 21, 4977, 116, 70, "AnchorBarGrid",ExpressionUUID->"ebd4c823-11d5-456a-8e09-93d69ca0604a",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5586, 141, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"c85f6e95-7f11-4a1d-8485-58b1e494dd45"],
+Cell[5758, 149, 485, 14, 70, "Usage",ExpressionUUID->"cbb2a702-1648-4b68-881d-ea1a1c342e0c",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6280, 168, 629, 19, 70, "NotesSection",ExpressionUUID->"50e8b8b7-53c4-406a-976d-b14403d41da6",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->581959814],
+Cell[6912, 189, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"0e70900d-d6e0-447c-9250-e941b097afdf"],
+Cell[6946, 191, 718, 25, 70, "Notes",ExpressionUUID->"f2d78193-362e-460d-aadf-19dcb1a829ad",
+ CellID->179929223],
+Cell[7667, 218, 706, 22, 70, "1ColumnTableMod",ExpressionUUID->"9ddd7933-2638-43cc-bc3e-635bc35e80be",
+ CellID->514678747],
+Cell[8376, 242, 378, 13, 70, "Notes",ExpressionUUID->"89d05fad-3523-4969-9d99-e6ac4de220e5",
+ CellID->1465903827],
+Cell[8757, 257, 321, 10, 70, "Notes",ExpressionUUID->"1875b8d4-9da9-4701-a96f-91eb61b78881",
+ CellID->816483028],
+Cell[9081, 269, 242, 10, 70, "Notes",ExpressionUUID->"c2ac6b6c-9011-40ac-8843-20f0a11a689e",
+ CellID->2036437554],
+Cell[9326, 281, 243, 9, 70, "Notes",ExpressionUUID->"8080b7d7-3405-43aa-8dbe-9d5acef06004",
+ CellID->1980952874],
+Cell[9572, 292, 194, 6, 70, "Input",ExpressionUUID->"30d48de5-d8ef-4cfe-8a9b-eb8ef765e060",
+ CellID->414830283],
+Cell[9769, 300, 504, 18, 70, "Notes",ExpressionUUID->"3fe4e7e0-d5d3-40b3-ae66-3b572cc6b9e4",
+ CellID->1711199123],
+Cell[10276, 320, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"adc3f044-d678-4e80-bb94-196a778f7a95"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10344, 325, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"f7ee0eb2-7595-4782-bf7c-1aff98119548",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1358065460],
+Cell[CellGroupData[{
+Cell[10637, 339, 196, 6, 70, "ExampleSection",ExpressionUUID->"0176ff51-8a0a-41d9-a9d6-cc62ce9942f0",
+ CellID->1549985904],
+Cell[CellGroupData[{
+Cell[10858, 349, 106, 3, 70, "Input",ExpressionUUID->"a6b3edee-6aa7-475e-b681-ce86a2775f68",
+ CellID->997421414],
+Cell[10967, 354, 985, 17, 70, "Output",ExpressionUUID->"f064d83b-b12d-4ab7-9454-0c7549cb8fc2",
+ CellID->1505173571]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11989, 376, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"8bd413f8-5786-41c8-8d02-2db2fba55213",
+ CellID->2105753191],
+Cell[CellGroupData[{
+Cell[12140, 383, 174, 5, 70, "Input",ExpressionUUID->"47fd8074-05ab-4f9f-b7b2-41077ec418d7",
+ CellID->832763026],
+Cell[12317, 390, 4233, 101, 70, "Output",ExpressionUUID->"11bfd800-3051-4485-b695-c95887111e48",
+ CellID->439363342]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16611, 498, 187, 6, 70, "ExampleSection",ExpressionUUID->"fd2f2903-1845-4ced-a0b5-ae87e75c7d6d",
+ CellID->1293636265],
+Cell[16801, 506, 74, 1, 70, "ExampleText",ExpressionUUID->"e641d411-a9d6-4711-845b-a59effbc4c79",
+ CellID->738372461],
+Cell[CellGroupData[{
+Cell[16900, 511, 169, 5, 70, "Input",ExpressionUUID->"0c9c4122-63a7-43b3-b8ea-5a8a7b965f4e",
+ CellID->1369306613],
+Cell[17072, 518, 1046, 23, 70, "Output",ExpressionUUID->"88d0eb62-bd53-4863-a479-4b1e62d88cc4",
+ CellID->2019834621]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18155, 546, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"4687eee9-aaf5-4fff-b10b-09c67e8ac421",
+ CellID->1779470918],
+Cell[18284, 551, 81, 1, 70, "ExampleText",ExpressionUUID->"fbc73240-745f-4057-bb26-81328d1ef99b",
+ CellID->81940905],
+Cell[CellGroupData[{
+Cell[18390, 556, 344, 11, 70, "Input",ExpressionUUID->"87dd0a0a-1ecb-4d1d-8c75-69f49dd5af3e",
+ CellID->632737607],
+Cell[18737, 569, 3797, 84, 70, "Output",ExpressionUUID->"e10feeb2-a1d0-47db-b12d-a62cf409bf50",
+ CellID->282322697]
+}, Open  ]],
+Cell[22549, 656, 84, 1, 70, "ExampleText",ExpressionUUID->"fcd0b75f-31e9-4225-80e7-5348bbba824c",
+ CellID->1263899616],
+Cell[CellGroupData[{
+Cell[22658, 661, 387, 12, 70, "Input",ExpressionUUID->"2b8b254b-6611-444a-95c0-e964c2f29dbc",
+ CellID->1216512333],
+Cell[23048, 675, 2442, 57, 70, "Output",ExpressionUUID->"c77d21dd-aa7f-4222-9ee2-9f49603ab659",
+ CellID->481109352]
+}, Open  ]],
+Cell[25505, 735, 85, 1, 70, "ExampleText",ExpressionUUID->"387ce0ba-8e2f-44f8-901e-95be2ddc261c",
+ CellID->36406440],
+Cell[CellGroupData[{
+Cell[25615, 740, 162, 5, 70, "Input",ExpressionUUID->"89217692-3bd0-4445-9c08-ef40c1010f1f",
+ CellID->90274454],
+Cell[25780, 747, 781, 23, 70, "Output",ExpressionUUID->"a95e9a8f-b4db-40d4-a164-a7e40b17613b",
+ CellID->769226260]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26610, 776, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"fc9d0c30-801e-4a49-a3d5-5a298341d6ac",
+ CellID->1153617642],
+Cell[26739, 781, 145, 4, 70, "ExampleText",ExpressionUUID->"67f16e10-1b35-424a-9382-8b0944bcd407",
+ CellID->1369343978],
+Cell[CellGroupData[{
+Cell[26909, 789, 530, 15, 70, "Input",ExpressionUUID->"c539fda9-b2ba-499d-84d9-09f900fd6e61",
+ CellID->1037868570],
+Cell[27442, 806, 223, 5, 70, "Output",ExpressionUUID->"08f1922a-86c2-4b31-8dd6-39306a906b43",
+ CellID->998193243]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27714, 817, 124, 3, 70, "ExampleDelimiter",ExpressionUUID->"86d85d80-9592-47f8-a66d-eb5fdc10504d",
+ CellID->89538559],
+Cell[27841, 822, 82, 1, 70, "ExampleText",ExpressionUUID->"8c669967-e74a-4984-9e3f-480dfb4dc439",
+ CellID->7362099],
+Cell[CellGroupData[{
+Cell[27948, 827, 390, 12, 70, "Input",ExpressionUUID->"5adfdc5e-1548-458a-ab18-792c99bcdc6e",
+ CellID->255229548],
+Cell[28341, 841, 4026, 105, 70, "Output",ExpressionUUID->"75ae9b4e-915e-45ab-8f85-61174648a2b6",
+ CellID->1677605919]
+}, Open  ]],
+Cell[32382, 949, 96, 1, 70, "ExampleText",ExpressionUUID->"0d844f8f-ee48-4f9e-a390-49a9ec8b4cc8",
+ CellID->1179847271],
+Cell[CellGroupData[{
+Cell[32503, 954, 362, 11, 70, "Input",ExpressionUUID->"00b0d126-c416-4b44-bba6-a6387475d8d7",
+ CellID->910430436],
+Cell[32868, 967, 648, 11, 70, "Output",ExpressionUUID->"1cef62c2-fe0b-45fd-89c1-de9f819c0f95",
+ CellID->2023551967]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[33577, 985, 236, 8, 70, "ExampleSection",ExpressionUUID->"eb86c5d1-e222-4c7a-9f4b-9edec53f6da2",
+ CellID->1318092278],
+Cell[33816, 995, 453, 13, 70, "Input",ExpressionUUID->"2121f183-73b2-4a65-8cd3-9ceb1cc2a579",
+ InitializationCell->False,
+ CellID->1840949632],
+Cell[34272, 1010, 497, 14, 70, "Input",ExpressionUUID->"6088ea8a-19ce-4304-ae61-fd40c49507fe",
+ InitializationCell->False,
+ CellID->2043562695]
+}, Closed]],
+Cell[34784, 1027, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"3dd3fd94-9bd7-4255-bb17-b218536ddd5f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34852, 1032, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"f90ee6e9-8a73-49a5-a357-d54a19ad0371",
+ CellID->1255426704],
+Cell[35005, 1041, 4612, 143, 70, "SeeAlso",ExpressionUUID->"8cfe4e8e-08c7-4d8d-b7f7-12567488cc46",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39654, 1189, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"f69a646f-41f7-46ad-a20b-8be170a40cd8",
+ CellID->38303248],
+Cell[39813, 1198, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"3670da51-1232-4354-8ef2-48064f89445c"],
+Cell[39847, 1200, 208, 7, 70, "MoreAbout",ExpressionUUID->"cab06697-f9e9-411f-af81-5fe527b71eb2",
+ CellID->1636450418]
+}, Open  ]],
+Cell[40070, 1210, 23, 0, 70, "FooterCell",ExpressionUUID->"ba8d65dd-1bf0-483e-a7a1-cbf1a6f81a7a"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,2265 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     90459,       2256]
+NotebookOptionsPosition[     80703,       2053]
+NotebookOutlinePosition[     83529,       2118]
+CellTagsIndexPosition[     83486,       2115]
+WindowTitle->The association structure of crystallographic data
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD TUTORIAL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Mathematica tips\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/tutorial/MathematicaTips"], "\<\"Quick guide to \
+conditions\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/tutorial/QuickGuideToConditions"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"RelatedTutorialsSection"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"$GroupSymbolRedirect\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$GroupSymbolRedirect"], "\<\"$PointGroups\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$PointGroups"], "\<\"$SpaceGroups\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/$SpaceGroups"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"TutorialFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd/tutorial/\
+TheAssociationStructureOfCrystallographicData\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+             "MaXrd/tutorial/TheAssociationStructureOfCrystallographicData"]},
+             Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/tutorial/\
+TheAssociationStructureOfCrystallographicData.html"], StandardForm]], "Input",
+               TextClipboardType -> "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$55861], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/tutorial/TheAssociationStructureOfCrystallographicData", 
+             ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["The association structure of crystallographic data", "Title",
+ CellID->509267359],
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{
+      Cell["Examples of queries"], 
+      "paclet:MaXrd/tutorial/TheAssociationStructureOfCrystallographicData#\
+1477290045", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], 
+    TemplateBox[{
+      Cell["Auxiliary tools"], 
+      "paclet:MaXrd/tutorial/TheAssociationStructureOfCrystallographicData#\
+938345198", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}]}
+  }]], "TutorialJumpBox"],
+
+Cell[TextData[{
+ "An ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Association"]], "paclet:ref/Association"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " is a list structure with entries being a pair of elements, referred to as ",
+ Cell[BoxData[
+  StyleBox["keys", "TI"]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  StyleBox["values", "TI"]], "InlineFormula"],
+ ". Each ",
+ Cell[BoxData[
+  StyleBox["key", "TI"]], "InlineFormula"],
+ " is associated with a certain ",
+ Cell[BoxData[
+  StyleBox["value", "TI"]], "InlineFormula"],
+ " using the notation ",
+ Cell[BoxData[
+  RowBox[{
+   StyleBox["key", "TI"], 
+   StyleBox["\[Rule]",
+    FontSlant->"Plain"], 
+   StyleBox["value", "TI"]}]], "InlineFormula"],
+ ". One can think of the structure as a one-way dictionary."
+}], "Text",
+ CellID->1534169418],
+
+Cell["\<\
+Associations can be nested with both lists and associations. This feature, \
+along with a fast and easy way of inquiring values, makes it useful for \
+storing information about point groups and space group in an hierarchical \
+form. \
+\>", "Text",
+ CellID->588601786],
+
+Cell["The package must be loaded:", "MathCaption",
+ CellID->1517691727],
+
+Cell[BoxData[
+ RowBox[{"<<", "MaXrd`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->318520214],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{
+     ButtonBox["$PointGroups",
+      BaseStyle->"Link",
+      ButtonData->"paclet:MaXrd/ref/$PointGroups"], "[", "\"\<group\>\"", 
+     "]"}], Cell[TextData[{
+     "returns information on the given point ",
+     Cell[BoxData[
+      StyleBox["group", "TI"]], "InlineFormula"]
+    }], "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["$SpaceGroups",
+      BaseStyle->"Link",
+      ButtonData->"paclet:MaXrd/ref/$SpaceGroups"], "[", "\"\<group\>\"", 
+     "]"}], Cell[TextData[{
+     "returns information on the given space ",
+     Cell[BoxData[
+      StyleBox["group", "TI"]], "InlineFormula"]
+    }], "TableText"]},
+   {
+    RowBox[{
+     ButtonBox["$GroupSymbolRedirect",
+      BaseStyle->"Link",
+      ButtonData->"paclet:MaXrd/ref/$GroupSymbolRedirect"], "[", 
+     "\"\<group\>\"", "]"}], Cell[TextData[{
+     "redirects group to the appropriate entry of ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$PointGroups"]], "paclet:MaXrd/ref/$PointGroups"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"]
+    }], "TableText"]}
+  }]], "DefinitionBox",
+ CellID->551264998],
+
+Cell["Looking up point- and space group information.", "Caption",
+ CellID->866368228],
+
+Cell[CellGroupData[{
+
+Cell["Examples of queries", "Section",
+ CellID->1477290045],
+
+Cell["First a point group example:", "Text",
+ CellID->904309971],
+
+Cell[TextData[{
+ "Let us inquire information on the point group ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"4", " ", "/", "m"}], TraditionalForm]], "InlineMath"],
+ ":"
+}], "MathCaption",
+ CellID->836781195],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$PointGroups", "[", "\"\<4/m\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2058623809],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Symbol\"\>", "\[Rule]", "\<\"4/m\"\>"}], ",", 
+   RowBox[{"\<\"PointGroupNumber\"\>", "\[Rule]", "11"}], ",", 
+   RowBox[{"\<\"CrystalSystem\"\>", "\[Rule]", "\<\"Tetragonal\"\>"}], ",", 
+   RowBox[{"\<\"LaueClass\"\>", "\[Rule]", "\<\"4/m\"\>"}], ",", 
+   RowBox[{"\<\"Properties\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Centrosymmetric\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Enantiomorphic\"\>", "\[Rule]", "False"}], ",", 
+      RowBox[{"\<\"Polar\"\>", "\[Rule]", "False"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"SymmetryOperations\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"MatrixOperations\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"-", "1"}]}], "}"}]}], "}"}]}], "}"}]}], ",", 
+      RowBox[{"\<\"SymmetryOperationsITA\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"1\"\>", 
+         ",", "\<\"\\!\\(\\*SubscriptBox[\\(2\\), \\([001]\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubsuperscriptBox[\\(4\\), \\([001]\\), \
+\\(\\(\\\\ \\)\\(+\\)\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubsuperscriptBox[\\(4\\), \\([001]\\), \
+\\(\\(\\\\ \\)\\(-\\)\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubscriptBox[\\(m\\), \\([001]\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubsuperscriptBox[OverscriptBox[\\(4\\), \
+\\(_\\)], \\([001]\\), \\(\\(\\\\ \\)\\(+\\)\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubsuperscriptBox[OverscriptBox[\\(4\\), \
+\\(_\\)], \\([001]\\), \\(\\(\\\\ \\)\\(-\\)\\)]\\)\"\>"}], "}"}]}], ",", 
+      RowBox[{"\<\"SymmetryOperationsSeitz\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"1\"\>", 
+         ",", "\<\"\\!\\(\\*SubscriptBox[\\(2\\), \\(z\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubscriptBox[\\(4\\), \\(z\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubsuperscriptBox[\\(4\\), \\(z\\), \\(\\(\\\\ \
+\\)\\(3\\)\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubscriptBox[\\(m\\), \\(z\\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubsuperscriptBox[OverscriptBox[\\(4\\), \
+\\(_\\)], \\(z\\), \\(\\\\ \\)]\\)\"\>", 
+         ",", "\<\"\\!\\(\\*SubsuperscriptBox[OverscriptBox[\\(4\\), \
+\\(_\\)], \\(z\\), \\(\\(\\\\ \\)\\(3\\)\\)]\\)\"\>"}], "}"}]}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1175081882]
+}, Open  ]],
+
+Cell[TextData[{
+ "Notice how the output is itself an association, with the values of ",
+ Cell[BoxData["\"\<Properties\>\""], "InlineFormula"],
+ " and ",
+ Cell[BoxData["\"\<SymmetryOperations\>\""], "InlineFormula"],
+ " being \"sub-associations\". Read more about the output structure on the \
+documentation page for ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$PointGroups"]], "paclet:MaXrd/ref/$PointGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "MathCaption",
+ CellID->2071765006],
+
+Cell["Now a little more advanced:", "Text",
+ CellID->1686878742],
+
+Cell["Selecting all centrosymmetric point groups:", "MathCaption",
+ CellID->439173159],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"centr", "=", 
+  RowBox[{"Keys", "@", 
+   RowBox[{"Select", "[", 
+    RowBox[{"$PointGroups", ",", 
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", 
+        RowBox[{"\"\<Properties\>\"", ",", "\"\<Centrosymmetric\>\""}], "]"}],
+        "]"}], "&"}]}], "]"}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->480581018],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"2/m\"\>", ",", "\<\"mmm\"\>", ",", "\<\"4/m\"\>", 
+   ",", "\<\"4/mmm\"\>", 
+   ",", "\<\"\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+   ",", "\<\"6/m\"\>", ",", "\<\"6/mmm\"\>", 
+   ",", "\<\"m\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"m\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1919045568]
+}, Open  ]],
+
+Cell["\<\
+Verify that the set of centrosymmetric point groups is the same set as the \
+Laue classes:\
+\>", "MathCaption",
+ CellID->356711628],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"centr", "\[Equal]", 
+  RowBox[{"Keys", "@", "$LaueClasses"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1539441892],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->381655782]
+}, Open  ]],
+
+Cell["Find the 13 alternative settings of point groups:", "MathCaption",
+ CellID->1322872937],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"alt", "=", 
+   RowBox[{"DeleteMissing", "@", 
+    RowBox[{"$PointGroups", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "\"\<AlternativeSettings\>\""}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"keys", "=", 
+   RowBox[{"Keys", "@", "alt"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"values", "=", 
+   RowBox[{"Keys", "@", 
+    RowBox[{"Values", "@", "alt"}]}]}], ";"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->477012596],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Thread", "[", 
+   RowBox[{"keys", "\[Rule]", "values"}], "]"}], "//", "TableForm"}]], "Input",\
+
+ CellLabel->"In[6]:=",
+ CellID->156789537],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      RowBox[{"\<\"2\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"UniqueAxisC\"\>", "}"}]}]},
+     {
+      RowBox[{"\<\"m\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"UniqueAxisC\"\>", "}"}]}]},
+     {
+      RowBox[{"\<\"2/m\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"UniqueAxisC\"\>", "}"}]}]},
+     {
+      RowBox[{"\<\"\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)2m\"\>", 
+       "\[Rule]", 
+       RowBox[{
+       "{", "\<\"\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)m2\"\>", 
+        "}"}]}]},
+     {
+      RowBox[{"\<\"3\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"RhombohedralAxes\"\>", "}"}]}]},
+     {
+      RowBox[{"\<\"\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+       "\[Rule]", 
+       RowBox[{"{", "\<\"RhombohedralAxes\"\>", "}"}]}]},
+     {
+      RowBox[{"\<\"32\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"HexagonalAxes\"\>", ",", "\<\"RhombohedralAxes\"\>"}], 
+        "}"}]}]},
+     {
+      RowBox[{"\<\"3m\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"HexagonalAxes\"\>", ",", "\<\"RhombohedralAxes\"\>"}], 
+        "}"}]}]},
+     {
+      RowBox[{"\<\"\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+       "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"HexagonalAxes\"\>", ",", "\<\"RhombohedralAxes\"\>"}], 
+        "}"}]}]},
+     {
+      RowBox[{"\<\"\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)2m\"\>", 
+       "\[Rule]", 
+       RowBox[{
+       "{", "\<\"\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)m2\"\>", "}"}]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellLabel->"Out[6]//TableForm=",
+ CellID->1328263948]
+}, Open  ]],
+
+Cell[TextData[{
+ "To get an overview of the data stored with a single point group, try ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Dataset"]], "paclet:ref/Dataset"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ButtonBox[":",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Dataset"]
+}], "MathCaption",
+ CellID->1686196213],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dataset", "@", 
+  RowBox[{"$PointGroups", "[", "\"\<3m\>\"", "]"}]}]], "Input",
+ CellLabel->"In[7]:=",
+ CellID->131592305],
+
+Cell[BoxData[
+ TemplateBox[{
+   TagBox[
+    DynamicModuleBox[{
+     TypeSystem`NestedGrid`PackagePrivate`$state$$ = 
+      Data`UnorderedAssociation[
+       "RowCount" -> 20, "Length" -> 7, "InitialType" -> 
+        TypeSystem`Struct[{
+          "Symbol", "PointGroupNumber", "CrystalSystem", "LaueClass", 
+           "Properties", "SymmetryOperations", "AlternativeSettings"}, {
+           TypeSystem`Atom[String], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[String], 
+           TypeSystem`Atom[String], 
+           TypeSystem`Assoc[
+            TypeSystem`Atom[
+             TypeSystem`Enumeration[
+             "Centrosymmetric", "Enantiomorphic", "Polar"]], 
+            TypeSystem`Atom[TypeSystem`Boolean], 3], 
+           
+           TypeSystem`Struct[{
+            "Setting", "MatrixOperations", "SymmetryOperationsITA", 
+             "SymmetryOperationsSeitz"}, {
+             TypeSystem`Atom[String], 
+             TypeSystem`Vector[
+              TypeSystem`Vector[
+               TypeSystem`Vector[
+                TypeSystem`Atom[Integer], 3], 3], 6], 
+             TypeSystem`Vector[
+              TypeSystem`Atom[String], 6], 
+             TypeSystem`Vector[
+              TypeSystem`Atom[String], 6]}], 
+           TypeSystem`Assoc[
+            TypeSystem`Atom[String], 
+            
+            TypeSystem`Struct[{
+             "Symbol", "MatrixOperations", "SymmetryOperationsITA", 
+              "SymmetryOperationsSeitz"}, {
+              TypeSystem`Atom[String], 
+              TypeSystem`Vector[
+               TypeSystem`Vector[
+                TypeSystem`Vector[
+                 TypeSystem`Atom[Integer], 3], 3], 6], 
+              TypeSystem`Vector[
+               TypeSystem`Atom[String], 6], 
+              TypeSystem`Vector[
+               TypeSystem`Atom[String], 6]}], 2]}], "Shape" -> 
+        TypeSystem`PackageScope`DocumentShape[
+          
+          Association[{"Symbol"} -> 
+           TypeSystem`PackageScope`AtomShape[28.800000000000004`], {
+            "PointGroupNumber"} -> 
+           TypeSystem`PackageScope`AtomShape[34], {"CrystalSystem"} -> 
+           TypeSystem`PackageScope`AtomShape[76.80000000000001], {
+            "LaueClass"} -> 
+           TypeSystem`PackageScope`AtomShape[268.80000000000007`], {
+            "Properties"} -> 
+           TypeSystem`PackageScope`ElidedShape[1], {"SymmetryOperations"} -> 
+           TypeSystem`PackageScope`ElidedShape[1], {"AlternativeSettings"} -> 
+           TypeSystem`PackageScope`ElidedShape[1]], 1], "InitialData" -> 
+        TypeSystem`PackageScope`CacheHandle[1908112389], "Type" -> 
+        TypeSystem`Struct[{
+          "Symbol", "PointGroupNumber", "CrystalSystem", "LaueClass", 
+           "Properties", "SymmetryOperations", "AlternativeSettings"}, {
+           TypeSystem`Atom[String], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[String], 
+           TypeSystem`Atom[String], 
+           TypeSystem`Assoc[
+            TypeSystem`Atom[
+             TypeSystem`Enumeration[
+             "Centrosymmetric", "Enantiomorphic", "Polar"]], 
+            TypeSystem`Atom[TypeSystem`Boolean], 3], 
+           
+           TypeSystem`Struct[{
+            "Setting", "MatrixOperations", "SymmetryOperationsITA", 
+             "SymmetryOperationsSeitz"}, {
+             TypeSystem`Atom[String], 
+             TypeSystem`Vector[
+              TypeSystem`Vector[
+               TypeSystem`Vector[
+                TypeSystem`Atom[Integer], 3], 3], 6], 
+             TypeSystem`Vector[
+              TypeSystem`Atom[String], 6], 
+             TypeSystem`Vector[
+              TypeSystem`Atom[String], 6]}], 
+           TypeSystem`Assoc[
+            TypeSystem`Atom[String], 
+            
+            TypeSystem`Struct[{
+             "Symbol", "MatrixOperations", "SymmetryOperationsITA", 
+              "SymmetryOperationsSeitz"}, {
+              TypeSystem`Atom[String], 
+              TypeSystem`Vector[
+               TypeSystem`Vector[
+                TypeSystem`Vector[
+                 TypeSystem`Atom[Integer], 3], 3], 6], 
+              TypeSystem`Vector[
+               TypeSystem`Atom[String], 6], 
+              TypeSystem`Vector[
+               TypeSystem`Atom[String], 6]}], 2]}], "HandleQ" -> True, 
+        "RowTarget" -> 20, "Data" -> 
+        TypeSystem`PackageScope`CacheHandle[1908112389]], 
+      TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+      TypeSystem`NestedGrid`PackagePrivate`$pos$$ = 1, 
+      TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+      DynamicModule[{
+        TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+           Style[
+            Grid[{{
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"Symbol\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"Symbol\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["Symbol"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["Symbol"]]], "Mouse"], Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation["3m", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["Symbol"]]], "Mouse"], 
+                ImageSize -> {{28.800000000000004`, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"PointGroupNumber\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"PointGroupNumber\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["PointGroupNumber"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["PointGroupNumber"]]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes["19"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["PointGroupNumber"]]], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"CrystalSystem\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"CrystalSystem\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["CrystalSystem"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["CrystalSystem"]]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation["Trigonal", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["CrystalSystem"]]], "Mouse"], 
+                ImageSize -> {{76.80000000000001, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"LaueClass\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"LaueClass\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["LaueClass"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["LaueClass"]]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation["\!\(\*OverscriptBox[\(3\), \(_\)]\)m", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["LaueClass"]]], "Mouse"], 
+                ImageSize -> {{268.80000000000007`, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"Properties\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"Properties\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["Properties"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["Properties"]]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Style[
+                    Association[
+                    "Centrosymmetric" -> False, "Enantiomorphic" -> False, 
+                    "Polar" -> True], ShowStringCharacters -> False], 
+                    Style[
+                    Style[
+                    Association[
+                    "Centrosymmetric" -> False, "Enantiomorphic" -> False, 
+                    "Polar" -> True], ShowStringCharacters -> False], 
+                    FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["Properties"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["Properties"]]], "Mouse"]]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"SymmetryOperations\"", FontColor -> 
+                    GrayLevel[0.4]]], {{20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"SymmetryOperations\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["SymmetryOperations"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["SymmetryOperations"]]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Tooltip[
+                    Row[{"\[LeftAssociation] ", 
+                    Subscript["\[Ellipsis]", 4], "\[RightAssociation]"}], 
+                    Row[{"Keys: ", 
+                    
+                    Row[{"Setting", "MatrixOperations", 
+                    "SymmetryOperationsITA", "SymmetryOperationsSeitz"}, ", ",
+                     BaseStyle -> (ShowStringCharacters -> True)]}], 
+                    TooltipDelay -> 0.1], 
+                    Style[
+                    Tooltip[
+                    Row[{"\[LeftAssociation] ", 
+                    Subscript["\[Ellipsis]", 4], "\[RightAssociation]"}], 
+                    Row[{"Keys: ", 
+                    
+                    Row[{"Setting", "MatrixOperations", 
+                    "SymmetryOperationsITA", "SymmetryOperationsSeitz"}, ", ",
+                     BaseStyle -> (ShowStringCharacters -> True)]}], 
+                    TooltipDelay -> 0.1], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["SymmetryOperations"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["SymmetryOperations"]]], "Mouse"], BaseStyle -> {
+                  GrayLevel[0.5]}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"AlternativeSettings\"", FontColor -> 
+                    GrayLevel[0.4]]], {{20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"AlternativeSettings\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["AlternativeSettings"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["AlternativeSettings"]]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Tooltip[
+                    Row[{"\[LeftAssociation] ", 
+                    Subscript["\[Ellipsis]", 2], "\[RightAssociation]"}], 
+                    Row[{"Keys: ", 
+                    
+                    Row[{"HexagonalAxes", "RhombohedralAxes"}, ", ", 
+                    BaseStyle -> (ShowStringCharacters -> True)]}], 
+                    TooltipDelay -> 0.1], 
+                    Style[
+                    Tooltip[
+                    Row[{"\[LeftAssociation] ", 
+                    Subscript["\[Ellipsis]", 2], "\[RightAssociation]"}], 
+                    Row[{"Keys: ", 
+                    
+                    Row[{"HexagonalAxes", "RhombohedralAxes"}, ", ", 
+                    BaseStyle -> (ShowStringCharacters -> True)]}], 
+                    TooltipDelay -> 0.1], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][{
+                    Key["AlternativeSettings"]}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+                  GeneralUtilities`Slice[
+                   Key["AlternativeSettings"]]], "Mouse"], BaseStyle -> {
+                  GrayLevel[0.5]}]}}, BaseStyle -> {ContextMenu -> {
+                 MenuItem["Copy position to clipboard", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                   TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                  MenuEvaluator -> Automatic], 
+                 MenuItem["Copy data to clipboard", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                  MenuEvaluator -> Automatic], Delimiter, 
+                 MenuItem["Paste position in new cell", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                   TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                  MenuEvaluator -> Automatic], 
+                 MenuItem["Paste data in new cell", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                  MenuEvaluator -> Automatic]}, FontFamily -> "Verdana", 
+               FontSize -> 12}, Alignment -> Left, RowMinHeight -> 1.5, 
+             Dividers -> All, FrameStyle -> GrayLevel[0.85], 
+             BaseStyle -> {FontFamily -> "Verdana", FontSize -> 12}], 
+            LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> False,
+             ShowAutoStyles -> False]], 
+         TypeSystem`NestedGrid`PackagePrivate`initialQ = True, 
+         TypeSystem`NestedGrid`PackagePrivate`self = $Failed}, 
+        Dynamic[
+         TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+         TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+            Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+            
+            Module[{TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+              TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+              TypeSystem`NestedGrid`PackagePrivate`LookupCacheValue[
+                TypeSystem`NestedGrid`PackagePrivate`$state$$["Data"]]}, 
+             TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = 
+              If[TypeSystem`NestedGrid`PackagePrivate`tmpData$ === 
+                TypeSystem`NestedGrid`PackagePrivate`$NotCached, 
+                TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+                TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+                TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                 TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                 TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                 TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501][
+                TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+               Not[
+                FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+               TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+               TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+          TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+          TypeSystem`NestedGrid`PackagePrivate`$pos$$; If[
+            FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+            TypeSystem`SparseGrid[
+             TypeSystem`H["(data no longer present)"]], 
+            If[GeneralUtilities`$DebugMode, 
+             Row[{TypeSystem`NestedGrid`PackagePrivate`renderedGrid, "  ", 
+               TypeSystem`NestedGrid`PackagePrivate`formatState[
+               TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$pos$$]}], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid]]], 
+         TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$pos$$}], 
+        Initialization :> If[
+          Not[$CloudEvaluation], 
+          TypeSystem`NestedGrid`PackagePrivate`attachScrollbar[
+          TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$pos$$]], 
+        DynamicModuleValues :> {}], 
+      TypeSystem`NestedGrid`PackagePrivate`$posCell$$, 
+      TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+        TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+         TypeSystem`PackageScope`Pathbar[
+         TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+          TypeSystem`NestedGrid`PackagePrivate`updateState[
+          TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$grid$$, 2043786501]]], 
+        TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+      TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Framed[
+        Dynamic[
+         Replace[
+          MouseAnnotation[Null], {
+          TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][Null] -> 
+           "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[2043786501][
+             Pattern[TypeSystem`NestedGrid`PackagePrivate`path, 
+              Blank[]]] :> (
+            TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+             TypeSystem`NestedGrid`PackagePrivate`path; 
+            TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+             TypeSystem`NestedGrid`PackagePrivate`path, 
+              TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+           Spacer[10], Blank[] :> Spacer[10]}], TrackedSymbols :> {}], 
+        FrameStyle -> None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> 
+        Top, ImageSize -> {Automatic, 14}]}, 
+     DynamicBox[
+      ToBoxes[
+       Column[
+        If[TypeSystem`NestedGrid`PackagePrivate`$path$$ == {}, 
+         TypeSystem`NestedGrid`PackagePrivate`shiftRight[{
+          TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+           TypeSystem`NestedGrid`PackagePrivate`onDesktopShow[
+           TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+         TypeSystem`NestedGrid`PackagePrivate`shiftRight[{
+          TypeSystem`NestedGrid`PackagePrivate`$topBar$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+           TypeSystem`NestedGrid`PackagePrivate`onDesktopShow[
+           TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`$state$$]], Spacings -> 
+        If[TypeSystem`NestedGrid`PackagePrivate`$path$$ == {}, 
+          0, {{}, {0, 0.05, 0}}]], StandardForm], 
+      ImageSizeCache -> {554., {84.3544921875, 89.6455078125}}, 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], Deinitialization :> 
+     TypeSystem`NestedGrid`PackagePrivate`deleteState[
+      TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+     DynamicModuleValues :> {}, Initialization :> 
+     Block[{$ContextPath = $ContextPath}, 
+       Needs["TypeSystem`"]]], Deploy, DefaultBaseStyle -> "Deploy"]},
+  "CopyTag",
+  DisplayFunction->(#& ),
+  InterpretationFunction->("Dataset[<>]"& )]], "Output",
+ CellLabel->"Out[7]=",
+ CellID->1940463824]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Auxiliary tools", "Section",
+ CellID->938345198],
+
+Cell[TextData[{
+ "In this section we will learn more about the two functions ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$GroupSymbolRedirect"]], 
+    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryData"]], "paclet:MaXrd/ref/SymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", which are built-in to the ",
+ StyleBox["MaXrd",
+  FontSlant->"Italic"],
+ " package and help query data from point groups, space groups and crystal \
+data."
+}], "Text",
+ CellID->1653357919],
+
+Cell[TextData[{
+ "Associations only support a single key for each entry. The associations ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$PointGroups"]], "paclet:MaXrd/ref/$PointGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " only have one \[OpenCurlyDoubleQuote]main entry\[CloseCurlyDoubleQuote] \
+for each group,"
+}], "Text",
+ CellID->1926981462],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "/@", 
+  RowBox[{"{", 
+   RowBox[{"$PointGroups", ",", "$SpaceGroups"}], "}"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->576551427],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"32", ",", "230"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1820303658]
+}, Open  ]],
+
+Cell[TextData[{
+ "All data concerned with the alternative settings are stored as sub-entries. \
+For example, the orthorhombic space group ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", " ", "b", " ", "c", " ", "n"}], TraditionalForm]], 
+  "InlineMath"],
+ " has five alternative settings: one with an ",
+ Cell[BoxData[
+ "\"\<ba\!\(\*OverscriptBox[\(c\), \(_\)]\)\>\""], "InlineFormula"],
+ "-permutation of the axes, and one with a ",
+ Cell[BoxData["\"\<cab\>\""], "InlineFormula"],
+ "-permutation, and the remaining versions with ",
+ Cell[BoxData[
+ "\"\<\!\(\*OverscriptBox[\(c\), \(_\)]\)ba\>\""], "InlineFormula"],
+ ", ",
+ Cell[BoxData["\"\<bca\>\""], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+ "\"\<a\!\(\*OverscriptBox[\(c\), \(_\)]\)b\>\""], "InlineFormula"],
+ " permutations."
+}], "Text",
+ CellID->791544844],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "@", 
+  RowBox[{"$SpaceGroups", "[", 
+   RowBox[{"\"\<Pbcn\>\"", ",", "\"\<AlternativeSettings\>\""}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->713264434],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"AxisPermutationBA\\!\\(\\*OverscriptBox[\\(C\\), \\(_\\)]\\)\"\
+\>", ",", "\<\"AxisPermutationCAB\"\>", 
+   ",", "\<\"AxisPermutation\\!\\(\\*OverscriptBox[\\(C\\), \
+\\(_\\)]\\)BA\"\>", ",", "\<\"AxisPermutationBCA\"\>", 
+   ",", "\<\"AxisPermutationA\\!\\(\\*OverscriptBox[\\(C\\), \
+\\(_\\)]\\)B\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1950767315]
+}, Open  ]],
+
+Cell[TextData[{
+ "Let us look at three different ways to access the data of, say the ",
+ Cell[BoxData["\"\<bca\>\""], "InlineFormula"],
+ "-version:"
+}], "Text",
+ CellID->106117543],
+
+Cell[TextData[{
+ "1. Look up the entry directly in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ":"
+}], "MathCaption",
+ CellID->529365239],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$SpaceGroups", "[", 
+  RowBox[{
+  "\"\<Pbcn\>\"", ",", "\"\<AlternativeSettings\>\"", ",", 
+   "\"\<AxisPermutationBCA\>\""}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->341755647],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Name\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Symbol\"\>", "\[Rule]", "\<\"Pbna\"\>"}], ",", 
+      RowBox[{"\<\"HermannMauguinShort\"\>", "\[Rule]", "\<\"P b n a\"\>"}], 
+      ",", 
+      RowBox[{"\<\"HermannMauguinFull\"\>", 
+       "\[Rule]", "\<\"P 2/b 21/n 21/a\"\>"}], ",", 
+      RowBox[{"\<\"HallString\"\>", "\[Rule]", "\<\"-P 2ac 2b\"\>"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"Setting\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"AxisPermutation\"\>", "\[Rule]", "\<\"bca\"\>"}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"SymmetryOperations\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox["1", "2"], ",", "0", ",", 
+          FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          FractionBox["1", "2"], ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["1", "2"]}], ",", "0", ",", 
+          RowBox[{"-", 
+           FractionBox["1", "2"]}]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"-", 
+           FractionBox["1", "2"]}], ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["1", "2"]}], ",", 
+          RowBox[{"-", 
+           FractionBox["1", "2"]}], ",", 
+          RowBox[{"-", 
+           FractionBox["1", "2"]}]}], "}"}]}], "}"}]}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->800652022]
+}, Open  ]],
+
+Cell[TextData[{
+ "2. Let ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$GroupSymbolRedirect"]], 
+    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " look up the entry automatically (it works almost like a \
+\[OpenCurlyDoubleQuote]switchboard\[CloseCurlyDoubleQuote] for the point- and \
+space groups). You would need to know the space group symbol in advance:"
+}], "MathCaption",
+ CellID->1128691895],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$GroupSymbolRedirect", "[", "\"\<Pbna\>\"", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1251013360],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Name\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"Symbol\"\>", "\[Rule]", "\<\"Pbna\"\>"}], ",", 
+      RowBox[{"\<\"HermannMauguinShort\"\>", "\[Rule]", "\<\"P b n a\"\>"}], 
+      ",", 
+      RowBox[{"\<\"HermannMauguinFull\"\>", 
+       "\[Rule]", "\<\"P 2/b 21/n 21/a\"\>"}], ",", 
+      RowBox[{"\<\"HallString\"\>", "\[Rule]", "\<\"-P 2ac 2b\"\>"}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"Setting\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"\<\"AxisPermutation\"\>", "\[Rule]", "\<\"bca\"\>"}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"SymmetryOperations\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox["1", "2"], ",", "0", ",", 
+          FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          FractionBox["1", "2"], ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "2"], ",", 
+          FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", 
+            RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["1", "2"]}], ",", "0", ",", 
+          RowBox[{"-", 
+           FractionBox["1", "2"]}]}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"-", 
+           FractionBox["1", "2"]}], ",", "0"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           FractionBox["1", "2"]}], ",", 
+          RowBox[{"-", 
+           FractionBox["1", "2"]}], ",", 
+          RowBox[{"-", 
+           FractionBox["1", "2"]}]}], "}"}]}], "}"}]}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->2022589984]
+}, Open  ]],
+
+Cell[TextData[{
+ "3. Use ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryData"]], "paclet:MaXrd/ref/SymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " to extract the data you want (see valid commands in the documentation). \
+Say we want to know the space group number or whether the space group is a \
+\[OpenCurlyDoubleQuote]main entry\[CloseCurlyDoubleQuote] or not. A similar \
+function (",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryOperations"]], "paclet:MaXrd/ref/SymmetryOperations"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ") can also extract the symmetry operations:"
+}], "MathCaption",
+ CellID->1860424459],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GetSymmetryData", "[", 
+  RowBox[{"\"\<Pbna\>\"", ",", "\"\<SpaceGroupNumber\>\""}], "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->1658747158],
+
+Cell[BoxData["60"], "Output",
+ CellLabel->"Out[5]=",
+ CellID->1357742702]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GetSymmetryData", "[", 
+  RowBox[{"\"\<Pbna\>\"", ",", "\"\<MainEntryQ\>\""}], "]"}]], "Input",
+ CellLabel->"In[6]:=",
+ CellID->1908267061],
+
+Cell[BoxData["False"], "Output",
+ CellLabel->"Out[6]=",
+ CellID->191290740]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GetSymmetryData", "[", "\"\<Pbna\>\"", "]"}]], "Input",
+ CellLabel->"In[7]:=",
+ CellID->1786426140],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       FractionBox["1", "2"], ",", "0", ",", 
+       FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       FractionBox["1", "2"], ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       FractionBox["1", "2"], ",", 
+       FractionBox["1", "2"], ",", 
+       FractionBox["1", "2"]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], ",", "0", ",", 
+       RowBox[{"-", 
+        FractionBox["1", "2"]}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], ",", 
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], ",", 
+       RowBox[{"-", 
+        FractionBox["1", "2"]}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[7]=",
+ CellID->425588346]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Tutorials"
+}], "RelatedTutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->415694126],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ StyleBox[ButtonBox["Mathematica",
+  BaseStyle->"Link",
+  ButtonData->"paclet:MaXrd/tutorial/MathematicaTips"],
+  FontSlant->"Italic"],
+ ButtonBox[" tips",
+  BaseStyle->"Link",
+  ButtonData->"paclet:MaXrd/tutorial/MathematicaTips"]
+}], "RelatedTutorials",
+ CellID->1984724829],
+
+Cell[TextData[ButtonBox["Quick guide to conditions",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:MaXrd/tutorial/QuickGuideToConditions"]], "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"The association structure of crystallographic data",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 18, 2.494835}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Tutorial", "language" -> "en", "paclet" -> 
+    "MaXrd", "status" -> "None", "summary" -> 
+    "An Association is a list structure with entries being a pair of \
+elements, referred to as keys and values. Each key is associated with a \
+certain value using the notation key\[Rule]value. One can think of the \
+structure as a one-way dictionary. Associations can be nested with both lists \
+and associations. This feature, along with a fast and easy way of inquiring \
+values, makes it useful for storing information about point groups and space \
+group in an hierarchical form. The package must be loaded:", "synonyms" -> {},
+     "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$55777, 
+    "title" -> "The association structure of crystallographic data", 
+    "titlemodifier" -> "", "windowtitle" -> 
+    "The association structure of crystallographic data", "type" -> 
+    "Tutorial", "uri" -> 
+    "MaXrd/tutorial/TheAssociationStructureOfCrystallographicData", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[622, 21, 4127, 101, 70, "AnchorBarGrid",ExpressionUUID->"3159b648-1ad4-4b03-9a4f-51a96ea7add0",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4774, 126, 87, 1, 70, "Title",ExpressionUUID->"9677bf49-8aa7-4299-b04a-a7de8bd56639",
+ CellID->509267359],
+Cell[4864, 129, 11885, 212, 70, "TutorialJumpBox",ExpressionUUID->"78677932-fdb2-4b56-839c-380428ce4aaa"],
+Cell[16752, 343, 838, 29, 70, "Text",ExpressionUUID->"5dc8398e-87f5-453e-9f25-e2b791e45259",
+ CellID->1534169418],
+Cell[17593, 374, 277, 6, 70, "Text",ExpressionUUID->"b53fb8ce-3209-47c1-8786-c6694d57e7fc",
+ CellID->588601786],
+Cell[17873, 382, 71, 1, 70, "MathCaption",ExpressionUUID->"a4b49b14-08c8-4ab3-8aa9-f0957c13093a",
+ CellID->1517691727],
+Cell[17947, 385, 93, 3, 70, "Input",ExpressionUUID->"e1279180-7699-407d-ac37-b7a6a53210bf",
+ CellID->318520214],
+Cell[18043, 390, 1374, 43, 70, "DefinitionBox",ExpressionUUID->"bfc55f98-c01a-4fcc-a7d2-53efb40320dc",
+ CellID->551264998],
+Cell[19420, 435, 85, 1, 70, "Caption",ExpressionUUID->"b04ef076-0a2d-4031-80c3-e3d89f38a1f5",
+ CellID->866368228],
+Cell[CellGroupData[{
+Cell[19530, 440, 59, 1, 70, "Section",ExpressionUUID->"316b8cf3-4b05-4e4b-81f8-705bb3681814",
+ CellID->1477290045],
+Cell[19592, 443, 64, 1, 70, "Text",ExpressionUUID->"d16c7893-6ea4-40c9-a9f4-a6fece42198f",
+ CellID->904309971],
+Cell[19659, 446, 203, 7, 70, "MathCaption",ExpressionUUID->"51c139bb-0e98-4e9e-9385-d2bd16374526",
+ CellID->836781195],
+Cell[CellGroupData[{
+Cell[19887, 457, 119, 3, 70, "Input",ExpressionUUID->"1a876e44-29f8-474c-a091-a77f0f0c19cc",
+ CellID->2058623809],
+Cell[20009, 462, 5322, 125, 70, "Output",ExpressionUUID->"312657a1-7b77-4f84-9fb0-65bed79a47c4",
+ CellID->1175081882]
+}, Open  ]],
+Cell[25346, 590, 537, 15, 70, "MathCaption",ExpressionUUID->"65e139e5-a7fa-4345-bb75-1a8bcf36657e",
+ CellID->2071765006],
+Cell[25886, 607, 64, 1, 70, "Text",ExpressionUUID->"c74f5c12-5adf-4f9f-b87a-bdf13d310dad",
+ CellID->1686878742],
+Cell[25953, 610, 86, 1, 70, "MathCaption",ExpressionUUID->"c6bad021-dab4-491a-982f-9cec3570d00f",
+ CellID->439173159],
+Cell[CellGroupData[{
+Cell[26064, 615, 349, 11, 70, "Input",ExpressionUUID->"27c89e2c-438e-4708-9969-a153757df011",
+ CellID->480581018],
+Cell[26416, 628, 556, 12, 70, "Output",ExpressionUUID->"7a391b37-412a-4ffd-b460-8aac9fd021de",
+ CellID->1919045568]
+}, Open  ]],
+Cell[26987, 643, 141, 4, 70, "MathCaption",ExpressionUUID->"259259fa-9e20-4c3d-9870-fe94d0084a9c",
+ CellID->356711628],
+Cell[CellGroupData[{
+Cell[27153, 651, 141, 4, 70, "Input",ExpressionUUID->"2af7121f-e658-4dd1-bf83-de939885bf98",
+ CellID->1539441892],
+Cell[27297, 657, 74, 2, 70, "Output",ExpressionUUID->"0837dc57-939f-4891-9f83-cadf6547ee70",
+ CellID->381655782]
+}, Open  ]],
+Cell[27386, 662, 93, 1, 70, "MathCaption",ExpressionUUID->"798bb37e-3621-4a1c-9ad4-2c7aa2d56034",
+ CellID->1322872937],
+Cell[27482, 665, 507, 16, 70, "Input",ExpressionUUID->"f40b164f-3cb9-43e8-8d4d-8aa5195c5f6f",
+ CellID->477012596],
+Cell[CellGroupData[{
+Cell[28014, 685, 174, 6, 70, "Input",ExpressionUUID->"6c97941d-e838-48a8-ac3f-db621cf5717a",
+ CellID->156789537],
+Cell[28191, 693, 2080, 61, 70, "Output",ExpressionUUID->"146ffa93-f0d9-4c8f-bbc0-07f51d1f5919",
+ CellID->1328263948]
+}, Open  ]],
+Cell[30286, 757, 360, 12, 70, "MathCaption",ExpressionUUID->"9979345d-ed45-4a09-8d5f-2b86c11b94cd",
+ CellID->1686196213],
+Cell[CellGroupData[{
+Cell[30671, 773, 146, 4, 70, "Input",ExpressionUUID->"5c59a390-fa21-4e74-a734-b0b9d7771182",
+ CellID->131592305],
+Cell[30820, 779, 29064, 583, 70, "Output",ExpressionUUID->"c38526a5-4d8e-475f-9e27-66095aac2e66",
+ CellID->1940463824]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59933, 1368, 54, 1, 70, "Section",ExpressionUUID->"3009275b-67c1-4d31-93b2-fc1077d3b1f5",
+ CellID->938345198],
+Cell[59990, 1371, 651, 22, 70, "Text",ExpressionUUID->"1af0f2f6-c15b-44be-a3c9-c55a0c943217",
+ CellID->1653357919],
+Cell[60644, 1395, 577, 18, 70, "Text",ExpressionUUID->"dbdf5d8d-bf48-45b3-b694-40612dc10593",
+ CellID->1926981462],
+Cell[CellGroupData[{
+Cell[61246, 1417, 167, 5, 70, "Input",ExpressionUUID->"86ed67eb-5721-4b55-8f2b-70c9eb6b107a",
+ CellID->576551427],
+Cell[61416, 1424, 120, 4, 70, "Output",ExpressionUUID->"9e9b24a9-2d9d-4f1f-8bca-ce5b6987df6d",
+ CellID->1820303658]
+}, Open  ]],
+Cell[61551, 1431, 812, 22, 70, "Text",ExpressionUUID->"0dc44c78-b0eb-4423-94ae-ac08a374734b",
+ CellID->791544844],
+Cell[CellGroupData[{
+Cell[62388, 1457, 199, 6, 70, "Input",ExpressionUUID->"98060f8e-96ef-408b-a338-211cbd4f142e",
+ CellID->713264434],
+Cell[62590, 1465, 412, 9, 70, "Output",ExpressionUUID->"74418c22-3f61-4091-b1d7-2d6eb1714c50",
+ CellID->1950767315]
+}, Open  ]],
+Cell[63017, 1477, 180, 5, 70, "Text",ExpressionUUID->"dc78ee22-fe98-42ad-a536-91e21302df50",
+ CellID->106117543],
+Cell[63200, 1484, 271, 10, 70, "MathCaption",ExpressionUUID->"40acf251-e322-426d-be81-ce149ea850ba",
+ CellID->529365239],
+Cell[CellGroupData[{
+Cell[63496, 1498, 210, 6, 70, "Input",ExpressionUUID->"63ac3a2a-f853-4c13-be51-7c138d4e595c",
+ CellID->341755647],
+Cell[63709, 1506, 5090, 148, 70, "Output",ExpressionUUID->"0c9f9128-efe4-498f-a5ef-518f7fddbf78",
+ CellID->800652022]
+}, Open  ]],
+Cell[68814, 1657, 477, 13, 70, "MathCaption",ExpressionUUID->"0b97037a-072a-45ee-9033-635a18288232",
+ CellID->1128691895],
+Cell[CellGroupData[{
+Cell[69316, 1674, 128, 3, 70, "Input",ExpressionUUID->"e84ed3be-ff03-4617-9318-74d2238848ea",
+ CellID->1251013360],
+Cell[69447, 1679, 5091, 148, 70, "Output",ExpressionUUID->"db473b0f-d084-407a-b921-8770d8c75548",
+ CellID->2022589984]
+}, Open  ]],
+Cell[74553, 1830, 719, 20, 70, "MathCaption",ExpressionUUID->"97d405dc-88b6-49c5-92b7-981187c25c2b",
+ CellID->1860424459],
+Cell[CellGroupData[{
+Cell[75297, 1854, 169, 4, 70, "Input",ExpressionUUID->"6ae4a966-90fa-4743-a5e6-4644e81bae03",
+ CellID->1658747158],
+Cell[75469, 1860, 73, 2, 70, "Output",ExpressionUUID->"370a481f-727f-4189-95b1-ffbc1fb6b805",
+ CellID->1357742702]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75579, 1867, 163, 4, 70, "Input",ExpressionUUID->"783631b8-7237-4a60-a4dc-2bce29845cfa",
+ CellID->1908267061],
+Cell[75745, 1873, 75, 2, 70, "Output",ExpressionUUID->"86b56bd9-c708-4e58-9964-87b9e8d0ba36",
+ CellID->191290740]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75857, 1880, 123, 3, 70, "Input",ExpressionUUID->"c5c2c3ce-7d7e-44ec-8953-951fd3a773ca",
+ CellID->1786426140],
+Cell[75983, 1885, 3940, 130, 70, "Output",ExpressionUUID->"9f74b2e4-d283-473e-b94d-34ae13999961",
+ CellID->425588346]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79972, 2021, 167, 7, 70, "RelatedTutorialsSection",ExpressionUUID->"370aa31c-d6d8-40b6-ab1d-f1bcf2548d61",
+ CellID->415694126],
+Cell[80142, 2030, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"e0504d50-e814-45ae-a18c-964889fb07f5"],
+Cell[80176, 2032, 292, 9, 70, "RelatedTutorials",ExpressionUUID->"b4bccd80-bf6a-49b3-96cb-a0dbfc09a703",
+ CellID->1984724829],
+Cell[80471, 2043, 178, 4, 70, "RelatedTutorials",ExpressionUUID->"a09b6a20-e81b-41ab-a47c-b64028c3079f",
+ CellID->806871991]
+}, Open  ]]
+}, Open  ]],
+Cell[80676, 2051, 23, 0, 70, "FooterCell",ExpressionUUID->"5fc8fde8-7445-44b7-9bd6-941484092225"]
+}
+]
+*)
+
+(* End of internal cache information *)

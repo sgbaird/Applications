@@ -1,0 +1,2570 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     98618,       2561]
+NotebookOptionsPosition[     86846,       2311]
+NotebookOutlinePosition[     89354,       2372]
+CellTagsIndexPosition[     89311,       2369]
+WindowTitle->Computations on reflections
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD TUTORIAL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MergeSymmetryEquivalent\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/MergeSymmetryEquivalent"], "\<\"MillerNotationToList\
+\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/MillerNotationToList"], \
+"\<\"MillerNotationToString\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/MillerNotationToString"], "\<\"ReflectionList\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ReflectionList"], "\<\"SystematicAbsentQ\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SystematicAbsentQ"], "\<\"ToStandardSetting\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/ToStandardSetting"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"TutorialFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd/tutorial/ComputationsOnReflections\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/tutorial/ComputationsOnReflections"]}, Visible -> 
+            False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/tutorial/\
+ComputationsOnReflections.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$52582], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/tutorial/ComputationsOnReflections", ".html"]], None}]}]},
+       
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Computations on reflections", "Title",
+ CellID->509267359],
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{
+      Cell["Generating lists of reflections"], 
+      "paclet:MaXrd/tutorial/ComputationsOnReflections#452856133", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], 
+    TemplateBox[{
+      Cell["Working with formatted strings"], 
+      "paclet:MaXrd/tutorial/ComputationsOnReflections#1476721470", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}]},
+   {
+    TemplateBox[{
+      Cell["Formatting the reflections"], 
+      "paclet:MaXrd/tutorial/ComputationsOnReflections#138763261", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], ""}
+  }]], "TutorialJumpBox"],
+
+Cell[TextData[{
+ "In this tutorial, we will see how to make use of the package when working \
+with reflections on the form ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"h", ",", "k", ",", "l"}], "}"}]], "InlineFormula"],
+ ", symbolising Miller indices ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"h", " ", "k", " ", "l"}], TraditionalForm]], "InlineMath"],
+ "."
+}], "Text",
+ CellID->1534169418],
+
+Cell["The package must be loaded:", "MathCaption",
+ CellID->1517691727],
+
+Cell[BoxData[
+ RowBox[{"<<", "MaXrd`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->318520214],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox["MergeSymmetryEquivalent",
+     BaseStyle->"Link",
+     ButtonData->"paclet:MaXrd/ref/MergeSymmetryEquivalent"], Cell[
+    "delete duplicate reflections by symmetry equivalence", "TableText"]},
+   {
+    ButtonBox["ReflectionList",
+     BaseStyle->"Link",
+     ButtonData->"paclet:MaXrd/ref/ReflectionList"], Cell[
+    "generates lists of reflections", "TableText"]},
+   {
+    ButtonBox["SystematicAbsentQ",
+     BaseStyle->"Link",
+     ButtonData->"paclet:MaXrd/ref/SystematicAbsentQ"], Cell[
+    "checks whether a reflection is extinct", "TableText"]},
+   {
+    ButtonBox["ToStandardSetting",
+     BaseStyle->"Link",
+     ButtonData->"paclet:MaXrd/ref/ToStandardSetting"], Cell[
+    "gives the \[LeftGuillemet]standard representative\[RightGuillemet] \
+reflection", "TableText"]}
+  }]], "DefinitionBox",
+ CellID->99232225],
+
+Cell[TextData[{
+ "Useful functions concerning ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"h", " ", "k", " ", "l"}],
+    FontSlant->"Italic"], TraditionalForm]], "InlineMath"],
+ " reflections and systematic absence (extinct- or forbidden reflections)."
+}], "Caption",
+ CellID->1348695503],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox["MillerNotationToList",
+     BaseStyle->"Link",
+     ButtonData->"paclet:MaXrd/ref/MillerNotationToList"], Cell[TextData[{
+     "converts formatted string ",
+     Cell[BoxData[
+      StyleBox["hkl", "TI"]], "InlineFormula"],
+     " to list ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        StyleBox["h", "TI"], ",", 
+        StyleBox["k", "TI"], ",", 
+        StyleBox["l", "TI"]}], "}"}]], "InlineFormula"]
+    }], "TableText"]},
+   {
+    ButtonBox["MillerNotationToString",
+     BaseStyle->"Link",
+     ButtonData->"paclet:MaXrd/ref/MillerNotationToString"], Cell[TextData[{
+     "converts list ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        StyleBox["h", "TI"], ",", 
+        StyleBox["k", "TI"], ",", 
+        StyleBox["l", "TI"]}], "}"}]], "InlineFormula"],
+     " to formatted string ",
+     Cell[BoxData[
+      StyleBox["hkl", "TI"]], "InlineFormula"]
+    }], "TableText"]}
+  }]], "DefinitionBox",
+ CellID->165241693],
+
+Cell["Functions for formatting and deformatting reflections.", "Caption",
+ CellID->520778680],
+
+Cell[CellGroupData[{
+
+Cell["Generating lists of reflections", "Section",
+ CellID->452856133],
+
+Cell[TextData[{
+ "In this demonstration we wish to generate an appropriate list of \
+reflections for ",
+ StyleBox["sodium chloride",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellID->1652838465],
+
+Cell[TextData[{
+ "Reflections are characterised by their Miller indices, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"h", " ", "k", " ", "l"}], TraditionalForm]], "InlineMath"],
+ ", which are represented by lists of three elements in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"h", ",", "k", ",", "l"}], "}"}]], "InlineFormula"],
+ "."
+}], "Text",
+ CellID->285647363],
+
+Cell[TextData[{
+ "Let us start by making a generic list of reflections; every possible whole \
+number combinations, up to index ",
+ Cell[BoxData[
+  FormBox["2", TraditionalForm]], "InlineMath"],
+ " (except the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", " ", "0", " ", "0"}], TraditionalForm]], "InlineMath"],
+ " reflection): "
+}], "MathCaption",
+ CellID->836781195],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"hkl", "=", 
+  RowBox[{"ReflectionList", "[", "2", "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2058623809],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "2"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->2033754830]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$CrystalData", "[", 
+  RowBox[{"\"\<SodiumChloride\>\"", ",", "\"\<SpaceGroup\>\""}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->2019258044],
+
+Cell[BoxData["\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"], \
+"Output",
+ CellLabel->"Out[2]=",
+ CellID->1262409059]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"extinct", "=", 
+  RowBox[{"SystematicAbsentQ", "[", 
+   RowBox[{"\"\<Fm\!\(\*OverscriptBox[\(3\), \(_\)]\)m\>\"", ",", "hkl"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1001407484],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "False", ",", "True", ",", "False", ",", "True", ",", "True", ",", 
+   "False", ",", "False", ",", "True", ",", "True", ",", "False", ",", "True",
+    ",", "True", ",", "True", ",", "False", ",", "True", ",", "True", ",", 
+   "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "False", 
+   ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", 
+   "True", ",", "False", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "False", ",", "True", ",", "True", ",", "True", ",", "False", ",", 
+   "True", ",", "True", ",", "True", ",", "False", ",", "True", ",", "True", 
+   ",", "True", ",", "False", ",", "True", ",", "True", ",", "False", ",", 
+   "False", ",", "False", ",", "True", ",", "True", ",", "False", ",", "True",
+    ",", "False", ",", "False", ",", "True", ",", "True", ",", "False", ",", 
+   "True", ",", "False", ",", "True", ",", "True", ",", "False", ",", "True", 
+   ",", "False", ",", "True", ",", "True", ",", "True", ",", "False", ",", 
+   "True", ",", "False", ",", "True", ",", "True", ",", "False", ",", "True", 
+   ",", "True", ",", "True", ",", "False", ",", "True", ",", "True", ",", 
+   "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", 
+   "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", 
+   "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "False", ",", "False", ",", "False", ",", "False", ",", "False", ",", 
+   "False", ",", "False", ",", "False"}], "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1648459366]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"hkl", "=", 
+  RowBox[{"Pick", "[", 
+   RowBox[{"hkl", ",", "extinct", ",", "False"}], "]"}]}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->773138009],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->798542228]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MergeSymmetryEquivalentReflections", "[", 
+  RowBox[{"\"\<Fm\!\(\*OverscriptBox[\(3\), \(_\)]\)m\>\"", ",", "hkl"}], 
+  "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->1315579155],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[5]=",
+ CellID->1113720663]
+}, Open  ]],
+
+Cell[TextData[{
+ "Two comments before we proceed further: We chose to remove the extinct \
+reflections before we merged the symmetry equivalents, but this could have \
+been done in the opposite order. The other thing is that we could also had \
+used the name of the crystal directly instead of its space group. In the next \
+lines we do this, and see that we end up with the same four reflections ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", " ", "0", " ", "2"}], TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", " ", "1", " ", "1"}], TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", " ", "2", " ", "2"}], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", " ", "2", " ", "2"}], TraditionalForm]], "InlineMath"],
+ ":"
+}], "Text",
+ CellID->1365164161],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"ReflectionList", "[", "2", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"hkl", "=", 
+  RowBox[{"MergeSymmetryEquivalentReflections", "[", 
+   RowBox[{"\"\<SodiumChloride\>\"", ",", "hkl"}], "]"}]}]}], "Input",
+ CellLabel->"In[6]:=",
+ CellID->1003033997],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[7]=",
+ CellID->861959179]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"extinct", "=", 
+  RowBox[{"SystematicAbsentQ", "[", 
+   RowBox[{"\"\<SodiumChloride\>\"", ",", "hkl"}], "]"}]}]], "Input",
+ CellLabel->"In[8]:=",
+ CellID->634366406],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "True", ",", "False", ",", "True", ",", "True", ",", "False", ",", "False", 
+   ",", "True", ",", "True", ",", "False"}], "}"}]], "Output",
+ CellLabel->"Out[8]=",
+ CellID->359190946]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Pick", "[", 
+  RowBox[{"hkl", ",", "extinct", ",", "False"}], "]"}]], "Input",
+ CellLabel->"In[9]:=",
+ CellID->1613558772],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[9]=",
+ CellID->1034805328]
+}, Open  ]],
+
+Cell["\<\
+Another thing to consider is the Bragg angles of the reflections. The \
+wavelength will limit how far out in reciprocal space we will see \
+reflections. For example:\
+\>", "Text",
+ CellID->1841698457],
+
+Cell[TextData[{
+ "Given the wavelength ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Lambda]", "=", 
+    RowBox[{"1.54", " ", "\[CapitalARing]"}]}], TraditionalForm]], 
+  "InlineMath"],
+ " (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Cu", " ", 
+    SubscriptBox["K", "\[Alpha]1"]}], TraditionalForm]], "InlineMath"],
+ "), we see that the reflection ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"3", " ", "3", " ", "5"}], TraditionalForm]], "InlineMath"],
+ " is OK, but the higher indices of the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"5", " ", "5", " ", "7"}], TraditionalForm]], "InlineMath"],
+ " reflection yields an undefined angle:"
+}], "MathCaption",
+ CellID->313492412],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<SodiumChloride\>\"", ",", "1.54", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "3", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "5", ",", "7"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[10]:=",
+ CellID->1356726882],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"63.5409623170986`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", "Undefined"}], "}"}]], "Output",
+ CellLabel->"Out[10]=",
+ CellID->585354733]
+}, Open  ]],
+
+Cell[TextData[{
+ "Thus, we also need to run our reflections through this check. Since we only \
+generated reflections with a maximum index ",
+ Cell[BoxData[
+  FormBox["2", TraditionalForm]], "InlineMath"],
+ ", we won't have this problem with the four reflections we got. This begs \
+another question: Which maximum index is appropriate for our crystal, given a \
+certain wavelength? Luckily, the function ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReflectionList"]], "paclet:MaXrd/ref/ReflectionList"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " does this and above steps automatically."
+}], "Text",
+ CellID->1041931239],
+
+Cell[TextData[{
+ "Generating reflections for sodium chloride, given the wavelength ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Lambda]", "=", 
+    RowBox[{"1.54", " ", "\[CapitalARing]"}]}], TraditionalForm]], 
+  "InlineMath"],
+ ":"
+}], "MathCaption",
+ CellID->1402210381],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ReflectionList", "[", 
+  RowBox[{"\"\<SodiumChloride\>\"", ",", "1.54"}], "]"}]], "Input",
+ CellLabel->"In[11]:=",
+ CellID->1898417409],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "4", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "3", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[11]=",
+ CellID->1100511139]
+}, Open  ]],
+
+Cell["\<\
+You may have notices a progress bar during the computations. If we have a \
+crystal with low symmetry or a very small wavelength, the process could take \
+a little while.\
+\>", "Text",
+ CellID->1286366377],
+
+Cell["A crystal with low symmetry (space group #14):", "MathCaption",
+ CellID->1900682364],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReflectionList", "[", 
+   RowBox[{"\"\<OxalicAcid\>\"", ",", "1.54"}], "]"}], "//", 
+  "Shallow"}]], "Input",
+ CellLabel->"In[18]:=",
+ CellID->1263461432],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"\[LeftSkeleton]", "127", "\[RightSkeleton]"}]}], "}"}]], "Output",\
+
+ CellLabel->"Out[18]//Shallow=",
+ CellID->1765837619]
+}, Open  ]],
+
+Cell["Relatively short wavelength:", "MathCaption",
+ CellID->971497286],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReflectionList", "[", 
+   RowBox[{"\"\<SodiumChloride\>\"", ",", "0.25"}], "]"}], "//", 
+  "Shallow"}]], "Input",
+ CellLabel->"In[19]:=",
+ CellID->636717661],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "3"}], "}"}], ",", 
+   RowBox[{"\[LeftSkeleton]", "1039", "\[RightSkeleton]"}]}], "}"}]], "Output",\
+
+ CellLabel->"Out[19]//Shallow=",
+ CellID->1953650870]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Formatting the reflections", "Section",
+ CellID->138763261],
+
+Cell["\<\
+Once we have generated reflections, we may wish to present them in for \
+instance a table.\
+\>", "Text",
+ CellID->1550736978],
+
+Cell[TextData[{
+ "Twelve random reflections with maximum index ",
+ Cell[BoxData[
+  FormBox["7", TraditionalForm]], "InlineMath"],
+ ":"
+}], "MathCaption",
+ CellID->395965241],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"hkl", "=", 
+  RowBox[{"RandomChoice", "[", 
+   RowBox[{
+    RowBox[{"ReflectionList", "[", "5", "]"}], ",", "12"}], "]"}]}]], "Input",\
+
+ CellLabel->"In[1]:=",
+ CellID->2110366032],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "5"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "3", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5"}], ",", "4", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "2", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", "0", ",", "5"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1151145671]
+}, Open  ]],
+
+Cell[TextData[{
+ "We can make formatted versions of the reflections (normal crystallographic \
+notation) with ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ToMiller"]], "paclet:MaXrd/ref/ToMiller"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". Here the function is mapped over each reflection:"
+}], "MathCaption",
+ CellID->939397198],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"miller", "=", 
+  RowBox[{"MillerNotationToString", "/@", "hkl"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1462664324],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"(\\!\\(\\*OverscriptBox[\\(1\\), \
+\\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(2\\), \\(_\\)]\\)5)\"\>", 
+   ",", "\<\"(130)\"\>", 
+   ",", "\<\"(2\\!\\(\\*OverscriptBox[\\(2\\), \
+\\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\))\"\>", 
+   ",", "\<\"(345)\"\>", 
+   ",", "\<\"(2\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\))\"\>", 
+   ",", "\<\"(\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(3\\), \\(_\\)]\\))\"\>", 
+   ",", "\<\"(\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)4)\"\>", 
+   ",", "\<\"(0\\!\\(\\*OverscriptBox[\\(3\\), \
+\\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\))\"\>", 
+   ",", "\<\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)33)\"\>", 
+   ",", "\<\"(\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)44)\"\>", 
+   ",", "\<\"(42\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\))\"\>", 
+   ",", "\<\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)05)\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->625116674]
+}, Open  ]],
+
+Cell[TextData[{
+ "Let us make a table over the reflections and their corresponding Bragg \
+angles (",
+ StyleBox["note: we do not care about extinct reflections at the moment",
+  FontSlant->"Italic"],
+ "):"
+}], "MathCaption",
+ CellID->959012233],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"angle", "=", 
+  RowBox[{"BraggAngle", "[", 
+   RowBox[{"\"\<SodiumChloride\>\"", ",", "1.54", ",", "hkl"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->194728893],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"48.39820157249584`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"25.577362171493192`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"34.257024540346485`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"74.87882277885838`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"47.324851428425795`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"60.9487142501747`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", "Undefined", ",", 
+   TemplateBox[{"43.04904241039642`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"36.51961186841164`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", "Undefined", ",", 
+   TemplateBox[{"38.72883450450819`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"60.9487142501747`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"]}], "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->845938794]
+}, Open  ]],
+
+Cell[TextData[{
+ "Let us gather the data into one list, and also sort the data by increasing \
+Bragg angle (while pushing the ",
+ Cell[BoxData["Undefined"], "InlineFormula"],
+ " to the bottom):"
+}], "MathCaption",
+ CellID->298077865],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"miller", ",", "hkl", ",", "angle"}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"data", "=", 
+    RowBox[{"SortBy", "[", 
+     RowBox[{"data", ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"QuantityQ", "@", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "3", "]"}], "]"}]}]}], ",", 
+         RowBox[{"Abs", "@", 
+          RowBox[{"#", "[", 
+           RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}], "&"}]}], "]"}]}], ";"}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Prepend", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<(hkl)\>\"", ",", "\"\<{h,k,l}\>\"", ",", 
+       "\"\<\!\(\*SubscriptBox[\(\[Theta]\), \(B\)]\)\>\""}], "}"}]}], "]"}], 
+   ",", 
+   RowBox[{"Dividers", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"False", ",", "True"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"False", ",", "True"}], "}"}]}], "}"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1696103385],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"(hkl)\"\>", "\<\"{h,k,l}\"\>", "\<\"\\!\\(\\*SubscriptBox[\\(\
+\[Theta]\\), \\(B\\)]\\)\"\>"},
+    {"\<\"(130)\"\>", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "0"}], "}"}], 
+     TemplateBox[{"25.577362171493192`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(2\\!\\(\\*OverscriptBox[\\(2\\), \
+\\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\))\"\>", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "2"}], ",", 
+       RowBox[{"-", "3"}]}], "}"}], 
+     TemplateBox[{"34.257024540346485`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)33)\"\>", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "3", ",", "3"}], "}"}], 
+     TemplateBox[{"36.51961186841164`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(42\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\))\"\>", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "2", ",", 
+       RowBox[{"-", "1"}]}], "}"}], 
+     TemplateBox[{"38.72883450450819`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(0\\!\\(\\*OverscriptBox[\\(3\\), \
+\\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\))\"\>", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "3"}], ",", 
+       RowBox[{"-", "4"}]}], "}"}], 
+     TemplateBox[{"43.04904241039642`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(2\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\))\"\>", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "4"}], ",", 
+       RowBox[{"-", "3"}]}], "}"}], 
+     TemplateBox[{"47.324851428425795`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(2\\), \\(_\\)]\\)5)\"\>", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "2"}], ",", "5"}], "}"}], 
+     TemplateBox[{"48.39820157249584`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)05)\"\>", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "4"}], ",", "0", ",", "5"}], "}"}], 
+     TemplateBox[{"60.9487142501747`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(4\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\))\"\>", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "4"}], ",", 
+       RowBox[{"-", "4"}], ",", 
+       RowBox[{"-", "3"}]}], "}"}], 
+     TemplateBox[{"60.9487142501747`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(345)\"\>", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "4", ",", "5"}], "}"}], 
+     TemplateBox[{"74.87882277885838`", 
+       RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+       "\"AngularDegrees\""},
+      "QuantityPostfix"]},
+    {"\<\"(\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\\!\\(\\*OverscriptBox[\
+\\(5\\), \\(_\\)]\\)4)\"\>", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "4"}], ",", 
+       RowBox[{"-", "5"}], ",", "4"}], "}"}], "Undefined"},
+    {"\<\"(\\!\\(\\*OverscriptBox[\\(5\\), \\(_\\)]\\)44)\"\>", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "5"}], ",", "4", ",", "4"}], "}"}], "Undefined"}
+   },
+   AutoDelete->False,
+   GridBoxDividers->{"Columns" -> {False, True}, "Rows" -> {False, True}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellLabel->"Out[6]=",
+ CellID->1351567618]
+}, Open  ]],
+
+Cell[TextData[{
+ "If we want to deformat the Miller indices, we use ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["FromMiller"]], "paclet:MaXrd/ref/FromMiller"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ":"
+}], "MathCaption",
+ CellID->1314978241],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MillerNotationToList", "/@", "miller"}]], "Input",
+ CellLabel->"In[7]:=",
+ CellID->1678480760],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"-1\"\>", ",", "\<\"-2\"\>", ",", "\<\"5\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"1\"\>", ",", "\<\"3\"\>", ",", "\<\"0\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"2\"\>", ",", "\<\"-2\"\>", ",", "\<\"-3\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"3\"\>", ",", "\<\"4\"\>", ",", "\<\"5\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"2\"\>", ",", "\<\"-4\"\>", ",", "\<\"-3\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"-4\"\>", ",", "\<\"-4\"\>", ",", "\<\"-3\"\>"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"-4\"\>", ",", "\<\"-5\"\>", ",", "\<\"4\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"0\"\>", ",", "\<\"-3\"\>", ",", "\<\"-4\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"-1\"\>", ",", "\<\"3\"\>", ",", "\<\"3\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"-5\"\>", ",", "\<\"4\"\>", ",", "\<\"4\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"4\"\>", ",", "\<\"2\"\>", ",", "\<\"-1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"-4\"\>", ",", "\<\"0\"\>", ",", "\<\"5\"\>"}], "}"}]}], 
+  "}"}]], "Output",
+ CellLabel->"Out[7]=",
+ CellID->1862421407]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Working with formatted strings", "Section",
+ CellID->1476721470],
+
+Cell[TextData[{
+ "The main entry keys of ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$PointGroups"]], "paclet:MaXrd/ref/$PointGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " are non- formatted strings, e.g ",
+ Cell[BoxData["\"\<P21/m\>\""], "InlineFormula"],
+ " and ",
+ Cell[BoxData["\"\<I-42d\>\""], "InlineFormula"],
+ ":"
+}], "Text",
+ CellID->507057234],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "@", "$SpaceGroups"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1892818732],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"P1\"\>", ",", "\<\"P-1\"\>", ",", "\<\"P2\"\>", 
+   ",", "\<\"P21\"\>", ",", "\<\"C2\"\>", ",", "\<\"Pm\"\>", 
+   ",", "\<\"Pc\"\>", ",", "\<\"Cm\"\>", ",", "\<\"Cc\"\>", 
+   ",", "\<\"P2/m\"\>", ",", "\<\"P21/m\"\>", ",", "\<\"C2/m\"\>", 
+   ",", "\<\"P2/c\"\>", ",", "\<\"P21/c\"\>", ",", "\<\"C2/c\"\>", 
+   ",", "\<\"P222\"\>", ",", "\<\"P2221\"\>", ",", "\<\"P21212\"\>", 
+   ",", "\<\"P212121\"\>", ",", "\<\"C2221\"\>", ",", "\<\"C222\"\>", 
+   ",", "\<\"F222\"\>", ",", "\<\"I222\"\>", ",", "\<\"I212121\"\>", 
+   ",", "\<\"Pmm2\"\>", ",", "\<\"Pmc21\"\>", ",", "\<\"Pcc2\"\>", 
+   ",", "\<\"Pma2\"\>", ",", "\<\"Pca21\"\>", ",", "\<\"Pnc2\"\>", 
+   ",", "\<\"Pmn21\"\>", ",", "\<\"Pba2\"\>", ",", "\<\"Pna21\"\>", 
+   ",", "\<\"Pnn2\"\>", ",", "\<\"Cmm2\"\>", ",", "\<\"Cmc21\"\>", 
+   ",", "\<\"Ccc2\"\>", ",", "\<\"Amm2\"\>", ",", "\<\"Aem2\"\>", 
+   ",", "\<\"Ama2\"\>", ",", "\<\"Aea2\"\>", ",", "\<\"Fmm2\"\>", 
+   ",", "\<\"Fdd2\"\>", ",", "\<\"Imm2\"\>", ",", "\<\"Iba2\"\>", 
+   ",", "\<\"Ima2\"\>", ",", "\<\"Pmmm\"\>", ",", "\<\"Pnnn\"\>", 
+   ",", "\<\"Pccm\"\>", ",", "\<\"Pban\"\>", ",", "\<\"Pmma\"\>", 
+   ",", "\<\"Pnna\"\>", ",", "\<\"Pmna\"\>", ",", "\<\"Pcca\"\>", 
+   ",", "\<\"Pbam\"\>", ",", "\<\"Pccn\"\>", ",", "\<\"Pbcm\"\>", 
+   ",", "\<\"Pnnm\"\>", ",", "\<\"Pmmn\"\>", ",", "\<\"Pbcn\"\>", 
+   ",", "\<\"Pbca\"\>", ",", "\<\"Pnma\"\>", ",", "\<\"Cmcm\"\>", 
+   ",", "\<\"Cmce\"\>", ",", "\<\"Cmmm\"\>", ",", "\<\"Cccm\"\>", 
+   ",", "\<\"Cmme\"\>", ",", "\<\"Ccce\"\>", ",", "\<\"Fmmm\"\>", 
+   ",", "\<\"Fddd\"\>", ",", "\<\"Immm\"\>", ",", "\<\"Ibam\"\>", 
+   ",", "\<\"Ibca\"\>", ",", "\<\"Imma\"\>", ",", "\<\"P4\"\>", 
+   ",", "\<\"P41\"\>", ",", "\<\"P42\"\>", ",", "\<\"P43\"\>", 
+   ",", "\<\"I4\"\>", ",", "\<\"I41\"\>", ",", "\<\"P-4\"\>", 
+   ",", "\<\"I-4\"\>", ",", "\<\"P4/m\"\>", ",", "\<\"P42/m\"\>", 
+   ",", "\<\"P4/n\"\>", ",", "\<\"P42/n\"\>", ",", "\<\"I4/m\"\>", 
+   ",", "\<\"I41/a\"\>", ",", "\<\"P422\"\>", ",", "\<\"P4212\"\>", 
+   ",", "\<\"P4122\"\>", ",", "\<\"P41212\"\>", ",", "\<\"P4222\"\>", 
+   ",", "\<\"P42212\"\>", ",", "\<\"P4322\"\>", ",", "\<\"P43212\"\>", 
+   ",", "\<\"I422\"\>", ",", "\<\"I4122\"\>", ",", "\<\"P4mm\"\>", 
+   ",", "\<\"P4bm\"\>", ",", "\<\"P42cm\"\>", ",", "\<\"P42nm\"\>", 
+   ",", "\<\"P4cc\"\>", ",", "\<\"P4nc\"\>", ",", "\<\"P43mc\"\>", 
+   ",", "\<\"P42bc\"\>", ",", "\<\"I4mm\"\>", ",", "\<\"I4cm\"\>", 
+   ",", "\<\"I41md\"\>", ",", "\<\"I41cd\"\>", ",", "\<\"P-42m\"\>", 
+   ",", "\<\"P-42c\"\>", ",", "\<\"P-421m\"\>", ",", "\<\"P-421c\"\>", 
+   ",", "\<\"P-4m2\"\>", ",", "\<\"P-4c2\"\>", ",", "\<\"P-4b2\"\>", 
+   ",", "\<\"P-4n2\"\>", ",", "\<\"I-4m2\"\>", ",", "\<\"I-4c2\"\>", 
+   ",", "\<\"I-42m\"\>", ",", "\<\"I-42d\"\>", ",", "\<\"P4/mmm\"\>", 
+   ",", "\<\"P4/mcc\"\>", ",", "\<\"P4/nbm\"\>", ",", "\<\"P4/nnc\"\>", 
+   ",", "\<\"P4/mbm\"\>", ",", "\<\"P4/mnc\"\>", ",", "\<\"P4/nmm\"\>", 
+   ",", "\<\"P4/ncc\"\>", ",", "\<\"P42/mmc\"\>", ",", "\<\"P42/mcm\"\>", 
+   ",", "\<\"P42/nbc\"\>", ",", "\<\"P42/nnm\"\>", ",", "\<\"P42/mbc\"\>", 
+   ",", "\<\"P42/mnm\"\>", ",", "\<\"P42/nmc\"\>", ",", "\<\"P42/ncm\"\>", 
+   ",", "\<\"I4/mmm\"\>", ",", "\<\"I4/mcm\"\>", ",", "\<\"I41/amd\"\>", 
+   ",", "\<\"I41/acd\"\>", ",", "\<\"P3\"\>", ",", "\<\"P31\"\>", 
+   ",", "\<\"P32\"\>", ",", "\<\"R3\"\>", ",", "\<\"P-3\"\>", 
+   ",", "\<\"R-3\"\>", ",", "\<\"P312\"\>", ",", "\<\"P321\"\>", 
+   ",", "\<\"P3112\"\>", ",", "\<\"P3121\"\>", ",", "\<\"P3212\"\>", 
+   ",", "\<\"P3221\"\>", ",", "\<\"R32\"\>", ",", "\<\"P3m1\"\>", 
+   ",", "\<\"P31m\"\>", ",", "\<\"P3c1\"\>", ",", "\<\"P31c\"\>", 
+   ",", "\<\"R3m\"\>", ",", "\<\"R3c\"\>", ",", "\<\"P-31m\"\>", 
+   ",", "\<\"P-31c\"\>", ",", "\<\"P-3m1\"\>", ",", "\<\"P-3c1\"\>", 
+   ",", "\<\"R-3m\"\>", ",", "\<\"R-3c\"\>", ",", "\<\"P6\"\>", 
+   ",", "\<\"P61\"\>", ",", "\<\"P65\"\>", ",", "\<\"P62\"\>", 
+   ",", "\<\"P64\"\>", ",", "\<\"P63\"\>", ",", "\<\"P-6\"\>", 
+   ",", "\<\"P6/m\"\>", ",", "\<\"P63/m\"\>", ",", "\<\"P622\"\>", 
+   ",", "\<\"P6122\"\>", ",", "\<\"P6522\"\>", ",", "\<\"P6222\"\>", 
+   ",", "\<\"P6422\"\>", ",", "\<\"P6322\"\>", ",", "\<\"P6mm\"\>", 
+   ",", "\<\"P6cc\"\>", ",", "\<\"P63cm\"\>", ",", "\<\"P63mc\"\>", 
+   ",", "\<\"P-6m2\"\>", ",", "\<\"P-6c2\"\>", ",", "\<\"P-62m\"\>", 
+   ",", "\<\"P-62c\"\>", ",", "\<\"P6/mmm\"\>", ",", "\<\"P6/mcc\"\>", 
+   ",", "\<\"P63/mcm\"\>", ",", "\<\"P63/mmc\"\>", ",", "\<\"P23\"\>", 
+   ",", "\<\"F23\"\>", ",", "\<\"I23\"\>", ",", "\<\"P213\"\>", 
+   ",", "\<\"I213\"\>", ",", "\<\"Pm-3\"\>", ",", "\<\"Pn-3\"\>", 
+   ",", "\<\"Fm-3\"\>", ",", "\<\"Fd-3\"\>", ",", "\<\"Im-3\"\>", 
+   ",", "\<\"Pa-3\"\>", ",", "\<\"Ia-3\"\>", ",", "\<\"P432\"\>", 
+   ",", "\<\"P4232\"\>", ",", "\<\"F432\"\>", ",", "\<\"F4132\"\>", 
+   ",", "\<\"I432\"\>", ",", "\<\"P4332\"\>", ",", "\<\"P4132\"\>", 
+   ",", "\<\"I4132\"\>", ",", "\<\"P-43m\"\>", ",", "\<\"F-43m\"\>", 
+   ",", "\<\"I-43m\"\>", ",", "\<\"P-43n\"\>", ",", "\<\"F-43c\"\>", 
+   ",", "\<\"I-43d\"\>", ",", "\<\"Pm-3m\"\>", ",", "\<\"Pn-3n\"\>", 
+   ",", "\<\"Pm-3n\"\>", ",", "\<\"Pn-3m\"\>", ",", "\<\"Fm-3m\"\>", 
+   ",", "\<\"Fm-3c\"\>", ",", "\<\"Fd-3m\"\>", ",", "\<\"Fd-3c\"\>", 
+   ",", "\<\"Im-3m\"\>", ",", "\<\"Ia-3d\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->737470407]
+}, Open  ]],
+
+Cell[TextData[{
+ "All entries in $SpaceGroups have the corresponding formatted symbol stored \
+under the key ",
+ Cell[BoxData[
+  RowBox[{"[", 
+   RowBox[{"\"\<Name\>\"", ",", "\"\<Symbol\>\""}], "]"}]], "InlineFormula"],
+ "."
+}], "Text",
+ CellID->885083924],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Values", "@", 
+  RowBox[{"$SpaceGroups", "[", 
+   RowBox[{"[", 
+    RowBox[{"All", ",", "\"\<Name\>\"", ",", "\"\<Symbol\>\""}], "]"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->985910860],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"P1\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"P2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"C2\"\>", ",", "\<\"Pm\"\>", ",", "\<\"Pc\"\>", ",", "\<\"Cm\"\>",
+    ",", "\<\"Cc\"\>", ",", "\<\"P2/m\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)/m\"\>", 
+   ",", "\<\"C2/m\"\>", ",", "\<\"P2/c\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)/c\"\>", 
+   ",", "\<\"C2/c\"\>", ",", "\<\"P222\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P222\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(C222\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"C222\"\>", ",", "\<\"F222\"\>", ",", "\<\"I222\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"Pmm2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(Pmc2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"Pcc2\"\>", ",", "\<\"Pma2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(Pca2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"Pnc2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(Pmn2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"Pba2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(Pna2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"Pnn2\"\>", ",", "\<\"Cmm2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(Cmc2\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"Ccc2\"\>", ",", "\<\"Amm2\"\>", ",", "\<\"Aem2\"\>", 
+   ",", "\<\"Ama2\"\>", ",", "\<\"Aea2\"\>", ",", "\<\"Fmm2\"\>", 
+   ",", "\<\"Fdd2\"\>", ",", "\<\"Imm2\"\>", ",", "\<\"Iba2\"\>", 
+   ",", "\<\"Ima2\"\>", ",", "\<\"Pmmm\"\>", ",", "\<\"Pnnn\"\>", 
+   ",", "\<\"Pccm\"\>", ",", "\<\"Pban\"\>", ",", "\<\"Pmma\"\>", 
+   ",", "\<\"Pnna\"\>", ",", "\<\"Pmna\"\>", ",", "\<\"Pcca\"\>", 
+   ",", "\<\"Pbam\"\>", ",", "\<\"Pccn\"\>", ",", "\<\"Pbcm\"\>", 
+   ",", "\<\"Pnnm\"\>", ",", "\<\"Pmmn\"\>", ",", "\<\"Pbcn\"\>", 
+   ",", "\<\"Pbca\"\>", ",", "\<\"Pnma\"\>", ",", "\<\"Cmcm\"\>", 
+   ",", "\<\"Cmce\"\>", ",", "\<\"Cmmm\"\>", ",", "\<\"Cccm\"\>", 
+   ",", "\<\"Cmme\"\>", ",", "\<\"Ccce\"\>", ",", "\<\"Fmmm\"\>", 
+   ",", "\<\"Fddd\"\>", ",", "\<\"Immm\"\>", ",", "\<\"Ibam\"\>", 
+   ",", "\<\"Ibca\"\>", ",", "\<\"Imma\"\>", ",", "\<\"P4\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(3\\)]\\)\"\>", 
+   ",", "\<\"I4\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"P4/m\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/m\"\>", 
+   ",", "\<\"P4/n\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/n\"\>", 
+   ",", "\<\"I4/m\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)/a\"\>", 
+   ",", "\<\"P422\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P42\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(1\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \
+\\(1\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(3\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)2\"\>", 
+   ",", "\<\"I422\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)22\"\>", 
+   ",", "\<\"P4mm\"\>", ",", "\<\"P4bm\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)cm\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)nm\"\>", 
+   ",", "\<\"P4cc\"\>", ",", "\<\"P4nc\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)mc\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)bc\"\>", 
+   ",", "\<\"I4mm\"\>", ",", "\<\"I4cm\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)md\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)cd\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)2m\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)2c\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)m\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \
+\\(_\\)]\\)\\!\\(\\*SubscriptBox[\\(2\\), \\(1\\)]\\)c\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)m2\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)c2\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)b2\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)n2\"\>", 
+   ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)m2\"\>", 
+   ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)c2\"\>", 
+   ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)2m\"\>", 
+   ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)2d\"\>", 
+   ",", "\<\"P4/mmm\"\>", ",", "\<\"P4/mcc\"\>", ",", "\<\"P4/nbm\"\>", 
+   ",", "\<\"P4/nnc\"\>", ",", "\<\"P4/mbm\"\>", ",", "\<\"P4/mnc\"\>", 
+   ",", "\<\"P4/nmm\"\>", ",", "\<\"P4/ncc\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/mmc\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/mcm\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/nbc\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/nnm\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/mbc\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/mnm\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/nmc\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)/ncm\"\>", 
+   ",", "\<\"I4/mmm\"\>", ",", "\<\"I4/mcm\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)/amd\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)/acd\"\>", 
+   ",", "\<\"P3\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(2\\)]\\)\"\>", 
+   ",", "\<\"R3\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"R\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"P312\"\>", ",", "\<\"P321\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)12\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(1\\)]\\)21\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(2\\)]\\)12\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P3\\), \\(2\\)]\\)21\"\>", 
+   ",", "\<\"R32\"\>", ",", "\<\"P3m1\"\>", ",", "\<\"P31m\"\>", 
+   ",", "\<\"P3c1\"\>", ",", "\<\"P31c\"\>", ",", "\<\"R3m\"\>", 
+   ",", "\<\"R3c\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)1m\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)1c\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m1\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)c1\"\>", 
+   ",", "\<\"R\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+   ",", "\<\"R\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)c\"\>", 
+   ",", "\<\"P6\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(1\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(5\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(2\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(4\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"P6/m\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)/m\"\>", 
+   ",", "\<\"P622\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(1\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(5\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(2\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(4\\)]\\)22\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)22\"\>", 
+   ",", "\<\"P6mm\"\>", ",", "\<\"P6cc\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)cm\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)mc\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)m2\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)c2\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)2m\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)2c\"\>", 
+   ",", "\<\"P6/mmm\"\>", ",", "\<\"P6/mcc\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)/mcm\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P6\\), \\(3\\)]\\)/mmc\"\>", 
+   ",", "\<\"P23\"\>", ",", "\<\"F23\"\>", ",", "\<\"I23\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P2\\), \\(1\\)]\\)3\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I2\\), \\(1\\)]\\)3\"\>", 
+   ",", "\<\"Pm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"Pn\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"Im\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"Pa\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"Ia\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"P432\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(2\\)]\\)32\"\>", 
+   ",", "\<\"F432\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(F4\\), \\(1\\)]\\)32\"\>", 
+   ",", "\<\"I432\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(3\\)]\\)32\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(P4\\), \\(1\\)]\\)32\"\>", 
+   ",", "\<\"\\!\\(\\*SubscriptBox[\\(I4\\), \\(1\\)]\\)32\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>", 
+   ",", "\<\"F\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>", 
+   ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>", 
+   ",", "\<\"P\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3n\"\>", 
+   ",", "\<\"F\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3c\"\>", 
+   ",", "\<\"I\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3d\"\>", 
+   ",", "\<\"Pm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+   ",", "\<\"Pn\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)n\"\>", 
+   ",", "\<\"Pm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)n\"\>", 
+   ",", "\<\"Pn\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+   ",", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+   ",", "\<\"Fm\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)c\"\>", 
+   ",", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+   ",", "\<\"Fd\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)c\"\>", 
+   ",", "\<\"Im\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+   ",", "\<\"Ia\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)d\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1537003612]
+}, Open  ]],
+
+Cell[TextData[{
+ "Subscripts are made with the key combination \[ControlKey]+",
+ StyleBox["hyphen-minus",
+  FontSlant->"Italic"],
+ " and overbars are made by highlighting the digit character and pressing \
+\[ControlKey]+7 followed by and underscore."
+}], "Text",
+ CellID->1118086339],
+
+Cell[TextData[{
+ "Input in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryData"]], "paclet:MaXrd/ref/SymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " (and ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryOperations"]], "paclet:MaXrd/ref/SymmetryOperations"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ") are automatically run through ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$GroupSymbolRedirect"]], 
+    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". An advantage is that the entries do not have to be formatted; instead of \
+using ",
+ Cell[BoxData[
+ "\"\<Fd\!\(\*OverscriptBox[\(3\), \(_\)]\)m\>\""], "InlineFormula"],
+ ", entering ",
+ Cell[BoxData["\"\<Fd-3m\>\""], "InlineFormula"],
+ ", ",
+ Cell[BoxData["\"\<F d -3 m\>\""], "InlineFormula"],
+ ", ",
+ Cell[BoxData["\"\<F 41/d -3 2/m\>\""], "InlineFormula"],
+ " or even the Hall string of that space group (",
+ Cell[BoxData["\"\<F 4d 2 3 -1d\>\""], "InlineFormula"],
+ ") will look up the same space group."
+}], "Text",
+ CellID->1151212725],
+
+Cell[TextData[{
+ "One can also use ",
+ Cell[BoxData["\"\<Fd-3m:2\>\""], "InlineFormula"],
+ " to specify the alternative setting with cell origin 2, or ",
+ Cell[BoxData["\"\<R -3 c:r\>\""], "InlineFormula"],
+ " to specify the version with rhombohedral axes."
+}], "Text",
+ CellID->339500947]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Computations on reflections",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 44.931633}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Tutorial", "language" -> "en", "paclet" -> 
+    "MaXrd", "status" -> "None", "summary" -> 
+    "In this tutorial, we will see how to make use of the package when \
+working with reflections on the form {h,k,l}, symbolising Miller indices h k \
+l. The package must be loaded: Useful functions concerning h k l reflections \
+and systematic absence (extinct- or forbidden reflections).", 
+    "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$52494, "title" -> 
+    "Computations on reflections", "titlemodifier" -> "", "windowtitle" -> 
+    "Computations on reflections", "type" -> "Tutorial", "uri" -> 
+    "MaXrd/tutorial/ComputationsOnReflections", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[599, 21, 3688, 87, 70, "AnchorBarGrid",ExpressionUUID->"1843f473-9a31-4c2b-ae63-011fa653d94c",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4312, 112, 64, 1, 70, "Title",ExpressionUUID->"d5234024-d052-4f53-b15f-7f533ae197bb",
+ CellID->509267359],
+Cell[4379, 115, 17780, 315, 70, "TutorialJumpBox",ExpressionUUID->"565da590-3736-445b-8446-4c8c06e85849"],
+Cell[22162, 432, 390, 12, 70, "Text",ExpressionUUID->"65907e1e-60c3-40d4-bd63-a8826447c63a",
+ CellID->1534169418],
+Cell[22555, 446, 71, 1, 70, "MathCaption",ExpressionUUID->"ced95fbb-1059-4468-9078-461a8df01072",
+ CellID->1517691727],
+Cell[22629, 449, 93, 3, 70, "Input",ExpressionUUID->"c699377b-b460-4426-a099-4c58264d9931",
+ CellID->318520214],
+Cell[22725, 454, 865, 23, 70, "DefinitionBox",ExpressionUUID->"6bafb0ed-4d90-4de2-911f-12d0f877e9a4",
+ CellID->99232225],
+Cell[23593, 479, 298, 9, 70, "Caption",ExpressionUUID->"d783d0c3-0c7e-44ea-bae2-18756b70a3fc",
+ CellID->1348695503],
+Cell[23894, 490, 1001, 32, 70, "DefinitionBox",ExpressionUUID->"5b76e300-03a1-4295-be9f-c94d83ebacb2",
+ CellID->165241693],
+Cell[24898, 524, 93, 1, 70, "Caption",ExpressionUUID->"8ed8d7a4-ef20-4555-ac54-692283e8a4e3",
+ CellID->520778680],
+Cell[CellGroupData[{
+Cell[25016, 529, 70, 1, 70, "Section",ExpressionUUID->"5005453f-7094-4a2b-a4ab-e8929c16709c",
+ CellID->452856133],
+Cell[25089, 532, 194, 7, 70, "Text",ExpressionUUID->"42e43b1b-d2d6-4657-86ae-2db4cec5bc50",
+ CellID->1652838465],
+Cell[25286, 541, 420, 14, 70, "Text",ExpressionUUID->"3dcb6b83-1e11-4a62-bc61-7b5488787bae",
+ CellID->285647363],
+Cell[25709, 557, 367, 11, 70, "MathCaption",ExpressionUUID->"0c3faf43-6128-4279-9459-478b7856e5c8",
+ CellID->836781195],
+Cell[CellGroupData[{
+Cell[26101, 572, 136, 4, 70, "Input",ExpressionUUID->"946131fe-5e5a-4bdd-918b-2d28fbf0ca52",
+ CellID->2058623809],
+Cell[26240, 578, 11803, 402, 70, "Output",ExpressionUUID->"dd29e837-df74-4874-af3d-4ccaa6d4652a",
+ CellID->2033754830]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38080, 985, 173, 5, 70, "Input",ExpressionUUID->"23ad646f-89e3-4f8d-99a6-e433b4253545",
+ CellID->2019258044],
+Cell[38256, 992, 127, 3, 70, "Output",ExpressionUUID->"59a876e1-3bbb-46b2-b0a1-cda5e7752b14",
+ CellID->1262409059]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38420, 1000, 218, 6, 70, "Input",ExpressionUUID->"09f57e83-1936-45bd-9e28-9459631e62fc",
+ CellID->1001407484],
+Cell[38641, 1008, 1834, 27, 70, "Output",ExpressionUUID->"474cac61-74cd-420f-87cc-f658adaf9f01",
+ CellID->1648459366]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40512, 1040, 171, 5, 70, "Input",ExpressionUUID->"710d6685-eeee-4e9a-accd-edb7bcc787be",
+ CellID->773138009],
+Cell[40686, 1047, 3261, 111, 70, "Output",ExpressionUUID->"e4783889-f4b8-476e-aee4-f9205b94319f",
+ CellID->798542228]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43984, 1163, 204, 5, 70, "Input",ExpressionUUID->"649f5bd6-e4a1-4fc5-a824-5f0e53c1c8c4",
+ CellID->1315579155],
+Cell[44191, 1170, 373, 12, 70, "Output",ExpressionUUID->"26b39434-7d99-4305-b87d-ad72fb6ba57d",
+ CellID->1113720663]
+}, Open  ]],
+Cell[44579, 1185, 853, 23, 70, "Text",ExpressionUUID->"95aef7a1-8099-4749-a088-a2d63d8fb807",
+ CellID->1365164161],
+Cell[CellGroupData[{
+Cell[45457, 1212, 320, 9, 70, "Input",ExpressionUUID->"76e10db3-2712-4cb7-b991-0f32cff1a850",
+ CellID->1003033997],
+Cell[45780, 1223, 717, 22, 70, "Output",ExpressionUUID->"9568006b-081b-4536-8e11-153979698274",
+ CellID->861959179]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46534, 1250, 189, 5, 70, "Input",ExpressionUUID->"03ad3a7d-bfe4-41a6-83a1-604a0cae848d",
+ CellID->634366406],
+Cell[46726, 1257, 224, 6, 70, "Output",ExpressionUUID->"e740f026-d655-4a1d-96a6-4faf7112d0d8",
+ CellID->359190946]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46987, 1268, 146, 4, 70, "Input",ExpressionUUID->"57ae7eee-1c32-4e5d-be84-063dcbb2b087",
+ CellID->1613558772],
+Cell[47136, 1274, 373, 12, 70, "Output",ExpressionUUID->"13111063-e27f-441a-83e7-853b29ce989e",
+ CellID->1034805328]
+}, Open  ]],
+Cell[47524, 1289, 210, 5, 70, "Text",ExpressionUUID->"8835a827-a397-48a8-8198-58ca60c3f5e5",
+ CellID->1841698457],
+Cell[47737, 1296, 665, 22, 70, "MathCaption",ExpressionUUID->"ec0337cb-fd88-4a7a-a70f-e40023b87796",
+ CellID->313492412],
+Cell[CellGroupData[{
+Cell[48427, 1322, 340, 10, 70, "Input",ExpressionUUID->"4f318b65-795c-4e1f-9640-abc957e95565",
+ CellID->1356726882],
+Cell[48770, 1334, 276, 8, 70, "Output",ExpressionUUID->"6caf874f-1a31-4a0e-b906-27727c5476d9",
+ CellID->585354733]
+}, Open  ]],
+Cell[49061, 1345, 663, 16, 70, "Text",ExpressionUUID->"5b22b18d-1344-487e-a4fc-d6bb3acde32e",
+ CellID->1041931239],
+Cell[49727, 1363, 271, 9, 70, "MathCaption",ExpressionUUID->"463e429a-73a3-48c8-991f-38f8a864aa0f",
+ CellID->1402210381],
+Cell[CellGroupData[{
+Cell[50023, 1376, 159, 4, 70, "Input",ExpressionUUID->"623580b5-da28-4d3b-882f-3424fe19b8d9",
+ CellID->1898417409],
+Cell[50185, 1382, 1064, 32, 70, "Output",ExpressionUUID->"a85a242c-6d9b-4864-a782-1354fc36d7ca",
+ CellID->1100511139]
+}, Open  ]],
+Cell[51264, 1417, 215, 5, 70, "Text",ExpressionUUID->"89697794-93b0-4c1c-94f1-a3ca3daa6719",
+ CellID->1286366377],
+Cell[51482, 1424, 90, 1, 70, "MathCaption",ExpressionUUID->"80f3b94a-5cbe-4d30-876e-373dfda1fb38",
+ CellID->1900682364],
+Cell[CellGroupData[{
+Cell[51597, 1429, 189, 6, 70, "Input",ExpressionUUID->"f98a3dc9-cd4d-4cdd-8629-0e09926c2e0c",
+ CellID->1263461432],
+Cell[51789, 1437, 885, 27, 70, "Output",ExpressionUUID->"f4a1b391-74cf-4b2d-abce-46694ffb323a",
+ CellID->1765837619]
+}, Open  ]],
+Cell[52689, 1467, 71, 1, 70, "MathCaption",ExpressionUUID->"649298ad-e760-4118-820e-f1c17838d2e1",
+ CellID->971497286],
+Cell[CellGroupData[{
+Cell[52785, 1472, 192, 6, 70, "Input",ExpressionUUID->"70006466-5390-40ac-b119-ccbf4735a612",
+ CellID->636717661],
+Cell[52980, 1480, 865, 26, 70, "Output",ExpressionUUID->"ffb35470-31bc-4b37-94ab-4544d0a745ff",
+ CellID->1953650870]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53894, 1512, 65, 1, 70, "Section",ExpressionUUID->"8cbb0c24-4ff7-4ca8-8713-c3d9ed296e1c",
+ CellID->138763261],
+Cell[53962, 1515, 135, 4, 70, "Text",ExpressionUUID->"28dcc9b0-127a-4747-a09a-65a6714d9f8e",
+ CellID->1550736978],
+Cell[54100, 1521, 173, 6, 70, "MathCaption",ExpressionUUID->"9cb99ccf-2d1d-44b9-82d4-b4843f075ea5",
+ CellID->395965241],
+Cell[CellGroupData[{
+Cell[54298, 1531, 204, 7, 70, "Input",ExpressionUUID->"c557b92c-a8fa-4cce-8c69-7ce1074e4e08",
+ CellID->2110366032],
+Cell[54505, 1540, 1282, 45, 70, "Output",ExpressionUUID->"036653fa-7cbf-478e-bd33-f46fbe831fa9",
+ CellID->1151145671]
+}, Open  ]],
+Cell[55802, 1588, 372, 11, 70, "MathCaption",ExpressionUUID->"2d662ae0-ad5b-40be-a9c0-37c533e1067b",
+ CellID->939397198],
+Cell[CellGroupData[{
+Cell[56199, 1603, 145, 4, 70, "Input",ExpressionUUID->"c312cb1d-cf4e-4698-8979-beea2313b77c",
+ CellID->1462664324],
+Cell[56347, 1609, 1135, 23, 70, "Output",ExpressionUUID->"dd45e4b6-e189-4e43-ae8c-f52785e40519",
+ CellID->625116674]
+}, Open  ]],
+Cell[57497, 1635, 244, 7, 70, "MathCaption",ExpressionUUID->"b010b37f-7644-48ac-a5be-26b3626b15b0",
+ CellID->959012233],
+Cell[CellGroupData[{
+Cell[57766, 1646, 197, 6, 70, "Input",ExpressionUUID->"66cc9a2a-b439-470b-b35f-ca5214c858ef",
+ CellID->194728893],
+Cell[57966, 1654, 1753, 44, 70, "Output",ExpressionUUID->"c5daa9ce-63fe-4d19-b974-5d98d8eddadc",
+ CellID->845938794]
+}, Open  ]],
+Cell[59734, 1701, 233, 6, 70, "MathCaption",ExpressionUUID->"885def67-a5a2-4425-8d49-d14d2dede768",
+ CellID->298077865],
+Cell[CellGroupData[{
+Cell[59992, 1711, 1251, 40, 70, "Input",ExpressionUUID->"08527003-222a-41b0-8f51-c014c292997c",
+ CellID->1696103385],
+Cell[61246, 1753, 4266, 109, 70, "Output",ExpressionUUID->"f8781072-df60-4273-99ab-319d55997cbf",
+ CellID->1351567618]
+}, Open  ]],
+Cell[65527, 1865, 285, 10, 70, "MathCaption",ExpressionUUID->"29756c64-3d05-42d9-bd80-a46827f73846",
+ CellID->1314978241],
+Cell[CellGroupData[{
+Cell[65837, 1879, 118, 3, 70, "Input",ExpressionUUID->"983878fe-3545-49aa-a686-4e3b3ace9fff",
+ CellID->1678480760],
+Cell[65958, 1884, 1237, 30, 70, "Output",ExpressionUUID->"01c1b82e-6fd8-4640-8774-554467f49380",
+ CellID->1862421407]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67244, 1920, 70, 1, 70, "Section",ExpressionUUID->"dc2b9641-2a53-444b-8839-0dea667eea0c",
+ CellID->1476721470],
+Cell[67317, 1923, 586, 21, 70, "Text",ExpressionUUID->"b4ae3bf0-3890-4853-9594-8801fe8c0b67",
+ CellID->507057234],
+Cell[CellGroupData[{
+Cell[67928, 1948, 107, 3, 70, "Input",ExpressionUUID->"03d13ecf-f713-41eb-b851-fb05fdae1ef5",
+ CellID->1892818732],
+Cell[68038, 1953, 5334, 80, 70, "Output",ExpressionUUID->"1ea580b0-7a83-4aa2-8361-e738427f723e",
+ CellID->737470407]
+}, Open  ]],
+Cell[73387, 2036, 257, 8, 70, "Text",ExpressionUUID->"d74255f8-a24e-48c4-9432-40cf1529a8a6",
+ CellID->885083924],
+Cell[CellGroupData[{
+Cell[73669, 2048, 225, 7, 70, "Input",ExpressionUUID->"a8e5aeaa-6130-4c2b-acbe-7a969bfc23ba",
+ CellID->985910860],
+Cell[73897, 2057, 11125, 190, 70, "Output",ExpressionUUID->"5af76140-bede-40a2-8460-49b81aba1378",
+ CellID->1537003612]
+}, Open  ]],
+Cell[85037, 2250, 283, 7, 70, "Text",ExpressionUUID->"7683f6c1-06cb-4dea-9ece-bdb3ddad9404",
+ CellID->1118086339],
+Cell[85323, 2259, 1177, 37, 70, "Text",ExpressionUUID->"e1e0836c-c1bc-42c6-a5e7-7bb627d3dc68",
+ CellID->1151212725],
+Cell[86503, 2298, 289, 7, 70, "Text",ExpressionUUID->"89c3e9b6-a2fa-41b9-a2e4-4d227aa306ba",
+ CellID->339500947]
+}, Open  ]]
+}, Open  ]],
+Cell[86819, 2309, 23, 0, 70, "FooterCell",ExpressionUUID->"1e45ad73-306b-4879-b558-9b6200bf4045"]
+}
+]
+*)
+
+(* End of internal cache information *)

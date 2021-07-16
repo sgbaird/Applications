@@ -1,0 +1,3814 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    185010,       3805]
+NotebookOptionsPosition[    174266,       3580]
+NotebookOutlinePosition[    177306,       3654]
+CellTagsIndexPosition[    177174,       3648]
+WindowTitle->Importing crystal data
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD TUTORIAL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ExportCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ExportCrystalData"], "\<\"ImportCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ImportCrystalData"], "\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/$CrystalData"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"TutorialFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/tutorial/ImportingCrystalData\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/tutorial/ImportingCrystalData"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/tutorial/\
+ImportingCrystalData.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$53784], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/tutorial/ImportingCrystalData", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Importing crystal data", "Title",
+ CellID->509267359],
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{
+      Cell["Storing crystal data"], 
+      "paclet:MaXrd/tutorial/ImportingCrystalData#838308732", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], 
+    TemplateBox[{
+      Cell["Importing data from CIF files"], 
+      "paclet:MaXrd/tutorial/ImportingCrystalData#1880140157", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}]},
+   {
+    TemplateBox[{
+      Cell["Importing data manually"], 
+      "paclet:MaXrd/tutorial/ImportingCrystalData#1068372883", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], ""}
+  }]], "TutorialJumpBox"],
+
+Cell[TextData[{
+ "In order to make use of the basic functions in this package, some basic \
+input is required, such as lattice parameters, space group and atom \
+positions. In this tutorial, we will learn how to import the relevant \
+crystallographic information to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " automatically from ",
+ StyleBox["cif", "InlineCode"],
+ " files."
+}], "Text",
+ CellID->1534169418],
+
+Cell["The package must be loaded:", "MathCaption",
+ CellID->1517691727],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<MaXrd`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->318520214],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox["$CrystalData",
+     BaseStyle->"Link",
+     ButtonData->"paclet:MaXrd/ref/$CrystalData"], Cell[
+    "contains all crystal data entries", "TableText"]},
+   {
+    ButtonBox["ExportCrystalData",
+     BaseStyle->"Link",
+     ButtonData->"paclet:MaXrd/ref/ExportCrystalData"], Cell[TextData[{
+     "deletes data \[Dash] currently only to a ",
+     StyleBox["DISCUS",
+      FontSlant->"Italic"],
+     " format"
+    }], "TableText"]},
+   {
+    ButtonBox["ImportCrystalData",
+     BaseStyle->"Link",
+     ButtonData->"paclet:MaXrd/ref/ImportCrystalData"], Cell[TextData[{
+     "imports data form ",
+     StyleBox["cif", "InlineCode"],
+     " files into ",
+     StyleBox["Mathematica",
+      FontSlant->"Italic"]
+    }], "TableText"]}
+  }]], "DefinitionBox",
+ CellID->1179381505],
+
+Cell["Functions related to crystal/compound data.", "Caption",
+ CellID->1110981067],
+
+Cell[CellGroupData[{
+
+Cell["Storing crystal data", "Section",
+ CellID->838308732],
+
+Cell["\<\
+In this package, crystal data is by default stored in the file:\
+\>", "Text",
+ CellID->337576626],
+
+Cell[TextData[{
+ StyleBox["$UserBaseDirectory", "MenuName",
+  FontWeight->"Plain"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter",
+  FontWeight->"Plain"],
+ StyleBox["Applications", "MenuName",
+  FontWeight->"Plain"],
+ StyleBox[" \[FilledRightTriangle] MaXrd \[FilledRightTriangle] ", 
+  "MenuNameDelimiter",
+  FontWeight->"Plain"],
+ StyleBox["Core", "MenuName",
+  FontWeight->"Plain"],
+ StyleBox[" \[FilledRightTriangle] Data \[FilledRightTriangle] CrystalData.m",
+   "MenuNameDelimiter",
+  FontWeight->"Plain"]
+}], "Program",
+ CellID->312766054],
+
+Cell[TextData[{
+ "Under each data entry, or ",
+ StyleBox["crystal",
+  FontSlant->"Italic"],
+ ", we find the following relevant information:"
+}], "Text",
+ CellID->1967948739],
+
+Cell["Chemical formula", "BulletedText",
+ CellID->768409944],
+
+Cell["Space group", "BulletedText",
+ CellID->528644195],
+
+Cell["Lattice parameters", "BulletedText",
+ CellID->1158010975],
+
+Cell["Wavelength (may be omitted)", "BulletedText",
+ CellID->1204599443],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Atom data (element, occupation factor, fractional coordinates, displacement \
+parameters)\
+\>", "BulletedText",
+ CellID->2133747140],
+
+Cell[TextData[{
+ "All this information is stored as an ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Association"]], "paclet:ref/Association"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " in the ",
+ StyleBox["Wolfram Language",
+  FontSlant->"Italic"],
+ ". See ",
+ StyleBox[ButtonBox["The association structure of crystallographic data",
+  BaseStyle->"Link",
+  ButtonData->"paclet:MaXrd/tutorial/AssociationStructure"],
+  FontSlant->"Italic"],
+ " tutorial if you are unfamiliar with this construct."
+}], "Text",
+ CellID->1890989225],
+
+Cell[TextData[{
+ "When the ",
+ StyleBox["MaXrd",
+  FontSlant->"Italic"],
+ " package is loaded, the mentioned file is loaded and the symbol ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " is assigned for the association within."
+}], "Text",
+ CellID->471938362],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "$CrystalData"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->672050695],
+
+Cell[BoxData["\<\"\\!\\(\\*TemplateBox[List[\\\"\\\\\\\"\\\\\\\\!\\\\\\\\(\\\\\
+\\\\*$CrystalData\\\\\\\\)\\\\\\\\!\\\\\\\\(\\\\\\\\*RowBox[{\\\\\\\\\\\\\\\" \
+is an association containing data on crystals or compounds for calculation \
+purposes.\\\\\\\\\\\\\\\"}]\\\\\\\\)\\\\\\\"\\\", \\\"\\\\\\\"   \
+\\\\\\\"\\\", TagBox[ButtonBox[PaneSelectorBox[List[Rule[False, \
+\\\"\\\\\\\"\\\\[RightSkeleton]\\\\\\\"\\\"]], False, Rule[BaseStyle, List[\\\
+\"Hyperlink\\\"]], Rule[FrameMargins, 0], Rule[ImageSize, Automatic]], \
+Rule[BaseStyle, \\\"Link\\\"], Rule[ButtonData, \
+\\\"paclet:MaXrd/ref/$CrystalData\\\"], Rule[ButtonNote, \
+\\\"paclet:MaXrd/ref/$CrystalData\\\"]], Function[Annotation[Slot[1], \
+\\\"paclet:MaXrd/ref/$CrystalData\\\", \\\"Hyperlink\\\"]]]], \
+\\\"RowDefault\\\"]\\)\"\>"], "Print", "PrintUsage",
+ CellTags->"Info13741677435-3015495",
+ CellID->2045424016]
+}, Open  ]],
+
+Cell[TextData[{
+ "Some example crystal data is included in the package, i.e. the file ",
+ StyleBox["CrystalData.m", "InlineCode"],
+ " contains some entries already."
+}], "Text",
+ CellID->1742312998],
+
+Cell[TextData[{
+ "Example entry in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ":"
+}], "MathCaption",
+ CellID->604118976],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "=", 
+  RowBox[{"$CrystalData", "[", "\"\<GalliumArsenide\>\"", "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1184639610],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ChemicalFormula\"\>", "\[Rule]", "\<\"GaAs\"\>"}], ",", 
+   RowBox[{"\<\"FormulaUnits\"\>", "\[Rule]", "4"}], ",", 
+   RowBox[{"\<\"SpaceGroup\"\>", 
+    "\[Rule]", "\<\"F\\!\\(\\*OverscriptBox[\\(4\\), \\(_\\)]\\)3m\"\>"}], 
+   ",", 
+   RowBox[{"\<\"LatticeParameters\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"a\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.6534`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"b\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.6534`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"c\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.6534`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"\[Alpha]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Beta]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Gamma]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"AtomData\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"Ga\"\>"}], ",", 
+        RowBox[{"\<\"OccupationFactor\"\>", "\[Rule]", "1.`"}], ",", 
+        RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ",", 
+        RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0.631`"}], ",", 
+        
+        RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Biso\"\>"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"As\"\>"}], ",", 
+        RowBox[{"\<\"OccupationFactor\"\>", "\[Rule]", "1.`"}], ",", 
+        RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox["1", "4"], ",", 
+           FractionBox["1", "4"], ",", 
+           FractionBox["1", "4"]}], "}"}]}], ",", 
+        RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0.679`"}], ",", 
+        
+        RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Biso\"\>"}]}], 
+       "\[RightAssociation]"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"Notes\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"West\"\>", "}"}]}]}], "\[RightAssociation]"}]], "Output",\
+
+ CellLabel->"Out[2]=",
+ CellID->523215736]
+}, Open  ]],
+
+Cell[TextData[{
+ "We can use the ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Dataset"]], "paclet:ref/Dataset"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " function to get a better and dynamic overview:"
+}], "MathCaption",
+ CellID->341563389],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dataset", "@", "data"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1336797970],
+
+Cell[BoxData[
+ TemplateBox[{
+   TagBox[
+    DynamicModuleBox[{
+     TypeSystem`NestedGrid`PackagePrivate`$state$$ = 
+      Data`UnorderedAssociation[
+       "DisplayedRowCount" -> 20, "RowCount" -> 20, "Length" -> 6, 
+        "InitialType" -> 
+        TypeSystem`Struct[{
+          "ChemicalFormula", "FormulaUnits", "SpaceGroup", 
+           "LatticeParameters", "AtomData", "Notes"}, {
+           TypeSystem`Atom[String], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[String], 
+           
+           TypeSystem`Struct[{
+            "a", "b", "c", "\[Alpha]", "\[Beta]", "\[Gamma]"}, {
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]]}], 
+           TypeSystem`Vector[
+            
+            TypeSystem`Struct[{
+             "Element", "OccupationFactor", "FractionalCoordinates", 
+              "DisplacementParameters", "Type"}, {
+              TypeSystem`Atom[String], 
+              TypeSystem`Atom[Real], 
+              TypeSystem`Vector[
+               TypeSystem`Atom[Real], 3], 
+              TypeSystem`Atom[Real], 
+              TypeSystem`Atom[String]}], 2], 
+           TypeSystem`Vector[
+            TypeSystem`Atom[String], 1]}], "DisplayedColumnCount" -> 20, 
+        "DataRowCount" -> 0, "Shape" -> 
+        TypeSystem`PackageScope`DocumentShape[
+          
+          Association[{"ChemicalFormula"} -> 
+           TypeSystem`PackageScope`AtomShape[38.400000000000006`], {
+            "FormulaUnits"} -> 
+           TypeSystem`PackageScope`AtomShape[34], {"SpaceGroup"} -> 
+           TypeSystem`PackageScope`AtomShape[288.00000000000006`], {
+            "LatticeParameters", "a"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {"LatticeParameters", "b"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {"LatticeParameters", "c"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {
+            "LatticeParameters", "\[Alpha]"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {
+            "LatticeParameters", "\[Beta]"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {
+            "LatticeParameters", "\[Gamma]"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {"AtomData"} -> 
+           TypeSystem`PackageScope`ElidedShape[1], {"Notes"} -> 
+           TypeSystem`PackageScope`UnknownShape], 2], "DataColumnCount" -> 0, 
+        "InitialData" -> TypeSystem`PackageScope`CacheHandle[1621596994], 
+        "Type" -> TypeSystem`Struct[{
+          "ChemicalFormula", "FormulaUnits", "SpaceGroup", 
+           "LatticeParameters", "AtomData", "Notes"}, {
+           TypeSystem`Atom[String], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[String], 
+           
+           TypeSystem`Struct[{
+            "a", "b", "c", "\[Alpha]", "\[Beta]", "\[Gamma]"}, {
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]]}], 
+           TypeSystem`Vector[
+            
+            TypeSystem`Struct[{
+             "Element", "OccupationFactor", "FractionalCoordinates", 
+              "DisplacementParameters", "Type"}, {
+              TypeSystem`Atom[String], 
+              TypeSystem`Atom[Real], 
+              TypeSystem`Vector[
+               TypeSystem`Atom[Real], 3], 
+              TypeSystem`Atom[Real], 
+              TypeSystem`Atom[String]}], 2], 
+           TypeSystem`Vector[
+            TypeSystem`Atom[String], 1]}], "HandleQ" -> True, "Meta" -> {}, 
+        "RowTarget" -> 20, "Data" -> 
+        TypeSystem`PackageScope`CacheHandle[1621596994]], 
+      TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+      TypeSystem`NestedGrid`PackagePrivate`$pos$$ = 1, 
+      TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+      DynamicModule[{
+        TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+           Style[
+            Grid[{{
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"ChemicalFormula\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"ChemicalFormula\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"ChemicalFormula"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["ChemicalFormula"]], "Mouse"], 
+                Background -> GrayLevel[0.95], Alignment -> {Left, Baseline}],
+                SpanFromLeft, 
+               Pane[
+                Annotation["GaAs", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["ChemicalFormula"]], "Mouse"], 
+                ImageSize -> {{38.400000000000006`, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"FormulaUnits\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"FormulaUnits\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"FormulaUnits"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["FormulaUnits"]], "Mouse"], 
+                Background -> GrayLevel[0.95], Alignment -> {Left, Baseline}],
+                SpanFromLeft, 
+               Pane[
+                Annotation[
+                 RawBoxes["4"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["FormulaUnits"]], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"SpaceGroup\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"SpaceGroup\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"SpaceGroup"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["SpaceGroup"]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], SpanFromLeft, 
+               Pane[
+                Annotation["F\!\(\*OverscriptBox[\(4\), \(_\)]\)3m", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["SpaceGroup"]], "Mouse"], 
+                ImageSize -> {{288.00000000000006`, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"LatticeParameters\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"LatticeParameters\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"LatticeParameters", "a"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "a"]], "Mouse"],
+                 Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"a\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"a\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"LatticeParameters", "a"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "a"]], "Mouse"],
+                 Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   RowBox[{"5.6534`", "\"\[CapitalARing]\""}], FontColor -> 
+                   RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "a"]], "Mouse"],
+                 ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"b\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"b\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"LatticeParameters", "b"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "b"]], "Mouse"],
+                 Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   RowBox[{"5.6534`", "\"\[CapitalARing]\""}], FontColor -> 
+                   RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "b"]], "Mouse"],
+                 ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"c\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"c\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"LatticeParameters", "c"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "c"]], "Mouse"],
+                 Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   RowBox[{"5.6534`", "\"\[CapitalARing]\""}], FontColor -> 
+                   RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "c"]], "Mouse"],
+                 ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"\[Alpha]\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"\[Alpha]\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"LatticeParameters", "\[Alpha]"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "\[Alpha]"]], 
+                 "Mouse"], Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   TemplateBox[{"90", 
+                    RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees",
+                     "\"AngularDegrees\""}, "QuantityPostfix", SyntaxForm -> 
+                    Mod], FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "\[Alpha]"]], 
+                 "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"\[Beta]\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"\[Beta]\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"LatticeParameters", "\[Beta]"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "\[Beta]"]], 
+                 "Mouse"], Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   TemplateBox[{"90", 
+                    RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees",
+                     "\"AngularDegrees\""}, "QuantityPostfix", SyntaxForm -> 
+                    Mod], FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "\[Beta]"]], 
+                 "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"\[Gamma]\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"\[Gamma]\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"LatticeParameters", "\[Gamma]"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "\[Gamma]"]], 
+                 "Mouse"], Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   TemplateBox[{"90", 
+                    RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees",
+                     "\"AngularDegrees\""}, "QuantityPostfix", SyntaxForm -> 
+                    Mod], FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["LatticeParameters", "\[Gamma]"]], 
+                 "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"AtomData\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"AtomData\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"AtomData"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["AtomData"]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], SpanFromLeft, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Row[{"  { ", 
+                    Subscript["\[Ellipsis]", 2], " }  "}], 
+                    Style[
+                    Row[{"  { ", 
+                    Subscript["\[Ellipsis]", 2], " }  "}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"AtomData"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["AtomData"]], "Mouse"], BaseStyle -> {
+                  GrayLevel[0.5]}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"Notes\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"Notes\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"Notes"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["Notes"]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], SpanFromLeft, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Style[{"West"}, ShowStringCharacters -> False], 
+                    Style[
+                    Style[{"West"}, ShowStringCharacters -> False], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    1449039062][{"Notes"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+                  GeneralUtilities`Slice["Notes"]], "Mouse"]]}}, 
+             BaseStyle -> {ContextMenu -> {
+                 MenuItem["Copy position to clipboard", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                   TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                  MenuEvaluator -> Automatic], 
+                 MenuItem["Copy data to clipboard", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                  MenuEvaluator -> Automatic], Delimiter, 
+                 MenuItem["Paste position in new cell", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                   TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                  MenuEvaluator -> Automatic], 
+                 MenuItem["Paste data in new cell", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                  MenuEvaluator -> Automatic]}, FontFamily -> "Verdana", 
+               FontSize -> 12}, Alignment -> Left, RowMinHeight -> 1.5, 
+             Dividers -> All, FrameStyle -> GrayLevel[0.85], 
+             BaseStyle -> {FontFamily -> "Verdana", FontSize -> 12}], 
+            LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> False,
+             ShowAutoStyles -> False]], 
+         TypeSystem`NestedGrid`PackagePrivate`initialQ = True, 
+         TypeSystem`NestedGrid`PackagePrivate`self = $Failed}, 
+        Dynamic[
+         TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+         TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+            Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+            
+            Module[{TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+              TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+              TypeSystem`NestedGrid`PackagePrivate`LookupCacheValue[
+                TypeSystem`NestedGrid`PackagePrivate`$state$$["Data"]]}, 
+             TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = 
+              If[
+               TypeSystem`NestedGrid`PackagePrivate`tmpData$ === 
+                TypeSystem`NestedGrid`PackagePrivate`$NotCached, 
+                TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+                TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+                TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                 TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                 TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                 TypeSystem`NestedGrid`PackagePrivate`$grid$$, 1449039062][
+                TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+               Not[
+                FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+               TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+               TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+          TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+          TypeSystem`NestedGrid`PackagePrivate`$pos$$; If[
+            FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+            TypeSystem`SparseGrid[
+             TypeSystem`H["(data no longer present)"]], 
+            If[GeneralUtilities`$DebugMode, 
+             Row[{TypeSystem`NestedGrid`PackagePrivate`renderedGrid, "  ", 
+               TypeSystem`NestedGrid`PackagePrivate`formatState[
+               TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$pos$$]}], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid]]], 
+         TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$pos$$}], 
+        DynamicModuleValues :> {}], 
+      TypeSystem`NestedGrid`PackagePrivate`$posCell$$, 
+      TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+        TypeSystem`NestedGrid`PackagePrivate`alignBar[
+        TypeSystem`NestedGrid`PackagePrivate`$state$$][
+         TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+          TypeSystem`PackageScope`Pathbar[
+          TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+           TypeSystem`NestedGrid`PackagePrivate`updateState[
+           TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+            TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+            TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+            TypeSystem`NestedGrid`PackagePrivate`$grid$$, 1449039062]]]], 
+        TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+      TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Framed[
+        Dynamic[
+         Replace[
+          MouseAnnotation[Null], {
+          TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][Null] -> 
+           "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[1449039062][
+             Pattern[TypeSystem`NestedGrid`PackagePrivate`path, 
+              Blank[]]] :> (
+            TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+             TypeSystem`NestedGrid`PackagePrivate`path; 
+            TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+             TypeSystem`NestedGrid`PackagePrivate`path, 
+              TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+           Spacer[10], Blank[] :> Spacer[10]}], TrackedSymbols :> {}], 
+        FrameStyle -> None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> 
+        Top, ImageSize -> {Automatic, 14}]}, 
+     DynamicBox[
+      ToBoxes[
+       Column[
+        If[TypeSystem`NestedGrid`PackagePrivate`$path$$ == {}, {
+          TypeSystem`NestedGrid`PackagePrivate`displayScrollBar[
+          TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$pos$$], 
+          TypeSystem`NestedGrid`PackagePrivate`onDesktopShow[
+           TypeSystem`NestedGrid`PackagePrivate`alignBar[
+           TypeSystem`NestedGrid`PackagePrivate`$state$$][
+           TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$]]}, {
+         TypeSystem`NestedGrid`PackagePrivate`$topBar$$, 
+          TypeSystem`NestedGrid`PackagePrivate`displayScrollBar[
+          TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$pos$$], 
+          TypeSystem`NestedGrid`PackagePrivate`onDesktopShow[
+           TypeSystem`NestedGrid`PackagePrivate`alignBar[
+           TypeSystem`NestedGrid`PackagePrivate`$state$$][
+           TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$]]}], Spacings -> 
+        If[TypeSystem`NestedGrid`PackagePrivate`$path$$ == {}, 
+          0, {{}, {0, 0.05, 0}}]], StandardForm], 
+      ImageSizeCache -> {447., {142.3544921875, 147.6455078125}}, 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     BaseStyle -> {LineBreakWithin -> False}, Deinitialization :> 
+     TypeSystem`NestedGrid`PackagePrivate`deleteState[
+      TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+     DynamicModuleValues :> {}, Initialization :> 
+     Block[{$ContextPath = $ContextPath}, 
+       Needs["TypeSystem`"]]], Deploy, DefaultBaseStyle -> "Deploy"]},
+  "CopyTag",
+  DisplayFunction->(#& ),
+  InterpretationFunction->("Dataset[<>]"& )]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1888824134]
+}, Open  ]],
+
+Cell["An overview of all entries:", "MathCaption",
+ CellID->1978279602],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Multicolumn", "[", 
+  RowBox[{
+   RowBox[{"Keys", "@", "$CrystalData"}], ",", "3"}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1007856892],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Aluminium\"\>", "\<\"Germanium\"\>", "\<\"Polonium\"\>"},
+    {"\<\"Austenite\"\>", "\<\"Glycyl-L-alanine\"\>", \
+"\<\"PrussianBlue\"\>"},
+    {"\<\"CalciumFluoride\"\>", "\<\"Ice\"\>", "\<\"Quartz\"\>"},
+    {"\<\"Cobalt(II)Fluoride\"\>", "\<\"LanthanumHexaboride\"\>", \
+"\<\"Silicon\"\>"},
+    {"\<\"Copper\"\>", "\<\"LithiumCobaltate\"\>", "\<\"Silver\"\>"},
+    {"\<\"CopperTungstenOxide\"\>", "\<\"LithiumManganesePhosphate\"\>", \
+"\<\"Sodalite\"\>"},
+    {"\<\"Corundum\"\>", "\<\"ManganeseSilicon\"\>", "\<\"SodiumChloride\"\>"},
+    {"\<\"Diamond\"\>", "\<\"Nickel\"\>", "\<\"Sphalerite\"\>"},
+    {"\<\"Ferrite\"\>", "\<\"OxalicAcid\"\>", "\<\"Tungsten\"\>"},
+    {"\<\"GalliumArsenide\"\>", "\<\"Perovskite\"\>", "\<\"Zinc\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->1818495166]
+}, Open  ]],
+
+Cell[TextData[{
+ "To see how we may put this data into use, see ",
+ StyleBox[ButtonBox["Performing calculations on crystal data",
+  BaseStyle->"Link",
+  ButtonData->"paclet:MaXrd/tutorial/PerformingCalculationsOnCrystalData"],
+  FontSlant->"Italic"],
+ ". Alternatively, continue to the next section to learn how to import \
+crystal data to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellID->912009395]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Importing data manually", "Section",
+ CellID->1068372883],
+
+Cell[TextData[{
+ "Data on crystals is imported to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " through the function called ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "Text",
+ CellID->1518624062],
+
+Cell["There are two ways to enter the data manually:", "Text",
+ CellID->254513148],
+
+Cell[TextData[{
+ "Arrange all information in a list/pattern specified by the signature of the \
+",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " function"
+}], "BulletedText",
+ CellID->1809959442],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Execute ",
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}], "[", "]"}]], "InlineFormula"],
+ " and fill in the information in the dialogue window that appears."
+}], "BulletedText",
+ CellID->857789915],
+
+Cell["\<\
+In essence, the second method and automatic method that will be elaborated in \
+the next section, just organise the same information and feeds it into the \
+\[OpenCurlyDoubleQuote]main\[CloseCurlyDoubleQuote] function.\
+\>", "Text",
+ CellID->2146615432],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJzsvQ14G9d55zv7ce9u7u223W2zd7tNN07atAm2ZXezuZu2QdIq6bNbbGwr
+mxbb3n2Uh02eWoa73RZ2klsoX0hkB42SILaKxCUS2/AHGMeAbVohHAa+IiyP
+IoIwBRsiIRAWIXrCgiEoiuJSjEgKBPO/55wZAAMQAAESIEjgfZ/nT8ycOXPm
+zBnw/c17zsHMWz72Vx8++g8lSfr4P2V/PvzRvz50zz0fPfaHP8tWzH/58bvu
+/Ms7/sz0l5+448477vmtj/0jlhj6B5L0ONM/lsjIyMjIyMjIyMjIyMjIyMjI
+yMjIyMjIyMjIyMjIyMjIyMjIyMjIyMgq2j8gkUikbURG1qi1+ztLIpG6V2Td
+Ze3+vpFIJFK9Ijv41u7vEIlEIjVbZPvb2v39IJFIpL0WWfut3d8BEolE2i8i
+2ztr97Xm+ockEolURe32T8Sk1hkxhkQidYqIRwfLiDckEqlbRDzaX3bQufOP
+SCRSx+mgc4msPtuP7Gn3d59EIh1c7UcmkVW2drOn3d9VEonUfWo3k8iK1g72
+NOM79I9JJBJJU7u4RCzane0lf4gxJBKp3Woll4hHjdte8GcvmPO/kUikrtde
+sGkveNRN1kr+NJM7rf7u/u8kEmnfaL+wqllMIhZVt3bwp9nMaff/C4lE2r9q
+NpvawaNOtv3En1aw5p+QSKSuUSsYtZ941InWbAY1yp7dMGe339d/SiKRDqxa
+zaudcGmnPOpWFjW7H64Z/NkNc5r5/X4DiUTaN9pLdjXKpWbyqBv76drBn0bY
+s1PetPL/4f8gkUgtUztZ1iiX6mVSq3l0UK3VMVA9/KnFm0bYUu/3+/8kkUhd
+o91yrx5O1WJSvTzq5n66ZjCo3hioGn/4deTXm39nforpnzH9dJl+poJ+tor+
+eQP6FyQSqePUiA+o5kcq+Zxyv8R9FfdZ3HdxH6Zn0nY8ajQ26lQOtYpBjfCH
+31vwa/nzTL/IdAvTLzP9ik5vK9OvVtCv1dDbd6F3kEikfafd/E/X8hWVfEu5
+/9H7Ju6rbpFU38V9GPdl+XhpNzzqFha1gkHb9cGV97+9geln3vCGN/zSmTNn
+/t/Z2dnv//jHP86srq6CRCKRDoK4z+K+i/sw7sskNW56g1S7v66evrpOZ9Fe
+MGi7MSB+z/DT/LrF4/FvXL9+HUtLS7h69SoWFhZIJBLpQIj7LO67uA/jvkxj
+0U9LW+OincRGncyivWRQpTkI/PrwccE3vvjii3/9v/7X/2r7d4lEIpF2K+7L
+uE/jvk3zcfo5DfXGRs1m0X60VjKo1jhQ+fw33o/6ph/+8Iffv3LlCkgkEqkT
+xH0a921ScayofH5dPbFRJ7NorxhUbR62ft4170N9K7tuGWYgkUikThD3ady3
+ScVxolosqhUbdSqL2sWg8t/98HiVz4t8G79uc3NzJFLbNR45j8v7oB6kgy3u
+0yR1Xt3PSqW/Syrn0V6zaD/YbmKhRhlULQbKM4jPtefz9n/tRz/6EUj16YeT
+EZx65vuI/3CbfK88gw99yIHzVfJtt32/6fXzvL5fbWl9X5+U2TE+hL+TJytu
+T70io//v/hZf/epX8bcP9ePFV15re7v86Ifn4WB1fur862L9tchpnDr1PJ5/
+nusUTj3/fUTiqfbXswslqXPA/7lU/B1tNRZV66drlEUHJSbaawZVev5B/nfL
+/Hdf/Ldmb0+n0yDVp9CDfy585ckXLtbMd/nl77B8n8QPLu9s+17oZe8n8eeP
+huvKW7O+r7+ML7I28YYv7bAuF/GdL35ItGtBn/wWoq8X87w69KC27ZM4+eBJ
+fFLL98WnX256u7wefZqV/TmE67k2r4dFXfLnHmZtWnIemj736At4vZ7j77ot
+SXlJ6u+U/oXm68qf11DpuQx7xaJ2WrsYVM6f/HM2+LX5OaZ3/P3f/z1IdWg6
+gvsOH8Zhrs/6kaqQ54c//KH6ef5Jlu+TGEk1tn0vFXmCccgzUlfeVKRGfadH
+8EnWJk9EUjuqx2tnPaJNPd8L4gH+OfAk/px9fvbJSKH8z/I2//Nv4Py0tt8P
+43jyPn4t7kNkuvFj1tJ0/lzrKTd/7iOvqW365CdZPZ/Aa/nrnXpFq+dhfCMY
+r7+8HbYlqShJ/a3tz0nFZy3ony+0XT9dJ7JoPzIo//wEw8zMDEjbK3H6m8yf
+fBbPfvcR4VeCE0ph2+XYi3jgExqj7noAvicfEHnPTdW3vVyxF334RJ55LN+T
+p18R6VNjPtz1iQfwyDc+K7Y9Ir+MR1i5D3x3rLj/lCx46RudgjIh45ufzZfD
+8j15GlMzl/Hsl+8qpHE9OzbF9p3CaVEvLZ0d5/QrU+pxR7lv/sTW+l4eLbJZ
+8PlJVv4MlMS5kuPe98jzSFZp13OPf4LleRwKW/Z99j6Msk/5kfvwwLPqOcWe
+V+v03VeU0n0ngriLnyevO6vHl++6D0/6HhFph+/6O/xdjXaZmUni+Ue+XKjf
+XV9+HKPJ/Hnq6u0bLVyPzxbS78Ijz4+K+s5cPieu0+PnkiLf6JPsXO5S26BY
+1wl88y7envn0Ku1coy0fua94vT77zWcxobT//2G/i/s2qfh8BWJRczjUDAb9
+lFT67Dg+v/7fKooC0naawjP33o7b730O08oFfO322/GZp0bUbSxOOsHWb/+4
+Cy+MRHAm8DBu5+u3fwZnX6tje9mxXhvpF9s/0/ccIucjCDz8GbH+VGSqsO32
+ex/DC8Nn8EpiGsMPW1jaw4hr+78S+BpbvxeRqdfw1Md53n5ELlzAyAuPiX0f
+PvsaEq+M4Jmvsf2+9gzOsjrFpxScf+5esb3/hRG8cv4sHvsMr3M/XivU6eMV
+6juF88Nqnb72zAuIRC5gevq8aB/1fM+z4/bDwtddL1Rs2/w53dvXJz6fuTBd
+sv3sYx/H7ZbHkKh1fabO4jNamz41NMzO6UKNdmHn+sy9Im9g5BVcOD+s1vdr
+Q6ycOIaf4vkseOqFszh/4TUor50R9f/MYwGcf+U8XhDbb8cLcfW4H2fLj51N
+iGOM9PO6qm2mr198uK/QftXbuUJbKto1tLgwHDmPyJnnxPHufeb8Pvif2N/i
+vk3zcfpn0OV51EwWdQqHGomFGmWQPgbSM4jPZ/yXTL/++uuvg7SN2L0390UP
+vXhRrMuPMn9zex9ibDkpPyr81umLxfxjT3+JpX0acnL77eXHCrq4X/IiWUi7
+BPl7gzgXu4TkOV7WlzCmy3/5lQHhuwZeuczWk/gO91t9p8Xyoxa2fNyL0YmL
+Wv7LuKztd46dg+UhueTYly+x7Zcv49KlS3gl2CfqeO4SO4dzXuFHK9X3dRYT
+fJod/1EWE7xepT1i33NV35/Vaez00/jap2/X+Hw7Pv2lR3Hu4mW1nl7u2/Xt
+UUGXZFGHh+RkHe3Cy/w023Yc3zv3Ci5d1vJrn5dGtXO9pGuXy8V2ScZOCxY8
+JF8Ux+XLj8oXa9Y1X+aLydrtXN6WavuyfOL4l1j+CTx9/PYt1420Vdy3aT4u
+/2zUchZtN3+hFouaERPtpe0kFqqnP65RBv0zqZRBfD7j/8X0G/n/MVJ1jfj+
+Brfddhtuu/NT+MIXvoB7+DLTkyNJJH7wBFv+An6QLOZPjjzJ0u7BS4nL224v
+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
+5s/VExO1m0OtmKu9m1iofF4Cvw48RuXXhc8j+VWm97b7+0IikUjNFvdtmo97
+s+bzflEqsqjR/rlaMdF+m8PdDA41Egv9lFT8TXCl/rjyeQn8OvD7Aj6n/hZJ
+fX/7+9r9fSGRSKRmi/s2zcfdovm8N0lFFunHiir1z+X9avk7i1oZE7WDQ43O
+T6g3FqrWH5dnUD4W4vNI+Htzf7fd3xcSiURqtrhv03zcW6RiTJRnUbX+uUZj
+op3MV9jvHGpkjpx+nnatWKh8TIhfj1skdR4Jf2/uoXZ/X0gkEqnZ4r5N83Fv
+1XyenkXl/XPV5izk/exO5s7tRw61Yn5CpXGhWrFQvj+O3x/8sqS+N/f97f6+
+kEgkUrPFfZvm435Z83m3SKX9c5VionrHiVrZN7dbq5dB9XCofH5CtWcn1DM3
+obw/jt8f8PmM/L25H2j394VUv4aHh0t0+vRpEulAqvy73AIOfUDzcb+i+bzy
+/rl65ixs94yFWvMV2vWb1lbOk2skFiqfm8DbPR8L8evB7w/4PBL+3tzfb7dv
+JTXGITKyTrMWcej3NR/3q5rPy/fP/RupOH+u0m+KGomJWjFvbrfWij657eYn
+1DMuxNs9Hwvx68HvD/g8Ev6+wv/Ubt9KIg6Rdbe1iEP/SfNxv6b5vHz/3Jul
+Yv/cduNEu52v0EkcqvQMn2q/Fyp/dk95LMSvB/9t19sl9X2F/7ndvpVEHCLr
+bmsRh/6z5uPervm8fP/cLVLtmKjafIVqz/rpFA5t9xyfRuZq1xoX4vcD/Hrw
+OJXPZ+TvK/yDdvtWEnGIrLutRRz6A83HvUPzeW+TSmOiSuNEjc7h3u45P/uV
+Q82cJ1epT67aHDl9LMTjVD6f8Z1Mpnb7VhJxiKy7rUUcMmk+zqD5vEoxUaW5
+c430zbVi/vZurRUcqmeeXPlc7fLn9+jHhfh9AY9T+XxG/t7c/1LvdU2GA/C4
+3fAOhJDK7I3fjQdccA3E2u7/94uqcyiLxbkZTE1NY3ZhBZt74j1ymEtMYH51
+b47WDNtcmcVEcr729qmFustbmU1iav5GM6rW1dYiDv0Xzcf9W83n/aq0dZxI
+/7yfWnO4q82b6wYOVXuOT719cuVz5PKxEI9T+XxG/t7cD25/TdMYsJvYdTXB
+7nTCblGXB+KZXX1P0rITZodcM0/IboBkC7bd/+8XVeTQ6hxC7P7AL0eRYFyQ
+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
+w/04Zj2Ko0etON53Csr15p/PrtpxbRxHJAl94y2oWJk1s91bLanIod+WihzS
+P1NhOw7pn+1DHGo+h/jvi/m1eb9UD4cUGb3se26y2uFy2mFky2aX3HZ/3K2q
+7jevo++QxP7/DmP0Wmn6SXbNpBOjTfdL0ZOH0HNi7zn0h/03Na1ruokvnlHv
+x79/KYc/+vY6+9wQ644zG4V8H9b0nvvX62jPDQwf6+H+DNLho4xFR9Rl6Sia
+7fJ31Y5rUTBni5PRa9vn3aU1s91bLUnl0Ps1X1fp2T7Eof3Dof++3fVUQnZ2
+Te1Q8mnKGALBMWTSMqy9NjjtZvX/02RHOJVheTIIua3a/6wEqzuklZWEx2pS
+0w1meMOKmp4KwWpU8xotLiS31CGNgLNXO4YFtl4zXLKCdNgNc68VZgPbzxES
+5bvz5Utm+MbU8mWnBY6QFsOlQ+g1u9i5KHBbWLrLBoOW3xs+GHFeLQ55Dqvt
+KB3x4LounfOpFXGL6j/H1ZWNDea598Zue3yd6abu8yY2mO8LTW/idm39drZt
++PImsjkU8tz2mJr/3V+pg0NanHH4ZHH79cl+0b5H/ammns+u2nEPOdTMdt8D
+Dv13iTjULg69RSp9xumuOXQ1rcZDkmSC3eWFHE8XfLqJx0bOIJR0El4ry2MZ
+EPktJitCjEmZuI/5eRNCac4DxgijAzEljbDXItiWYszymCX0esKsTAWeXhZ3
+ucdKjp+WHYITwbiCVNgruMG5oshOlm6AJxRDKp1Ryzc5EU+nMeazsW29GMtc
+Rchugi2oMUYJwmTgx1Xg5OxjTIqleX04N62I7wPO7IZDfYxDPYcPqfwv+Eo9
+h66j/0gPjvZPFvZaE76V3eOvQfjeoz1H4Ok/gR7tPuKYfxTjwycL9xWHj/Vj
+VnOU4ycPo+eYB55jh7TtPThxalJXp2sYOnG0sG/P0T6k1rRaTXrQc8iKE8cO
+i20nRuv3o3/gualTVnyaHr1ZOd2zNf1dX6qDQ9dV/15arzVEh/yQJ69h3MPi
+o8N9uKbb5j/aw7g1qi5bD+Gw9Tish/Ln7sFkit279Wj3Cuzch5W1+tvxZLEd
+pcPHMXpFuwh7yKFmtvs+4pD+2T7EodZwqNozTuvnkGBOHAGPk/HFIP4Penm/
+HOOQUTJCzmh5Yh6NLYwdyTB8HrfWj2dCUFHg4PyQ04UyFcYjzizOsl6HC263
+G04Lj3ncSOv9rtMIg6PYDzhgMQiuiDjN7NXSy8tPwWYwIqBU55DDoM8fY6xV
+87ebM7vh0MkePk6g4NRR1ZcNzarpeg7x5R5dbHR9vI/lPYTR66pPO6z1PQ2P
+T2LYk49rj2CIrY/6j6vM0HzeeJ/aV3WIsSk6OQ7/CXU97xPlEz2ibI88jtT4
+EI4KH6rGaupxeex2EsPyKJRr9UcB7//WTVUPcWXxASZ1+WZxG5OantXyZgv6
+zXvr6ZebxfF8TH/Sj9HxFK6t6Vp73CO2nVK0el+TBbtPjF6BPjY9MRTFuNyv
+tauE44zrk1GtLaxD9bXj8R5xPftYWalJGccOqddocg17yqFmtnsbOaR/1ilx
+qD0c4s+3aIhDGSWJpM4/JwM2lTeCQ6Yih5JekZ6Mqf+fFsYWn8/NOKPnkFJa
+PuMCH2+yub3wejzw+gbUPr8SDpmqcshoD5ZxSCms2w2mrRxKV+NQHJYO4dCJ
+KHNOG2qfknSoj6WuwVPGoUMVOBTVcehkVOvVY+Xw9eOFmEAdaypyiN2/95ws
+7QNkdejhY1FaWUf6x7GxsYY15q6V4WMF5l0fPyl86U56uPaGQ+z0r03Cc/xo
+ITbkOnLcr8WDVwSnDvWp/WmK/6iIqZV8O3DeHy+OyY1yJh85VVif7Dss2u5a
+ne1oPaUUK3Z9VGUevw7EoXo5pH/WKXHogHEo6bOI/6+xtLoe9vRCMjihaP1y
+Nh/vR8sgyPvFWHyS0o0nZcY4k4yMQ1cRtLNYyuIV6SnZxcrgPEjCzssIxEXZ
+8YALDm+45Pj5frlALIW4rDJO9MtxDtmChXwBGyvf6iuWz/gX5v2BDiM7rk+w
+bUzU3SHGh3i/nMHmE7FXMsiPYUFsH3Bm9xxS/dH1qBpvWPuH4TlSP4dKfFph
+/XrhGH26Y1QaX+dpwr+yfY/o/HdRh8WxBIdKfG97/GHt+XJ528D1KwqG+tT4
+8LBHZU+qn8ctxxlL1kS7FNt1azuP87bSrwv29Inz364dD5XPh1ubFG17kjhE
+HNpqHcmhq5k4nL0GnR8xwiOz+EIJwcxiDos5v82MgRjvawvDatDyGs0wGsyC
+Q1fTY7Cbiv7IMRAT5StjXhETSdoYlC+W3lIH2WMT2w1mG+y9Rth5PMT4ZLIX
+OcTLtxmL5Ts1tmXiA4KXYn+TUYwhifEhttxrMRXrE4i1nTHN5BC3aN+Rwvkd
+7tM41FO8hxd7jZ6og0PXKh5D+FIWcxW7q9TYSzouF/a1DunnizN/fn1NjMOr
+8dDOOPRedxbv7btZFFt/n5sv59Ozah6e/s3icj791z9/c9v2XEsN4dixPqRK
+ugs3xPn15Ocean1xfUP94vNUfuCsAofKWaPnUD3teGxYNx9fS6N4iDhUwTqT
+Q5rSSgqpVKrYZ6YEGGMcatyTTpf0pdUsp2LejEivmH/MB6vNg6To/4uL+Mke
+UnZQfka3nhL9dkEe42XSSGfqq/t+UCMc4uPbfdo4xWHNJw4fY+s9VsipWcym
+ZHWcQotR8mPz9XNI5dzRvmHMXrvC7hfUeOGEzH3mBk5Z1bGlU+OzuHYlhX4x
+D/ooJjd2x6F3P5jFu79Rqps54NmLOfwWX2fb+eczbJ2nv1tLy+d9+2e35xCu
+DBfmVkSVK7h2bRaj/hNqjFnoI8ufY3HcK99OjXGodjsOWdVr5I8quDI7jr6j
+artWvGYttGbynzhEHJJ2wKEtYnGPnfFBadL3prqScFuMhft6s93XhGMq8Nrs
+kA/AeFAjHOrbwiFm10bV+cd9qg9cU4ZL+suOHj1c5FD5byK19Wr9cvz3l9LR
+4zh2uFie1TNanHe8oTCf2aOLpTmTtH7DXfTLvdOVLdMG/nJwQ8wh9k3k8K6v
+Z9nnpljn6eV533asDg4xSw33CR8v6dvr5FBJna+NqnMJjw/r477r6D9coV9O
+zyHPYW38rp52nIXHeqikHYdSpddoL37H2kz+E4eIQ0y/I+2WQ6S2qL7xjO2M
+949dF3MHmmVra2tMVY62dl30xzXLeh7YwG+UKCv0ie9tYPMnwOXFn4jPTw4V
+t+v3eesn6+OQVnsWy7HYcfYKKp1Cym8VXBhv0ult245ra3v2O61yayb/Wy2p
+yKHfkYhDxCFSU9UcDh1se7vzJlMW72Diy/rPe55X/SL/fEdZHnU5izd/PLv7
+9lybhDU/h84zvn3+DrBm8r/VkohDB4VDH5CIQwdO9FxO4G1fzpbqK7rPr1RI
+K9v2pr9qJB6qYhtXMDo0hOFoqm3xyV5bM/nfakkqhz4gEYeIQ6Sma2xsDPPz
+8+12SW21t3wpi7f8TRZv/dLGls+8+DrPV1jWtt9yXxbv/NSNQnsS1+u3ZvK/
+1ZKIQ8QhUsuUSCQQiUTa7ZLaam/+4gbe7KigL+o+v1i2rn2+6dMbuMu9XGhP
+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
+N7NE7o9lWjnZT2L4FKlQnZsclO9r3+fy/iadHBSV1x1bWCf1lqaHirks9Ssv
+iyFayh/UbHt2obq/Y6fWKb8yXXndwbEF2o2wL4d5+R6DJ2l2ckjbpk3vudnK
+Y8xQNu9/8ggeagYBD8FDoKVE81CJFoZkvBs6JePyLmU4lmpx72DTjbFDk6co
+v513HMM/D3rjKWHP17/dJg2q+L65LWN41onpg9ltN6ZO9jp5QDaXp0J+mYa1
+HG0/x74cpm2O8+Vt97lK7WqXxuTPw0vF+vcsF5z9EkOTtL69TetLrm8z3u/q
+HlIOGJ5dpu2C2p9+yh3o2z5MK/ltWslmKq5alj+vnzrp/Dy5eRC6L+p9ejNZ
+yhe2aXnWfa2FbSmq0j7lnNfupezKJhV2g4tz8FDjCHgIHgItJZKH9lccD0yu
+H1RishAnSY0SrYzJ2Nk/q9XqDmm6V1TG9cOer2teLJ/WBj7WOV4PLlDJe25o
+IU/lcolK0jfFlTEnlq87wXvdyVMWCvJ7Z/yk1/l5kp88WHbi+Mp+/VuqmL9U
+PKRyqSR9e0hLGbndve526x5y92da5jRluT1lKh+sO9vkOMvc9nLe+fnkuro3
+S+678lDIvrjbNOQ61WkFpzaqHFbaRl3uKBDwEDwEWkoUD20veHWj3kEaGhqq
+1KOy/H85HVidkjvZ68XtsOctTcbnfieWV++r5flqoneaDuRzlXGqGlTOc0jZ
+fhnbT8k8ala6Y3qd8gvyb0/mvBg/Sba7dc06V4VB00Nyf/pt7+/ld+a2V35W
+Tj2k2d6qh4L25TA/7eyz7u/K31a2uT/SPAV4qHEEPAQPgZYS7qF9mpSxTwxP
+0/LKMi0tLdHy8imnftR7kv+2TMsZt5ZU/be8RLP9yj1hz1ua1UP9bm7iPVc7
+Z09mL4elylhOgb3Zn6Fhud3TeU4yFpzYnhmUrpi1j6McOrXDXre2VnnZknw/
+91WrHrLtj9zkw0Mnn/H3kJYPaR4K2hfHQ2K6Lo+s8xDyoZYi4CF4CLSUMA+V
+Cgta7lNt29kht2ZUUmMygsayOdo/2KWV2eGa8Z+w5+vaoZ+HOCaX3XqZMzdg
+lw72C7TgzCcfrtSvyrtLXl6hHis640LCqdf5BG01H3A4S9v7B7S7veKOF510
+j49elztYn6zMY9g/2Ke8N5Y0mz+s3/YgD4XsS5iHSl4ON5vbpoPD2nkjZoOH
+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
+0/m9N/zBk4lsx9BiqbJ/+lc+Bmlfn+2AgIfa2UNvEvBQx5PL5WJG+zItDbux
+M7tZndeQX8g4j02u78d8veSa8tBmTA/xMTCPyzu+WXLykg99T/L9Kh/+fu3P
+jfMs3fZe9zi+8d7/U3n8/fd/y3XRL3+PPug8dpne+Erpoa8+7Tx/x9gfOs+/
+5tP/kNB2ePv4vfrH3/HN51K/PtsBUe+hNwl4KC0P3SDcY94r4KGuIbaHSptO
+LjQ4u2k8sU/T/dXHi7lsJWeSlwxNLuWlwZwXoFOZfhocm6SxQfX8EC1tV+VR
+3t+kk4O93nOChqeXqWq8A1qeHK481zs8S4VS8h665Y+fo19feN5D/1793CR/
+8Q8kOxm95Ldydc+965475H7cQf1/zj9fppvYQw/8mD7wje86+/yS3/hBMttQ
+wdw39/tbvoF8iBH+Hur1YuINAh5qtYdeK+ChriWuh9xY30srQWnP4Tr1squm
+l6hQLNBK1s2V3L85pKznn7FT61TYXpfO4Z8nyXm6XKAMO6Z3jFbyBdpcnnWd
+M7nuOmOy13FNNpenQn6Zhvm5wSwdJuyht3y9RHf85XMezyfOwFfcvOct37I8
+/6er9C+57nZyT/78I+q9QdB1n/wuXevUPr9L723B9rjU7i8fg7Svz3ZARPfQ
+awU8lLSHjkleLeChrqYxDw3SZshcgHK57FAqlehwN0f9XLNz6niHNMvjSSer
+71vero7rHOanHc/ltFuZ9vMrtLxerORiQwsytyqXqCQTrOLKmPa3yXnolx54
+jn41+3zLeNd9U07Oc8ufWZ7/s016qdzPG+7dkz//iG58o6jkf+L6cbrtO0lv
+zxXr93wM0r4+2wF53O8U0T30ai92wkPpeOjOtK8XEJ+4HiptZ514uLRbDvil
+Ak0P91djp8e05qH+6WpdT/eH8px1zpv00JDxmi6D2t8m46Gb7nuO3vnt5+md
+37lifE2G2+/7tltXnPxJ/fN//APnuV+490fy5x/RL7CH3vptumXyB/QS3t/b
+vuu4KKltqeybwnv8pvvhIUbAQ0fpoZeJ6B76ReGeizdL3iqR/+7CQ51I7PGh
+8rZTC+s9af7dAWWle4azeSouZRw3rBS9pOZw3cmHInlo082H9Dlvpd1tym/v
+Ox7i18ks67PyynR4WHLGnpL00BvufY5unX2ebp274jJ7xf159kr1sWb4022S
+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
+6XO6bbmRzUdMv6jNk5SXbG7S/aQ7yg/z2gcAJE9YP9T7rN6Xdeco7+h5j3IP
+Y/OPmQPpc7PjOMivHpdELmTW5DrNQ7b7iJKozQXdT6TX56K46A2idu0fPv9+
+udEtojp2ZDpJz5P0XMnmJtNRJu8GAKSGX780+6/uHD3n0fMe0z1qDEgfBzJz
+IH1uNscmjlFRHaTX44LmyCVRk2vkvqG0PRR33lzU+1rNNRb0+pw5VmS66AZR
+dZGa063nRnxNqNxI5Ue6k94u6vMk3Uu2nMl0lOmqKJj9AQAQnTh9zdZX9b58
+u6h1jvKOmffouY9yj4orao0EPQfS52br40G6g2xjQno9jmOiXo9THgpyUKvn
+ybWTh/658K/NxRknCqvP6WNFfnkRn1/9/iKVG5njRma9TvlIz5OUk5SXFDY/
+6Y4y6QcApMbtPpj9V/eNQvV/5R3lHtM/Kv8xx4FUDqTfH2RzkMqDjonaMaGg
+elwj40J+8+TS9pDe/N6jmXlzQesr+LlIn7MQx0WvE7X3F+m5kekjs15n5kg2
+L5k5k86tFt4BAGgbbH3U7Md6rmPzji33MetvNv+oOhzHJrVWQlwHhc3TDlo/
+oR3vXfVrzXgobk4UZc6C7f5WW42Oz6M+p9vMjaL4SHeS6SXdTbqfTEfpnvLD
+vO4BAMkT1g/Nfqv3ab2vq/6ve0d3Txz/qBxIOYhjlu4gjmm6g8z7VaPMTTjK
+XKhVLaqH4sxXiDNOZKvPxXWRmRtF8ZHuJNNLNjfpfrJ5yuRtAIDUCOqbZj/W
++7juHNM7unvi+keNBTXqoCj1uDjjQrqHjvKeIb8WVP+LkxPZPNRIfS6qi8w6
+nZ4bMdcLfx/pTtLzJN1LNjeZjjL59zEw+wIAIDpx+ppffzX7tekc5R0979Hd
+4+cfdW+qXw6kz4tLwkFhuZDyUBLjQq1qjXoozty5qPW5IBe9XNjndB8T/rmR
+X35kc5LpJT1nsjnKdJWJeY0DAI4Ov35p68N6H9f7vu4dm3v88p+gHMhvbnYj
+Dopyv1DYuFA3eSjqnAVbfa5RF4XlRspHZr1Od5LpJZubdD/ZPOXnLABAe+DX
+X81+rfd53Tmmd8zcR6+/RfGPngPFdVBYPS7O/UKd4qGkcqIoY0XNusjPR0E5
+knKSzUu6m0xH2VwVhHm9AwCSJ2p/NPux2c/1GKB7x+YeM/fx80+zDmKiOqhV
+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
+
+    "], {{0, 446}, {418, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> ColorProfileData[CompressedData["
+1:eJyVlwdYU8kWx+fe9EYLREBK6B0pAgGkhB66dLARkhBCCSEFBLsiruBaEBEB
+RdAVEAVXpciiIhZsi2DvC7KoqOtiwYbKu5FH3H3ve+997+Sbub+cnDlzZu7M
+9/1jkJIdlQoDACR4pIti5zHFYnZ+tAryJVYoEfCFPC5LKOXxeWJGCoQ4r5OR
+DpCvs0WiTBiJyhJKxVGBPvSExCQ67hGAkI8ywAMlNkciYkZGhsqjp59/t3c3
+gTwhuGYjz/Xvv/9XU+XyJBwAoEiEU7gSThbCR5HWxRGJpQCgRIjfKE8qknMZ
+wupipECEG+TMn+IuOadMcf+3mJgoX4R/BwBPZrPFfABIY4ifnsvhI3nI8j2x
+E3IFQoS9EfbkpLG5CK9E2DorK1vOBxA2T/lLHv7fcqYocrLZfAVPreWb4f0E
+ElEmO///3I7/bVmZsuk5jJBGThMHRcnnk+9bRnaIgoUp4RHTLOBO1STnNFlQ
+7DRzJL5J08xl+4UoxmaGh05zqiCApcgjZcVMszg7SpGfJ/GPnma2+PtcsoxY
+pmJeHkuRsyAtJn6acwVx4dMsyYgO+R7jq/CLZVGKmlPFAYo1Zkn+si4BSxEv
+TYsJUqyR/b02niRBUQOX5+ev8AtjFTEiqY8ivygzUhHPywxU+CW50YqxUuSw
+fR8bqdifdHZw5DQDAQgDbMCR8hZL5QX7ZovyxQJ+mpTORG4Mj84Scmyt6Q52
+9gwA5Pdv6vW+oX27VxDt4ndfTjcArsWIk//dx0bOwbHHAFDfffcZvUaOxmYA
+jvdzZOLcKR9a3mEAEbnX6kAL6CHnxxzYAAfgDNyBN/AHwSACxIBEsBBwQBrI
+AmKQB5aCVaAIlIDNYBuoBDVgD2gAB8Fh0A66wClwDlwC/eAGuAcGwQh4DsbA
+OzABQRAOokBUSAvSh0wgK8gBYkCekD8UCkVBiVAyxIeEkAxaCq2BSqBSqBKq
+hRqhn6Fj0CnoAjQA3YGGoFHoNfQJRsFkWB3WhU3hWTADZsIhcAy8AObDOXAB
+XAhvhCvgOvgA3Aafgi/BN+BB+Dk8jgIoEoqGMkDZoBgoX1QEKgmVihKjlqOK
+UeWoOlQzqhPVi7qGGkS9QH1EY9FUNB1tg3ZHB6Fj0Rx0Dno5egO6Et2AbkOf
+QV9DD6HH0F8xFIwOxgrjhmFhEjB8TB6mCFOO2YdpxZzF3MCMYN5hsVga1gzr
+gg3CJmLTsUuwG7A7sS3YbuwAdhg7jsPhtHBWOA9cBI6Nk+KKcDtwB3AncVdx
+I7gPeBJeH++AD8An4YX41fhy/H78CfxV/BP8BEGFYEJwI0QQuIR8wibCXkIn
+4QphhDBBVCWaET2IMcR04ipiBbGZeJZ4n/iGRCIZklxJc0kC0kpSBekQ6Txp
+iPSRrEa2JPuS55Nl5I3kenI3+Q75DYVCMaV4U5IoUspGSiPlNOUh5YMSVclW
+iaXEVVqhVKXUpnRV6aUyQdlEmam8ULlAuVz5iPIV5RcqBBVTFV8VtspylSqV
+Yyq3VMZVqar2qhGqWaobVPerXlB9qoZTM1XzV+OqFartUTutNkxFUY2ovlQO
+dQ11L/UsdUQdq26mzlJPVy9RP6jepz6moaYxWyNOY7FGlcZxjUEaimZKY9Ey
+aZtoh2k3aZ9m6M5gzuDNWD+jecbVGe81Z2p6a/I0izVbNG9oftKia/lrZWht
+0WrXeqCN1rbUnqudp71L+6z2i5nqM91ncmYWzzw8864OrGOpE6WzRGePzmWd
+cV093UBdke4O3dO6L/Roet566Xpleif0RvWp+p76Av0y/ZP6z+gadCY9k15B
+P0MfM9AxCDKQGdQa9BlMGJoZxhquNmwxfGBENGIYpRqVGfUYjRnrG4cZLzVu
+Mr5rQjBhmKSZbDfpNXlvamYab7rOtN30qZmmGcuswKzJ7L45xdzLPMe8zvy6
+BdaCYZFhsdOi3xK2dLJMs6yyvGIFWzlbCax2Wg1YY6xdrYXWdda3bMg2TJtc
+myabIVuabajtatt225ezjGclzdoyq3fWVzsnu0y7vXb37NXsg+1X23fav3aw
+dOA4VDlcd6Q4BjiucOxwfDXbajZv9q7Zt52oTmFO65x6nL44uziLnZudR12M
+XZJdql1uMdQZkYwNjPOuGFcf1xWuXa4f3ZzdpG6H3f50t3HPcN/v/nSO2Rze
+nL1zhj0MPdgetR6DnnTPZM/dnoNeBl5srzqvR95G3lzvfd5PmBbMdOYB5ksf
+Ox+xT6vPe18332W+3X4ov0C/Yr8+fzX/WP9K/4cBhgH8gKaAsUCnwCWB3UGY
+oJCgLUG3WLosDquRNRbsErws+EwIOSQ6pDLkUahlqDi0MwwOCw7bGnY/3CRc
+GN4eASJYEVsjHkSaReZE/jIXOzdybtXcx1H2UUujeqOp0Yui90e/i/GJ2RRz
+L9Y8VhbbE6ccNz+uMe59vF98afxgwqyEZQmXErUTBYkdSbikuKR9SePz/Odt
+mzcy32l+0fybC8wWLF5wYaH2wsyFxxcpL2IvOpKMSY5P3p/8mR3BrmOPp7BS
+qlPGOL6c7ZznXG9uGXeU58Er5T1J9UgtTX3K9+Bv5Y+meaWVp70Q+AoqBa/S
+g9Jr0t9nRGTUZ0xmxme2ZOGzkrOOCdWEGcIz2XrZi7MHRFaiItFgjlvOtpwx
+cYh4nwSSLJB0SNURoXNZZi5bKxvK9cytyv2QF5d3ZLHqYuHiy/mW+evznxQE
+FPy0BL2Es6RnqcHSVUuHljGX1S6Hlqcs71lhtKJwxcjKwJUNq4irMlb9utpu
+denqt2vi13QW6hauLBxeG7i2qUipSFx0a537upof0D8Ifuhb77h+x/qvxdzi
+iyV2JeUlnzdwNlz80f7Hih8nN6Zu7NvkvGnXZuxm4eabW7y2NJSqlhaUDm8N
+29pWRi8rLnu7bdG2C+Wzy2u2E7fLtg9WhFZ07DDesXnH58q0yhtVPlUt1TrV
+66vf7+TuvLrLe1dzjW5NSc2n3YLdt2sDa9vqTOvK92D35O55vDdub+9PjJ8a
+92nvK9n3pV5YP9gQ1XCm0aWxcb/O/k1NcJOsafTA/AP9B/0OdjTbNNe20FpK
+DoFDskPPfk7++ebhkMM9RxhHmo+aHK1upbYWt0Ft+W1j7Wntgx2JHQPHgo/1
+dLp3tv5i+0t9l0FX1XGN45tOEE8Unpg8WXByvFvU/eIU/9Rwz6Kee6cTTl8/
+M/dM39mQs+fPBZw73cvsPXne43zXBbcLxy4yLrZfcr7UdtnpcuuvTr+29jn3
+tV1xudLR79rfOTBn4MRVr6unrvldO3eddf3SjfAbAzdjb96+Nf/W4G3u7ad3
+Mu+8upt7d+LeyvuY+8UPVB6UP9R5WPebxW8tg86Dx4f8hi4/in50b5gz/Px3
+ye+fRwofUx6XP9F/0vjU4WnXaMBo/7N5z0aei55PvCj6Q/WP6pfmL4/+6f3n
+5bGEsZFX4leTrze80XpT/3b2257xyPGH77LeTbwv/qD1oeEj42Pvp/hPTyby
+PuM+V3yx+NL5NeTr/cmsyUkRW8z+JgVQSINTUwF4XQ8AJRHRDohuJs6b0sff
+DJrS9N8I/Cee0tDfzBmAem/kr8ZKAEIRjbILaSYIk5GnXAbFeAPY0VHR/mmS
+VEeHqVxkRDViPkxOvtEFANcJwBfx5OTEzsnJL3uRYu8A0J0zpcvlhkX0+26c
+nC6Y6YF/tX8AoK0SzQ==
+      "], "RGB", "XYZ"], Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSizeRaw->{418, 446},
+  PlotRange->{{0, 418}, {0, 446}}]], "Input",
+ CellID->1616921741],
+
+Cell["\<\
+The labels and expected values should be evident. A worked example using this \
+method is available on the the function's documentation page; no more details \
+will be given here.\
+\>", "Text",
+ CellID->387357774]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Importing data from CIF files", "Section",
+ CellID->1880140157],
+
+Cell[TextData[{
+ "Although \[OpenCurlyDoubleQuote]manual\[CloseCurlyDoubleQuote] input is an \
+option, the function ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " is built for automatic import in mind."
+}], "Text",
+ CellID->1999897910],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Crystallography Open Database"]], 
+    "http://www.crystallography.net/cod/browse.html"},
+   "WebLink",
+   BaseStyle->{"Text", FontSlant -> "Italic"}]]],
+ " can be used to find ",
+ StyleBox["cif", "InlineCode"],
+ " files for testing purposes. We will be using a random ",
+ StyleBox["cif", "InlineCode"],
+ " file from that site in this demonstration; the actual file is found in:"
+}], "Text",
+ CellID->1591895472],
+
+Cell[TextData[{
+ StyleBox["$UserBaseDirectory", "MenuName",
+  FontWeight->"Plain"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter",
+  FontWeight->"Plain"],
+ StyleBox["Applications", "MenuName",
+  FontWeight->"Plain"],
+ StyleBox[" \[FilledRightTriangle] MaXrd \[FilledRightTriangle] ", 
+  "MenuNameDelimiter",
+  FontWeight->"Plain"],
+ StyleBox["ExampleFiles", "MenuName",
+  FontWeight->"Plain"],
+ StyleBox[" \[FilledRightTriangle] CIF \[FilledRightTriangle] \
+COD_2203515.cif", "MenuNameDelimiter",
+  FontWeight->"Plain"]
+}], "Program",
+ CellID->1221577853],
+
+Cell[TextData[{
+ "First we need the file path. You can also use the menu in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ": ",
+ StyleBox["Insert", "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox["File Path\[Ellipsis]", "MenuName"]
+}], "MathCaption",
+ CellID->16893848],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"filepath", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+     "$MaXrdPath", ",", "\"\<ExampleFiles\>\"", ",", "\"\<CIF\>\"", ",", 
+      "\"\<COD_2203515.cif\>\""}], "}"}], "]"}]}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->269089377],
+
+Cell[TextData[{
+ "Next we simply use the ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " function:"
+}], "MathCaption",
+ CellID->1314710713],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "ImportCrystalData"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1280966767],
+
+Cell[BoxData["\<\"\\!\\(\\*RowBox[{\\\"ImportCrystalData\\\", \\\"[\\\", \
+StyleBox[\\\"cif\\\", \\\"TI\\\"], \\\"]\\\"}]\\) \
+\\!\\(\\*RowBox[{\\\"extracts information from a \\\", Cell[BoxData[StyleBox[\
+\\\"cif\\\", \\\"TI\\\"]], \\\"InlineFormula\\\", ExpressionUUID -> \
+\\\"7f8376ad-e598-4aad-81d1-13d804a8cc7c\\\"], \\\" file and stores the data \
+in \\\", Cell[BoxData[\\\"$CrystalData\\\"], \\\"InlineFormula\\\", \
+ExpressionUUID -> \\\"50434b2b-fc2f-44ac-94bf-369728cad4b6\\\"], \\\" under \
+the \\\", Cell[BoxData[StyleBox[\\\"cif\\\", \\\"TI\\\"]], \
+\\\"InlineFormula\\\", ExpressionUUID -> \
+\\\"c3120800-9912-4837-a5d0-ac395c33aa6d\\\"], \\\" file name.\\\"}]\\)\\n\\!\
+\\(\\*RowBox[{\\\"ImportCrystalData\\\", \\\"[\\\", StyleBox[\\\"cif\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"label\\\", \\\"TI\\\"], \\\"]\\\"}]\\) \
+\\!\\(\\*RowBox[{\\\"extracts information from a \\\", Cell[BoxData[StyleBox[\
+\\\"cif\\\", \\\"TI\\\"]], \\\"InlineFormula\\\", ExpressionUUID -> \
+\\\"8d11f203-65be-4dbb-bfc5-e035f45067ac\\\"], \\\" file and stores the data \
+in \\\", Cell[BoxData[\\\"$CrystalData\\\"], \\\"InlineFormula\\\", \
+ExpressionUUID -> \\\"b0bdf7a5-3a04-4361-b9aa-0d93c88e6f8b\\\"], \\\" under \
+\\\", Cell[BoxData[StyleBox[\\\"label\\\", \\\"TI\\\"]], \
+\\\"InlineFormula\\\", ExpressionUUID -> \
+\\\"28d0651d-8f23-4a4f-a2bd-8fbbec24e3fe\\\"], \
+\\\".\\\"}]\\)\\n\\!\\(\\*TemplateBox[List[\\\"\\\\\\\"\\\\\\\\!\\\\\\\\(\\\\\
+\\\\*RowBox[{\\\\\\\\\\\\\\\"ImportCrystalData\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"[\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"{\\\\\\\\\\\\\\\", \
+RowBox[{StyleBox[\\\\\\\\\\\\\\\"label\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"TI\\\\\\\\\\\\\\\"], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+StyleBox[\\\\\\\\\\\\\\\"formula\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"TI\\\\\\\\\\\\\\\"], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+StyleBox[\\\\\\\\\\\\\\\"Z\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"TI\\\\\\\\\\\\\\\"], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+StyleBox[\\\\\\\\\\\\\\\"sg\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"TI\\\\\\\\\\\\\\\
+\"], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", StyleBox[\\\\\\\\\\\\\\\"\\\\[Lambda]\
+\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"TR\\\\\\\\\\\\\\\"]}], \
+\\\\\\\\\\\\\\\"}\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+RowBox[{\\\\\\\\\\\\\\\"{\\\\\\\\\\\\\\\", RowBox[{StyleBox[\\\\\\\\\\\\\\\"a\
+\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"TI\\\\\\\\\\\\\\\"], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+StyleBox[\\\\\\\\\\\\\\\"b\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"TI\\\\\\\\\\\\\\\"], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+StyleBox[\\\\\\\\\\\\\\\"c\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"TI\\\\\\\\\\\\\\\"], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+StyleBox[\\\\\\\\\\\\\\\"\\\\[Alpha]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"TR\\\\\\\\\\\\\\\"], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+StyleBox[\\\\\\\\\\\\\\\"\\\\[Beta]\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"TR\\\\\\\
+\\\\\\\\\"], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+StyleBox[\\\\\\\\\\\\\\\"\\\\[Gamma]\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"TR\\\\\\\\\\\\\\\"]}], \\\\\\\\\\\\\\\"}\\\\\\\\\\\\\\\"}], \
+\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", RowBox[{\\\\\\\\\\\\\\\"{\\\\\\\\\\\\\\\", \
+RowBox[{RowBox[{\\\\\\\\\\\\\\\"<|\\\\\\\\\\\\\\\", StyleBox[\\\\\\\\\\\\\\\"\
+\\\\[Ellipsis]\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"TR\\\\\\\\\\\\\\\"], \\\\\\\\\
+\\\\\\\"|>\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\", \
+StyleBox[\\\\\\\\\\\\\\\"\\\\[Ellipsis]\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"TR\\\
+\\\\\\\\\\\\\"]}], \\\\\\\\\\\\\\\"}\\\\\\\\\\\\\\\"}], \\\\\\\\\\\\\\\",\\\\\
+\\\\\\\\\\\", StyleBox[\\\\\\\\\\\\\\\"notes\\\\\\\\\\\\\\\", \
+\\\\\\\\\\\\\\\"TI\\\\\\\\\\\\\\\"], \
+\\\\\\\\\\\\\\\"]\\\\\\\\\\\\\\\"}]\\\\\\\\) \
+\\\\\\\\!\\\\\\\\(\\\\\\\\*RowBox[{\\\\\\\\\\\\\\\"stores the data in \
+\\\\\\\\\\\\\\\", Cell[BoxData[\\\\\\\\\\\\\\\"$CrystalData\\\\\\\\\\\\\\\"], \
+\\\\\\\\\\\\\\\"InlineFormula\\\\\\\\\\\\\\\", ExpressionUUID -> \\\\\\\\\\\\\
+\\\"eb295790-08a9-4aaa-9553-45498a811956\\\\\\\\\\\\\\\"], \\\\\\\\\\\\\\\" \
+under \\\\\\\\\\\\\\\", Cell[BoxData[StyleBox[\\\\\\\\\\\\\\\"label\\\\\\\\\\\
+\\\\\", \\\\\\\\\\\\\\\"TI\\\\\\\\\\\\\\\"]], \\\\\\\\\\\\\\\"InlineFormula\\\
+\\\\\\\\\\\\\", ExpressionUUID -> \
+\\\\\\\\\\\\\\\"407cf224-c665-4b03-b00b-5187104a1ea9\\\\\\\\\\\\\\\"], \\\\\\\
+\\\\\\\\\".\\\\\\\\\\\\\\\"}]\\\\\\\\)\\\\\\\"\\\", \\\"\\\\\\\"   \\\\\\\"\\\
+\", TagBox[ButtonBox[PaneSelectorBox[List[Rule[False, \
+\\\"\\\\\\\"\\\\[RightSkeleton]\\\\\\\"\\\"]], False, Rule[BaseStyle, List[\\\
+\"Hyperlink\\\"]], Rule[FrameMargins, 0], Rule[ImageSize, Automatic]], \
+Rule[BaseStyle, \\\"Link\\\"], Rule[ButtonData, \
+\\\"paclet:MaXrd/ref/ImportCrystalData\\\"], Rule[ButtonNote, \
+\\\"paclet:MaXrd/ref/ImportCrystalData\\\"]], Function[Annotation[Slot[1], \\\
+\"paclet:MaXrd/ref/ImportCrystalData\\\", \\\"Hyperlink\\\"]]]], \
+\\\"RowDefault\\\"]\\)\"\>"], "Print", "PrintUsage",
+ CellTags->"Info23741689390-2046653",
+ CellID->335599801]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ImportCrystalData", "[", "filepath", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->730077328],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"ChemicalFormula\"\>", 
+    "\[Rule]", "\<\"CCaFK\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)\"\>"}], 
+   ",", 
+   RowBox[{"\<\"FormulaUnits\"\>", "\[Rule]", "1"}], ",", 
+   RowBox[{"\<\"SpaceGroup\"\>", 
+    "\[Rule]", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)m2\"\>"}], 
+   ",", 
+   RowBox[{"\<\"LatticeParameters\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"a\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.10093`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"b\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.10093`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"c\"\>", "\[Rule]", 
+       TemplateBox[{
+        "4.4551`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"\[Alpha]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Beta]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Gamma]\"\>", "\[Rule]", 
+       TemplateBox[{"120", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"AtomData\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftSkeleton]", "5", "\[RightSkeleton]"}], "}"}]}]}], 
+  "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1328824837]
+}, Open  ]],
+
+Cell[TextData[{
+ "Data on the crystal is now stored under ",
+ Cell[BoxData["\"\<TutorialData\>\""], "InlineFormula"],
+ " in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", since we did not specify a ",
+ Cell[BoxData[
+  StyleBox["label", "TI"]], "InlineFormula"],
+ ". If we wanted another name, for instance ",
+ Cell[BoxData["\"\<My test crystal\>\""], "InlineFormula"],
+ ", we would write:"
+}], "Text",
+ CellID->1554092208],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ImportCrystalData", "[", 
+  RowBox[{"filepath", ",", "\"\<My test crystal\>\""}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1480588393],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"ChemicalFormula\"\>", 
+    "\[Rule]", "\<\"CCaFK\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)\"\>"}], 
+   ",", 
+   RowBox[{"\<\"FormulaUnits\"\>", "\[Rule]", "1"}], ",", 
+   RowBox[{"\<\"SpaceGroup\"\>", 
+    "\[Rule]", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)m2\"\>"}], 
+   ",", 
+   RowBox[{"\<\"LatticeParameters\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"a\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.10093`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"b\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.10093`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"c\"\>", "\[Rule]", 
+       TemplateBox[{
+        "4.4551`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"\[Alpha]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Beta]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Gamma]\"\>", "\[Rule]", 
+       TemplateBox[{"120", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"AtomData\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[LeftSkeleton]", "5", "\[RightSkeleton]"}], "}"}]}]}], 
+  "}"}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->201065088]
+}, Open  ]],
+
+Cell["Look up the newly added crystal:", "MathCaption",
+ CellID->1543110170],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$CrystalData", "[", "\"\<My test crystal\>\"", "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->2029075352],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ChemicalFormula\"\>", 
+    "\[Rule]", "\<\"CCaFK\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)\"\>"}], 
+   ",", 
+   RowBox[{"\<\"FormulaUnits\"\>", "\[Rule]", "1"}], ",", 
+   RowBox[{"\<\"SpaceGroup\"\>", 
+    "\[Rule]", "\<\"P\\!\\(\\*OverscriptBox[\\(6\\), \\(_\\)]\\)m2\"\>"}], 
+   ",", 
+   RowBox[{"\<\"LatticeParameters\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"a\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.10093`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"b\"\>", "\[Rule]", 
+       TemplateBox[{
+        "5.10093`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"c\"\>", "\[Rule]", 
+       TemplateBox[{
+        "4.4551`", "\"\[CapitalARing]\"", "\[ARing]ngstr\[ODoubleDot]ms", 
+         "\"Angstroms\""},
+        "Quantity"]}], ",", 
+      RowBox[{"\<\"\[Alpha]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Beta]\"\>", "\[Rule]", 
+       TemplateBox[{"90", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}], ",", 
+      RowBox[{"\<\"\[Gamma]\"\>", "\[Rule]", 
+       TemplateBox[{"120", 
+         RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+         "\"AngularDegrees\""},
+        "QuantityPostfix"]}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"AtomData\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"K\"\>"}], ",", 
+        RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ",", 
+        RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0.0126`"}], ",", 
+        RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Uiso\"\>"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"C\"\>"}], ",", 
+        RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0.66667`", ",", "0.33333`", ",", "0.5`"}], "}"}]}], ",", 
+        RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0.018`"}], ",", 
+        
+        RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Uiso\"\>"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"Ca\"\>"}], ",", 
+        RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0.33333`", ",", "0.66667`", ",", "0.5`"}], "}"}]}], ",", 
+        RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0.01`"}], ",", 
+        RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Uiso\"\>"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"O\"\>"}], ",", 
+        RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0.812`", ",", "0.188`", ",", "0.5`"}], "}"}]}], ",", 
+        RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0.0129`"}], ",", 
+        RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Uiso\"\>"}]}], 
+       "\[RightAssociation]"}], ",", 
+      RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+        RowBox[{"\<\"Element\"\>", "\[Rule]", "\<\"F\"\>"}], ",", 
+        RowBox[{"\<\"FractionalCoordinates\"\>", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0.33333`", ",", "0.66667`", ",", "0"}], "}"}]}], ",", 
+        RowBox[{"\<\"DisplacementParameters\"\>", "\[Rule]", "0.0196`"}], ",", 
+        RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"Uiso\"\>"}]}], 
+       "\[RightAssociation]"}]}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[5]=",
+ CellID->1309157285]
+}, Open  ]],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Dataset"]], "paclet:ref/Dataset"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " function can sometimes give a better overview:"
+}], "MathCaption",
+ CellID->1108746175],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$CrystalData", "[", "\"\<My test crystal\>\"", "]"}], "//", 
+  "Dataset"}]], "Input",
+ CellLabel->"In[6]:=",
+ CellID->981358206],
+
+Cell[BoxData[
+ TemplateBox[{
+   TagBox[
+    DynamicModuleBox[{
+     TypeSystem`NestedGrid`PackagePrivate`$state$$ = 
+      Data`UnorderedAssociation[
+       "DisplayedRowCount" -> 20, "RowCount" -> 20, "Length" -> 5, 
+        "InitialType" -> 
+        TypeSystem`Struct[{
+          "ChemicalFormula", "FormulaUnits", "SpaceGroup", 
+           "LatticeParameters", "AtomData"}, {
+           TypeSystem`Atom[String], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[String], 
+           
+           TypeSystem`Struct[{
+            "a", "b", "c", "\[Alpha]", "\[Beta]", "\[Gamma]"}, {
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]]}], 
+           TypeSystem`Vector[
+            
+            TypeSystem`Struct[{
+             "Element", "FractionalCoordinates", "DisplacementParameters", 
+              "Type"}, {
+              TypeSystem`Atom[String], 
+              TypeSystem`Vector[
+               TypeSystem`Atom[Real], 3], 
+              TypeSystem`Atom[Real], 
+              TypeSystem`Atom[
+               TypeSystem`Enumeration["Uiso"]]}], 5]}], 
+        "DisplayedColumnCount" -> 20, "DataRowCount" -> 0, "Shape" -> 
+        TypeSystem`PackageScope`DocumentShape[
+          
+          Association[{"ChemicalFormula"} -> 
+           TypeSystem`PackageScope`AtomShape[297.6], {"FormulaUnits"} -> 
+           TypeSystem`PackageScope`AtomShape[34], {"SpaceGroup"} -> 
+           TypeSystem`PackageScope`AtomShape[288.00000000000006`], {
+            "LatticeParameters", "a"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {"LatticeParameters", "b"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {"LatticeParameters", "c"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {
+            "LatticeParameters", "\[Alpha]"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {
+            "LatticeParameters", "\[Beta]"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {
+            "LatticeParameters", "\[Gamma]"} -> 
+           TypeSystem`PackageScope`AtomShape[75], {"AtomData"} -> 
+           TypeSystem`PackageScope`ElidedShape[1]], 2], "DataColumnCount" -> 
+        0, "InitialData" -> TypeSystem`PackageScope`CacheHandle[286259325], 
+        "Type" -> TypeSystem`Struct[{
+          "ChemicalFormula", "FormulaUnits", "SpaceGroup", 
+           "LatticeParameters", "AtomData"}, {
+           TypeSystem`Atom[String], 
+           TypeSystem`Atom[Integer], 
+           TypeSystem`Atom[String], 
+           
+           TypeSystem`Struct[{
+            "a", "b", "c", "\[Alpha]", "\[Beta]", "\[Gamma]"}, {
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "Angstroms"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]], 
+             TypeSystem`Atom[
+              Quantity[1, "AngularDegrees"]]}], 
+           TypeSystem`Vector[
+            
+            TypeSystem`Struct[{
+             "Element", "FractionalCoordinates", "DisplacementParameters", 
+              "Type"}, {
+              TypeSystem`Atom[String], 
+              TypeSystem`Vector[
+               TypeSystem`Atom[Real], 3], 
+              TypeSystem`Atom[Real], 
+              TypeSystem`Atom[
+               TypeSystem`Enumeration["Uiso"]]}], 5]}], "HandleQ" -> True, 
+        "Meta" -> {}, "RowTarget" -> 20, "Data" -> 
+        TypeSystem`PackageScope`CacheHandle[286259325]], 
+      TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+      TypeSystem`NestedGrid`PackagePrivate`$pos$$ = 1, 
+      TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+      DynamicModule[{
+        TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+           Style[
+            Grid[{{
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"ChemicalFormula\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"ChemicalFormula\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "ChemicalFormula"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["ChemicalFormula"]], "Mouse"], 
+                Background -> GrayLevel[0.95], Alignment -> {Left, Baseline}],
+                SpanFromLeft, 
+               Pane[
+                Annotation["CCaFK\!\(\*SubscriptBox[\(O\), \(3\)]\)", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["ChemicalFormula"]], "Mouse"], 
+                ImageSize -> {{297.6, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"FormulaUnits\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"FormulaUnits\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "FormulaUnits"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["FormulaUnits"]], "Mouse"], 
+                Background -> GrayLevel[0.95], Alignment -> {Left, Baseline}],
+                SpanFromLeft, 
+               Pane[
+                Annotation[
+                 RawBoxes["1"], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["FormulaUnits"]], "Mouse"], 
+                ImageSize -> {{34, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"SpaceGroup\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"SpaceGroup\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "SpaceGroup"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["SpaceGroup"]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], SpanFromLeft, 
+               Pane[
+                Annotation["P\!\(\*OverscriptBox[\(6\), \(_\)]\)m2", 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["SpaceGroup"]], "Mouse"], 
+                ImageSize -> {{288.00000000000006`, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"LatticeParameters\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"LatticeParameters\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "LatticeParameters", "a"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "a"]], "Mouse"],
+                 Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"a\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"a\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "LatticeParameters", "a"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "a"]], "Mouse"],
+                 Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   RowBox[{"5.10093`", "\"\[CapitalARing]\""}], FontColor -> 
+                   RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "a"]], "Mouse"],
+                 ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"b\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"b\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "LatticeParameters", "b"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "b"]], "Mouse"],
+                 Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   RowBox[{"5.10093`", "\"\[CapitalARing]\""}], FontColor -> 
+                   RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "b"]], "Mouse"],
+                 ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"c\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"c\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "LatticeParameters", "c"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "c"]], "Mouse"],
+                 Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   RowBox[{"4.4551`", "\"\[CapitalARing]\""}], FontColor -> 
+                   RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "c"]], "Mouse"],
+                 ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"\[Alpha]\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"\[Alpha]\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "LatticeParameters", "\[Alpha]"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "\[Alpha]"]], 
+                 "Mouse"], Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   TemplateBox[{"90", 
+                    RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees",
+                     "\"AngularDegrees\""}, "QuantityPostfix", SyntaxForm -> 
+                    Mod], FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "\[Alpha]"]], 
+                 "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"\[Beta]\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"\[Beta]\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "LatticeParameters", "\[Beta]"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "\[Beta]"]], 
+                 "Mouse"], Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   TemplateBox[{"90", 
+                    RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees",
+                     "\"AngularDegrees\""}, "QuantityPostfix", SyntaxForm -> 
+                    Mod], FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "\[Beta]"]], 
+                 "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {SpanFromAbove, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"\[Gamma]\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"\[Gamma]\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "LatticeParameters", "\[Gamma]"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "\[Gamma]"]], 
+                 "Mouse"], Background -> GrayLevel[0.95], 
+                Alignment -> {Left, Baseline}], 
+               Pane[
+                Annotation[
+                 RawBoxes[
+                  StyleBox[
+                   TemplateBox[{"120", 
+                    RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees",
+                     "\"AngularDegrees\""}, "QuantityPostfix", SyntaxForm -> 
+                    Mod], FontColor -> RGBColor[{
+                    Rational[33, 74], 
+                    Rational[27, 74], 
+                    Rational[117, 370]}]]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["LatticeParameters", "\[Gamma]"]], 
+                 "Mouse"], ImageSize -> {{75, Full}, Automatic}, 
+                Alignment -> {Left, Baseline}]}, {
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Pane[
+                    RawBoxes[
+                    StyleBox["\"AtomData\"", FontColor -> GrayLevel[0.4]]], {{
+                    20, Full}, 15}], 
+                    Style[
+                    Pane[
+                    RawBoxes[
+                    StyleBox[
+                    "\"AtomData\"", FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], {{20, Full}, 15}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "AtomData"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["AtomData"]], "Mouse"], Background -> 
+                GrayLevel[0.95], Alignment -> {Left, Baseline}], SpanFromLeft, 
+               Item[
+                Annotation[
+                 EventHandler[
+                  MouseAppearance[
+                   Mouseover[
+                    Row[{"  { ", 
+                    Subscript["\[Ellipsis]", 5], " }  "}], 
+                    Style[
+                    Row[{"  { ", 
+                    Subscript["\[Ellipsis]", 5], " }  "}], FontColor -> 
+                    RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][{
+                    "AtomData"}]], 
+                 TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+                 
+                  GeneralUtilities`Slice["AtomData"]], "Mouse"], BaseStyle -> {
+                  GrayLevel[0.5]}]}}, BaseStyle -> {ContextMenu -> {
+                 MenuItem["Copy position to clipboard", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                   TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                  MenuEvaluator -> Automatic], 
+                 MenuItem["Copy data to clipboard", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                  MenuEvaluator -> Automatic], Delimiter, 
+                 MenuItem["Paste position in new cell", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                   TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                  MenuEvaluator -> Automatic], 
+                 MenuItem["Paste data in new cell", 
+                  KernelExecute[
+                   TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                   TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                  MenuEvaluator -> Automatic]}, FontFamily -> "Verdana", 
+               FontSize -> 12}, Alignment -> Left, RowMinHeight -> 1.5, 
+             Dividers -> All, FrameStyle -> GrayLevel[0.85], 
+             BaseStyle -> {FontFamily -> "Verdana", FontSize -> 12}], 
+            LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> False,
+             ShowAutoStyles -> False]], 
+         TypeSystem`NestedGrid`PackagePrivate`initialQ = True, 
+         TypeSystem`NestedGrid`PackagePrivate`self = $Failed}, 
+        Dynamic[
+         TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+         TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+            Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+            
+            Module[{TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+              TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+              TypeSystem`NestedGrid`PackagePrivate`LookupCacheValue[
+                TypeSystem`NestedGrid`PackagePrivate`$state$$["Data"]]}, 
+             TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = 
+              If[TypeSystem`NestedGrid`PackagePrivate`tmpData$ === 
+                TypeSystem`NestedGrid`PackagePrivate`$NotCached, 
+                TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+                TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+                TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                 TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                 TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+                 TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830][
+                TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+               Not[
+                FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+               TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+               TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+          TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+          TypeSystem`NestedGrid`PackagePrivate`$pos$$; If[
+            FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+            TypeSystem`SparseGrid[
+             TypeSystem`H["(data no longer present)"]], 
+            If[GeneralUtilities`$DebugMode, 
+             Row[{TypeSystem`NestedGrid`PackagePrivate`renderedGrid, "  ", 
+               TypeSystem`NestedGrid`PackagePrivate`formatState[
+               TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                TypeSystem`NestedGrid`PackagePrivate`$pos$$]}], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid]]], 
+         TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$pos$$}], 
+        DynamicModuleValues :> {}], 
+      TypeSystem`NestedGrid`PackagePrivate`$posCell$$, 
+      TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+        TypeSystem`NestedGrid`PackagePrivate`alignBar[
+        TypeSystem`NestedGrid`PackagePrivate`$state$$][
+         TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+          TypeSystem`PackageScope`Pathbar[
+          TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+           TypeSystem`NestedGrid`PackagePrivate`updateState[
+           TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+            TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+            TypeSystem`NestedGrid`PackagePrivate`$pos$$, 
+            TypeSystem`NestedGrid`PackagePrivate`$grid$$, 676825830]]]], 
+        TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+      TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Framed[
+        Dynamic[
+         Replace[
+          MouseAnnotation[Null], {
+          TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][Null] -> 
+           "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[676825830][
+             Pattern[TypeSystem`NestedGrid`PackagePrivate`path, 
+              Blank[]]] :> (
+            TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+             TypeSystem`NestedGrid`PackagePrivate`path; 
+            TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+             TypeSystem`NestedGrid`PackagePrivate`path, 
+              TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+           Spacer[10], Blank[] :> Spacer[10]}], TrackedSymbols :> {}], 
+        FrameStyle -> None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> 
+        Top, ImageSize -> {Automatic, 14}]}, 
+     DynamicBox[
+      ToBoxes[
+       Column[
+        If[TypeSystem`NestedGrid`PackagePrivate`$path$$ == {}, {
+          TypeSystem`NestedGrid`PackagePrivate`displayScrollBar[
+          TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$pos$$], 
+          TypeSystem`NestedGrid`PackagePrivate`onDesktopShow[
+           TypeSystem`NestedGrid`PackagePrivate`alignBar[
+           TypeSystem`NestedGrid`PackagePrivate`$state$$][
+           TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$]]}, {
+         TypeSystem`NestedGrid`PackagePrivate`$topBar$$, 
+          TypeSystem`NestedGrid`PackagePrivate`displayScrollBar[
+          TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+           TypeSystem`NestedGrid`PackagePrivate`$pos$$], 
+          TypeSystem`NestedGrid`PackagePrivate`onDesktopShow[
+           TypeSystem`NestedGrid`PackagePrivate`alignBar[
+           TypeSystem`NestedGrid`PackagePrivate`$state$$][
+           TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$]]}], Spacings -> 
+        If[TypeSystem`NestedGrid`PackagePrivate`$path$$ == {}, 
+          0, {{}, {0, 0.05, 0}}]], StandardForm], 
+      ImageSizeCache -> {456., {130.3544921875, 135.6455078125}}, 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     BaseStyle -> {LineBreakWithin -> False}, Deinitialization :> 
+     TypeSystem`NestedGrid`PackagePrivate`deleteState[
+      TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+     DynamicModuleValues :> {}, Initialization :> 
+     Block[{$ContextPath = $ContextPath}, 
+       Needs["TypeSystem`"]]], Deploy, DefaultBaseStyle -> "Deploy"]},
+  "CopyTag",
+  DisplayFunction->(#& ),
+  InterpretationFunction->("Dataset[<>]"& )]], "Output",
+ CellLabel->"Out[6]=",
+ CellID->2036525480]
+}, Open  ]],
+
+Cell[TextData[{
+ "Applications of this kind of data is covered in other tutorials. The \
+imported data is stored in the ",
+ StyleBox["CrystalData.m", "InlineCode"],
+ " file and thus kept even after ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " shuts down or the kernel is quit. The user may also specify a custom file \
+to store the data in, but more about this can be read in the documentation on \
+",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "Text",
+ CellID->1079281924]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Importing crystal data",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 50.671943}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Tutorial", "language" -> "en", "paclet" -> 
+    "MaXrd", "status" -> "None", "summary" -> 
+    "In order to make use of the basic functions in this package, some basic \
+input is required, such as lattice parameters, space group and atom \
+positions. In this tutorial, we will learn how to import the relevant \
+crystallographic information to Mathematica automatically from cif files. The \
+package must be loaded: Functions related to crystal/compound data.", 
+    "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$53688, "title" -> 
+    "Importing crystal data", "titlemodifier" -> "", "windowtitle" -> 
+    "Importing crystal data", "type" -> "Tutorial", "uri" -> 
+    "MaXrd/tutorial/ImportingCrystalData", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info13741677435-3015495"->{
+  Cell[25689, 573, 878, 13, 70, "Print",ExpressionUUID->"b2f5d54f-a902-4004-95b6-4eef01960566",
+   CellTags->"Info13741677435-3015495",
+   CellID->2045424016]},
+ "Info23741689390-2046653"->{
+  Cell[124253, 2503, 4919, 73, 70, "Print",ExpressionUUID->"e6813049-0d88-4313-8d05-5ff746bc5ef3",
+   CellTags->"Info23741689390-2046653",
+   CellID->335599801]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info13741677435-3015495", 176797, 3637},
+ {"Info23741689390-2046653", 176988, 3641}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[594, 21, 3290, 78, 70, "AnchorBarGrid",ExpressionUUID->"80862087-3929-4cd8-8570-35b47a417691",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3909, 103, 59, 1, 70, "Title",ExpressionUUID->"94664918-f356-4eab-876a-64ca38afb6d2",
+ CellID->509267359],
+Cell[3971, 106, 17751, 315, 70, "TutorialJumpBox",ExpressionUUID->"d50319dc-b3a2-4fc5-9600-9b74bceb2e73"],
+Cell[21725, 423, 418, 11, 70, "Text",ExpressionUUID->"f446ce68-dcda-4bf6-a1b2-fa3e50f558a0",
+ CellID->1534169418],
+Cell[22146, 436, 71, 1, 70, "MathCaption",ExpressionUUID->"753a5807-104c-4eda-86b4-32dc70324fc6",
+ CellID->1517691727],
+Cell[22220, 439, 114, 3, 70, "Input",ExpressionUUID->"f29c7241-f85d-46e0-a78a-c93d34c1399e",
+ CellID->318520214],
+Cell[22337, 444, 813, 26, 70, "DefinitionBox",ExpressionUUID->"87e1ba5e-6111-48f6-bffa-b70edbf9b023",
+ CellID->1179381505],
+Cell[23153, 472, 83, 1, 70, "Caption",ExpressionUUID->"abd1d934-bc0d-4636-b97c-76215ce5e960",
+ CellID->1110981067],
+Cell[CellGroupData[{
+Cell[23261, 477, 59, 1, 70, "Section",ExpressionUUID->"35d46027-b92f-43a2-86a7-9f84ecfd1cfb",
+ CellID->838308732],
+Cell[23323, 480, 107, 3, 70, "Text",ExpressionUUID->"bb0d7edc-f696-4f8f-bfe9-66c60b2870de",
+ CellID->337576626],
+Cell[23433, 485, 558, 16, 70, "Program",ExpressionUUID->"0feead72-9e5b-4b5b-9621-da3f1653a2ca",
+ CellID->312766054],
+Cell[23994, 503, 173, 6, 70, "Text",ExpressionUUID->"81883e2f-2321-479d-b1b8-cad39f135478",
+ CellID->1967948739],
+Cell[24170, 511, 60, 1, 70, "BulletedText",ExpressionUUID->"f34d02c9-cce6-4c19-b372-43612a462bed",
+ CellID->768409944],
+Cell[24233, 514, 55, 1, 70, "BulletedText",ExpressionUUID->"39335f3e-9f0b-4111-906a-8dff4019d7e6",
+ CellID->528644195],
+Cell[24291, 517, 63, 1, 70, "BulletedText",ExpressionUUID->"6f76ec9b-e503-47d3-9bd5-ae59b58fe3e4",
+ CellID->1158010975],
+Cell[24357, 520, 72, 1, 70, "BulletedText",ExpressionUUID->"80048b01-c662-4b95-82f8-c818500aac0d",
+ CellID->1204599443],
+Cell[CellGroupData[{
+Cell[24454, 525, 142, 4, 70, "BulletedText",ExpressionUUID->"d96ca8bb-db9b-474e-ad21-4abb93776e38",
+ CellID->2133747140],
+Cell[24599, 531, 570, 18, 70, "Text",ExpressionUUID->"88728ad6-96f9-4e8e-aa22-9e186d6de6eb",
+ CellID->1890989225],
+Cell[25172, 551, 391, 13, 70, "Text",ExpressionUUID->"a520ebf9-c470-4f78-802a-102b6d344103",
+ CellID->471938362],
+Cell[CellGroupData[{
+Cell[25588, 568, 98, 3, 70, "Input",ExpressionUUID->"0b9d97dc-a86f-4359-adb2-433df4d3c704",
+ CellID->672050695],
+Cell[25689, 573, 878, 13, 70, "Print",ExpressionUUID->"b2f5d54f-a902-4004-95b6-4eef01960566",
+ CellTags->"Info13741677435-3015495",
+ CellID->2045424016]
+}, Open  ]],
+Cell[26582, 589, 198, 5, 70, "Text",ExpressionUUID->"c7ca69da-6401-4a01-ab8b-1633c59ccf1e",
+ CellID->1742312998],
+Cell[26783, 596, 255, 10, 70, "MathCaption",ExpressionUUID->"92216adb-9ac0-4a98-a427-54ba7a46b667",
+ CellID->604118976],
+Cell[CellGroupData[{
+Cell[27063, 610, 157, 4, 70, "Input",ExpressionUUID->"6fb4340e-8deb-464e-ac96-e0183c29f41c",
+ CellID->1184639610],
+Cell[27223, 616, 3030, 73, 70, "Output",ExpressionUUID->"8de4281e-7ff3-4fe9-b7fd-b1bd254d7e56",
+ CellID->523215736]
+}, Open  ]],
+Cell[30268, 692, 283, 10, 70, "MathCaption",ExpressionUUID->"530a2c4c-b025-44db-9f99-b938f1ca57a4",
+ CellID->341563389],
+Cell[CellGroupData[{
+Cell[30576, 706, 102, 3, 70, "Input",ExpressionUUID->"76870096-b7e0-4d98-9308-a2770e6df1db",
+ CellID->1336797970],
+Cell[30681, 711, 37246, 745, 70, "Output",ExpressionUUID->"1e27dc84-0568-4916-be3e-fad91bbba158",
+ CellID->1888824134]
+}, Open  ]],
+Cell[67942, 1459, 71, 1, 70, "MathCaption",ExpressionUUID->"0e0514ca-06ad-4734-8125-7a7d8151bc91",
+ CellID->1978279602],
+Cell[CellGroupData[{
+Cell[68038, 1464, 169, 5, 70, "Input",ExpressionUUID->"7064399b-81bb-43d6-ab03-49ea3ed89baf",
+ CellID->1007856892],
+Cell[68210, 1471, 1022, 21, 70, "Output",ExpressionUUID->"e8056fdb-3318-45c3-a37e-b69081217782",
+ CellID->1818495166]
+}, Open  ]],
+Cell[69247, 1495, 428, 12, 70, "Text",ExpressionUUID->"ab2f8dca-18bc-40dc-ba52-66ae135d51d9",
+ CellID->912009395]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69724, 1513, 63, 1, 70, "Section",ExpressionUUID->"99db2675-a4ba-43ba-8894-a48df9575bae",
+ CellID->1068372883],
+Cell[69790, 1516, 357, 13, 70, "Text",ExpressionUUID->"86534e92-4861-42e8-b23a-2d07ff174396",
+ CellID->1518624062],
+Cell[70150, 1531, 82, 1, 70, "Text",ExpressionUUID->"a67d26c0-f057-484e-a08b-6b562ec8af3f",
+ CellID->254513148],
+Cell[70235, 1534, 336, 11, 70, "BulletedText",ExpressionUUID->"8021f424-b26d-4118-a786-4689d2d064a4",
+ CellID->1809959442],
+Cell[CellGroupData[{
+Cell[70596, 1549, 349, 11, 70, "BulletedText",ExpressionUUID->"3b83c80b-73ae-429e-bf30-3a9859210f99",
+ CellID->857789915],
+Cell[70948, 1562, 263, 5, 70, "Text",ExpressionUUID->"faca8d8c-ae1f-4ee6-8541-71d92cb67647",
+ CellID->2146615432],
+Cell[71214, 1569, 50214, 829, 70, "Input",ExpressionUUID->"62aa0253-8608-49c5-bd15-627b31a8a4ca",
+ CellID->1616921741],
+Cell[121431, 2400, 223, 5, 70, "Text",ExpressionUUID->"cf1fe6c8-23fc-429a-a122-ea650ab95cc5",
+ CellID->387357774]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[121703, 2411, 69, 1, 70, "Section",ExpressionUUID->"b0c52e4f-d706-48b6-baee-4a484ca63eb9",
+ CellID->1880140157],
+Cell[121775, 2414, 378, 11, 70, "Text",ExpressionUUID->"d8f5485d-0534-4cec-8ec7-1e6bca0f3b4f",
+ CellID->1999897910],
+Cell[122156, 2427, 493, 15, 70, "Text",ExpressionUUID->"85d85cb9-9e04-4f36-bc30-083ac31e7da3",
+ CellID->1591895472],
+Cell[122652, 2444, 567, 16, 70, "Program",ExpressionUUID->"29abb268-e526-41d3-af94-45468536b7f6",
+ CellID->1221577853],
+Cell[123222, 2462, 311, 9, 70, "MathCaption",ExpressionUUID->"9699a8a8-d13d-4104-acac-fadd0ce7fae6",
+ CellID->16893848],
+Cell[123536, 2473, 301, 9, 70, "Input",ExpressionUUID->"e3266ec5-c17f-4c63-a382-7d8c882e5331",
+ CellID->269089377],
+Cell[123840, 2484, 281, 10, 70, "MathCaption",ExpressionUUID->"b96398d6-f29d-4300-aa52-b02a8c636e96",
+ CellID->1314710713],
+Cell[CellGroupData[{
+Cell[124146, 2498, 104, 3, 70, "Input",ExpressionUUID->"9c5f4e9e-c21d-4f56-be3b-73ad7233a870",
+ CellID->1280966767],
+Cell[124253, 2503, 4919, 73, 70, "Print",ExpressionUUID->"e6813049-0d88-4313-8d05-5ff746bc5ef3",
+ CellTags->"Info23741689390-2046653",
+ CellID->335599801]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[129209, 2581, 120, 3, 70, "Input",ExpressionUUID->"700f4981-329b-4754-a81e-5d448005d3ab",
+ CellID->730077328],
+Cell[129332, 2586, 1873, 48, 70, "Output",ExpressionUUID->"e73404fc-61d3-4970-b51a-f524e1eac72b",
+ CellID->1328824837]
+}, Open  ]],
+Cell[131220, 2637, 556, 17, 70, "Text",ExpressionUUID->"91b511a6-4c0a-4cce-b046-1dd2d5c3f828",
+ CellID->1554092208],
+Cell[CellGroupData[{
+Cell[131801, 2658, 166, 4, 70, "Input",ExpressionUUID->"6a269271-e81e-43d1-a385-540ccb42a35e",
+ CellID->1480588393],
+Cell[131970, 2664, 1872, 48, 70, "Output",ExpressionUUID->"7862e608-cdb0-4fce-8118-0de37fece568",
+ CellID->201065088]
+}, Open  ]],
+Cell[133857, 2715, 76, 1, 70, "MathCaption",ExpressionUUID->"983757c7-bbc7-4d9f-97db-1a71ada0b225",
+ CellID->1543110170],
+Cell[CellGroupData[{
+Cell[133958, 2720, 131, 3, 70, "Input",ExpressionUUID->"f1cd718b-ca59-4dc5-89eb-31ce84acd157",
+ CellID->2029075352],
+Cell[134092, 2725, 4157, 94, 70, "Output",ExpressionUUID->"9c638b8a-2be8-4b06-83bc-2cf6e5945ffd",
+ CellID->1309157285]
+}, Open  ]],
+Cell[138264, 2822, 273, 10, 70, "MathCaption",ExpressionUUID->"11b71e60-0510-40cc-8eec-e5cce2acb12a",
+ CellID->1108746175],
+Cell[CellGroupData[{
+Cell[138562, 2836, 163, 5, 70, "Input",ExpressionUUID->"c7a89b67-e4e7-4917-bdcb-81c0f2d3cf70",
+ CellID->981358206],
+Cell[138728, 2843, 34836, 710, 70, "Output",ExpressionUUID->"9ad373d8-4782-4aea-9f11-6124a83edba5",
+ CellID->2036525480]
+}, Open  ]],
+Cell[173579, 3556, 633, 18, 70, "Text",ExpressionUUID->"c60a26a9-ea96-4784-98c4-a5d554f69054",
+ CellID->1079281924]
+}, Open  ]]
+}, Open  ]],
+Cell[174239, 3578, 23, 0, 70, "FooterCell",ExpressionUUID->"80bb81d5-a8e6-40b5-9d40-6d60b62b8dca"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,1680 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     63925,       1671]
+NotebookOptionsPosition[     55961,       1500]
+NotebookOutlinePosition[     58442,       1561]
+CellTagsIndexPosition[     58356,       1556]
+WindowTitle->ExportCrystalData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"$CrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$CrystalData"], "\<\"ResetCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ResetCrystalData"], "\<\"EquivalentIsotropicADP\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/EquivalentIsotropicADP"], \
+"\<\"GetLatticeParameters\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetLatticeParameters"], "\<\"GetCrystalMetric\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetCrystalMetric"], \
+"\<\"SimulateDiffractionPattern\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SimulateDiffractionPattern"], "\<\"InputCheck\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/InputCheck"], "\<\"$GroupSymbolRedirect\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/$GroupSymbolRedirect"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/ExportCrystalData\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/ExportCrystalData"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+ExportCrystalData.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$19436], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/ExportCrystalData", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ExportCrystalData", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["ExportCrystalData"]], 
+         "paclet:MaXrd/ref/ExportCrystalData"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{"\"\<DISCUS\>\"", ",", 
+        StyleBox["crystal", "TI"], ",", 
+        StyleBox["file", "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]exports the data associated with ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " to ",
+     Cell[BoxData[
+      StyleBox["file", "TI"]], "InlineFormula"],
+     "; applicable for ",
+     StyleBox["DISCUS",
+      FontSlant->"Italic"],
+     "."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["ExportCrystalData"]], 
+         "paclet:MaXrd/ref/ExportCrystalData"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{"\"\<DIFFUSE\>\"", ",", 
+        StyleBox["crystal", "TI"], ",", 
+        StyleBox["dir", "TI"], ",", 
+        StyleBox["hkl", "TI"], ",", 
+        StyleBox["limit", "TI"], ",", 
+        StyleBox["m", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["w", "TI"], ",", 
+          StyleBox["h", "TI"]}], "}"}]}], 
+       StyleBox["]", "TI"]}]], "InlineFormula"],
+     "\[LineSeparator]exports the data associated with ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " (at ",
+     Cell[BoxData[
+      StyleBox["hkl", "TI"]], "InlineFormula"],
+     " with reciprocal space ",
+     Cell[BoxData[
+      StyleBox["limit", "TI"]], "InlineFormula"],
+     " using subtraction mode ",
+     Cell[BoxData[
+      StyleBox["m", "TI"]], "InlineFormula"],
+     ", and width ",
+     Cell[BoxData[
+      StyleBox["w", "TI"]], "InlineFormula"],
+     " and height ",
+     Cell[BoxData[
+      StyleBox["h", "TI"]], "InlineFormula"],
+     ") to ",
+     Cell[BoxData[
+      StyleBox["dir", "TI"]], "InlineFormula"],
+     "; applicable for ",
+     StyleBox["DIFFUSE.",
+      FontSlant->"Italic"]
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1255337775],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["Options:", "Notes",
+ CellID->2086198239],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<Detailed\>\"", 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[
+    "output to a more detailed/verbose format", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<IncludeStructureSizeInfo\>\"", 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[TextData[{
+     "whether to include ",
+     StyleBox["ncell", "InlineCode"],
+     " line in ",
+     StyleBox["DISCUS",
+      FontSlant->"Italic"],
+     " file"
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}},
+ CellID->503559283],
+
+Cell[TextData[{
+ "The following scattering subtraction modes are available from ",
+ StyleBox["DIFFUSE ",
+  FontSlant->"Italic"],
+ "(see ",
+ StyleBox["ZMC_handbook_incomplete",
+  FontSlant->"Italic"],
+ ", pp. 68\[Dash]69 [2011-05-05]):"
+}], "Notes",
+ CellID->1532908556],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "None", "N", Cell[
+    "no subtraction of Bragg peaks; no diffuse scattering", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Biso\>\"", "Y", Cell[TextData[{
+     "calculate Bragg scattering from ",
+     Cell[BoxData[
+      FormBox[
+       SubscriptBox["B", 
+        StyleBox["iso", "TR"]], TraditionalForm]], "InlineMath"],
+     " values"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<ExactAverage\>\"", "E", Cell[
+    "subtract Bragg scattring from the whole crystal", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<SmallAverage\>\"", "e", Cell[
+    "subtract Bragg scattering using 5% of the crystal", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "Rows" -> {None, None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True, True}}}},
+ CellID->1937850278],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Chop"]], "paclet:ref/Chop"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " is applied to all coordinates with a tolerance of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", 
+    RowBox[{"-", "6"}]], TraditionalForm]], "InlineMath"],
+ "."
+}], "Notes",
+ CellID->991443164],
+
+Cell[TextData[{
+ "If no ADP values are present in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", a value of zero will be used in the export."
+}], "Notes",
+ CellID->12102587],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1582636297],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->635791937],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tempFile", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$TemporaryDirectory", ",", "\"\<test.stru\>\""}], "}"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ExportCrystalData", "[", 
+   RowBox[{"\"\<DISCUS\>\"", ",", "\"\<Ice\>\"", ",", "tempFile"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Style", "[", 
+  RowBox[{
+   RowBox[{"Import", "@", "tempFile"}], ",", "11"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->264836864],
+
+Cell[BoxData[
+ StyleBox["\<\"title  Ice\\nspcgr  P63cm\\ncell   7.82  7.82  7.36  90.  90.  \
+120.\\nncell  1,  1,  1,  5\\natoms\\nO          0.333300        0.000000     \
+   0.062500       0.000000        \\nO          0.666700        0.000000      \
+  0.937500       0.000000        \\nH          0.333300        0.000000       \
+ 0.174000       0.000000        \\nH          0.438000        0.000000        \
+0.026000       0.000000        \\nH          0.772000        0.105000        \
+0.975000       0.000000        \"\>",
+  StripOnInput->False,
+  FontSize->11]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->223117020]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->464228894],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"files", "=", 
+  RowBox[{"ExportCrystalData", "[", 
+   RowBox[{
+   "\"\<DIFFUSE\>\"", ",", "\"\<Ice\>\"", ",", "\"\<~/Desktop\>\"", ",", 
+    "\"\<hk0\>\"", ",", "5.5", ",", "\"\<N\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"500", ",", "500"}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1951865879],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"~/Desktop/diffuse_input1_crystal.txt\"\>", 
+   ",", "\<\"~/Desktop/diffuse_input2_setup.txt\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1935364044]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Style", "[", 
+  RowBox[{
+   RowBox[{"Import", "@", 
+    RowBox[{"Last", "@", "files"}]}], ",", "8"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->921750799],
+
+Cell[BoxData[
+ StyleBox["\<\"Ice                                        \\t! Header or \
+structure label\\n12645, 9676                                \\t! Random \
+number seeds\\n7.82 7.82 7.36  0.00000 0.00000 -0.50000   \\t! Cell coord's; \
+angles are cos(ang)\\n1 1 1                                      \\t! Size of \
+crystal simulation (unit cells)\\nY                                          \
+\\t! Periodic Boundary?\\n  11.0000,     4.0263,  0.                 \\t! \
+Origin of volume\\n  11.0000,   -15.0263,  0.,  500           \\t! u-axis \
+(bottom right) and image x-dimension\\n -11.0000,    15.0263,  0.,  500       \
+    \\t! v-axis (top left) and image y-dimension\\n  11.0000,     4.0263,  \
+0.,  1             \\t! w-axis (top right) and image z-dimension\\n3.0        \
+                                \\t! sin(theta)/lambda maximum\\n1 1 1        \
+                              \\t! Lot size\\n1                               \
+           \\t! Number of lots\\n5                                          \
+\\t! Number of atom sites per cell\\n2                                        \
+  \\t! Number of different atom types (list of sc.coef's below)\\nN           \
+                               \\t! Subtract average lattice? ('N', 'e', 'E' \
+or 'Y')\\n'O'\\n3.0485,13.2771,2.2868,5.7011\\n1.5463,0.3239,0.867,32.9089,0.\
+2508\\n0.0,0.0\\n'H'\\n0.493002,10.5109,0.322912,26.1257\\n0.140191,3.14236,0.\
+04081,57.7997,0.003038\\n0.0,0.0\\n\"\>",
+  StripOnInput->False,
+  FontSize->8]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->67221528]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Detailed\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tempFile", "=", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"$TemporaryDirectory", ",", "\"\<test.stru\>\""}], "}"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ExportCrystalData", "[", 
+   RowBox[{"\"\<DISCUS\>\"", ",", "\"\<Ice\>\"", ",", "tempFile", ",", 
+    RowBox[{"\"\<Detailed\>\"", "\[Rule]", "True"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Style", "[", 
+  RowBox[{
+   RowBox[{"Import", "@", "tempFile"}], ",", "8"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->409295607],
+
+Cell[BoxData[
+ StyleBox["\<\"title  Ice\\nspcgr  P63cm\\ncell   7.820000  7.820000  \
+7.360000  90.000000  90.000000  120.000000\\nncell  1,  1,  1,  5\\natoms     \
+ x,              y,              z,             Biso,    Property,  MoleNo,  \
+MoleAt,   Occ\\nO          0.333300,       0.000000,       0.062500,      \
+0.000000,        1,       0,       0,   1.000000\\nO          0.666700,       \
+0.000000,       0.937500,      0.000000,        1,       0,       0,   \
+1.000000\\nH          0.333300,       0.000000,       0.174000,      \
+0.000000,        1,       0,       0,   1.000000\\nH          0.438000,       \
+0.000000,       0.026000,      0.000000,        1,       0,       0,   \
+1.000000\\nH          0.772000,       0.105000,       0.975000,      \
+0.000000,        1,       0,       0,   1.000000\"\>",
+  StripOnInput->False,
+  FontSize->8]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->160225779]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->422887447],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ExportCrystalData", "::", "InvalidProgramOrFormat"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is not a valid program/format.\>\
+\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ExportCrystalData", "::", "ParameterError"}], "=", 
+   "\"\<Invalid input parameters.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ExportCrystalData", "::", "DirectoryExpected"}], "=", 
+   "\"\<An existing output directory was expected.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ExportCrystalData", "::", "InvalidSubtractionMode"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is not a valid scattering \
+subtraction mode.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ExportCrystalData", "::", "InvalidImageDimensions"}], "=", 
+    "\"\<Image dimensions must be two positive integers.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "ExportCrystalData"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<Detailed\>\"", "\[Rule]", "False"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<IncludeStructureSizeInfo\>\"", "\[Rule]", "True"}]}], 
+     "\[IndentingNewLine]", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "ExportCrystalData"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", "_", ",", "_", ",", "_.", ",", "_.", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->2065228435],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ExportCrystalData", "[", 
+   RowBox[{
+   "\"\<DISCUS\>\"", ",", "crystal_String", ",", "outputFile_String", ",", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "crystalData", ",", "atomData", ",", "size", ",", "unitCellAtomCount", 
+      ",", "latticeParameters", ",", "\[IndentingNewLine]", "formatter", ",", 
+      "appendComma", ",", "simpleQ", ",", "\[IndentingNewLine]", 
+      "preambleTitle", ",", "preambleSpaceGroup", ",", "preambleCell", ",", 
+      "preambleCount", ",", "preambleAtomsHeader", ",", "preamble", ",", 
+      "\[IndentingNewLine]", "elements", ",", "coordinates", ",", "dispPars", 
+      ",", "items", ",", "spacesToUse", ",", "additional", ",", "makeSpace", 
+      ",", "atoms"}], "\[IndentingNewLine]", "}"}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Loading", " ", "necessary", " ", "data"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "crystalData", ",", "atomData", ",", "size", ",", 
+        "latticeParameters"}], "}"}], "=", 
+      RowBox[{"ECD$LoadNecessaries", "@", "crystal"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"unitCellAtomCount", "=", 
+      RowBox[{"Lookup", "[", 
+       RowBox[{
+        RowBox[{"crystalData", "[", "\"\<Notes\>\"", "]"}], ",", 
+        "\[IndentingNewLine]", "\"\<UnitCellAtomsCount\>\"", ",", 
+        RowBox[{"Round", "[", 
+         RowBox[{
+          RowBox[{"Length", "[", "atomData", "]"}], "/", 
+          RowBox[{"Times", "@@", "size"}]}], "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", "Auxiliary", " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"formatter", "[", "x_", "]"}], ":=", 
+      RowBox[{"ToString", "@", 
+       RowBox[{"NumberForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"N", "@", 
+          RowBox[{"Chop", "[", 
+           RowBox[{"x", ",", 
+            RowBox[{"Power", "[", 
+             RowBox[{"10.", ",", 
+              RowBox[{"-", "5"}]}], "]"}]}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"9", ",", "6"}], "}"}]}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"appendComma", "[", "x_", "]"}], ":=", 
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"StringInsert", "[", 
+          RowBox[{"#", ",", "\"\<,\>\"", ",", 
+           RowBox[{"-", "1"}]}], "]"}], "&"}], ",", "x", ",", 
+        RowBox[{"{", "1", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"simpleQ", "=", 
+      RowBox[{"!", 
+       RowBox[{"TrueQ", "@", 
+        RowBox[{"OptionValue", "[", "\"\<Detailed\>\"", "]"}]}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"latticeParameters", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{"simpleQ", ",", "\[IndentingNewLine]", 
+        RowBox[{"ToString", "/@", 
+         RowBox[{"N", "@", "latticeParameters"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Map", "[", 
+         RowBox[{"formatter", ",", "latticeParameters", ",", 
+          RowBox[{"{", "1", "}"}]}], "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Creating", " ", "the", " ", "preamble"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"preambleTitle", "=", 
+      RowBox[{"{", 
+       RowBox[{"\"\<title  \>\"", ",", "crystal"}], "}"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"preambleSpaceGroup", "=", 
+      RowBox[{"{", 
+       RowBox[{"\"\<spcgr  \>\"", ",", 
+        RowBox[{"StringDelete", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"$GroupSymbolRedirect", "[", 
+            RowBox[{"crystalData", "[", "\"\<SpaceGroup\>\"", "]"}], "]"}], 
+           "\[IndentingNewLine]", "[", 
+           RowBox[{"\"\<Name\>\"", ",", "\"\<HermannMauguinShort\>\""}], 
+           "]"}], ",", "\"\< \>\""}], "]"}]}], "}"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"preambleCell", "=", 
+      RowBox[{"{", 
+       RowBox[{"\"\<cell   \>\"", ",", 
+        RowBox[{"StringJoin", "@", 
+         RowBox[{"Riffle", "[", 
+          RowBox[{"latticeParameters", ",", "\"\<  \>\""}], "]"}]}]}], 
+       "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"preambleCount", "=", 
+      RowBox[{"{", 
+       RowBox[{"\"\<ncell  \>\"", ",", 
+        RowBox[{"StringJoin", "@", 
+         RowBox[{"Riffle", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"ToString", "/@", 
+            RowBox[{"Join", "[", 
+             RowBox[{"size", ",", 
+              RowBox[{"{", "unitCellAtomCount", "}"}]}], "]"}]}], ",", 
+           "\[IndentingNewLine]", "\"\<,  \>\""}], "]"}]}]}], "}"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"preambleAtomsHeader", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{"simpleQ", ",", "\[IndentingNewLine]", 
+        RowBox[{"{", "\"\<atoms\\n\>\"", "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "{", "\"\<atoms      x,              y,              z,             \
+Biso,    Property,  MoleNo,  MoleAt,   Occ\\n\>\"", "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"preamble", "=", 
+      RowBox[{"StringJoin", "@", 
+       RowBox[{"Riffle", "[", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+          "preambleTitle", ",", "preambleSpaceGroup", ",", "preambleCell", 
+           ",", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"TrueQ", "@", 
+              RowBox[{
+              "OptionValue", "[", "\"\<IncludeStructureSizeInfo\>\"", "]"}]}],
+              ",", "\[IndentingNewLine]", "preambleCount", ",", "Nothing"}], 
+            "]"}], ",", "\[IndentingNewLine]", "preambleAtomsHeader"}], "}"}],
+          ",", "\[IndentingNewLine]", 
+         RowBox[{"{", "\"\<\\n\>\"", "}"}]}], "\[IndentingNewLine]", 
+        "]"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Extracting", " ", "atom", " ", "data"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"elements", "=", 
+      RowBox[{"ToUpperCase", "@", 
+       RowBox[{"Lookup", "[", 
+        RowBox[{"atomData", ",", "\"\<Element\>\""}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"elements", "=", 
+      RowBox[{"StringDelete", "[", 
+       RowBox[{"elements", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<+\>\"", ",", "\"\<-\>\"", ",", "DigitCharacter"}], 
+         "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"coordinates", "=", 
+      RowBox[{"N", "@", 
+       RowBox[{"Lookup", "[", 
+        RowBox[{"atomData", ",", "\"\<FractionalCoordinates\>\""}], "]"}]}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{"coordinates", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{"formatter", ",", "coordinates", ",", 
+        RowBox[{"{", "2", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", "simpleQ"}], ",", 
+       RowBox[{"coordinates", "=", 
+        RowBox[{"appendComma", "@", "coordinates"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"dispPars", "=", 
+      RowBox[{
+       RowBox[{"EquivalentIsotropicADP", "[", "crystal", "]"}], "/.", 
+       RowBox[{"_Missing", "\[Rule]", "0."}]}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"dispPars", "=", 
+      RowBox[{"formatter", "/@", "dispPars"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", "simpleQ"}], ",", 
+       RowBox[{"dispPars", "=", 
+        RowBox[{"appendComma", "@", "dispPars"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"items", "=", 
+      RowBox[{"{", 
+       RowBox[{"elements", ",", 
+        RowBox[{"Sequence", "@@", 
+         RowBox[{"Transpose", "@", "coordinates"}]}], ",", "dispPars"}], 
+       "}"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Determining", " ", "spacing", " ", "information"}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"spacesToUse", "=", 
+      RowBox[{"Transpose", "@", 
+       RowBox[{"ConstantArray", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"11", ",", "16", ",", "16", ",", "15", ",", "8"}], "}"}], 
+         ",", 
+         RowBox[{"Length", "@", "atomData"}]}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"additional", "=", "\"\<1,       0,       0,   1.000000\>\""}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+        "spacesToUse", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}],
+         "=", 
+        RowBox[{
+         RowBox[{
+         "spacesToUse", "\[LeftDoubleBracket]", "i", 
+          "\[RightDoubleBracket]"}], "-", 
+         RowBox[{"(", 
+          RowBox[{"StringLength", "/@", 
+           RowBox[{
+           "items", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], 
+          ")"}]}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", 
+         RowBox[{
+          RowBox[{"Length", "@", "items"}], "-", "1"}]}], "}"}]}], "]"}], ";",
+      "\[IndentingNewLine]", 
+     RowBox[{"spacesToUse", "=", 
+      RowBox[{"Transpose", "@", "spacesToUse"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"makeSpace", "[", 
+       RowBox[{"i_", ",", "j_"}], "]"}], ":=", 
+      RowBox[{"ConstantArray", "[", 
+       RowBox[{"\"\< \>\"", ",", 
+        RowBox[{"spacesToUse", "\[LeftDoubleBracket]", 
+         RowBox[{"i", ",", "j"}], "\[RightDoubleBracket]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Writing", " ", "atom", " ", "data"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"atoms", "=", 
+      RowBox[{
+       RowBox[{"Reap", "[", 
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{"Sow", "[", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{
+             "elements", "\[LeftDoubleBracket]", "i", 
+              "\[RightDoubleBracket]"}], ",", 
+             RowBox[{"makeSpace", "[", 
+              RowBox[{"i", ",", "1"}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"coordinates", "\[LeftDoubleBracket]", 
+              RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+             RowBox[{"makeSpace", "[", 
+              RowBox[{"i", ",", "2"}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"coordinates", "\[LeftDoubleBracket]", 
+              RowBox[{"i", ",", "2"}], "\[RightDoubleBracket]"}], ",", 
+             RowBox[{"makeSpace", "[", 
+              RowBox[{"i", ",", "3"}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"coordinates", "\[LeftDoubleBracket]", 
+              RowBox[{"i", ",", "3"}], "\[RightDoubleBracket]"}], ",", 
+             RowBox[{"makeSpace", "[", 
+              RowBox[{"i", ",", "4"}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{
+             "dispPars", "\[LeftDoubleBracket]", "i", 
+              "\[RightDoubleBracket]"}], ",", 
+             RowBox[{"makeSpace", "[", 
+              RowBox[{"i", ",", "5"}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{"simpleQ", ",", "\"\<\>\"", ",", "additional"}], "]"}], 
+             ",", "\[IndentingNewLine]", "\"\<\\n\>\""}], 
+            "\[IndentingNewLine]", "}"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{"Length", "@", "atomData"}]}], "}"}]}], "]"}], "]"}], 
+       "\[LeftDoubleBracket]", 
+       RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Prepare", " ", "output", " ", "and", " ", "export"}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Export", "[", 
+      RowBox[{"outputFile", ",", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"preamble", ",", "atoms"}], "]"}], ",", "\"\<String\>\""}], 
+      "]"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->516120584],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ExportCrystalData", "[", 
+   RowBox[{
+   "\"\<DIFFUSE\>\"", ",", "crystal_String", ",", "outputDir_String", ",", 
+    "hklPlane_", ",", "indexLimit_", ",", "subtractionMode_String", ",", 
+    RowBox[{"{", 
+     RowBox[{"width_Integer", ",", "height_Integer"}], "}"}], ",", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "reorganise", ",", "source", ",", "scatteringFactorTemplate", ",", 
+      "\[IndentingNewLine]", "crystalData", ",", "atomData", ",", 
+      "allElements", ",", "size", ",", "latticeParameters", ",", 
+      "directionCosines", ",", "M", ",", "\[IndentingNewLine]", "partA", ",", 
+      "X", ",", "Y", ",", "Z", ",", "unitCells", ",", "MakeSitesTable", ",", 
+      "table", ",", "sitesList", ",", "\[IndentingNewLine]", "partB", ",", 
+      "maxPossibleSites", ",", "newAtomData", ",", "blockLengths", ",", 
+      "\[IndentingNewLine]", "headerComments", ",", "headerData", ",", 
+      "padWidth", ",", "header", ",", "scatteringData"}], 
+     "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", "Checks", " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"\"\<CrystalQ\>\"", ",", "crystal"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"DirectoryQ", "@", "outputDir"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ExportCrystalData", "::", "DirectoryExpected"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<N\>\"", ",", "\"\<Y\>\"", ",", "\"\<E\>\"", ",", 
+            "\"\<e\>\""}], "}"}], ",", "subtractionMode"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{
+          RowBox[{"ExportCrystalData", "::", "InvalidSubtractionMode"}], ",", 
+          "subtractionMode"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"AllTrue", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"width", ",", "height"}], "}"}], ",", "Positive"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"ExportCrystalData", "::", "InvalidImageDimensions"}], "]"}],
+         ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", "Auxiliary", " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"reorganise", "[", "data_Association", "]"}], ":=", 
+      RowBox[{"With", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"xyz", "=", 
+          RowBox[{"data", "[", "\"\<FractionalCoordinates\>\"", "]"}]}], 
+         "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Min", "/@", 
+           RowBox[{"Transpose", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IntegerPart", "@", "xyz"}], "+", "1"}], ",", "size"}],
+              "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"StringJoin", "[", "\[IndentingNewLine]", 
+           RowBox[{"\"\<   \>\"", ",", "\[IndentingNewLine]", 
+            RowBox[{"StringPadRight", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"ToString", "@", 
+                 RowBox[{"DecimalForm", "[", 
+                  RowBox[{"#", ",", 
+                   RowBox[{"{", 
+                    RowBox[{"11", ",", "5"}], "}"}]}], "]"}]}], "&"}], "/@", 
+               RowBox[{"FractionalPart", "@", "xyz"}]}], ",", "11"}], "]"}], 
+            ",", "\[IndentingNewLine]", 
+            RowBox[{"StringDelete", "[", 
+             RowBox[{
+              RowBox[{"data", "[", "\"\<Element\>\"", "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"DigitCharacter", ",", "\"\<+\>\"", ",", "\"\<-\>\""}],
+                "}"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}], "}"}]}], 
+       "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"MakeSitesTable", "[", "stop_Integer", "]"}], ":=", 
+      RowBox[{"(", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"table", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"i", ",", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"i", ">", "stop"}], ",", "0", ",", "i"}], "]"}]}], 
+            "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "maxPossibleSites"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"table", "=", 
+         RowBox[{"Map", "[", 
+          RowBox[{"ToString", ",", "table", ",", 
+           RowBox[{"{", "2", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"table", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"StringPadLeft", "[", 
+            RowBox[{"#", ",", "6"}], "]"}], "&"}], "/@", "table"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"StringJoin", "/@", "table"}]}], "\[IndentingNewLine]", 
+       ")"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"source", "=", 
+      RowBox[{"Import", "@", 
+       RowBox[{"FileNameJoin", "[", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+         "$MaXrdPath", ",", "\"\<Core\>\"", ",", "\"\<Data\>\"", ",", 
+          "\"\<AtomicScatteringFactor\>\"", ",", 
+          "\"\<InternationalTablesC(3rd).m\>\""}], "}"}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"scatteringFactorTemplate", "[", "element_", "]"}], ":=", 
+      RowBox[{
+       RowBox[{
+       "StringTemplate", "[", 
+        "\"\<'`X`'\n`a1`,`b1`,`a2`,`b2`\n`a3`,`b3`,`a4`,`b4`,`c`\n\
+0.0,0.0\>\"", "]"}], "@", 
+       RowBox[{"Join", "[", 
+        RowBox[{
+         RowBox[{"source", "[", "element", "]"}], ",", 
+         RowBox[{"<|", 
+          RowBox[{"\"\<X\>\"", "\[Rule]", "element"}], "|>"}]}], "]"}]}]}], 
+     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Loading", " ", "necessary", " ", "data"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "crystalData", ",", "atomData", ",", "size", ",", 
+        "latticeParameters"}], "}"}], "=", 
+      RowBox[{"ECD$LoadNecessaries", "@", "crystal"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"allElements", "=", 
+      RowBox[{"DeleteDuplicates", "@", 
+       RowBox[{"atomData", "\[LeftDoubleBracket]", 
+        RowBox[{"All", ",", "\"\<Element\>\""}], 
+        "\[RightDoubleBracket]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"allElements", "=", 
+      RowBox[{"DeleteDuplicates", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"StringDelete", "[", 
+          RowBox[{"#", ",", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"DigitCharacter", ",", "\"\<+\>\"", ",", "\"\<-\>\""}], 
+            "}"}]}], "]"}], "&"}], "/@", "allElements"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"directionCosines", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ToString", "@", 
+         RowBox[{"DecimalForm", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Cos", "[", 
+            RowBox[{"#", "*", "Degree"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"6", ",", "5"}], "}"}]}], "]"}]}], "&"}], "/@", 
+       RowBox[{"N", "@", 
+        RowBox[{"latticeParameters", "\[LeftDoubleBracket]", 
+         RowBox[{"4", ";;", "6"}], "\[RightDoubleBracket]"}]}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"M", "=", 
+      RowBox[{"GetCrystalMetric", "[", 
+       RowBox[{"crystal", ",", 
+        RowBox[{"\"\<ToCartesian\>\"", "\[Rule]", "True"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"File", " ", "1"}], ":", " ", 
+       RowBox[{"Crystal", " ", "data", " ", 
+        RowBox[{"in", " ", "'"}], 
+        RowBox[{"DIFFUSE", "'"}], " ", "format"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Part", " ", "B"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"newAtomData", "=", 
+      RowBox[{"reorganise", "/@", "atomData"}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"newAtomData", "=", 
+      RowBox[{"DeleteDuplicates", "/@", 
+       RowBox[{"GatherBy", "[", 
+        RowBox[{"newAtomData", ",", 
+         RowBox[{
+          RowBox[{"#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
+           "&"}]}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"blockLengths", "=", 
+      RowBox[{"Length", "/@", "newAtomData"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"maxPossibleSites", "=", 
+      RowBox[{"Max", "@", "blockLengths"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"partB", "=", 
+      RowBox[{"Flatten", "@", 
+       RowBox[{"Riffle", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"StringTemplate", "[", "\"\< `1` `2` `3`\>\"", "]"}], "@@@", 
+          RowBox[{"newAtomData", "\[LeftDoubleBracket]", 
+           RowBox[{"All", ",", "1", ",", "1"}], "\[RightDoubleBracket]"}]}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"newAtomData", "\[LeftDoubleBracket]", 
+          RowBox[{"All", ",", "All", ",", "2"}], "\[RightDoubleBracket]"}]}], 
+        "\[IndentingNewLine]", "]"}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Part", " ", "A"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"sitesList", "=", 
+      RowBox[{"MakeSitesTable", "/@", "blockLengths"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"X", ",", "Y", ",", "Z"}], "}"}], "=", "size"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"unitCells", "=", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{
+        RowBox[{"Table", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"StringTemplate", "[", "\"\< `1` `2` `3`\>\"", "]"}], "[", 
+           
+           RowBox[{"x", ",", "y", ",", "z"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "1", ",", "X"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"y", ",", "1", ",", "Y"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"z", ",", "1", ",", "Z"}], "}"}]}], "]"}], ",", "2"}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"partA", "=", 
+      RowBox[{"Flatten", "@", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{"unitCells", ",", "sitesList"}], "}"}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PrependTo", "[", 
+      RowBox[{"partA", ",", 
+       RowBox[{
+        RowBox[{
+        "StringTemplate", "[", "\"\< `X` `Y` `Z` `N1` `N1`\>\"", "]"}], "@", 
+        RowBox[{"<|", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"\"\<X\>\"", "\[Rule]", "X"}], ",", 
+          RowBox[{"\"\<Y\>\"", "\[Rule]", "Y"}], ",", 
+          RowBox[{"\"\<Z\>\"", "\[Rule]", "Z"}], ",", 
+          RowBox[{"\"\<N1\>\"", "\[Rule]", "maxPossibleSites"}]}], "|>"}]}]}],
+       "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"File", " ", "2"}], ":", " ", 
+       RowBox[{
+        RowBox[{"Input", "/", "summary"}], " ", "file"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"headerComments", "=", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Header or structure label\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Random number seeds\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Cell coord's; angles are cos(ang)\>\"", ",", 
+        "\[IndentingNewLine]", 
+        "\"\<Size of crystal simulation (unit cells)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Periodic Boundary?\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Origin of volume\>\"", ",", 
+        "\[IndentingNewLine]", 
+        "\"\<u-axis (bottom right) and image x-dimension\>\"", ",", 
+        "\[IndentingNewLine]", 
+        "\"\<v-axis (top left) and image y-dimension\>\"", ",", 
+        "\[IndentingNewLine]", 
+        "\"\<w-axis (top right) and image z-dimension\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<sin(theta)/lambda maximum\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Lot size\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Number of lots\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Number of atom sites per cell\>\"", ",", 
+        "\[IndentingNewLine]", 
+        "\"\<Number of different atom types (list of sc.coef's below)\>\"", 
+        ",", "\[IndentingNewLine]", 
+        "\"\<Subtract average lattice? ('N', 'e', 'E' or 'Y')\>\""}], 
+       "\[IndentingNewLine]", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"headerData", "=", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "crystal", ",", "\[IndentingNewLine]", "\"\<12645, 9676\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+         "StringTemplate", "[", "\"\<`1` `2` `3`  `4` `5` `6`\>\"", "]"}], "@@", 
+         RowBox[{"Join", "[", 
+          RowBox[{
+           RowBox[{"latticeParameters", "\[LeftDoubleBracket]", 
+            RowBox[{"1", ";;", "3"}], "\[RightDoubleBracket]"}], ",", 
+           "directionCosines"}], "]"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"StringTemplate", "[", "\"\<`1` `2` `3`\>\"", "]"}], "@@", 
+         "size"}], ",", "\[IndentingNewLine]", "\"\<Y\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Sequence", "@@", 
+         RowBox[{"InputCheck", "[", 
+          RowBox[{
+          "\"\<GetReciprocalImageOrientation\>\"", ",", "\[IndentingNewLine]",
+            "crystal", ",", "hklPlane", ",", "indexLimit", ",", 
+           RowBox[{"{", 
+            RowBox[{"width", ",", "height"}], "}"}], ",", "True"}], "]"}]}], 
+        ",", "\[IndentingNewLine]", "\"\<3.0\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"StringTemplate", "[", "\"\<`1` `2` `3`\>\"", "]"}], "@@", 
+         "size"}], ",", "\[IndentingNewLine]", "\"\<1\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"ToString", "@", "maxPossibleSites"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"ToString", "@", 
+         RowBox[{"Length", "@", "allElements"}]}], ",", "\[IndentingNewLine]",
+         "subtractionMode"}], "\[IndentingNewLine]", "}"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"padWidth", "=", 
+      RowBox[{
+       RowBox[{"Max", "[", 
+        RowBox[{"StringLength", "/@", "headerData"}], "]"}], "+", "3"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"headerData", "=", 
+      RowBox[{"StringPadRight", "[", 
+       RowBox[{"headerData", ",", "padWidth"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"header", "=", 
+      RowBox[{"Transpose", "@", 
+       RowBox[{"{", 
+        RowBox[{"headerData", ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\"\<! \>\"", "<>", "#"}], "&"}], "/@", 
+          "headerComments"}]}], "}"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"scatteringData", "=", 
+      RowBox[{"scatteringFactorTemplate", "/@", "allElements"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Prepare", " ", "output", " ", "and", " ", "export"}], " ", 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Export", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{"outputDir", ",", "\"\<diffuse_input1_crystal.txt\>\""}], 
+           "}"}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Join", "[", 
+          RowBox[{"partA", ",", "partB", ",", 
+           RowBox[{"{", "\"\<\\n\>\"", "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", "\"\<Table\>\""}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Export", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{"outputDir", ",", "\"\<diffuse_input2_setup.txt\>\""}], 
+           "}"}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Join", "[", 
+          RowBox[{"header", ",", "scatteringData", ",", 
+           RowBox[{"{", "\"\<\\n\>\"", "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", "\"\<Table\>\""}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[3]:=",
+ CellID->752205055],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ECD$LoadNecessaries", "[", "crystal_String", "]"}], ":=", 
+  RowBox[{"Block", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "crystalData", ",", "atomData", ",", "crystalNotes", ",", "size", ",", 
+      "latticeParameters"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"\"\<CrystalQ\>\"", ",", "crystal"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"crystalData", "=", 
+      RowBox[{"$CrystalData", "[", "crystal", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"atomData", "=", 
+      RowBox[{"N", "@", 
+       RowBox[{"crystalData", "[", "\"\<AtomData\>\"", "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"crystalNotes", "=", 
+      RowBox[{"Lookup", "[", 
+       RowBox[{"crystalData", ",", "\"\<Notes\>\"", ",", 
+        RowBox[{"<|", "|>"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"AssociationQ", "@", "crystalNotes"}]}], ",", 
+       RowBox[{"crystalNotes", "=", 
+        RowBox[{"<|", "|>"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"size", "=", 
+      RowBox[{
+       RowBox[{"Lookup", "[", 
+        RowBox[{
+        "crystalNotes", ",", "\"\<StructureSize\>\"", ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Round", "/@", 
+          RowBox[{"Max", "/@", 
+           RowBox[{"Transpose", "@", 
+            RowBox[{"atomData", "\[LeftDoubleBracket]", 
+             RowBox[{"All", ",", "\"\<FractionalCoordinates\>\""}], 
+             "\[RightDoubleBracket]"}]}]}]}]}], "\[IndentingNewLine]", "]"}], 
+       "/.", 
+       RowBox[{"{", 
+        RowBox[{"0", "\[Rule]", "1"}], "}"}]}]}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"latticeParameters", "=", 
+      RowBox[{"GetLatticeParameters", "[", 
+       RowBox[{"crystal", ",", 
+        RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+      "crystalData", ",", "atomData", ",", "size", ",", "latticeParameters"}],
+       "}"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[4]:=",
+ CellID->74129496],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ExportCrystalData", "[", 
+   RowBox[{"invalidProgram_String", ",", "rest___"}], "]"}], ":=", 
+  RowBox[{"(", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"!", 
+       RowBox[{"MemberQ", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<DISCUS\>\"", ",", "\"\<DIFFUSE\>\""}], "}"}], ",", 
+         "invalidProgram"}], "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Message", "[", 
+       RowBox[{
+        RowBox[{"ExportCrystalData", "::", "InvalidProgramOrFormat"}], ",", 
+        "invalidProgram"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Message", "[", 
+       RowBox[{"ExportCrystalData", "::", "ParameterError"}], "]"}]}], "]"}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{"Abort", "[", "]"}]}], "\[IndentingNewLine]", ")"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[5]:=",
+ CellID->353924012]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ResetCrystalData"]], "paclet:MaXrd/ref/ResetCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["EquivalentIsotropicADP"]], 
+    "paclet:MaXrd/ref/EquivalentIsotropicADP"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLatticeParameters"]], 
+    "paclet:MaXrd/ref/GetLatticeParameters"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SimulateDiffractionPattern"]], 
+    "paclet:MaXrd/ref/SimulateDiffractionPattern"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$GroupSymbolRedirect"]], 
+    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->2023941334],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Links"
+}], "RelatedLinksSection",
+ WholeCellGroupOpener->True,
+ CellID->1584193535],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["GitHub page for DISCUS"]], 
+   "https://github.com/tproffen/DiffuseCode"},
+  "WebLink",
+  BaseStyle->{"RelatedLinks", FontSlant -> "Italic"}]]]], "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ExportCrystalData",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 14, 54.413698}", 
+    "history" -> {"1.2", "2.4.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", "status" -> 
+    "None", "summary" -> 
+    "ExportCrystalData[\"DISCUS\", crystal, file] exports the data associated \
+with crystal to file; applicable for DISCUS. ExportCrystalData[\"DIFFUSE\", \
+crystal, dir, hkl, limit, m, {w, h}] exports the data associated with crystal \
+(at hkl with reciprocal space limit using subtraction mode m, and width w and \
+height h) to dir; applicable for DIFFUSE.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "ExportCrystalData", "titlemodifier" -> "", 
+    "windowtitle" -> "ExportCrystalData", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/ExportCrystalData", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10887, 329, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"5a4eed7c-134d-4c84-ac97-98e3787b99a2",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1582636297]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 58156, 1549}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 4364, 104, 70, "AnchorBarGrid",ExpressionUUID->"a4469efb-b6be-495e-9936-71eca316e6ec",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4978, 129, 174, 6, 70, "ObjectNameGrid",ExpressionUUID->"ebabcfd5-1d2b-482b-8297-bf49df471fef"],
+Cell[5155, 137, 2242, 72, 70, "Usage",ExpressionUUID->"fcfaa951-9156-480a-a9d7-05f56f75f006",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7434, 214, 642, 19, 70, "NotesSection",ExpressionUUID->"aaa69865-f328-4fde-baed-8fde4d9581a4",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1255337775],
+Cell[8079, 235, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"de616fb0-1bfb-4a12-b536-a280a96b1514"],
+Cell[8113, 237, 46, 1, 70, "Notes",ExpressionUUID->"f60ec40d-a03f-4c71-8d35-a2a17a1710b1",
+ CellID->2086198239],
+Cell[8162, 240, 765, 21, 70, "3ColumnTableMod",ExpressionUUID->"0148eee6-dbda-48b2-a0ca-6e1b52336cad",
+ CellID->503559283],
+Cell[8930, 263, 269, 9, 70, "Notes",ExpressionUUID->"13c03c68-716d-478a-ac31-793f6acf4753",
+ CellID->1532908556],
+Cell[9202, 274, 930, 20, 70, "3ColumnTableMod",ExpressionUUID->"54f5a770-b840-4118-8c2e-d409e9958d83",
+ CellID->1937850278],
+Cell[10135, 296, 371, 14, 70, "Notes",ExpressionUUID->"c8e8e259-4112-4884-bed8-747850cea916",
+ CellID->991443164],
+Cell[10509, 312, 307, 10, 70, "Notes",ExpressionUUID->"861121f7-136f-4abc-9708-ea5fafcea08a",
+ CellID->12102587],
+Cell[10819, 324, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"0ae6acfd-a5dd-41b3-a57c-5d990bbb44c1"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10887, 329, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"5a4eed7c-134d-4c84-ac97-98e3787b99a2",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1582636297],
+Cell[CellGroupData[{
+Cell[11180, 343, 195, 6, 70, "ExampleSection",ExpressionUUID->"ca44b5d9-7faf-4213-9539-1dbd192a050c",
+ CellID->635791937],
+Cell[CellGroupData[{
+Cell[11400, 353, 524, 15, 70, "Input",ExpressionUUID->"72c65b37-347b-4e9e-bd69-27b82feb1e3d",
+ CellID->264836864],
+Cell[11927, 370, 624, 11, 70, "Output",ExpressionUUID->"e37bbc07-ebef-4dc6-ab52-c017f062259e",
+ CellID->223117020]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12588, 386, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"cbf89c09-5043-4c65-8212-c5da7b3da887",
+ CellID->464228894],
+Cell[CellGroupData[{
+Cell[12738, 393, 339, 9, 70, "Input",ExpressionUUID->"2661fe83-0e25-4aca-af0e-50d262d1af6e",
+ CellID->1951865879],
+Cell[13080, 404, 205, 5, 70, "Output",ExpressionUUID->"b303ed39-d47c-4ee8-9bbe-0414e277ae7e",
+ CellID->1935364044]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13322, 414, 185, 6, 70, "Input",ExpressionUUID->"565280b2-3d4e-4777-9b4d-0dc14b16e2ca",
+ CellID->921750799],
+Cell[13510, 422, 1560, 23, 70, "Output",ExpressionUUID->"17ad85e7-b512-41f0-948f-98cf86df0f39",
+ CellID->67221528]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15131, 452, 189, 6, 70, "ExampleSection",ExpressionUUID->"7e50d760-e46f-47cc-a32d-c87ec8dc82a9",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[15345, 462, 200, 6, 70, "ExampleSubsection",ExpressionUUID->"50a4b5f0-eb59-438d-94aa-288250f49314",
+ CellID->1757724783],
+Cell[CellGroupData[{
+Cell[15570, 472, 582, 16, 70, "Input",ExpressionUUID->"8af65a37-690f-4934-8eeb-c93f9c460aa7",
+ CellID->409295607],
+Cell[16155, 490, 916, 15, 70, "Output",ExpressionUUID->"bbbf9337-f10b-4dac-87e9-786042ccfa78",
+ CellID->160225779]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[17132, 512, 235, 8, 70, "ExampleSection",ExpressionUUID->"e8bb5727-8f74-44e5-b8de-2cfd5f92e907",
+ CellID->422887447],
+Cell[17370, 522, 1871, 48, 70, "Input",ExpressionUUID->"6c6bc897-c8f7-47c8-9f6a-9d7a6ddb96d9",
+ InitializationCell->False,
+ CellID->2065228435],
+Cell[19244, 572, 12436, 289, 70, "Input",ExpressionUUID->"cec1c362-f079-479d-ab67-821240856f46",
+ InitializationCell->False,
+ CellID->516120584],
+Cell[31683, 863, 17199, 398, 70, "Input",ExpressionUUID->"09087d8b-c8fd-4179-b797-2871cfe128dd",
+ InitializationCell->False,
+ CellID->752205055],
+Cell[48885, 1263, 2284, 58, 70, "Input",ExpressionUUID->"dfefd564-3ace-4043-af9a-c47d106ac2bf",
+ InitializationCell->False,
+ CellID->74129496],
+Cell[51172, 1323, 971, 25, 70, "Input",ExpressionUUID->"4e753140-9d33-464c-b5cf-40a1539dfb5e",
+ InitializationCell->False,
+ CellID->353924012]
+}, Closed]],
+Cell[52158, 1351, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"443f94be-f6fc-4a4e-83c7-1eac83790090"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52226, 1356, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"9e2e80c0-6a96-4bb0-a882-a3e039f25ffe",
+ CellID->1255426704],
+Cell[52379, 1365, 2586, 82, 70, "SeeAlso",ExpressionUUID->"47901ced-dc80-45de-b1d3-830db95bc617",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55002, 1452, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"70488c39-2f8c-480c-b44f-78a3c7e9a896",
+ CellID->38303248],
+Cell[55161, 1461, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"0e93f45b-6e0a-4272-a2e5-138564a2fdab"],
+Cell[55195, 1463, 208, 7, 70, "MoreAbout",ExpressionUUID->"331ec8f8-9f4c-452e-bdee-787c07610522",
+ CellID->2023941334],
+Cell[55406, 1472, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"d292519d-bdde-4769-a056-504901477fac"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55474, 1477, 160, 7, 70, "RelatedLinksSection",ExpressionUUID->"2549bbf4-ae32-4d3b-bfeb-d423f0cf467a",
+ CellID->1584193535],
+Cell[55637, 1486, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"c8860c43-1d81-4e69-8fbf-6981dd881f83"],
+Cell[55671, 1488, 248, 7, 70, "RelatedLinks",ExpressionUUID->"5f27bf80-bd27-4ace-b412-e209c3ae848c",
+ CellID->1038487239]
+}, Open  ]],
+Cell[55934, 1498, 23, 0, 70, "FooterCell",ExpressionUUID->"509546ea-494b-4ed6-b5cd-f281fed36f10"]
+}
+]
+*)
+
+(* End of internal cache information *)

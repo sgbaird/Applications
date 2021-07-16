@@ -1,0 +1,732 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24663,        723]
+NotebookOptionsPosition[     18397,        581]
+NotebookOutlinePosition[     20625,        638]
+CellTagsIndexPosition[     20540,        633]
+WindowTitle->MillerNotationToList
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MillerNotationToString\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/MillerNotationToString"], \
+"\<\"ToStandardSetting\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ToStandardSetting"], "\<\"GetCrystalMetric\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetCrystalMetric"], \
+"\<\"SymmetryEquivalentReflectionsQ\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/MillerNotationToList\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/MillerNotationToList"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+MillerNotationToList.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$30722], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/MillerNotationToList", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["MillerNotationToList", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["MillerNotationToList"]], 
+         "paclet:MaXrd/ref/MillerNotationToList"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       StyleBox["hkl", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]converts Miller index string ",
+     Cell[BoxData[
+      StyleBox["hkl", "TI"]], "InlineFormula"],
+     " to an expression on the form ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{"h", ",", "k", ",", "l"}], "}"}]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->512722773],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["\<\
+Overbars must be typed using underscores as overscripts. This may be done by \
+first highlighting the digit, then pressing \[ControlKey]+7 (for overscript) \
+and finally inserting an underscore (_) in the box above.\
+\>", "Notes",
+ CellID->1851698817],
+
+Cell["\<\
+Any indices that are numbers are converted to expressions; strings remain \
+strings.\
+\>", "Notes",
+ CellID->984583207],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1627254047],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1054523384],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MillerNotationToList", "[", 
+  "\"\<(\!\(\*OverscriptBox[\(2\), \(_\)]\)1\!\(\*OverscriptBox[\(4\), \(_\)]\
+\))\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1946150671],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"-2\"\>", ",", "\<\"1\"\>", ",", "\<\"-4\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1526240739]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1963503177],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MillerNotationToList", "[", "\"\<(301)\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->937986465],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"3\"\>", ",", "\<\"0\"\>", ",", "\<\"1\"\>"}], "}"}]], "Output",\
+
+ CellLabel->"Out[1]=",
+ CellID->306956156]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->216692390],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MillerNotationToList", "[", 
+  "\"\<(11,0,\!\(\*OverscriptBox[\(7\), \(_\)]\))\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->61064628],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"11\"\>", ",", "\<\"0\"\>", ",", "\<\"-7\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->512773679]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1164777885],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MillerNotationToList", "[", 
+  "\"\<(\!\(\*OverscriptBox[\(h\), \(_\)]\)k0)\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2043997614],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"-h\"\>", ",", "\<\"k\"\>", ",", "\<\"0\"\>"}], "}"}]], "Output",\
+
+ CellLabel->"Out[1]=",
+ CellID->812832118]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1613039309],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "MillerNotationToList"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", "_", "}"}]}], "\[IndentingNewLine]", "}"}]}], 
+  ";"}]], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1817681571],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MillerNotationToList", "[", "input_String", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"L", ",", "R", ",", "temp", ",", "split"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Removing", " ", "overbars"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"L", "=", "\"\<\\!\\(\\*OverscriptBox[\\(\>\""}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"R", "=", "\"\<\\), \\(_\\)]\\)\>\""}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{"input", ",", 
+        RowBox[{
+         RowBox[{"L", "~~", 
+          RowBox[{"Shortest", "@", "x__"}], "~~", "R"}], "\[RuleDelayed]", 
+         RowBox[{
+         "\"\<|\>\"", "<>", "\"\<-\>\"", "<>", "x", "<>", "\"\<|\>\""}]}]}], 
+       "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Separating", " ", "indices"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{"temp", ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", "Sign", " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"s", ":", 
+           RowBox[{"{", 
+            RowBox[{"\"\<\>\"", ",", "\"\<-\>\"", ",", "\"\<|\>\""}], "}"}]}],
+           "~~", "\[IndentingNewLine]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{"(*", " ", 
+            RowBox[{
+            "Letters", " ", "are", " ", "not", " ", "joined", " ", "with", 
+             " ", "digits"}], " ", "*)"}], "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"x", ":", "LetterCharacter"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"(*", " ", 
+             RowBox[{"Digits", " ", "could", " ", "be", " ", "joined"}], " ", 
+             "*)"}], "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"d", ":", "DigitCharacter"}], "~~", 
+             "\[IndentingNewLine]", 
+             RowBox[{"y", ":", 
+              RowBox[{"Shortest", "[", 
+               RowBox[{"{", "\[IndentingNewLine]", 
+                RowBox[{"\"\<|\>\"", ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"DigitCharacter", ".."}], "~~", 
+                  RowBox[{"{", 
+                   RowBox[{"\"\<,\>\"", ",", "\"\<|\>\"", ",", "\"\<)\>\""}], 
+                   "}"}]}]}], "\[IndentingNewLine]", "}"}], "]"}]}]}]}], 
+           "\[IndentingNewLine]", "}"}]}], "\[RuleDelayed]", 
+         RowBox[{
+         "\"\<|\>\"", "<>", "s", "<>", "x", "<>", "d", "<>", "y", "<>", 
+          "\"\<|\>\""}]}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{"temp", ",", 
+        RowBox[{"\"\<|\>\"", "\[Rule]", "\"\<,\>\""}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringSplit", "[", 
+       RowBox[{"temp", ",", "\"\<,\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Special", " ", 
+       RowBox[{"case", ":", " ", 
+        RowBox[{"Positive", " ", "single", " ", 
+         RowBox[{"digits", "/", "letters"}], " ", "only"}]}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", 
+      StyleBox["[", "Code"], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "@", "temp"}], "<", "3"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"temp", "=", 
+         RowBox[{"StringCases", "[", 
+          RowBox[{"temp", ",", 
+           RowBox[{
+            RowBox[{"x", ":", "WordCharacter"}], "\[RuleDelayed]", "x"}]}], 
+          "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"temp", "=", 
+         RowBox[{"Flatten", "@", 
+          RowBox[{"DeleteCases", "[", 
+           RowBox[{"temp", ",", 
+            RowBox[{"{", "}"}]}], "]"}]}]}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", "Trimming", " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringDelete", "[", 
+       RowBox[{"temp", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<(\>\"", ",", "\"\<)\>\""}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"DeleteCases", "[", 
+       RowBox[{"temp", ",", 
+        RowBox[{"x_", "/;", 
+         RowBox[{"MemberQ", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\"\<\>\"", ",", "Null", ",", "\"\<{}\>\""}], "}"}], ",", 
+           "x"}], "]"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"If", " ", "not", " ", "three", " ", "entires"}], ",", " ", 
+       RowBox[{"split", " ", "digits"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"split", "[", "x_", "]"}], ":=", 
+      RowBox[{"Flatten", "@", 
+       RowBox[{"StringCases", "[", 
+        RowBox[{"x", ",", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"p", ":", 
+              RowBox[{"{", 
+               RowBox[{"\"\<\>\"", ",", "\"\<-\>\""}], "}"}]}], "~~", 
+             RowBox[{"n", ":", "DigitCharacter"}]}], "\[RuleDelayed]", 
+            RowBox[{"p", "~~", "n"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"n1", ":", "DigitCharacter"}], "~~", 
+             RowBox[{"n2", ":", "DigitCharacter"}]}], "\[RuleDelayed]", 
+            RowBox[{"{", 
+             RowBox[{"n1", ",", "n2"}], "}"}]}]}], "\[IndentingNewLine]", 
+          "}"}]}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"temp", "/.", 
+       RowBox[{
+        RowBox[{"x_List", "/;", 
+         RowBox[{
+          RowBox[{"Length", "[", "x", "]"}], "<", "3"}]}], "\[RuleDelayed]", 
+        RowBox[{"split", "[", "x", "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Setting", " ", "numbers", " ", "as", " ", "experssions"}], " ",
+       "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"temp", "/.", 
+      RowBox[{
+       RowBox[{"x_String", "/;", 
+        RowBox[{"StringContainsQ", "[", 
+         RowBox[{"x", ",", "DigitCharacter"}], "]"}]}], "\[RuleDelayed]", 
+       RowBox[{"ToExpression", "[", "x", "]"}]}]}]}]}], "\[IndentingNewLine]",
+    "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1819285222]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["MillerNotationToString"]], 
+    "paclet:MaXrd/ref/MillerNotationToString"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ToStandardSetting"]], "paclet:MaXrd/ref/ToStandardSetting"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentReflectionsQ"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->191976197]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"MillerNotationToList",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 15, 44.437413}", 
+    "history" -> {"0.2", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "MillerNotationToList[hkl] converts Miller index string hkl to an \
+expression on the form {h, k, l}.", "synonyms" -> {}, "tabletags" -> {}, 
+    "title" -> "MillerNotationToList", "titlemodifier" -> "", "windowtitle" -> 
+    "MillerNotationToList", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/MillerNotationToList", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6674, 199, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"38b490e4-8c42-4e5b-89c6-6690ceac2418",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1627254047]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 20341, 626}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[592, 21, 3970, 97, 70, "AnchorBarGrid",ExpressionUUID->"1811b1d4-d280-4cf5-88c2-ecbef2a3074e",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4587, 122, 177, 6, 70, "ObjectNameGrid",ExpressionUUID->"005e8758-6f91-4de8-ad39-e126b1e2c4aa"],
+Cell[4767, 130, 740, 23, 70, "Usage",ExpressionUUID->"2aa2d696-6466-4ef5-800f-ffbb1b5608af",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5544, 158, 629, 19, 70, "NotesSection",ExpressionUUID->"8b2be1e0-e2eb-4a74-b568-6944b9150d5d",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->512722773],
+Cell[6176, 179, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"19e08c62-ed98-4f4b-9bd1-301fd2f15b23"],
+Cell[6210, 181, 261, 5, 70, "Notes",ExpressionUUID->"e412c176-bf6a-4903-9578-ccc4f612b7eb",
+ CellID->1851698817],
+Cell[6474, 188, 129, 4, 70, "Notes",ExpressionUUID->"65a73ec5-9a3f-434b-a78e-6d09ebabd62a",
+ CellID->984583207],
+Cell[6606, 194, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"a245214f-2475-4e97-a1dc-47177d39e40f"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6674, 199, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"38b490e4-8c42-4e5b-89c6-6690ceac2418",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1627254047],
+Cell[CellGroupData[{
+Cell[6967, 213, 196, 6, 70, "ExampleSection",ExpressionUUID->"13cf25be-aecf-404f-a333-22a6d236ee29",
+ CellID->1054523384],
+Cell[CellGroupData[{
+Cell[7188, 223, 202, 5, 70, "Input",ExpressionUUID->"375ab9c1-5124-4936-a5ac-5407b157cf00",
+ CellID->1946150671],
+Cell[7393, 230, 156, 5, 70, "Output",ExpressionUUID->"3eb10264-bdfd-4185-9c88-64d5b337d48b",
+ CellID->1526240739]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7586, 240, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"d5294fdd-b4a0-4572-8094-7c78ee8c39fe",
+ CellID->1963503177],
+Cell[CellGroupData[{
+Cell[7737, 247, 128, 3, 70, "Input",ExpressionUUID->"eaa4bee4-a0a2-4a39-b02f-d2f758029a91",
+ CellID->937986465],
+Cell[7868, 252, 152, 5, 70, "Output",ExpressionUUID->"2ff97aa7-5537-4b2e-b36d-1386926011c4",
+ CellID->306956156]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8069, 263, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"16546807-d297-4a31-847d-203c21d509fe",
+ CellID->216692390],
+Cell[CellGroupData[{
+Cell[8219, 270, 167, 4, 70, "Input",ExpressionUUID->"65a5437d-a594-4e1d-ae89-bac8f5001d70",
+ CellID->61064628],
+Cell[8389, 276, 155, 5, 70, "Output",ExpressionUUID->"d1bc687c-9eb8-4b18-a6cc-23664661a28e",
+ CellID->512773679]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8593, 287, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"cf40fd03-d14e-4981-b387-1afbde0e848b",
+ CellID->1164777885],
+Cell[CellGroupData[{
+Cell[8744, 294, 166, 4, 70, "Input",ExpressionUUID->"c5b01c64-fe04-427d-ac6e-ed7f4d559e1a",
+ CellID->2043997614],
+Cell[8913, 300, 153, 5, 70, "Output",ExpressionUUID->"c4563a6b-d335-4999-bd8f-5271835b3586",
+ CellID->812832118]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9127, 312, 236, 8, 70, "ExampleSection",ExpressionUUID->"1e406c72-e90b-4537-b314-fd1bc4e1edfc",
+ CellID->1613039309],
+Cell[9366, 322, 351, 10, 70, "Input",ExpressionUUID->"b235ed6a-48ad-4f52-9d9c-7c39831e66be",
+ InitializationCell->False,
+ CellID->1817681571],
+Cell[9720, 334, 6676, 162, 70, "Input",ExpressionUUID->"c0e32c85-3a85-45a6-9d7a-f23eb5679fd6",
+ InitializationCell->False,
+ CellID->1819285222]
+}, Closed]],
+Cell[16411, 499, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"437176ae-8b89-47f7-90e5-d9ea608801fe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16479, 504, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"3c695d07-9cc4-492b-8135-0d18bc2686f4",
+ CellID->1255426704],
+Cell[16632, 513, 1286, 40, 70, "SeeAlso",ExpressionUUID->"9371c21d-f6f4-4df7-8eb3-bebee91fff52",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17955, 558, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"135bc393-c69c-414e-b72d-8efd74236d72",
+ CellID->38303248],
+Cell[18114, 567, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"679a7945-ac1a-47d3-b4b4-346625d12ca3"],
+Cell[18148, 569, 207, 7, 70, "MoreAbout",ExpressionUUID->"c7511db9-6e1c-447c-8056-729d934971fb",
+ CellID->191976197]
+}, Open  ]],
+Cell[18370, 579, 23, 0, 70, "FooterCell",ExpressionUUID->"6e99e887-4e9e-42cd-9ce5-40fad430675a"]
+}
+]
+*)
+
+(* End of internal cache information *)

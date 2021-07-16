@@ -1,0 +1,497 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16332,        488]
+NotebookOptionsPosition[     11332,        379]
+NotebookOutlinePosition[     13893,        440]
+CellTagsIndexPosition[     13850,        437]
+WindowTitle->Quick guide to conditions
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD TUTORIAL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"MaXrd/tutorial/QuickGuideToConditions\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["MaXrd/tutorial/QuickGuideToConditions"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/MaXrd/tutorial/\
+QuickGuideToConditions.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$54386], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "MaXrd/tutorial/QuickGuideToConditions", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Quick guide to conditions", "Title",
+ CellID->509267359],
+
+Cell["Say we have a list of reflections,", "Text",
+ CellID->1534169418],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "1", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "3", ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "4", ",", 
+       RowBox[{"-", "4"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "2", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3"}], ",", "1", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->153862621],
+
+Cell[TextData[{
+ "It may be that we want to look at a subset of reflections that fulfill some \
+kind pattern. This filtering can easily be done with a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Condition"]], "paclet:ref/Condition"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". We effectively run all the reflections through a test on the Miller ",
+ StyleBox["indices ", "Text"],
+ StyleBox[Cell[BoxData[
+  FormBox["h", TraditionalForm]], "InlineMath"], "Text"],
+ StyleBox[", ", "Text"],
+ StyleBox[Cell[BoxData[
+  FormBox["k", TraditionalForm]], "InlineMath"], "Text"],
+ StyleBox[" and ", "Text"],
+ StyleBox[Cell[BoxData[
+  FormBox["l", TraditionalForm]], "InlineMath"], "Text"],
+ StyleBox[". Here are some examples:", "Text"]
+}], "Text",
+ CellID->1115767174],
+
+Cell[TextData[{
+ "Keep the reflections where ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"h", "=", "0"}], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]], "InlineMath"],
+ " is an even number:"
+}], "MathCaption",
+ CellID->827664275],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Cases", "[", 
+  RowBox[{"hkl", ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+    RowBox[{
+     RowBox[{"h", "\[Equal]", "0"}], "&&", 
+     RowBox[{"EvenQ", "[", "k", "]"}]}]}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1600833010],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"0", ",", "4", ",", 
+    RowBox[{"-", "4"}]}], "}"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1258040366]
+}, Open  ]],
+
+Cell["\<\
+Keep the reflections where the indices add up to an even number (condition \
+for body-centred cells):\
+\>", "MathCaption",
+ CellID->383557006],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Cases", "[", 
+  RowBox[{"hkl", ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+    RowBox[{"EvenQ", "[", 
+     RowBox[{"h", "+", "k", "+", "l"}], "]"}]}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1844175195],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "4", ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1907926647]
+}, Open  ]],
+
+Cell["\<\
+Keep the reflections that do not mix odd and even indices (reflection \
+condition for face-centred cells):\
+\>", "MathCaption",
+ CellID->1239868292],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Cases", "[", 
+  RowBox[{"hkl", ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+    RowBox[{
+     RowBox[{"AllTrue", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"h", ",", "k", ",", "l"}], "}"}], ",", "OddQ"}], "]"}], "||", 
+     
+     RowBox[{"AllTrue", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"h", ",", "k", ",", "l"}], "}"}], ",", "EvenQ"}], "]"}]}]}]}],
+   "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1749891210],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "1", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "4", ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "1", ",", 
+     RowBox[{"-", "1"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->297339125]
+}, Open  ]],
+
+Cell[TextData[{
+ "Functions in the ",
+ StyleBox["MaXrd",
+  FontSlant->"Italic"],
+ " package that allow conditions to be input in order to restrict the \
+reflections include:"
+}], "Text",
+ CellID->1312386462],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["ReflectionList"]], "paclet:MaXrd/ref/ReflectionList"},
+  "RefLink",
+  BaseStyle->{"InlineFormula"}]], "InlineFormula"]], "BulletedText",
+ CellID->300070488],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["StructureFactorTable"]], 
+   "paclet:MaXrd/ref/StructureFactorTable"},
+  "RefLink",
+  BaseStyle->{"InlineFormula"}]], "InlineFormula"]], "BulletedText",
+ CellID->1543459593],
+
+Cell["Some more examples of settings:", "Text",
+ CellID->1784396615],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+     RowBox[{"OddQ", "[", "h", "]"}]}], Cell[TextData[{
+     "Index ",
+     Cell[BoxData[
+      FormBox["k", TraditionalForm]], "InlineMath"],
+     " has to be odd"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+     RowBox[{"EvenQ", "[", 
+      RowBox[{"k", "+", "l"}], "]"}]}], Cell[TextData[{
+     "The sum of indices ",
+     Cell[BoxData[
+      FormBox["h", TraditionalForm]], "InlineMath"],
+     " and ",
+     Cell[BoxData[
+      FormBox["l", TraditionalForm]], "InlineMath"],
+     " must be an even number"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+     RowBox[{"Divisible", "[", 
+      RowBox[{
+       RowBox[{"k", "+", "k", "+", "l"}], ",", "4"}], "]"}]}], Cell[
+    "The digit sum of the indices must be divisible by four", "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+     RowBox[{
+      RowBox[{"h", "\[Equal]", "0"}], "||", 
+      RowBox[{"h", "\[Equal]", "2"}]}]}], Cell[TextData[{
+     "Index ",
+     Cell[BoxData[
+      FormBox["h", TraditionalForm]], "InlineMath"],
+     " has to be either 0 or 2"
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h_", ",", "k_", ",", "l_"}], "}"}], "/;", 
+     RowBox[{
+      RowBox[{"h", "\[Equal]", "1"}], "&&", 
+      RowBox[{"Divisible", "[", 
+       RowBox[{"k", ",", "3"}], "]"}]}]}], Cell[TextData[{
+     "Index ",
+     Cell[BoxData[
+      FormBox["h", TraditionalForm]], "InlineMath"],
+     " has to be 1 and index ",
+     Cell[BoxData[
+      FormBox["k", TraditionalForm]], "InlineMath"],
+     " divisible by 3"
+    }], "TableText"]}
+  }]], "2ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "Rows" -> {None, None, None, None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True, True, True}}}},
+ CellID->507080764],
+
+Cell[TextData[{
+ StyleBox["See ", "Text"],
+ StyleBox["Mathematica'", "Text",
+  FontSlant->"Italic"],
+ StyleBox["s ", "Text"],
+ StyleBox[ButtonBox["guide on patterns",
+  BaseStyle->"Link",
+  ButtonData->"paclet:guide/Patterns"], "Text"],
+ StyleBox[" for more on the topic.", "Text"]
+}], "Text",
+ CellID->1394359453]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Quick guide to conditions",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 54.131152}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Tutorial", "language" -> "en", "paclet" -> 
+    "MaXrd", "status" -> "None", "summary" -> 
+    "Say we have a list of reflections, It may be that we want to look at a \
+subset of reflections that fulfill some kind pattern. This filtering can \
+easily be done with a Condition. We effectively run all the reflections \
+through a test on the Miller indices h, k and l. Here are some examples: Keep \
+the reflections where h=0 and k is an even number:", "synonyms" -> {}, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$54288, 
+    "title" -> "Quick guide to conditions", "titlemodifier" -> "", 
+    "windowtitle" -> "Quick guide to conditions", "type" -> "Tutorial", "uri" -> 
+    "MaXrd/tutorial/QuickGuideToConditions", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[597, 21, 2348, 54, 70, "AnchorBarGrid",ExpressionUUID->"2a10ea6d-367a-4871-8a23-be55f775f00d",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2970, 79, 62, 1, 70, "Title",ExpressionUUID->"a4eeec39-9611-47bd-ab90-d23d2cacc72d",
+ CellID->509267359],
+Cell[3035, 82, 71, 1, 70, "Text",ExpressionUUID->"b4d90dbb-4a2a-4767-a48f-540a65ec65c2",
+ CellID->1534169418],
+Cell[3109, 85, 986, 31, 70, "Input",ExpressionUUID->"387b097b-83ac-4f42-9d7b-07c244775a73",
+ CellID->153862621],
+Cell[4098, 118, 800, 21, 70, "Text",ExpressionUUID->"74c8b581-a734-4e5e-a2f9-c9e6452408c3",
+ CellID->1115767174],
+Cell[4901, 141, 271, 10, 70, "MathCaption",ExpressionUUID->"95c9d10c-4499-49c3-bfec-9a7249844e50",
+ CellID->827664275],
+Cell[CellGroupData[{
+Cell[5197, 155, 310, 10, 70, "Input",ExpressionUUID->"41d1afe4-198b-4482-ab50-4538f43bde5f",
+ CellID->1600833010],
+Cell[5510, 167, 171, 6, 70, "Output",ExpressionUUID->"4f0b32a6-2b37-400a-ba55-9638bacb57e0",
+ CellID->1258040366]
+}, Open  ]],
+Cell[5696, 176, 152, 4, 70, "MathCaption",ExpressionUUID->"a94d63fc-6761-4fea-99cd-b881c90776b8",
+ CellID->383557006],
+Cell[CellGroupData[{
+Cell[5873, 184, 286, 9, 70, "Input",ExpressionUUID->"48efd859-af26-401a-91e9-13b0c1ff8268",
+ CellID->1844175195],
+Cell[6162, 195, 484, 16, 70, "Output",ExpressionUUID->"e9734c19-106f-4a7e-a399-f4d58244ba84",
+ CellID->1907926647]
+}, Open  ]],
+Cell[6661, 214, 158, 4, 70, "MathCaption",ExpressionUUID->"e53eb0e9-5c0e-41ae-b5cc-d9f7251a2bdf",
+ CellID->1239868292],
+Cell[CellGroupData[{
+Cell[6844, 222, 520, 18, 70, "Input",ExpressionUUID->"956b6c6e-f577-4ac8-9013-22eda7dec177",
+ CellID->1749891210],
+Cell[7367, 242, 573, 19, 70, "Output",ExpressionUUID->"03302adf-fa78-459e-9ffa-82dcbe5d83da",
+ CellID->297339125]
+}, Open  ]],
+Cell[7955, 264, 207, 7, 70, "Text",ExpressionUUID->"1559beca-00af-465c-820d-a784a15cc095",
+ CellID->1312386462],
+Cell[8165, 273, 222, 6, 70, "BulletedText",ExpressionUUID->"d16590a3-7eac-42aa-bbe8-3c52c5e7aed9",
+ CellID->300070488],
+Cell[CellGroupData[{
+Cell[8412, 283, 239, 7, 70, "BulletedText",ExpressionUUID->"bf27bec3-03fa-4e38-8c63-0ff6feb13dcd",
+ CellID->1543459593],
+Cell[8654, 292, 68, 1, 70, "Text",ExpressionUUID->"ea44bd24-1feb-4958-b882-3847dd9cbc56",
+ CellID->1784396615],
+Cell[8725, 295, 2236, 66, 70, "2ColumnTableMod",ExpressionUUID->"d02ab5d2-ea78-4cf2-93c1-384cae0eca95",
+ CellID->507080764],
+Cell[10964, 363, 314, 10, 70, "Text",ExpressionUUID->"ffe0854e-b30d-497f-87e7-d3d09dcfd011",
+ CellID->1394359453]
+}, Open  ]]
+}, Open  ]],
+Cell[11305, 377, 23, 0, 70, "FooterCell",ExpressionUUID->"2385eb63-218a-4893-8214-e66fe1c37e5b"]
+}
+]
+*)
+
+(* End of internal cache information *)

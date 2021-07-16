@@ -1,0 +1,2719 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    125878,       2710]
+NotebookOptionsPosition[    116275,       2512]
+NotebookOutlinePosition[    118916,       2575]
+CellTagsIndexPosition[    118873,       2572]
+WindowTitle->Using the rotation options
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD TUTORIAL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"MaXrd/tutorial/UsingRotationMaps\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["MaXrd/tutorial/UsingRotationMaps"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/MaXrd/tutorial/\
+UsingRotationMaps.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$56872], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "MaXrd/tutorial/UsingRotationMaps", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Using the rotation options", "Title",
+ CellID->509267359],
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{
+      Cell["Anchors"], "paclet:MaXrd/tutorial/UsingRotationMaps#1783646765", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], 
+    TemplateBox[{
+      Cell["The common auxiliary function"], 
+      "paclet:MaXrd/tutorial/UsingRotationMaps#2139507492", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}]}
+  }]], "TutorialJumpBox"],
+
+Cell["\<\
+Some of the tools that deal with creation and manipulation of crystal \
+entities \[Dash] asymmetric units, unit cells, blocks, domains and structures \
+\[Dash] allow rotation of these instances. These functions share a common \
+options framework which will be elaborated on here.\
+\>", "Text",
+ CellID->1534169418],
+
+Cell[BoxData[GridBox[{
+   {"\"\<RotationAnchorReference\>\"", Cell[
+    "describe the type of rotation anchors that will be used", "TableText"]},
+   {"\"\<RotationAnchorShift\>\"", Cell[
+    "an optional translation of the anchor point(s)", "TableText"]},
+   {"\"\<RotationAxes\>\"", Cell[
+    "define the three rotation axes to be used in 3D rotations", "TableText"]},
+   {"\"\<RotationMap\>\"", Cell[
+    "maps domains to their respective rotation amounts", "TableText"]}
+  }]], "DefinitionBox",
+ CellID->2096742444],
+
+Cell["\<\
+An overview of the rotation options encountered in the relevant functions.\
+\>", "Caption",
+ CellID->1891092685],
+
+Cell["\<\
+The functions that currently make use of the rotation options are:\
+\>", "Text",
+ CellID->1988357493],
+
+Cell[BoxData[GridBox[{
+   {"DomainPlot", Cell[
+    "provides a visual plot of a domain representation", "TableText"]},
+   {"EmbedStructure", Cell[
+    "embeds given units into a host system", "TableText"]},
+   {"SynthesiseStructure", Cell[
+    "assembles a given domain to the represented structure", "TableText"]}
+  }]], "DefinitionBox",
+ CellID->827962455],
+
+Cell["The relevant functions along with short descriptions.", "Caption",
+ CellID->2018432272],
+
+Cell["Load the package if not done already:", "MathCaption",
+ CellID->836781195],
+
+Cell[BoxData[
+ RowBox[{"<<", "MaXrd`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2058623809],
+
+Cell[CellGroupData[{
+
+Cell["Anchors", "Section",
+ CellID->1783646765],
+
+Cell[TextData[{
+ "By ",
+ StyleBox["anchor",
+  FontSlant->"Italic"],
+ " we mean the particular point a rotation will be performed about. The first \
+option, ",
+ Cell[BoxData["\"\<RotationAnchorReference\>\""], "InlineFormula"],
+ " enables us to choose between four general positions of the anchor(s):"
+}], "Text",
+ CellID->133240190],
+
+Cell[BoxData[GridBox[{
+   {"\"\<Host\>\"", Cell["origin of the host structure", "TableText"]},
+   {"\"\<Domain\>\"", Cell["\<\
+origin of each domain's cell that is closest to the host's origin\
+\>", "TableText"]},
+   {"\"\<DomainCentroid\>\"", Cell["centroid of each domain", "TableText"]},
+   {"\"\<Unit\>\"", Cell["origin of each unit", "TableText"]}
+  }]], "DefinitionBox",
+ CellID->752541106],
+
+Cell[TextData[{
+ "All the possible settings of the ",
+ Cell[BoxData["\"\<RotationAnchorReference\>\""], "InlineFormula"],
+ " option and what they mean."
+}], "Caption",
+ CellID->1427171359],
+
+Cell[TextData[{
+ "We will start an example using ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DomainPlot"]], "paclet:MaXrd/ref/DomainPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ":"
+}], "Text",
+ CellID->1051416660],
+
+Cell["This will be the domain we'll be working with in this demo:", \
+"MathCaption",
+ CellID->1002407248],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"domain", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"7", ",", "7", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "3", ",", "3", ",", "3", ",", "3", ",", "3", ",", "1", ",", "1", ",", 
+       "3", ",", "3", ",", "3", ",", "3", ",", "3", ",", "1", ",", "1", ",", 
+       "3", ",", "3", ",", "3", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+       "3", ",", "3", ",", "3", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+       "3", ",", "2", ",", "2", ",", "1", ",", "2", ",", "2", ",", "1", ",", 
+       "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", 
+       "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2"}], 
+      "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DomainPlot", "@", "domain"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->449406421],
+
+Cell[BoxData[
+ GraphicsBox[
+  {Opacity[1.], 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{0., 0.}, {1., 0.}, {1., 1.}, {0., 1.}}],
+     Parallelepiped[{0., 0.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{0., 1.}, {1., 1.}, {1., 2.}, {0., 2.}}],
+     Parallelepiped[{0., 1.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{0., 2.}, {1., 2.}, {1., 3.}, {0., 3.}}],
+     Parallelepiped[{0., 2.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{0., 3.}, {1., 3.}, {1., 4.}, {0., 4.}}],
+     Parallelepiped[{0., 3.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{0., 4.}, {1., 4.}, {1., 5.}, {0., 5.}}],
+     Parallelepiped[{0., 4.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{0., 5.}, {1., 5.}, {1., 6.}, {0., 6.}}],
+     Parallelepiped[{0., 5.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{0., 6.}, {1., 6.}, {1., 7.}, {0., 7.}}],
+     Parallelepiped[{0., 6.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{1., 0.}, {2., 0.}, {2., 1.}, {1., 1.}}],
+     Parallelepiped[{1., 0.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{1., 1.}, {2., 1.}, {2., 2.}, {1., 2.}}],
+     Parallelepiped[{1., 1.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{1., 2.}, {2., 2.}, {2., 3.}, {1., 3.}}],
+     Parallelepiped[{1., 2.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{1., 3.}, {2., 3.}, {2., 4.}, {1., 4.}}],
+     Parallelepiped[{1., 3.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{1., 4.}, {2., 4.}, {2., 5.}, {1., 5.}}],
+     Parallelepiped[{1., 4.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{1., 5.}, {2., 5.}, {2., 6.}, {1., 6.}}],
+     Parallelepiped[{1., 5.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{1., 6.}, {2., 6.}, {2., 7.}, {1., 7.}}],
+     Parallelepiped[{1., 6.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{2., 0.}, {3., 0.}, {3., 1.}, {2., 1.}}],
+     Parallelepiped[{2., 0.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{2., 1.}, {3., 1.}, {3., 2.}, {2., 2.}}],
+     Parallelepiped[{2., 1.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{2., 2.}, {3., 2.}, {3., 3.}, {2., 3.}}],
+     Parallelepiped[{2., 2.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{2., 3.}, {3., 3.}, {3., 4.}, {2., 4.}}],
+     Parallelepiped[{2., 3.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{2., 4.}, {3., 4.}, {3., 5.}, {2., 5.}}],
+     Parallelepiped[{2., 4.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{2., 5.}, {3., 5.}, {3., 6.}, {2., 6.}}],
+     Parallelepiped[{2., 5.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{2., 6.}, {3., 6.}, {3., 7.}, {2., 7.}}],
+     Parallelepiped[{2., 6.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{3., 0.}, {4., 0.}, {4., 1.}, {3., 1.}}],
+     Parallelepiped[{3., 0.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{3., 1.}, {4., 1.}, {4., 2.}, {3., 2.}}],
+     Parallelepiped[{3., 1.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{3., 2.}, {4., 2.}, {4., 3.}, {3., 3.}}],
+     Parallelepiped[{3., 2.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{3., 3.}, {4., 3.}, {4., 4.}, {3., 4.}}],
+     Parallelepiped[{3., 3.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{3., 4.}, {4., 4.}, {4., 5.}, {3., 5.}}],
+     Parallelepiped[{3., 4.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{3., 5.}, {4., 5.}, {4., 6.}, {3., 6.}}],
+     Parallelepiped[{3., 5.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{3., 6.}, {4., 6.}, {4., 7.}, {3., 7.}}],
+     Parallelepiped[{3., 6.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 0, 1], 
+    InterpretationBox[PolygonBox[{{4., 0.}, {5., 0.}, {5., 1.}, {4., 1.}}],
+     Parallelepiped[{4., 0.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{4., 1.}, {5., 1.}, {5., 2.}, {4., 2.}}],
+     Parallelepiped[{4., 1.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{4., 2.}, {5., 2.}, {5., 3.}, {4., 3.}}],
+     Parallelepiped[{4., 2.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{4., 3.}, {5., 3.}, {5., 4.}, {4., 4.}}],
+     Parallelepiped[{4., 3.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{4., 4.}, {5., 4.}, {5., 5.}, {4., 5.}}],
+     Parallelepiped[{4., 4.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{4., 5.}, {5., 5.}, {5., 6.}, {4., 6.}}],
+     Parallelepiped[{4., 5.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[PolygonBox[{{4., 6.}, {5., 6.}, {5., 7.}, {4., 7.}}],
+     Parallelepiped[{4., 6.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{5., 0.}, {6., 0.}, {6., 1.}, {5., 1.}}],
+     Parallelepiped[{5., 0.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{5., 1.}, {6., 1.}, {6., 2.}, {5., 2.}}],
+     Parallelepiped[{5., 1.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{5., 2.}, {6., 2.}, {6., 3.}, {5., 3.}}],
+     Parallelepiped[{5., 2.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{5., 3.}, {6., 3.}, {6., 4.}, {5., 4.}}],
+     Parallelepiped[{5., 3.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{5., 4.}, {6., 4.}, {6., 5.}, {5., 5.}}],
+     Parallelepiped[{5., 4.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{5., 5.}, {6., 5.}, {6., 6.}, {5., 6.}}],
+     Parallelepiped[{5., 5.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{5., 6.}, {6., 6.}, {6., 7.}, {5., 7.}}],
+     Parallelepiped[{5., 6.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{6., 0.}, {7., 0.}, {7., 1.}, {6., 1.}}],
+     Parallelepiped[{6., 0.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{6., 1.}, {7., 1.}, {7., 2.}, {6., 2.}}],
+     Parallelepiped[{6., 1.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{6., 2.}, {7., 2.}, {7., 3.}, {6., 3.}}],
+     Parallelepiped[{6., 2.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{6., 3.}, {7., 3.}, {7., 4.}, {6., 4.}}],
+     Parallelepiped[{6., 3.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{6., 4.}, {7., 4.}, {7., 5.}, {6., 5.}}],
+     Parallelepiped[{6., 4.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{6., 5.}, {7., 5.}, {7., 6.}, {6., 6.}}],
+     Parallelepiped[{6., 5.}, {{1., 0.}, {0., 1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[PolygonBox[{{6., 6.}, {7., 6.}, {7., 7.}, {6., 7.}}],
+     Parallelepiped[{6., 6.}, {{1., 0.}, {0., 1.}}]]}},
+  Frame->False]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->2013447779]
+}, Open  ]],
+
+Cell["\<\
+Before we start rotating let us define a map for all the anchors that can \
+come up with this particular domain:\
+\>", "MathCaption",
+ CellID->1158761453],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"anchors", "=", 
+   RowBox[{"<|", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\"\<Host\>\"", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"0.", ",", "0."}], "}"}], "}"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"\"\<Domain\>\"", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.", ",", "0."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2.", ",", "3."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4.", ",", "1."}], "}"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<DomainCentroid\>\"", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1.912", ",", "2.029"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2.643", ",", "5.286"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"5.667", ",", "3.500"}], "}"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"\"\<Unit\>\"", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.", ",", "5."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0.", ",", "6."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1.", ",", "5."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1.", ",", "6."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2.", ",", "3."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2.", ",", "4."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2.", ",", "5."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2.", ",", "6."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"3.", ",", "3."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"3.", ",", "4."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"3.", ",", "5."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"3.", ",", "6."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4.", ",", "3."}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4.", ",", "6."}], "}"}]}], "}"}]}]}], "|>"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->766536665],
+
+Cell["\<\
+The anchor points defined above are produced internally by the functions, but \
+not directly obtainable. They are therefore copied here. We will momentarily \
+be using them to show graphically where they are.\
+\>", "Text",
+ CellID->1425365031],
+
+Cell[TextData[{
+ "Below is an interactive controller to illustrate the various anchor \
+reference settings. The yellow dots indicate where the anchors are (to avoid \
+cluttering, only the red cells have the anchors shown in the ",
+ Cell[BoxData["\"\<Unit\>\""], "InlineFormula"],
+ " setting)."
+}], "MathCaption",
+ CellID->506884064],
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"First", "@", 
+       RowBox[{"DomainPlot", "[", 
+        RowBox[{"domain", ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<RotationMap\>\"", "\[Rule]", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"1", "\[Rule]", 
+             RowBox[{"\[Theta]1", "*", "Degree"}]}], ",", 
+            RowBox[{"2", "\[Rule]", 
+             RowBox[{"\[Theta]2", "*", "Degree"}]}], ",", 
+            RowBox[{"3", "\[Rule]", 
+             RowBox[{"\[Theta]3", "*", "Degree"}]}]}], "|>"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<RotationAnchorReference\>\"", "\[Rule]", "r"}]}], 
+        "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"Yellow", ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Disk", "[", 
+           RowBox[{"#", ",", "0.25"}], "]"}], "&"}], "/@", 
+         RowBox[{"anchors", "@", "r"}]}]}], "}"}]}], "\[IndentingNewLine]", 
+     "}"}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]1", ",", "0", ",", "\"\<Red\>\""}], "}"}], ",", "0", 
+     ",", "90"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]2", ",", "0", ",", "\"\<Green\>\""}], "}"}], ",", "0", 
+     ",", "90"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]3", ",", "0", ",", "\"\<Blue\>\""}], "}"}], ",", "0", 
+     ",", "90"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "\"\<DomainCentroid\>\"", ",", "\"\<Type\>\""}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Host\>\"", ",", "\"\<Domain\>\"", ",", "\"\<DomainCentroid\>\"", 
+       ",", "\"\<Unit\>\""}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"ControlPlacement", "\[Rule]", "Right"}]}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->999724886],
+
+Cell[TextData[{
+ "If you need further control of where the anchors should be, use the option ",
+ Cell[BoxData["\"\<RotationAnchorShift\>\""], "InlineFormula"],
+ " to translate the anchor(s)."
+}], "Text",
+ CellID->1271064411],
+
+Cell[CellGroupData[{
+
+Cell["A practical example", "Subsection",
+ CellID->314884389],
+
+Cell["\<\
+Now that we're more familiar with the anchors, let us look at a more \
+practical example. We will create two layers where the top sheet should be \
+rotated. Then, we will synthesise the structure with graphene. First, let us \
+make a general factory method that creates the layered domain:\
+\>", "Text",
+ CellID->45493021],
+
+Cell["Our demo structure will consist of 7\[Times]7\[Times]2 unit cells:", \
+"MathCaption",
+ CellID->545123292],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"makeSandwichedDomains", "[", 
+   RowBox[{"A_", ",", "B_", ",", "C_"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"A", ",", "B", ",", "C"}], "}"}], ",", 
+    RowBox[{"Flatten", "@", 
+     RowBox[{"ConstantArray", "[", 
+      RowBox[{
+       RowBox[{"Range", "@", "C"}], ",", 
+       RowBox[{"A", "*", "B"}]}], "]"}]}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"domain", "=", 
+   RowBox[{"makeSandwichedDomains", "[", 
+    RowBox[{"7", ",", "7", ",", "2"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DomainPlot", "@", "domain"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->721930542],
+
+Cell[BoxData[
+ Graphics3DBox[
+  {Opacity[1.], 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 0., 0.}, {1., 0., 0.}, {1., 1., 0.}, {0., 1., 0.}, {
+      0., 0., 1.}, {1., 0., 1.}, {1., 1., 1.}, {0., 1., 1.}}],
+     Parallelepiped[{0., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 0., 1.}, {1., 0., 1.}, {1., 1., 1.}, {0., 1., 1.}, {
+      0., 0., 2.}, {1., 0., 2.}, {1., 1., 2.}, {0., 1., 2.}}],
+     Parallelepiped[{0., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 1., 0.}, {1., 1., 0.}, {1., 2., 0.}, {0., 2., 0.}, {
+      0., 1., 1.}, {1., 1., 1.}, {1., 2., 1.}, {0., 2., 1.}}],
+     Parallelepiped[{0., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 1., 1.}, {1., 1., 1.}, {1., 2., 1.}, {0., 2., 1.}, {
+      0., 1., 2.}, {1., 1., 2.}, {1., 2., 2.}, {0., 2., 2.}}],
+     Parallelepiped[{0., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 2., 0.}, {1., 2., 0.}, {1., 3., 0.}, {0., 3., 0.}, {
+      0., 2., 1.}, {1., 2., 1.}, {1., 3., 1.}, {0., 3., 1.}}],
+     Parallelepiped[{0., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 2., 1.}, {1., 2., 1.}, {1., 3., 1.}, {0., 3., 1.}, {
+      0., 2., 2.}, {1., 2., 2.}, {1., 3., 2.}, {0., 3., 2.}}],
+     Parallelepiped[{0., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 3., 0.}, {1., 3., 0.}, {1., 4., 0.}, {0., 4., 0.}, {
+      0., 3., 1.}, {1., 3., 1.}, {1., 4., 1.}, {0., 4., 1.}}],
+     Parallelepiped[{0., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 3., 1.}, {1., 3., 1.}, {1., 4., 1.}, {0., 4., 1.}, {
+      0., 3., 2.}, {1., 3., 2.}, {1., 4., 2.}, {0., 4., 2.}}],
+     Parallelepiped[{0., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 4., 0.}, {1., 4., 0.}, {1., 5., 0.}, {0., 5., 0.}, {
+      0., 4., 1.}, {1., 4., 1.}, {1., 5., 1.}, {0., 5., 1.}}],
+     Parallelepiped[{0., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 4., 1.}, {1., 4., 1.}, {1., 5., 1.}, {0., 5., 1.}, {
+      0., 4., 2.}, {1., 4., 2.}, {1., 5., 2.}, {0., 5., 2.}}],
+     Parallelepiped[{0., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 5., 0.}, {1., 5., 0.}, {1., 6., 0.}, {0., 6., 0.}, {
+      0., 5., 1.}, {1., 5., 1.}, {1., 6., 1.}, {0., 6., 1.}}],
+     Parallelepiped[{0., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 5., 1.}, {1., 5., 1.}, {1., 6., 1.}, {0., 6., 1.}, {
+      0., 5., 2.}, {1., 5., 2.}, {1., 6., 2.}, {0., 6., 2.}}],
+     Parallelepiped[{0., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 6., 0.}, {1., 6., 0.}, {1., 7., 0.}, {0., 7., 0.}, {
+      0., 6., 1.}, {1., 6., 1.}, {1., 7., 1.}, {0., 7., 1.}}],
+     Parallelepiped[{0., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{0., 6., 1.}, {1., 6., 1.}, {1., 7., 1.}, {0., 7., 1.}, {
+      0., 6., 2.}, {1., 6., 2.}, {1., 7., 2.}, {0., 7., 2.}}],
+     Parallelepiped[{0., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 0., 0.}, {2., 0., 0.}, {2., 1., 0.}, {1., 1., 0.}, {
+      1., 0., 1.}, {2., 0., 1.}, {2., 1., 1.}, {1., 1., 1.}}],
+     Parallelepiped[{1., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 0., 1.}, {2., 0., 1.}, {2., 1., 1.}, {1., 1., 1.}, {
+      1., 0., 2.}, {2., 0., 2.}, {2., 1., 2.}, {1., 1., 2.}}],
+     Parallelepiped[{1., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 1., 0.}, {2., 1., 0.}, {2., 2., 0.}, {1., 2., 0.}, {
+      1., 1., 1.}, {2., 1., 1.}, {2., 2., 1.}, {1., 2., 1.}}],
+     Parallelepiped[{1., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 1., 1.}, {2., 1., 1.}, {2., 2., 1.}, {1., 2., 1.}, {
+      1., 1., 2.}, {2., 1., 2.}, {2., 2., 2.}, {1., 2., 2.}}],
+     Parallelepiped[{1., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 2., 0.}, {2., 2., 0.}, {2., 3., 0.}, {1., 3., 0.}, {
+      1., 2., 1.}, {2., 2., 1.}, {2., 3., 1.}, {1., 3., 1.}}],
+     Parallelepiped[{1., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 2., 1.}, {2., 2., 1.}, {2., 3., 1.}, {1., 3., 1.}, {
+      1., 2., 2.}, {2., 2., 2.}, {2., 3., 2.}, {1., 3., 2.}}],
+     Parallelepiped[{1., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 3., 0.}, {2., 3., 0.}, {2., 4., 0.}, {1., 4., 0.}, {
+      1., 3., 1.}, {2., 3., 1.}, {2., 4., 1.}, {1., 4., 1.}}],
+     Parallelepiped[{1., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 3., 1.}, {2., 3., 1.}, {2., 4., 1.}, {1., 4., 1.}, {
+      1., 3., 2.}, {2., 3., 2.}, {2., 4., 2.}, {1., 4., 2.}}],
+     Parallelepiped[{1., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 4., 0.}, {2., 4., 0.}, {2., 5., 0.}, {1., 5., 0.}, {
+      1., 4., 1.}, {2., 4., 1.}, {2., 5., 1.}, {1., 5., 1.}}],
+     Parallelepiped[{1., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 4., 1.}, {2., 4., 1.}, {2., 5., 1.}, {1., 5., 1.}, {
+      1., 4., 2.}, {2., 4., 2.}, {2., 5., 2.}, {1., 5., 2.}}],
+     Parallelepiped[{1., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 5., 0.}, {2., 5., 0.}, {2., 6., 0.}, {1., 6., 0.}, {
+      1., 5., 1.}, {2., 5., 1.}, {2., 6., 1.}, {1., 6., 1.}}],
+     Parallelepiped[{1., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 5., 1.}, {2., 5., 1.}, {2., 6., 1.}, {1., 6., 1.}, {
+      1., 5., 2.}, {2., 5., 2.}, {2., 6., 2.}, {1., 6., 2.}}],
+     Parallelepiped[{1., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 6., 0.}, {2., 6., 0.}, {2., 7., 0.}, {1., 7., 0.}, {
+      1., 6., 1.}, {2., 6., 1.}, {2., 7., 1.}, {1., 7., 1.}}],
+     Parallelepiped[{1., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{1., 6., 1.}, {2., 6., 1.}, {2., 7., 1.}, {1., 7., 1.}, {
+      1., 6., 2.}, {2., 6., 2.}, {2., 7., 2.}, {1., 7., 2.}}],
+     Parallelepiped[{1., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 0., 0.}, {3., 0., 0.}, {3., 1., 0.}, {2., 1., 0.}, {
+      2., 0., 1.}, {3., 0., 1.}, {3., 1., 1.}, {2., 1., 1.}}],
+     Parallelepiped[{2., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 0., 1.}, {3., 0., 1.}, {3., 1., 1.}, {2., 1., 1.}, {
+      2., 0., 2.}, {3., 0., 2.}, {3., 1., 2.}, {2., 1., 2.}}],
+     Parallelepiped[{2., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 1., 0.}, {3., 1., 0.}, {3., 2., 0.}, {2., 2., 0.}, {
+      2., 1., 1.}, {3., 1., 1.}, {3., 2., 1.}, {2., 2., 1.}}],
+     Parallelepiped[{2., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 1., 1.}, {3., 1., 1.}, {3., 2., 1.}, {2., 2., 1.}, {
+      2., 1., 2.}, {3., 1., 2.}, {3., 2., 2.}, {2., 2., 2.}}],
+     Parallelepiped[{2., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 2., 0.}, {3., 2., 0.}, {3., 3., 0.}, {2., 3., 0.}, {
+      2., 2., 1.}, {3., 2., 1.}, {3., 3., 1.}, {2., 3., 1.}}],
+     Parallelepiped[{2., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 2., 1.}, {3., 2., 1.}, {3., 3., 1.}, {2., 3., 1.}, {
+      2., 2., 2.}, {3., 2., 2.}, {3., 3., 2.}, {2., 3., 2.}}],
+     Parallelepiped[{2., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 3., 0.}, {3., 3., 0.}, {3., 4., 0.}, {2., 4., 0.}, {
+      2., 3., 1.}, {3., 3., 1.}, {3., 4., 1.}, {2., 4., 1.}}],
+     Parallelepiped[{2., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 3., 1.}, {3., 3., 1.}, {3., 4., 1.}, {2., 4., 1.}, {
+      2., 3., 2.}, {3., 3., 2.}, {3., 4., 2.}, {2., 4., 2.}}],
+     Parallelepiped[{2., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 4., 0.}, {3., 4., 0.}, {3., 5., 0.}, {2., 5., 0.}, {
+      2., 4., 1.}, {3., 4., 1.}, {3., 5., 1.}, {2., 5., 1.}}],
+     Parallelepiped[{2., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 4., 1.}, {3., 4., 1.}, {3., 5., 1.}, {2., 5., 1.}, {
+      2., 4., 2.}, {3., 4., 2.}, {3., 5., 2.}, {2., 5., 2.}}],
+     Parallelepiped[{2., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 5., 0.}, {3., 5., 0.}, {3., 6., 0.}, {2., 6., 0.}, {
+      2., 5., 1.}, {3., 5., 1.}, {3., 6., 1.}, {2., 6., 1.}}],
+     Parallelepiped[{2., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 5., 1.}, {3., 5., 1.}, {3., 6., 1.}, {2., 6., 1.}, {
+      2., 5., 2.}, {3., 5., 2.}, {3., 6., 2.}, {2., 6., 2.}}],
+     Parallelepiped[{2., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 6., 0.}, {3., 6., 0.}, {3., 7., 0.}, {2., 7., 0.}, {
+      2., 6., 1.}, {3., 6., 1.}, {3., 7., 1.}, {2., 7., 1.}}],
+     Parallelepiped[{2., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{2., 6., 1.}, {3., 6., 1.}, {3., 7., 1.}, {2., 7., 1.}, {
+      2., 6., 2.}, {3., 6., 2.}, {3., 7., 2.}, {2., 7., 2.}}],
+     Parallelepiped[{2., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 0., 0.}, {4., 0., 0.}, {4., 1., 0.}, {3., 1., 0.}, {
+      3., 0., 1.}, {4., 0., 1.}, {4., 1., 1.}, {3., 1., 1.}}],
+     Parallelepiped[{3., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 0., 1.}, {4., 0., 1.}, {4., 1., 1.}, {3., 1., 1.}, {
+      3., 0., 2.}, {4., 0., 2.}, {4., 1., 2.}, {3., 1., 2.}}],
+     Parallelepiped[{3., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 1., 0.}, {4., 1., 0.}, {4., 2., 0.}, {3., 2., 0.}, {
+      3., 1., 1.}, {4., 1., 1.}, {4., 2., 1.}, {3., 2., 1.}}],
+     Parallelepiped[{3., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 1., 1.}, {4., 1., 1.}, {4., 2., 1.}, {3., 2., 1.}, {
+      3., 1., 2.}, {4., 1., 2.}, {4., 2., 2.}, {3., 2., 2.}}],
+     Parallelepiped[{3., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 2., 0.}, {4., 2., 0.}, {4., 3., 0.}, {3., 3., 0.}, {
+      3., 2., 1.}, {4., 2., 1.}, {4., 3., 1.}, {3., 3., 1.}}],
+     Parallelepiped[{3., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 2., 1.}, {4., 2., 1.}, {4., 3., 1.}, {3., 3., 1.}, {
+      3., 2., 2.}, {4., 2., 2.}, {4., 3., 2.}, {3., 3., 2.}}],
+     Parallelepiped[{3., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 3., 0.}, {4., 3., 0.}, {4., 4., 0.}, {3., 4., 0.}, {
+      3., 3., 1.}, {4., 3., 1.}, {4., 4., 1.}, {3., 4., 1.}}],
+     Parallelepiped[{3., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 3., 1.}, {4., 3., 1.}, {4., 4., 1.}, {3., 4., 1.}, {
+      3., 3., 2.}, {4., 3., 2.}, {4., 4., 2.}, {3., 4., 2.}}],
+     Parallelepiped[{3., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 4., 0.}, {4., 4., 0.}, {4., 5., 0.}, {3., 5., 0.}, {
+      3., 4., 1.}, {4., 4., 1.}, {4., 5., 1.}, {3., 5., 1.}}],
+     Parallelepiped[{3., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 4., 1.}, {4., 4., 1.}, {4., 5., 1.}, {3., 5., 1.}, {
+      3., 4., 2.}, {4., 4., 2.}, {4., 5., 2.}, {3., 5., 2.}}],
+     Parallelepiped[{3., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 5., 0.}, {4., 5., 0.}, {4., 6., 0.}, {3., 6., 0.}, {
+      3., 5., 1.}, {4., 5., 1.}, {4., 6., 1.}, {3., 6., 1.}}],
+     Parallelepiped[{3., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 5., 1.}, {4., 5., 1.}, {4., 6., 1.}, {3., 6., 1.}, {
+      3., 5., 2.}, {4., 5., 2.}, {4., 6., 2.}, {3., 6., 2.}}],
+     Parallelepiped[{3., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 6., 0.}, {4., 6., 0.}, {4., 7., 0.}, {3., 7., 0.}, {
+      3., 6., 1.}, {4., 6., 1.}, {4., 7., 1.}, {3., 7., 1.}}],
+     Parallelepiped[{3., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{3., 6., 1.}, {4., 6., 1.}, {4., 7., 1.}, {3., 7., 1.}, {
+      3., 6., 2.}, {4., 6., 2.}, {4., 7., 2.}, {3., 7., 2.}}],
+     Parallelepiped[{3., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 0., 0.}, {5., 0., 0.}, {5., 1., 0.}, {4., 1., 0.}, {
+      4., 0., 1.}, {5., 0., 1.}, {5., 1., 1.}, {4., 1., 1.}}],
+     Parallelepiped[{4., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 0., 1.}, {5., 0., 1.}, {5., 1., 1.}, {4., 1., 1.}, {
+      4., 0., 2.}, {5., 0., 2.}, {5., 1., 2.}, {4., 1., 2.}}],
+     Parallelepiped[{4., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 1., 0.}, {5., 1., 0.}, {5., 2., 0.}, {4., 2., 0.}, {
+      4., 1., 1.}, {5., 1., 1.}, {5., 2., 1.}, {4., 2., 1.}}],
+     Parallelepiped[{4., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 1., 1.}, {5., 1., 1.}, {5., 2., 1.}, {4., 2., 1.}, {
+      4., 1., 2.}, {5., 1., 2.}, {5., 2., 2.}, {4., 2., 2.}}],
+     Parallelepiped[{4., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 2., 0.}, {5., 2., 0.}, {5., 3., 0.}, {4., 3., 0.}, {
+      4., 2., 1.}, {5., 2., 1.}, {5., 3., 1.}, {4., 3., 1.}}],
+     Parallelepiped[{4., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 2., 1.}, {5., 2., 1.}, {5., 3., 1.}, {4., 3., 1.}, {
+      4., 2., 2.}, {5., 2., 2.}, {5., 3., 2.}, {4., 3., 2.}}],
+     Parallelepiped[{4., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 3., 0.}, {5., 3., 0.}, {5., 4., 0.}, {4., 4., 0.}, {
+      4., 3., 1.}, {5., 3., 1.}, {5., 4., 1.}, {4., 4., 1.}}],
+     Parallelepiped[{4., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 3., 1.}, {5., 3., 1.}, {5., 4., 1.}, {4., 4., 1.}, {
+      4., 3., 2.}, {5., 3., 2.}, {5., 4., 2.}, {4., 4., 2.}}],
+     Parallelepiped[{4., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 4., 0.}, {5., 4., 0.}, {5., 5., 0.}, {4., 5., 0.}, {
+      4., 4., 1.}, {5., 4., 1.}, {5., 5., 1.}, {4., 5., 1.}}],
+     Parallelepiped[{4., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 4., 1.}, {5., 4., 1.}, {5., 5., 1.}, {4., 5., 1.}, {
+      4., 4., 2.}, {5., 4., 2.}, {5., 5., 2.}, {4., 5., 2.}}],
+     Parallelepiped[{4., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 5., 0.}, {5., 5., 0.}, {5., 6., 0.}, {4., 6., 0.}, {
+      4., 5., 1.}, {5., 5., 1.}, {5., 6., 1.}, {4., 6., 1.}}],
+     Parallelepiped[{4., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 5., 1.}, {5., 5., 1.}, {5., 6., 1.}, {4., 6., 1.}, {
+      4., 5., 2.}, {5., 5., 2.}, {5., 6., 2.}, {4., 6., 2.}}],
+     Parallelepiped[{4., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 6., 0.}, {5., 6., 0.}, {5., 7., 0.}, {4., 7., 0.}, {
+      4., 6., 1.}, {5., 6., 1.}, {5., 7., 1.}, {4., 7., 1.}}],
+     Parallelepiped[{4., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{4., 6., 1.}, {5., 6., 1.}, {5., 7., 1.}, {4., 7., 1.}, {
+      4., 6., 2.}, {5., 6., 2.}, {5., 7., 2.}, {4., 7., 2.}}],
+     Parallelepiped[{4., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 0., 0.}, {6., 0., 0.}, {6., 1., 0.}, {5., 1., 0.}, {
+      5., 0., 1.}, {6., 0., 1.}, {6., 1., 1.}, {5., 1., 1.}}],
+     Parallelepiped[{5., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 0., 1.}, {6., 0., 1.}, {6., 1., 1.}, {5., 1., 1.}, {
+      5., 0., 2.}, {6., 0., 2.}, {6., 1., 2.}, {5., 1., 2.}}],
+     Parallelepiped[{5., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 1., 0.}, {6., 1., 0.}, {6., 2., 0.}, {5., 2., 0.}, {
+      5., 1., 1.}, {6., 1., 1.}, {6., 2., 1.}, {5., 2., 1.}}],
+     Parallelepiped[{5., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 1., 1.}, {6., 1., 1.}, {6., 2., 1.}, {5., 2., 1.}, {
+      5., 1., 2.}, {6., 1., 2.}, {6., 2., 2.}, {5., 2., 2.}}],
+     Parallelepiped[{5., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 2., 0.}, {6., 2., 0.}, {6., 3., 0.}, {5., 3., 0.}, {
+      5., 2., 1.}, {6., 2., 1.}, {6., 3., 1.}, {5., 3., 1.}}],
+     Parallelepiped[{5., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 2., 1.}, {6., 2., 1.}, {6., 3., 1.}, {5., 3., 1.}, {
+      5., 2., 2.}, {6., 2., 2.}, {6., 3., 2.}, {5., 3., 2.}}],
+     Parallelepiped[{5., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 3., 0.}, {6., 3., 0.}, {6., 4., 0.}, {5., 4., 0.}, {
+      5., 3., 1.}, {6., 3., 1.}, {6., 4., 1.}, {5., 4., 1.}}],
+     Parallelepiped[{5., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 3., 1.}, {6., 3., 1.}, {6., 4., 1.}, {5., 4., 1.}, {
+      5., 3., 2.}, {6., 3., 2.}, {6., 4., 2.}, {5., 4., 2.}}],
+     Parallelepiped[{5., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 4., 0.}, {6., 4., 0.}, {6., 5., 0.}, {5., 5., 0.}, {
+      5., 4., 1.}, {6., 4., 1.}, {6., 5., 1.}, {5., 5., 1.}}],
+     Parallelepiped[{5., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 4., 1.}, {6., 4., 1.}, {6., 5., 1.}, {5., 5., 1.}, {
+      5., 4., 2.}, {6., 4., 2.}, {6., 5., 2.}, {5., 5., 2.}}],
+     Parallelepiped[{5., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 5., 0.}, {6., 5., 0.}, {6., 6., 0.}, {5., 6., 0.}, {
+      5., 5., 1.}, {6., 5., 1.}, {6., 6., 1.}, {5., 6., 1.}}],
+     Parallelepiped[{5., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 5., 1.}, {6., 5., 1.}, {6., 6., 1.}, {5., 6., 1.}, {
+      5., 5., 2.}, {6., 5., 2.}, {6., 6., 2.}, {5., 6., 2.}}],
+     Parallelepiped[{5., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 6., 0.}, {6., 6., 0.}, {6., 7., 0.}, {5., 7., 0.}, {
+      5., 6., 1.}, {6., 6., 1.}, {6., 7., 1.}, {5., 7., 1.}}],
+     Parallelepiped[{5., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{5., 6., 1.}, {6., 6., 1.}, {6., 7., 1.}, {5., 7., 1.}, {
+      5., 6., 2.}, {6., 6., 2.}, {6., 7., 2.}, {5., 7., 2.}}],
+     Parallelepiped[{5., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 0., 0.}, {7., 0., 0.}, {7., 1., 0.}, {6., 1., 0.}, {
+      6., 0., 1.}, {7., 0., 1.}, {7., 1., 1.}, {6., 1., 1.}}],
+     Parallelepiped[{6., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 0., 1.}, {7., 0., 1.}, {7., 1., 1.}, {6., 1., 1.}, {
+      6., 0., 2.}, {7., 0., 2.}, {7., 1., 2.}, {6., 1., 2.}}],
+     Parallelepiped[{6., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 1., 0.}, {7., 1., 0.}, {7., 2., 0.}, {6., 2., 0.}, {
+      6., 1., 1.}, {7., 1., 1.}, {7., 2., 1.}, {6., 2., 1.}}],
+     Parallelepiped[{6., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 1., 1.}, {7., 1., 1.}, {7., 2., 1.}, {6., 2., 1.}, {
+      6., 1., 2.}, {7., 1., 2.}, {7., 2., 2.}, {6., 2., 2.}}],
+     Parallelepiped[{6., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 2., 0.}, {7., 2., 0.}, {7., 3., 0.}, {6., 3., 0.}, {
+      6., 2., 1.}, {7., 2., 1.}, {7., 3., 1.}, {6., 3., 1.}}],
+     Parallelepiped[{6., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 2., 1.}, {7., 2., 1.}, {7., 3., 1.}, {6., 3., 1.}, {
+      6., 2., 2.}, {7., 2., 2.}, {7., 3., 2.}, {6., 3., 2.}}],
+     Parallelepiped[{6., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 3., 0.}, {7., 3., 0.}, {7., 4., 0.}, {6., 4., 0.}, {
+      6., 3., 1.}, {7., 3., 1.}, {7., 4., 1.}, {6., 4., 1.}}],
+     Parallelepiped[{6., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 3., 1.}, {7., 3., 1.}, {7., 4., 1.}, {6., 4., 1.}, {
+      6., 3., 2.}, {7., 3., 2.}, {7., 4., 2.}, {6., 4., 2.}}],
+     Parallelepiped[{6., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 4., 0.}, {7., 4., 0.}, {7., 5., 0.}, {6., 5., 0.}, {
+      6., 4., 1.}, {7., 4., 1.}, {7., 5., 1.}, {6., 5., 1.}}],
+     Parallelepiped[{6., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 4., 1.}, {7., 4., 1.}, {7., 5., 1.}, {6., 5., 1.}, {
+      6., 4., 2.}, {7., 4., 2.}, {7., 5., 2.}, {6., 5., 2.}}],
+     Parallelepiped[{6., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 5., 0.}, {7., 5., 0.}, {7., 6., 0.}, {6., 6., 0.}, {
+      6., 5., 1.}, {7., 5., 1.}, {7., 6., 1.}, {6., 6., 1.}}],
+     Parallelepiped[{6., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 5., 1.}, {7., 5., 1.}, {7., 6., 1.}, {6., 6., 1.}, {
+      6., 5., 2.}, {7., 5., 2.}, {7., 6., 2.}, {6., 6., 2.}}],
+     Parallelepiped[{6., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[1, 0, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 6., 0.}, {7., 6., 0.}, {7., 7., 0.}, {6., 7., 0.}, {
+      6., 6., 1.}, {7., 6., 1.}, {7., 7., 1.}, {6., 7., 1.}}],
+     Parallelepiped[{6., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    InterpretationBox[
+     HexahedronBox[{{6., 6., 1.}, {7., 6., 1.}, {7., 7., 1.}, {6., 7., 1.}, {
+      6., 6., 2.}, {7., 6., 2.}, {7., 7., 2.}, {6., 7., 2.}}],
+     Parallelepiped[{6., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+      1.}}]]}},
+  Boxed->False]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1193804758]
+}, Open  ]],
+
+Cell["\<\
+We wish to rotate the top layer, for instance by 15\[Degree] and hinged at \
+the lower-left corner:\
+\>", "MathCaption",
+ CellID->918111546],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DomainPlot", "[", 
+  RowBox[{"domain", ",", "\[IndentingNewLine]", 
+   RowBox[{"\"\<RotationMap\>\"", "\[Rule]", 
+    RowBox[{"<|", 
+     RowBox[{"2", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", 
+        RowBox[{"15", "\[Degree]"}]}], "}"}]}], "|>"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"\"\<RotationAnchorReference\>\"", "\[Rule]", "\"\<Host\>\""}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1130242268],
+
+Cell[BoxData[
+ Graphics3DBox[
+  {Opacity[1.], 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 0., 0.}, {1., 0., 0.}, {1., 1., 0.}, {0., 1., 0.}, {
+       0., 0., 1.}, {1., 0., 1.}, {1., 1., 1.}, {0., 1., 1.}}],
+      Parallelepiped[{0., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 0., 1.}, {1., 0., 1.}, {1., 1., 1.}, {0., 1., 1.}, {
+       0., 0., 2.}, {1., 0., 2.}, {1., 1., 2.}, {0., 1., 2.}}],
+      Parallelepiped[{0., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 1., 0.}, {1., 1., 0.}, {1., 2., 0.}, {0., 2., 0.}, {
+       0., 1., 1.}, {1., 1., 1.}, {1., 2., 1.}, {0., 2., 1.}}],
+      Parallelepiped[{0., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 1., 1.}, {1., 1., 1.}, {1., 2., 1.}, {0., 2., 1.}, {
+       0., 1., 2.}, {1., 1., 2.}, {1., 2., 2.}, {0., 2., 2.}}],
+      Parallelepiped[{0., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 2., 0.}, {1., 2., 0.}, {1., 3., 0.}, {0., 3., 0.}, {
+       0., 2., 1.}, {1., 2., 1.}, {1., 3., 1.}, {0., 3., 1.}}],
+      Parallelepiped[{0., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 2., 1.}, {1., 2., 1.}, {1., 3., 1.}, {0., 3., 1.}, {
+       0., 2., 2.}, {1., 2., 2.}, {1., 3., 2.}, {0., 3., 2.}}],
+      Parallelepiped[{0., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 3., 0.}, {1., 3., 0.}, {1., 4., 0.}, {0., 4., 0.}, {
+       0., 3., 1.}, {1., 3., 1.}, {1., 4., 1.}, {0., 4., 1.}}],
+      Parallelepiped[{0., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 3., 1.}, {1., 3., 1.}, {1., 4., 1.}, {0., 4., 1.}, {
+       0., 3., 2.}, {1., 3., 2.}, {1., 4., 2.}, {0., 4., 2.}}],
+      Parallelepiped[{0., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 4., 0.}, {1., 4., 0.}, {1., 5., 0.}, {0., 5., 0.}, {
+       0., 4., 1.}, {1., 4., 1.}, {1., 5., 1.}, {0., 5., 1.}}],
+      Parallelepiped[{0., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 4., 1.}, {1., 4., 1.}, {1., 5., 1.}, {0., 5., 1.}, {
+       0., 4., 2.}, {1., 4., 2.}, {1., 5., 2.}, {0., 5., 2.}}],
+      Parallelepiped[{0., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 5., 0.}, {1., 5., 0.}, {1., 6., 0.}, {0., 6., 0.}, {
+       0., 5., 1.}, {1., 5., 1.}, {1., 6., 1.}, {0., 6., 1.}}],
+      Parallelepiped[{0., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 5., 1.}, {1., 5., 1.}, {1., 6., 1.}, {0., 6., 1.}, {
+       0., 5., 2.}, {1., 5., 2.}, {1., 6., 2.}, {0., 6., 2.}}],
+      Parallelepiped[{0., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 6., 0.}, {1., 6., 0.}, {1., 7., 0.}, {0., 7., 0.}, {
+       0., 6., 1.}, {1., 6., 1.}, {1., 7., 1.}, {0., 7., 1.}}],
+      Parallelepiped[{0., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{0., 6., 1.}, {1., 6., 1.}, {1., 7., 1.}, {0., 7., 1.}, {
+       0., 6., 2.}, {1., 6., 2.}, {1., 7., 2.}, {0., 7., 2.}}],
+      Parallelepiped[{0., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 0., 0.}, {2., 0., 0.}, {2., 1., 0.}, {1., 1., 0.}, {
+       1., 0., 1.}, {2., 0., 1.}, {2., 1., 1.}, {1., 1., 1.}}],
+      Parallelepiped[{1., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 0., 1.}, {2., 0., 1.}, {2., 1., 1.}, {1., 1., 1.}, {
+       1., 0., 2.}, {2., 0., 2.}, {2., 1., 2.}, {1., 1., 2.}}],
+      Parallelepiped[{1., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 1., 0.}, {2., 1., 0.}, {2., 2., 0.}, {1., 2., 0.}, {
+       1., 1., 1.}, {2., 1., 1.}, {2., 2., 1.}, {1., 2., 1.}}],
+      Parallelepiped[{1., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 1., 1.}, {2., 1., 1.}, {2., 2., 1.}, {1., 2., 1.}, {
+       1., 1., 2.}, {2., 1., 2.}, {2., 2., 2.}, {1., 2., 2.}}],
+      Parallelepiped[{1., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 2., 0.}, {2., 2., 0.}, {2., 3., 0.}, {1., 3., 0.}, {
+       1., 2., 1.}, {2., 2., 1.}, {2., 3., 1.}, {1., 3., 1.}}],
+      Parallelepiped[{1., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 2., 1.}, {2., 2., 1.}, {2., 3., 1.}, {1., 3., 1.}, {
+       1., 2., 2.}, {2., 2., 2.}, {2., 3., 2.}, {1., 3., 2.}}],
+      Parallelepiped[{1., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 3., 0.}, {2., 3., 0.}, {2., 4., 0.}, {1., 4., 0.}, {
+       1., 3., 1.}, {2., 3., 1.}, {2., 4., 1.}, {1., 4., 1.}}],
+      Parallelepiped[{1., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 3., 1.}, {2., 3., 1.}, {2., 4., 1.}, {1., 4., 1.}, {
+       1., 3., 2.}, {2., 3., 2.}, {2., 4., 2.}, {1., 4., 2.}}],
+      Parallelepiped[{1., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 4., 0.}, {2., 4., 0.}, {2., 5., 0.}, {1., 5., 0.}, {
+       1., 4., 1.}, {2., 4., 1.}, {2., 5., 1.}, {1., 5., 1.}}],
+      Parallelepiped[{1., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 4., 1.}, {2., 4., 1.}, {2., 5., 1.}, {1., 5., 1.}, {
+       1., 4., 2.}, {2., 4., 2.}, {2., 5., 2.}, {1., 5., 2.}}],
+      Parallelepiped[{1., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 5., 0.}, {2., 5., 0.}, {2., 6., 0.}, {1., 6., 0.}, {
+       1., 5., 1.}, {2., 5., 1.}, {2., 6., 1.}, {1., 6., 1.}}],
+      Parallelepiped[{1., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 5., 1.}, {2., 5., 1.}, {2., 6., 1.}, {1., 6., 1.}, {
+       1., 5., 2.}, {2., 5., 2.}, {2., 6., 2.}, {1., 6., 2.}}],
+      Parallelepiped[{1., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 6., 0.}, {2., 6., 0.}, {2., 7., 0.}, {1., 7., 0.}, {
+       1., 6., 1.}, {2., 6., 1.}, {2., 7., 1.}, {1., 7., 1.}}],
+      Parallelepiped[{1., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{1., 6., 1.}, {2., 6., 1.}, {2., 7., 1.}, {1., 7., 1.}, {
+       1., 6., 2.}, {2., 6., 2.}, {2., 7., 2.}, {1., 7., 2.}}],
+      Parallelepiped[{1., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 0., 0.}, {3., 0., 0.}, {3., 1., 0.}, {2., 1., 0.}, {
+       2., 0., 1.}, {3., 0., 1.}, {3., 1., 1.}, {2., 1., 1.}}],
+      Parallelepiped[{2., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 0., 1.}, {3., 0., 1.}, {3., 1., 1.}, {2., 1., 1.}, {
+       2., 0., 2.}, {3., 0., 2.}, {3., 1., 2.}, {2., 1., 2.}}],
+      Parallelepiped[{2., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 1., 0.}, {3., 1., 0.}, {3., 2., 0.}, {2., 2., 0.}, {
+       2., 1., 1.}, {3., 1., 1.}, {3., 2., 1.}, {2., 2., 1.}}],
+      Parallelepiped[{2., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 1., 1.}, {3., 1., 1.}, {3., 2., 1.}, {2., 2., 1.}, {
+       2., 1., 2.}, {3., 1., 2.}, {3., 2., 2.}, {2., 2., 2.}}],
+      Parallelepiped[{2., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 2., 0.}, {3., 2., 0.}, {3., 3., 0.}, {2., 3., 0.}, {
+       2., 2., 1.}, {3., 2., 1.}, {3., 3., 1.}, {2., 3., 1.}}],
+      Parallelepiped[{2., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 2., 1.}, {3., 2., 1.}, {3., 3., 1.}, {2., 3., 1.}, {
+       2., 2., 2.}, {3., 2., 2.}, {3., 3., 2.}, {2., 3., 2.}}],
+      Parallelepiped[{2., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 3., 0.}, {3., 3., 0.}, {3., 4., 0.}, {2., 4., 0.}, {
+       2., 3., 1.}, {3., 3., 1.}, {3., 4., 1.}, {2., 4., 1.}}],
+      Parallelepiped[{2., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 3., 1.}, {3., 3., 1.}, {3., 4., 1.}, {2., 4., 1.}, {
+       2., 3., 2.}, {3., 3., 2.}, {3., 4., 2.}, {2., 4., 2.}}],
+      Parallelepiped[{2., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 4., 0.}, {3., 4., 0.}, {3., 5., 0.}, {2., 5., 0.}, {
+       2., 4., 1.}, {3., 4., 1.}, {3., 5., 1.}, {2., 5., 1.}}],
+      Parallelepiped[{2., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 4., 1.}, {3., 4., 1.}, {3., 5., 1.}, {2., 5., 1.}, {
+       2., 4., 2.}, {3., 4., 2.}, {3., 5., 2.}, {2., 5., 2.}}],
+      Parallelepiped[{2., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 5., 0.}, {3., 5., 0.}, {3., 6., 0.}, {2., 6., 0.}, {
+       2., 5., 1.}, {3., 5., 1.}, {3., 6., 1.}, {2., 6., 1.}}],
+      Parallelepiped[{2., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 5., 1.}, {3., 5., 1.}, {3., 6., 1.}, {2., 6., 1.}, {
+       2., 5., 2.}, {3., 5., 2.}, {3., 6., 2.}, {2., 6., 2.}}],
+      Parallelepiped[{2., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 6., 0.}, {3., 6., 0.}, {3., 7., 0.}, {2., 7., 0.}, {
+       2., 6., 1.}, {3., 6., 1.}, {3., 7., 1.}, {2., 7., 1.}}],
+      Parallelepiped[{2., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{2., 6., 1.}, {3., 6., 1.}, {3., 7., 1.}, {2., 7., 1.}, {
+       2., 6., 2.}, {3., 6., 2.}, {3., 7., 2.}, {2., 7., 2.}}],
+      Parallelepiped[{2., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 0., 0.}, {4., 0., 0.}, {4., 1., 0.}, {3., 1., 0.}, {
+       3., 0., 1.}, {4., 0., 1.}, {4., 1., 1.}, {3., 1., 1.}}],
+      Parallelepiped[{3., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 0., 1.}, {4., 0., 1.}, {4., 1., 1.}, {3., 1., 1.}, {
+       3., 0., 2.}, {4., 0., 2.}, {4., 1., 2.}, {3., 1., 2.}}],
+      Parallelepiped[{3., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 1., 0.}, {4., 1., 0.}, {4., 2., 0.}, {3., 2., 0.}, {
+       3., 1., 1.}, {4., 1., 1.}, {4., 2., 1.}, {3., 2., 1.}}],
+      Parallelepiped[{3., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 1., 1.}, {4., 1., 1.}, {4., 2., 1.}, {3., 2., 1.}, {
+       3., 1., 2.}, {4., 1., 2.}, {4., 2., 2.}, {3., 2., 2.}}],
+      Parallelepiped[{3., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 2., 0.}, {4., 2., 0.}, {4., 3., 0.}, {3., 3., 0.}, {
+       3., 2., 1.}, {4., 2., 1.}, {4., 3., 1.}, {3., 3., 1.}}],
+      Parallelepiped[{3., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 2., 1.}, {4., 2., 1.}, {4., 3., 1.}, {3., 3., 1.}, {
+       3., 2., 2.}, {4., 2., 2.}, {4., 3., 2.}, {3., 3., 2.}}],
+      Parallelepiped[{3., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 3., 0.}, {4., 3., 0.}, {4., 4., 0.}, {3., 4., 0.}, {
+       3., 3., 1.}, {4., 3., 1.}, {4., 4., 1.}, {3., 4., 1.}}],
+      Parallelepiped[{3., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 3., 1.}, {4., 3., 1.}, {4., 4., 1.}, {3., 4., 1.}, {
+       3., 3., 2.}, {4., 3., 2.}, {4., 4., 2.}, {3., 4., 2.}}],
+      Parallelepiped[{3., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 4., 0.}, {4., 4., 0.}, {4., 5., 0.}, {3., 5., 0.}, {
+       3., 4., 1.}, {4., 4., 1.}, {4., 5., 1.}, {3., 5., 1.}}],
+      Parallelepiped[{3., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 4., 1.}, {4., 4., 1.}, {4., 5., 1.}, {3., 5., 1.}, {
+       3., 4., 2.}, {4., 4., 2.}, {4., 5., 2.}, {3., 5., 2.}}],
+      Parallelepiped[{3., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 5., 0.}, {4., 5., 0.}, {4., 6., 0.}, {3., 6., 0.}, {
+       3., 5., 1.}, {4., 5., 1.}, {4., 6., 1.}, {3., 6., 1.}}],
+      Parallelepiped[{3., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 5., 1.}, {4., 5., 1.}, {4., 6., 1.}, {3., 6., 1.}, {
+       3., 5., 2.}, {4., 5., 2.}, {4., 6., 2.}, {3., 6., 2.}}],
+      Parallelepiped[{3., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 6., 0.}, {4., 6., 0.}, {4., 7., 0.}, {3., 7., 0.}, {
+       3., 6., 1.}, {4., 6., 1.}, {4., 7., 1.}, {3., 7., 1.}}],
+      Parallelepiped[{3., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{3., 6., 1.}, {4., 6., 1.}, {4., 7., 1.}, {3., 7., 1.}, {
+       3., 6., 2.}, {4., 6., 2.}, {4., 7., 2.}, {3., 7., 2.}}],
+      Parallelepiped[{3., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 0., 0.}, {5., 0., 0.}, {5., 1., 0.}, {4., 1., 0.}, {
+       4., 0., 1.}, {5., 0., 1.}, {5., 1., 1.}, {4., 1., 1.}}],
+      Parallelepiped[{4., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 0., 1.}, {5., 0., 1.}, {5., 1., 1.}, {4., 1., 1.}, {
+       4., 0., 2.}, {5., 0., 2.}, {5., 1., 2.}, {4., 1., 2.}}],
+      Parallelepiped[{4., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 1., 0.}, {5., 1., 0.}, {5., 2., 0.}, {4., 2., 0.}, {
+       4., 1., 1.}, {5., 1., 1.}, {5., 2., 1.}, {4., 2., 1.}}],
+      Parallelepiped[{4., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 1., 1.}, {5., 1., 1.}, {5., 2., 1.}, {4., 2., 1.}, {
+       4., 1., 2.}, {5., 1., 2.}, {5., 2., 2.}, {4., 2., 2.}}],
+      Parallelepiped[{4., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 2., 0.}, {5., 2., 0.}, {5., 3., 0.}, {4., 3., 0.}, {
+       4., 2., 1.}, {5., 2., 1.}, {5., 3., 1.}, {4., 3., 1.}}],
+      Parallelepiped[{4., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 2., 1.}, {5., 2., 1.}, {5., 3., 1.}, {4., 3., 1.}, {
+       4., 2., 2.}, {5., 2., 2.}, {5., 3., 2.}, {4., 3., 2.}}],
+      Parallelepiped[{4., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 3., 0.}, {5., 3., 0.}, {5., 4., 0.}, {4., 4., 0.}, {
+       4., 3., 1.}, {5., 3., 1.}, {5., 4., 1.}, {4., 4., 1.}}],
+      Parallelepiped[{4., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 3., 1.}, {5., 3., 1.}, {5., 4., 1.}, {4., 4., 1.}, {
+       4., 3., 2.}, {5., 3., 2.}, {5., 4., 2.}, {4., 4., 2.}}],
+      Parallelepiped[{4., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 4., 0.}, {5., 4., 0.}, {5., 5., 0.}, {4., 5., 0.}, {
+       4., 4., 1.}, {5., 4., 1.}, {5., 5., 1.}, {4., 5., 1.}}],
+      Parallelepiped[{4., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 4., 1.}, {5., 4., 1.}, {5., 5., 1.}, {4., 5., 1.}, {
+       4., 4., 2.}, {5., 4., 2.}, {5., 5., 2.}, {4., 5., 2.}}],
+      Parallelepiped[{4., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 5., 0.}, {5., 5., 0.}, {5., 6., 0.}, {4., 6., 0.}, {
+       4., 5., 1.}, {5., 5., 1.}, {5., 6., 1.}, {4., 6., 1.}}],
+      Parallelepiped[{4., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 5., 1.}, {5., 5., 1.}, {5., 6., 1.}, {4., 6., 1.}, {
+       4., 5., 2.}, {5., 5., 2.}, {5., 6., 2.}, {4., 6., 2.}}],
+      Parallelepiped[{4., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 6., 0.}, {5., 6., 0.}, {5., 7., 0.}, {4., 7., 0.}, {
+       4., 6., 1.}, {5., 6., 1.}, {5., 7., 1.}, {4., 7., 1.}}],
+      Parallelepiped[{4., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{4., 6., 1.}, {5., 6., 1.}, {5., 7., 1.}, {4., 7., 1.}, {
+       4., 6., 2.}, {5., 6., 2.}, {5., 7., 2.}, {4., 7., 2.}}],
+      Parallelepiped[{4., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 0., 0.}, {6., 0., 0.}, {6., 1., 0.}, {5., 1., 0.}, {
+       5., 0., 1.}, {6., 0., 1.}, {6., 1., 1.}, {5., 1., 1.}}],
+      Parallelepiped[{5., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 0., 1.}, {6., 0., 1.}, {6., 1., 1.}, {5., 1., 1.}, {
+       5., 0., 2.}, {6., 0., 2.}, {6., 1., 2.}, {5., 1., 2.}}],
+      Parallelepiped[{5., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 1., 0.}, {6., 1., 0.}, {6., 2., 0.}, {5., 2., 0.}, {
+       5., 1., 1.}, {6., 1., 1.}, {6., 2., 1.}, {5., 2., 1.}}],
+      Parallelepiped[{5., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 1., 1.}, {6., 1., 1.}, {6., 2., 1.}, {5., 2., 1.}, {
+       5., 1., 2.}, {6., 1., 2.}, {6., 2., 2.}, {5., 2., 2.}}],
+      Parallelepiped[{5., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 2., 0.}, {6., 2., 0.}, {6., 3., 0.}, {5., 3., 0.}, {
+       5., 2., 1.}, {6., 2., 1.}, {6., 3., 1.}, {5., 3., 1.}}],
+      Parallelepiped[{5., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 2., 1.}, {6., 2., 1.}, {6., 3., 1.}, {5., 3., 1.}, {
+       5., 2., 2.}, {6., 2., 2.}, {6., 3., 2.}, {5., 3., 2.}}],
+      Parallelepiped[{5., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 3., 0.}, {6., 3., 0.}, {6., 4., 0.}, {5., 4., 0.}, {
+       5., 3., 1.}, {6., 3., 1.}, {6., 4., 1.}, {5., 4., 1.}}],
+      Parallelepiped[{5., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 3., 1.}, {6., 3., 1.}, {6., 4., 1.}, {5., 4., 1.}, {
+       5., 3., 2.}, {6., 3., 2.}, {6., 4., 2.}, {5., 4., 2.}}],
+      Parallelepiped[{5., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 4., 0.}, {6., 4., 0.}, {6., 5., 0.}, {5., 5., 0.}, {
+       5., 4., 1.}, {6., 4., 1.}, {6., 5., 1.}, {5., 5., 1.}}],
+      Parallelepiped[{5., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 4., 1.}, {6., 4., 1.}, {6., 5., 1.}, {5., 5., 1.}, {
+       5., 4., 2.}, {6., 4., 2.}, {6., 5., 2.}, {5., 5., 2.}}],
+      Parallelepiped[{5., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 5., 0.}, {6., 5., 0.}, {6., 6., 0.}, {5., 6., 0.}, {
+       5., 5., 1.}, {6., 5., 1.}, {6., 6., 1.}, {5., 6., 1.}}],
+      Parallelepiped[{5., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 5., 1.}, {6., 5., 1.}, {6., 6., 1.}, {5., 6., 1.}, {
+       5., 5., 2.}, {6., 5., 2.}, {6., 6., 2.}, {5., 6., 2.}}],
+      Parallelepiped[{5., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 6., 0.}, {6., 6., 0.}, {6., 7., 0.}, {5., 7., 0.}, {
+       5., 6., 1.}, {6., 6., 1.}, {6., 7., 1.}, {5., 7., 1.}}],
+      Parallelepiped[{5., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{5., 6., 1.}, {6., 6., 1.}, {6., 7., 1.}, {5., 7., 1.}, {
+       5., 6., 2.}, {6., 6., 2.}, {6., 7., 2.}, {5., 7., 2.}}],
+      Parallelepiped[{5., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 0., 0.}, {7., 0., 0.}, {7., 1., 0.}, {6., 1., 0.}, {
+       6., 0., 1.}, {7., 0., 1.}, {7., 1., 1.}, {6., 1., 1.}}],
+      Parallelepiped[{6., 0., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 0., 1.}, {7., 0., 1.}, {7., 1., 1.}, {6., 1., 1.}, {
+       6., 0., 2.}, {7., 0., 2.}, {7., 1., 2.}, {6., 1., 2.}}],
+      Parallelepiped[{6., 0., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 1., 0.}, {7., 1., 0.}, {7., 2., 0.}, {6., 2., 0.}, {
+       6., 1., 1.}, {7., 1., 1.}, {7., 2., 1.}, {6., 2., 1.}}],
+      Parallelepiped[{6., 1., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 1., 1.}, {7., 1., 1.}, {7., 2., 1.}, {6., 2., 1.}, {
+       6., 1., 2.}, {7., 1., 2.}, {7., 2., 2.}, {6., 2., 2.}}],
+      Parallelepiped[{6., 1., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 2., 0.}, {7., 2., 0.}, {7., 3., 0.}, {6., 3., 0.}, {
+       6., 2., 1.}, {7., 2., 1.}, {7., 3., 1.}, {6., 3., 1.}}],
+      Parallelepiped[{6., 2., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 2., 1.}, {7., 2., 1.}, {7., 3., 1.}, {6., 3., 1.}, {
+       6., 2., 2.}, {7., 2., 2.}, {7., 3., 2.}, {6., 3., 2.}}],
+      Parallelepiped[{6., 2., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 3., 0.}, {7., 3., 0.}, {7., 4., 0.}, {6., 4., 0.}, {
+       6., 3., 1.}, {7., 3., 1.}, {7., 4., 1.}, {6., 4., 1.}}],
+      Parallelepiped[{6., 3., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 3., 1.}, {7., 3., 1.}, {7., 4., 1.}, {6., 4., 1.}, {
+       6., 3., 2.}, {7., 3., 2.}, {7., 4., 2.}, {6., 4., 2.}}],
+      Parallelepiped[{6., 3., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 4., 0.}, {7., 4., 0.}, {7., 5., 0.}, {6., 5., 0.}, {
+       6., 4., 1.}, {7., 4., 1.}, {7., 5., 1.}, {6., 5., 1.}}],
+      Parallelepiped[{6., 4., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 4., 1.}, {7., 4., 1.}, {7., 5., 1.}, {6., 5., 1.}, {
+       6., 4., 2.}, {7., 4., 2.}, {7., 5., 2.}, {6., 5., 2.}}],
+      Parallelepiped[{6., 4., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 5., 0.}, {7., 5., 0.}, {7., 6., 0.}, {6., 6., 0.}, {
+       6., 5., 1.}, {7., 5., 1.}, {7., 6., 1.}, {6., 6., 1.}}],
+      Parallelepiped[{6., 5., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 5., 1.}, {7., 5., 1.}, {7., 6., 1.}, {6., 6., 1.}, {
+       6., 5., 2.}, {7., 5., 2.}, {7., 6., 2.}, {6., 6., 2.}}],
+      Parallelepiped[{6., 5., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}, 
+   {RGBColor[1, 0, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 6., 0.}, {7., 6., 0.}, {7., 7., 0.}, {6., 7., 0.}, {
+       6., 6., 1.}, {7., 6., 1.}, {7., 7., 1.}, {6., 7., 1.}}],
+      Parallelepiped[{6., 6., 0.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{1., 0., 0.}, {0., 1., 0.}, {0., 0., 1.}}, {0., 0., 0.}}]}, 
+   {RGBColor[0, 1, 0], GeometricTransformation3DBox[
+     InterpretationBox[
+      HexahedronBox[{{6., 6., 1.}, {7., 6., 1.}, {7., 7., 1.}, {6., 7., 1.}, {
+       6., 6., 2.}, {7., 6., 2.}, {7., 7., 2.}, {6., 7., 2.}}],
+      Parallelepiped[{6., 6., 1.}, {{1., 0., 0.}, {0., 1., 0.}, {0., 0., 
+       1.}}]], {{{0.9659258262890683, -0.25881904510252074`, 0.}, {
+      0.25881904510252074`, 0.9659258262890683, 0.}, {0., 0., 1.}}, {0., 0., 
+      0.}}]}},
+  Boxed->False]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->958385030]
+}, Open  ]],
+
+Cell[TextData[{
+ "The next step is to assemble this structure. Here we want to use graphene \
+in both layers, but we need to create it first for our ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " and expand it to one unit cell (which each block represents):"
+}], "Text",
+ CellID->1814302641],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " is normally used with ",
+ StyleBox["cif", "InlineCode"],
+ " files, but here it's just as simple to provide the details \
+\[OpenCurlyDoubleQuote]manually\[CloseCurlyDoubleQuote]:"
+}], "MathCaption",
+ CellID->963585550],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ImportCrystalData", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<Graphene\>\"", ",", "\"\<C\>\"", ",", "\"\<P-3m1\>\""}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{
+     "2.5", ",", "2.5", ",", "5.0", ",", "90", ",", "90", ",", "120"}], "}"}],
+     ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{"\"\<Element\>\"", "\[Rule]", "\"\<C\>\""}], ",", 
+       RowBox[{"\"\<FractionalCoordinates\>\"", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", "/", "3"}], ",", 
+          RowBox[{"2", "/", "3"}], ",", 
+          RowBox[{"1", "/", "2"}]}], "}"}]}]}], "|>"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ExpandCrystal", "[", 
+  RowBox[{"\"\<Graphene\>\"", ",", 
+   RowBox[{"\"\<NewLabel\>\"", "\[Rule]", "\"\<GrapheneCell\>\""}]}], 
+  "]"}]}], "Input",
+ CellLabel->"In[5]:=",
+ CellID->808156823],
+
+Cell[BoxData["\<\"GrapheneCell\"\>"], "Output",
+ CellLabel->"Out[6]=",
+ CellID->2101671753]
+}, Open  ]],
+
+Cell[TextData[{
+ "Finally, we synthesise the \[OpenCurlyDoubleQuote]domain structure\
+\[CloseCurlyDoubleQuote]. We make use of the third parameter to replace all \
+the domain identifiers (1's and 2's) with the label of the graphene unit \
+cell. We use the same rotation options as above, and we see that the ",
+ Cell[BoxData["\"\<RotationMap\>\""], "InlineFormula"],
+ " still differentiates between the two domains."
+}], "Text",
+ CellID->903815030],
+
+Cell[TextData[{
+ "The realisation of our domain model to a crystal structure is done with ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SynthesiseStructure"]], "paclet:MaXrd/ref/SynthesiseStructure"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ":"
+}], "MathCaption",
+ CellID->1442163373],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SynthesiseStructure", "[", 
+   RowBox[{"domain", ",", "\"\<GrapheneLayers\>\"", ",", 
+    RowBox[{"(", 
+     RowBox[{"_Integer", "\[Rule]", "\"\<GrapheneCell\>\""}], ")"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<RotationMap\>\"", "\[Rule]", 
+     RowBox[{"<|", 
+      RowBox[{"2", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", 
+         RowBox[{"15", "\[Degree]"}]}], "}"}]}], "|>"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<RotationAnchorReference\>\"", "\[Rule]", "\"\<Host\>\""}]}], 
+   "\[IndentingNewLine]", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"CrystalPlot", "[", "\"\<GrapheneLayers\>\"", "]"}]}], "Input",
+ CellLabel->"In[7]:=",
+ CellID->1939369969],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   {RGBColor[1, 0, 0], Arrow3DBox[Line3DBox[{{0, 0, 0}, {2.5, 0., 0.}}]]}, 
+   {RGBColor[0, 1, 0], 
+    Arrow3DBox[Line3DBox[{{0, 0, 0}, {-1.25, 2.1650635094610964`, 0.}}]]}, 
+   {RGBColor[0, 0, 1], Arrow3DBox[Line3DBox[{{0, 0, 0}, {0., 0., 5.}}]]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{-1.25, 2.1650635094610964`, 0.}, {1.25, 2.1650635094610964`, 
+     0.}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{2.5, 0., 0.}, {1.25, 2.1650635094610964`, 0.}}]}, 
+   {GrayLevel[0], Line3DBox[{{2.5, 0., 0.}, {2.5, 0., 5.}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{-1.25, 2.1650635094610964`, 0.}, {-1.25, 2.1650635094610964`, 
+     5.}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{1.25, 2.1650635094610964`, 0.}, {1.25, 2.1650635094610964`, 
+     5.}}]}, 
+   {GrayLevel[0], Line3DBox[{{0., 0., 5.}, {2.5, 0., 5.}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{0., 0., 5.}, {-1.25, 2.1650635094610964`, 5.}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{-1.25, 2.1650635094610964`, 5.}, {1.25, 2.1650635094610964`, 
+     5.}}]}, 
+   {GrayLevel[0], 
+    Line3DBox[{{2.5, 0., 5.}, {1.25, 2.1650635094610964`, 5.}}]}, 
+   {RGBColor[0.4, 0.4, 0.4], SphereBox[CompressedData["
+1:eJx1lwlQU0cYgMMhtAgBJEgiGAgJEAkg4jFQrW9rBzoVr/EsVK0XjDLYDvXE
+o2A9QR3rgRYRlSlFq1YFrUKl81bBs6hYbUFFp1IVWlGqxOJRSWn2332TfSQz
+zg4/5Nvd/33//z91Mz4bm+KoUCiqO/85KaRPo2Du6a1uF8hPzoisZoHEm1g8
++m7UgD3NdWLMOJ/+u0f9A3Et2l/gmrpw/N9CCaw0brF+2sTbo0sn+951R7Z8
+uq8ri4dMz3u4UOeAX0Tla8oS30aUQ/Ztgn1dWBy+hwnHj3HI3cxi00lfs3Kg
+isXXPCx+eDPeE0ck39jgVu7DOI+H+F/O1Trj4emb87PjenB8Ja6r25TldzqQ
+cRxh3wbrvQJYvG1g8jztDz3x7YAG9yGXejFOmPVe3nAvDYsTjgqTcxq4/Chx
+87ySxo1VwSxe8mJ62+jzvfG51oxzg54EMc6v+sLU/f3V+Mbi2pqnUUEcX4Pv
+rZxp3JJj5PgqyFsYix+4c7wCpwdj7bUFa0YvMjAOyVsg5E3P8bWQhwiOr8F3
+ug9L3JZukvImlmfefB6CF5ZlJsxWGBln5/iJx7pF6PGqwfUj9O+FsTj9Hu+n
+A8kP4v0kHipQCayUg+I3Z51d2h3hLCdL9eFXgi3fLPB+Em+dEO9nbBnuW5B9
+TXDR+aXeXKxk/NPAFWAfWz71XPLzX1IXAu8n8bwdPO/JOEFHy7299laIY1Jq
+BVWtiuObRd5PstZW8n5mmkN3lqndcKOv/7Gr03ozDs57x+F84xtRYawX4xv9
+WZzUkbMdP80i7yepIxXUUTDjCLWHss/5euBJz1v3DF6i4/hKO346y/wstASP
+rIz2x0Uj85Lyz4QwzpXwqVhV6IsP/9b2yXgnKU7rq2s/lTI/SZ3qoE77ME7W
+4xSUcCQAu5a3B87dYOT5Mj+JP2qZn+tzhicprnujYxtXlxWu6MY4k6Z6PtyX
+6odaSi0/56xyZHFnck7Udf9Uyfz8Ebi5sA/lkLrwgrrw4vi0viQ/O6zn90C8
+n5N19Rf/mv9YiBsx9ma/B2rGoeeeAPew5ZsF3s8OqC/eT4M5ZVBRwCOxWZmc
+NLM9kHGirXV3D+pOy+IK+NjxU+D9THP8buT6R874cvPR9EurpD62t3To7MXr
+OudUhue81WeDWRw4Ytd+0rqW/HzwfkNo+1pvbLh0POIPD6mPkbp2xaSuQzm+
+sx0/zSLvZ57L/RLjTjVefrC85fX2cMa50C+w1woXH5w7wK/tRJ3krROsXc73
+bJ3Mz2HW/uUPfdKNcVw8TGtOrA1Cr75Zri4tdeX4Gjt+amV+bvkyx7J1jgp9
+BSv9uymTRm0Y/EaDDm1LcHd71IPjq2R+OsC+vJ9VcG4B7kE5B4FL92H3sq5K
+xPtJ6tdH5meNuelNleql8GJlTdbrBKmP0bzQPNE4/Z6d+Y54P/GR//v8Rejz
+0vyNfbchelevNmHKk6iEq14Gjm8W7PRPxPtZGTTR8cIyi7gv4YYlIknqY14F
+q3ePm9woHr8a49Kcz89fhcKOnwLvZ6V1jnhgMkdMjGNoOdq06JQjVpYOOqfQ
+S3GSZ73MT2tfzQ6V+blE0TI2fkswqslYkdhy25Nx7qeN0mgmhyDX7a9n1TMP
+4fydnvN+kr5tkPn5wdDakKQeWrR96YVvwxRSHyN9Wwd925c7f2+Zn3Rf3s+v
+gRsP+1DOrDEbY65uDWCrLV8t89MBfs/7eQXyQvNEOSfg3LlwDxrvAM95P0nf
+1sj8TG/JSMw56YCu32vtMdVf6mNKyPs9eA40/i/MEd5PwlfJ/JwW6/NxTH6D
+YKpq+2VhsdTHyNx5A3PHyPHpHJH8fMu6KhHv5/4hyXMyg5+LK4vbt2yKjGSc
+7DmbC0acKRM2R07MH/5pBIuT/Bvt+GmS+UnmeBjMQ6mPiRcyDi2NDkfdqyvr
+Ld2kuWxdOj3v2s8+Mj8ty7qHbrqjR7vmu444tV3qY6lNc1tm7AtFFWuqP+qn
+Vtvymee8n6EyP8l7QhC8J0h9TOmSFjFcq0dpH9bUzwgPtOV3et71+6dB5ude
+OHcH3INy0oHrDvvQeAfUF++nI+zL+0nzPgGeA+VUQl5SIE+2fLUdP7UyP5fd
+bd1x9L4L+l7wKcGt0vz1hOdaCc/Zlu8j85PWF+8nec95Cu85UYxT7phWuqvJ
+CakOLEjfViF5S/yM7Hq+o2iZnzGVMZlugyNQ24Ghn/f2l/pYfmiecNe5L/L6
+6fUXW3dJ/y8mz9ck85PM5SiZn7dvRVU8LTWi4rkJz0ZFSn2MvFeY4L2ily2f
+ec77aZL5ufJl+Mt6Ywjqow6Lw3ukPvbnzI3ioWdhKLZotbD0d27+dnretZ99
+ZH6agLsC9qEc8r5iYKtt/vUyP51gX97PIsjLLcgT5cTBuZvhHjb8LJ3MT5J/
+g8xPMzzXfvCcKacK8i7Ac6BxWl+8n+T8Opmf62rn3q/zdke5hYPi9NV9GUcF
+3uwAj2j8PxXf9mA=
+     "], 0.67]}},
+  ControllerMethod -> Automatic,
+  AlignmentPoint->Center,
+  AspectRatio->Automatic,
+  Axes->False,
+  AxesEdge->Automatic,
+  AxesLabel->None,
+  AxesOrigin->Automatic,
+  AxesStyle->{},
+  Background->None,
+  BaseStyle->{},
+  BaselinePosition->Automatic,
+  BoxRatios->Automatic,
+  BoxStyle->{},
+  Boxed->False,
+  ClipPlanes->None,
+  ClipPlanesStyle->Automatic,
+  ColorOutput->Automatic,
+  ContentSelectable->Automatic,
+  ControllerLinking->Automatic,
+  ControllerPath->Automatic,
+  CoordinatesToolOptions:>Automatic,
+  DisplayFunction->Identity,
+  Epilog->{},
+  FaceGrids->None,
+  FaceGridsStyle->{},
+  FormatType->TraditionalForm,
+  ImageMargins->0.,
+  ImagePadding->All,
+  ImageSize->Automatic,
+  ImageSizeRaw->Automatic,
+  LabelStyle->{},
+  Lighting->"Neutral",
+  Method->Automatic,
+  PlotLabel->None,
+  PlotRange->All,
+  PlotRangePadding->Automatic,
+  PlotRegion->Automatic,
+  PreserveImageOptions->Automatic,
+  Prolog->{},
+  RotationAction->"Fit",
+  SphericalRegion->True,
+  Ticks->Automatic,
+  TicksStyle->{},
+  TouchscreenAutoZoom->False,
+  ViewAngle->Automatic,
+  ViewCenter->Automatic,
+  ViewMatrix->Automatic,
+  ViewPoint->Above,
+  ViewProjection->Automatic,
+  ViewRange->All,
+  ViewVector->Automatic,
+  ViewVertical->{0, 0, 1}]], "Output",
+ CellLabel->"Out[8]=",
+ CellID->604767047]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The common auxiliary function", "Section",
+ CellID->2139507492],
+
+Cell[TextData[{
+ "The functions that currently use the rotation options framework all rely \
+internally on the ",
+ Cell[BoxData["\"\<RotationTransformation\>\""], "InlineFormula"],
+ " module of ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". This procedure returns a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["TransformationFunction"]], "paclet:ref/TransformationFunction"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " that in turn requires one or two parameters, depending on the dimensions \
+and anchor reference type of input."
+}], "Text",
+ CellID->245700726],
+
+Cell[TextData[{
+ "In this first example we create a two-dimensional domain to be used in the ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " function. It uses ",
+ Cell[BoxData["\"\<Domain\>\""], "InlineFormula"],
+ " anchor reference, so only the domain identifier is required at later input."
+}], "Text",
+ CellID->362732183],
+
+Cell["Constructing a two-dimensional domain:", "MathCaption",
+ CellID->1438855967],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"domain1", "=", 
+  RowBox[{"ConstructDomains", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"7", ",", "7", ",", "1"}], "}"}], ",", "3", ",", "25"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->685727073],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"7", ",", "7", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "2", ",", "1", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2",
+      ",", "1", ",", "1", ",", "3", ",", "3", ",", "1", ",", "3", ",", "2", 
+     ",", "2", ",", "3", ",", "1", ",", "3", ",", "3", ",", "1", ",", "3", 
+     ",", "1", ",", "1", ",", "1", ",", "3", ",", "3", ",", "3", ",", "3", 
+     ",", "2", ",", "3", ",", "3", ",", "3", ",", "3", ",", "3", ",", "3", 
+     ",", "3", ",", "2", ",", "3", ",", "3", ",", "3", ",", "3", ",", "3", 
+     ",", "3", ",", "2", ",", "2", ",", "1", ",", "3", ",", "3"}], "}"}]}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->24673899]
+}, Open  ]],
+
+Cell["\<\
+Obtaining the transformation function where we want to rotate all cells of \
+domain 3 around the \[OpenCurlyDoubleQuote]domain corner\
+\[CloseCurlyDoubleQuote] by 23.5\[Degree]:\
+\>", "MathCaption",
+ CellID->853282563],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"R1", "=", 
+   RowBox[{"InputCheck", "[", 
+    RowBox[{"\"\<RotationTransformation\>\"", ",", "domain1", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "\"\<Domain\>\"", ",", 
+       
+       RowBox[{"<|", 
+        RowBox[{"3", "\[Rule]", 
+         RowBox[{"23.5", "\[Degree]"}]}], "|>"}]}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->324919468],
+
+Cell[BoxData["MaXrd`Private`R$6358"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->866944964]
+}, Open  ]],
+
+Cell["\<\
+To get the appropriate transformation function, we only need to specify the \
+domain identifier:\
+\>", "MathCaption",
+ CellID->1423975162],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"R1", "[", "3", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->2128016662],
+
+Cell[BoxData[
+ RowBox[{"TransformationFunction", "[", 
+  RowBox[{"(", 
+   TagBox[GridBox[{
+      {"0.917060074385124`", 
+       RowBox[{"-", "0.3987490689252462`"}], "1.2791871323906145`"},
+      {"0.3987490689252462`", "0.917060074385124`", 
+       RowBox[{"-", "0.14992929208061856`"}]},
+      {"0", "0", "1.`"}
+     },
+     AutoDelete->False,
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {-2 -> True}, 
+       "Rows" -> {{False}}, "RowsIndexed" -> {-2 -> True}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    #& ], ")"}], "]"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1822314856]
+}, Open  ]],
+
+Cell["\<\
+In this second example we use a three-dimensional structure instead and \
+choose to rotate about each block as well. Thus, we specify both the domain \
+and the point in order to get the transformation function back:\
+\>", "Text",
+ CellID->1592908899],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"domain2", "=", 
+   RowBox[{"ConstructDomains", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"7", ",", "7", ",", "7"}], "}"}], ",", "3", ",", "250"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R2", "=", 
+   RowBox[{"InputCheck", "[", 
+    RowBox[{"\"\<RotationTransformation\>\"", ",", "domain2", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "\"\<Unit\>\"", ",", 
+       RowBox[{"<|", 
+        RowBox[{"1", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", 
+           RowBox[{"45", "\[Degree]"}]}], "}"}]}], "|>"}]}], "}"}]}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{"R2", "[", 
+  RowBox[{"1", ",", 
+   RowBox[{"{", 
+    RowBox[{"2.5", ",", "3.5", ",", "0.5"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1159887342],
+
+Cell[BoxData[
+ RowBox[{"TransformationFunction", "[", 
+  RowBox[{"(", 
+   TagBox[GridBox[{
+      {"0.7071067811865476`", 
+       RowBox[{"-", "0.7071067811865475`"}], "0", "3.207106781186547`"},
+      {"0.7071067811865475`", "0.7071067811865476`", "0", 
+       RowBox[{"-", "0.7426406871192848`"}]},
+      {"0", "0", "1.`", "0"},
+      {"0", "0", "0", "1.`"}
+     },
+     AutoDelete->False,
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {-2 -> True}, 
+       "Rows" -> {{False}}, "RowsIndexed" -> {-2 -> True}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    #& ], ")"}], "]"}]], "Output",
+ CellLabel->"Out[6]=",
+ CellID->1561032512]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Using the rotation options",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 18, 7.620827}", 
+    "history" -> {"2.0", "2.1.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Tutorial", "language" -> "en", "paclet" -> "MaXrd", "status" -> 
+    "None", "summary" -> 
+    "Some of the tools that deal with creation and manipulation of crystal \
+entities \[Dash] asymmetric units, unit cells, blocks, domains and structures \
+\[Dash] allow rotation of these instances. These functions share a common \
+options framework which will be elaborated on here. An overview of the \
+rotation options encountered in the relevant functions. The functions that \
+currently make use of the rotation options are:", "synonyms" -> {}, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$56757, 
+    "title" -> "Using the rotation options", "titlemodifier" -> "", 
+    "windowtitle" -> "Using the rotation options", "type" -> "Tutorial", 
+    "uri" -> "MaXrd/tutorial/UsingRotationMaps", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> ""},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[598, 21, 2315, 53, 70, "AnchorBarGrid",ExpressionUUID->"f2140b11-6e70-4b4c-817f-dac8f5a911a9",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2938, 78, 63, 1, 70, "Title",ExpressionUUID->"bdb16bc0-b65a-48db-b6f6-6ed2e8386d2a",
+ CellID->509267359],
+Cell[3004, 81, 11821, 209, 70, "TutorialJumpBox",ExpressionUUID->"b380e68b-736b-4fb0-be91-2b38c86cc96d"],
+Cell[14828, 292, 324, 6, 70, "Text",ExpressionUUID->"f28552d0-b7a9-4547-afdd-1700a12551e0",
+ CellID->1534169418],
+Cell[15155, 300, 518, 10, 70, "DefinitionBox",ExpressionUUID->"5ce2521d-27f7-4e1d-bcd1-bf71f8afdb94",
+ CellID->2096742444],
+Cell[15676, 312, 122, 3, 70, "Caption",ExpressionUUID->"883b5ca7-a84d-441d-9b6b-1e00cc3ef1ec",
+ CellID->1891092685],
+Cell[15801, 317, 111, 3, 70, "Text",ExpressionUUID->"ec8e1f7e-5302-40ff-becf-9ed59c77d134",
+ CellID->1988357493],
+Cell[15915, 322, 358, 8, 70, "DefinitionBox",ExpressionUUID->"e4e04d7e-ca67-4471-b05b-83e3989c9d72",
+ CellID->827962455],
+Cell[16276, 332, 93, 1, 70, "Caption",ExpressionUUID->"c92ffbc0-9cf1-41a8-b515-17ab043f7e6f",
+ CellID->2018432272],
+Cell[16372, 335, 80, 1, 70, "MathCaption",ExpressionUUID->"7d622b44-cb70-4f78-a341-8ddbb30878b3",
+ CellID->836781195],
+Cell[16455, 338, 94, 3, 70, "Input",ExpressionUUID->"9dab1c91-1218-4186-b778-661a604a9f28",
+ CellID->2058623809],
+Cell[CellGroupData[{
+Cell[16574, 345, 47, 1, 70, "Section",ExpressionUUID->"0af59b28-48a9-47a2-8901-31445410ea3e",
+ CellID->1783646765],
+Cell[16624, 348, 332, 9, 70, "Text",ExpressionUUID->"2b7f0cf1-f099-43f8-bee9-fc8242eaae40",
+ CellID->133240190],
+Cell[16959, 359, 396, 8, 70, "DefinitionBox",ExpressionUUID->"867f8429-2aaf-4d41-a15d-cf8a635f6fcc",
+ CellID->752541106],
+Cell[17358, 369, 188, 5, 70, "Caption",ExpressionUUID->"10b6edb8-c420-4e8e-a778-141ec4033a89",
+ CellID->1427171359],
+Cell[17549, 376, 259, 10, 70, "Text",ExpressionUUID->"b3cf7bd0-8ae2-4c77-a4f5-7bb8bf4d1080",
+ CellID->1051416660],
+Cell[17811, 388, 105, 2, 70, "MathCaption",ExpressionUUID->"fab41e2b-037f-4d81-a9da-5ab5658c9d8d",
+ CellID->1002407248],
+Cell[CellGroupData[{
+Cell[17941, 394, 878, 19, 70, "Input",ExpressionUUID->"1ecc7046-b32d-497e-990f-cec7814056ca",
+ CellID->449406421],
+Cell[18822, 415, 7760, 152, 70, "Output",ExpressionUUID->"19034e02-95ec-4879-a555-29a00af25120",
+ CellID->2013447779]
+}, Open  ]],
+Cell[26597, 570, 164, 4, 70, "MathCaption",ExpressionUUID->"6baa0c92-1054-414b-9c01-711871b4b59a",
+ CellID->1158761453],
+Cell[26764, 576, 2107, 62, 70, "Input",ExpressionUUID->"eb270b0c-4313-404a-9cca-bac41b4d8239",
+ CellID->766536665],
+Cell[28874, 640, 253, 5, 70, "Text",ExpressionUUID->"17d26653-2972-404d-9815-91cca21ef18d",
+ CellID->1425365031],
+Cell[29130, 647, 332, 7, 70, "MathCaption",ExpressionUUID->"8d40704c-5b39-44aa-a018-817aba11d2b5",
+ CellID->506884064],
+Cell[29465, 656, 2071, 55, 70, "Input",ExpressionUUID->"3345d51d-f15d-42e8-8cb9-dc28caaed7c2",
+ CellID->999724886],
+Cell[31539, 713, 224, 5, 70, "Text",ExpressionUUID->"ba5141bb-b1eb-4a86-adb5-191076665463",
+ CellID->1271064411],
+Cell[CellGroupData[{
+Cell[31788, 722, 61, 1, 70, "Subsection",ExpressionUUID->"f688dfdc-4ba2-4a61-8fb4-a4f4bc5a5b9a",
+ CellID->314884389],
+Cell[31852, 725, 332, 6, 70, "Text",ExpressionUUID->"61c74cdc-3851-4e91-84d1-0e03d79dfc77",
+ CellID->45493021],
+Cell[32187, 733, 111, 2, 70, "MathCaption",ExpressionUUID->"fbc31001-9cfb-4414-a0b3-162a7ce2c01c",
+ CellID->545123292],
+Cell[CellGroupData[{
+Cell[32323, 739, 673, 20, 70, "Input",ExpressionUUID->"e2bd2ea0-85fb-408a-85a5-e421abc6c792",
+ CellID->721930542],
+Cell[32999, 761, 27264, 593, 70, "Output",ExpressionUUID->"d403aff9-f2c6-4b72-b231-7f57e2119766",
+ CellID->1193804758]
+}, Open  ]],
+Cell[60278, 1357, 150, 4, 70, "MathCaption",ExpressionUUID->"930f5c60-561a-4df7-a8dd-43c588fba606",
+ CellID->918111546],
+Cell[CellGroupData[{
+Cell[60453, 1365, 474, 13, 70, "Input",ExpressionUUID->"3d6849d0-24d0-4743-8eb1-e03cab7e6cb4",
+ CellID->1130242268],
+Cell[60930, 1380, 40640, 691, 70, "Output",ExpressionUUID->"fd87f73d-a5a1-42ac-a341-40ef6363b379",
+ CellID->958385030]
+}, Open  ]],
+Cell[101585, 2074, 424, 11, 70, "Text",ExpressionUUID->"578b05aa-a448-45e4-9466-381b03b09023",
+ CellID->1814302641],
+Cell[102012, 2087, 420, 12, 70, "MathCaption",ExpressionUUID->"536db6b7-8dbf-492e-babe-abcb5e6b6907",
+ CellID->963585550],
+Cell[CellGroupData[{
+Cell[102457, 2103, 985, 27, 70, "Input",ExpressionUUID->"91f8938a-3099-4f96-b204-9ca9f465abef",
+ CellID->808156823],
+Cell[103445, 2132, 91, 2, 70, "Output",ExpressionUUID->"40fef115-92fe-4914-97c8-307f9c61dc06",
+ CellID->2101671753]
+}, Open  ]],
+Cell[103551, 2137, 448, 8, 70, "Text",ExpressionUUID->"0a3a3ebf-5d50-4394-981d-f2b9120a846d",
+ CellID->903815030],
+Cell[104002, 2147, 325, 10, 70, "MathCaption",ExpressionUUID->"54450977-d0b3-4f7c-b4a5-a1eaad6fe504",
+ CellID->1442163373],
+Cell[CellGroupData[{
+Cell[104352, 2161, 751, 18, 70, "Input",ExpressionUUID->"524482a7-1f81-46ce-aa80-d9304a3fc14d",
+ CellID->1939369969],
+Cell[105106, 2181, 4993, 123, 70, "Output",ExpressionUUID->"02745688-e323-41a8-a658-98354d8fbcdc",
+ CellID->604767047]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[110160, 2311, 69, 1, 70, "Section",ExpressionUUID->"0041d001-b3bd-461b-8605-e3b4924fcda9",
+ CellID->2139507492],
+Cell[110232, 2314, 733, 21, 70, "Text",ExpressionUUID->"2206653b-3853-4df8-beb6-c7c92192b156",
+ CellID->245700726],
+Cell[110968, 2337, 452, 12, 70, "Text",ExpressionUUID->"288ea9b9-6388-406b-8963-ea59194b5406",
+ CellID->362732183],
+Cell[111423, 2351, 82, 1, 70, "MathCaption",ExpressionUUID->"4c4d4c37-be5e-4c4f-beca-fab626d91edb",
+ CellID->1438855967],
+Cell[CellGroupData[{
+Cell[111530, 2356, 241, 8, 70, "Input",ExpressionUUID->"6276db6d-8e7c-414f-a941-20c55b1d0879",
+ CellID->685727073],
+Cell[111774, 2366, 737, 16, 70, "Output",ExpressionUUID->"20b9e608-d757-42ad-92a4-3b13f4ed9f2c",
+ CellID->24673899]
+}, Open  ]],
+Cell[112526, 2385, 228, 5, 70, "MathCaption",ExpressionUUID->"387740c5-9a07-474c-a798-8d351c483165",
+ CellID->853282563],
+Cell[CellGroupData[{
+Cell[112779, 2394, 492, 15, 70, "Input",ExpressionUUID->"d656ba38-83ee-4ede-a717-e0b2813c4138",
+ CellID->324919468],
+Cell[113274, 2411, 90, 2, 70, "Output",ExpressionUUID->"0c90ee32-50b9-4cb1-97b2-532f721355ea",
+ CellID->866944964]
+}, Open  ]],
+Cell[113379, 2416, 148, 4, 70, "MathCaption",ExpressionUUID->"93751f5c-fb2b-40e0-a6a2-44a210df3c58",
+ CellID->1423975162],
+Cell[CellGroupData[{
+Cell[113552, 2424, 99, 3, 70, "Input",ExpressionUUID->"3cd1c6d5-199e-492e-9cf3-9b8b97c4cdb9",
+ CellID->2128016662],
+Cell[113654, 2429, 651, 17, 70, "Output",ExpressionUUID->"c752ee7b-2d96-4b15-b41e-c8d54b141d58",
+ CellID->1822314856]
+}, Open  ]],
+Cell[114320, 2449, 260, 5, 70, "Text",ExpressionUUID->"1a7d2f3d-bd81-45cb-ba13-77bdec914e30",
+ CellID->1592908899],
+Cell[CellGroupData[{
+Cell[114605, 2458, 905, 27, 70, "Input",ExpressionUUID->"58d4326b-97a0-4b8c-8996-52e1f72b6177",
+ CellID->1159887342],
+Cell[115513, 2487, 696, 18, 70, "Output",ExpressionUUID->"c5e68431-48a7-49c1-9aa7-b40124735ce4",
+ CellID->1561032512]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[116248, 2510, 23, 0, 70, "FooterCell",ExpressionUUID->"29be7753-e520-408d-9dca-29de323c780f"]
+}
+]
+*)
+
+(* End of internal cache information *)

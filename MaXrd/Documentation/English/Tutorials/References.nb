@@ -1,0 +1,2772 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    123910,       2763]
+NotebookOptionsPosition[    119703,       2663]
+NotebookOutlinePosition[    122037,       2721]
+CellTagsIndexPosition[    121994,       2718]
+WindowTitle->References
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD TUTORIAL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"MaXrd/tutorial/References\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["MaXrd/tutorial/References"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/MaXrd/tutorial/\
+References.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$54695], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "MaXrd/tutorial/References", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["References", "Title",
+ CellID->509267359],
+
+Cell[BoxData[GridBox[{
+   {
+    TemplateBox[{
+      Cell["Crystal data"], "paclet:MaXrd/tutorial/References#746296040", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], 
+    TemplateBox[{
+      Cell["Data from miscellaneous sources"], 
+      "paclet:MaXrd/tutorial/References#1666510947", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}]},
+   {
+    TemplateBox[{
+      Cell[
+       TextData[{"Data from ", 
+         StyleBox[
+         "International Tables for Crystallography", FontSlant -> 
+          "Italic"]}]], "paclet:MaXrd/tutorial/References#1837080108", 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
+          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
+          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
+          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
+          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
+          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
+          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
+          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
+          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
+          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
+          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
+          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
+          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
+          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
+          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
+          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
+          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
+          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
+          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
+         RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}], 
+      GraphicsBox[
+       TagBox[
+        RasterBox[
+        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
+          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
+          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
+          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
+          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
+          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
+          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
+          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
+           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
+          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
+          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
+           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
+          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
+           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
+          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
+          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
+          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
+        BoxForm`ImageTag[
+        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
+         Automatic, MetaInformation -> 
+         Association[{
+           "XMP" -> Association[{
+              "BasicSchema" -> 
+               Association[{
+                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
+               "MediaManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
+                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
+                  "InstanceID" -> 
+                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
+               "RightsManagementSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
+               "PagedTextSchema" -> 
+               Association[{
+                 "DerivedFrom" -> 
+                  Association[{
+                    "DerivedFrom" -> 
+                    Association[{
+                    "InstanceID" -> 
+                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
+                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
+            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
+        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
+       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
+       ImageSize -> {8, 9}]},
+     "GrayLinkWithIcon",
+     BaseStyle->{"TutorialJumpBoxLink"}], ""}
+  }]], "TutorialJumpBox"],
+
+Cell["\<\
+This page contains references for the contents of this package that is \
+gathered from external sources.\
+\>", "Text",
+ CellID->1534169418],
+
+Cell[CellGroupData[{
+
+Cell["Crystal data", "Section",
+ CellID->746296040],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"link", "[", "filename_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Mouseover", "[", 
+       RowBox[{"#1", ",", "#2"}], "]"}], "&"}], "@@", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Button", "[", 
+         RowBox[{"filename", ",", 
+          RowBox[{"SystemOpen", "@", 
+           RowBox[{"FileNameJoin", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "$MaXrdPath", ",", "\"\<ExampleFiles\>\"", ",", "\"\<CIF\>\"", 
+              ",", "\"\<Default\>\"", ",", "filename"}], "}"}], "]"}]}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Appearance", "\[Rule]", "\"\<Frameless\>\""}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"BaseStyle", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"\"\<Text\>\"", ",", "#"}], "}"}]}]}], "]"}], "&"}], "/@", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0.269993", ",", "0.308507", ",", "0.6"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{
+          "0.823529411764706", ",", "0.490196078431373", ",", 
+           "0.133333333333333"}], "]"}]}], "}"}]}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"data", "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Added", " ", "by", " ", "Stian"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<LanthanumHexaboride\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/1000057.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]19\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<LaB6.cif\>\""}]}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<LithiumCobaltate\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<https://materialsproject.org/materials/mp-24850/\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]19\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<LiCoO2.cif\>\""}]}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<LithiumManganesePhosphate\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/1011089.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]26\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<LiMnO4P.cif\>\""}]}], "\[IndentingNewLine]",
+        "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Sodalite\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/1000028.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]26\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<Sodalite.cif\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Perovskite\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/1000022.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]26\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<Perovskite.cif\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<PrussianBlue\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://crystallography.net/cod/4343748.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]26\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<PrussianBlue.cif\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Ferrite\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/9008536.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]26\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<Ferrite.cif\>\""}]}], "\[IndentingNewLine]",
+        "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Austenite\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/9014056.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]26\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<Austenite.cif\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Polonium\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<https://github.com/andeplane/cif2cell-lammps/tree/master/cifs\>\
+\""}], ",", "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]26\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<Po.cif\>\""}]}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Tungsten\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/9008558.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]26\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<W.cif\>\""}]}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Quartz\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{"Column", "[", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<R.M. Hazen, L.W. Finger, R.J. Hemley, H.K. Mao,\n\
+\!\(\*StyleBox[\"High\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"-\",\
+FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"pressure\",FontSlant->\"Italic\"]\)\!\
+\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"crystal\",FontSlant->\"Italic\"]\)\
+\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"chemistry\",FontSlant->\"Italic\"]\
+\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"and\",FontSlant->\"Italic\"]\)\!\(\
+\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"amorphization\",FontSlant->\"\
+Italic\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"of\",FontSlant->\"Italic\"]\)\!\(\
+\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"\[Alpha]\",FontSlant->\"Italic\"]\
+\)\!\(\*StyleBox[\"-\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"quartz\",\
+FontSlant->\"Italic\"]\), \n\!\(\*StyleBox[\"Solid\",FontSlant->\"Italic\"]\)\
+\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"State\",FontSlant->\"Italic\"]\)\!\
+\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"Communications\",FontSlant->\"\
+Italic\"]\),\nVolume 72, Issue 5, 1989, Pages 507-511, ISSN 0038-1098\>\"", 
+           ",", "\n", 
+           RowBox[{
+           "Hyperlink", "@", 
+            "\"\<https://doi.org/10.1016/0038-1098(89)90607-8\>\""}]}], "}"}],
+          "]"}], ",", "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]12\>\"",
+         ",", "\[IndentingNewLine]", "\"\<\>\""}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Ice\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/1011023.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]30\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<Ice.cif\>\""}]}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Zinc\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/9008522.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]30\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<Zn.cif\>\""}]}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Sphalerite\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.crystallography.net/cod/1100043.html\>\""}], ",", 
+        "\[IndentingNewLine]", "\"\<2017\[Dash]10\[Dash]30\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"link", "@", "\"\<ZnS.cif\>\""}]}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Yoderite\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://rruff.geo.arizona.edu/AMS/download.php?id=00929.cif&down=\
+cif\>\""}], ",", "\[IndentingNewLine]", "\"\<2018-05-07\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\""}], "\[IndentingNewLine]", "}"}], 
+      ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Previously", " ", "added"}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Aluminium\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<CalciumFluoride\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",",
+         "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Cobalt(II)Fluoride\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{"Column", "[", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Jauch, Reehuis and Schultz,\n\
+\!\(\*StyleBox[\"\[Gamma]\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"-\",\
+FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"ray\",FontSlant->\"Italic\"]\)\!\(\*\
+StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"and\",FontSlant->\"Italic\"]\)\!\(\
+\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"neutron\",FontSlant->\"Italic\"]\)\
+\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"diffraction\",FontSlant->\"Italic\
+\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"studies\",FontSlant->\"Italic\"]\)\
+\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"of\",FontSlant->\"Italic\"]\)\!\(\
+\*StyleBox[\" \",FontSlant->\"Italic\"]\)\!\(\*StyleBox[SubscriptBox[\"CoF\", \
+\"2\"],FontSlant->\"Italic\"]\)\!\(\*StyleBox[\":\",FontSlant->\"Italic\"]\)\!\
+\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"magnetostriction\",FontSlant->\"\
+Italic\"]\)\!\(\*StyleBox[\",\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"electron\",FontSlant->\"Italic\"]\
+\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"density\",FontSlant->\"Italic\"]\)\
+\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"and\",FontSlant->\"Italic\"]\)\!\(\
+\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"magnetic\",FontSlant->\"Italic\"]\
+\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"moments\",FontSlant->\"Italic\"]\)\
+\!\(\*StyleBox[\",\",FontSlant->\"Italic\"]\)\n\
+\!\(\*StyleBox[\"Acta\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"Cryst\",FontSlant->\"Italic\"]\). \
+(2004). A60, 51-57\>\"", ",", "\n", 
+           RowBox[{
+           "Hyperlink", "@", 
+            "\"\<https://doi.org/10.1107/S0108767303022803\>\""}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\""}], "\[IndentingNewLine]", "}"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Copper\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<CopperTungstenOxide\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{"Column", "[", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<L. Kihlborg and E. Gebert,\n\!\(\*StyleBox[SubscriptBox[\"CuWO\
+\", \"4\"],FontSlant->\"Italic\"]\)\!\(\*StyleBox[\",\",FontSlant->\"Italic\"]\
+\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"a\",FontSlant->\"Italic\"]\)\!\(\*\
+StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"distorted\",FontSlant->\"Italic\"]\
+\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"Wolframite\",FontSlant->\"Italic\"\
+]\)\!\(\*StyleBox[\"-\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"type\",\
+FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"structure\",FontSlant->\"Italic\"]\
+\),\n\!\(\*StyleBox[\"Acta\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"Cryst\",FontSlant->\"Italic\"]\). \
+(1970). B26, 1020-1026\>\"", ",", "\n", 
+           RowBox[{
+           "Hyperlink", "@", 
+            "\"\<https://doi.org/10.1107/S0567740870003515\>\""}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\""}], "\[IndentingNewLine]", "}"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Corundum\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{"Column", "[", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<H. Graafsma, M. Souhassou, A. Puig-Molina, S. Harkema, C. \
+Lecomte and \[CapitalARing]. Kvick,\n\
+\!\(\*StyleBox[\"Towards\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"extinction\",FontSlant->\"Italic\"\
+]\)\!\(\*StyleBox[\"-\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"free\",\
+FontSlant->\"Italic\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"experimental\",FontSlant->\"\
+Italic\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"diffraction\",FontSlant->\"Italic\
+\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"data\",FontSlant->\"Italic\"]\)\!\
+\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"on\",FontSlant->\"Italic\"]\)\!\(\
+\*StyleBox[\" \",FontSlant->\"Italic\"]\)\!\(\*StyleBox[SubscriptBox[\"Al\", \
+\"2\"],FontSlant->\"Italic\"]\)\!\(\*StyleBox[SubscriptBox[\"O\", \
+\"3\"],FontSlant->\"Italic\"]\),\n\!\(\*StyleBox[\"Acta\",FontSlant->\"Italic\
+\"]\)\!\(\*StyleBox[\" \
+\",FontSlant->\"Italic\"]\)\!\(\*StyleBox[\"Cryst\",FontSlant->\"Italic\"]\). \
+(1998). B54, 193-195\>\"", ",", "\n", 
+           RowBox[{
+           "Hyperlink", "@", 
+            "\"\<https://doi.org/10.1107/S0108768197012949\>\""}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\""}], "\[IndentingNewLine]", "}"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Diamond\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<GalliumArsenide\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",",
+         "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Germanium\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Glycyl-L-alanine\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", 
+        ",", "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<ManganeseSilicon\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", 
+        ",", "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Nickel\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<OxalicAcid\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Silicon\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Silver\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<SodiumChloride\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\""}], "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", 
+     "}"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Sort", "@", "data"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"table", "=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Entry name\>\"", ",", "\"\<Source\>\"", ",", "\"\<Access date\>\"",
+        ",", "\"\<Local file\>\""}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"r", ",", "c"}], "}"}], "=", 
+    RowBox[{"Dimensions", "@", "table"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", 
+  RowBox[{"table", ",", "\[IndentingNewLine]", 
+   RowBox[{"ItemSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Full", ",", "Automatic"}], "}"}]}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"Background", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "None", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"None", ",", 
+        RowBox[{"{", 
+         RowBox[{"None", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"#", ",", "#", ",", "#"}], "]"}], "&"}], "[", "0.97", 
+           "]"}]}], "}"}]}], "}"}]}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Dividers", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"False", ",", 
+        RowBox[{"{", "True", "}"}], ",", "False"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"False", ",", "True"}], "}"}]}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Alignment", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Left", ",", "Center"}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"ItemStyle", "\[Rule]", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", "Columns", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"Automatic", ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", "Rows", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+      RowBox[{"1", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FontWeight", "\[Rule]", "\"\<SemiBold\>\""}], ",", "11", 
+         ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<Verdana\>\""}]}], "}"}]}], ",",
+       "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Specific", " ", "regions"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"First", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+       
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "1"}], "}"}]}], "}"}], "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Text\>\"", ",", 
+           RowBox[{"FontWeight", "\[Rule]", "\"\<SemiBold\>\""}], ",", 
+           "Italic", ",", "10"}], "}"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Second", " ", "column"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "2"}], "}"}]}], "}"}], "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Text\>\"", ",", "10"}], "}"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Third", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", "3"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Fourth", " ", "column"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"4", ",", "4"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}]}], "\[IndentingNewLine]", "}"}]}], 
+     "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "Input",
+ ShowSelection->True,
+ CellOpen->False,
+ CellLabel->"In[8]:=",
+ CellID->53842780],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Entry name\"\>", "\<\"Source\"\>", "\<\"Access date\"\>", \
+"\<\"Local file\"\>"},
+    {"\<\"Aluminium\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Austenite\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/9014056.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/9014056.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/9014056.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/9014056.html"],
+      Annotation[#, "http://www.crystallography.net/cod/9014056.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]26\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"Austenite.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", 
+           "Austenite.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"Austenite.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", 
+           "Austenite.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"CalciumFluoride\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Cobalt(II)Fluoride\"\>", 
+     TagBox[GridBox[{
+        {"\<\"Jauch, Reehuis and Schultz,\\n\\!\\(\\*\\nStyleBox[\\\"\[Gamma]\
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"-\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"ray\\\",\\nFontSlant->\
+\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"and\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"neutron\\\",\\nFontSlant->\\\"Italic\
+\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\
+\\*\\nStyleBox[\\\"diffraction\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\\
+nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"studies\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"of\\\",\\nFontSlant->\\\"Italic\\\"]\
+\\)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[SubscriptBox[\\\"\
+CoF\\\", \\\"2\\\"],\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\":\
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"\
+magnetostriction\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"\
+,\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"electron\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"density\\\",\\nFontSlant->\\\"Italic\
+\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\
+\\*\\nStyleBox[\\\"and\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\\
+nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"magnetic\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"moments\\\",\\nFontSlant->\\\"Italic\
+\\\"]\\)\\!\\(\\*\\nStyleBox[\\\",\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\n\\!\
+\\(\\*\\nStyleBox[\\\"Acta\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\\
+nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"Cryst\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\). (2004). A60, 51-57\"\>"},
+        {
+         TagBox[
+          ButtonBox[
+           
+           PaneSelectorBox[{
+            False->"\<\"https://doi.org/10.1107/S0108767303022803\"\>", True->
+            
+            
+            StyleBox["\<\"https://doi.org/10.1107/S0108767303022803\"\>", 
+             "HyperlinkActive"]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            BaseStyle->{"Hyperlink"},
+            FrameMargins->0,
+            ImageSize->Automatic],
+           BaseStyle->"Hyperlink",
+           ButtonData->{
+             URL["https://doi.org/10.1107/S0108767303022803"], None},
+           ButtonNote->"https://doi.org/10.1107/S0108767303022803"],
+          
+          Annotation[#, "https://doi.org/10.1107/S0108767303022803", 
+           "Hyperlink"]& ]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Copper\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"CopperTungstenOxide\"\>", 
+     TagBox[GridBox[{
+        {"\<\"L. Kihlborg and E. Gebert,\\n\\!\\(\\*\\nStyleBox[SubscriptBox[\
+\\\"CuWO\\\", \
+\\\"4\\\"],\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\",\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"a\\\",\\nFontSlant->\\\"Italic\\\"]\\\
+)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"distorted\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"Wolframite\\\",\\nFontSlant->\\\"\
+Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"-\\\",\\nFontSlant->\\\"Italic\\\"]\\)\
+\\!\\(\\*\\nStyleBox[\\\"type\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\\
+nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"structure\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\),\\n\\!\\(\\*\\nStyleBox[\\\"Acta\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"Cryst\\\",\\nFontSlant->\\\"Italic\\\
+\"]\\). (1970). B26, 1020-1026\"\>"},
+        {
+         TagBox[
+          ButtonBox[
+           
+           PaneSelectorBox[{
+            False->"\<\"https://doi.org/10.1107/S0567740870003515\"\>", True->
+            
+            
+            StyleBox["\<\"https://doi.org/10.1107/S0567740870003515\"\>", 
+             "HyperlinkActive"]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            BaseStyle->{"Hyperlink"},
+            FrameMargins->0,
+            ImageSize->Automatic],
+           BaseStyle->"Hyperlink",
+           ButtonData->{
+             URL["https://doi.org/10.1107/S0567740870003515"], None},
+           ButtonNote->"https://doi.org/10.1107/S0567740870003515"],
+          
+          Annotation[#, "https://doi.org/10.1107/S0567740870003515", 
+           "Hyperlink"]& ]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Corundum\"\>", 
+     TagBox[GridBox[{
+        {"\<\"H. Graafsma, M. Souhassou, A. Puig-Molina, S. Harkema, C. \
+Lecomte and \[CapitalARing]. \
+Kvick,\\n\\!\\(\\*\\nStyleBox[\\\"Towards\\\",\\nFontSlant->\\\"Italic\\\"]\\)\
+\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"extinction\\\",\
+\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"-\\\",\\nFontSlant->\
+\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"free\\\",\\nFontSlant->\\\"Italic\\\
+\"]\\)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"experimental\\\"\
+,\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"diffraction\\\",\
+\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\
+\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"data\\\",\\nFontSlant->\\\"Italic\\\
+\"]\\)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"on\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[SubscriptBox[\\\"Al\\\", \
+\\\"2\\\"],\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[SubscriptBox[\
+\\\"O\\\", \
+\\\"3\\\"],\\nFontSlant->\\\"Italic\\\"]\\),\\n\\!\\(\\*\\nStyleBox[\\\"Acta\\\
+\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"Cryst\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\). (1998). B54, 193-195\"\>"},
+        {
+         TagBox[
+          ButtonBox[
+           
+           PaneSelectorBox[{
+            False->"\<\"https://doi.org/10.1107/S0108768197012949\"\>", True->
+            
+            
+            StyleBox["\<\"https://doi.org/10.1107/S0108768197012949\"\>", 
+             "HyperlinkActive"]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            BaseStyle->{"Hyperlink"},
+            FrameMargins->0,
+            ImageSize->Automatic],
+           BaseStyle->"Hyperlink",
+           ButtonData->{
+             URL["https://doi.org/10.1107/S0108768197012949"], None},
+           ButtonNote->"https://doi.org/10.1107/S0108768197012949"],
+          
+          Annotation[#, "https://doi.org/10.1107/S0108768197012949", 
+           "Hyperlink"]& ]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Diamond\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Ferrite\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/9008536.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/9008536.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/9008536.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/9008536.html"],
+      Annotation[#, "http://www.crystallography.net/cod/9008536.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]26\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"Ferrite.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "Ferrite.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"Ferrite.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "Ferrite.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"GalliumArsenide\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Germanium\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Glycyl-L-alanine\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Ice\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/1011023.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/1011023.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/1011023.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/1011023.html"],
+      Annotation[#, "http://www.crystallography.net/cod/1011023.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]30\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"Ice.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "Ice.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"Ice.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "Ice.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"LanthanumHexaboride\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/1000057.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/1000057.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/1000057.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/1000057.html"],
+      Annotation[#, "http://www.crystallography.net/cod/1000057.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]19\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"LaB6.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "LaB6.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"LaB6.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "LaB6.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"LithiumCobaltate\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"https://materialsproject.org/materials/mp-24850/\"\>", 
+        True->
+        StyleBox["\<\"https://materialsproject.org/materials/mp-24850/\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["https://materialsproject.org/materials/mp-24850/"], None},
+       ButtonNote->"https://materialsproject.org/materials/mp-24850/"],
+      Annotation[#, "https://materialsproject.org/materials/mp-24850/", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]19\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"LiCoO2.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "LiCoO2.cif"}]],
+       
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"LiCoO2.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "LiCoO2.cif"}]],
+       
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"LithiumManganesePhosphate\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/1011089.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/1011089.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/1011089.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/1011089.html"],
+      Annotation[#, "http://www.crystallography.net/cod/1011089.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]26\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"LiMnO4P.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "LiMnO4P.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"LiMnO4P.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "LiMnO4P.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"ManganeseSilicon\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Nickel\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"OxalicAcid\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Perovskite\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/1000022.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/1000022.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/1000022.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/1000022.html"],
+      Annotation[#, "http://www.crystallography.net/cod/1000022.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]26\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"Perovskite.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", 
+           "Perovskite.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"Perovskite.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", 
+           "Perovskite.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"Polonium\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"https://github.com/andeplane/cif2cell-lammps/tree/master/\
+cifs\"\>", True->
+        StyleBox["\<\"https://github.com/andeplane/cif2cell-lammps/tree/\
+master/cifs\"\>", "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["https://github.com/andeplane/cif2cell-lammps/tree/master/cifs"],
+          None},
+       ButtonNote->
+        "https://github.com/andeplane/cif2cell-lammps/tree/master/cifs"],
+      Annotation[#, 
+       "https://github.com/andeplane/cif2cell-lammps/tree/master/cifs", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]26\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"Po.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "Po.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"Po.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "Po.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"PrussianBlue\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://crystallography.net/cod/4343748.html\"\>", True->
+        StyleBox["\<\"http://crystallography.net/cod/4343748.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://crystallography.net/cod/4343748.html"], None},
+       ButtonNote->"http://crystallography.net/cod/4343748.html"],
+      Annotation[#, "http://crystallography.net/cod/4343748.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]26\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"PrussianBlue.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", 
+           "PrussianBlue.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"PrussianBlue.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", 
+           "PrussianBlue.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"Quartz\"\>", 
+     TagBox[GridBox[{
+        {"\<\"R.M. Hazen, L.W. Finger, R.J. Hemley, H.K. \
+Mao,\\n\\!\\(\\*\\nStyleBox[\\\"High\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\\
+(\\*\\nStyleBox[\\\"-\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\\
+nStyleBox[\\\"pressure\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\\
+nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"crystal\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"chemistry\\\",\\nFontSlant->\\\"\
+Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\"Italic\\\"]\\)\
+\\!\\(\\*\\nStyleBox[\\\"and\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\\
+nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"amorphization\\\
+\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"of\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"\[Alpha]\\\",\\nFontSlant->\\\"\
+Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"-\\\",\\nFontSlant->\\\"Italic\\\"]\\)\
+\\!\\(\\*\\nStyleBox[\\\"quartz\\\",\\nFontSlant->\\\"Italic\\\"]\\), \
+\\n\\!\\(\\*\\nStyleBox[\\\"Solid\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\\
+*\\nStyleBox[\\\" \
+\\\",\\nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"State\\\",\\\
+nFontSlant->\\\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\",\\nFontSlant->\\\
+\"Italic\\\"]\\)\\!\\(\\*\\nStyleBox[\\\"Communications\\\",\\nFontSlant->\\\"\
+Italic\\\"]\\),\\nVolume 72, Issue 5, 1989, Pages 507-511, ISSN \
+0038-1098\"\>"},
+        {
+         TagBox[
+          ButtonBox[
+           
+           PaneSelectorBox[{
+            False->"\<\"https://doi.org/10.1016/0038-1098(89)90607-8\"\>", 
+            True->
+            
+            StyleBox["\<\"https://doi.org/10.1016/0038-1098(89)90607-8\"\>", 
+             "HyperlinkActive"]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            BaseStyle->{"Hyperlink"},
+            FrameMargins->0,
+            ImageSize->Automatic],
+           BaseStyle->"Hyperlink",
+           ButtonData->{
+             URL["https://doi.org/10.1016/0038-1098(89)90607-8"], None},
+           ButtonNote->"https://doi.org/10.1016/0038-1098(89)90607-8"],
+          
+          Annotation[#, "https://doi.org/10.1016/0038-1098(89)90607-8", 
+           "Hyperlink"]& ]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], "\<\"2017\[Dash]10\[Dash]12\"\>", "\<\"\"\>"},
+    {"\<\"Silicon\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Silver\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Sodalite\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/1000028.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/1000028.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/1000028.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/1000028.html"],
+      Annotation[#, "http://www.crystallography.net/cod/1000028.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]26\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"Sodalite.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", 
+           "Sodalite.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"Sodalite.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", 
+           "Sodalite.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"SodiumChloride\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"Sphalerite\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/1100043.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/1100043.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/1100043.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/1100043.html"],
+      Annotation[#, "http://www.crystallography.net/cod/1100043.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]30\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"ZnS.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "ZnS.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"ZnS.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "ZnS.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"Tungsten\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/9008558.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/9008558.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/9008558.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/9008558.html"],
+      Annotation[#, "http://www.crystallography.net/cod/9008558.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]26\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"W.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "W.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"W.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "W.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]},
+    {"\<\"Yoderite\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://rruff.geo.arizona.edu/AMS/download.php?id=00929.\
+cif&down=cif\"\>", True->
+        StyleBox["\<\"http://rruff.geo.arizona.edu/AMS/download.php?id=00929.\
+cif&down=cif\"\>", "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL[
+         "http://rruff.geo.arizona.edu/AMS/download.php?id=00929.cif&down=\
+cif"], None},
+       ButtonNote->
+        "http://rruff.geo.arizona.edu/AMS/download.php?id=00929.cif&down=cif"],
+      Annotation[#, 
+       "http://rruff.geo.arizona.edu/AMS/download.php?id=00929.cif&down=cif", 
+       "Hyperlink"]& ], "\<\"2018-05-07\"\>", "\<\"\"\>"},
+    {"\<\"Zinc\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.crystallography.net/cod/9008522.html\"\>", 
+        True->
+        StyleBox["\<\"http://www.crystallography.net/cod/9008522.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.crystallography.net/cod/9008522.html"], None},
+       ButtonNote->"http://www.crystallography.net/cod/9008522.html"],
+      Annotation[#, "http://www.crystallography.net/cod/9008522.html", 
+       "Hyperlink"]& ], "\<\"2017\[Dash]10\[Dash]30\"\>", 
+     PaneSelectorBox[{False->
+      ButtonBox["\<\"Zn.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.269993, 0.308507, 0.6]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "Zn.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"], True->
+      ButtonBox["\<\"Zn.cif\"\>",
+       Appearance->"Frameless",
+       BaseStyle->{"Text", 
+         RGBColor[0.823529411764706, 0.490196078431373, 0.133333333333333]},
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{
+          MaXrd`$MaXrdPath, "ExampleFiles", "CIF", "Default", "Zn.cif"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      FrameMargins->0,
+      ImageSize->Automatic]}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Center}}},
+   GridBoxBackground->{"Columns" -> {None}, "Rows" -> {None, {None, 
+        RGBColor[0.97, 0.97, 0.97]}}},
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, True}},
+   GridBoxItemSize->{"Columns" -> {{All}}, "Rows" -> {{Automatic}}},
+   GridBoxItemStyle->{
+    "Columns" -> {{Automatic}}, 
+     "RowsIndexed" -> {
+      1 -> {FontWeight -> "SemiBold", 11, FontFamily -> "Verdana"}}, 
+     "ItemsIndexed" -> {{{2, 32}, {1, 1}} -> {
+        "Text", FontWeight -> "SemiBold", Italic, 10}, {{2, 32}, {2, 2}} -> {
+        "Text", 10}, {{2, 32}, {3, 3}} -> "Text", {{2, 32}, {4, 4}} -> 
+       "Text"}}],
+  "Grid"]], "Output",
+ ShowCellLabel->False,
+ CellLabel->"Out[13]=",
+ CellID->1040009793]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Local files",
+  FontSlant->"Italic"],
+ " are stored ",
+ StyleBox["$MaXrdPath", "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox["ExampleFiles", "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox["CIF", "MenuName"],
+ StyleBox[" \[FilledRightTriangle] ", "MenuNameDelimiter"],
+ StyleBox["Default", "MenuName"],
+ " if available."
+}], "Caption",
+ CellID->1095018320]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Data from ",
+ StyleBox["International Tables for Crystallography",
+  FontSlant->"Italic"]
+}], "Section",
+ CellID->1837080108],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"link", "[", "filename_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Mouseover", "[", 
+       RowBox[{"#1", ",", "#2"}], "]"}], "&"}], "@@", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Button", "[", 
+         RowBox[{"filename", ",", 
+          RowBox[{"SystemOpen", "@", 
+           RowBox[{"FileNameJoin", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "$MaXrdPath", ",", "\"\<ExampleFiles\>\"", ",", "\"\<CIF\>\"", 
+              ",", "filename"}], "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Appearance", "\[Rule]", "\"\<Frameless\>\""}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"BaseStyle", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"\"\<Text\>\"", ",", "#"}], "}"}]}]}], "]"}], "&"}], "/@", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0.269993", ",", "0.308507", ",", "0.6"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{
+          "0.823529411764706", ",", "0.490196078431373", ",", 
+           "0.133333333333333"}], "]"}]}], "}"}]}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"data", "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Point groups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<symbols, matrix operations\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<$PointGroups\>\"", ",", "\[IndentingNewLine]", "\"\<A\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<5th (2005)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<10\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<10.1.2.2\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<770\[Dash]790\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Point groups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<subgroups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<$PointGroups\>\"", ",", "\[IndentingNewLine]", "\"\<D\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<1st (2003)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<3.4\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<3.4.2.7\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<463\[Dash]467\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Space groups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<symbols, symmetry operations\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<$SpaceGroups\>\"", ",", "\[IndentingNewLine]", "\"\<A\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<5th (2005)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\>\"", ",", "\[IndentingNewLine]", "\"\<112\[Dash]715\>\""}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Space groups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Hall symbols\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<$SpaceGroups\>\"", ",", "\[IndentingNewLine]", "\"\<B\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<2nd (1999)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<1.4\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<A1.4.2.7\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<115\[Dash]119\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Transformation matrices\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<matrices\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<$TransformationMatrices\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<A\>\"", ",", "\[IndentingNewLine]", "\"\<5th (2005)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<5.1\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<5.1.3.1\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<80\[Dash]83\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Common absorption edges\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<wavelengths\>\"", ",", "\[IndentingNewLine]", "\"\<\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<C\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<3rd (2004)\>\"", ",", "\[IndentingNewLine]", "\"\<4.2\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<4.2.2.4\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<206\[Dash]208\>\""}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Scattering factors\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<tabulated coefficients\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<AtomicScatteringFactor\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<C\>\"", ",", "\[IndentingNewLine]", "\"\<3rd (2004)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<6.1\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<6.1.1.4\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<578\[Dash]580\>\""}], "\[IndentingNewLine]", "}"}]}], 
+     "\[IndentingNewLine]", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Sort", "@", "data"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"table", "=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<Data entry\>\"", ",", "\[IndentingNewLine]", "\"\<Description\>\"",
+        ",", "\[IndentingNewLine]", "\"\<Symbols\>\"", ",", 
+       "\[IndentingNewLine]", "\"\<Volume\>\"", ",", "\[IndentingNewLine]", 
+       "\"\<Edition\>\"", ",", "\[IndentingNewLine]", "\"\<Chapter\>\"", ",", 
+       "\[IndentingNewLine]", "\"\<Table\>\"", ",", "\[IndentingNewLine]", 
+       "\"\<Pages\>\""}], "\[IndentingNewLine]", "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"r", ",", "c"}], "}"}], "=", 
+    RowBox[{"Dimensions", "@", "table"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", 
+  RowBox[{"table", ",", "\[IndentingNewLine]", 
+   RowBox[{"ItemSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Full", ",", "Automatic"}], "}"}]}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"Background", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "None", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"None", ",", 
+        RowBox[{"{", 
+         RowBox[{"None", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"#", ",", "#", ",", "#"}], "]"}], "&"}], "[", "0.97", 
+           "]"}]}], "}"}]}], "}"}]}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Dividers", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"False", ",", 
+        RowBox[{"{", "True", "}"}], ",", "False"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"False", ",", "True"}], "}"}]}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Alignment", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Left", ",", "Center"}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"ItemStyle", "\[Rule]", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", "Columns", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"Automatic", ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", "Rows", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+      RowBox[{"1", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FontWeight", "\[Rule]", "\"\<SemiBold\>\""}], ",", "11", 
+         ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<Verdana\>\""}]}], "}"}]}], ",",
+       "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Specific", " ", "regions"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"First", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+       
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "1"}], "}"}]}], "}"}], "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Text\>\"", ",", 
+           RowBox[{"FontWeight", "\[Rule]", "\"\<SemiBold\>\""}], ",", 
+           "Italic", ",", "10"}], "}"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Second", " ", "column"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "2"}], "}"}]}], "}"}], "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Text\>\"", ",", "Italic", ",", "10"}], "}"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Third", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", "3"}], "}"}]}], "}"}], "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Text\>\"", ",", 
+           RowBox[{"FontFamily", "\[Rule]", "\"\<Source Code Pro\>\""}]}], 
+          "}"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Fourth", " ", "column"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"4", ",", "4"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Fifth", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", "5"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Sixth", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"6", ",", "6"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Seventh", " ", "column"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"7", ",", "7"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Eight", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"8", ",", "8"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}]}], "\[IndentingNewLine]", "}"}]}], 
+     "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "Input",
+ ShowSelection->True,
+ CellOpen->False,
+ CellLabel->"In[44]:=",
+ CellID->2077245372],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Data entry\"\>", "\<\"Description\"\>", "\<\"Symbols\"\>", \
+"\<\"Volume\"\>", "\<\"Edition\"\>", "\<\"Chapter\"\>", "\<\"Table\"\>", \
+"\<\"Pages\"\>"},
+    {"\<\"Common absorption edges\"\>", "\<\"wavelengths\"\>", "\<\"\"\>", \
+"\<\"C\"\>", "\<\"3rd (2004)\"\>", "\<\"4.2\"\>", "\<\"4.2.2.4\"\>", "\<\"206\
+\[Dash]208\"\>"},
+    {"\<\"Point groups\"\>", "\<\"subgroups\"\>", "\<\"$PointGroups\"\>", "\<\
+\"D\"\>", "\<\"1st (2003)\"\>", "\<\"3.4\"\>", "\<\"3.4.2.7\"\>", "\<\"463\
+\[Dash]467\"\>"},
+    {"\<\"Point groups\"\>", "\<\"symbols, matrix operations\"\>", \
+"\<\"$PointGroups\"\>", "\<\"A\"\>", "\<\"5th (2005)\"\>", "\<\"10\"\>", \
+"\<\"10.1.2.2\"\>", "\<\"770\[Dash]790\"\>"},
+    {"\<\"Scattering factors\"\>", "\<\"tabulated coefficients\"\>", \
+"\<\"AtomicScatteringFactor\"\>", "\<\"C\"\>", "\<\"3rd (2004)\"\>", "\<\"6.1\
+\"\>", "\<\"6.1.1.4\"\>", "\<\"578\[Dash]580\"\>"},
+    {"\<\"Space groups\"\>", "\<\"Hall symbols\"\>", "\<\"$SpaceGroups\"\>", \
+"\<\"B\"\>", "\<\"2nd (1999)\"\>", "\<\"1.4\"\>", "\<\"A1.4.2.7\"\>", \
+"\<\"115\[Dash]119\"\>"},
+    {"\<\"Space groups\"\>", "\<\"symbols, symmetry operations\"\>", \
+"\<\"$SpaceGroups\"\>", "\<\"A\"\>", "\<\"5th (2005)\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"112\[Dash]715\"\>"},
+    {"\<\"Transformation matrices\"\>", "\<\"matrices\"\>", \
+"\<\"$TransformationMatrices\"\>", "\<\"A\"\>", "\<\"5th (2005)\"\>", \
+"\<\"5.1\"\>", "\<\"5.1.3.1\"\>", "\<\"80\[Dash]83\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Center}}},
+   GridBoxBackground->{"Columns" -> {None}, "Rows" -> {None, {None, 
+        RGBColor[0.97, 0.97, 0.97]}}},
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, True}},
+   GridBoxItemSize->{"Columns" -> {{All}}, "Rows" -> {{Automatic}}},
+   GridBoxItemStyle->{
+    "Columns" -> {{Automatic}}, 
+     "RowsIndexed" -> {
+      1 -> {FontWeight -> "SemiBold", 11, FontFamily -> "Verdana"}}, 
+     "ItemsIndexed" -> {{{2, 8}, {1, 1}} -> {
+        "Text", FontWeight -> "SemiBold", Italic, 10}, {{2, 8}, {2, 2}} -> {
+        "Text", Italic, 10}, {{2, 8}, {3, 3}} -> {
+        "Text", FontFamily -> "Source Code Pro"}, {{2, 8}, {4, 4}} -> 
+       "Text", {{2, 8}, {5, 5}} -> "Text", {{2, 8}, {6, 6}} -> 
+       "Text", {{2, 8}, {7, 7}} -> "Text", {{2, 8}, {8, 8}} -> "Text"}}],
+  "Grid"]], "Output",
+ ShowCellLabel->False,
+ CellLabel->"Out[49]=",
+ CellID->320598152]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Data from miscellaneous sources", "Section",
+ CellID->1666510947],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"link", "[", "filename_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Mouseover", "[", 
+       RowBox[{"#1", ",", "#2"}], "]"}], "&"}], "@@", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Button", "[", 
+         RowBox[{"filename", ",", 
+          RowBox[{"SystemOpen", "@", 
+           RowBox[{"FileNameJoin", "[", 
+            RowBox[{"{", 
+             RowBox[{
+             "$MaXrdPath", ",", "\"\<ExampleFiles\>\"", ",", "\"\<CIF\>\"", 
+              ",", "filename"}], "}"}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Appearance", "\[Rule]", "\"\<Frameless\>\""}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"BaseStyle", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"\"\<Text\>\"", ",", "#"}], "}"}]}]}], "]"}], "&"}], "/@", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0.269993", ",", "0.308507", ",", "0.6"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{
+          "0.823529411764706", ",", "0.490196078431373", ",", 
+           "0.133333333333333"}], "]"}]}], "}"}]}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"data", "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Scattering factors\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<tabulated coefficients\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<AtomicScatteringFactor\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<D. Waasmaier and A. Kirfel\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<New analytical scattering-factor functions for free atoms and \
+ions\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Acta Cryst. (1995). A51, 416-431\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<1995\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<https://doi.org/10.1107/S0108767394013292\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Transformation matrices\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<matrix for transforming from crystallographic\\nto Cartesian \
+system\>\"", ",", "\[IndentingNewLine]", "\"\<$TransformationMatrices\>\"", 
+        ",", "\[IndentingNewLine]", "\"\<Maureen M. Julian\>\"", ",", 
+        "\[IndentingNewLine]", 
+        "\"\<Foundations of Crystallography with Computer Applications\>\"", 
+        ",", "\[IndentingNewLine]", "\"\<CRC Press\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<2015 (2nd ed.)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<9781466552920\>\""}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Transformation matrices\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<matrices that tansforms A, B and C-centred cells\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<$TransformationMatrices\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Carmelo Giacovazzo et al.\>\"", ",", 
+        "\[IndentingNewLine]", 
+        "\"\<Fundamentals of Crystallography (p. 141)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Oxford University Press\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<1992 (1st. ed.)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<9780198555780\>\""}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Periodic table\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<element names, atomic mass\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<$PeriodicTable\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<\[LongDash]\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Atomic Weights of the Elements 2015\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<(web page)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<2015\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://www.sbcs.qmul.ac.uk/iupac/AtWt/\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<Physical constants\>\"", ",", "\[IndentingNewLine]", 
+          "\"\<fundamental constants\>\"", ",", "\[IndentingNewLine]", 
+          "\"\<$PhysicalConstants\>\"", ",", "\[IndentingNewLine]", 
+          "\"\<(web page)\>\"", ",", "\[IndentingNewLine]", 
+          "\"\<Fundamental Physical Constants from NIST\>\"", ",", 
+          "\[IndentingNewLine]", "\"\<(web page)\>\"", ",", 
+          "\[IndentingNewLine]", "\"\<2016 (October)\>\"", ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+          "Hyperlink", "@", 
+           "\"\<https://physics.nist.gov/cuu/Constants/\>\""}]}], 
+         "\[IndentingNewLine]", "}"}], ","}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Unconventional space groups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Symmetry operations and symbols of space groups\\nnot in the \
+International Tables for Crystallography\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<$SpaceGroups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Jeremy Karl Cockcroft\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<A Hypertext Book of Crystallographic Space Group Diagrams and \
+Tables\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Birkbeck College, University of London\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<2016-02-01\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://img.chem.ucl.ac.uk/sgp/mainmenu.htm\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Space groups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<symmetry operations of unconventional space groups\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<$SpaceGroups\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<Grosse-Kunstleve et al.\>\"", ",", 
+        "\[IndentingNewLine]", 
+        "\"\<cctbx - Browse alternative space group setting\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\[LongDash]\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\[LongDash]\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://cci.lbl.gov/cctbx/browse_settings.html\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Unconventional space groups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Hall symbols\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<$SpaceGroups\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<R.W. Grosse-Kunstleve\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<cctbx - Multiple cell C or F and triple cell H settings\>\"", 
+        ",", "\[IndentingNewLine]", "\"\<\[LongDash]\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<October 2001\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<https://cci.lbl.gov/cctbx/multiple_cell.html\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Scattering cross sections\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<tabulated data for photoelectric, Rayleigh, Compton and total \
+scattering\>\"", ",", "\[IndentingNewLine]", "\"\<AttenuationCoefficient\>\"",
+         ",", "\[IndentingNewLine]", "\"\<Tom Schoonjans et al.\>\"", ",", 
+        "\[IndentingNewLine]", 
+        "\"\<xraylib: a library for interactions of X-rays with matter\>\"", 
+        ",", "\[IndentingNewLine]", "\"\<(web page)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<September 2017 (v. 3.3.0)\>\"", ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", "\"\<https://github.com/tschoonj/xraylib\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Scattering factors\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<tabulated data for calculating \!\(\*SubscriptBox[\(f\), \
+\(0\)]\), \!\(\*SuperscriptBox[\(f\), \(\[Prime]\)]\) and \
+\!\(\*SuperscriptBox[\(f\), \(\[DoublePrime]\)]\)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<AtomicScatteringFactor\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<\[LongDash]\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<ESRF Anonymous FTP Server\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<(web page)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<2013\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<http://ftp.esrf.eu/scisoft/xop2.3/DabaxFiles/\>\""}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+       "\"\<Scattering factors\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<tabulated data for calculating \!\(\*SubscriptBox[\(f\), \
+\(0\)]\), \!\(\*SuperscriptBox[\(f\), \(\[Prime]\)]\) and \
+\!\(\*SuperscriptBox[\(f\), \(\[DoublePrime]\)]\)\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<AtomicScatteringFactor\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<D. T. Cromer and D. A. Liberman\>\"", ",",
+         "\[IndentingNewLine]", 
+        "\"\<Anomalous dispersion calculations near to and on the \
+long-wavelength side of an absorption edge\>\"", ",", "\[IndentingNewLine]", 
+        "\"\<Acta Cryst. (1981). A37, 267-268\>\"", ",", 
+        "\[IndentingNewLine]", "\"\<1981\>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Hyperlink", "@", 
+         "\"\<https://doi.org/10.1107/S0567739481000600\>\""}]}], 
+       "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Sort", "@", "data"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"table", "=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<Data entry\>\"", ",", "\[IndentingNewLine]", "\"\<Description\>\"",
+        ",", "\[IndentingNewLine]", "\"\<Symbols\>\"", ",", 
+       "\[IndentingNewLine]", "\"\<Authors\>\"", ",", "\[IndentingNewLine]", 
+       "\"\<Title\>\"", ",", "\[IndentingNewLine]", 
+       "\"\<Journal, publisher or university\>\"", ",", 
+       "\[IndentingNewLine]", "\"\<Year\>\"", ",", "\[IndentingNewLine]", 
+       "\"\<Link or ISBN\>\""}], "\[IndentingNewLine]", "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"r", ",", "c"}], "}"}], "=", 
+    RowBox[{"Dimensions", "@", "table"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", 
+  RowBox[{"table", ",", "\[IndentingNewLine]", 
+   RowBox[{"ItemSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Full", ",", "Automatic"}], "}"}]}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"Background", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "None", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"None", ",", 
+        RowBox[{"{", 
+         RowBox[{"None", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"#", ",", "#", ",", "#"}], "]"}], "&"}], "[", "0.97", 
+           "]"}]}], "}"}]}], "}"}]}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Dividers", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"False", ",", 
+        RowBox[{"{", "True", "}"}], ",", "False"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"False", ",", "True"}], "}"}]}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Alignment", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Left", ",", "Center"}], "}"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"ItemStyle", "\[Rule]", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", "Columns", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"Automatic", ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", "Rows", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+      RowBox[{"1", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FontWeight", "\[Rule]", "\"\<SemiBold\>\""}], ",", "11", 
+         ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<Verdana\>\""}]}], "}"}]}], ",",
+       "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Specific", " ", "regions"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"First", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+       
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "1"}], "}"}]}], "}"}], "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Text\>\"", ",", 
+           RowBox[{"FontWeight", "\[Rule]", "\"\<SemiBold\>\""}], ",", 
+           "Italic", ",", "10"}], "}"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Second", " ", "column"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "2"}], "}"}]}], "}"}], "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Text\>\"", ",", "Italic", ",", "10"}], "}"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Third", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"3", ",", "3"}], "}"}]}], "}"}], "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Text\>\"", ",", 
+           RowBox[{"FontFamily", "\[Rule]", "\"\<Source Code Pro\>\""}]}], 
+          "}"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Fourth", " ", "column"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"4", ",", "4"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Fifth", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"5", ",", "5"}], "}"}]}], "}"}], "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Text\>\"", ",", "Italic"}], "}"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Sixth", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"6", ",", "6"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Seventh", " ", "column"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"7", ",", "7"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Eight", " ", "column"}], " ", "*)"}], "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"2", ",", "r"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"8", ",", "8"}], "}"}]}], "}"}], "\[Rule]", 
+         "\"\<Text\>\""}]}], "\[IndentingNewLine]", "}"}]}], 
+     "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "Input",
+ ShowSelection->True,
+ CellOpen->False,
+ CellLabel->"In[32]:=",
+ CellID->1567762055],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Data entry\"\>", "\<\"Description\"\>", "\<\"Symbols\"\>", \
+"\<\"Authors\"\>", "\<\"Title\"\>", "\<\"Journal, publisher or \
+university\"\>", "\<\"Year\"\>", "\<\"Link or ISBN\"\>"},
+    {"\<\"Periodic table\"\>", "\<\"element names, atomic mass\"\>", \
+"\<\"$PeriodicTable\"\>", "\<\"\[LongDash]\"\>", "\<\"Atomic Weights of the \
+Elements 2015\"\>", "\<\"(web page)\"\>", "\<\"2015\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://www.sbcs.qmul.ac.uk/iupac/AtWt/\"\>", True->
+        StyleBox["\<\"http://www.sbcs.qmul.ac.uk/iupac/AtWt/\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://www.sbcs.qmul.ac.uk/iupac/AtWt/"], None},
+       ButtonNote->"http://www.sbcs.qmul.ac.uk/iupac/AtWt/"],
+      Annotation[#, "http://www.sbcs.qmul.ac.uk/iupac/AtWt/", "Hyperlink"]& ]},
+    {"\<\"Scattering cross sections\"\>", "\<\"tabulated data for \
+photoelectric, Rayleigh, Compton and total scattering\"\>", \
+"\<\"AttenuationCoefficient\"\>", "\<\"Tom Schoonjans et al.\"\>", \
+"\<\"xraylib: a library for interactions of X-rays with matter\"\>", \
+"\<\"(web page)\"\>", "\<\"September 2017 (v. 3.3.0)\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{False->"\<\"https://github.com/tschoonj/xraylib\"\>", 
+        True->
+        StyleBox["\<\"https://github.com/tschoonj/xraylib\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["https://github.com/tschoonj/xraylib"], None},
+       ButtonNote->"https://github.com/tschoonj/xraylib"],
+      Annotation[#, "https://github.com/tschoonj/xraylib", "Hyperlink"]& ]},
+    {"\<\"Scattering factors\"\>", "\<\"tabulated coefficients\"\>", \
+"\<\"AtomicScatteringFactor\"\>", "\<\"D. Waasmaier and A. Kirfel\"\>", \
+"\<\"New analytical scattering-factor functions for free atoms and ions\"\>", \
+"\<\"Acta Cryst. (1995). A51, 416-431\"\>", "\<\"1995\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"https://doi.org/10.1107/S0108767394013292\"\>", True->
+        StyleBox["\<\"https://doi.org/10.1107/S0108767394013292\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["https://doi.org/10.1107/S0108767394013292"], None},
+       ButtonNote->"https://doi.org/10.1107/S0108767394013292"],
+      Annotation[#, "https://doi.org/10.1107/S0108767394013292", 
+       "Hyperlink"]& ]},
+    {"\<\"Scattering factors\"\>", "\<\"tabulated data for calculating \\!\\(\
+\\*SubscriptBox[\\(f\\), \\(0\\)]\\), \\!\\(\\*SuperscriptBox[\\(f\\), \\(\
+\[Prime]\\)]\\) and \\!\\(\\*SuperscriptBox[\\(f\\), \\(\[DoublePrime]\\)]\\)\
+\"\>", "\<\"AtomicScatteringFactor\"\>", "\<\"D. T. Cromer and D. A. Liberman\
+\"\>", "\<\"Anomalous dispersion calculations near to and on the \
+long-wavelength side of an absorption edge\"\>", "\<\"Acta Cryst. (1981). \
+A37, 267-268\"\>", "\<\"1981\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"https://doi.org/10.1107/S0567739481000600\"\>", True->
+        StyleBox["\<\"https://doi.org/10.1107/S0567739481000600\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["https://doi.org/10.1107/S0567739481000600"], None},
+       ButtonNote->"https://doi.org/10.1107/S0567739481000600"],
+      Annotation[#, "https://doi.org/10.1107/S0567739481000600", 
+       "Hyperlink"]& ]},
+    {"\<\"Scattering factors\"\>", "\<\"tabulated data for calculating \\!\\(\
+\\*SubscriptBox[\\(f\\), \\(0\\)]\\), \\!\\(\\*SuperscriptBox[\\(f\\), \\(\
+\[Prime]\\)]\\) and \\!\\(\\*SuperscriptBox[\\(f\\), \\(\[DoublePrime]\\)]\\)\
+\"\>", "\<\"AtomicScatteringFactor\"\>", "\<\"\[LongDash]\"\>", "\<\"ESRF \
+Anonymous FTP Server\"\>", "\<\"(web page)\"\>", "\<\"2013\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://ftp.esrf.eu/scisoft/xop2.3/DabaxFiles/\"\>", True->
+        
+        StyleBox["\<\"http://ftp.esrf.eu/scisoft/xop2.3/DabaxFiles/\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://ftp.esrf.eu/scisoft/xop2.3/DabaxFiles/"], None},
+       ButtonNote->"http://ftp.esrf.eu/scisoft/xop2.3/DabaxFiles/"],
+      Annotation[#, "http://ftp.esrf.eu/scisoft/xop2.3/DabaxFiles/", 
+       "Hyperlink"]& ]},
+    {"\<\"Space groups\"\>", "\<\"symmetry operations of unconventional space \
+groups\"\>", "\<\"$SpaceGroups\"\>", "\<\"Grosse-Kunstleve et al.\"\>", \
+"\<\"cctbx - Browse alternative space group setting\"\>", \
+"\<\"\[LongDash]\"\>", "\<\"\[LongDash]\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://cci.lbl.gov/cctbx/browse_settings.html\"\>", True->
+        
+        StyleBox["\<\"http://cci.lbl.gov/cctbx/browse_settings.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://cci.lbl.gov/cctbx/browse_settings.html"], None},
+       ButtonNote->"http://cci.lbl.gov/cctbx/browse_settings.html"],
+      Annotation[#, "http://cci.lbl.gov/cctbx/browse_settings.html", 
+       "Hyperlink"]& ]},
+    {"\<\"Transformation matrices\"\>", "\<\"matrices that tansforms A, B and \
+C-centred cells\"\>", "\<\"$TransformationMatrices\"\>", "\<\"Carmelo \
+Giacovazzo et al.\"\>", "\<\"Fundamentals of Crystallography (p. 141)\"\>", "\
+\<\"Oxford University Press\"\>", "\<\"1992 (1st. ed.)\"\>", \
+"\<\"9780198555780\"\>"},
+    {"\<\"Transformation matrices\"\>", "\<\"matrix for transforming from \
+crystallographic\\nto Cartesian system\"\>", \
+"\<\"$TransformationMatrices\"\>", "\<\"Maureen M. Julian\"\>", \
+"\<\"Foundations of Crystallography with Computer Applications\"\>", "\<\"CRC \
+Press\"\>", "\<\"2015 (2nd ed.)\"\>", "\<\"9781466552920\"\>"},
+    {"\<\"Unconventional space groups\"\>", "\<\"Hall symbols\"\>", \
+"\<\"$SpaceGroups\"\>", "\<\"R.W. Grosse-Kunstleve\"\>", "\<\"cctbx - \
+Multiple cell C or F and triple cell H settings\"\>", "\<\"\[LongDash]\"\>", \
+"\<\"October 2001\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"https://cci.lbl.gov/cctbx/multiple_cell.html\"\>", True->
+        StyleBox["\<\"https://cci.lbl.gov/cctbx/multiple_cell.html\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["https://cci.lbl.gov/cctbx/multiple_cell.html"], None},
+       ButtonNote->"https://cci.lbl.gov/cctbx/multiple_cell.html"],
+      Annotation[#, "https://cci.lbl.gov/cctbx/multiple_cell.html", 
+       "Hyperlink"]& ]},
+    {"\<\"Unconventional space groups\"\>", "\<\"Symmetry operations and \
+symbols of space groups\\nnot in the International Tables for Crystallography\
+\"\>", "\<\"$SpaceGroups\"\>", "\<\"Jeremy Karl Cockcroft\"\>", "\<\"A \
+Hypertext Book of Crystallographic Space Group Diagrams and Tables\"\>", \
+"\<\"Birkbeck College, University of London\"\>", "\<\"2016-02-01\"\>", 
+     TagBox[
+      ButtonBox[
+       PaneSelectorBox[{
+        False->"\<\"http://img.chem.ucl.ac.uk/sgp/mainmenu.htm\"\>", True->
+        StyleBox["\<\"http://img.chem.ucl.ac.uk/sgp/mainmenu.htm\"\>", 
+         "HyperlinkActive"]}, Dynamic[
+         CurrentValue["MouseOver"]],
+        BaseStyle->{"Hyperlink"},
+        FrameMargins->0,
+        ImageSize->Automatic],
+       BaseStyle->"Hyperlink",
+       ButtonData->{
+         URL["http://img.chem.ucl.ac.uk/sgp/mainmenu.htm"], None},
+       ButtonNote->"http://img.chem.ucl.ac.uk/sgp/mainmenu.htm"],
+      Annotation[#, "http://img.chem.ucl.ac.uk/sgp/mainmenu.htm", 
+       "Hyperlink"]& ]}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Center}}},
+   GridBoxBackground->{"Columns" -> {None}, "Rows" -> {None, {None, 
+        RGBColor[0.97, 0.97, 0.97]}}},
+   GridBoxDividers->{
+    "Columns" -> {False, {True}, False}, "Rows" -> {False, True}},
+   GridBoxItemSize->{"Columns" -> {{All}}, "Rows" -> {{Automatic}}},
+   GridBoxItemStyle->{
+    "Columns" -> {{Automatic}}, 
+     "RowsIndexed" -> {
+      1 -> {FontWeight -> "SemiBold", 11, FontFamily -> "Verdana"}}, 
+     "ItemsIndexed" -> {{{2, 11}, {1, 1}} -> {
+        "Text", FontWeight -> "SemiBold", Italic, 10}, {{2, 11}, {2, 2}} -> {
+        "Text", Italic, 10}, {{2, 11}, {3, 3}} -> {
+        "Text", FontFamily -> "Source Code Pro"}, {{2, 11}, {4, 4}} -> 
+       "Text", {{2, 11}, {5, 5}} -> {"Text", Italic}, {{2, 11}, {6, 6}} -> 
+       "Text", {{2, 11}, {7, 7}} -> "Text", {{2, 11}, {8, 8}} -> "Text"}}],
+  "Grid"]], "Output",
+ ShowCellLabel->False,
+ CellLabel->"Out[37]=",
+ CellID->1999329823]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"References",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 57.019167}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Tutorial", "language" -> "en", "paclet" -> 
+    "MaXrd", "status" -> "None", "summary" -> 
+    "This page contains references for the contents of this package that is \
+gathered from external sources. Local files are stored $MaXrdPath > \
+ExampleFiles > CIF > Default if available.", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$54615, "title" -> 
+    "References", "titlemodifier" -> "", "windowtitle" -> "References", 
+    "type" -> "Tutorial", "uri" -> "MaXrd/tutorial/References", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 2287, 53, 70, "AnchorBarGrid",ExpressionUUID->"7ad76b82-0fa9-41d8-8ef0-9970d4618f55",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[2894, 78, 47, 1, 70, "Title",ExpressionUUID->"2e3520c9-f848-4986-9ceb-9d341292e45f",
+ CellID->509267359],
+Cell[2944, 81, 17816, 317, 70, "TutorialJumpBox",ExpressionUUID->"8a28eb65-cdf5-42ec-8f1a-23a297ea1915"],
+Cell[20763, 400, 149, 4, 70, "Text",ExpressionUUID->"ae17a56f-c54d-4b07-a7d4-9ec8b32adfec",
+ CellID->1534169418],
+Cell[CellGroupData[{
+Cell[20937, 408, 51, 1, 70, "Section",ExpressionUUID->"692c44bb-df38-4ca7-b959-4f3e346efdbb",
+ CellID->746296040],
+Cell[CellGroupData[{
+Cell[21013, 413, 23251, 502, 70, "Input",ExpressionUUID->"ce7812c8-c822-4178-8c3f-a54b864d9926",
+ CellOpen->False,
+ CellID->53842780],
+Cell[44267, 917, 34198, 801, 70, "Output",ExpressionUUID->"17995502-5c9f-4798-b848-991a4856fd46",
+ CellID->1040009793]
+}, Open  ]],
+Cell[78480, 1721, 455, 13, 70, "Caption",ExpressionUUID->"0b49af1d-6704-4193-aa41-822c4349138d",
+ CellID->1095018320]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78972, 1739, 143, 5, 70, "Section",ExpressionUUID->"d32c1de9-6b86-4edc-818a-f9a07b3232ee",
+ CellID->1837080108],
+Cell[CellGroupData[{
+Cell[79140, 1748, 11707, 276, 70, "Input",ExpressionUUID->"e08f9c1a-bfce-4bd0-aa74-69231668eaca",
+ CellOpen->False,
+ CellID->2077245372],
+Cell[90850, 2026, 2468, 47, 70, "Output",ExpressionUUID->"17e31c59-1ddc-4921-896e-2d8a3d2c9df4",
+ CellID->320598152]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93367, 2079, 71, 1, 70, "Section",ExpressionUUID->"d3517b40-8215-44f4-bf8d-002d6679d760",
+ CellID->1666510947],
+Cell[CellGroupData[{
+Cell[93463, 2084, 16572, 369, 70, "Input",ExpressionUUID->"92e0ba1b-9550-4729-97db-53299db7b40b",
+ CellOpen->False,
+ CellID->1567762055],
+Cell[110038, 2455, 9599, 201, 70, "Output",ExpressionUUID->"903986e2-58c2-4969-bb42-defedcc525c3",
+ CellID->1999329823]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[119676, 2661, 23, 0, 70, "FooterCell",ExpressionUUID->"0503da9f-e449-4e51-b2f4-61cde936069d"]
+}
+]
+*)
+
+(* End of internal cache information *)

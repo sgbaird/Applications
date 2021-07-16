@@ -1,0 +1,1571 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     51347,       1562]
+NotebookOptionsPosition[     38894,       1291]
+NotebookOutlinePosition[     41313,       1351]
+CellTagsIndexPosition[     41227,       1346]
+WindowTitle->SystematicAbsentQ
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"StructureFactor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/StructureFactor"], "\<\"ReflectionList\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ReflectionList"], \
+"\<\"GetAtomicScatteringFactors\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetAtomicScatteringFactors"], \
+"\<\"GetSymmetryOperations\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetSymmetryOperations"], \
+"\<\"SymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentReflections"], \
+"\<\"SymmetryEquivalentReflectionsQ\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"], \
+"\<\"SymmetryEquivalentPositions\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentPositions"], \
+"\<\"ToStandardSetting\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ToStandardSetting"], "\<\"GetSymmetryData\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/GetSymmetryData"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/SystematicAbsentQ\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/SystematicAbsentQ"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+SystematicAbsentQ.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$40911], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/SystematicAbsentQ", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["SystematicAbsentQ", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["SystematicAbsentQ"]], 
+         "paclet:MaXrd/ref/SystematicAbsentQ"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["group", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["h", "TI"], ",", 
+          StyleBox["k", "TI"], ",", 
+          StyleBox["l", "TI"]}], "}"}]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["True"]], "paclet:ref/True"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " if the ",
+     Cell[BoxData[
+      StyleBox["hkl", "TI"]], "InlineFormula"],
+     " reflection is systematically absent for space ",
+     Cell[BoxData[
+      StyleBox["group", "TI"]], "InlineFormula"],
+     ", and ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["False"]], "paclet:ref/False"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " otherwise."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["SystematicAbsentQ"]], 
+         "paclet:MaXrd/ref/SystematicAbsentQ"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["group", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["1", "TR"]]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["2", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["2", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["2", "TR"]]}], "}"}], ",", 
+          StyleBox["\[Ellipsis]", "TR"]}], "}"}]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]returns a list where each reflection ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["hkl", "TI"], 
+       StyleBox["i", "TI"]]], "InlineFormula"],
+     " has been checked for systematical absence for space ",
+     Cell[BoxData[
+      StyleBox["group", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
+ CellID->1567016671]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->651513384],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "One may also enter the name of an entry in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " in ",
+ Cell[BoxData[
+  StyleBox["group", "TI"]], "InlineFormula"],
+ "; the space group will be found automatically."
+}], "Notes",
+ CellID->1146027753],
+
+Cell["\<\
+General extinction rules are applied, i.e. absences due to centring, screw \
+axes or glide planes.\
+\>", "Notes",
+ CellID->1067943069],
+
+Cell["Options:", "Notes",
+ CellID->309573796],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<Threshold\>\"", "0", Cell[TextData[{
+     "declare the reflection ",
+     Cell[BoxData[
+      FormBox[
+       StyleBox["hkl",
+        FontSlant->"Italic"], TraditionalForm]], "InlineMath"],
+     " extinct if ",
+     Cell[BoxData[
+      FormBox[
+       RowBox[{"F", "(", 
+        StyleBox["hkl",
+         FontSlant->"Italic"], ")"}], TraditionalForm]], "InlineMath"],
+     " is below this value (only checks if set to a number)"
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->433264717],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(9)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->2113812482],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1024412653],
+
+Cell[TextData[{
+ "Reflection ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"0", "\[VeryThinSpace]", "1", "\[VeryThinSpace]", 
+    OverscriptBox["2", "_"]}], TraditionalForm]], "InlineMath"],
+ " is systematic absent (extinct) for space group ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"I", "\[VeryThinSpace]", 
+    RowBox[{
+     SubscriptBox["4", "1"], "\[NegativeMediumSpace]", "/", "a"}], 
+    "\[VeryThinSpace]", "c", "\[VeryThinSpace]", "d"}], TraditionalForm]], 
+  "InlineMath"],
+ ":"
+}], "ExampleText",
+ CellID->1501746094],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<I41/acd\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", 
+     RowBox[{"-", "2"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1761869016],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->382413207]
+}, Open  ]],
+
+Cell[TextData[{
+ "while reflection ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[VeryThinSpace]", "2", "\[VeryThinSpace]", "3"}], 
+   TraditionalForm]], "InlineMath"],
+ " is not:"
+}], "ExampleText",
+ CellID->811705869],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<I41/acd\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->364753976],
+
+Cell[BoxData["False"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1386921356]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1037841017],
+
+Cell[TextData[{
+ "In the case of silicon, reflection ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[VeryThinSpace]", "1", "\[VeryThinSpace]", "1"}], 
+   TraditionalForm]], "InlineMath"],
+ " is not extinct, but ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "\[VeryThinSpace]", "2", "\[VeryThinSpace]", "3"}], 
+   TraditionalForm]], "InlineMath"],
+ " is. This follows from the reflection condition for face-centred crystals \
+(all Miller indices must be either odd or even)."
+}], "ExampleText",
+ CellID->861286987],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->656921421],
+
+Cell[BoxData["False"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->928766344]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->912572268],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1292834688]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->713372495],
+
+Cell["Multiple reflections:", "ExampleText",
+ CellID->250322264],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "3", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<CalciumFluoride\>\"", ",", "hkl"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1996192844],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "True", ",", "False", ",", "True", ",", "False", ",", "True", ",", 
+   "False"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->335831485]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "3"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1471240964],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"True", ",", "False", ",", "True"}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->916248526]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell["\<\
+It is faster to apply a list of reflections directly into the function \
+instead of mapping them over the function:\
+\>", "ExampleText",
+ CellID->1175398742],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"ReflectionList", "[", "2", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"First", "@", 
+    RowBox[{"AbsoluteTiming", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"SystematicAbsentQ", "[", 
+        RowBox[{"\"\<Silicon\>\"", ",", "#"}], "]"}], "&"}], "/@", "hkl"}], 
+     "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"First", "@", 
+    RowBox[{"AbsoluteTiming", "@", 
+     RowBox[{"SystematicAbsentQ", "[", 
+      RowBox[{"\"\<Silicon\>\"", ",", "hkl"}], "]"}]}]}]}], "}"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->129527103],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1.955271`", ",", "0.022661`"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->361753698]
+}, Open  ]],
+
+Cell[TextData[{
+ "It is ",
+ StyleBox["fastest",
+  FontSlant->"Italic"],
+ " to turn off the ",
+ Cell[BoxData["\"\<Threshold\>\""], "InlineFormula"],
+ " check, which it is by default. This is done giving it a non-numeric \
+setting, like ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["False"]], "paclet:ref/False"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", or setting it to a value ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[LessEqual]", "0"}], TraditionalForm]], "InlineMath"],
+ "."
+}], "ExampleText",
+ CellID->110741189]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Threshold\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[TextData[{
+ Cell[BoxData["SystematicAbsentQ"], "InlineFormula"],
+ " will return ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["True"]], "paclet:ref/True"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " (input reflection is extinct) if the structure factor of this reflection \
+is less than the threshold value set by this option. By the default, it is \
+set to ",
+ Cell[BoxData["0"], "InlineFormula"],
+ ", so it effectively turned off."
+}], "ExampleText",
+ CellID->1426519644],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StructureFactor", "[", 
+  RowBox[{"\"\<ManganeseSilicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", "1.0"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->760176046],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"10.594013569940133`", ",", 
+   TemplateBox[{
+     RowBox[{"-", "21.20244174620118`"}], 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->543956732]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<ManganeseSilicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1482317329],
+
+Cell[BoxData["False"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1595617589]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<ManganeseSilicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"\"\<Threshold\>\"", "\[Rule]", "15"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1681363847],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->937177123]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Applications",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->258228157],
+
+Cell[TextData[{
+ "When filtering away extinct reflections from a long list of reflections, \
+use ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Pick"]], "paclet:ref/Pick"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " instead of ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Select"]], "paclet:ref/Select"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". It is faster to run a list of reflections through ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SystematicAbsentQ"]], "paclet:MaXrd/ref/SystematicAbsentQ"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " instead of one reflection at a time, because then the function has to do \
+various checks and preparations only once."
+}], "ExampleText",
+ CellID->508380231],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"ReflectionList", "[", "5", "]"}]}], ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1046333553],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"First", "@", 
+  RowBox[{"AbsoluteTiming", "@", "\[IndentingNewLine]", 
+   RowBox[{"Select", "[", 
+    RowBox[{"hkl", ",", 
+     RowBox[{
+      RowBox[{"!", 
+       RowBox[{"SystematicAbsentQ", "[", 
+        RowBox[{"\"\<CalciumFluoride\>\"", ",", "#"}], "]"}]}], "&"}]}], 
+    "]"}]}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1357785208],
+
+Cell[BoxData["20.83049`"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1299085554]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"First", "@", 
+  RowBox[{"AbsoluteTiming", "@", "\[IndentingNewLine]", 
+   RowBox[{"Pick", "[", 
+    RowBox[{"hkl", ",", 
+     RowBox[{"SystematicAbsentQ", "[", 
+      RowBox[{"\"\<CalciumFluoride\>\"", ",", "hkl"}], "]"}], ",", "False"}], 
+    "]"}]}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->793340640],
+
+Cell[BoxData["0.087641`"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->264667029]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373],
+
+Cell["Point groups are not supported.", "ExampleText",
+ CellID->1596733856],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<mmm\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1709536584],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "InvalidSpaceGroup", 
+   "\"Unable to interpret \
+\[LeftGuillemet]\\!\\(\\*RowBox[{\\\"\\\\\\\"mmm\\\\\\\"\\\"}]\\)\
+\[RightGuillemet] as a space group.\"", 2, 1, 20, 26775811996559735324, 
+   "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1208412812],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1041281605]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SystematicAbsentQ", "[", 
+   RowBox[{"\"\<222\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Interpreted", " ", "as", " ", "space", " ", "group", " ", "#222", " ", 
+    RowBox[{"(", 
+     RowBox[{"Pn", "-", 
+      RowBox[{"3", "n"}]}], ")"}]}], " ", "*)"}]}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->2123146043],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1378225631]
+}, Open  ]],
+
+Cell[TextData[{
+ "Enter strings representing space groups or entries in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "ExampleText",
+ CellID->614602532],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->112131902],
+
+Cell[TextData[{
+ "Each reflection must be a ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["List"]], "paclet:ref/List"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " of three integers"
+}], "ExampleText",
+ CellID->1954232943],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "6"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->50124774],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "InvalidTuple", 
+   "\"Reflections (and coordinates) must be on a \
+{\\!\\(\\*\\nStyleBox[\\\"h\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"k\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"l\\\", \\\"TI\\\"]\\)} (or \
+{\\!\\(\\*\\nStyleBox[\\\"x\\\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"y\\\
+\", \\\"TI\\\"]\\), \\!\\(\\*\\nStyleBox[\\\"z\\\", \\\"TI\\\"]\\)}) form\"", 
+   2, 1, 21, 26775811996559735324, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1589736818],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1862647799]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SystematicAbsentQ", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1.", ",", "1.", ",", "1."}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->17659240],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "IntegerExpected", 
+   "\"One or more indices are not integers.\"", 2, 2, 22, 
+   26775811996559735324, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->642665597],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1585428016]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->245838079],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "SystematicAbsentQ"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Options", " ", 
+       RowBox[{"from", " ", "'"}], 
+       RowBox[{"StructureFactor", "'"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"\"\<Threshold\>\"", "\[Rule]", "0"}], "\[IndentingNewLine]", 
+     "}"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "SystematicAbsentQ"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", "_", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1797748409],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SystematicAbsentQ", "[", 
+   RowBox[{"group_String", ",", "hkl_List", ",", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "sgHM", ",", "centring", ",", "symop", ",", "r", ",", "t", ",", 
+      "\[Delta]", ",", "crystalQ", ",", "\[Lambda]", ",", "check"}], "}"}], 
+    ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", "Checking", " ", "and", " ", 
+      "processing", " ", "input", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"KeyExistsQ", "[", 
+        RowBox[{"$CrystalData", ",", "group"}], "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"sgHM", "=", 
+        RowBox[{"$CrystalData", "[", 
+         RowBox[{"group", ",", "\"\<SpaceGroup\>\""}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"sgHM", "=", "group"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"sgHM", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{"\"\<InterpretSpaceGroup\>\"", ",", "sgHM"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"InputCheck", "[", 
+      RowBox[{"hkl", ",", "\"\<Integer\>\""}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Loading", " ", "lattice", " ", "centring", " ", "vectors", " ", "and", 
+       " ", "symmetry", " ", "operations"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"sgHM", "=", 
+      RowBox[{"GetSymmetryData", "[", 
+       RowBox[{"sgHM", ",", "\"\<HermannMauguinFull\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"centring", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{"\"\<GetCentringVectors\>\"", ",", 
+        RowBox[{"StringTake", "[", 
+         RowBox[{"sgHM", ",", "1"}], "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"symop", "=", 
+      RowBox[{"GetSymmetryOperations", "[", "sgHM", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Procedure", " ", "for", " ", 
+       "checking", " ", "systematic", " ", "absence", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Useful", " ", "variables"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"\[Delta]", "=", 
+      RowBox[{"OptionValue", "[", "\"\<Threshold\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"crystalQ", "=", 
+      RowBox[{"KeyExistsQ", "[", 
+       RowBox[{"$CrystalData", ",", "group"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Ony", " ", "check", " ", "structure", " ", "factor", " ", "if", " ", 
+       "\[Delta]", " ", "is", " ", "numeric"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"NumericQ", "@", "\[Delta]"}], "&&", 
+        RowBox[{"\[Delta]", ">", "0"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+       
+       RowBox[{
+        RowBox[{"\[Lambda]", "=", 
+         RowBox[{"$CrystalData", "[", 
+          RowBox[{"group", ",", "\"\<Wavelength\>\""}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"MissingQ", "@", "\[Lambda]"}], ",", 
+          RowBox[{"\[Lambda]", "=", "1.0"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"crystalQ", "=", "False"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"check", "[", "input_", "]"}], ":=", 
+      RowBox[{"(", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"General", " ", "absence", " ", 
+         RowBox[{"(", "centring", ")"}]}], " ", "*)"}], "\[IndentingNewLine]",
+        "\t", 
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"AllTrue", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Dot", "[", 
+                RowBox[{"input", ",", "#"}], "]"}], "&"}], "/@", "centring"}],
+              ",", "IntegerQ"}], "]"}]}], ",", 
+          RowBox[{"Return", "@", "True"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Special", " ", "absence", " ", 
+          RowBox[{"(", "translation", ")"}]}], " ", "*)"}], 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"r", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Equal", "[", 
+            RowBox[{"input", ",", "#"}], "]"}], "&"}], "/@", 
+          RowBox[{"Transpose", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "@", 
+             RowBox[{"symop", "\[LeftDoubleBracket]", 
+              RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}]}], ".", 
+            "input"}], "]"}]}]}], ";", "\[IndentingNewLine]", "\t", 
+        RowBox[{"t", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"IntegerQ", "[", 
+            RowBox[{"input", ".", "#"}], "]"}], "&"}], "/@", 
+          RowBox[{"symop", "\[LeftDoubleBracket]", 
+           RowBox[{"All", ",", "2"}], "\[RightDoubleBracket]"}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"MemberQ", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", 
+             RowBox[{"{", 
+              RowBox[{"r", ",", "t"}], "}"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"True", ",", "False"}], "}"}]}], "]"}], ",", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"Return", "@", "True"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"Structure", " ", "factor", " ", "below", " ", "threshold"}],
+          " ", "*)"}], "\[IndentingNewLine]", "\t", 
+        RowBox[{"If", "[", 
+         RowBox[{"crystalQ", ",", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Abs", "[", 
+              RowBox[{"First", "@", "\[IndentingNewLine]", 
+               RowBox[{"StructureFactor", "[", 
+                RowBox[{
+                "group", ",", "input", ",", "\[Lambda]", ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}], ",", 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                 "\"\<IgnoreSystematicAbsence\>\"", "\[Rule]", "True"}]}], 
+                "]"}]}], "]"}], "<", "\[Delta]"}], ",", "\[IndentingNewLine]",
+             "\t", 
+            RowBox[{"Return", "@", "True"}]}], "]"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{
+         "Not", " ", "systematically", " ", "absent", " ", "reflection"}], 
+         " ", "*)"}], "\[IndentingNewLine]", "\t", "False"}], 
+       "\[IndentingNewLine]", "\t", ")"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Checking", " ", "one", " ", "or", " ", 
+       "more", " ", "reflections", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MatrixQ", "@", "hkl"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Multiple", " ", "reflections"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Reap", "[", 
+         RowBox[{"Do", "[", 
+          RowBox[{
+           RowBox[{"Sow", "[", 
+            RowBox[{"check", "@", 
+             RowBox[{
+             "hkl", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], 
+            "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", 
+             RowBox[{"Length", "@", "hkl"}]}], "}"}]}], "]"}], "]"}], 
+        "\[LeftDoubleBracket]", 
+        RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Single", " ", "reflection", " ", "input"}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"check", "[", "hkl", "]"}]}], "\[IndentingNewLine]", "]"}]}]}],
+    "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1810080420]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StructureFactor"]], "paclet:MaXrd/ref/StructureFactor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReflectionList"]], "paclet:MaXrd/ref/ReflectionList"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetAtomicScatteringFactors"]], 
+    "paclet:MaXrd/ref/GetAtomicScatteringFactors"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryOperations"]], 
+    "paclet:MaXrd/ref/GetSymmetryOperations"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentReflections"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentReflections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentReflectionsQ"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentPositions"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ToStandardSetting"]], "paclet:MaXrd/ref/ToStandardSetting"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryData"]], "paclet:MaXrd/ref/GetSymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->927060972]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"SystematicAbsentQ",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 16, 50.514592}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "SystematicAbsentQ[group, {h, k, l}] returns True if the hkl reflection \
+is systematically absent for space group, and False otherwise. \
+SystematicAbsentQ[group, {{h1, k1, l1}, {h2, k2, l2}, ...}] returns a list \
+where each reflection hkli has been checked for systematical absence for \
+space group.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "SystematicAbsentQ", "titlemodifier" -> "", "windowtitle" -> 
+    "SystematicAbsentQ", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/SystematicAbsentQ", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10121, 305, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"f9b29baa-c503-46a5-842c-bf9e42341395",
+   CellTags->"PrimaryExamplesSection",
+   CellID->2113812482]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 41027, 1339}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 4519, 106, 70, "AnchorBarGrid",ExpressionUUID->"814620a3-e04f-4ddf-91e3-a992dd01a256",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5133, 131, 174, 6, 70, "ObjectNameGrid",ExpressionUUID->"b63aafc4-ca0e-4213-ab1c-c1293d52867f"],
+Cell[5310, 139, 2746, 88, 70, "Usage",ExpressionUUID->"c56c6faf-8797-4ad9-bc70-fcf7aa610464",
+ CellID->1567016671]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8093, 232, 641, 19, 70, "NotesSection",ExpressionUUID->"29b02684-4a53-4565-9208-dd60e6b89502",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->651513384],
+Cell[8737, 253, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"737b564d-7df5-4e18-a9d6-c3e3978ab7dc"],
+Cell[8771, 255, 391, 13, 70, "Notes",ExpressionUUID->"a0f1f718-abfa-441b-91fe-deb203dd498a",
+ CellID->1146027753],
+Cell[9165, 270, 144, 4, 70, "Notes",ExpressionUUID->"3ce8035a-5926-448e-9054-53b6e77658a8",
+ CellID->1067943069],
+Cell[9312, 276, 45, 1, 70, "Notes",ExpressionUUID->"c11711bf-2f59-41ac-a30b-a0b178befd28",
+ CellID->309573796],
+Cell[9360, 279, 690, 19, 70, "3ColumnTableMod",ExpressionUUID->"63aacc6a-4e4b-46d6-b9c4-9b6590d11c5f",
+ CellID->433264717],
+Cell[10053, 300, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"297761e2-61eb-49ed-8aed-c35a1a66fcf3"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10121, 305, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"f9b29baa-c503-46a5-842c-bf9e42341395",
+ CellTags->"PrimaryExamplesSection",
+ CellID->2113812482],
+Cell[CellGroupData[{
+Cell[10414, 319, 196, 6, 70, "ExampleSection",ExpressionUUID->"108b5489-fdec-4833-849f-fba81dfdd73c",
+ CellID->1024412653],
+Cell[10613, 327, 519, 16, 70, "ExampleText",ExpressionUUID->"da306e1d-f688-441b-baa9-54de0ab8a6c5",
+ CellID->1501746094],
+Cell[CellGroupData[{
+Cell[11157, 347, 231, 7, 70, "Input",ExpressionUUID->"3ca86c70-da78-419b-a88d-e6f9f3aeff06",
+ CellID->1761869016],
+Cell[11391, 356, 74, 2, 70, "Output",ExpressionUUID->"aea4794c-0140-4c48-b413-20e20524f26b",
+ CellID->382413207]
+}, Open  ]],
+Cell[11480, 361, 220, 8, 70, "ExampleText",ExpressionUUID->"8ec03d2e-3d5b-43e4-97a3-bab86cbf3981",
+ CellID->811705869],
+Cell[CellGroupData[{
+Cell[11725, 373, 209, 6, 70, "Input",ExpressionUUID->"94969159-6424-4a1a-8272-709824f2d504",
+ CellID->364753976],
+Cell[11937, 381, 76, 2, 70, "Output",ExpressionUUID->"bedbab7d-6b47-41f5-a9cc-e589e696af92",
+ CellID->1386921356]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12050, 388, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"233536f9-65c1-454b-bf88-d12e82429f7a",
+ CellID->1037841017],
+Cell[12179, 393, 512, 14, 70, "ExampleText",ExpressionUUID->"07648318-f36d-41b9-a809-4bf5a7ad3c66",
+ CellID->861286987],
+Cell[CellGroupData[{
+Cell[12716, 411, 209, 6, 70, "Input",ExpressionUUID->"ff67b9ab-3393-4966-abeb-e9386a1d2dc0",
+ CellID->656921421],
+Cell[12928, 419, 75, 2, 70, "Output",ExpressionUUID->"979ee03e-dbbd-450d-839e-043fcc58c692",
+ CellID->928766344]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13040, 426, 209, 6, 70, "Input",ExpressionUUID->"192f86ae-d465-47b6-b47a-1925c6903cb4",
+ CellID->912572268],
+Cell[13252, 434, 75, 2, 70, "Output",ExpressionUUID->"22c4ca13-b854-4ff2-82f0-1ebe1c53a215",
+ CellID->1292834688]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13376, 442, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"9d164d70-bc76-4f3a-873f-68a69fb5e1ea",
+ CellID->713372495],
+Cell[13504, 447, 64, 1, 70, "ExampleText",ExpressionUUID->"00a45fbc-4260-4ed8-9d39-3ed80157d9a0",
+ CellID->250322264],
+Cell[CellGroupData[{
+Cell[13593, 452, 703, 21, 70, "Input",ExpressionUUID->"d80bfcd1-5b52-43dd-8cb5-a7eebf18c497",
+ CellID->1996192844],
+Cell[14299, 475, 184, 6, 70, "Output",ExpressionUUID->"8f41fd45-9675-4a18-85a9-72417863f5d1",
+ CellID->335831485]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14520, 486, 399, 12, 70, "Input",ExpressionUUID->"427674d2-dc82-4e35-8a56-fc715310d261",
+ CellID->1471240964],
+Cell[14922, 500, 136, 4, 70, "Output",ExpressionUUID->"26bc53eb-3902-420f-99b8-5007b4b2a107",
+ CellID->916248526]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15119, 511, 187, 6, 70, "ExampleSection",ExpressionUUID->"44c443f0-f68c-424f-878b-e1cca225a7a7",
+ CellID->1293636265],
+Cell[15309, 519, 167, 4, 70, "ExampleText",ExpressionUUID->"e077c3a3-d599-423b-b367-474b02b77147",
+ CellID->1175398742],
+Cell[CellGroupData[{
+Cell[15501, 527, 631, 19, 70, "Input",ExpressionUUID->"6d03c91f-cdda-43a0-89d7-fa70313fe800",
+ CellID->129527103],
+Cell[16135, 548, 132, 4, 70, "Output",ExpressionUUID->"5443c8ab-16be-4183-bf51-413a5534e03e",
+ CellID->361753698]
+}, Open  ]],
+Cell[16282, 555, 561, 20, 70, "ExampleText",ExpressionUUID->"c1371ca5-1c81-4cf7-ba74-b01936767358",
+ CellID->110741189]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[16880, 580, 189, 6, 70, "ExampleSection",ExpressionUUID->"df2aaed3-5f03-4ee9-9d42-2e91a16f787f",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[17094, 590, 201, 6, 70, "ExampleSubsection",ExpressionUUID->"9d460a78-9007-48bd-ac68-f558ff5da832",
+ CellID->1757724783],
+Cell[17298, 598, 517, 15, 70, "ExampleText",ExpressionUUID->"4a406c62-7ed0-4909-8d19-d497504e8468",
+ CellID->1426519644],
+Cell[CellGroupData[{
+Cell[17840, 617, 228, 6, 70, "Input",ExpressionUUID->"d25e0a72-a3e7-4709-b772-0ca6a418f293",
+ CellID->760176046],
+Cell[18071, 625, 307, 9, 70, "Output",ExpressionUUID->"650a654e-f1c9-48ff-a5e2-6dcb0c749ea8",
+ CellID->543956732]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18415, 639, 219, 6, 70, "Input",ExpressionUUID->"b498b46d-1601-496d-ab0e-0b90ee8d3bd6",
+ CellID->1482317329],
+Cell[18637, 647, 76, 2, 70, "Output",ExpressionUUID->"058754f6-20bb-4e76-b9f5-f7790f786a84",
+ CellID->1595617589]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18750, 654, 276, 7, 70, "Input",ExpressionUUID->"0c29064e-870a-4087-8b5e-e96f50bf2947",
+ CellID->1681363847],
+Cell[19029, 663, 74, 2, 70, "Output",ExpressionUUID->"08c03932-034a-4cf8-8931-44d86f8f7603",
+ CellID->937177123]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[19164, 672, 193, 6, 70, "ExampleSection",ExpressionUUID->"88d8d0f9-4fb3-4e2e-86eb-5cc75e06e521",
+ CellID->258228157],
+Cell[19360, 680, 826, 26, 70, "ExampleText",ExpressionUUID->"76b4fbd6-3ea9-4b92-85d1-9c54cd759bd4",
+ CellID->508380231],
+Cell[20189, 708, 155, 5, 70, "Input",ExpressionUUID->"dbd47673-e841-4e5a-94a1-12dc953e536c",
+ CellID->1046333553],
+Cell[CellGroupData[{
+Cell[20369, 717, 365, 11, 70, "Input",ExpressionUUID->"0fd1768b-fd7c-4191-b157-d420cbf0515c",
+ CellID->1357785208],
+Cell[20737, 730, 80, 2, 70, "Output",ExpressionUUID->"e6b7108a-20f3-4cd5-8f9f-59b4b9874835",
+ CellID->1299085554]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20854, 737, 331, 9, 70, "Input",ExpressionUUID->"3b757be7-a3d3-42a5-896f-aff04006b9e4",
+ CellID->793340640],
+Cell[21188, 748, 79, 2, 70, "Output",ExpressionUUID->"605d9d60-e173-4dac-8a76-8ffcc807a129",
+ CellID->264667029]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[21316, 756, 197, 6, 70, "ExampleSection",ExpressionUUID->"76d4f343-4c2d-42d1-9ed8-fca4adbed17c",
+ CellID->1305812373],
+Cell[21516, 764, 75, 1, 70, "ExampleText",ExpressionUUID->"9235f976-a013-4394-a45a-0fd00b82162e",
+ CellID->1596733856],
+Cell[CellGroupData[{
+Cell[21616, 769, 206, 6, 70, "Input",ExpressionUUID->"ec6f5eb3-aa8d-4f34-81b3-0700b3ea0a1e",
+ CellID->1709536584],
+Cell[21825, 777, 374, 9, 70, "Message",ExpressionUUID->"bafe4a2d-b2a1-4cec-91d3-4a256bca17a2",
+ CellID->1208412812],
+Cell[22202, 788, 79, 2, 70, "Output",ExpressionUUID->"9283eb74-e95b-42de-bfd7-ffde3dda1bea",
+ CellID->1041281605]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22318, 795, 471, 15, 70, "Input",ExpressionUUID->"d1547a3f-05d4-43ec-9101-8219f241a513",
+ CellID->2123146043],
+Cell[22792, 812, 75, 2, 70, "Output",ExpressionUUID->"271fcea0-3949-4251-8cb6-b73131fd85cb",
+ CellID->1378225631]
+}, Open  ]],
+Cell[22882, 817, 292, 10, 70, "ExampleText",ExpressionUUID->"1942f7c8-1173-47fd-8a49-669a4fd1b818",
+ CellID->614602532],
+Cell[CellGroupData[{
+Cell[23199, 831, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"b959b995-aaa3-4d88-877c-1bcf9884afb9",
+ CellID->112131902],
+Cell[23327, 836, 260, 10, 70, "ExampleText",ExpressionUUID->"e5eda853-45e3-4255-812c-0a3213fbcc51",
+ CellID->1954232943],
+Cell[CellGroupData[{
+Cell[23612, 850, 324, 10, 70, "Input",ExpressionUUID->"8c858af0-caa7-45d1-bd24-281ef9b53d8f",
+ CellID->50124774],
+Cell[23939, 862, 595, 11, 70, "Message",ExpressionUUID->"78915f75-0571-4b5d-9807-0d5510289be5",
+ CellID->1589736818],
+Cell[24537, 875, 79, 2, 70, "Output",ExpressionUUID->"93a82254-47b4-4d14-9a0f-cee4a2235a68",
+ CellID->1862647799]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24653, 882, 211, 6, 70, "Input",ExpressionUUID->"fce93ef2-c7bc-4822-96ea-029e858d3ca0",
+ CellID->17659240],
+Cell[24867, 890, 284, 7, 70, "Message",ExpressionUUID->"d84fe721-8200-4933-82df-9587b57627d0",
+ CellID->642665597],
+Cell[25154, 899, 79, 2, 70, "Output",ExpressionUUID->"8f05a4eb-4920-468c-9ff7-77bc4a40a181",
+ CellID->1585428016]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[25294, 908, 235, 8, 70, "ExampleSection",ExpressionUUID->"8d8115d5-c866-4531-9437-f38b6dc73e3a",
+ CellID->245838079],
+Cell[25532, 918, 879, 23, 70, "Input",ExpressionUUID->"a449e5f2-6701-4824-81b2-69325ebebdd7",
+ InitializationCell->False,
+ CellID->1797748409],
+Cell[26414, 943, 8776, 210, 70, "Input",ExpressionUUID->"a5819483-ea09-4a8b-8224-aeb66306360d",
+ InitializationCell->False,
+ CellID->1810080420]
+}, Closed]],
+Cell[35205, 1156, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"26a487a2-062b-48d5-bd09-bea8ad269780"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35273, 1161, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"3b79e7a3-691f-4ba4-b713-214406b41942",
+ CellID->1255426704],
+Cell[35426, 1170, 2989, 93, 70, "SeeAlso",ExpressionUUID->"9b80daa2-d726-404f-839d-3945f4e898cf",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38452, 1268, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"2e05ef16-df96-4d31-b244-2e81a8c22f76",
+ CellID->38303248],
+Cell[38611, 1277, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"fe6ce007-cf94-49f0-b630-8e65d6a86efa"],
+Cell[38645, 1279, 207, 7, 70, "MoreAbout",ExpressionUUID->"d0b0a46c-bf35-4fba-b49f-5d20bb594863",
+ CellID->927060972]
+}, Open  ]],
+Cell[38867, 1289, 23, 0, 70, "FooterCell",ExpressionUUID->"37b9500a-2d66-4695-bb5c-4d78641b2af7"]
+}
+]
+*)
+
+(* End of internal cache information *)

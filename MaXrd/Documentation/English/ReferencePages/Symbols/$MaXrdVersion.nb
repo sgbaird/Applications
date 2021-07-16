@@ -1,0 +1,491 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15866,        482]
+NotebookOptionsPosition[     11182,        376]
+NotebookOutlinePosition[     13344,        432]
+CellTagsIndexPosition[     13259,        427]
+WindowTitle->$MaXrdVersion
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"RelatedFunctionsGraph\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/RelatedFunctionsGraph"], "\<\"$MaXrdChangelog\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdChangelog"], "\<\"$MaXrdPath\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdPath"], "\<\"$MaXrdFunctions\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$MaXrdFunctions"], "\<\"$GroupSymbolRedirect\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$GroupSymbolRedirect"], "\<\"InputCheck\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/InputCheck"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/$MaXrdVersion\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/$MaXrdVersion"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/$\
+MaXrdVersion.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$47413], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/$MaXrdVersion", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["$MaXrdVersion", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$MaXrdVersion"]], "paclet:MaXrd/ref/$MaXrdVersion"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " \[LineSeparator]returns the current version of the ",
+     StyleBox["MaXrd",
+      FontSlant->"Italic"],
+     " package."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1713708260],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "This function returns a string, similar to the global ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$Version"]], "paclet:ref/$Version"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ "."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->244052256],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->92500822],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$MaXrdVersion"], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1917368917],
+
+Cell[BoxData["\<\"2.4.0\"\>"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1067445560]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->352555645],
+
+Cell[BoxData[
+ RowBox[{"$MaXrdVersion", ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"dir", ",", "p"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Load", " ", "current", " ", "version"}], " ", "*)"}], 
+    "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"dir", "=", "$MaXrdPath"}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"p", "=", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"dir", ",", "\"\<PacletInfo.m\>\""}], "}"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"First", "@", 
+      RowBox[{"StringCases", "[", 
+       RowBox[{
+        RowBox[{"Import", "[", 
+         RowBox[{"p", ",", "\"\<String\>\""}], "]"}], ",", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{
+         RowBox[{"Shortest", "[", 
+          RowBox[{
+          "Whitespace", "~~", "\"\<Version -> \\\"\>\"", "~~", "v__", "~~", 
+           "\"\<\\\"\>\""}], "]"}], "\[RuleDelayed]", "v"}]}], "]"}]}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[1]:=",
+ CellID->915240904]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["RelatedFunctionsGraph"]], 
+    "paclet:MaXrd/ref/RelatedFunctionsGraph"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdChangelog"]], "paclet:MaXrd/ref/$MaXrdChangelog"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdPath"]], "paclet:MaXrd/ref/$MaXrdPath"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$MaXrdFunctions"]], "paclet:MaXrd/ref/$MaXrdFunctions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$GroupSymbolRedirect"]], 
+    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->2030638573]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"$MaXrdVersion",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 17.716497}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "$MaXrdVersion returns the current version of the MaXrd package.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "$MaXrdVersion", 
+    "titlemodifier" -> "", "windowtitle" -> "$MaXrdVersion", "type" -> 
+    "Symbol", "uri" -> "MaXrd/ref/$MaXrdVersion", "WorkflowDockedCell" -> ""},
+   "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6444, 194, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"cb051171-2098-40a3-8125-c11738cf3039",
+   CellTags->"PrimaryExamplesSection",
+   CellID->244052256]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 13061, 420}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 4108, 100, 70, "AnchorBarGrid",ExpressionUUID->"c3d0863b-fb73-40a9-8e68-b414dfe2fe34",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4718, 125, 170, 6, 70, "ObjectNameGrid",ExpressionUUID->"ab405baa-5dd9-421e-9184-a7f5bf6d2943"],
+Cell[4891, 133, 505, 16, 70, "Usage",ExpressionUUID->"866daf1c-831f-4e2f-98b5-7162bdca33aa",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5433, 154, 630, 19, 70, "NotesSection",ExpressionUUID->"e09e64cf-cb49-4c1e-935a-3b9f6afdf133",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1713708260],
+Cell[6066, 175, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"dac0e418-e770-4cda-b2dc-4cc26f60d1fb"],
+Cell[6100, 177, 273, 10, 70, "Notes",ExpressionUUID->"15101e47-b033-4c5b-83a6-490b89e9283c",
+ CellID->1067943069],
+Cell[6376, 189, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"cd655a81-9b99-4e43-b221-33027122ff4b"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6444, 194, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"cb051171-2098-40a3-8125-c11738cf3039",
+ CellTags->"PrimaryExamplesSection",
+ CellID->244052256],
+Cell[CellGroupData[{
+Cell[6736, 208, 194, 6, 70, "ExampleSection",ExpressionUUID->"c2dd1098-6cd9-47a2-8d99-6e9c097dbca1",
+ CellID->92500822],
+Cell[CellGroupData[{
+Cell[6955, 218, 83, 2, 70, "Input",ExpressionUUID->"832ec8b0-1794-4f45-bbeb-dbcb7ebae0ef",
+ CellID->1917368917],
+Cell[7041, 222, 84, 2, 70, "Output",ExpressionUUID->"527979ab-ca1c-44cd-80cd-f282535c3ebc",
+ CellID->1067445560]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7174, 230, 235, 8, 70, "ExampleSection",ExpressionUUID->"b3284a6c-3c2a-4ac9-bd92-b66df27a4e65",
+ CellID->352555645],
+Cell[7412, 240, 1168, 31, 70, "Input",ExpressionUUID->"b13ed3e1-319b-402d-8a7f-018473e23b32",
+ InitializationCell->False,
+ CellID->915240904]
+}, Closed]],
+Cell[8595, 274, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"e2124193-318b-4fd3-a205-bd9fb0c17d03"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8663, 279, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"0272a6ce-3320-4bd3-94af-a778daa2f4a2",
+ CellID->1255426704],
+Cell[8816, 288, 1886, 60, 70, "SeeAlso",ExpressionUUID->"bcf70620-350b-471e-a715-8e8a532649fd",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10739, 353, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"09ad53f1-5a21-4e7c-b5fc-834c2c4da565",
+ CellID->38303248],
+Cell[10898, 362, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"7ef01423-7e40-4eef-8f37-91d45916051f"],
+Cell[10932, 364, 208, 7, 70, "MoreAbout",ExpressionUUID->"0b470c79-b32e-4897-aeff-d84ca5e6fcd3",
+ CellID->2030638573]
+}, Open  ]],
+Cell[11155, 374, 23, 0, 70, "FooterCell",ExpressionUUID->"43bfb1e7-d543-4c66-99d7-37f84f3e3379"]
+}
+]
+*)
+
+(* End of internal cache information *)

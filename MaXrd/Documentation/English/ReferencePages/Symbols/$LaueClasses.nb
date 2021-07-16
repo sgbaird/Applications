@@ -1,0 +1,572 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18534,        563]
+NotebookOptionsPosition[     13114,        438]
+NotebookOutlinePosition[     15320,        495]
+CellTagsIndexPosition[     15235,        490]
+WindowTitle->$LaueClasses
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"GetLaueClass\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetLaueClass"], "\<\"$PointGroups\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$PointGroups"], "\<\"$SpaceGroups\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/$SpaceGroups"], "\<\"MillerNotationToString\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/MillerNotationToString"], \
+"\<\"MillerNotationToList\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/MillerNotationToList"], "\<\"ToStandardSetting\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ToStandardSetting"], "\<\"GetSymmetryData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetSymmetryData"], \
+"\<\"SymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentReflections"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/$LaueClasses\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/$LaueClasses"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/$LaueClasses.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$44834], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/$LaueClasses", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["$LaueClasses", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$LaueClasses"]], "paclet:MaXrd/ref/$LaueClasses"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     "\[LineSeparator]is a subset of the ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["$PointGroups"]], "paclet:MaXrd/ref/$PointGroups"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " association, containing only the 11 centrosymmetric point groups."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->772771044],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2129323099],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Keys", "@", "$LaueClasses"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->326230165],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"-1\"\>", ",", "\<\"2/m\"\>", ",", "\<\"mmm\"\>", 
+   ",", "\<\"4/m\"\>", ",", "\<\"4/mmm\"\>", ",", "\<\"-3\"\>", 
+   ",", "\<\"-3m\"\>", ",", "\<\"6/m\"\>", ",", "\<\"6/mmm\"\>", 
+   ",", "\<\"m-3\"\>", ",", "\<\"m-3m\"\>"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1953550]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1432594986],
+
+Cell["The Laue classes are the centrosymmetric point groups.", "ExampleText",
+ CellID->1875691997],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$LaueClasses", "\[Equal]", 
+  RowBox[{"Select", "[", 
+   RowBox[{"$PointGroups", ",", 
+    RowBox[{
+     RowBox[{"#", "[", 
+      RowBox[{"\"\<Properties\>\"", ",", "\"\<Centrosymmetric\>\""}], "]"}], 
+     "&"}]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1014174888],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->937691311]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell["\<\
+If you want formatted version of the symbols, one way to get them is with the \
+following:\
+\>", "ExampleText",
+ CellID->1092197193],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"$PointGroups", "[", 
+    RowBox[{"#", ",", "\"\<Symbol\>\""}], "]"}], "&"}], "/@", 
+  RowBox[{"Keys", "@", "$LaueClasses"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1861187179],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"\\!\\(\\*OverscriptBox[\\(1\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"2/m\"\>", ",", "\<\"mmm\"\>", ",", "\<\"4/m\"\>", 
+   ",", "\<\"4/mmm\"\>", 
+   ",", "\<\"\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>", 
+   ",", "\<\"6/m\"\>", ",", "\<\"6/mmm\"\>", 
+   ",", "\<\"m\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)\"\>", 
+   ",", "\<\"m\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->279706214]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2044274898],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"$LaueClasses", "::", "notLaue"}], "=", 
+   "\"\<\[LeftGuillemet]`1`\[RightGuillemet] is not a valid Laue \
+class.\>\""}], ";"}]], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1248172079],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$LaueClasses", ":=", 
+   RowBox[{"$LaueClasses", "=", 
+    RowBox[{"$PointGroups", "\[LeftDoubleBracket]", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<-1\>\"", ",", "\"\<2/m\>\"", ",", "\"\<mmm\>\"", ",", 
+       "\"\<4/m\>\"", ",", "\"\<4/mmm\>\"", ",", "\"\<-3\>\"", ",", 
+       "\"\<-3m\>\"", ",", "\"\<6/m\>\"", ",", "\"\<6/mmm\>\"", ",", 
+       "\"\<m-3\>\"", ",", "\"\<m-3m\>\""}], "}"}], 
+     "\[RightDoubleBracket]"}]}]}], ";"}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->1407867857]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLaueClass"]], "paclet:MaXrd/ref/GetLaueClass"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$PointGroups"]], "paclet:MaXrd/ref/$PointGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["MillerNotationToString"]], 
+    "paclet:MaXrd/ref/MillerNotationToString"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["MillerNotationToList"]], 
+    "paclet:MaXrd/ref/MillerNotationToList"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ToStandardSetting"]], "paclet:MaXrd/ref/ToStandardSetting"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryData"]], "paclet:MaXrd/ref/GetSymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentReflections"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentReflections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1865831285]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"$LaueClasses",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 17, 7.010870}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "$LaueClasses is a subset of the $PointGroups association, containing \
+only the 11 centrosymmetric point groups.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "$LaueClasses", "titlemodifier" -> "", 
+    "windowtitle" -> "$LaueClasses", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/$LaueClasses", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5853, 163, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"6b854013-7ac1-4ec9-a0e5-ca9275af222e",
+   CellTags->"PrimaryExamplesSection",
+   CellID->772771044]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 15037, 483}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[584, 21, 4345, 105, 70, "AnchorBarGrid",ExpressionUUID->"c1fe2dfc-9e26-4139-832f-5fe6286cae83",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4954, 130, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"ce1d0c2f-6ff9-48a5-a8f1-6e429444ad47"],
+Cell[5126, 138, 690, 20, 70, "Usage",ExpressionUUID->"2c51f571-1c33-4f7a-b8cc-6887b2642930",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5853, 163, 267, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"6b854013-7ac1-4ec9-a0e5-ca9275af222e",
+ CellTags->"PrimaryExamplesSection",
+ CellID->772771044],
+Cell[CellGroupData[{
+Cell[6145, 177, 196, 6, 70, "ExampleSection",ExpressionUUID->"563c5ac0-da8a-4446-99a4-9dffc9c8d0b9",
+ CellID->2129323099],
+Cell[CellGroupData[{
+Cell[6366, 187, 106, 3, 70, "Input",ExpressionUUID->"75c2270e-55f0-4c89-97b4-fa961bb673bc",
+ CellID->326230165],
+Cell[6475, 192, 329, 7, 70, "Output",ExpressionUUID->"9756c94b-e482-4b02-a055-20d87d7bfb31",
+ CellID->1953550]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6841, 204, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"ff976cac-c1a1-49dc-be39-b7faa45601e5",
+ CellID->1432594986],
+Cell[6970, 209, 98, 1, 70, "ExampleText",ExpressionUUID->"a2444dc6-f925-433b-ae80-f8a54534b629",
+ CellID->1875691997],
+Cell[CellGroupData[{
+Cell[7093, 214, 302, 9, 70, "Input",ExpressionUUID->"7618089f-05c2-4109-b30d-38a9f20e3a70",
+ CellID->1014174888],
+Cell[7398, 225, 74, 2, 70, "Output",ExpressionUUID->"697de467-8d55-408f-b412-00629f4c0192",
+ CellID->937691311]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7533, 234, 187, 6, 70, "ExampleSection",ExpressionUUID->"ec8310b2-d771-4a1c-a409-d23c4f996660",
+ CellID->1293636265],
+Cell[7723, 242, 142, 4, 70, "ExampleText",ExpressionUUID->"86ff9c08-c98b-43c4-9cf1-7734e5665e42",
+ CellID->1092197193],
+Cell[CellGroupData[{
+Cell[7890, 250, 227, 7, 70, "Input",ExpressionUUID->"c2365782-2f53-4a27-a72b-917d1262e670",
+ CellID->1861187179],
+Cell[8120, 259, 555, 12, 70, "Output",ExpressionUUID->"17d05677-76c7-416c-9220-437b8ae653f4",
+ CellID->279706214]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8724, 277, 236, 8, 70, "ExampleSection",ExpressionUUID->"70f3c561-3d03-4321-9a49-67583b211924",
+ CellID->2044274898],
+Cell[8963, 287, 257, 8, 70, "Input",ExpressionUUID->"2fed682b-f0de-4608-871b-7213316cd1df",
+ InitializationCell->False,
+ CellID->1248172079],
+Cell[9223, 297, 600, 15, 70, "Input",ExpressionUUID->"ccb78bfd-3bad-48f5-bb37-d329ebc2711f",
+ InitializationCell->False,
+ CellID->1407867857]
+}, Closed]],
+Cell[9838, 315, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"1d55b9fd-4cb8-47bf-8562-5d953fdce5fd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9906, 320, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"dad52cb9-2a6e-45d2-ac31-cdd1699431f7",
+ CellID->1255426704],
+Cell[10059, 329, 2575, 81, 70, "SeeAlso",ExpressionUUID->"9b97e2b7-245f-4360-b4cb-e703d56958c7",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12671, 415, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"0e020444-b95a-476f-bfb7-dd9866da6367",
+ CellID->38303248],
+Cell[12830, 424, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"8e6262ca-9133-41c4-899a-a81e72e96a32"],
+Cell[12864, 426, 208, 7, 70, "MoreAbout",ExpressionUUID->"e5689419-7752-4d96-9d13-53fe19f869a0",
+ CellID->1865831285]
+}, Open  ]],
+Cell[13087, 436, 23, 0, 70, "FooterCell",ExpressionUUID->"1c520739-617b-4a61-91fc-250ece74e9e9"]
+}
+]
+*)
+
+(* End of internal cache information *)

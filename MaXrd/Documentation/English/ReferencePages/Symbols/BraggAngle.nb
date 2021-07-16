@@ -1,0 +1,1823 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     58701,       1814]
+NotebookOptionsPosition[     45019,       1516]
+NotebookOutlinePosition[     47951,       1583]
+CellTagsIndexPosition[     47865,       1578]
+WindowTitle->BraggAngle
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"GetAtomicScatteringFactors\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetAtomicScatteringFactors"], \
+"\<\"AttenuationCoefficient\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/AttenuationCoefficient"], "\<\"CrystalDensity\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/CrystalDensity"], "\<\"GetCrystalMetric\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetCrystalMetric"], "\<\"DarwinWidth\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/DarwinWidth"], "\<\"ImportCrystalData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ImportCrystalData"], \
+"\<\"MillerNotationToString\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/MillerNotationToString"], \
+"\<\"InterplanarSpacing\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/InterplanarSpacing"], "\<\"GetLatticeParameters\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetLatticeParameters"], \
+"\<\"SymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentReflections"], \
+"\<\"ReciprocalSpaceSimulation\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ReciprocalSpaceSimulation"], \
+"\<\"ReflectionList\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ReflectionList"], "\<\"StructureFactor\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/StructureFactor"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"MaXrd/ref/BraggAngle\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/BraggAngle"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/BraggAngle.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$10682], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/BraggAngle", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["BraggAngle", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["crystal", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["h", "TI"], ",", 
+          StyleBox["k", "TI"], ",", 
+          StyleBox["l", "TI"]}], "}"}]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns the Bragg angle of reflection ",
+     Cell[BoxData[
+      StyleBox["hkl", "TI"]], "InlineFormula"],
+     " for ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " at the stored wavelength."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["crystal", "TI"], ",", 
+        StyleBox["\[Lambda]", "TR"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["h", "TI"], ",", 
+          StyleBox["k", "TI"], ",", 
+          StyleBox["l", "TI"]}], "}"}]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]returns the Bragg angle of reflection ",
+     Cell[BoxData[
+      StyleBox["hkl", "TI"]], "InlineFormula"],
+     " for ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " at wavelength ",
+     Cell[BoxData[
+      StyleBox["\[Lambda]", "TR"]], "InlineFormula"],
+     "."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["crystal", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["1", "TR"]]}], "}"}], ",", 
+          StyleBox["\[Ellipsis]", "TR"], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["n", "TI"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["n", "TI"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["n", "TI"]]}], "}"}]}], "}"}]}], "]"}]], 
+      "InlineFormula"],
+     "\[LineSeparator]returns the Bragg angle of the ",
+     Cell[BoxData[
+      StyleBox["n", "TI"]], "InlineFormula"],
+     " reflections ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["hkl", "TI"], 
+       StyleBox["i", "TI"]]], "InlineFormula"],
+     " for ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " at the stored wavelength."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["crystal", "TI"], ",", 
+        StyleBox["\[Lambda]", "TR"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["1", "TR"]]}], "}"}], ",", 
+          StyleBox["\[Ellipsis]", "TR"], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["n", "TI"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["n", "TI"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["n", "TI"]]}], "}"}]}], "}"}]}], "]"}]], 
+      "InlineFormula"],
+     "\[LineSeparator]returns the Bragg angle of the ",
+     Cell[BoxData[
+      StyleBox["n", "TI"]], "InlineFormula"],
+     " reflections ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["hkl", "TI"], 
+       StyleBox["i", "TI"]]], "InlineFormula"],
+     " for ",
+     Cell[BoxData[
+      StyleBox["crystal", "TI"]], "InlineFormula"],
+     " at wavelength ",
+     Cell[BoxData[
+      StyleBox["\[Lambda]", "TR"]], "InlineFormula"],
+     "."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["G", "TI"], ",", 
+        StyleBox["\[Lambda]", "TR"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["h", "TI"], ",", 
+          StyleBox["k", "TI"], ",", 
+          StyleBox["l", "TI"]}], "}"}]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]returns the Bragg angle of reflection ",
+     Cell[BoxData[
+      StyleBox["hkl", "TI"]], "InlineFormula"],
+     " associated with metric ",
+     Cell[BoxData[
+      StyleBox["G", "TI"]], "InlineFormula"],
+     " at wavelength ",
+     Cell[BoxData[
+      StyleBox["\[Lambda]", "TR"]], "InlineFormula"],
+     "."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["G", "TI"], ",", 
+        StyleBox["\[Lambda]", "TR"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["1", "TR"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["1", "TR"]]}], "}"}], ",", 
+          StyleBox["\[Ellipsis]", "TR"], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["h", "TI"], 
+             StyleBox["n", "TI"]], ",", 
+            SubscriptBox[
+             StyleBox["k", "TI"], 
+             StyleBox["n", "TI"]], ",", 
+            SubscriptBox[
+             StyleBox["l", "TI"], 
+             StyleBox["n", "TI"]]}], "}"}]}], "}"}]}], "]"}]], 
+      "InlineFormula"],
+     "\[LineSeparator]returns the Bragg angle of reflection ",
+     Cell[BoxData[
+      SubscriptBox[
+       StyleBox["hkl", "TI"], 
+       StyleBox["i", "TI"]]], "InlineFormula"],
+     " associated with metric ",
+     Cell[BoxData[
+      StyleBox["G", "TI"]], "InlineFormula"],
+     " at wavelength ",
+     Cell[BoxData[
+      StyleBox["\[Lambda]", "TR"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "Rows" -> {None, None, None, None, None, {None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1091008126],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ "The Bragg angle ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "B"], TraditionalForm]], "InlineMath"],
+ " is defined from Bragg's law:"
+}], "Notes",
+ CellID->2117176998],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    StyleBox["2",
+     FontWeight->"Plain"], 
+    StyleBox[
+     SubscriptBox[
+      StyleBox["d",
+       FontWeight->"Plain"], "hkl"],
+     FontWeight->"Plain"], 
+    StyleBox["sin",
+     FontWeight->"Plain"], " ", 
+    StyleBox[
+     SubscriptBox["\[Theta]", "B"],
+     FontWeight->"Plain"]}], 
+   StyleBox["=",
+    FontWeight->"Plain"], 
+   StyleBox["\[Lambda]",
+    FontWeight->"Plain"]}], TraditionalForm]], "Input",
+ TextAlignment->Center,
+ CellID->866918373],
+
+Cell[TextData[{
+ "The scattering angle usually measured in diffraction experiments is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", 
+    SubscriptBox["\[Theta]", "B"]}], TraditionalForm]], "InlineMath"],
+ ". "
+}], "Notes",
+ CellID->694873855],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["crystal", "TI"]], "InlineFormula"],
+ " may either be a key in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". The crystal metric ",
+ Cell[BoxData[
+  StyleBox["G", "TI"]], "InlineFormula"],
+ " must be a ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"3", "\[Times]", "3"}], TraditionalForm]], "InlineMath"],
+ " matrix."
+}], "Notes",
+ CellID->1067943069],
+
+Cell[TextData[{
+ "Output may be ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Undefined"]], "paclet:ref/Undefined"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " if the wavelength is too small and/or the reflections is too far out in \
+reciprocal space."
+}], "Notes",
+ CellID->1808733708],
+
+Cell["Options:", "Notes",
+ CellID->676761489],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<AngleThreshold\>\"", 
+    RowBox[{"90.", "*", "Degree"}], Cell["\<\
+ignore relfections with Bragg angles [degree] above this limit\
+\>", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<Units\>\"", 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[TextData[{
+     "whether to return output as ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Quantity"]], "paclet:ref/Quantity"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"]
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}},
+ CellID->410498224],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(14)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1358195596],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1589698009],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "0.71069", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1055983554],
+
+Cell[BoxData[
+ TemplateBox[{"12.533376573373166`", 
+   RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+   "\"AngularDegrees\""},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1710751508]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->2119003765],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Quartz\>\"", ",", "1.5418", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1521154853],
+
+Cell[BoxData[
+ TemplateBox[{"39.97322627801922`", 
+   RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+   "\"AngularDegrees\""},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->432145750]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell["\<\
+Lists of reflections are thread into the function automatically:\
+\>", "ExampleText",
+ CellID->2056153890],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "3", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Ferrite\>\"", ",", "1.5418", ",", "hkl"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1166892573],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"32.53865464248473`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"27.762511953319148`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"36.967021556560894`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"68.68806438493125`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"75.84933006377719`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", "Undefined"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1986084777]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1367484775],
+
+Cell["\<\
+The metric matrix may be put in directly instead of a crystal:\
+\>", "ExampleText",
+ CellID->946623231],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"G", "=", 
+  RowBox[{"GetCrystalMetric", "[", "\"\<Silicon\>\"", "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1024328739],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"29.494457574400002`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "29.494457574400002`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.`", ",", "29.494457574400002`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1457175621]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"G", ",", "1.234", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1416348419],
+
+Cell[BoxData[
+ TemplateBox[{"11.348582800227222`", 
+   RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+   "\"AngularDegrees\""},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1289462195]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"AngleThreshold\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->2070559211],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Lambda]", "=", "0.71069"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "5", ",", "7"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"9", ",", "3", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "6", ",", "8"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "\[Lambda]", ",", "hkl"}], "]"}]}], "Input",\
+
+ CellLabel->"In[1]:=",
+ CellID->1093653203],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"34.516562442708086`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"44.560624461987075`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"], ",", 
+   TemplateBox[{"41.85612771206595`", 
+     RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+     "\"AngularDegrees\""},
+    "QuantityPostfix"]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->38726369]
+}, Open  ]],
+
+Cell["Let us now impose a threshold:", "ExampleText",
+ CellID->971896805],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "\[Lambda]", ",", "hkl", ",", 
+   RowBox[{"\"\<AngleThreshold\>\"", "\[Rule]", 
+    RowBox[{"35", "\[Degree]"}]}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1475199060],
+
+Cell[BoxData[
+ TemplateBox[{"34.516562442708086`", 
+   RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+   "\"AngularDegrees\""},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1128907987]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"Units\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Silver\>\"", ",", "1.9373", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1450769949],
+
+Cell[BoxData["41.61969755533672`"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->585838686]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->196453272],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "3", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "1.5418", ",", "hkl", ",", 
+   RowBox[{"\"\<Units\>\"", "\[Rule]", "False"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->420980011],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "16.49281229409228`", ",", "14.232682449414819`", ",", 
+   "18.506021915652134`", ",", "29.45373888424059`", ",", 
+   "30.783741142411007`", ",", "57.116147307617034`"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1717651067]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Applications",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->258228157],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hkl", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "0", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "3", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SortBy", "[", 
+  RowBox[{"hkl", ",", 
+   RowBox[{
+    RowBox[{"BraggAngle", "[", 
+     RowBox[{"\"\<Quartz\>\"", ",", "1.234", ",", "#"}], "]"}], "&"}]}], 
+  "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2022243341],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", "3", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->595971691]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<NotInDatabase\>\"", ",", "1.5418", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2036766537],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "NotIn$CrystalData", 
+   "\"No data found on \
+\[LeftGuillemet]\\!\\(\\*RowBox[{\\\"\\\\\\\"NotInDatabase\\\\\\\"\\\"}]\\)\
+\[RightGuillemet].\"", 2, 1, 1, 26775811996559735324, "Local", 
+   "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1150913980],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1026053331]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->872100546],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1499899387],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "NoWavelengthIncluded", 
+   "\"No wavelength was found for crystal \[LeftGuillemet]\\!\\(\\*RowBox[{\\\
+\"\\\\\\\"Silicon\\\\\\\"\\\"}]\\)\[RightGuillemet].\"", 2, 1, 2, 
+   26775811996559735324, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1041501138],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->370419669]
+}, Open  ]],
+
+Cell[TextData[{
+ "If the crystal does not have an accompanying wavelength in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", the user must provide one: "
+}], "ExampleText",
+ CellID->444327103],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "0.71069", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1909806070],
+
+Cell[BoxData[
+ TemplateBox[{"22.77366622936022`", 
+   RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+   "\"AngularDegrees\""},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->734702606]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->46724951],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Austenite\>\"", ",", "0.69", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2.5", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1233230778],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "IntegerExpected", 
+   "\"One or more indices are not integers.\"", 2, 1, 3, 26775811996559735324,
+    "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1724187884],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->281433770]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1474720302],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"\"\<Silicon\>\"", ",", "1.0", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "7"}], ",", 
+     RowBox[{"-", "7"}], ",", 
+     RowBox[{"-", "7"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->754886661],
+
+Cell[BoxData["Undefined"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->545297435]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->885899403],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"G", "=", 
+   RowBox[{"GetCrystalMetric", "[", "\"\<Silicon\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"G", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->807141570],
+
+Cell[BoxData[
+ TemplateBox[{
+  "InputCheck", "EnergyMustBePositive", 
+   "\"The wavelength/energy must be positive.\"", 2, 2, 9, 
+   26775811996559735324, "Local", "MaXrd`InputCheck"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1923071610],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1435661920]
+}, Open  ]],
+
+Cell["Wavelengths must always be provided with metric inputs.", "ExampleText",
+ CellID->1983044004],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraggAngle", "[", 
+  RowBox[{"G", ",", "1.5418", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->61183764],
+
+Cell[BoxData[
+ TemplateBox[{"14.232682449414819`", 
+   RowBox[{"\[InvisibleSpace]", "\"\[Degree]\""}], "degrees", 
+   "\"AngularDegrees\""},
+  "QuantityPostfix"]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1341618971]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->911147557],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"BraggAngle", "::", "invinput"}], "=", 
+    "\"\<Input must either be the name of a crystal or a metric \
+matrix.\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "BraggAngle"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<Units\>\"", "\[Rule]", "True"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<AngleThreshold\>\"", "\[Rule]", 
+       RowBox[{"90.", "*", "Degree"}]}]}], "\[IndentingNewLine]", "}"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "BraggAngle"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", "_.", ",", "_", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1645383471],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"BraggAngle", "[", "\[IndentingNewLine]", 
+   RowBox[{"input_", ",", "\[IndentingNewLine]", 
+    RowBox[{"lambda", ":", 
+     RowBox[{"_", "?", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"NumericQ", "[", "#", "]"}], "||", 
+         RowBox[{"QuantityQ", "[", "#", "]"}]}], "&"}], ")"}]}], ":", 
+     RowBox[{"-", "1"}]}], ",", "\[IndentingNewLine]", "reflections_List", 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"hkl", ",", "G", ",", "H", ",", 
+      RowBox[{"\[Lambda]", "=", 
+       RowBox[{"N", "@", "lambda"}]}], ",", "sl", ",", "bragg", ",", "angle", 
+      ",", "angleThreshold"}], "\[IndentingNewLine]", "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Check", " ", "crystal", " ", 
+      RowBox[{"(", 
+       RowBox[{"or", " ", "metric"}], ")"}], " ", "and", " ", "reflection", 
+      RowBox[{"(", "s", ")"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Which", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"StringQ", "@", "input"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"InputCheck", "[", 
+         RowBox[{"\"\<CrystalQ\>\"", ",", "input"}], "]"}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"G", "=", 
+         RowBox[{"GetCrystalMetric", "@", "input"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"MatrixQ", "@", "input"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"G", "=", "input"}], ",", "\[IndentingNewLine]", "True", ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"Message", "[", 
+         RowBox[{"BraggAngle", "::", "invinput"}], "]"}], ";", 
+        RowBox[{"Abort", "[", "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"hkl", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{
+       "reflections", ",", "\"\<Integer\>\"", ",", "\"\<WrapSingle\>\""}], 
+       "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Reciprocal", " ", "metric"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"H", "=", 
+      RowBox[{"Chop", "@", 
+       RowBox[{"N", "@", 
+        RowBox[{"Inverse", "@", "G"}]}]}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Process", " ", "wavelength"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"\[Lambda]", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"MatrixQ", "@", "input"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"InputCheck", "[", 
+         RowBox[{
+         "\"\<GetEnergyWavelength\>\"", ",", "\[Lambda]", ",", "False"}], 
+         "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"InputCheck", "[", 
+         RowBox[{
+         "\"\<ProcessWavelength\>\"", ",", "input", ",", "\[Lambda]"}], 
+         "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"Sin", "/", "lambda"}], ",", " ", 
+       RowBox[{"from", " ", 
+        RowBox[{"Bragg", "'"}], "s", " ", "law", " ", "and", " ", "inner", 
+        " ", "product"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"sl", "[", "h_", "]"}], ":=", 
+      RowBox[{
+       RowBox[{"Sqrt", "[", 
+        RowBox[{"h", ".", "H", ".", "h"}], "]"}], "/", "2."}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"bragg", "[", "h_", "]"}], ":=", 
+      RowBox[{
+       RowBox[{"N", "[", 
+        RowBox[{"ArcSin", "[", 
+         RowBox[{
+          RowBox[{"sl", "[", "h", "]"}], "*", "\[Lambda]"}], "]"}], "]"}], "/.", 
+       RowBox[{"x_Complex", "\[Rule]", "Undefined"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"angle", "=", 
+      RowBox[{"bragg", "/@", "hkl"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Optional", ":", " ", 
+       RowBox[{
+       "Truncate", " ", "at", " ", "chosen", " ", "angle", " ", 
+        "threshold"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"angleThreshold", "=", 
+      RowBox[{"OptionValue", "[", "\"\<AngleThreshold\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"0", "\[LessEqual]", "angleThreshold", "<", 
+        RowBox[{"\[Pi]", "/", "2"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"angle", "=", 
+        RowBox[{"Select", "[", 
+         RowBox[{"angle", ",", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"#", "\[LessEqual]", "angleThreshold"}], ")"}], "&"}]}], 
+         "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     
+     RowBox[{"angle", "=", 
+      RowBox[{"angle", "/", "Degree"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Option", ":", " ", "Units"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"OptionValue", "[", "\"\<Units\>\"", "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"angle", "=", 
+         RowBox[{"Quantity", "[", 
+          RowBox[{"angle", ",", "\"\<Degrees\>\""}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"angle", "=", 
+         RowBox[{"angle", "/.", 
+          RowBox[{
+           RowBox[{"Quantity", "[", 
+            RowBox[{"Undefined", ",", "\"\<Degrees\>\""}], "]"}], "\[Rule]", 
+           "Undefined"}]}]}]}]}], "]"}], ";", " ", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"If", " ", "only", " ", "one", " ", "reflection"}], ",", " ", 
+       RowBox[{"return", " ", "content"}]}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "@", "angle"}], "\[Equal]", "1"}], ",", 
+       RowBox[{"First", "@", "angle"}], ",", "angle"}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->813074678]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetAtomicScatteringFactors"]], 
+    "paclet:MaXrd/ref/GetAtomicScatteringFactors"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AttenuationCoefficient"]], 
+    "paclet:MaXrd/ref/AttenuationCoefficient"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CrystalDensity"]], "paclet:MaXrd/ref/CrystalDensity"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DarwinWidth"]], "paclet:MaXrd/ref/DarwinWidth"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["MillerNotationToString"]], 
+    "paclet:MaXrd/ref/MillerNotationToString"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["InterplanarSpacing"]], "paclet:MaXrd/ref/InterplanarSpacing"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLatticeParameters"]], 
+    "paclet:MaXrd/ref/GetLatticeParameters"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentReflections"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentReflections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReciprocalSpaceSimulation"]], 
+    "paclet:MaXrd/ref/ReciprocalSpaceSimulation"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ReflectionList"]], "paclet:MaXrd/ref/ReflectionList"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StructureFactor"]], "paclet:MaXrd/ref/StructureFactor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1210384936]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"BraggAngle",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 13, 30.869061}", 
+    "history" -> {"0.7", "2.0.0", "", ""}, "context" -> "MaXrd`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", "status" -> 
+    "None", "summary" -> 
+    "BraggAngle[crystal, {h, k, l}] returns the Bragg angle of reflection hkl \
+for crystal at the stored wavelength. BraggAngle[crystal, \\[Lambda], {h, k, \
+l}] returns the Bragg angle of reflection hkl for crystal at wavelength \
+\\[Lambda]. BraggAngle[crystal, {{h1, k1, l1}, ..., {hn, kn, ln}}] returns \
+the Bragg angle of the n reflections hkli for crystal at the stored \
+wavelength. BraggAngle[crystal, \\[Lambda], {{h1, k1, l1}, ..., {hn, kn, \
+ln}}] returns the Bragg angle of the n reflections hkli for crystal at \
+wavelength \\[Lambda]. BraggAngle[G, \\[Lambda], {h, k, l}] returns the Bragg \
+angle of reflection hkl associated with metric G at wavelength \\[Lambda]. \
+BraggAngle[G, \\[Lambda], {{h1, k1, l1}, ..., {hn, kn, ln}}] returns the \
+Bragg angle of reflection hkli associated with metric G at wavelength \
+\\[Lambda].", "synonyms" -> {}, "tabletags" -> {}, "title" -> "BraggAngle", 
+    "titlemodifier" -> "", "windowtitle" -> "BraggAngle", "type" -> "Symbol", 
+    "uri" -> "MaXrd/ref/BraggAngle", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[16406, 516, 269, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"abb66ced-81e0-4360-83a6-3d216d451220",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1358195596]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 47665, 1571}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 4899, 114, 70, "AnchorBarGrid",ExpressionUUID->"e39da994-1e96-4854-929f-2e8abdd51ffc",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5506, 139, 167, 6, 70, "ObjectNameGrid",ExpressionUUID->"3510d01f-0b1b-4320-bbd7-cec5fbc34b2d"],
+Cell[5676, 147, 7284, 234, 70, "Usage",ExpressionUUID->"02f64236-a15d-4dcb-baaa-de82b5a8a799",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12997, 386, 642, 19, 70, "NotesSection",ExpressionUUID->"ff48df92-5358-44bb-9ad5-21496cd7254f",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1091008126],
+Cell[13642, 407, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"15362429-c97b-4d31-b3b1-b06471df0473"],
+Cell[13676, 409, 197, 7, 70, "Notes",ExpressionUUID->"c188f346-9d32-4e27-9823-d9db7b3dd6b3",
+ CellID->2117176998],
+Cell[13876, 418, 512, 21, 70, "Input",ExpressionUUID->"c57be37d-8927-4416-b1de-1c356ff19ea2",
+ CellID->866918373],
+Cell[14391, 441, 241, 8, 70, "Notes",ExpressionUUID->"edea2f9a-3500-419d-9219-60c7e674fea2",
+ CellID->694873855],
+Cell[14635, 451, 521, 19, 70, "Notes",ExpressionUUID->"d6012dde-eb1c-47d4-8cab-e2d68600c3c8",
+ CellID->1067943069],
+Cell[15159, 472, 326, 11, 70, "Notes",ExpressionUUID->"5678938c-f71e-490e-b167-3a4944a6f557",
+ CellID->1808733708],
+Cell[15488, 485, 45, 1, 70, "Notes",ExpressionUUID->"27c8e454-be97-4035-84df-0666fd7be725",
+ CellID->676761489],
+Cell[15536, 488, 799, 21, 70, "3ColumnTableMod",ExpressionUUID->"51adb3fc-7362-4d93-add3-f0929033b835",
+ CellID->410498224],
+Cell[16338, 511, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"3fed678b-7d54-43a0-ab2e-7a73f4a5fa12"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[16406, 516, 269, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"abb66ced-81e0-4360-83a6-3d216d451220",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1358195596],
+Cell[CellGroupData[{
+Cell[16700, 530, 196, 6, 70, "ExampleSection",ExpressionUUID->"5a6db02d-15de-4ec3-bf89-31365baa238f",
+ CellID->1589698009],
+Cell[CellGroupData[{
+Cell[16921, 540, 219, 6, 70, "Input",ExpressionUUID->"c76bdbdc-2dce-4893-adad-17a770375590",
+ CellID->1055983554],
+Cell[17143, 548, 217, 6, 70, "Output",ExpressionUUID->"8593295c-dd0f-49da-8385-70d130e8b86f",
+ CellID->1710751508]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17397, 559, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"b5d8cbe6-82f4-40c6-9379-839d95671a5d",
+ CellID->2119003765],
+Cell[CellGroupData[{
+Cell[17548, 566, 217, 6, 70, "Input",ExpressionUUID->"e121500b-7984-4312-b9bd-ac29f31a2b3d",
+ CellID->1521154853],
+Cell[17768, 574, 215, 6, 70, "Output",ExpressionUUID->"78ab23c9-29be-458e-a559-61aff65c61a3",
+ CellID->432145750]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18044, 587, 187, 6, 70, "ExampleSection",ExpressionUUID->"f8524c03-1451-4e8a-bd10-658d5adfd849",
+ CellID->1293636265],
+Cell[18234, 595, 116, 3, 70, "ExampleText",ExpressionUUID->"3d33bf4e-5c06-49cf-9fed-ff71eff804bc",
+ CellID->2056153890],
+Cell[CellGroupData[{
+Cell[18375, 602, 703, 21, 70, "Input",ExpressionUUID->"363b0dca-792c-4592-b955-c11a71b64e15",
+ CellID->1166892573],
+Cell[19081, 625, 927, 24, 70, "Output",ExpressionUUID->"cdef0dc3-5216-4a35-ab0b-d29129a6905a",
+ CellID->1986084777]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20045, 654, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"22d27d93-ca50-4296-8a5c-f27db374fc25",
+ CellID->1367484775],
+Cell[20174, 659, 113, 3, 70, "ExampleText",ExpressionUUID->"4a366fee-0e0b-4347-ba0c-fc3120a17c06",
+ CellID->946623231],
+Cell[CellGroupData[{
+Cell[20312, 666, 150, 4, 70, "Input",ExpressionUUID->"4cca2679-d320-4a8a-9902-427ebc5505fc",
+ CellID->1024328739],
+Cell[20465, 672, 373, 11, 70, "Output",ExpressionUUID->"149c197c-ac3b-4453-a5cd-5d2ada8a6aff",
+ CellID->1457175621]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20875, 688, 203, 6, 70, "Input",ExpressionUUID->"c824d7dd-143f-4a4e-b7cc-ee3b05cf9e15",
+ CellID->1416348419],
+Cell[21081, 696, 217, 6, 70, "Output",ExpressionUUID->"3b3fbb0e-47d1-47e4-9488-6fe52344e4b0",
+ CellID->1289462195]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[21359, 709, 189, 6, 70, "ExampleSection",ExpressionUUID->"b7811795-807e-434e-8be0-ec6b6f28292a",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[21573, 719, 206, 6, 70, "ExampleSubsection",ExpressionUUID->"86c4fe50-61ac-404d-b2a1-6bc9eb9ac84e",
+ CellID->2070559211],
+Cell[CellGroupData[{
+Cell[21804, 729, 571, 18, 70, "Input",ExpressionUUID->"20d6fdde-917a-4020-8277-6127af0c0a0d",
+ CellID->1093653203],
+Cell[22378, 749, 583, 16, 70, "Output",ExpressionUUID->"dd30c386-0aaa-40e2-bea0-914a8f2fc349",
+ CellID->38726369]
+}, Open  ]],
+Cell[22976, 768, 73, 1, 70, "ExampleText",ExpressionUUID->"74eb8cfb-a3c4-4c2c-94a6-b1644c94692e",
+ CellID->971896805],
+Cell[CellGroupData[{
+Cell[23074, 773, 254, 6, 70, "Input",ExpressionUUID->"10a99d17-efc6-4f17-82f3-5fc77035d3c9",
+ CellID->1475199060],
+Cell[23331, 781, 217, 6, 70, "Output",ExpressionUUID->"e6a0a9a3-79ca-4647-85c6-b79e6cfed946",
+ CellID->1128907987]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[23597, 793, 197, 6, 70, "ExampleSubsection",ExpressionUUID->"46ab960c-d24a-4f6d-a7a6-53bd243a464a",
+ CellID->1757724783],
+Cell[CellGroupData[{
+Cell[23819, 803, 273, 7, 70, "Input",ExpressionUUID->"7a71ec70-87a9-49e4-bea8-400ab7068864",
+ CellID->1450769949],
+Cell[24095, 812, 88, 2, 70, "Output",ExpressionUUID->"9e2bf751-52c5-4c2f-842c-b47a0945826e",
+ CellID->585838686]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24220, 819, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"eab17451-5025-471a-a397-9123be9e5f7b",
+ CellID->196453272],
+Cell[CellGroupData[{
+Cell[24370, 826, 758, 22, 70, "Input",ExpressionUUID->"cf10f1c1-d829-4567-a3e7-bc8bb3d6e4dc",
+ CellID->420980011],
+Cell[25131, 850, 274, 7, 70, "Output",ExpressionUUID->"c433677d-5716-4d14-b1da-26226f105285",
+ CellID->1717651067]
+}, Open  ]]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[25478, 865, 193, 6, 70, "ExampleSection",ExpressionUUID->"ee69efae-8028-4393-93cd-49cc3cb64826",
+ CellID->258228157],
+Cell[CellGroupData[{
+Cell[25696, 875, 784, 25, 70, "Input",ExpressionUUID->"7e10a71c-a16c-4fef-a1ba-91a4291e7099",
+ CellID->2022243341],
+Cell[26483, 902, 510, 16, 70, "Output",ExpressionUUID->"fd77f8eb-da45-4b30-b416-eb8ce2d50f65",
+ CellID->595971691]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[27042, 924, 197, 6, 70, "ExampleSection",ExpressionUUID->"bb9216e0-01b0-4864-8c91-42b9c35a89a6",
+ CellID->1305812373],
+Cell[CellGroupData[{
+Cell[27264, 934, 224, 6, 70, "Input",ExpressionUUID->"c9a8df11-78c7-4c61-94eb-22077f6fc0da",
+ CellID->2036766537],
+Cell[27491, 942, 363, 9, 70, "Message",ExpressionUUID->"86c77fd9-0c9a-476a-9247-660e7a834f26",
+ CellID->1150913980],
+Cell[27857, 953, 79, 2, 70, "Output",ExpressionUUID->"64343bbc-48c3-4dec-80cd-bf06e503851e",
+ CellID->1026053331]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27973, 960, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"e421f076-1e54-4e49-bad6-cd9ef44611e2",
+ CellID->872100546],
+Cell[CellGroupData[{
+Cell[28123, 967, 203, 6, 70, "Input",ExpressionUUID->"05910035-a10a-4d09-8f4c-c98e4f9ed512",
+ CellID->1499899387],
+Cell[28329, 975, 377, 8, 70, "Message",ExpressionUUID->"23de2ee8-f6d8-46de-97bf-af986cb6ed9e",
+ CellID->1041501138],
+Cell[28709, 985, 78, 2, 70, "Output",ExpressionUUID->"c404b0d1-3d9e-4b75-b629-ab74e03029f9",
+ CellID->370419669]
+}, Open  ]],
+Cell[28802, 990, 325, 10, 70, "ExampleText",ExpressionUUID->"2c96301a-e0f4-472f-b556-d9d927bb0dbc",
+ CellID->444327103],
+Cell[CellGroupData[{
+Cell[29152, 1004, 219, 6, 70, "Input",ExpressionUUID->"e55e3d65-de56-45a8-b72d-fcccac9a1eac",
+ CellID->1909806070],
+Cell[29374, 1012, 215, 6, 70, "Output",ExpressionUUID->"b3f75fb4-dc0b-4f35-b4e6-c3034741437f",
+ CellID->734702606]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29638, 1024, 124, 3, 70, "ExampleDelimiter",ExpressionUUID->"b240e6d5-e676-4af2-9c75-5354e9b37d5a",
+ CellID->46724951],
+Cell[CellGroupData[{
+Cell[29787, 1031, 220, 6, 70, "Input",ExpressionUUID->"861cb4e3-2120-452d-8db8-38c22ef0b6bb",
+ CellID->1233230778],
+Cell[30010, 1039, 284, 7, 70, "Message",ExpressionUUID->"b07f5a07-ef85-46ca-9ce1-eaa1d8d2a7d9",
+ CellID->1724187884],
+Cell[30297, 1048, 78, 2, 70, "Output",ExpressionUUID->"f2cbee13-6adf-4e83-a50b-25470f770c34",
+ CellID->281433770]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30424, 1056, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"ab4738fa-5686-4c8d-b79f-dc86f90baf45",
+ CellID->1474720302],
+Cell[CellGroupData[{
+Cell[30575, 1063, 277, 9, 70, "Input",ExpressionUUID->"78371fbb-4d69-455d-a8f3-d1f152730299",
+ CellID->754886661],
+Cell[30855, 1074, 79, 2, 70, "Output",ExpressionUUID->"6e5119f5-9656-4211-adda-e08f262a7c57",
+ CellID->545297435]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30983, 1082, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"0777e5a5-156f-492f-b07e-c4b9195bc95d",
+ CellID->885899403],
+Cell[CellGroupData[{
+Cell[31133, 1089, 319, 10, 70, "Input",ExpressionUUID->"0deb623c-7f63-4618-bbd0-f79be6a1d33c",
+ CellID->807141570],
+Cell[31455, 1101, 291, 7, 70, "Message",ExpressionUUID->"0cb13400-3596-44ec-9a0d-81fa1a72c585",
+ CellID->1923071610],
+Cell[31749, 1110, 79, 2, 70, "Output",ExpressionUUID->"f53d071e-962e-444c-a347-6067e3af6312",
+ CellID->1435661920]
+}, Open  ]],
+Cell[31843, 1115, 99, 1, 70, "ExampleText",ExpressionUUID->"e56b9589-0107-4107-afcc-102a41bd7b4e",
+ CellID->1983044004],
+Cell[CellGroupData[{
+Cell[31967, 1120, 202, 6, 70, "Input",ExpressionUUID->"0e8d2ca4-8e50-4dde-a89e-b56d20042bea",
+ CellID->61183764],
+Cell[32172, 1128, 217, 6, 70, "Output",ExpressionUUID->"865b0cac-f23d-48e3-9edf-7d55459019dc",
+ CellID->1341618971]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[32450, 1141, 235, 8, 70, "ExampleSection",ExpressionUUID->"ba392e04-f099-4950-9247-3d6caed37d3e",
+ CellID->911147557],
+Cell[32688, 1151, 1070, 29, 70, "Input",ExpressionUUID->"831d61ac-6b75-40f1-9c3f-13dc30241474",
+ InitializationCell->False,
+ CellID->1645383471],
+Cell[33761, 1182, 6262, 155, 70, "Input",ExpressionUUID->"b31df570-66b4-49b4-a726-1835b7fa1407",
+ InitializationCell->False,
+ CellID->813074678]
+}, Closed]],
+Cell[40038, 1340, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"5b11326c-4150-46d0-a884-6d3838217a9a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40106, 1345, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"c6a4beae-f5d2-4dd7-9855-925c01099dd2",
+ CellID->1255426704],
+Cell[40259, 1354, 4280, 134, 70, "SeeAlso",ExpressionUUID->"e4be0f91-a9da-469a-a89c-2aaf831b8b0f",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44576, 1493, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"e2609099-0642-4d86-a0b9-05458f61073d",
+ CellID->38303248],
+Cell[44735, 1502, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"e98a084e-50cf-4509-b474-f65e387d507b"],
+Cell[44769, 1504, 208, 7, 70, "MoreAbout",ExpressionUUID->"fe999c63-f672-434c-9578-7656806d06b1",
+ CellID->1210384936]
+}, Open  ]],
+Cell[44992, 1514, 23, 0, 70, "FooterCell",ExpressionUUID->"e7c6df76-fa2c-4adc-a8ca-f0f07936a1cd"]
+}
+]
+*)
+
+(* End of internal cache information *)

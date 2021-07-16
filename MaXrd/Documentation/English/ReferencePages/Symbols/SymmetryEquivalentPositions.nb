@@ -1,0 +1,1988 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     65984,       1979]
+NotebookOptionsPosition[     53330,       1706]
+NotebookOutlinePosition[     55812,       1766]
+CellTagsIndexPosition[     55726,       1761]
+WindowTitle->SymmetryEquivalentPositions
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["MAXRD SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"AttenuationCoefficient\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/AttenuationCoefficient"], "\<\"StructureFactor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/StructureFactor"], "\<\"GetSymmetryOperations\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetSymmetryOperations"], "\<\"GetSymmetryData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/GetSymmetryData"], \
+"\<\"SymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentReflections"], \
+"\<\"SymmetryEquivalentReflectionsQ\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"], \
+"\<\"SystematicAbsentQ\"\>":>Documentation`HelpLookup[
+       "paclet:MaXrd/ref/SystematicAbsentQ"], "\<\"ToStandardSetting\"\>":>
+       Documentation`HelpLookup[
+       "paclet:MaXrd/ref/ToStandardSetting"], "\<\"$SpaceGroups\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/ref/$SpaceGroups"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd: Mathematica X-ray diffraction package\"\>":>
+       Documentation`HelpLookup["paclet:MaXrd/guide/MaXrd"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"MaXrd/ref/SymmetryEquivalentPositions\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["MaXrd/ref/SymmetryEquivalentPositions"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/MaXrd/ref/\
+SymmetryEquivalentPositions.html"], StandardForm]], "Input", 
+              TextClipboardType -> "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$37850], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "MaXrd/ref/SymmetryEquivalentPositions", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["SymmetryEquivalentPositions", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["SymmetryEquivalentPositions"]], 
+         "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["group", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["x", "TI"], ",", 
+          StyleBox["y", "TI"], ",", 
+          StyleBox["z", "TI"]}], "}"}]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns a list of coordinates that are equivalent to ",
+     
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        StyleBox["x", "TI"], ",", 
+        StyleBox["y", "TI"], ",", 
+        StyleBox["z", "TI"]}], "}"}]], "InlineFormula"],
+     " under the symmetry of ",
+     Cell[BoxData[
+      StyleBox["group", "TI"]], "InlineFormula"],
+     "."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{
+         Cell[
+          TextData["SymmetryEquivalentPositions"]], 
+         "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["group", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             SubscriptBox[
+              StyleBox["x", "TI"], 
+              StyleBox["1", "TR"]], ",", 
+             SubscriptBox[
+              StyleBox["y", "TI"], 
+              StyleBox["1", "TR"]], ",", 
+             SubscriptBox[
+              StyleBox["z", "TI"], 
+              StyleBox["1", "TR"]]}], "}"}], 
+           RowBox[{"{", 
+            RowBox[{
+             SubscriptBox[
+              StyleBox["x", "TI"], 
+              StyleBox["2", "TR"]], ",", 
+             SubscriptBox[
+              StyleBox["y", "TI"], 
+              StyleBox["2", "TR"]], ",", 
+             SubscriptBox[
+              StyleBox["z", "TI"], 
+              StyleBox["2", "TR"]]}], "}"}]}], ",", 
+          StyleBox["\[Ellipsis]", "TR"]}], "}"}]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]returns a list of coordinates, each entry containg the \
+equivalents of ",
+     Cell[BoxData[
+      SubscriptBox[
+       RowBox[{"{", 
+        RowBox[{
+         StyleBox["x", "TI"], ",", 
+         StyleBox["i", "TI"], ",", 
+         StyleBox["z", "TI"]}], "}"}], 
+       StyleBox["i", "TI"]]], "InlineFormula"],
+     " under the symmetry of ",
+     Cell[BoxData[
+      StyleBox["group", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1320514495],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["group", "TI"]], "InlineFormula"],
+ " may be a point group, a space group or the name of a crystal (entry) in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ". If not a point group, the function ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetLaueClass"]], "paclet:MaXrd/ref/GetLaueClass"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " will be used on input."
+}], "Notes",
+ CellID->1996706349],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["SymmetryEquivalentPositions"]], 
+     "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}], "[", 
+   StyleBox["group", "TI"], "]"}]], "InlineFormula"],
+ " is equivalent to ",
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["SymmetryEquivalentPositions"]], 
+     "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}], "[", 
+   RowBox[{
+    StyleBox["group", "TI"], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<\!\(\*StyleBox[\"x\", \"TI\"]\)\>\"", ",", 
+      "\"\<\!\(\*StyleBox[\"y\", \"TI\"]\)\>\"", ",", 
+      "\"\<\!\(\*StyleBox[\"z\", \"TI\"]\)\>\""}], "}"}]}], "]"}]], 
+  "InlineFormula"],
+ ", i.e. general coordinates."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["Options include:", "Notes",
+ CellID->1968864877],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "\"\<RationaliseThreshold\>\"", "0.001", 
+    Cell["\<\
+discrepancy threshold for converting a real number to a fraction used in \
+special positions\
+\>", "TableText"]},
+   {Cell["      ", "TableRowIcon"], "\"\<UseCentring\>\"", 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell["\<\
+whether to use centring vectors to generate symmetry equivalent positions\
+\>", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {None, {None}}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}},
+ CellID->2024841348],
+
+Cell["The fractions that appear in special positions are:", "Notes",
+ CellID->471815327],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["1", "12"], ",", 
+   FractionBox["1", "8"], ",", 
+   FractionBox["1", "6"], ",", 
+   FractionBox["1", "4"], ",", 
+   FractionBox["1", "3"], ",", 
+   FractionBox["3", "8"], ",", 
+   FractionBox["5", "12"], ",", 
+   FractionBox["1", "2"], ",", 
+   FractionBox["7", "12"], ",", 
+   FractionBox["5", "8"], ",", 
+   FractionBox["2", "3"], ",", 
+   FractionBox["3", "4"], ",", 
+   FractionBox["5", "6"], ",", 
+   FractionBox["7", "8"], ",", 
+   FractionBox["11", "12"]}], "}"}]], "Input",
+ CellID->393695796],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(8)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1791109367],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1896851170],
+
+Cell["Fractional coordinates:", "ExampleText",
+ CellID->1822669809],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentPositions", "[", 
+  RowBox[{"\"\<Pnma\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"1", "/", "2"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1474322350],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     FractionBox["1", "2"], ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     FractionBox["1", "2"], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1040489867]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentPositions", "[", 
+  RowBox[{"\"\<F d -3 m:2\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "/", "8"}], ",", 
+     RowBox[{"1", "/", "8"}], ",", 
+     RowBox[{"1", "/", "8"}]}], "}"}], ",", 
+   RowBox[{"\"\<UseCentring\>\"", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1872147128],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "8"], ",", 
+     FractionBox["1", "8"], ",", 
+     FractionBox["1", "8"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["7", "8"], ",", 
+     FractionBox["3", "8"], ",", 
+     FractionBox["3", "8"]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->419193684]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentPositions", "[", 
+  RowBox[{"\"\<P -3 1 c\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"1", "/", "4"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1823097893],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     FractionBox["1", "4"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     FractionBox["3", "4"]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1419364166]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1498134612],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Head"]], "paclet:ref/Head"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " of indices may be ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["String"]], "paclet:ref/String"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " or ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Symbol"]], "paclet:ref/Symbol"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " as well:"
+}], "ExampleText",
+ CellID->2050146456],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentPositions", "[", 
+  RowBox[{"\"\<R -3 c\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "\"\<z\>\""}], "}"}], ",", 
+   RowBox[{"\"\<UseCentring\>\"", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->287360011],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "\<\"z\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{
+      FractionBox["1", "2"], "-", "\<\"z\"\>"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", "\<\"z\"\>"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\<\"z\"\>"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1292028305]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentPositions", "[", 
+  RowBox[{"\"\<I4/mcm\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\"\<k\>\"", ",", "0"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->772639800],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\<\"k\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "\<\"k\"\>"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\<\"k\"\>"}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"k\"\>", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\<\"k\"\>", ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "\<\"k\"\>"}], ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"k\"\>", ",", "0", ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\<\"k\"\>"}], ",", "0", ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\<\"k\"\>"}], ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{
+      FractionBox["1", "2"], "-", "\<\"k\"\>"}], ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], "-", "\<\"k\"\>"}], ",", 
+     FractionBox["1", "2"], ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], "+", "\<\"k\"\>"}], ",", 
+     FractionBox["1", "2"], ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\<\"k\"\>"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{
+      FractionBox["1", "2"], "-", "\<\"k\"\>"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], "+", "\<\"k\"\>"}], ",", 
+     FractionBox["1", "2"], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], "-", "\<\"k\"\>"}], ",", 
+     FractionBox["1", "2"], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1470226704]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentPositions", "[", 
+  RowBox[{"\"\<F d -3 m\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->391767198],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     FractionBox["1", "2"], ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     FractionBox["1", "2"], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", "0", ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "4"], ",", 
+     FractionBox["1", "4"], ",", 
+     FractionBox["3", "4"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "4"], ",", 
+     FractionBox["1", "4"], ",", 
+     FractionBox["1", "4"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "4"], ",", 
+     FractionBox["3", "4"], ",", 
+     FractionBox["3", "4"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "4"], ",", 
+     FractionBox["3", "4"], ",", 
+     FractionBox["1", "4"]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->806727458]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentPositions", "[", 
+  RowBox[{"\"\<P6cc\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"\[WhiteKing]", ",", "\[MathematicaIcon]", ",", "\[Wolf]"}], 
+    "}"}]}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->456428555],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[WhiteKing]", ",", "\[MathematicaIcon]", ",", "\[Wolf]"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\[MathematicaIcon]"}], ",", 
+     RowBox[{
+      RowBox[{"-", "\[MathematicaIcon]"}], "+", "\[WhiteKing]"}], ",", 
+     "\[Wolf]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[MathematicaIcon]", "-", "\[WhiteKing]"}], ",", 
+     RowBox[{"-", "\[WhiteKing]"}], ",", "\[Wolf]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\[WhiteKing]"}], ",", 
+     RowBox[{"-", "\[MathematicaIcon]"}], ",", "\[Wolf]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[MathematicaIcon]", ",", 
+     RowBox[{"\[MathematicaIcon]", "-", "\[WhiteKing]"}], ",", "\[Wolf]"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[MathematicaIcon]"}], "+", "\[WhiteKing]"}], ",", 
+     "\[WhiteKing]", ",", "\[Wolf]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\[MathematicaIcon]"}], ",", 
+     RowBox[{"-", "\[WhiteKing]"}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\[Wolf]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[MathematicaIcon]", "-", "\[WhiteKing]"}], ",", 
+     "\[MathematicaIcon]", ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\[Wolf]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[WhiteKing]", ",", 
+     RowBox[{
+      RowBox[{"-", "\[MathematicaIcon]"}], "+", "\[WhiteKing]"}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\[Wolf]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[MathematicaIcon]", ",", "\[WhiteKing]", ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\[Wolf]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[MathematicaIcon]"}], "+", "\[WhiteKing]"}], ",", 
+     RowBox[{"-", "\[MathematicaIcon]"}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\[Wolf]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\[WhiteKing]"}], ",", 
+     RowBox[{"\[MathematicaIcon]", "-", "\[WhiteKing]"}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\[Wolf]"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->1773113114]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Scope",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1293636265],
+
+Cell[TextData[{
+ "Entries from ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ " may be used directly:"
+}], "ExampleText",
+ CellID->210053192],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SymmetryEquivalentPositions", "[", "\"\<Silicon\>\"", "]"}], 
+  "\[Equal]", 
+  RowBox[{
+  "SymmetryEquivalentPositions", "[", "\"\<F d -3 m:2\>\"", "]"}]}]], "Input",\
+
+ CellLabel->"In[1]:=",
+ CellID->476186508],
+
+Cell[BoxData["True"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->783978995]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->887056824],
+
+Cell["General positions can be returned easily:", "ExampleText",
+ CellID->932563494],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentPositions", "[", 
+  "\"\<\!\(\*SubscriptBox[\(Pca2\), \(1\)]\)\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2033569841],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"x\"\>", ",", "\<\"y\"\>", ",", "\<\"z\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\<\"x\"\>"}], ",", 
+     RowBox[{"-", "\<\"y\"\>"}], ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\<\"z\"\>"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], "+", "\<\"x\"\>"}], ",", 
+     RowBox[{"-", "\<\"y\"\>"}], ",", "\<\"z\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], "-", "\<\"x\"\>"}], ",", "\<\"y\"\>", ",", 
+     RowBox[{
+      FractionBox["1", "2"], "+", "\<\"z\"\>"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->763041369]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1151340366],
+
+Cell["\<\
+It is faster to input a list of coordinates, than to map over them:\
+\>", "ExampleText",
+ CellID->1749871892],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"xyz", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.250", ",", "0.000", ",", "0.333"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.000", ",", "0.000", ",", "0.500"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.750", ",", "0.333", ",", "0.500"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.000", ",", "0.000", ",", "0.000"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.123", ",", "0.456", ",", "0.789"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.111", ",", "0.222", ",", "0.333"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.123"}], ",", 
+       RowBox[{"-", "0.444"}], ",", "0.555"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.678", ",", 
+       RowBox[{"-", "0.876"}], ",", "0.999"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->279621352],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"SymmetryEquivalentPositions", "[", 
+      RowBox[{"\"\<Fm-3m\>\"", ",", "#"}], "]"}], "&"}], "/@", "xyz"}], "//", 
+   "AbsoluteTiming"}], "//", "First"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1688250911],
+
+Cell[BoxData["0.142443`"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->364311498]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"SymmetryEquivalentPositions", "[", 
+    RowBox[{"\"\<Fm-3m\>\"", ",", "xyz"}], "]"}], "//", "AbsoluteTiming"}], "//",
+   "First"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->5719076],
+
+Cell[BoxData["0.03682`"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1773059572]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"UseCentring\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[TextData[{
+ "By setting this option to ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["False"]], "paclet:ref/False"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+ ", centring vectors will ",
+ StyleBox["not",
+  FontSlant->"Italic"],
+ " be applied to generate more symmetry equivalent positions."
+}], "ExampleText",
+ CellID->2026722395],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SymmetryEquivalentPositions", "[", "\"\<Silicon\>\"", "]"}], "//", 
+  "Length"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1478828199],
+
+Cell[BoxData["192"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->415172196]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SymmetryEquivalentPositions", "[", 
+   RowBox[{"\"\<Silicon\>\"", ",", 
+    RowBox[{"\"\<UseCentring\>\"", "\[Rule]", "False"}]}], "]"}], "//", 
+  "Length"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1015831365],
+
+Cell[BoxData["48"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1986421268]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\"RationaliseThreshold\"",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->448126965],
+
+Cell[TextData[{
+ "Consider one of the special positions of space group ",
+ Cell[BoxData[
+  FormBox["P321", TraditionalForm]], "InlineMath"],
+ ":"
+}], "ExampleText",
+ CellID->1015787839],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$SpaceGroups", "[", 
+   RowBox[{"\"\<P321\>\"", ",", "\"\<SpecialPositions\>\""}], "]"}], "[", 
+  RowBox[{"[", "4", "]"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2118178332],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Multiplicity\"\>", "\[Rule]", "2"}], ",", 
+   RowBox[{"\<\"WyckoffLetter\"\>", "\[Rule]", "\<\"d\"\>"}], ",", 
+   RowBox[{"\<\"SiteSymmetry\"\>", "\[Rule]", "\<\"3..\"\>"}], ",", 
+   RowBox[{"\<\"Coordinates\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["1", "3"], ",", 
+        FractionBox["2", "3"], ",", "\<\"z\"\>"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["2", "3"], ",", 
+        FractionBox["1", "3"], ",", 
+        RowBox[{"-", "\<\"z\"\>"}]}], "}"}]}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->620919603]
+}, Open  ]],
+
+Cell["\<\
+We see that there are two symmetry equivalent positions here. If we input one \
+of them in SymmetryEquivalentPositions, we expect to find only these two:\
+\>", "ExampleText",
+ CellID->34056041],
+
+Cell[CellGroupData[{
+
+Cell["SymmetryEquivalentPositions[\"P321\", {1/3, 2/3, z}]", "Input",
+ CellLabel->"In[2]:=",
+ CellID->61174150],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "3"], ",", 
+     FractionBox["2", "3"], ",", "z"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["2", "3"], ",", 
+     FractionBox["1", "3"], ",", 
+     RowBox[{"-", "z"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1464642087]
+}, Open  ]],
+
+Cell["\[Ellipsis] even if we use real (not rational) coordinates:", \
+"ExampleText",
+ CellID->1382485696],
+
+Cell[CellGroupData[{
+
+Cell["SymmetryEquivalentPositions[\"P321\", {0.333, 0.667, z}]", "Input",
+ CellLabel->"In[3]:=",
+ CellID->1314315404],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "3"], ",", 
+     FractionBox["2", "3"], ",", "z"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["2", "3"], ",", 
+     FractionBox["1", "3"], ",", 
+     RowBox[{"-", "z"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->103167019]
+}, Open  ]],
+
+Cell["\<\
+The inputted coordinates are checked if they are closer to any of the \
+fractions\
+\>", "ExampleText",
+ CellID->1093804241],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    FractionBox["1", "12"], ",", 
+    FractionBox["1", "8"], ",", 
+    FractionBox["1", "6"], ",", 
+    FractionBox["1", "4"], ",", 
+    FractionBox["1", "3"], ",", 
+    FractionBox["3", "8"], ",", 
+    FractionBox["5", "12"], ",", 
+    FractionBox["1", "2"], ",", 
+    FractionBox["7", "12"], ",", 
+    FractionBox["5", "8"], ",", 
+    FractionBox["2", "3"], ",", 
+    FractionBox["3", "4"], ",", 
+    FractionBox["5", "6"], ",", 
+    FractionBox["7", "8"], ",", 
+    FractionBox["11", "12"]}], "}"}], ";"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->657454618],
+
+Cell[TextData[{
+ "by an amount sat by the ",
+ Cell[BoxData["\"\<RationaliseThreshold\>\""], "InlineFormula"],
+ " option. If we lower this value, the difference may come above this limit;"
+}], "ExampleText",
+ CellID->440074080],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymmetryEquivalentPositions", "[", 
+  RowBox[{"\"\<P321\>\"", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"0.333", ",", " ", "0.667", ",", " ", "z"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"\"\<RationaliseThreshold\>\"", "\[Rule]", "0.0001"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->612412834],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.33299999999999996`", ",", "0.6669999999999999`", ",", 
+     RowBox[{"0.`", "\[VeryThinSpace]", "+", "z"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.33299999999999996`", ",", "0.6659999999999999`", ",", 
+     RowBox[{"0.`", "\[VeryThinSpace]", "+", "z"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.33399999999999996`", ",", "0.6669999999999999`", ",", 
+     RowBox[{"0.`", "\[VeryThinSpace]", "+", "z"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.6669999999999999`", ",", "0.33299999999999996`", ",", 
+     RowBox[{"0.`", "\[VeryThinSpace]", "-", "z"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.6659999999999999`", ",", "0.33299999999999996`", ",", 
+     RowBox[{"0.`", "\[VeryThinSpace]", "-", "z"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.6669999999999999`", ",", "0.33399999999999996`", ",", 
+     RowBox[{"0.`", "\[VeryThinSpace]", "-", "z"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellLabel->"Out[5]=",
+ CellID->1513286141]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " code",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->611183881],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SymmetryEquivalentPositions", "::", "threshold"}], "=", 
+    "\"\<Tolerance specification must be a non-negative number.\>\""}], ";"}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Options", "@", "SymmetryEquivalentPositions"}], "=", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<UseCentring\>\"", "\[Rule]", "True"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<RationaliseThreshold\>\"", "\[Rule]", "0.001"}]}], 
+     "\[IndentingNewLine]", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SyntaxInformation", "@", "SymmetryEquivalentPositions"}], "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{"\"\<ArgumentsPattern\>\"", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"_", ",", "_.", ",", 
+       RowBox[{"OptionsPattern", "[", "]"}]}], "}"}]}], "\[IndentingNewLine]",
+     "}"}]}], ";"}]}], "Input",
+ InitializationCell->False,
+ CellLabel->"In[1]:=",
+ CellID->1009976956],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SymmetryEquivalentPositions", "[", 
+   RowBox[{"input_String", ",", 
+    RowBox[{"xyzInput_List", ":", 
+     RowBox[{"{", 
+      RowBox[{"\"\<x\>\"", ",", "\"\<y\>\"", ",", "\"\<z\>\""}], "}"}]}], ",",
+     "\[IndentingNewLine]", 
+    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+     "group", ",", "\[Delta]", ",", "useCentringQ", ",", "fracs", ",", "r", 
+      ",", "xyz", ",", "\[IndentingNewLine]", "s", ",", "R", ",", "T", ",", 
+      "equiv", ",", "rationalise", ",", "mod", ",", "generate", ",", "gather",
+       ",", "centring", ",", "final", ",", "t", ",", "sym", ",", "c", ",", 
+      "add", ",", "pos", ",", "temp"}], "}"}], ",", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"--", "-"}], "*", " ", "Input", " ", "check", " ", "*", 
+      RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"group", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{"\"\<GetPointSpaceGroupCrystal\>\"", ",", "input"}], "]"}]}], 
+     ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"xyz", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{"xyzInput", ",", "\"\<WrapSingle\>\""}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", "Options", " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"\[Delta]", "=", 
+      RowBox[{"OptionValue", "[", "\"\<RationaliseThreshold\>\"", "]"}]}], 
+     ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"NumericQ", "[", "#", "]"}], "&&", 
+            RowBox[{"!", 
+             RowBox[{"Negative", "[", "#", "]"}]}]}], ")"}]}], "&"}], "@", 
+        "\[Delta]"}], ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"Message", "@", 
+        RowBox[{"SymmetryEquivalentPositions", "::", "threshold"}]}]}], "]"}],
+      ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"useCentringQ", "=", 
+      RowBox[{"OptionValue", "[", "\"\<UseCentring\>\"", "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Procedure", " ", "for", " ", 
+       "generating", " ", "equivalent", " ", "positions", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Replace", " ", "float", " ", "zero", " ", "to", " ", "integer", " ", 
+       "zero", " ", "and", " ", "rationalis"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"fracs", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox["1", "12"], ",", 
+        FractionBox["1", "8"], ",", 
+        FractionBox["1", "6"], ",", 
+        FractionBox["1", "4"], ",", 
+        FractionBox["1", "3"], ",", 
+        FractionBox["3", "8"], ",", 
+        FractionBox["5", "12"], ",", 
+        FractionBox["1", "2"], ",", 
+        FractionBox["7", "12"], ",", 
+        FractionBox["5", "8"], ",", 
+        FractionBox["2", "3"], ",", 
+        FractionBox["3", "4"], ",", 
+        FractionBox["5", "6"], ",", 
+        FractionBox["7", "8"], ",", 
+        FractionBox["11", "12"]}], "}"}]}], ";", "\[IndentingNewLine]", "\t", 
+     
+     RowBox[{
+      RowBox[{"rationalise", "[", "coord_", "]"}], ":=", 
+      RowBox[{
+       RowBox[{"Reap", "[", 
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{"Sow", "@", 
+           RowBox[{"If", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"MemberQ", "[", 
+              RowBox[{"fracs", ",", 
+               RowBox[{"r", "=", 
+                RowBox[{"Rationalize", "[", 
+                 RowBox[{
+                  RowBox[{"i", "/.", 
+                   RowBox[{"{", 
+                    RowBox[{"0.", "\[Rule]", "0"}], "}"}]}], ",", 
+                  "\[Delta]"}], "]"}]}]}], "]"}], ",", "r", ",", "i"}], 
+            "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "coord"}], "}"}]}], "]"}], "]"}], 
+       "\[LeftDoubleBracket]", 
+       RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Dealing", " ", "with", " ", "remainder", " ", "of", " ", 
+       "coordinates"}], " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"mod", "[", "X_", "]"}], ":=", 
+      RowBox[{"Which", "[", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"NumericQ", "[", "X", "]"}], ",", 
+        RowBox[{"Mod", "[", 
+         RowBox[{"X", ",", "1"}], "]"}], ",", "\[IndentingNewLine]", "\t", 
+        RowBox[{
+         RowBox[{"Head", "[", "X", "]"}], "===", "Plus"}], ",", 
+        "\[IndentingNewLine]", "\t\t", 
+        RowBox[{
+         RowBox[{"t", "=", 
+          RowBox[{"Select", "[", 
+           RowBox[{"X", ",", "NumericQ"}], "]"}]}], ";", 
+         "\[IndentingNewLine]", "\t\t", 
+         RowBox[{"sym", "=", 
+          RowBox[{"X", "-", "t"}]}], ";", "\[IndentingNewLine]", "\t\t", 
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{"t", ",", "1"}], "]"}], "+", "sym"}]}], ",", 
+        "\[IndentingNewLine]", "\t", "True", ",", "X"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Preparing", " ", "symmetry", " ", "generation"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"s", "=", 
+      RowBox[{"GetSymmetryOperations", "@", "group"}]}], ";", 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"R", ",", "T"}], "}"}], "=", 
+      RowBox[{"Transpose", "@", "s"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MatchQ", "[", 
+        RowBox[{
+         RowBox[{"Dimensions", "@", "s"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"_", ",", "3", ",", "3"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Point", " ", "group", " ", "procedure"}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"generate", "[", "coord_", "]"}], ":=", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Transpose", "[", 
+            RowBox[{
+            "s", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+            "]"}], ".", "coord"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{"Length", "@", "s"}]}], "}"}]}], "]"}]}], ",", 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Space", " ", "group", " ", "procedure"}], " ", "*)"}], 
+       "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"generate", "[", "coord_", "]"}], ":=", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+            "R", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], ".", 
+            "coord"}], "+", 
+           RowBox[{
+           "T", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{"Length", "@", "s"}]}], "}"}]}], "]"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Bring", " ", "coordinates", " ", "into", " ", "one", " ", "cell"}], 
+      " ", "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{"gather", "[", "list_", "]"}], ":=", 
+      RowBox[{"Map", "[", 
+       RowBox[{"mod", ",", "list", ",", 
+        RowBox[{"{", "2", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Process", " ", "centring"}], " ", "*)"}], 
+     "\[IndentingNewLine]", "\t", 
+     RowBox[{"c", "=", 
+      RowBox[{"StringTake", "[", 
+       RowBox[{
+        RowBox[{"GetSymmetryData", "[", 
+         RowBox[{"group", ",", "\"\<HermannMauguinFull\>\""}], "]"}], ",", 
+        "1"}], "]"}]}], ";", "\[IndentingNewLine]", "\t", 
+     RowBox[{"add", "=", 
+      RowBox[{"InputCheck", "[", 
+       RowBox[{"\"\<GetCentringVectors\>\"", ",", "c"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"If", "[", 
+      RowBox[{"useCentringQ", ",", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"a", ".", " ", "Apply"}], " ", "centring", " ", "vectors"}], 
+        " ", "*)"}], "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"centring", "[", "list_", "]"}], ":=", 
+        RowBox[{"(", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"equiv", "=", 
+           RowBox[{"DeleteDuplicates", "@", "list"}]}], ";", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"temp", "=", "equiv"}], ";", "\[IndentingNewLine]", "\t", 
+          RowBox[{"equiv", "=", 
+           RowBox[{
+            RowBox[{"Reap", "[", 
+             RowBox[{"Do", "[", 
+              RowBox[{
+               RowBox[{"Sow", "[", "\[IndentingNewLine]", "\t", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"#", "+", 
+                   RowBox[{
+                   "add", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}]}], "&"}], "/@", "temp"}], "]"}],
+                ",", "\[IndentingNewLine]", "\t", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", 
+                 RowBox[{"Length", "@", "add"}]}], "}"}]}], "]"}], "]"}], 
+            "\[LeftDoubleBracket]", 
+            RowBox[{"2", ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"equiv", "=", 
+           RowBox[{"Flatten", "[", 
+            RowBox[{"equiv", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          "\t", 
+          RowBox[{"Map", "[", 
+           RowBox[{"mod", ",", "equiv", ",", 
+            RowBox[{"{", "2", "}"}]}], "]"}]}], "\[IndentingNewLine]", "\t", 
+         ")"}]}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+       RowBox[{"(*", " ", 
+        RowBox[{
+         RowBox[{"b", ".", " ", "Do"}], " ", "not", " ", "use", " ", 
+         "centring", " ", "vectors"}], " ", "*)"}], "\[IndentingNewLine]", 
+       "\t", 
+       RowBox[{
+        RowBox[{"centring", "[", "list_", "]"}], ":=", 
+        RowBox[{"(", "\[IndentingNewLine]", "\t", 
+         RowBox[{
+          RowBox[{"temp", "=", 
+           RowBox[{"Table", "[", "\[IndentingNewLine]", "\t", 
+            RowBox[{
+             RowBox[{"Map", "[", 
+              RowBox[{"mod", ",", 
+               RowBox[{
+                RowBox[{
+                "list", "\[LeftDoubleBracket]", "i", 
+                 "\[RightDoubleBracket]"}], "+", 
+                RowBox[{
+                "add", "\[LeftDoubleBracket]", "j", 
+                 "\[RightDoubleBracket]"}]}]}], "]"}], ",", 
+             "\[IndentingNewLine]", "\t", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", 
+               RowBox[{"Length", "@", "add"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"Length", "@", "list"}]}], "}"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+          RowBox[{"pos", "=", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"Position", "[", "\[IndentingNewLine]", 
+                RowBox[{"list", ",", 
+                 RowBox[{
+                 "#", "\[LeftDoubleBracket]", "i", 
+                  "\[RightDoubleBracket]"}]}], "]"}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", 
+                 RowBox[{"Length", "@", "list"}]}], "}"}]}], "]"}], "&"}], "/@",
+             "temp"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{"Transpose", "@", "pos"}]}], ";", "\[IndentingNewLine]", 
+          "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{"DeleteDuplicates", "@", 
+            RowBox[{"Table", "[", "\[IndentingNewLine]", "\t", 
+             RowBox[{
+              RowBox[{"Sort", "@", 
+               RowBox[{"Flatten", "[", 
+                RowBox[{
+                 RowBox[{
+                 "temp", "\[LeftDoubleBracket]", "i", 
+                  "\[RightDoubleBracket]"}], ",", "1"}], "]"}]}], ",", 
+              "\[IndentingNewLine]", "\t", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", 
+                RowBox[{"Length", "@", "temp"}]}], "}"}]}], "]"}]}]}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+          RowBox[{"temp", "=", 
+           RowBox[{"Flatten", "@", 
+            RowBox[{"temp", "\[LeftDoubleBracket]", 
+             RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}]}]}], ";", 
+          "\[IndentingNewLine]", "\t", 
+          RowBox[{"list", "\[LeftDoubleBracket]", 
+           RowBox[{"Flatten", "@", "temp"}], "\[RightDoubleBracket]"}]}], 
+         "\[IndentingNewLine]", "\t", ")"}]}]}], "\[IndentingNewLine]", "\t", 
+      "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{"Final", " ", "trimming"}], " ", "*)"}], "\[IndentingNewLine]", 
+     "\t", 
+     RowBox[{
+      RowBox[{"final", "[", "list_", "]"}], ":=", 
+      RowBox[{"(", "\[IndentingNewLine]", "\t", 
+       RowBox[{
+        RowBox[{"temp", "=", 
+         RowBox[{"list", "/.", 
+          RowBox[{"x_Real", "\[RuleDelayed]", 
+           RowBox[{"Round", "[", 
+            RowBox[{"x", ",", 
+             RowBox[{"10.", "^", 
+              RowBox[{"(", 
+               RowBox[{"-", "6"}], ")"}]}]}], "]"}]}]}]}], ";", 
+        "\[IndentingNewLine]", "\t", 
+        RowBox[{"DeleteDuplicates", "@", "temp"}]}], "\[IndentingNewLine]", 
+       "\t", ")"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"--", "-"}], "*", " ", "Execute", " ", "procedure", " ", "*", 
+       RowBox[{"--", "-"}]}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"xyz", "=", 
+      RowBox[{"final", "/@", 
+       RowBox[{"centring", "/@", 
+        RowBox[{"gather", "/@", 
+         RowBox[{"generate", "/@", 
+          RowBox[{"rationalise", "/@", "xyz"}]}]}]}]}]}], ";", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"MatchQ", "[", 
+        RowBox[{"xyzInput", ",", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x_", ",", "y_", ",", "z_"}], "}"}], "/;", 
+          RowBox[{"!", 
+           RowBox[{"AnyTrue", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", "ListQ"}], 
+            "]"}]}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Return", "@", 
+        RowBox[{"First", "@", "xyz"}]}], ",", 
+       RowBox[{"Return", "@", "xyz"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ InitializationCell->False,
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",
+ CellID->971953604]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AttenuationCoefficient"]], 
+    "paclet:MaXrd/ref/AttenuationCoefficient"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["StructureFactor"]], "paclet:MaXrd/ref/StructureFactor"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryOperations"]], 
+    "paclet:MaXrd/ref/GetSymmetryOperations"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetSymmetryData"]], "paclet:MaXrd/ref/GetSymmetryData"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentReflections"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentReflections"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SymmetryEquivalentReflectionsQ"]], 
+    "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SystematicAbsentQ"]], "paclet:MaXrd/ref/SystematicAbsentQ"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ToStandardSetting"]], "paclet:MaXrd/ref/ToStandardSetting"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["MaXrd: Mathematica X-ray diffraction package"]], 
+   "paclet:MaXrd/guide/MaXrd"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->982874475]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"SymmetryEquivalentPositions",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
+         "paclet:MaXrd/guide/MaXrd", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2020, 9, 3, 23, 16, 36.186261}", 
+    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
+     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
+    True, "label" -> "MaXrd Symbol", "language" -> "en", "paclet" -> "MaXrd", 
+    "status" -> "None", "summary" -> 
+    "SymmetryEquivalentPositions[group, {x, y, z}] returns a list of \
+coordinates that are equivalent to {x, y, z} under the symmetry of group. \
+SymmetryEquivalentPositions[group, {{x1, y1, z1} {x2, y2, z2}, ...}] returns \
+a list of coordinates, each entry containg the equivalents of {x, i, z} i \
+under the symmetry of group.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "SymmetryEquivalentPositions", "titlemodifier" -> "", "windowtitle" -> 
+    "SymmetryEquivalentPositions", "type" -> "Symbol", "uri" -> 
+    "MaXrd/ref/SymmetryEquivalentPositions", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[11704, 355, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"777b31f3-e8b5-446a-ae63-0ba93282f6ba",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1791109367]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 55526, 1754}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[599, 21, 4569, 108, 70, "AnchorBarGrid",ExpressionUUID->"ade629b9-5fa3-4ec3-bb2a-2ddb16e6834b",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5193, 133, 184, 6, 70, "ObjectNameGrid",ExpressionUUID->"b8eac1c7-27ac-44ba-bf61-eb34f2ae63cd"],
+Cell[5380, 141, 2693, 85, 70, "Usage",ExpressionUUID->"3f098171-fe1c-4485-a805-4aeeb4b6e6dd",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8110, 231, 642, 19, 70, "NotesSection",ExpressionUUID->"ddcd3cff-4a75-4865-963a-aefd8889ff8a",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1320514495],
+Cell[8755, 252, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"de4cfb18-e9a9-4d74-b022-183ec6015b50"],
+Cell[8789, 254, 605, 19, 70, "Notes",ExpressionUUID->"3323ddca-55ab-45be-b1cf-ac8a772e3d25",
+ CellID->1996706349],
+Cell[9397, 275, 860, 29, 70, "Notes",ExpressionUUID->"a3f92414-0eec-4024-96e8-928c871b9d9c",
+ CellID->1067943069],
+Cell[10260, 306, 54, 1, 70, "Notes",ExpressionUUID->"f6500ca7-fe98-40f3-839b-60461cf57c47",
+ CellID->1968864877],
+Cell[10317, 309, 665, 16, 70, "3ColumnTableMod",ExpressionUUID->"3a4ad2b3-cfcf-4240-9ec0-ce2d6d48e2bb",
+ CellID->2024841348],
+Cell[10985, 327, 88, 1, 70, "Notes",ExpressionUUID->"c9dcae27-ba3e-40ce-afc8-f00bc1ec64ab",
+ CellID->471815327],
+Cell[11076, 330, 557, 18, 70, "Input",ExpressionUUID->"94b442df-f1ca-467f-bb5b-cac269ad86a2",
+ CellID->393695796],
+Cell[11636, 350, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"49379e13-e3a3-493a-825d-172d29b4a34e"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11704, 355, 268, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"777b31f3-e8b5-446a-ae63-0ba93282f6ba",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1791109367],
+Cell[CellGroupData[{
+Cell[11997, 369, 196, 6, 70, "ExampleSection",ExpressionUUID->"3d59d316-b9a5-47b1-9577-6204c9ec5188",
+ CellID->1896851170],
+Cell[12196, 377, 67, 1, 70, "ExampleText",ExpressionUUID->"826cbf41-e96e-41cd-8111-4992069b0d90",
+ CellID->1822669809],
+Cell[CellGroupData[{
+Cell[12288, 382, 243, 7, 70, "Input",ExpressionUUID->"40d61818-1173-4539-bb57-86afaef64f26",
+ CellID->1474322350],
+Cell[12534, 391, 517, 18, 70, "Output",ExpressionUUID->"4beff24c-e13d-4f59-bdf5-4ecb8d620e68",
+ CellID->1040489867]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13088, 414, 363, 10, 70, "Input",ExpressionUUID->"7310eac4-adae-49bc-b1aa-3c6cd7ee1c21",
+ CellID->1872147128],
+Cell[13454, 426, 378, 14, 70, "Output",ExpressionUUID->"d7874150-6859-40fe-a9ba-0d76f99410ae",
+ CellID->419193684]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13869, 445, 247, 7, 70, "Input",ExpressionUUID->"a5e1c74e-d27e-40c1-b77c-3f9e0529fda1",
+ CellID->1823097893],
+Cell[14119, 454, 283, 10, 70, "Output",ExpressionUUID->"209321e1-32c6-4557-8745-1323d60f86fd",
+ CellID->1419364166]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14439, 469, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"ea5cef7a-02b7-4a2f-bb10-3c6fbe8c44a4",
+ CellID->1498134612],
+Cell[14568, 474, 574, 24, 70, "ExampleText",ExpressionUUID->"88019af9-0369-44f4-ae92-08bdabea69d4",
+ CellID->2050146456],
+Cell[CellGroupData[{
+Cell[15167, 502, 288, 7, 70, "Input",ExpressionUUID->"5d0b0f22-d396-46b0-97c7-f25b0d088bbf",
+ CellID->287360011],
+Cell[15458, 511, 528, 17, 70, "Output",ExpressionUUID->"e768ea36-631b-4ecb-b2c8-8fdc2a86c498",
+ CellID->1292028305]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16023, 533, 226, 6, 70, "Input",ExpressionUUID->"5d6f8b02-c276-4098-a171-4dd720958e0a",
+ CellID->772639800],
+Cell[16252, 541, 2205, 72, 70, "Output",ExpressionUUID->"267340e9-1a79-4755-9581-dce78ca0ecd3",
+ CellID->1470226704]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18494, 618, 220, 6, 70, "Input",ExpressionUUID->"50d23bf6-bf0f-452d-ae83-a46ba22a3209",
+ CellID->391767198],
+Cell[18717, 626, 1080, 38, 70, "Output",ExpressionUUID->"fd605100-64ef-49aa-9811-47a68a5d58fd",
+ CellID->806727458]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19834, 669, 255, 7, 70, "Input",ExpressionUUID->"35b72079-590d-4d3a-9bbc-3db720bc2de5",
+ CellID->456428555],
+Cell[20092, 678, 2243, 65, 70, "Output",ExpressionUUID->"9a0a3b02-28cd-49b7-9212-8de3b6f764af",
+ CellID->1773113114]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22396, 750, 187, 6, 70, "ExampleSection",ExpressionUUID->"2c7b5d35-21db-41bb-bfc4-063383a32a15",
+ CellID->1293636265],
+Cell[22586, 758, 272, 10, 70, "ExampleText",ExpressionUUID->"3b891a95-a70d-4a68-8a72-45204b32235e",
+ CellID->210053192],
+Cell[CellGroupData[{
+Cell[22883, 772, 246, 8, 70, "Input",ExpressionUUID->"bccbe3b0-93b3-47cc-9f95-c3065bac5413",
+ CellID->476186508],
+Cell[23132, 782, 74, 2, 70, "Output",ExpressionUUID->"59a63e1e-55ca-4dee-ad03-2120836e54bb",
+ CellID->783978995]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23243, 789, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"78d207e7-834a-4a48-96a0-9c72f0cef48d",
+ CellID->887056824],
+Cell[23371, 794, 84, 1, 70, "ExampleText",ExpressionUUID->"3a7dfc5f-cff3-4e7e-b06f-9d94be9cc8f0",
+ CellID->932563494],
+Cell[CellGroupData[{
+Cell[23480, 799, 171, 4, 70, "Input",ExpressionUUID->"cf7f7957-c9d0-4329-944f-86473315afd1",
+ CellID->2033569841],
+Cell[23654, 805, 735, 23, 70, "Output",ExpressionUUID->"a822b1c9-35e2-4320-aabd-b7f7365d3984",
+ CellID->763041369]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24438, 834, 126, 3, 70, "ExampleDelimiter",ExpressionUUID->"7b74425a-f2e0-4ddc-9ea7-d1a4bc86efd1",
+ CellID->1151340366],
+Cell[24567, 839, 119, 3, 70, "ExampleText",ExpressionUUID->"48492f7b-7414-489d-9185-680db4fd9f07",
+ CellID->1749871892],
+Cell[24689, 844, 893, 26, 70, "Input",ExpressionUUID->"7cbf032c-52c3-4e67-a91f-daa8b9e3232c",
+ CellID->279621352],
+Cell[CellGroupData[{
+Cell[25607, 874, 282, 9, 70, "Input",ExpressionUUID->"c354be25-93d1-4f09-8ab6-a44e7a13e584",
+ CellID->1688250911],
+Cell[25892, 885, 79, 2, 70, "Output",ExpressionUUID->"7bb96050-cc6b-4dd8-8a04-e4dcf12eafd0",
+ CellID->364311498]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26008, 892, 229, 7, 70, "Input",ExpressionUUID->"1d0ee3c7-5962-4fec-b398-77b0386bb69c",
+ CellID->5719076],
+Cell[26240, 901, 79, 2, 70, "Output",ExpressionUUID->"765f05c1-b037-4beb-82b3-91f386ce54e6",
+ CellID->1773059572]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[26380, 910, 189, 6, 70, "ExampleSection",ExpressionUUID->"9042679c-fb49-4e74-8f77-63240faf47c0",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[26594, 920, 203, 6, 70, "ExampleSubsection",ExpressionUUID->"f84a5e95-037b-4f9b-8915-ac1c64c32494",
+ CellID->1757724783],
+Cell[26800, 928, 373, 13, 70, "ExampleText",ExpressionUUID->"5cf99a62-5eab-429f-b289-d8f94438fb2c",
+ CellID->2026722395],
+Cell[CellGroupData[{
+Cell[27198, 945, 170, 5, 70, "Input",ExpressionUUID->"c8d05de2-9e40-4035-a5a7-a913733cd255",
+ CellID->1478828199],
+Cell[27371, 952, 73, 2, 70, "Output",ExpressionUUID->"760326ed-1fa6-45c2-bc0c-2bf72728e359",
+ CellID->415172196]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27481, 959, 247, 7, 70, "Input",ExpressionUUID->"e5476d4d-a18b-480e-8532-d51068095d00",
+ CellID->1015831365],
+Cell[27731, 968, 73, 2, 70, "Output",ExpressionUUID->"3cb04004-fb72-4ef0-b20a-645be2d029bd",
+ CellID->1986421268]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[27853, 976, 211, 6, 70, "ExampleSubsection",ExpressionUUID->"a98a44ba-0277-438a-aaf5-f93c6ff02114",
+ CellID->448126965],
+Cell[28067, 984, 185, 6, 70, "ExampleText",ExpressionUUID->"efa20581-f271-41d6-8458-a83104df8955",
+ CellID->1015787839],
+Cell[CellGroupData[{
+Cell[28277, 994, 218, 6, 70, "Input",ExpressionUUID->"4684e5ea-2722-4cb8-96da-6ba2d8a0578c",
+ CellID->2118178332],
+Cell[28498, 1002, 717, 20, 70, "Output",ExpressionUUID->"86ef8e46-b475-4c07-8c3e-07d2af8d37d7",
+ CellID->620919603]
+}, Open  ]],
+Cell[29230, 1025, 203, 4, 70, "ExampleText",ExpressionUUID->"4de5d7af-131c-4dff-a52b-ec0d0b6a6a94",
+ CellID->34056041],
+Cell[CellGroupData[{
+Cell[29458, 1033, 111, 2, 70, "Input",ExpressionUUID->"186e4079-639b-4602-a41d-8bee4e49a782",
+ CellID->61174150],
+Cell[29572, 1037, 352, 13, 70, "Output",ExpressionUUID->"73c51997-a856-4c9f-b1be-c29f450ad631",
+ CellID->1464642087]
+}, Open  ]],
+Cell[29939, 1053, 105, 2, 70, "ExampleText",ExpressionUUID->"13844bb6-11d4-4b76-913e-d647450992bc",
+ CellID->1382485696],
+Cell[CellGroupData[{
+Cell[30069, 1059, 117, 2, 70, "Input",ExpressionUUID->"dcaaa3ac-f2fa-4f7c-9c7c-65f4be2d10ac",
+ CellID->1314315404],
+Cell[30189, 1063, 351, 13, 70, "Output",ExpressionUUID->"aa95d4e7-6a9b-4fb4-baea-b89b1fb28471",
+ CellID->103167019]
+}, Open  ]],
+Cell[30555, 1079, 133, 4, 70, "ExampleText",ExpressionUUID->"a0cef693-3955-4c7d-a0a1-d290723471a7",
+ CellID->1093804241],
+Cell[30691, 1085, 614, 20, 70, "Input",ExpressionUUID->"d61f5b14-752b-44fb-8d18-bc1aa43554e9",
+ CellID->657454618],
+Cell[31308, 1107, 226, 5, 70, "ExampleText",ExpressionUUID->"30c365a7-3c93-45b5-9626-32039c2f1e04",
+ CellID->440074080],
+Cell[CellGroupData[{
+Cell[31559, 1116, 341, 9, 70, "Input",ExpressionUUID->"c2471619-06fe-44db-9961-0e87a7edbdfa",
+ CellID->612412834],
+Cell[31903, 1127, 1024, 23, 70, "Output",ExpressionUUID->"1b2d018f-561e-4706-9aaf-d0a36881544c",
+ CellID->1513286141]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[32988, 1157, 235, 8, 70, "ExampleSection",ExpressionUUID->"a0ac34ad-0aeb-4a80-b648-4d550e2bc056",
+ CellID->611183881],
+Cell[33226, 1167, 1091, 29, 70, "Input",ExpressionUUID->"03dd0035-042f-4413-881e-94df2770edcf",
+ InitializationCell->False,
+ CellID->1009976956],
+Cell[34320, 1198, 15343, 371, 70, "Input",ExpressionUUID->"5efc8388-c04d-4522-895e-916ee72179f6",
+ InitializationCell->False,
+ CellID->971953604]
+}, Closed]],
+Cell[49678, 1572, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"c2e5529b-b590-48cf-8320-be55a52de16f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49746, 1577, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"1669e741-6a79-47ac-aded-49af6e89970b",
+ CellID->1255426704],
+Cell[49899, 1586, 2952, 92, 70, "SeeAlso",ExpressionUUID->"02bb5557-ffcd-469a-9634-864f96049239",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52888, 1683, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"c25ed4df-cfb6-4a77-a0ff-392995b7f1df",
+ CellID->38303248],
+Cell[53047, 1692, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"ffa5498c-e5c7-43bd-8cfa-cea16945e69b"],
+Cell[53081, 1694, 207, 7, 70, "MoreAbout",ExpressionUUID->"92978a8e-8e77-48af-ba0e-25da10d3a896",
+ CellID->982874475]
+}, Open  ]],
+Cell[53303, 1704, 23, 0, 70, "FooterCell",ExpressionUUID->"37616e9e-ba43-4792-9894-e03c175ce284"]
+}
+]
+*)
+
+(* End of internal cache information *)
