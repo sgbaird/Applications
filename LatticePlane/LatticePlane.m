@@ -76,84 +76,19 @@ Reciprocal[hklIn_]:=1/ParseHKL@hklIn
 
 
 (* ::Input::Initialization:: *)
-AssignAxis[n_,valIn_,\[Gamma]_,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{val,B},
-val=If[Length@valIn==0,valIn,valIn[[n]]];
-B=OptionValue["BasisVectors"];
-(*tri=SASTriangle[a,\[Gamma],b]\[LeftDoubleBracket]1\[RightDoubleBracket];*)
-out=If[B===Null,
-Switch[n,1,{val,0,0},2,{val,val,0}*{Cos[(*90\[Degree]-*)\[Gamma]],Sin[(*90\[Degree]-*)\[Gamma]],0},3,{0,0,val}],
-B[[n]]val
-];
-Rationalize[out,0]
-]
-
-
-(* ::Input::Initialization:: *)
-AssignAxes[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{},
-MapThread[AssignAxis[#1,#2,\[Gamma],"BasisVectors"->OptionValue["BasisVectors"]]&,{{1,2,3},\[ScriptCapitalI]}]
-]
-
-
-(* ::Input::Initialization:: *)
-GetPositions[\[ScriptCapitalI]_]:=Flatten@Position[NumberQ/@\[ScriptCapitalI],#]&/@{True(*p*),False(*f*)}
-
-
-(* ::Input::Initialization:: *)
-Options[OneDimension]={"BasisVectors"->Null};
-OneDimension[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[]]:=Module[{p,f,p1,f1,f2,f3,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB],B},
-B=OptionValue["BasisVectors"];
-opts="BasisVectors"->B;
-{p,f}=GetPositions@\[ScriptCapitalI];
-p1=p[[1]];
-{f1,f2}=f;
-f3=Complement[Range[3],f];
-If[B===Null,
-\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]],
-\[ScriptCapitalO]=(B[[f3]]\[ScriptCapitalI][[f3]])[[1]]
-];
-\[ScriptCapitalA]=AssignAxis[f1,1,\[Gamma],opts];
-\[ScriptCapitalB]=AssignAxis[f2,1,\[Gamma],opts];
-InfinitePlane[\[ScriptCapitalO],{\[ScriptCapitalA],\[ScriptCapitalB]}]
-]
-
-
-(* ::Input::Initialization:: *)
-TwoDimension[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[{"BasisVectors"->Null}]]:=Module[{p,f,p1,p2,f1,f2,f3,B,negQ,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB]},
-{p,f}=GetPositions@\[ScriptCapitalI];
-{p1,p2}=p[[ ;;2]];
-f1=f[[1]];
-{f2,f3}=Complement[Range@3,f];
-B=OptionValue["BasisVectors"];
-
-If[B===Null,
-
-\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]];
-\[ScriptCapitalA]=AssignAxis[p2,\[ScriptCapitalI],\[Gamma]],
-
-\[ScriptCapitalO]=B[[f2]]\[ScriptCapitalI][[f2]];
-\[ScriptCapitalA]=B[[f3]]\[ScriptCapitalI][[f3]]
-];
-\[ScriptCapitalB]=AssignAxis[f1,1,\[Gamma],"BasisVectors"->B];
-If[B===Null,
-InfinitePlane[{0,0,0},{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}],
-InfinitePlane[\[ScriptCapitalA],{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}]
-]
-]
-
-
-(* ::Input::Initialization:: *)
-Options[MillerToPlane]={"BasisVectors"->Null,"\[Gamma]"->Null};
-MillerToPlane[hkl_,\[Gamma]_:Null,OptionsPattern[]]:=Module[{\[ScriptCapitalI],p1,p,f,B,\[Gamma]1},
-If[\[Gamma]===Null,\[Gamma]1=OptionValue["\[Gamma]"],\[Gamma]1=\[Gamma]];
+MillerToPlane[hkl_,Rin_]:=Module[{\[ScriptCapitalI],R,negQ,\[ScriptCapitalO],pos,zeroPosition,finitePosition,axisIntersection},
 \[ScriptCapitalI]=Reciprocal[hkl];
-B=OptionValue["BasisVectors"];
-If[B=!=Null,
-B=Rationalize[B,0];
-negQ=Negative[\[ScriptCapitalI]/.Indeterminate->0];
-B=MapThread[If[#1,-#2,#2]&,{negQ,B}];
-];
-{p,f}=GetPositions@\[ScriptCapitalI];
-Switch[Length@p(*number of real-valued dimensions*),1,OneDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],2,TwoDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B],3,InfinitePlane@AssignAxes[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"->B]]
+R=Rationalize[Rin,0];(*basis vectors*)
+\[ScriptCapitalO]={0,0,0};(*reference point*)
+negQ=Negative[\[ScriptCapitalI]/.Indeterminate->0];(*which ones are negative?*)
+MapThread[If[#1,\[ScriptCapitalO]=\[ScriptCapitalO]+#2]&,{negQ,R}];(*if negative, shift the reference point in the positive direction along an axis*)
+zeroPosition=Flatten@Position[hkl,0];(*which hkl values are 0?*)
+finitePosition=Complement[Range@3,zeroPosition];(*which hkl values are finite?*)
+axisIntersection=\[ScriptCapitalO]+#&/@(\[ScriptCapitalI][[finitePosition]]R[[finitePosition]]); (*using the finite hkl values, compute axis intersections*)
+R=MapThread[If[#1,-#2,#2]&,{negQ,R}];(*if negative, flip the basis vector*)
+If[Length@zeroPosition>0,
+AppendTo[axisIntersection,axisIntersection[[1]]-R[[#]]]&/@zeroPosition]; (*get point(s) in plane (if any) for remaining hkl indices that are 0*)
+InfinitePlane[axisIntersection]
 ]
 
 
@@ -178,7 +113,7 @@ Parallelepiped[\[ScriptCapitalO],\[ScriptCapitalN]]
 
 
 (* ::Input::Initialization:: *)
-RationalUnitCell[R_,n_]:=Module[{R1,R2,R3,c,\[ScriptCapitalU]pts,\[ScriptCapitalU]},
+RationalUnitCell[R_,n_:1]:=Module[{R1,R2,R3,c,\[ScriptCapitalU]pts,\[ScriptCapitalU]},
 {R1,R2,R3}=R(1+100$MachineEpsilon);(*for some reason Kernel aborts unexpectedly without the machine precision factor*)
 c=Floor[n/2](R1+R2+R3);(*corner*)
 \[ScriptCapitalU]pts=#-c&/@(n{{0,0,0},R1,R2,R3,R1+R2,R2+R3,R1+R3,R1+R2+R3});
@@ -208,7 +143,7 @@ PlaneIntersection[\[ScriptCapitalP]_,\[ScriptCapitalU]_]:=Module[{\[ScriptCapita
 If[Head@\[ScriptCapitalP]===InfinitePlane,\[ScriptCapitalP]1={\[ScriptCapitalP]},\[ScriptCapitalP]1=\[ScriptCapitalP]];
 \[ScriptCapitalB]=RegionResize[BoundingRegion[\[ScriptCapitalU]],Scaled@Rationalize[1.1(*100$MachineEpsilon*)]];(*for cropping the plane*)
 \[ScriptCapitalP]crop=RegionIntersection[#,\[ScriptCapitalB]]&/@\[ScriptCapitalP]1;
-\[ScriptCapitalP]int=RegionIntersection[#,\[ScriptCapitalU]]&/@(*\[ScriptCapitalP]1*)\[ScriptCapitalP]crop;
+\[ScriptCapitalP]int=RegionIntersection[#,N@\[ScriptCapitalU]]&/@N[\[ScriptCapitalP]crop];
 shapes=OpenCascadeShape[#]&/@\[ScriptCapitalP]int;
 bmesh=OpenCascadeShapeSurfaceMeshToBoundaryMesh[#]&/@shapes;
 coords=#["Coordinates"]&/@bmesh;
@@ -863,7 +798,7 @@ crystalCopy
 
 (* ::Input::Initialization:: *)
 SetupDensityHKL::odd="supercell expansion (n) should be odd";
-SetupDensityHKL[mpid_String,n_Integer:3,hklMax_Integer:4,radiusFactor:(_Real|_Integer):1/3]:=Module[{crystalData,pg,latticeParameters,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
+SetupDensityHKL[mpid_String,n_Integer:1,hklMax_Integer:3,radiusFactor:(_Real|_Integer):1/3]:=Module[{crystalData,pg,latticeParameters,\[ScriptCapitalE],\[ScriptF]tmp,R,R1,R2,R3,\[ScriptCapitalO],\[ScriptCapitalE]Unique,\[ScriptF],rKey,r,\[ScriptCapitalE]Pos,\[ScriptCapitalU],\[ScriptCapitalU]pts,reflectionList,hklList,\[ScriptCapitalP],\[ScriptCapitalR],rList,\[ScriptF]List,\[ScriptCapitalD],npts,\[ScriptCapitalA]Sym},
 
 crystalData=ImportCrystalData2[mpid<>".cif",mpid,"OverwriteWarning"->False];
 (*ExpandCrystal[mpid,{n,n,n},"NewLabel"\[Rule]mpid<>"_2","DataFile"\[Rule]mpid<>".m"];(*Defaults to 1x1x1*)*)
@@ -891,7 +826,7 @@ r=radiusFactor*ReplaceAll[\[ScriptCapitalE],Thread[\[ScriptCapitalE]Unique->rKey
 
 reflectionList=ReflectionList@hklMax;
 hklList=MergeSymmetryEquivalentReflections[pg,reflectionList];
-\[ScriptCapitalP]=MillerToPlane[#,\[Gamma]=0,"BasisVectors"->R]&/@hklList;
+\[ScriptCapitalP]=MillerToPlane[#,R]&/@hklList;
 \[ScriptCapitalR]=PlaneIntersection[\[ScriptCapitalP],\[ScriptCapitalU]];
 \[ScriptF]List=\[ScriptF][[#/.\[ScriptCapitalE]Pos]]&/@\[ScriptCapitalE]Unique;
 rList=r[[#/.\[ScriptCapitalE]Pos]]&/@\[ScriptCapitalE]Unique;
@@ -971,7 +906,7 @@ vals2=Range@npts/.(Thread[Keys@#->Values@#]&/@valsReplace//Flatten);
 
 (* ::Input::Initialization:: *)
 DensityHKL::mpidNotString="A string was expected for mpid.";
-DensityHKL[mpid_:"mp-134",n_Integer:3,hklMax_Integer:4,dFactor:(_Real|_Integer):0.01,radiusFactorIn:(_Real|_Integer):0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction","PrintID"->False,"PrintMethod"->False}]]:=Module[{method,radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
+DensityHKL[mpid_:"mp-134",n_Integer:1,hklMax_Integer:3,dFactor:(_Real|_Integer):0.01,radiusFactorIn:(_Real|_Integer):0,OptionsPattern[{"Method"->"PDF","Output"->"PackingFraction","PrintID"->False,"PrintMethod"->False}]]:=Module[{method,radiusFactor,\[ScriptCapitalD],\[ScriptCapitalR],\[ScriptCapitalP],\[ScriptCapitalA]Sym,\[ScriptF]List,rList,hklList,\[ScriptCapitalE]Unique,\[ScriptCapitalA]out,\[ScriptCapitalA]outn,\[ScriptCapitalA]outCt,pg,hklFull,outCt,outn,\[ScriptCapitalA]fulln,\[ScriptCapitalA]fullCt},
 (*If[Head@mpid=!=String,Message[DensityHKL::mpidNotString];Abort[]];*)
 If[OptionValue["PrintID"],Print@mpid];
 method=OptionValue["Method"];
@@ -995,7 +930,9 @@ outCt=GetFullHKL[#,hklList,pg]&/@\[ScriptCapitalA]outCt;
 
 (* ::Input::Initialization:: *)
 PlotSetup[mpid_,n_:3,hklMax_:4]:=Module[{pg,reflectionList,hklList},
-pg=$CrystalData[[mpid,"SpaceGroup"]];
+crystalData=ImportCrystalData2[mpid<>".cif",mpid,"OverwriteWarning"->False];
+crystalData=ExpandCrystal2[crystalData,{n,n,n}];
+pg=crystalData[["SpaceGroup"]];
 reflectionList=ReflectionList@hklMax;
 hklList=MergeSymmetryEquivalentReflections[pg,reflectionList];
 {hklList,reflectionList,pg}
@@ -1012,8 +949,9 @@ Show[Legended[g1,BarLegend[{c,c[[3]]},LegendLabel->legendLabel]],Graphics3D@{Fac
 
 
 (* ::Code::Initialization::Bold:: *)
-PlotFullHKL[valsIn_,hklIn_,pg_,o_Integer:0.75,legendLabel_:"\!\(\*FractionBox[SubscriptBox[\(\[ScriptCapitalA]\), \(\[Integral]\)], SubscriptBox[\(\[ScriptCapitalA]\), \(hkl\)]]\)(\!\(\*SuperscriptBox[\(\[CapitalARing]\), \(-2\)]\))"]:=Module[{c,hklFull,vals2,\[ScriptR],hklListSub,valsSub,g1},
+PlotFullHKL[valsIn_,hklIn_,pg_,o_Integer:0.75,legendLabel_:"\!\(\*FractionBox[SubscriptBox[\(\[ScriptCapitalA]\), \(\[Integral]\)], SubscriptBox[\(\[ScriptCapitalA]\), \(hkl\)]]\)(\!\(\*SuperscriptBox[\(\[CapitalARing]\), \(-2\)]\))"]:=Module[{c,max,hklFull,vals2,\[ScriptR],hklListSub,valsSub,g1},
 c=ColorData[{"AvocadoColors",{0,Max@valsIn}}];
+max=Max@hklIn;
 {\[ScriptR],vals2}=GetFullHKL[valsIn,hklIn,pg];
 {hklListSub,valsSub}=DeleteCases[{\[ScriptR],vals2}\[Transpose],{{x_,y_,z_},_}/;AllTrue[Thread[{x,y,z}>0],TrueQ]]\[Transpose];(*remove a corner of the cube for visualization*)
 g1=Graphics3D[{Opacity[o],PointSize[0.08],Point[hklListSub,VertexColors->c/@valsSub]},Axes->True,BoxRatios->Automatic,AxesLabel->{"h","k","l"},ViewPoint->{max,0.6max,0.6max},AxesEdge->{{1,-1},{1,-1},{1,-1}}, PlotRange->ConstantArray[{-max,max},3],ImageSize->Medium];
@@ -1036,4 +974,104 @@ Protect[Evaluate[Context[]<>"*"]];
 EndPackage[];
 
 
+(* ::Input::Initialization:: *)
+(*Options[OneDimension]={"BasisVectors"\[Rule]Null};
+OneDimension[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[]]:=Module[{p,f,p1,f1,f2,f3,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB],B},
+B=OptionValue["BasisVectors"];
+opts="BasisVectors"\[Rule]B;
+{p,f}=GetPositions@\[ScriptCapitalI];
+p1=p\[LeftDoubleBracket]1\[RightDoubleBracket];
+{f1,f2}=f;
+f3=Complement[Range[3],f];
+If[B===Null,
+\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]],
+\[ScriptCapitalO]=(B\[LeftDoubleBracket]f3\[RightDoubleBracket]\[ScriptCapitalI]\[LeftDoubleBracket]f3\[RightDoubleBracket])\[LeftDoubleBracket]1\[RightDoubleBracket]
+];
+\[ScriptCapitalA]=AssignAxis[f1,1,\[Gamma],opts];
+\[ScriptCapitalB]=AssignAxis[f2,1,\[Gamma],opts];
+InfinitePlane[\[ScriptCapitalO],{\[ScriptCapitalA],\[ScriptCapitalB]}]
+]*)
 
+
+(* ::Input::Initialization:: *)
+(*TwoDimension[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[{"BasisVectors"\[Rule]Null}]]:=Module[{p,f,p1,p2,f1,f2,f3,B,opts,negQ,\[ScriptCapitalO],\[ScriptCapitalA],\[ScriptCapitalB],v1,v2,pt,out},
+{p,f}=GetPositions@\[ScriptCapitalI];
+{p1,p2}=p\[LeftDoubleBracket] ;;2\[RightDoubleBracket];
+f1=f\[LeftDoubleBracket]1\[RightDoubleBracket];
+{f2,f3}=Complement[Range@3,f];
+B=OptionValue["BasisVectors"];
+opts="BasisVectors"\[Rule]B;
+If[B===Null,
+
+\[ScriptCapitalO]=AssignAxis[p1,\[ScriptCapitalI],\[Gamma]];
+\[ScriptCapitalA]=AssignAxis[p2,\[ScriptCapitalI],\[Gamma]],
+
+\[ScriptCapitalO]=B\[LeftDoubleBracket]f2\[RightDoubleBracket]\[ScriptCapitalI]\[LeftDoubleBracket]f2\[RightDoubleBracket];
+\[ScriptCapitalA]=B\[LeftDoubleBracket]f3\[RightDoubleBracket]\[ScriptCapitalI]\[LeftDoubleBracket]f3\[RightDoubleBracket];
+];
+\[ScriptCapitalB]=AssignAxis[f1,1,\[Gamma],opts];
+Print@{f1,f2,f3};
+Print[\[ScriptCapitalI]\[LeftDoubleBracket]{f2,f3}\[RightDoubleBracket]];
+Print@{\[ScriptCapitalI],B};
+(*Print@{\[ScriptCapitalA],\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB],\[ScriptCapitalO],{0,0,0}};*)
+(*negQ=Negative@B;*)
+(*If[Negative[\[ScriptCapitalI]\[LeftDoubleBracket]f2\[RightDoubleBracket]],\[ScriptCapitalO]=\[ScriptCapitalO]+B\[LeftDoubleBracket]f2\[RightDoubleBracket];Print@"Neg1"];
+If[Negative[\[ScriptCapitalI]\[LeftDoubleBracket]f3\[RightDoubleBracket]],\[ScriptCapitalA]=\[ScriptCapitalA]+B\[LeftDoubleBracket]f3\[RightDoubleBracket];Print@"Neg2"];*)
+(*pt=\[ScriptCapitalA];
+v1=\[ScriptCapitalA]-\[ScriptCapitalO];
+v2=\[ScriptCapitalB];*)
+out=If[B===Null,
+InfinitePlane[{0,0,0},{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}],
+(*InfinitePlane[pt,{v1,v2}]*)
+Print[Positive@\[ScriptCapitalI]\[LeftDoubleBracket]{f2,f3}\[RightDoubleBracket]];
+Switch[Positive@\[ScriptCapitalI]\[LeftDoubleBracket]{f2,f3}\[RightDoubleBracket],
+{False,True},InfinitePlane[\[ScriptCapitalA]+\[ScriptCapitalO],{\[ScriptCapitalA]+\[ScriptCapitalO],\[ScriptCapitalB]}],
+{False,False},InfinitePlane[\[ScriptCapitalA]-\[ScriptCapitalO]-\[ScriptCapitalB],{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}],
+{True,False},InfinitePlane[\[ScriptCapitalA]-\[ScriptCapitalB],{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}],
+{True,True},InfinitePlane[\[ScriptCapitalA],{\[ScriptCapitalA]-\[ScriptCapitalO],\[ScriptCapitalB]}]
+]
+];
+out
+]*)
+
+
+(* ::Input::Initialization:: *)
+(*AssignAxis::badArgs="If B is Null, then \[Gamma] should not be Null and vice-versa";
+AssignAxis[n_,valIn_,\[Gamma]_,OptionsPattern[{"BasisVectors"\[Rule]Null}]]:=Module[{val,B,out},
+val=If[Length@valIn\[Equal]0,valIn,valIn\[LeftDoubleBracket]n\[RightDoubleBracket]];
+B=OptionValue["BasisVectors"];
+(*tri=SASTriangle[a,\[Gamma],b]\[LeftDoubleBracket]1\[RightDoubleBracket];*)
+If[(B===Null)&&(\[Gamma]===Null),Message[AssignAxis::badArgs]];
+out=If[B===Null,
+Switch[n,1,{val,0,0},2,{val,val,0}*{Cos[(*90\[Degree]-*)\[Gamma]],Sin[(*90\[Degree]-*)\[Gamma]],0},3,{0,0,val}],
+B\[LeftDoubleBracket]n\[RightDoubleBracket]Abs@val
+];
+Rationalize[out,0]
+]*)
+
+
+(* ::Input::Initialization:: *)
+(*AssignAxes[\[ScriptCapitalI]_,\[Gamma]_,OptionsPattern[{"BasisVectors"\[Rule]Null}]]:=Module[{},
+AssignAxis[#1,\[ScriptCapitalI],\[Gamma],"BasisVectors"\[Rule]OptionValue["BasisVectors"]]&/@{1,2,3}
+]*)
+
+
+(* ::Input::Initialization:: *)
+(*GetPositions[\[ScriptCapitalI]_]:=Flatten@Position[NumberQ/@\[ScriptCapitalI],#]&/@{True(*p*),False(*f*)}*)
+
+
+(* ::Input::Initialization:: *)
+(*Options[MillerToPlane]={"BasisVectors"\[Rule]Null,"\[Gamma]"\[Rule]Null};
+MillerToPlane[hkl_,\[Gamma]_:Null,OptionsPattern[]]:=Module[{\[ScriptCapitalI],p1,p,f,B,negQ,\[Gamma]1,out},
+If[\[Gamma]===Null,\[Gamma]1=OptionValue["\[Gamma]"],\[Gamma]1=\[Gamma]];
+\[ScriptCapitalI]=Reciprocal[hkl];
+B=OptionValue["BasisVectors"];
+If[B=!=Null,
+B=Rationalize[B,0];
+negQ=Negative[\[ScriptCapitalI]/.Indeterminate\[Rule]0];(*which ones are negative?*)
+B=MapThread[If[#1,-#2,#2]&,{negQ,B}](*if negative, flip the corresponding basis vector element*) 
+];
+{p,f}=GetPositions@\[ScriptCapitalI];
+out=Switch[Length@p(*number of real-valued dimensions*),1,OneDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"\[Rule]B],2,TwoDimension[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"\[Rule]B],3,InfinitePlane@AssignAxes[\[ScriptCapitalI],\[Gamma]1,"BasisVectors"\[Rule]B]];
+out
+]*)
