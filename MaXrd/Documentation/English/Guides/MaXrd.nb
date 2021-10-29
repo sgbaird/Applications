@@ -3,196 +3,137 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 12.1' *)
+(* CreatedBy='Mathematica 10.3' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     69555,       1580]
-NotebookOptionsPosition[     63967,       1468]
-NotebookOutlinePosition[     65655,       1509]
-CellTagsIndexPosition[     65612,       1506]
-WindowTitle->MaXrd: Mathematica X-ray diffraction package
+NotebookDataLength[     74117,       1490]
+NotebookOptionsPosition[     67073,       1349]
+NotebookOutlinePosition[     67540,       1366]
+CellTagsIndexPosition[     67497,       1363]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[GridBox[{
-   {Cell["MAXRD GUIDE", "PacletNameCell"], Cell[TextData[{
-     Cell[BoxData[
-      ActionMenuBox[
-       FrameBox[
-        InterpretationBox[Cell[TextData[{
-          "Functions",
-          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-           StripOnInput->False]
-         }]],
-         TextCell[
-          Row[{"Functions", 
-            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->False], {"\<\"AttenuationCoefficient\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/AttenuationCoefficient"], "\<\"BraggAngle\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/BraggAngle"], "\<\"ConstructDomains\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/ConstructDomains"], "\<\"CrystalDensity\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/CrystalDensity"], "\<\"CrystalFormulaUnits\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/CrystalFormulaUnits"], "\<\"CrystalPlot\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/CrystalPlot"], "\<\"DarwinWidth\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/DarwinWidth"], "\<\"DistortStructure\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/DistortStructure"], "\<\"DomainPlot\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/DomainPlot"], "\<\"EmbedStructure\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/EmbedStructure"], "\<\"EquivalentIsotropicADP\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/EquivalentIsotropicADP"], "\<\"ExpandCrystal\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/ExpandCrystal"], "\<\"ExportCrystalData\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/ExportCrystalData"], "\<\"ExtinctionLength\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/ExtinctionLength"], \
-"\<\"GetAtomicScatteringFactors\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/GetAtomicScatteringFactors"], \
-"\<\"GetCrystalMetric\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/GetCrystalMetric"], "\<\"GetElements\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/GetElements"], "\<\"GetLatticeParameters\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/GetLatticeParameters"], "\<\"GetLaueClass\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/GetLaueClass"], "\<\"GetScatteringCrossSections\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/GetScatteringCrossSections"], "\<\"GetSymmetryData\"\
-\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/GetSymmetryData"], "\<\"GetSymmetryOperations\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/GetSymmetryOperations"], "\<\"ImportCrystalData\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/ImportCrystalData"], "\<\"InputCheck\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/InputCheck"], "\<\"InterplanarSpacing\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/InterplanarSpacing"], \
-"\<\"MergeSymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"], \
-"\<\"MillerNotationToList\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/MillerNotationToList"], \
-"\<\"MillerNotationToString\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/MillerNotationToString"], \
-"\<\"ReciprocalSpaceSimulation\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/ReciprocalSpaceSimulation"], \
-"\<\"ReflectionList\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/ReflectionList"], "\<\"RelatedFunctionsGraph\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/RelatedFunctionsGraph"], "\<\"ResetCrystalData\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/ResetCrystalData"], \
-"\<\"SimulateDiffractionPattern\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/SimulateDiffractionPattern"], "\<\"StructureFactor\"\
-\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/StructureFactor"], "\<\"StructureFactorTable\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/StructureFactorTable"], \
-"\<\"SymmetryEquivalentPositions\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/SymmetryEquivalentPositions"], \
-"\<\"SymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/SymmetryEquivalentReflections"], \
-"\<\"SymmetryEquivalentReflectionsQ\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"], \
-"\<\"SynthesiseStructure\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/SynthesiseStructure"], "\<\"SystematicAbsentQ\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/SystematicAbsentQ"], "\<\"ToStandardSetting\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/ToStandardSetting"], \
-"\<\"UnitCellTransformation\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/UnitCellTransformation"]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"GuideFunction"]],
-      LineSpacing->{1.4, 0}],
-     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
-\[ThickSpace]",
-     Cell[BoxData[
-      ActionMenuBox[
-       FrameBox[
-        InterpretationBox[Cell[TextData[{
-          "Tutorials",
-          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-           StripOnInput->False]
-         }]],
-         TextCell[
-          Row[{"Tutorials", 
-            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->
-         False], {"\<\"Tutorials and references in the MaXrd package\"\>":>
-       Documentation`HelpLookup["paclet:MaXrd/tutorial/TutorialsMainPage"]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"GuideTutorial"]],
-      LineSpacing->{1.4, 0}],
-     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
-\[ThickSpace]",
-     Cell[BoxData[
-      ActionMenuBox[
-       FrameBox[
-        InterpretationBox[Cell[TextData[{
-          "URL",
-          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-           StripOnInput->False]
-         }]],
-         TextCell[
-          Row[{"URL", 
-            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->False], {"\<\"MaXrd/guide/MaXrd\"\>":>
-       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell["MaXrd/guide/MaXrd"]}, Visible -> False]]; 
-        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-       Delimiter, "\<\"Copy web URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell[
-              BoxData[
-               MakeBoxes[
-                Hyperlink[
-                "http://reference.wolfram.com/language/MaXrd/guide/MaXrd.\
-html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
-            False]]; SelectionMove[
-         DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; 
-        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
-         NotebookLocate[{
-           URL[
-            StringJoin[
-             If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$8469], 
-              "http://reference.wolfram.com/system-modeler/", 
-              "http://reference.wolfram.com/language/"], "MaXrd/guide/MaXrd", 
-             ".html"]], None}]}]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"URLMenu"]],
-      LineSpacing->{1.4, 0}]
-    }], "AnchorBar"]}
-  }]], "AnchorBarGrid",
- CellID->1],
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New",ExpressionUUID->"b1b45d39-5ec2-4e20-8e1c-4e056910af8e"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"3f018bfc-a977-4825-954b-d934f43aea77"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->"b7472c58-2862-4dcf-82df-e816674bbdde"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised",ExpressionUUID->"93851587-f921-46ff-bbe2-cbc1daf3cd63"]
+}], "History",
+ CellID->1247902091,ExpressionUUID->"9bcb54b8-eeee-4703-b5e6-8e4b61199186"],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449,ExpressionUUID->"e61a21c1-9fa0-45f5-b6b3-fa4876f6453a"],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507,ExpressionUUID->"1d89e668-8fcc-4916-b0b1-279a5303b79b"],
+
+Cell["MaXrd", "Categorization",
+ CellChangeTimes->{3.74383608582088*^9},
+ CellLabel->"Paclet Name",
+ CellID->605800465,ExpressionUUID->"218561ac-2b88-4826-ba2f-163f55ba2e8d"],
+
+Cell["MaXrd`", "Categorization",
+ CellChangeTimes->{3.743836086279346*^9},
+ CellLabel->"Context",
+ CellID->468444828,ExpressionUUID->"8a6a45a4-88d0-4079-b5fc-2f387058c236"],
+
+Cell["MaXrd/guide/MaXrd", "Categorization",
+ CellChangeTimes->{{3.743155024745447*^9, 3.743155025551178*^9}, 
+   3.743836086758506*^9, {3.744698001304625*^9, 3.744698002283032*^9}},
+ CellLabel->"URI",ExpressionUUID->"373fda08-82e6-4bf3-904b-8fb9c5fabb9b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552,ExpressionUUID->"5f37628e-8ae5-4a60-b1bc-1d69e1efba70"],
+
+Cell["X-ray", "Keywords",
+ CellChangeTimes->{{3.658402272996806*^9, 3.6584022751034946`*^9}},
+ CellID->1251852827,ExpressionUUID->"ddffc2a7-349c-46cc-a4ba-c20a4b635275"],
+
+Cell["MaXrd", "Keywords",
+ CellChangeTimes->{{3.658402272996806*^9, 3.658402276087294*^9}, 
+   3.743836090295108*^9},
+ CellID->720193992,ExpressionUUID->"c11db84e-387f-4d7d-98e5-f082ebd4123a"],
+
+Cell["X-ray diffraction", "Keywords",
+ CellChangeTimes->{{3.658402272996806*^9, 3.658402285622905*^9}},
+ CellID->947632093,ExpressionUUID->"36df04e8-81b6-4b5b-9703-c762ae6f6fa9"],
+
+Cell["diffraction", "Keywords",
+ CellChangeTimes->{{3.658402272996806*^9, 3.658402287411689*^9}, {
+   3.658764433513331*^9, 3.65876443351703*^9}, 3.743836102291513*^9},
+ CellID->776452148,ExpressionUUID->"33721507-01c5-4bce-a8dd-11cab9e2aa91"],
+
+Cell["UiS", "Keywords",
+ CellChangeTimes->{{3.658402272996806*^9, 3.658402287411689*^9}, {
+  3.658764433513331*^9, 3.658764437945153*^9}},
+ CellID->1074276230,ExpressionUUID->"27dccfc4-fa15-4a7e-9e4c-aca8f289a284"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771,ExpressionUUID->"6419e149-1604-48d6-96fc-a70508b410d2"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->795394057,ExpressionUUID->"d60374df-d14f-4adb-8be6-c3f919c7a3d0"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985,ExpressionUUID->"07ba16a1-04fc-44e8-8155-eaf3cc24718a"],
+
+Cell["\<\
+Helge B\[OSlash]vik Larsen
+Stian Penev Ramsnes
+Gunnar Thorkildsen\
+\>", "Details",
+ CellChangeTimes->{{3.658402307051929*^9, 3.6584023201948347`*^9}},
+ CellLabel->"Authors",
+ CellID->802101,ExpressionUUID->"bb492372-7e6e-46f7-b320-410bfed12e84"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->509823116,ExpressionUUID->"5b3b82d6-7180-4270-ae3e-860facf55d16"],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->199884516,ExpressionUUID->"c157445b-e3fe-4d81-aa87-e39eac9f867a"],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->463951815,ExpressionUUID->"6bd4afda-95bb-4c27-b35c-4be9d4b78046"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->8237523,ExpressionUUID->"bb0f8972-9eb0-4fc1-9098-9a6a745d40a6"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->813936640,ExpressionUUID->"fb556127-e495-4616-b508-4103b420dc73"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365,ExpressionUUID->"ac319ac4-56bf-442f-a14d-ff5f1b52c2dd"]
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -201,646 +142,582 @@ Cell[TextData[{
   FontSlant->"Italic"],
  ": Mathematica X-ray diffraction package"
 }], "GuideTitle",
- CellID->1454126635],
+ CellChangeTimes->{{3.7184314537800627`*^9, 3.718431458141347*^9}, {
+  3.756633049059572*^9, 3.756633067720429*^9}},
+ CellID->1454126635,ExpressionUUID->"6971fe08-2e02-4d39-aef5-3843069b4be8"],
 
 Cell["\<\
 Database and utilities related to crystallography and X-ray scattering.\
 \>", "GuideAbstract",
- CellID->1142451585],
+ CellChangeTimes->{
+  3.718431898445209*^9, {3.730142159747221*^9, 3.7301421809127607`*^9}, {
+   3.7409882441639633`*^9, 3.74098828931714*^9}, {3.743137854578548*^9, 
+   3.743137861474577*^9}, {3.743317317634284*^9, 3.743317318962758*^9}, 
+   3.756633077421051*^9},
+ CellID->1142451585,ExpressionUUID->"1ceed99f-cfc9-46df-ad25-c17ccc43f82d"],
 
 Cell["\<\
 Stian Penev Ramsnes \[FilledVerySmallSquare] Helge B\[OSlash]vik Larsen \
 \[FilledVerySmallSquare] Gunnar Thorkildsen   \[LongDash]   University of \
-Stavanger \[FilledVerySmallSquare] 2020   \[LongDash]   \
-stian.p.ramsnes@uis.no   \[LongDash]   version 2.4.0\
+Stavanger \[FilledVerySmallSquare] 2021   \[LongDash]   \
+stian.p.ramsnes@uis.no   \[LongDash]   version 2.5.0\
 \>", "GuideAbstract",
- CellID->506893465],
+ CellChangeTimes->{{3.6584018816472197`*^9, 3.658401917501382*^9}, {
+   3.658763753708126*^9, 3.6587637579867697`*^9}, {3.658764393730966*^9, 
+   3.658764421793738*^9}, {3.659716859086821*^9, 3.659716874331141*^9}, 
+   3.6606613945808764`*^9, {3.679764386755925*^9, 3.679764396232872*^9}, 
+   3.6845562308223886`*^9, {3.684556666579566*^9, 3.684556704532495*^9}, {
+   3.685765203039469*^9, 3.685765203137785*^9}, {3.6858538998760633`*^9, 
+   3.6858538999466667`*^9}, 3.68602405543575*^9, {3.6866605831074963`*^9, 
+   3.6866605833302507`*^9}, {3.686894132126392*^9, 3.686894132348771*^9}, {
+   3.6868945487464848`*^9, 3.686894548820244*^9}, {3.7125615339793386`*^9, 
+   3.7125615373596277`*^9}, 3.717849216496999*^9, {3.718431883401004*^9, 
+   3.718431885430665*^9}, {3.730131177334981*^9, 3.7301311776116247`*^9}, {
+   3.734672106429863*^9, 3.734672128426237*^9}, 3.7383418383918247`*^9, {
+   3.743865991579577*^9, 3.743865992222517*^9}, {3.744558901605302*^9, 
+   3.7445589016751204`*^9}, {3.7558491614099216`*^9, 
+   3.7558491624290667`*^9}, {3.756633042663806*^9, 3.756633043037566*^9}, {
+   3.756633623693077*^9, 3.756633624856399*^9}, 3.761288756508132*^9, 
+   3.762793969951398*^9, 3.7632196208822937`*^9, {3.764957093572133*^9, 
+   3.764957094467811*^9}, {3.765348215463179*^9, 3.765348215500101*^9}, {
+   3.7662114369061127`*^9, 3.766211437254127*^9}, {3.769496485775242*^9, 
+   3.769496488034997*^9}, {3.771238171111339*^9, 3.771238171234028*^9}, {
+   3.780063200224792*^9, 3.780063200279924*^9}, {3.78505795823977*^9, 
+   3.785057959034905*^9}, {3.787051506540431*^9, 3.787051506825479*^9}, 
+   3.787817968678043*^9, 3.788200231341939*^9, {3.799651928493142*^9, 
+   3.799651929082069*^9}, 3.8055235488656*^9, 3.808063545924316*^9, {
+   3.8291092678245087`*^9, 3.829109272108665*^9}},
+ CellID->506893465,ExpressionUUID->"0423b01d-8e5e-4c8e-a224-8957da91cf44"],
 
 Cell[CellGroupData[{
 
 Cell["Crystallographic core", "GuideFunctionsSubsection",
- CellID->1015517429],
+ CellChangeTimes->{{3.730136115033205*^9, 3.7301361154315767`*^9}, {
+  3.734672772481658*^9, 3.734672774974592*^9}},
+ CellID->1015517429,ExpressionUUID->"f46697ff-1237-44e8-9530-159230f07e95"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$CrystalData"]], "paclet:MaXrd/ref/$CrystalData"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["$CrystalData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$CrystalData"]], "InlineFormula",
+  ExpressionUUID->"e75cf316-46db-405c-85f5-58c7a1c104bb"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$LaueClasses"]], "paclet:MaXrd/ref/$LaueClasses"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["$LaueClasses",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$LaueClasses"]], "InlineFormula",
+  ExpressionUUID->"bd577ec9-acc6-4f1e-936a-5f0194aca81a"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$PointGroups"]], "paclet:MaXrd/ref/$PointGroups"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["$PointGroups",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$PointGroups"]], "InlineFormula",
+  ExpressionUUID->"15ce46dc-db8b-4084-96b4-efc4f5d38fc9"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["$SpaceGroups",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$SpaceGroups"]], "InlineFormula",
+  ExpressionUUID->"39baaa3d-bf87-4c45-84f0-c7df0810380e"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$TransformationMatrices"]], 
-    "paclet:MaXrd/ref/$TransformationMatrices"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["$TransformationMatrices",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$TransformationMatrices"]], "InlineFormula",
+  ExpressionUUID->"aa12cc1f-6ede-456e-91c9-3dffb194e60f"]
 }], "InlineGuideFunctionListing",
- CellID->1748886494]
+ CellChangeTimes->{{3.730138554073491*^9, 3.730138591806938*^9}, {
+  3.734672759842353*^9, 3.734672761401352*^9}, {3.743867230955982*^9, 
+  3.743867247355527*^9}},
+ CellID->1748886494,ExpressionUUID->"ecf94c0f-2f6f-453a-91c5-24f517cf613e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Crystal simulation tools", "GuideFunctionsSubsection",
- CellID->1290896521],
+ CellChangeTimes->{{3.730136115033205*^9, 3.7301361154315767`*^9}, {
+  3.7301368593671217`*^9, 3.7301368638538513`*^9}, {3.734672200678791*^9, 
+  3.734672212305224*^9}, {3.7346727807586718`*^9, 3.73467278572418*^9}, {
+  3.736063532844067*^9, 3.73606354552845*^9}, {3.761288782702921*^9, 
+  3.761288795110712*^9}, {3.785057996733659*^9, 3.785057998938496*^9}},
+ CellID->1290896521,ExpressionUUID->"6bbe7a72-dd60-44e1-935e-e9f9cabc206f"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["ConstructDomains"]], "paclet:MaXrd/ref/ConstructDomains"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["ConstructDomains",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ConstructDomains"]], "InlineFormula",
+  ExpressionUUID->"cd20d3a7-1016-47f7-b270-02b591f5078a"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["CrystalPlot"]], "paclet:MaXrd/ref/CrystalPlot"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["CrystalPlot",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/CrystalPlot"]], "InlineFormula",
+  ExpressionUUID->"dfaae36d-556f-41f7-a8ef-47b573510cfe"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["DistortStructure"]], "paclet:MaXrd/ref/DistortStructure"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["DistortStructure",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/DistortStructure"]], "InlineFormula",
+  ExpressionUUID->"383c760e-10db-4323-98cd-2568346a10c9"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["DomainPlot"]], "paclet:MaXrd/ref/DomainPlot"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["DomainPlot",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/DomainPlot"]], "InlineFormula",
+  ExpressionUUID->"1eda9137-d3f0-43d5-bcfb-427a4e03e9b4"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["EmbedStructure"]], "paclet:MaXrd/ref/EmbedStructure"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["EmbedStructure",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/EmbedStructure"]], "InlineFormula",
+  ExpressionUUID->"cdca6ac1-b00b-4a63-8b8d-c9ca756d271a"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["ExpandCrystal"]], "paclet:MaXrd/ref/ExpandCrystal"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["ExpandCrystal",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ExpandCrystal"]], "InlineFormula",
+  ExpressionUUID->"ae6a260d-0591-4095-b146-a765ffc66753"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["ExportCrystalData"]], "paclet:MaXrd/ref/ExportCrystalData"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["ExportCrystalData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ExportCrystalData"]], "InlineFormula",
+  ExpressionUUID->"60a17f8d-fbd8-4fff-b4b3-df281b01063f"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["ImportCrystalData"]], "paclet:MaXrd/ref/ImportCrystalData"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["ImportCrystalData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ImportCrystalData"]], "InlineFormula",
+  ExpressionUUID->"8737d8bd-b0b8-4a61-a3a2-21aea31f338f"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SimulateDiffractionPattern"]], 
-    "paclet:MaXrd/ref/SimulateDiffractionPattern"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["SimulateDiffractionPattern",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SimulateDiffractionPattern"]], 
+  "InlineFormula",ExpressionUUID->"29e0b500-96a5-453c-a194-33d11ef6d1a1"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SynthesiseStructure"]], "paclet:MaXrd/ref/SynthesiseStructure"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["SynthesiseStructure",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SynthesiseStructure"]], "InlineFormula",
+  ExpressionUUID->"2ca89251-9769-460f-a784-a964209b8b56"]
 }], "InlineGuideFunctionListing",
- CellID->412829465]
+ CellChangeTimes->{{3.730138637199491*^9, 3.73013870725245*^9}, {
+   3.7301390684930563`*^9, 3.730139108363265*^9}, {3.734672187368268*^9, 
+   3.734672195781659*^9}, 3.734672226160658*^9, {3.734672257374495*^9, 
+   3.734672277806252*^9}, {3.734672315017776*^9, 3.734672348564846*^9}, {
+   3.73467281205836*^9, 3.734672825777028*^9}, {3.7438673668627462`*^9, 
+   3.743867369484483*^9}, {3.7612889014704037`*^9, 3.761288907432661*^9}, {
+   3.761289972870885*^9, 3.7612899975447617`*^9}, {3.761290033734057*^9, 
+   3.761290046789576*^9}, 3.761721946350984*^9, {3.762752920093114*^9, 
+   3.7627529208015738`*^9}, {3.764957116606496*^9, 3.764957118995317*^9}, {
+   3.769496501724629*^9, 3.769496508662663*^9}, {3.771238190123678*^9, 
+   3.771238195366599*^9}, {3.780063226272358*^9, 3.78006324149463*^9}, {
+   3.785057937109756*^9, 3.785057947457691*^9}},
+ CellID->412829465,ExpressionUUID->"058d8128-c6fd-455f-89f6-1465b79c1c2e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Extracting data", "GuideFunctionsSubsection",
- CellID->257171286],
+ CellChangeTimes->{{3.730136115033205*^9, 3.7301361154315767`*^9}, {
+  3.7301368593671217`*^9, 3.7301368638538513`*^9}, {3.734672200678791*^9, 
+  3.734672212305224*^9}, {3.7346727807586718`*^9, 3.73467278572418*^9}, {
+  3.736063532844067*^9, 3.73606354552845*^9}},
+ CellID->257171286,ExpressionUUID->"701536ad-b9f6-4ae0-8081-997121603a6f"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["GetAtomicScatteringFactors"]], 
-    "paclet:MaXrd/ref/GetAtomicScatteringFactors"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["GetAtomCoordinates",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/GetAtomCoordinates"]], "InlineFormula",
+  ExpressionUUID->"65d0568f-dcc1-48dc-aec7-002564d1333d"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["GetCrystalMetric"]], "paclet:MaXrd/ref/GetCrystalMetric"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["GetAtomicScatteringFactors",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/GetAtomicScatteringFactors"]], 
+  "InlineFormula",ExpressionUUID->"84a87f8e-4490-4a24-9d58-38ce0a98b36c"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["GetElements"]], "paclet:MaXrd/ref/GetElements"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["GetCrystalMetric",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/GetCrystalMetric"]], "InlineFormula",
+  ExpressionUUID->"0eafac9f-5d43-4289-b119-39ca82b0750c"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["GetLatticeParameters"]], 
-    "paclet:MaXrd/ref/GetLatticeParameters"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["GetElements",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/GetElements"]], "InlineFormula",
+  ExpressionUUID->"8aff8fab-7880-4611-bd1b-eee221f8e6e7"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["GetLaueClass"]], "paclet:MaXrd/ref/GetLaueClass"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["GetLatticeParameters",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/GetLatticeParameters"]], "InlineFormula",
+  ExpressionUUID->"0bf4ce9f-ce07-414d-a265-39ca26a1a20c"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["GetScatteringCrossSections"]], 
-    "paclet:MaXrd/ref/GetScatteringCrossSections"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["GetLaueClass",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/GetLaueClass"]], "InlineFormula",
+  ExpressionUUID->"d6bd86d1-d19e-4820-b222-496ba92289c2"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["GetSymmetryData"]], "paclet:MaXrd/ref/GetSymmetryData"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["GetScatteringCrossSections",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/GetScatteringCrossSections"]], 
+  "InlineFormula",ExpressionUUID->"3b872a0a-3770-4301-8cc7-8ec4ca8a9094"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["GetSymmetryOperations"]], 
-    "paclet:MaXrd/ref/GetSymmetryOperations"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["GetSymmetryData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/GetSymmetryData"]], "InlineFormula",
+  ExpressionUUID->"d234f363-a1bb-43ae-abb5-68114b936612"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["GetSymmetryOperations",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/GetSymmetryOperations"]], "InlineFormula",
+  ExpressionUUID->"68413bfa-081c-4d6f-836f-0d97d21db40f"]
 }], "InlineGuideFunctionListing",
- CellID->63485392]
+ CellChangeTimes->{{3.734672233721147*^9, 3.7346722397566233`*^9}, {
+  3.734672295879303*^9, 3.734672322052327*^9}, {3.734672849799646*^9, 
+  3.734672913891006*^9}, {3.734679579086893*^9, 3.734679601418577*^9}, {
+  3.735310361665234*^9, 3.735310376719489*^9}, {3.735647194468233*^9, 
+  3.735647220903645*^9}, {3.73606340591471*^9, 3.7360634067931433`*^9}, {
+  3.738570160145912*^9, 3.738570165771764*^9}, {3.74315294957073*^9, 
+  3.743152951765422*^9}, {3.743867353949808*^9, 3.7438673555857477`*^9}, {
+  3.830770199220519*^9, 3.830770199845786*^9}},
+ CellID->63485392,ExpressionUUID->"737f894b-1aec-4556-9337-f5b4105e91a7"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["FindPixelClusters",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/FindPixelClusters"]], "InlineFormula",
+  ExpressionUUID->"e909afa8-6b48-4587-8795-e1228e3dad41"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["ReciprocalImageCheck",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ReciprocalImageCheck"]], "InlineFormula",
+  ExpressionUUID->"3c277a4f-177e-49b3-9073-53445f159fbe"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.829109251108779*^9, 3.82910925399444*^9}, {
+  3.829109316018091*^9, 3.829109320627323*^9}},
+ CellID->1023552416,ExpressionUUID->"4698dd4e-365f-43d5-a6c5-fc771cddc42f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Calculations", "GuideFunctionsSubsection",
- CellID->1912304699],
+ CellChangeTimes->{{3.730136115033205*^9, 3.7301361154315767`*^9}, {
+   3.7301368593671217`*^9, 3.7301368638538513`*^9}, {3.734672200678791*^9, 
+   3.734672219448339*^9}, {3.7346727888382473`*^9, 3.7346727945120173`*^9}, {
+   3.73606349512243*^9, 3.736063525562348*^9}, 3.736063556297027*^9},
+ CellID->1912304699,ExpressionUUID->"a2d47f69-ce9c-461f-b129-64bdd0f7750b"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["AttenuationCoefficient"]], 
-    "paclet:MaXrd/ref/AttenuationCoefficient"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["AttenuationCoefficient",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/AttenuationCoefficient"]], "InlineFormula",
+  ExpressionUUID->"01c0423c-81e1-4d3c-a143-b6f82f8e45ce"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["BraggAngle"]], "paclet:MaXrd/ref/BraggAngle"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["BraggAngle",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/BraggAngle"]], "InlineFormula",
+  ExpressionUUID->"078b906d-7a63-4e52-9cdd-a316fc20fd8f"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["CrystalDensity"]], "paclet:MaXrd/ref/CrystalDensity"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["CrystalDensity",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/CrystalDensity"]], "InlineFormula",
+  ExpressionUUID->"f1830ac2-2196-4d86-9b20-6c06cb1135ac"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["CrystalFormulaUnits"]], "paclet:MaXrd/ref/CrystalFormulaUnits"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["CrystalFormulaUnits",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/CrystalFormulaUnits"]], "InlineFormula",
+  ExpressionUUID->"a74504b6-bcc8-401d-878f-ab1625d920a3"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["EquivalentIsotropicADP"]], 
-    "paclet:MaXrd/ref/EquivalentIsotropicADP"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["EquivalentIsotropicADP",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/EquivalentIsotropicADP"]], "InlineFormula",
+  ExpressionUUID->"c7e899c8-47b2-4442-b08a-457763100f33"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["InterplanarSpacing"]], "paclet:MaXrd/ref/InterplanarSpacing"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["InterplanarSpacing",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/InterplanarSpacing"]], "InlineFormula",
+  ExpressionUUID->"8acc3c6f-7ba6-4f77-943a-e7fe4a00518e"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["StructureFactor"]], "paclet:MaXrd/ref/StructureFactor"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["StructureFactor",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/StructureFactor"]], "InlineFormula",
+  ExpressionUUID->"4e8c187e-319b-4b8d-8096-c68d24f2dcc9"]
 }], "InlineGuideFunctionListing",
- CellID->2119566958],
+ CellChangeTimes->{{3.7346722605763273`*^9, 3.734672274050976*^9}, {
+   3.734672331968829*^9, 3.734672343305986*^9}, {3.734672716003263*^9, 
+   3.734672716380262*^9}, {3.734672975005248*^9, 3.734672979939685*^9}, 
+   3.734673294826982*^9, 3.734679575738595*^9, {3.734679617114688*^9, 
+   3.734679634525775*^9}, {3.735310387888977*^9, 3.735310444424581*^9}, {
+   3.735647278552788*^9, 3.73564729517731*^9}, 3.737278092772978*^9, {
+   3.740979959878448*^9, 3.740979960783617*^9}, {3.743867393420145*^9, 
+   3.743867400973268*^9}, {3.7612889467677298`*^9, 3.761288954845416*^9}},
+ CellID->2119566958,ExpressionUUID->"7948c902-2a2c-415b-81da-a4d43e83e32c"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["ReciprocalSpaceSimulation"]], 
-    "paclet:MaXrd/ref/ReciprocalSpaceSimulation"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["ReciprocalSpaceSimulation",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ReciprocalSpaceSimulation"]], 
+  "InlineFormula",ExpressionUUID->"88f22d86-2893-4dc1-8a4e-dac31e78996f"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["StructureFactorTable"]], 
-    "paclet:MaXrd/ref/StructureFactorTable"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["StructureFactorTable",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/StructureFactorTable"]], "InlineFormula",
+  ExpressionUUID->"870a0d32-7416-4ea2-a69d-9c695114b63e"]
 }], "InlineGuideFunctionListing",
- CellID->1066245530]
+ CellChangeTimes->{{3.743153002341098*^9, 3.743153014417342*^9}, {
+  3.7438673934612226`*^9, 3.743867393477466*^9}},
+ CellID->1066245530,ExpressionUUID->"67e3ea01-dd11-4a14-a480-707953fb43d6"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Symmetry-related operations", "GuideFunctionsSubsection",
- CellID->1678069588],
+ CellChangeTimes->{{3.730136115033205*^9, 3.7301361154315767`*^9}, {
+   3.7301368593671217`*^9, 3.7301368638538513`*^9}, 3.734672200678791*^9, {
+   3.734672923266378*^9, 3.734672927567432*^9}, {3.743137893674683*^9, 
+   3.74313789476166*^9}},
+ CellID->1678069588,ExpressionUUID->"b9ad304a-0c2d-42e5-82d9-fc93a1bbc31b"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["MergeSymmetryEquivalentReflections"]], 
-    "paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["MergeSymmetryEquivalentReflections",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/MergeSymmetryEquivalentReflections"]], 
+  "InlineFormula",ExpressionUUID->"d2cdd265-f32f-4980-8cf8-6b2597698833"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["ReflectionList"]], "paclet:MaXrd/ref/ReflectionList"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["ReflectionList",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ReflectionList"]], "InlineFormula",
+  ExpressionUUID->"a76f12c1-a645-4bd0-81c7-ee5f5d270aa5"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SymmetryEquivalentPositions"]], 
-    "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["SymmetryEquivalentPositions",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentPositions"]], 
+  "InlineFormula",ExpressionUUID->"00d796de-03ff-434e-a147-cde8a6d450f5"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SymmetryEquivalentReflections"]], 
-    "paclet:MaXrd/ref/SymmetryEquivalentReflections"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["SymmetryEquivalentReflections",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentReflections"]], 
+  "InlineFormula",ExpressionUUID->"679f2940-7f6f-4171-ac95-fb177beb9818"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SymmetryEquivalentReflectionsQ"]], 
-    "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["SymmetryEquivalentReflectionsQ",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"]], 
+  "InlineFormula",ExpressionUUID->"6ddffb7d-fef1-4a5c-b148-bf7267c0fa7b"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SystematicAbsentQ"]], "paclet:MaXrd/ref/SystematicAbsentQ"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["SystematicAbsentQ",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SystematicAbsentQ"]], "InlineFormula",
+  ExpressionUUID->"42fcb51b-9e99-4217-b34d-d09f9a846c46"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["ToStandardSetting"]], "paclet:MaXrd/ref/ToStandardSetting"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["ToStandardSetting",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ToStandardSetting"]], "InlineFormula",
+  ExpressionUUID->"544e56f4-eef2-48e1-aa5b-0d0a3e79836f"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["UnitCellTransformation"]], 
-    "paclet:MaXrd/ref/UnitCellTransformation"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["UnitCellTransformation",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/UnitCellTransformation"]], "InlineFormula",
+  ExpressionUUID->"bcbfbe89-d666-4642-ac1c-3cc94b78734a"]
 }], "InlineGuideFunctionListing",
- CellID->1517039707]
+ CellChangeTimes->{{3.7301387228216476`*^9, 3.730138729772002*^9}, {
+   3.7301389830249863`*^9, 3.7301389867737637`*^9}, {3.730139028661903*^9, 
+   3.730139117722816*^9}, 3.734672363356987*^9, 3.734672408378591*^9, 
+   3.7346728475222*^9, {3.734672885589489*^9, 3.7346729043893213`*^9}, {
+   3.7409801936606817`*^9, 3.740980194431367*^9}, {3.743153040346848*^9, 
+   3.743153044809601*^9}, {3.743867393494728*^9, 3.743867393617766*^9}},
+ CellID->1517039707,ExpressionUUID->"aaf3325d-6580-4089-9138-181ebd1ebd35"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Dynamical diffraction theory", "GuideFunctionsSubsection",
- CellID->1969464823],
+ CellChangeTimes->{{3.730136115033205*^9, 3.7301361154315767`*^9}, {
+   3.7301368593671217`*^9, 3.7301368638538513`*^9}, 3.734672200678791*^9, {
+   3.734672923266378*^9, 3.734672927567432*^9}, {3.737278068777184*^9, 
+   3.7372780736076202`*^9}},
+ CellID->1969464823,ExpressionUUID->"ace3bc87-09c9-4785-b47d-3f5bb5f01c6a"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["DarwinWidth"]], "paclet:MaXrd/ref/DarwinWidth"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["DarwinWidth",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/DarwinWidth"]], "InlineFormula",
+  ExpressionUUID->"2e816c8f-eec4-45c3-9dfa-9e58d26357aa"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["ExtinctionLength"]], "paclet:MaXrd/ref/ExtinctionLength"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["ExtinctionLength",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ExtinctionLength"]], "InlineFormula",
+  ExpressionUUID->"a1998e97-8a65-4be6-aa0b-a74ece40ac5d"]
 }], "InlineGuideFunctionListing",
- CellID->1530350490]
+ CellChangeTimes->{{3.7372780963664017`*^9, 3.737278096606677*^9}, {
+  3.743867393634584*^9, 3.743867393651477*^9}},
+ CellID->1530350490,ExpressionUUID->"224251ed-c0c0-45c6-8d62-5ff347042864"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Developer tools and formatting", "GuideFunctionsSubsection",
- CellID->1365063971],
+ CellChangeTimes->{{3.730136115033205*^9, 3.7301361154315767`*^9}, {
+  3.73467273215206*^9, 3.734672734941266*^9}, {3.761416252683445*^9, 
+  3.761416254473699*^9}},
+ CellID->1365063971,ExpressionUUID->"7e289a2a-4020-4bf2-b0c5-ec265615508c"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$GroupSymbolRedirect"]], 
-    "paclet:MaXrd/ref/$GroupSymbolRedirect"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["$GroupSymbolRedirect",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$GroupSymbolRedirect"]], "InlineFormula",
+  ExpressionUUID->"9791dc63-c326-47bf-9a3d-b31da1cbe713"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$PeriodicTable"]], "paclet:MaXrd/ref/$PeriodicTable"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["$PeriodicTable",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$PeriodicTable"]], "InlineFormula",
+  ExpressionUUID->"dfc6f6f1-e565-4334-8975-78a3dbb78a34"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$MaXrdChangelog"]], "paclet:MaXrd/ref/$MaXrdChangelog"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["$MaXrdChangelog",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$MaXrdChangelog"]], "InlineFormula",
+  ExpressionUUID->"1894f3a2-61d1-475c-8f99-ff7843fcf0ae"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$MaXrdFunctions"]], "paclet:MaXrd/ref/$MaXrdFunctions"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["$MaXrdFunctions",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$MaXrdFunctions"]], "InlineFormula",
+  ExpressionUUID->"1566c025-ab1b-4d0b-8770-5a44e844ff89"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$MaXrdPath"]], "paclet:MaXrd/ref/$MaXrdPath"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["$MaXrdPath",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$MaXrdPath"]], "InlineFormula",
+  ExpressionUUID->"f4cc6d3a-ac49-4a27-8782-bbf9e1c7026a"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$MaXrdVersion"]], "paclet:MaXrd/ref/$MaXrdVersion"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["$MaXrdVersion",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$MaXrdVersion"]], "InlineFormula",
+  ExpressionUUID->"d1e896d2-c22e-4612-b502-762ccfe2129a"]
 }], "InlineGuideFunctionListing",
- CellID->288228339],
+ CellChangeTimes->{{3.717301059754405*^9, 3.717301061530488*^9}, 
+   3.717301173593688*^9, {3.7178488741130943`*^9, 3.717848912654913*^9}, {
+   3.7301321517757473`*^9, 3.730132152438209*^9}, {3.730135997831234*^9, 
+   3.7301359979944687`*^9}, 3.7301376610287046`*^9, {3.73013812698715*^9, 
+   3.730138133929488*^9}, {3.7301392442097187`*^9, 3.730139269871657*^9}, {
+   3.734672182367763*^9, 3.734672182893457*^9}, {3.7346727633188543`*^9, 
+   3.734672769153854*^9}, {3.743867270058329*^9, 3.743867325664624*^9}},
+ CellID->288228339,ExpressionUUID->"df555db3-48f3-460c-803d-a96efcfcdfe6"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["InputCheck"]], "paclet:MaXrd/ref/InputCheck"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["InputCheck",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/InputCheck"]], "InlineFormula",
+  ExpressionUUID->"11149ff2-025d-4245-b2ff-6c08aa225216"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["RelatedFunctionsGraph"]], 
-    "paclet:MaXrd/ref/RelatedFunctionsGraph"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["RelatedFunctionsGraph",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/RelatedFunctionsGraph"]], "InlineFormula",
+  ExpressionUUID->"aa16a925-8935-4d6a-bf3b-cf419a8a39e6"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["ResetCrystalData"]], "paclet:MaXrd/ref/ResetCrystalData"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["ResetCrystalData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/ResetCrystalData"]], "InlineFormula",
+  ExpressionUUID->"e06dd95a-226f-48f6-b59c-4b132ece5e48"]
 }], "InlineGuideFunctionListing",
- CellID->1031694278],
+ CellChangeTimes->{{3.734672178438121*^9, 3.734672178775547*^9}, {
+  3.7438673342588654`*^9, 3.743867339512591*^9}, {3.7870514936430798`*^9, 
+  3.787051497521442*^9}},
+ CellID->1031694278,ExpressionUUID->"dc338f08-1f01-431e-93a9-29d4f825ebb9"],
 
 Cell[TextData[{
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["MillerNotationToList"]], 
-    "paclet:MaXrd/ref/MillerNotationToList"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
+  ButtonBox["MillerNotationToList",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/MillerNotationToList"]], "InlineFormula",
+  ExpressionUUID->"49aea1ed-1a8c-4525-9756-d3248ab4d3b7"],
+ " \[EmptyVerySmallSquare] ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["MillerNotationToString"]], 
-    "paclet:MaXrd/ref/MillerNotationToString"},
-   "RefLink",
-   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"]
+  ButtonBox["MillerNotationToString",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/MillerNotationToString"]], "InlineFormula",
+  ExpressionUUID->"f85349c9-1572-4409-87e7-16c82a93bef4"]
 }], "InlineGuideFunctionListing",
- CellID->228291440]
+ CellChangeTimes->{{3.734672391676342*^9, 3.734672436669805*^9}, {
+  3.734672478767015*^9, 3.734672482281007*^9}, {3.7438673936683273`*^9, 
+  3.7438673936851263`*^9}},
+ CellID->228291440,ExpressionUUID->"3b610b26-77f7-4355-9682-da50bee476fd"]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[TextData[{
- Cell[BoxData[
-  TemplateBox[{6},
-   "Spacer1"]]],
- "Tutorials"
-}], "GuideTutorialsSection",
- WholeCellGroupOpener->True,
- CellID->1751741197],
-
-Cell["", "SectionHeaderSpacer"],
+Cell["Tutorials", "GuideTutorialsSection",
+ CellChangeTimes->{3.381931905408058*^9},
+ CellID->1751741197,ExpressionUUID->"7b324287-0b38-4f99-8617-a7db89423e06"],
 
 Cell[TextData[ButtonBox["Tutorials and references in the MaXrd package",
  BaseStyle->"Link",
  ButtonData->"paclet:MaXrd/tutorial/TutorialsMainPage"]], "GuideTutorial",
- CellID->936431255],
-
-Cell["", "SectionFooterSpacer"]
+ CellChangeTimes->{{3.385403835153248*^9, 3.3854038442159214`*^9}, {
+   3.4108911521705427`*^9, 3.410891155326934*^9}, {3.6676507889430103`*^9, 
+   3.667650788974453*^9}, {3.6863749702545*^9, 3.686375067742022*^9}, {
+   3.716782981585455*^9, 3.716782981628573*^9}, {3.716896295319663*^9, 
+   3.716896295399453*^9}, 3.7172565278094254`*^9, {3.718363567457245*^9, 
+   3.7183635675791893`*^9}, {3.718431328527787*^9, 3.718431328598913*^9}, {
+   3.743867462944036*^9, 3.743867463108426*^9}},
+ CellID->936431255,ExpressionUUID->"74c5c4fe-7a97-4799-ba90-05a72a2106a0"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[TextData[{
- Cell[BoxData[
-  TemplateBox[{6},
-   "Spacer1"]]],
- "Related Links"
-}], "GuideRelatedLinksSection",
- WholeCellGroupOpener->True,
- CellID->415694148],
+Cell["More About", "GuideMoreAboutSection",
+ CellID->23220180,ExpressionUUID->"74dbcf6c-32ad-416f-a351-b708ee63b2ba"],
 
-Cell["", "SectionHeaderSpacer"],
+Cell["XXXX", "GuideMoreAbout",
+ CellID->1567025153,ExpressionUUID->"9d125b4e-1bb4-413d-ad74-582fd45d366e"],
+
+Cell["XXXX", "GuideMoreAbout",
+ CellID->252299663,ExpressionUUID->"538ac005-c411-40f8-b7f3-2a04c913b191"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "GuideRelatedLinksSection",
+ CellID->415694148,ExpressionUUID->"eeff5948-3f06-435d-9253-b2bf8027ac40"],
 
 Cell[TextData[Cell[BoxData[
  GraphicsBox[
@@ -1458,44 +1335,24 @@ jzJMPnr8w/gAVTHn3g==
   AspectRatio->Automatic,
   ImageSize->{96., 115.},
   PlotRange->{{0., 95.92038}, {0., 114.710335}}]],
- TextAlignment->Center]], "GuideRelatedLinks",
+ CellChangeTimes->{{3.670927051952941*^9, 3.6709270561200113`*^9}, {
+  3.679764637038393*^9, 3.679764638860014*^9}},
+ TextAlignment->
+  Center,ExpressionUUID->"be01ee31-c999-473b-8ddf-f7c6d95d9a0f"]], \
+"GuideRelatedLinks",
  ShowCellLabel->False,
+ CellChangeTimes->{{3.679764643286248*^9, 3.679764650715559*^9}, {
+  3.679765884722899*^9, 3.679765898792997*^9}},
  TextAlignment->Center,
- CellID->411638149]
-}, Open  ]],
-
-Cell[" ", "FooterCell"]
+ CellID->411638149,ExpressionUUID->"c52addc0-1d5a-47db-9232-1b10b7cb11c1"]
+}, Open  ]]
 },
-Saveable->False,
-ScreenStyleEnvironment->"Working",
-WindowSize->{725, 750},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-WindowTitle->"MaXrd: Mathematica X-ray diffraction package",
-TaggingRules->{
- "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
-  GridBox[{{
-      RowBox[{
-        ButtonBox[
-        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
-         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
-    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
-  "", "Metadata" -> {
-   "built" -> "{2020, 9, 3, 23, 13, 23.094982}", 
-    "history" -> {"0.0", "", "", ""}, "context" -> "MaXrd`", 
-    "keywords" -> {
-     "X-ray", "MaXrd", "X-ray diffraction", "diffraction", "UiS"}, 
-    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
-     "label" -> "MaXrd Guide", "language" -> "en", "paclet" -> "MaXrd", 
-    "status" -> "None", "summary" -> 
-    "Database and utilities related to crystallography and X-ray scattering.",
-     "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$8357, "title" -> 
-    "MaXrd: Mathematica X-ray diffraction package", "titlemodifier" -> "", 
-    "windowtitle" -> "MaXrd: Mathematica X-ray diffraction package", "type" -> 
-    "Guide", "uri" -> "MaXrd/guide/MaXrd"}},
+WindowSize->{720, 788},
+WindowMargins->{{480, Automatic}, {64, Automatic}},
 FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
-StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
-  CharacterEncoding -> "UTF-8"]
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"49a2e370-de4e-41f0-89c9-e3a6c77c7164"
 ]
 (* End of Notebook Content *)
 
@@ -1508,82 +1365,134 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[616, 21, 8089, 173, 70, "AnchorBarGrid",ExpressionUUID->"d139ac39-2bd1-41f5-8e35-1ee459188e99",
- CellID->1],
+Cell[558, 20, 600, 14, 24, "History",ExpressionUUID->"9bcb54b8-eeee-4703-b5e6-8e4b61199186",
+ CellID->1247902091],
 Cell[CellGroupData[{
-Cell[8730, 198, 140, 5, 70, "GuideTitle",ExpressionUUID->"6971fe08-2e02-4d39-aef5-3843069b4be8",
+Cell[1183, 38, 123, 1, 29, "CategorizationSection",ExpressionUUID->"e61a21c1-9fa0-45f5-b6b3-fa4876f6453a",
+ CellID->1122911449],
+Cell[1309, 41, 133, 2, 30, "Categorization",ExpressionUUID->"1d89e668-8fcc-4916-b0b1-279a5303b79b",
+ CellID->686433507],
+Cell[1445, 45, 174, 3, 30, "Categorization",ExpressionUUID->"218561ac-2b88-4826-ba2f-163f55ba2e8d",
+ CellID->605800465],
+Cell[1622, 50, 172, 3, 30, "Categorization",ExpressionUUID->"8a6a45a4-88d0-4079-b5fc-2f387058c236",
+ CellID->468444828],
+Cell[1797, 55, 255, 3, 30, "Categorization",ExpressionUUID->"373fda08-82e6-4bf3-904b-8fb9c5fabb9b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2089, 63, 111, 1, 29, "KeywordsSection",ExpressionUUID->"5f37628e-8ae5-4a60-b1bc-1d69e1efba70",
+ CellID->1427428552],
+Cell[2203, 66, 169, 2, 19, "Keywords",ExpressionUUID->"ddffc2a7-349c-46cc-a4ba-c20a4b635275",
+ CellID->1251852827],
+Cell[2375, 70, 192, 3, 19, "Keywords",ExpressionUUID->"c11db84e-387f-4d7d-98e5-f082ebd4123a",
+ CellID->720193992],
+Cell[2570, 75, 178, 2, 19, "Keywords",ExpressionUUID->"36df04e8-81b6-4b5b-9703-c762ae6f6fa9",
+ CellID->947632093],
+Cell[2751, 79, 243, 3, 19, "Keywords",ExpressionUUID->"33721507-01c5-4bce-a8dd-11cab9e2aa91",
+ CellID->776452148],
+Cell[2997, 84, 214, 3, 19, "Keywords",ExpressionUUID->"27dccfc4-fa15-4a7e-9e4c-aca8f289a284",
+ CellID->1074276230]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3248, 92, 108, 1, 29, "DetailsSection",ExpressionUUID->"6419e149-1604-48d6-96fc-a70508b410d2",
+ CellID->307771771],
+Cell[3359, 95, 118, 2, 30, "Details",ExpressionUUID->"d60374df-d14f-4adb-8be6-c3f919c7a3d0",
+ CellID->795394057],
+Cell[3480, 99, 124, 2, 30, "Details",ExpressionUUID->"07ba16a1-04fc-44e8-8155-eaf3cc24718a",
+ CellID->350963985],
+Cell[3607, 103, 255, 7, 62, "Details",ExpressionUUID->"bb492372-7e6e-46f7-b320-410bfed12e84",
+ CellID->802101],
+Cell[3865, 112, 126, 2, 30, "Details",ExpressionUUID->"5b3b82d6-7180-4270-ae3e-860facf55d16",
+ CellID->509823116],
+Cell[3994, 116, 116, 2, 30, "Details",ExpressionUUID->"c157445b-e3fe-4d81-aa87-e39eac9f867a",
+ CellID->199884516],
+Cell[4113, 120, 116, 2, 30, "Details",ExpressionUUID->"6bd4afda-95bb-4c27-b35c-4be9d4b78046",
+ CellID->463951815],
+Cell[4232, 124, 116, 2, 30, "Details",ExpressionUUID->"bb0f8972-9eb0-4fc1-9098-9a6a745d40a6",
+ CellID->8237523],
+Cell[4351, 128, 133, 2, 30, "Details",ExpressionUUID->"fb556127-e495-4616-b508-4103b420dc73",
+ CellID->813936640],
+Cell[4487, 132, 122, 2, 30, "Details",ExpressionUUID->"ac319ac4-56bf-442f-a14d-ff5f1b52c2dd",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[4646, 139, 312, 7, 77, "GuideTitle",ExpressionUUID->"6971fe08-2e02-4d39-aef5-3843069b4be8",
  CellID->1454126635],
-Cell[8873, 205, 125, 3, 70, "GuideAbstract",ExpressionUUID->"1ceed99f-cfc9-46df-ad25-c17ccc43f82d",
+Cell[4961, 148, 446, 8, 27, "GuideAbstract",ExpressionUUID->"1ceed99f-cfc9-46df-ad25-c17ccc43f82d",
  CellID->1142451585],
-Cell[9001, 210, 313, 6, 70, "GuideAbstract",ExpressionUUID->"0423b01d-8e5e-4c8e-a224-8957da91cf44",
+Cell[5410, 158, 2162, 31, 43, "GuideAbstract",ExpressionUUID->"0423b01d-8e5e-4c8e-a224-8957da91cf44",
  CellID->506893465],
 Cell[CellGroupData[{
-Cell[9339, 220, 78, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"f46697ff-1237-44e8-9530-159230f07e95",
+Cell[7597, 193, 250, 3, 35, "GuideFunctionsSubsection",ExpressionUUID->"f46697ff-1237-44e8-9530-159230f07e95",
  CellID->1015517429],
-Cell[9420, 223, 1482, 49, 70, "InlineGuideFunctionListing",ExpressionUUID->"ecf94c0f-2f6f-453a-91c5-24f517cf613e",
+Cell[7850, 198, 1385, 34, 41, "InlineGuideFunctionListing",ExpressionUUID->"ecf94c0f-2f6f-453a-91c5-24f517cf613e",
  CellID->1748886494]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10939, 277, 81, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"6bbe7a72-dd60-44e1-935e-e9f9cabc206f",
+Cell[9272, 237, 496, 6, 35, "GuideFunctionsSubsection",ExpressionUUID->"6bbe7a72-dd60-44e1-935e-e9f9cabc206f",
  CellID->1290896521],
-Cell[11023, 280, 3042, 99, 70, "InlineGuideFunctionListing",ExpressionUUID->"058d8128-c6fd-455f-89f6-1465b79c1c2e",
+Cell[9771, 245, 3232, 73, 60, "InlineGuideFunctionListing",ExpressionUUID->"058d8128-c6fd-455f-89f6-1465b79c1c2e",
  CellID->412829465]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14102, 384, 71, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"701536ad-b9f6-4ae0-8081-997121603a6f",
+Cell[13040, 323, 391, 5, 35, "GuideFunctionsSubsection",ExpressionUUID->"701536ad-b9f6-4ae0-8081-997121603a6f",
  CellID->257171286],
-Cell[14176, 387, 2478, 82, 70, "InlineGuideFunctionListing",ExpressionUUID->"ee9f8d8e-aa41-44ae-980b-b198879cd3b3",
- CellID->63485392]
+Cell[13434, 330, 2746, 63, 60, "InlineGuideFunctionListing",ExpressionUUID->"737f894b-1aec-4556-9337-f5b4105e91a7",
+ CellID->63485392],
+Cell[16183, 395, 676, 15, 24, "InlineGuideFunctionListing",ExpressionUUID->"4698dd4e-365f-43d5-a6c5-fc771cddc42f",
+ CellID->1023552416]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16691, 474, 69, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"a2d47f69-ce9c-461f-b129-64bdd0f7750b",
+Cell[16896, 415, 417, 5, 35, "GuideFunctionsSubsection",ExpressionUUID->"a2d47f69-ce9c-461f-b129-64bdd0f7750b",
  CellID->1912304699],
-Cell[16763, 477, 2139, 70, 70, "InlineGuideFunctionListing",ExpressionUUID->"7948c902-2a2c-415b-81da-a4d43e83e32c",
+Cell[17316, 422, 2290, 51, 59, "InlineGuideFunctionListing",ExpressionUUID->"7948c902-2a2c-415b-81da-a4d43e83e32c",
  CellID->2119566958],
-Cell[18905, 549, 604, 20, 70, "InlineGuideFunctionListing",ExpressionUUID->"67e3ea01-dd11-4a14-a480-707953fb43d6",
+Cell[19609, 475, 695, 15, 24, "InlineGuideFunctionListing",ExpressionUUID->"67e3ea01-dd11-4a14-a480-707953fb43d6",
  CellID->1066245530]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19546, 574, 84, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"b9ad304a-0c2d-42e5-82d9-fc93a1bbc31b",
+Cell[20341, 495, 382, 5, 35, "GuideFunctionsSubsection",ExpressionUUID->"b9ad304a-0c2d-42e5-82d9-fc93a1bbc31b",
  CellID->1678069588],
-Cell[19633, 577, 2571, 83, 70, "InlineGuideFunctionListing",ExpressionUUID->"aaf3325d-6580-4089-9138-181ebd1ebd35",
+Cell[20726, 502, 2486, 55, 78, "InlineGuideFunctionListing",ExpressionUUID->"aaf3325d-6580-4089-9138-181ebd1ebd35",
  CellID->1517039707]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22241, 665, 85, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"ace3bc87-09c9-4785-b47d-3f5bb5f01c6a",
+Cell[23249, 562, 386, 5, 35, "GuideFunctionsSubsection",ExpressionUUID->"ace3bc87-09c9-4785-b47d-3f5bb5f01c6a",
  CellID->1969464823],
-Cell[22329, 668, 558, 18, 70, "InlineGuideFunctionListing",ExpressionUUID->"224251ed-c0c0-45c6-8d62-5ff347042864",
+Cell[23638, 569, 659, 15, 24, "InlineGuideFunctionListing",ExpressionUUID->"224251ed-c0c0-45c6-8d62-5ff347042864",
  CellID->1530350490]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22924, 691, 87, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"7e289a2a-4020-4bf2-b0c5-ec265615508c",
+Cell[24334, 589, 307, 4, 35, "GuideFunctionsSubsection",ExpressionUUID->"7e289a2a-4020-4bf2-b0c5-ec265615508c",
  CellID->1365063971],
-Cell[23014, 694, 1790, 59, 70, "InlineGuideFunctionListing",ExpressionUUID->"df555db3-48f3-460c-803d-a96efcfcdfe6",
+Cell[24644, 595, 1962, 44, 42, "InlineGuideFunctionListing",ExpressionUUID->"df555db3-48f3-460c-803d-a96efcfcdfe6",
  CellID->288228339],
-Cell[24807, 755, 880, 29, 70, "InlineGuideFunctionListing",ExpressionUUID->"dc338f08-1f01-431e-93a9-29d4f825ebb9",
+Cell[26609, 641, 947, 22, 24, "InlineGuideFunctionListing",ExpressionUUID->"dc338f08-1f01-431e-93a9-29d4f825ebb9",
  CellID->1031694278],
-Cell[25690, 786, 597, 20, 70, "InlineGuideFunctionListing",ExpressionUUID->"3b610b26-77f7-4355-9682-da50bee476fd",
+Cell[27559, 665, 739, 16, 24, "InlineGuideFunctionListing",ExpressionUUID->"3b610b26-77f7-4355-9682-da50bee476fd",
  CellID->228291440]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26336, 812, 158, 7, 70, "GuideTutorialsSection",ExpressionUUID->"7b324287-0b38-4f99-8617-a7db89423e06",
+Cell[28347, 687, 160, 2, 72, "GuideTutorialsSection",ExpressionUUID->"7b324287-0b38-4f99-8617-a7db89423e06",
  CellID->1751741197],
-Cell[26497, 821, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"586c7df2-0ba5-4bfe-896e-1785604a469b"],
-Cell[26531, 823, 187, 3, 70, "GuideTutorial",ExpressionUUID->"74c5c4fe-7a97-4799-ba90-05a72a2106a0",
- CellID->936431255],
-Cell[26721, 828, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"da37c0db-d1c8-4b48-967e-cc8400089a6d"]
+Cell[28510, 691, 730, 10, 22, "GuideTutorial",ExpressionUUID->"74c5c4fe-7a97-4799-ba90-05a72a2106a0",
+ CellID->936431255]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26789, 833, 164, 7, 70, "GuideRelatedLinksSection",ExpressionUUID->"eeff5948-3f06-435d-9253-b2bf8027ac40",
+Cell[29277, 706, 117, 1, 72, "GuideMoreAboutSection",ExpressionUUID->"74dbcf6c-32ad-416f-a351-b708ee63b2ba",
+ CellID->23220180],
+Cell[29397, 709, 106, 1, 22, "GuideMoreAbout",ExpressionUUID->"9d125b4e-1bb4-413d-ad74-582fd45d366e",
+ CellID->1567025153],
+Cell[29506, 712, 105, 1, 22, "GuideMoreAbout",ExpressionUUID->"538ac005-c411-40f8-b7f3-2a04c913b191",
+ CellID->252299663]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[29648, 718, 124, 1, 66, "GuideRelatedLinksSection",ExpressionUUID->"eeff5948-3f06-435d-9253-b2bf8027ac40",
  CellID->415694148],
-Cell[26956, 842, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"35c5fe89-2f8c-44e2-8c9d-d6483764c078"],
-Cell[26990, 844, 36935, 619, 70, "GuideRelatedLinks",ExpressionUUID->"c52addc0-1d5a-47db-9232-1b10b7cb11c1",
+Cell[29775, 721, 37282, 625, 122, "GuideRelatedLinks",ExpressionUUID->"c52addc0-1d5a-47db-9232-1b10b7cb11c1",
  CellID->411638149]
-}, Open  ]],
-Cell[63940, 1466, 23, 0, 70, "FooterCell",ExpressionUUID->"db88b4de-2a1c-49a8-bfcc-d59519e269ff"]
+}, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)

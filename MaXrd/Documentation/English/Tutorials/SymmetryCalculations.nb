@@ -3,321 +3,117 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 12.1' *)
+(* CreatedBy='Mathematica 11.3' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    120131,       2571]
-NotebookOptionsPosition[    109540,       2346]
-NotebookOutlinePosition[    112251,       2413]
-CellTagsIndexPosition[    112163,       2408]
-WindowTitle->Symmetry calculations
+NotebookDataLength[    116961,       2601]
+NotebookOptionsPosition[    109813,       2334]
+NotebookOutlinePosition[    110432,       2358]
+CellTagsIndexPosition[    110344,       2353]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[GridBox[{
-   {Cell["MAXRD TUTORIAL", "PacletNameCell"], Cell[TextData[{
-     Cell[BoxData[
-      ActionMenuBox[
-       FrameBox[
-        InterpretationBox[Cell[TextData[{
-          "Functions",
-          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-           StripOnInput->False]
-         }]],
-         TextCell[
-          Row[{"Functions", 
-            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->False], {"\<\"GetSymmetryOperations\"\>":>
-       Documentation`HelpLookup[
-       "paclet:MaXrd/ref/GetSymmetryOperations"], \
-"\<\"SymmetryEquivalentPositions\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/SymmetryEquivalentPositions"], \
-"\<\"SymmetryEquivalentReflections\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/SymmetryEquivalentReflections"], \
-"\<\"SymmetryEquivalentReflectionsQ\"\>":>Documentation`HelpLookup[
-       "paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"TutorialFunction"]],
-      LineSpacing->{1.4, 0}],
-     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
-\[ThickSpace]",
-     Cell[BoxData[
-      ActionMenuBox[
-       FrameBox[
-        InterpretationBox[Cell[TextData[{
-          "URL",
-          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-           StripOnInput->False]
-         }]],
-         TextCell[
-          Row[{"URL", 
-            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->False], {"\<\"MaXrd/tutorial/SymmetryCalculations\"\>":>
-       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell["MaXrd/tutorial/SymmetryCalculations"]}, Visible -> False]]; 
-        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-       Delimiter, "\<\"Copy web URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell[
-              BoxData[
-               MakeBoxes[
-                Hyperlink[
-                "http://reference.wolfram.com/language/MaXrd/tutorial/\
-SymmetryCalculations.html"], StandardForm]], "Input", TextClipboardType -> 
-              "PlainText"]}, Visible -> False]]; 
-        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; 
-        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
-         NotebookLocate[{
-           URL[
-            StringJoin[
-             If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$55283], 
-              "http://reference.wolfram.com/system-modeler/", 
-              "http://reference.wolfram.com/language/"], 
-             "MaXrd/tutorial/SymmetryCalculations", ".html"]], None}]}]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"URLMenu"]],
-      LineSpacing->{1.4, 0}]
-    }], "AnchorBar"]}
-  }]], "AnchorBarGrid",
- GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
-     Scaled[0.65], {
-      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
-   "RowsIndexed" -> {}}},
- CellID->1],
+Cell[TextData[{
+ "New in: ",
+ Cell["0.7", "HistoryData",
+  CellTags->"New",ExpressionUUID->"e071cb6f-b1e0-4631-a083-aba4e0b4155d"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"043c07e1-4e08-4914-b14c-a666d269f2fb"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->"b944424f-461c-40c3-b41a-843ad92f1e88"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised",ExpressionUUID->"cac8fcca-740f-412e-b61b-4dda08bc24f4"]
+}], "History",
+ CellID->1247902091,ExpressionUUID->"02dee55e-4ba5-4220-81ea-d0031b93e152"],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449,ExpressionUUID->"2daaa8fe-2900-468c-92d6-038502c586b9"],
+
+Cell["Tutorial", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507,ExpressionUUID->"f106d46d-b5be-4eaf-a7fa-27d0cf9894d2"],
+
+Cell["MaXrd", "Categorization",
+ CellChangeTimes->{3.743836425605781*^9},
+ CellLabel->"Paclet Name",
+ CellID->605800465,ExpressionUUID->"e6e649f6-dd01-4c60-adc2-0e79156b7f0f"],
+
+Cell["MaXrd`", "Categorization",
+ CellChangeTimes->{3.743836425942872*^9},
+ CellLabel->"Context",
+ CellID->468444828,ExpressionUUID->"7a1dca96-5e6e-4419-9a0e-8bc81286799d"],
+
+Cell["MaXrd/tutorial/SymmetryCalculations", "Categorization",
+ CellChangeTimes->{3.743836426222994*^9},
+ CellLabel->"URI",ExpressionUUID->"af6b5847-8d98-47a7-94d8-ebf9d8cb70fc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552,ExpressionUUID->"be9dbd2f-4942-49b6-a7a3-07c9fa922668"],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827,ExpressionUUID->"b3e8108f-9cfd-45bc-bab0-8efa6bd4ec54"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771,ExpressionUUID->"42eb9f5b-d1dc-4156-87f8-3e96fbfd3236"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->218895918,ExpressionUUID->"5365fc62-72b1-477f-8797-27e38e4f64ef"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985,ExpressionUUID->"e831a2f2-acd1-441d-b2ce-f616a1838875"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->795871300,ExpressionUUID->"56bd61bd-9504-49ca-8968-7dcd556d7f7e"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->199739161,ExpressionUUID->"acdbfb16-f6c0-4297-813e-1f6b4f27c7c8"],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->40625308,ExpressionUUID->"bdeabe38-2799-46f8-a3f3-b4ee43a2526d"],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->357121918,ExpressionUUID->"30aea7a4-c291-48fe-be71-c5c8475948f5"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->35949532,ExpressionUUID->"9d070f5c-1ef2-43c8-87b5-7024d97bba1c"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->929432370,ExpressionUUID->"d5ed8e28-e8bb-4c82-800c-3b993a47bb0c"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365,ExpressionUUID->"816ae128-98ae-40b8-9fab-4065668cb781"]
+}, Closed]],
 
 Cell[CellGroupData[{
 
 Cell["Symmetry calculations", "Title",
- CellID->509267359],
-
-Cell[BoxData[GridBox[{
-   {
-    TemplateBox[{
-      Cell["Working with symmetry equivalent positions"], 
-      "paclet:MaXrd/tutorial/SymmetryCalculations#761365812", 
-      GraphicsBox[
-       TagBox[
-        RasterBox[
-        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
-          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
-          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
-          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
-          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
-          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
-          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
-          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
-          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
-          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
-          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
-          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
-          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
-          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
-          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
-          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
-          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
-          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
-          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
-          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
-          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
-          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
-         RGBColor], 
-        BoxForm`ImageTag[
-        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
-         Automatic, MetaInformation -> 
-         Association[{
-           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
-        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
-       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
-       ImageSize -> {8, 9}], 
-      GraphicsBox[
-       TagBox[
-        RasterBox[
-        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
-          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
-          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
-          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
-          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
-          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
-          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
-          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
-          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
-          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
-          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
-           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
-          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
-          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
-           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
-          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
-           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
-          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
-          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
-          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
-        BoxForm`ImageTag[
-        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
-         Automatic, MetaInformation -> 
-         Association[{
-           "XMP" -> Association[{
-              "BasicSchema" -> 
-               Association[{
-                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
-               "MediaManagementSchema" -> 
-               Association[{
-                 "DerivedFrom" -> 
-                  Association[{
-                    "DerivedFrom" -> 
-                    Association[{
-                    "InstanceID" -> 
-                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
-                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
-                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
-                  "InstanceID" -> 
-                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
-               "RightsManagementSchema" -> 
-               Association[{
-                 "DerivedFrom" -> 
-                  Association[{
-                    "DerivedFrom" -> 
-                    Association[{
-                    "InstanceID" -> 
-                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
-                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
-               "PagedTextSchema" -> 
-               Association[{
-                 "DerivedFrom" -> 
-                  Association[{
-                    "DerivedFrom" -> 
-                    Association[{
-                    "InstanceID" -> 
-                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
-                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
-            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
-        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
-       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
-       ImageSize -> {8, 9}]},
-     "GrayLinkWithIcon",
-     BaseStyle->{"TutorialJumpBoxLink"}], 
-    TemplateBox[{
-      Cell["Working with symmetry equivalent reflections"], 
-      "paclet:MaXrd/tutorial/SymmetryCalculations#1225706792", 
-      GraphicsBox[
-       TagBox[
-        RasterBox[
-        RawArray["UnsignedInteger8",{{{128, 128, 128, 32}, {128, 128, 128, 
-          16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
-          128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 
-          128, 128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 
-          128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 16}, {128, 128, 
-          128, 143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 
-          128, 64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
-          128, 112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 
-          128, 32}}, {{128, 128, 128, 32}, {128, 128, 128, 16}, {128, 128, 
-          128, 16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 
-          128, 127}, {128, 128, 128, 0}, {128, 128, 128, 48}}, {{128, 128, 
-          128, 48}, {128, 128, 128, 239}, {128, 128, 128, 112}, {128, 128, 
-          128, 0}, {128, 128, 128, 16}, {128, 128, 128, 16}, {128, 128, 128, 
-          143}, {128, 128, 128, 239}}, {{128, 128, 128, 0}, {128, 128, 128, 
-          64}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
-          112}, {128, 128, 128, 223}, {128, 128, 128, 191}, {128, 128, 128, 
-          32}}, {{128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 
-          16}, {128, 128, 128, 175}, {128, 128, 128, 255}, {128, 128, 128, 
-          127}, {128, 128, 128, 0}, {128, 128, 128, 0}}, {{128, 128, 128, 
-          0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 128, 128, 0}, {
-          128, 128, 128, 16}, {128, 128, 128, 0}, {128, 128, 128, 0}, {128, 
-          128, 128, 0}}}], {{0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> 
-         RGBColor], 
-        BoxForm`ImageTag[
-        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
-         Automatic, MetaInformation -> 
-         Association[{
-           "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
-        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
-       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
-       ImageSize -> {8, 9}], 
-      GraphicsBox[
-       TagBox[
-        RasterBox[
-        RawArray["UnsignedInteger8",{{{229, 95, 28, 32}, {229, 95, 28, 16}, {
-          229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 
-          0}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 48}, {229, 
-          95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229, 95, 28, 
-          0}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 239}}, {{
-          229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {229, 95, 
-          28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95, 28, 
-          191}, {229, 95, 28, 32}}, {{229, 95, 28, 32}, {229, 95, 28, 16}, {
-          229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229, 95, 
-          28, 127}, {229, 95, 28, 0}, {229, 95, 28, 48}}, {{229, 95, 28, 
-          48}, {229, 95, 28, 239}, {229, 95, 28, 112}, {229, 95, 28, 0}, {229,
-           95, 28, 16}, {229, 95, 28, 16}, {229, 95, 28, 143}, {229, 95, 28, 
-          239}}, {{229, 95, 28, 0}, {229, 95, 28, 64}, {229, 95, 28, 223}, {
-          229, 95, 28, 191}, {229, 95, 28, 112}, {229, 95, 28, 223}, {229, 95,
-           28, 191}, {229, 95, 28, 32}}, {{229, 95, 28, 0}, {229, 95, 28, 
-          0}, {229, 95, 28, 16}, {229, 95, 28, 175}, {229, 95, 28, 255}, {229,
-           95, 28, 127}, {229, 95, 28, 0}, {229, 95, 28, 0}}, {{229, 95, 28, 
-          0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 
-          28, 16}, {229, 95, 28, 0}, {229, 95, 28, 0}, {229, 95, 28, 0}}}], {{
-          0, 8.}, {8., 0}}, {0, 255}, ColorFunction -> RGBColor], 
-        BoxForm`ImageTag[
-        "Byte", ColorSpace -> "RGB", Interleaving -> True, Magnification -> 
-         Automatic, MetaInformation -> 
-         Association[{
-           "XMP" -> Association[{
-              "BasicSchema" -> 
-               Association[{
-                 "CreatorTool" -> "Adobe Photoshop CS5 Macintosh"}], 
-               "MediaManagementSchema" -> 
-               Association[{
-                 "DerivedFrom" -> 
-                  Association[{
-                    "DerivedFrom" -> 
-                    Association[{
-                    "InstanceID" -> 
-                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
-                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}], 
-                  "DocumentID" -> "xmp.did:AA75CDBB059711E28ADB8BB95CCA5C5A", 
-                  "InstanceID" -> 
-                  "xmp.iid:AA75CDBA059711E28ADB8BB95CCA5C5A"}], 
-               "RightsManagementSchema" -> 
-               Association[{
-                 "DerivedFrom" -> 
-                  Association[{
-                    "DerivedFrom" -> 
-                    Association[{
-                    "InstanceID" -> 
-                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
-                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}], 
-               "PagedTextSchema" -> 
-               Association[{
-                 "DerivedFrom" -> 
-                  Association[{
-                    "DerivedFrom" -> 
-                    Association[{
-                    "InstanceID" -> 
-                    "xmp.iid:AA75CDB8059711E28ADB8BB95CCA5C5A", "DocumentID" -> 
-                    "xmp.did:AA75CDB9059711E28ADB8BB95CCA5C5A"}]}]}]}], 
-            "Comments" -> Association[{"Software" -> "Adobe ImageReady"}]}]], 
-        Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
-       ImageSizeRaw -> {8., 8.}, PlotRange -> {{0, 8.}, {0, 8.}}, 
-       ImageSize -> {8, 9}]},
-     "GrayLinkWithIcon",
-     BaseStyle->{"TutorialJumpBoxLink"}]}
-  }]], "TutorialJumpBox"],
+ CellChangeTimes->{{3.716895156010131*^9, 3.716895156964596*^9}},
+ CellID->509267359,ExpressionUUID->"26c2d2dd-ad0d-4b7a-84fe-187537ca4545"],
 
 Cell[TextData[{
  "In this tutorial, we will learn about the correspondence between the \
@@ -326,56 +122,76 @@ information given in the ",
   FontSlant->"Italic"],
  " and data stored in ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["$SpaceGroups"]], "paclet:MaXrd/ref/$SpaceGroups"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+  ButtonBox["$SpaceGroups",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/$SpaceGroups"]], "InlineFormula",
+  ExpressionUUID->"d64152ad-d313-4df7-8b1f-5b54ad4d2b63"],
  "."
 }], "Text",
- CellID->1534169418],
+ CellChangeTimes->{{3.717256587183014*^9, 3.717256590580245*^9}, {
+  3.7328759799722548`*^9, 3.7328759988960247`*^9}, {3.741612829354471*^9, 
+  3.741612844654831*^9}, {3.74161358484157*^9, 3.74161359774776*^9}},
+ CellID->1534169418,ExpressionUUID->"fba1f151-e20e-4142-bea1-739ce6f4d131"],
+
+Cell[CellGroupData[{
 
 Cell["The package must be loaded:", "MathCaption",
- CellID->1517691727],
+ CellChangeTimes->{{3.717256679019158*^9, 3.717256686377759*^9}},
+ CellID->1517691727,ExpressionUUID->"b16ec595-050e-42da-adaa-4c1caa6e0342"],
 
 Cell[BoxData[
  RowBox[{"<<", "MaXrd`"}]], "Input",
+ CellChangeTimes->{{3.7172566881659927`*^9, 3.7172566912817793`*^9}, 
+   3.74383642719167*^9},
  CellLabel->"In[1]:=",
- CellID->318520214],
+ CellID->318520214,ExpressionUUID->"19d50d8f-8ed4-4b8f-9567-952cfdef8600"]
+}, Open  ]],
 
 Cell[BoxData[GridBox[{
    {
     ButtonBox["SymmetryEquivalentPositions",
      BaseStyle->"Link",
      ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentPositions"], Cell[
-    "returns equivalent postions of given coordinates", "TableText"]},
+    "returns equivalent postions of given coordinates", "TableText",
+     ExpressionUUID->"ae6168ef-4ae6-4c20-9a68-652254f01f9e"]},
    {
     ButtonBox["SymmetryEquivalentReflections",
      BaseStyle->"Link",
      ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentReflections"], Cell[
-    "returns equivalent reflections of given Miller indices", "TableText"]},
+    "returns equivalent reflections of given Miller indices", "TableText",
+     ExpressionUUID->"411bf698-84d1-4e1e-9128-5bfb9bd4322b"]},
    {
     ButtonBox["SymmetryEquivalentReflectionsQ",
      BaseStyle->"Link",
      ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentReflectionsQ"], Cell[
-    "check whether two or more reflections are equivalent", "TableText"]},
+    "check whether two or more reflections are equivalent", "TableText",
+     ExpressionUUID->"89b21c2b-e3ec-4cbf-b634-800c9212a213"]},
    {
     ButtonBox["GetSymmetryOperations",
      BaseStyle->"Link",
      ButtonData->"paclet:MaXrd/ref/GetSymmetryOperations"], Cell[
-    "returns the symmetry operations of a given group", "TableText"]}
+    "returns the symmetry operations of a given group", "TableText",
+     ExpressionUUID->"920279d3-b24f-446d-a8bc-70d60772dd6a"]}
   }]], "DefinitionBox",
- CellID->403343531],
+ CellChangeTimes->{{3.717220649043103*^9, 3.717220664997122*^9}, {
+   3.7172207249616203`*^9, 3.717220730197608*^9}, {3.717220775850379*^9, 
+   3.717220845446308*^9}, {3.71722306907868*^9, 3.717223092304323*^9}, 
+   3.717223259018696*^9, {3.741609017389908*^9, 3.741609084467902*^9}},
+ CellID->403343531,ExpressionUUID->"42cd144e-f97a-40a8-848e-0f4e1f0181d8"],
 
 Cell["\<\
 Functions concerning symmetry equivalence and symmetry operations.\
 \>", "Caption",
- CellID->1536335585],
+ CellChangeTimes->{{3.7172206683548403`*^9, 3.717220669130673*^9}},
+ CellID->1536335585,ExpressionUUID->"9b70d9e9-00a8-4ec4-9f9e-8222f1190d90"],
 
 Cell[CellGroupData[{
 
 Cell["Working with symmetry equivalent positions", "Section",
- CellID->761365812],
+ CellChangeTimes->{{3.717129430750194*^9, 3.717129439436306*^9}, {
+  3.717131933830866*^9, 3.71713193651057*^9}, {3.717133046158699*^9, 
+  3.7171330472921352`*^9}},
+ CellID->761365812,ExpressionUUID->"ed13586c-5498-4ddb-bd2c-654ec76c86c0"],
 
 Cell[TextData[{
  "Shown below is an extract from the ",
@@ -386,10 +202,14 @@ Cell[TextData[{
   FormBox[
    RowBox[{"P", " ", 
     OverscriptBox["4", "_"], 
-    SubscriptBox["2", "1"], "c"}], TraditionalForm]], "InlineMath"],
+    SubscriptBox["2", "1"], "c"}], TraditionalForm]], "InlineMath",
+  ExpressionUUID->"0c80be5a-c7bc-4123-9e4a-0ee4386b31e3"],
  " (#114)."
 }], "Text",
- CellID->1187032095],
+ CellChangeTimes->{{3.717131618521562*^9, 3.717131618984653*^9}, {
+  3.717131907656999*^9, 3.7171319404222603`*^9}, {3.717132053084803*^9, 
+  3.717132131960436*^9}, {3.741613983613687*^9, 3.741613991724478*^9}},
+ CellID->1187032095,ExpressionUUID->"503bc68a-9f0c-44c8-800b-2f12ec46635a"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -1498,28 +1318,32 @@ rdf:about=xmlns:exif=http://ns.adobe.com/exif/1.0/> \
   DefaultBaseStyle->"ImageGraphics",
   ImageSizeRaw->{1480, 524},
   PlotRange->{{0, 1480}, {0, 524}}]], "Text",
- CellID->1043338550],
+ CellChangeTimes->{3.71713161592756*^9},
+ CellID->1043338550,ExpressionUUID->"2f765bb3-8b22-4083-9509-cb5b54750600"],
+
+Cell[CellGroupData[{
 
 Cell[TextData[{
  "Let us generate these from the first coordinates from each site symmetry. \
 We use the function called ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SymmetryEquivalentPostions"]], 
-    "paclet:MaXrd/ref/SymmetryEquivalentPostions"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+  ButtonBox["SymmetryEquivalentPostions",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentPostions"]], 
+  "InlineFormula",ExpressionUUID->"96be1682-9f37-4f5e-87de-bec7ce86467f"],
  ":"
 }], "Text",
- CellID->684771842],
+ CellChangeTimes->{{3.717132160154941*^9, 3.717132193102597*^9}, {
+  3.717132404721299*^9, 3.7171324277813396`*^9}},
+ CellID->684771842,ExpressionUUID->"e5fa8feb-cd99-47cb-a782-d9f7fbee2d42"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"?", "SymmetryEquivalentPositions"}]], "Input",
+ CellChangeTimes->{{3.717129445221273*^9, 3.717129449444087*^9}},
  CellLabel->"In[1]:=",
- CellID->1061390852],
+ CellID->1061390852,ExpressionUUID->"a5d42c69-abf4-407c-9942-c36da6a58083"],
 
 Cell[BoxData["\<\"\\!\\(\\*RowBox[{\\\"SymmetryEquivalentPositions\\\", \\\"[\
 \\\", StyleBox[\\\"group\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
@@ -1591,17 +1415,25 @@ Rule[BaseStyle, \\\"Link\\\"], Rule[ButtonData, \
 Function[Annotation[Slot[1], \\\"paclet:MaXrd/ref/SymmetryEquivalentPositions\
 \\\", \\\"Hyperlink\\\"]]]], \\\"RowDefault\\\"]\\)\"\>"], "Print", \
 "PrintUsage",
+ CellChangeTimes->{3.741629290915512*^9},
  CellTags->"Info13741636490-1467218",
- CellID->747541625]
+ CellID->747541625,ExpressionUUID->"a07d52e6-baf8-4d2a-a4fc-1812f3ecf819"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[TextData[{
  "Wyckoff letter ",
  Cell[BoxData[
-  FormBox["e", TraditionalForm]], "InlineMath"],
+  FormBox["e", TraditionalForm]], "InlineMath",ExpressionUUID->
+  "277b3d51-285f-4cd1-8fb7-f0e6d3afaa9f"],
  " (general position):"
 }], "MathCaption",
- CellID->438563481],
+ CellChangeTimes->{{3.717132244350245*^9, 3.717132255268589*^9}, {
+  3.717132315284157*^9, 3.717132321994212*^9}, {3.7416145792145777`*^9, 
+  3.741614585435835*^9}},
+ CellID->438563481,ExpressionUUID->"e86bc6d1-f445-414e-a782-4572952a1af1"],
 
 Cell[CellGroupData[{
 
@@ -1610,8 +1442,9 @@ Cell[BoxData[
   RowBox[{"\"\<P -4 21 c\>\"", ",", 
    RowBox[{"{", 
     RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.717132201295568*^9, 3.717132222405724*^9}},
  CellLabel->"In[2]:=",
- CellID->1678814965],
+ CellID->1678814965,ExpressionUUID->"06103922-c93c-4c13-944d-1b5257104dcd"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1662,17 +1495,25 @@ Cell[BoxData[
       FractionBox["1", "2"], "+", "x"}], ",", 
      RowBox[{
       FractionBox["1", "2"], "+", "z"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.717132222754841*^9, 3.717132436584816*^9, 
+  3.741628200145952*^9, 3.741629291069037*^9},
  CellLabel->"Out[2]=",
- CellID->1152756425]
+ CellID->1152756425,ExpressionUUID->"4e363ecd-05d5-4f23-a29f-54516f78c97a"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[TextData[{
  "Wyckoff letter ",
  Cell[BoxData[
-  FormBox["d", TraditionalForm]], "InlineMath"],
+  FormBox["d", TraditionalForm]], "InlineMath",ExpressionUUID->
+  "2577c26e-60fd-48d0-b08d-211b70a8df3b"],
  ":"
 }], "MathCaption",
- CellID->73717974],
+ CellChangeTimes->{{3.717132244350245*^9, 3.717132255268589*^9}, {
+  3.717132315284157*^9, 3.717132341115991*^9}},
+ CellID->73717974,ExpressionUUID->"e59d73ad-7d91-4ee9-83f4-f6fa50bd8e4d"],
 
 Cell[CellGroupData[{
 
@@ -1682,8 +1523,10 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"0", ",", 
      RowBox[{"1", "/", "2"}], ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.717132201295568*^9, 3.717132222405724*^9}, {
+  3.717132345258113*^9, 3.717132346721966*^9}},
  CellLabel->"In[3]:=",
- CellID->2027408346],
+ CellID->2027408346,ExpressionUUID->"e8485be1-1bd9-4f13-a840-7a676e200311"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1705,17 +1548,25 @@ Cell[BoxData[
      FractionBox["1", "2"], ",", 
      RowBox[{
       FractionBox["1", "2"], "+", "z"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.717132222754841*^9, 3.717132348194334*^9, 
+  3.717132436721611*^9, 3.741628201496207*^9, 3.741629291202799*^9},
  CellLabel->"Out[3]=",
- CellID->1927255388]
+ CellID->1927255388,ExpressionUUID->"7108fc6a-58d4-4b9d-864c-6db321196a27"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[TextData[{
  "Wyckoff letter ",
  Cell[BoxData[
-  FormBox["c", TraditionalForm]], "InlineMath"],
+  FormBox["c", TraditionalForm]], "InlineMath",ExpressionUUID->
+  "65b21a1b-762e-49f9-9069-6bbc69ea2d41"],
  ":"
 }], "MathCaption",
- CellID->2068364894],
+ CellChangeTimes->{{3.717132244350245*^9, 3.717132255268589*^9}, {
+  3.717132315284157*^9, 3.717132358611649*^9}},
+ CellID->2068364894,ExpressionUUID->"409077a3-e73a-4ee6-b3f6-1bfbae6d6e78"],
 
 Cell[CellGroupData[{
 
@@ -1724,8 +1575,10 @@ Cell[BoxData[
   RowBox[{"\"\<P -4 21 c\>\"", ",", 
    RowBox[{"{", 
     RowBox[{"0", ",", "0", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.717132201295568*^9, 3.717132222405724*^9}, {
+  3.717132345258113*^9, 3.717132363889681*^9}},
  CellLabel->"In[4]:=",
- CellID->1690979469],
+ CellID->1690979469,ExpressionUUID->"68fe326b-ed76-47ed-99bb-333ae8eb8ad7"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1747,17 +1600,27 @@ Cell[BoxData[
      FractionBox["1", "2"], ",", 
      RowBox[{
       FractionBox["1", "2"], "+", "z"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.717132222754841*^9, {3.717132348194334*^9, 3.7171323642222233`*^9}, 
+   3.717132436836884*^9, 3.741628202179793*^9, 3.7416292913371477`*^9},
  CellLabel->"Out[4]=",
- CellID->885458415]
+ CellID->885458415,ExpressionUUID->"7434780a-b59c-4b30-acf6-300973c36e4a"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[TextData[{
  "Wyckoff letter ",
  Cell[BoxData[
-  FormBox["b", TraditionalForm]], "InlineMath"],
+  FormBox["b", TraditionalForm]], "InlineMath",ExpressionUUID->
+  "245b89a9-8c91-472f-a784-4cdb413f3fc3"],
  ":"
 }], "MathCaption",
- CellID->1699612251],
+ CellChangeTimes->{{3.717132244350245*^9, 3.717132255268589*^9}, {
+  3.717132315284157*^9, 3.717132341115991*^9}, {3.71713237461694*^9, 
+  3.717132374616982*^9}},
+ CellID->1699612251,ExpressionUUID->"89a3a7f5-c41b-403d-a3e6-b6c1dc03029b"],
 
 Cell[CellGroupData[{
 
@@ -1767,8 +1630,11 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"0", ",", "0", ",", 
      RowBox[{"1", "/", "2"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.717132201295568*^9, 3.717132222405724*^9}, {
+  3.717132345258113*^9, 3.717132346721966*^9}, {3.717132380152858*^9, 
+  3.717132381504716*^9}},
  CellLabel->"In[5]:=",
- CellID->1703113810],
+ CellID->1703113810,ExpressionUUID->"d2fc6f96-d0c6-4e45-8699-b0e218382593"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1780,17 +1646,27 @@ Cell[BoxData[
     RowBox[{
      FractionBox["1", "2"], ",", 
      FractionBox["1", "2"], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.717132222754841*^9, 3.717132348194334*^9, 
+  3.71713238182034*^9, 3.717132436953947*^9, 3.74162820311628*^9, 
+  3.7416292915046473`*^9},
  CellLabel->"Out[5]=",
- CellID->1985390842]
+ CellID->1985390842,ExpressionUUID->"1c56a2dc-e0c6-47b7-a688-fab474f94b25"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[TextData[{
  "Wyckoff letter ",
  Cell[BoxData[
-  FormBox["a", TraditionalForm]], "InlineMath"],
+  FormBox["a", TraditionalForm]], "InlineMath",ExpressionUUID->
+  "cb9bad87-ba00-4401-8bb1-3f36b108d479"],
  ":"
 }], "MathCaption",
- CellID->1040113465],
+ CellChangeTimes->{{3.717132244350245*^9, 3.717132255268589*^9}, {
+  3.717132315284157*^9, 3.717132341115991*^9}, {3.7171323853843946`*^9, 
+  3.717132385384441*^9}},
+ CellID->1040113465,ExpressionUUID->"4c21312f-97ed-4dd9-9b3d-4a36e70ee93b"],
 
 Cell[CellGroupData[{
 
@@ -1799,8 +1675,11 @@ Cell[BoxData[
   RowBox[{"\"\<P -4 21 c\>\"", ",", 
    RowBox[{"{", 
     RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.717132201295568*^9, 3.717132222405724*^9}, {
+  3.717132345258113*^9, 3.717132346721966*^9}, {3.717132390472641*^9, 
+  3.7171323911764174`*^9}},
  CellLabel->"In[6]:=",
- CellID->670119675],
+ CellID->670119675,ExpressionUUID->"7c0147e5-821d-426b-8e7d-c723c0c1de87"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1812,8 +1691,12 @@ Cell[BoxData[
      FractionBox["1", "2"], ",", 
      FractionBox["1", "2"], ",", 
      FractionBox["1", "2"]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.717132222754841*^9, 3.717132348194334*^9, 
+  3.7171323915817423`*^9, 3.717132437071398*^9, 3.741628203617828*^9, 
+  3.741629291700506*^9},
  CellLabel->"Out[6]=",
- CellID->862974408]
+ CellID->862974408,ExpressionUUID->"6ee3cd79-c976-41d8-b6e0-25c59a862181"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[TextData[{
@@ -1822,44 +1705,51 @@ Cell[TextData[{
   FontSlant->"Italic"],
  " section in the documentation pages on this function."
 }], "Text",
- CellID->89569258],
+ CellChangeTimes->{{3.717132976159137*^9, 3.717133025188713*^9}},
+ CellID->89569258,ExpressionUUID->"47556100-f737-48ba-a1a2-e0d9c85e0946"],
 
 Cell[TextData[{
  "Note that the multiplicity (the first column in the extract) is the number \
 of symmetry equivalent positions times the number of centring vectors (which \
 for ",
  Cell[BoxData[
-  FormBox["P", TraditionalForm]], "InlineMath"],
+  FormBox["P", TraditionalForm]], "InlineMath",ExpressionUUID->
+  "dc02af1f-f672-483d-b23c-27ea5f8e0fbd"],
  " is one)."
 }], "Text",
- CellID->1839653472]
+ CellChangeTimes->{{3.717215471241851*^9, 3.717215496736288*^9}, {
+  3.7172155433845377`*^9, 3.717215568110106*^9}},
+ CellID->1839653472,ExpressionUUID->"a644b595-a105-4a59-bc2f-c02f4bc8878a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Working with symmetry equivalent reflections", "Section",
- CellID->1225706792],
+ CellChangeTimes->{{3.717129430750194*^9, 3.717129439436306*^9}, {
+  3.717131933830866*^9, 3.71713193651057*^9}, {3.717133046158699*^9, 
+  3.7171330472921352`*^9}, {3.717215584521742*^9, 3.7172155861121063`*^9}},
+ CellID->1225706792,ExpressionUUID->"f2d4e205-86ee-4241-9b27-334752fa96b3"],
 
 Cell[TextData[{
  "Analogous to ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SymmetryEquivalentPositions"]], 
-    "paclet:MaXrd/ref/SymmetryEquivalentPositions"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+  ButtonBox["SymmetryEquivalentPositions",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentPositions"]], 
+  "InlineFormula",ExpressionUUID->"b1adf091-9778-4ca7-bf2a-1f077d900b8e"],
  " is the ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SymmetryEquivalentReflections"]], 
-    "paclet:MaXrd/ref/SymmetryEquivalentReflections"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+  ButtonBox["SymmetryEquivalentReflections",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentReflections"]], 
+  "InlineFormula",ExpressionUUID->"80e604d7-6f91-404d-ac96-9432bdb55d60"],
  " function. Let us first see an example:"
 }], "Text",
- CellID->1388471068],
+ CellChangeTimes->{{3.71721569433639*^9, 3.717215737973037*^9}, {
+  3.717215868086108*^9, 3.717215872371521*^9}},
+ CellID->1388471068,ExpressionUUID->"3238789c-bce8-4025-bc33-814e215358f0"],
+
+Cell[CellGroupData[{
 
 Cell[TextData[{
  "Reflections that are symmetry equivalent to ",
@@ -1873,15 +1763,19 @@ Cell[TextData[{
     StyleBox["k",
      FontSlant->"Italic"], 
     StyleBox[" ",
-     FontSlant->"Italic"], "0"}], TraditionalForm]], "InlineMath"],
+     FontSlant->"Italic"], "0"}], TraditionalForm]], "InlineMath",
+  ExpressionUUID->"36d47c0c-82b6-40a1-a24d-bde8b6b5afee"],
  " reflection in ",
  Cell[BoxData[
   FormBox[
    RowBox[{"P", " ", "3", " ", "1", " ", "m"}], TraditionalForm]], 
-  "InlineMath"],
+  "InlineMath",ExpressionUUID->"59d69fa3-acb8-408e-b6bd-7b49162ae6ad"],
  ":"
 }], "MathCaption",
- CellID->1014990181],
+ CellChangeTimes->{{3.717215889179088*^9, 3.717215950361745*^9}, {
+  3.717216193184037*^9, 3.717216241137973*^9}, {3.7172165968845053`*^9, 
+  3.7172166328752947`*^9}},
+ CellID->1014990181,ExpressionUUID->"3d2f0d35-7552-467c-a102-2f1bab4ac4ec"],
 
 Cell[CellGroupData[{
 
@@ -1890,8 +1784,9 @@ Cell[BoxData[
   RowBox[{"\"\<P31m\>\"", ",", 
    RowBox[{"{", 
     RowBox[{"h", ",", "k", ",", "0"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7172167298483562`*^9, 3.717216740552471*^9}},
  CellLabel->"In[1]:=",
- CellID->1938477741],
+ CellID->1938477741,ExpressionUUID->"a51f99fe-c18b-4a99-88e9-9fd56df06063"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1940,45 +1835,64 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"h", "+", "k"}], ",", 
      RowBox[{"-", "k"}], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.717216741443454*^9, 3.717218103924224*^9, 
+  3.717218786089098*^9, 3.741628205366591*^9, 3.741629299193165*^9},
  CellLabel->"Out[1]=",
- CellID->1294735199]
+ CellID->1294735199,ExpressionUUID->"3babcd5b-3be1-49db-aa58-bb221bf350c6"]
+}, Open  ]]
 }, Open  ]],
 
 Cell["\<\
 Let us now look more into the details of the function, and break the \
 procedure into steps.\
 \>", "Text",
- CellID->140266419],
+ CellChangeTimes->{{3.717216791161303*^9, 3.717216811326305*^9}, {
+  3.717217672769582*^9, 3.717217688215934*^9}, {3.717217730327256*^9, 
+  3.7172177468464813`*^9}},
+ CellID->140266419,ExpressionUUID->"70dbbcbb-8140-4b87-a4cd-b77af696faab"],
+
+Cell[CellGroupData[{
 
 Cell["\<\
 The functions starts by finding the Laue class of the space group:\
 \>", "MathCaption",
- CellID->105261536],
+ CellChangeTimes->{3.717217750190651*^9},
+ CellID->105261536,ExpressionUUID->"0fb4ff5b-7bc0-457f-9a26-6048aa7b75d3"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"GetLaueClass", "[", "\"\<P31m\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.717217237220828*^9, 3.717217241995496*^9}, {
+  3.741628208939993*^9, 3.741628209189389*^9}},
  CellLabel->"In[2]:=",
- CellID->399130030],
+ CellID->399130030,ExpressionUUID->"77960467-df7f-4d62-ae02-2f33c65bbffd"],
 
 Cell[BoxData["\<\"\\!\\(\\*OverscriptBox[\\(3\\), \\(_\\)]\\)m\"\>"], "Output",
+ CellChangeTimes->{3.7172172422157516`*^9, 3.7172181040497*^9, 
+  3.7172187862336884`*^9, 3.741628209477673*^9, 3.741629299306883*^9},
  CellLabel->"Out[2]=",
- CellID->162694542]
+ CellID->162694542,ExpressionUUID->"c3348d42-23a7-4b85-a8e1-a2176ff5dfd0"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell["\<\
 Next we find the symmetry operations associated with that group:\
 \>", "MathCaption",
- CellID->1751594071],
+ CellChangeTimes->{{3.7172177605912*^9, 3.7172177767898483`*^9}},
+ CellID->1751594071,ExpressionUUID->"005a74d0-0ea3-49c1-9f67-f58fba15f188"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"S", "=", 
   RowBox[{"GetSymmetryOperations", "[", "\"\<-3m\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.717217212965905*^9, 3.7172172473073797`*^9}, {
+  3.7416282123092213`*^9, 3.7416282125337143`*^9}},
  CellLabel->"In[3]:=",
- CellID->1098351381],
+ CellID->1098351381,ExpressionUUID->"e0ad23a2-fde3-4b82-9de5-160dc4b95b7f"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -2101,23 +2015,31 @@ Cell[BoxData[
        RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.71721722583913*^9, 3.717217247601639*^9}, 
+   3.717218104188661*^9, 3.717218786381822*^9, 3.7416282127089043`*^9, 
+   3.741629299426401*^9},
  CellLabel->"Out[3]=",
- CellID->660484763]
+ CellID->660484763,ExpressionUUID->"4dbe1d6e-3790-401a-81dc-15cb4208c8c3"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell["\<\
 Each symmetry operation (matrix) must be transposed and multiplied by the \
 reflection. For example:\
 \>", "MathCaption",
- CellID->1166300192],
+ CellChangeTimes->{{3.717217954930478*^9, 3.717218011959371*^9}},
+ CellID->1166300192,ExpressionUUID->"524a2e04-c181-4700-80ec-25f12d964ffe"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"s", "=", 
   RowBox[{"RandomChoice", "[", "S", "]"}]}]], "Input",
+ CellChangeTimes->{{3.717217284075802*^9, 3.71721728796347*^9}},
  CellLabel->"In[4]:=",
- CellID->2139738416],
+ CellID->2139738416,ExpressionUUID->"772040f3-5a87-4931-ae8a-863c9aeb2413"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -2128,8 +2050,10 @@ Cell[BoxData[
     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.717217288190938*^9, 3.717218104301504*^9, 
+  3.71721878653194*^9, 3.7416282159009733`*^9, 3.74162929954161*^9},
  CellLabel->"Out[4]=",
- CellID->424440398]
+ CellID->424440398,ExpressionUUID->"2415d1aa-2d93-433b-aac3-a56c67431c31"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2139,24 +2063,33 @@ Cell[BoxData[
   RowBox[{"Transpose", "[", "s", "]"}], ".", 
   RowBox[{"{", 
    RowBox[{"h", ",", "k", ",", "0"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7172172938348494`*^9, 3.717217301906158*^9}},
  CellLabel->"In[5]:=",
- CellID->1478680329],
+ CellID->1478680329,ExpressionUUID->"1f857ac5-70f7-413c-8ee5-57d01e6b742e"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"h", ",", "k", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.717217302177167*^9, 3.7172181044548473`*^9, 
+  3.717218786681752*^9, 3.7416282161525517`*^9, 3.7416292996766367`*^9},
  CellLabel->"Out[5]=",
- CellID->1776577499]
+ CellID->1776577499,ExpressionUUID->"ba9658c0-c43f-494d-91d1-4ad836084eb0"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[TextData[{
  "Finally, let us operate all the matrices on the ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"h", " ", "k", " ", "0"}], TraditionalForm]], "InlineMath"],
+   RowBox[{"h", " ", "k", " ", "0"}], TraditionalForm]], "InlineMath",
+  ExpressionUUID->"a43eccf9-0bff-41d2-8c76-4a79d802b699"],
  " reflection."
 }], "MathCaption",
- CellID->1206251172],
+ CellChangeTimes->{{3.717218022871387*^9, 3.7172180509184437`*^9}, {
+  3.717218251857841*^9, 3.717218253691402*^9}},
+ CellID->1206251172,ExpressionUUID->"a1ee394f-8ed7-4979-9bc1-69bd15e0539d"],
 
 Cell[CellGroupData[{
 
@@ -2172,8 +2105,9 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"i", ",", 
      RowBox[{"Length", "@", "S"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.717217318010996*^9, 3.71721737686421*^9}},
  CellLabel->"In[6]:=",
- CellID->295800779],
+ CellID->295800779,ExpressionUUID->"fb96fc1f-c52e-462b-92af-097e1ccc9e0f"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -2222,41 +2156,48 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"h", "+", "k"}], ",", 
      RowBox[{"-", "k"}], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.717217355979027*^9, 3.717217377440627*^9}, 
+   3.717218104572323*^9, 3.717218786800066*^9, 3.741628221747438*^9, 
+   3.7416292997869873`*^9},
  CellLabel->"Out[6]=",
- CellID->325397805]
+ CellID->325397805,ExpressionUUID->"6d998fa5-dd55-416f-9aaf-ab4d54fad2c5"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[TextData[{
  "We see that we have the same result as we got with ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SymmetryEquivalentReflections"]], 
-    "paclet:MaXrd/ref/SymmetryEquivalentReflections"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+  ButtonBox["SymmetryEquivalentReflections",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentReflections"]], 
+  "InlineFormula",ExpressionUUID->"38d5ddfc-f4eb-49cc-a62f-1809b3fd4338"],
  ". This function also delete duplicates, if any. "
 }], "Text",
- CellID->266814320],
+ CellChangeTimes->{{3.717218056110461*^9, 3.717218100370081*^9}},
+ CellID->266814320,ExpressionUUID->"044406f8-0575-4af6-9fa8-4dca011b3834"],
 
 Cell[TextData[{
  "If we want to check whether two (or more) reflections are equivalent in a \
 certain space group, we can use ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["SymmetryEquivalentQ"]], "paclet:MaXrd/ref/SymmetryEquivalentQ"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+  ButtonBox["SymmetryEquivalentQ",
+   BaseStyle->"Link",
+   ButtonData->"paclet:MaXrd/ref/SymmetryEquivalentQ"]], "InlineFormula",
+  ExpressionUUID->"9f7e5e8b-ecb4-4029-8797-2e9616c278eb"],
  ":"
 }], "Text",
- CellID->769808448],
+ CellChangeTimes->{{3.717218136835409*^9, 3.717218221443787*^9}},
+ CellID->769808448,ExpressionUUID->"aba6dff5-4d4d-41ca-9d64-80660e54191c"],
+
+Cell[CellGroupData[{
 
 Cell["\<\
 Two reflections from the list above, so we know they are symmetry equivalent:\
 \
 \>", "MathCaption",
- CellID->677762728],
+ CellChangeTimes->{{3.717218226067329*^9, 3.7172182310339413`*^9}, {
+  3.717218272049108*^9, 3.717218278576541*^9}},
+ CellID->677762728,ExpressionUUID->"c24219aa-f5e1-4597-9020-818b9b40eeaf"],
 
 Cell[CellGroupData[{
 
@@ -2272,17 +2213,27 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"-", "h"}], "-", "k"}], ",", "k", ",", "0"}], "}"}]}], 
     "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.717218290176549*^9, 3.717218319919867*^9}, {
+  3.7416282260291023`*^9, 3.7416282270666313`*^9}},
  CellLabel->"In[7]:=",
- CellID->1379215848],
+ CellID->1379215848,ExpressionUUID->"6879b236-2e27-4737-ae0f-527dea0cc6fb"],
 
 Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.717218320204258*^9, 3.717218461515448*^9, 3.717218506002708*^9, {
+   3.717218786958172*^9, 3.717218814527419*^9}, 3.7416282308127728`*^9, 
+   3.741629146684314*^9, 3.741629299885281*^9},
  CellLabel->"Out[7]=",
- CellID->1467543373]
+ CellID->1467543373,ExpressionUUID->"e47c873c-bb3a-47ec-8b6f-5bb332daf8f6"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell["Example of two reflections that are not symmetry equivalent:", \
 "MathCaption",
- CellID->1290520138],
+ CellChangeTimes->{{3.7172185095702333`*^9, 3.717218521593697*^9}},
+ CellID->1290520138,ExpressionUUID->"f71f448b-65e9-4f31-8ee9-6f7907498a8f"],
 
 Cell[CellGroupData[{
 
@@ -2295,26 +2246,33 @@ Cell[BoxData[
       RowBox[{"1", ",", "0", ",", "1"}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"0", ",", "1", ",", "1"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.717218535731326*^9, 3.717218615175528*^9}, 
+   3.7416291514059668`*^9},
  CellLabel->"In[8]:=",
- CellID->1547213852],
+ CellID->1547213852,ExpressionUUID->"12447a63-2614-48c0-bd35-d7e251bb24a0"],
 
 Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.7172185400397577`*^9, 3.717218615335348*^9}, 
+   3.717218787150296*^9, 3.741629151840928*^9, 3.7416293001589317`*^9},
  CellLabel->"Out[8]=",
- CellID->1151784216]
+ CellID->1151784216,ExpressionUUID->"7181e74e-0253-423c-8b5a-e29e0eca811d"]
+}, Open  ]]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[TextData[{
  "We may have more than two reflections in the input list. The function will \
 only give ",
  Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["True"]], "paclet:ref/True"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+  ButtonBox["True",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/True"]], "InlineFormula",ExpressionUUID->
+  "1fe2c12b-475f-49b6-8021-72de76ab6949"],
  " if all reflections are symmetry equivalent."
 }], "MathCaption",
- CellID->1887297709],
+ CellChangeTimes->{{3.717218626574551*^9, 3.71721870118876*^9}},
+ CellID->1887297709,ExpressionUUID->"1ebfa660-c9d8-4960-a592-3e9903edf66e"],
 
 Cell[CellGroupData[{
 
@@ -2332,67 +2290,54 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"-", "2"}], ",", 
        RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.717218726765374*^9, 3.717218770138516*^9}, 
+   3.7416291536763372`*^9},
  CellLabel->"In[9]:=",
- CellID->63497252],
+ CellID->63497252,ExpressionUUID->"fb689a7c-0799-4c31-8770-0aab1b1a900b"],
 
 Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.717218742158271*^9, 3.7172187873010902`*^9}, 
+   3.741629154082062*^9, 3.741629300313405*^9},
  CellLabel->"Out[9]=",
- CellID->619724254]
+ CellID->619724254,ExpressionUUID->"14e04daf-e8cb-463b-ac31-b2d4ba2fff2e"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
-Cell[" ", "FooterCell"]
+Cell[CellGroupData[{
+
+Cell["More About", "TutorialMoreAboutSection",
+ CellID->23220180,ExpressionUUID->"4c336169-0706-4a61-b87c-e50344933239"],
+
+Cell["XXXX", "TutorialMoreAbout",
+ CellID->1567025153,ExpressionUUID->"c605ec91-b7c1-4672-b88b-9107d930795a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tutorials", "RelatedTutorialsSection",
+ CellID->415694126,ExpressionUUID->"7e47a1d7-ba12-426d-b19e-82a1f971652b"],
+
+Cell["XXXX", "RelatedTutorials",
+ CellID->806871991,ExpressionUUID->"218a5934-44b3-486f-935b-8803411ad477"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Wolfram Education Group Courses", "TutorialRelatedLinksSection",
+ CellID->415694148,ExpressionUUID->"b1ff0876-11fd-43a6-9110-44c061e5d954"],
+
+Cell["XXXX", "TutorialRelatedLinks",
+ CellID->415694149,ExpressionUUID->"421f5a02-393c-4271-bd2c-20fe3e4b9d56"]
+}, Open  ]]
+}, Open  ]]
 },
-Saveable->False,
-ScreenStyleEnvironment->"Working",
-WindowSize->{725, 750},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-WindowTitle->"Symmetry calculations",
-TaggingRules->{
- "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
-  "LinkTrails" -> GridBox[{{
-      RowBox[{
-        ButtonBox[
-        "MaXrd: Mathematica X-ray diffraction package", ButtonData -> 
-         "paclet:MaXrd/guide/MaXrd", 
-         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
-    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
-  "", "Metadata" -> {
-   "built" -> "{2020, 9, 3, 23, 17, 59.687830}", 
-    "history" -> {"0.7", "", "", ""}, "context" -> "MaXrd`", "keywords" -> {},
-     "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> 
-    True, "label" -> "MaXrd Tutorial", "language" -> "en", "paclet" -> 
-    "MaXrd", "status" -> "None", "summary" -> 
-    "In this tutorial, we will learn about the correspondence between the \
-information given in the International Tables for Crystallography, volume A \
-and data stored in $SpaceGroups. The package must be loaded: Functions \
-concerning symmetry equivalence and symmetry operations.", "synonyms" -> {}, 
-    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$55201, 
-    "title" -> "Symmetry calculations", "titlemodifier" -> "", "windowtitle" -> 
-    "Symmetry calculations", "type" -> "Tutorial", "uri" -> 
-    "MaXrd/tutorial/SymmetryCalculations", "WorkflowDockedCell" -> ""}, 
-  "SearchTextTranslated" -> ""},
-FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
-StyleDefinitions->Notebook[{
-   Cell[
-    StyleData[
-    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
-   Cell[
-    StyleData["Input"], CellContext -> Notebook], 
-   Cell[
-    StyleData["Output"], CellContext -> Notebook], 
-   Cell[
-    StyleData["TutorialMoreAboutSection"], 
-    CellGroupingRules -> {"SectionGrouping", 30}], 
-   Cell[
-    StyleData["RelatedTutorialsSection"], 
-    CellGroupingRules -> {"SectionGrouping", 30}], 
-   Cell[
-    StyleData["TutorialRelatedLinksSection"], 
-    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
-  FrontEndVersion -> "12.1 for Mac OS X x86 (64-bit) (June 19, 2020)", 
-  StyleDefinitions -> "Default.nb"]
+WindowSize->{720, 791},
+WindowMargins->{{920, Automatic}, {Automatic, 258}},
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
 ]
 (* End of Notebook Content *)
 
@@ -2400,179 +2345,264 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "Info13741636490-1467218"->{
-  Cell[85723, 1523, 4676, 71, 70, "Print",ExpressionUUID->"abc55f28-467d-4d58-bcc4-1df90022c517",
+  Cell[75657, 1347, 4773, 72, 70, "Print",
    CellTags->"Info13741636490-1467218",
    CellID->747541625]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info13741636490-1467218", 111978, 2401}
+ {"Info13741636490-1467218", 110214, 2346}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[593, 21, 3477, 81, 70, "AnchorBarGrid",ExpressionUUID->"415c06b9-4030-403f-aded-7c8b69405973",
- CellID->1],
+Cell[558, 20, 600, 14, 24, "History",
+ CellID->1247902091],
 Cell[CellGroupData[{
-Cell[4095, 106, 58, 1, 70, "Title",ExpressionUUID->"30490e84-8963-4819-8cfa-fe3292d4018c",
+Cell[1183, 38, 123, 1, 29, "CategorizationSection",
+ CellID->1122911449],
+Cell[1309, 41, 136, 2, 30, "Categorization",
+ CellID->686433507],
+Cell[1448, 45, 175, 3, 30, "Categorization",
+ CellID->605800465],
+Cell[1626, 50, 172, 3, 30, "Categorization",
+ CellID->468444828],
+Cell[1801, 55, 177, 2, 30, "Categorization"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2015, 62, 111, 1, 29, "KeywordsSection",
+ CellID->1427428552],
+Cell[2129, 65, 100, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2266, 71, 108, 1, 19, "DetailsSection",
+ CellID->307771771],
+Cell[2377, 74, 118, 2, 70, "Details",
+ CellID->218895918],
+Cell[2498, 78, 124, 2, 70, "Details",
+ CellID->350963985],
+Cell[2625, 82, 121, 2, 70, "Details",
+ CellID->795871300],
+Cell[2749, 86, 126, 2, 70, "Details",
+ CellID->199739161],
+Cell[2878, 90, 115, 2, 70, "Details",
+ CellID->40625308],
+Cell[2996, 94, 116, 2, 70, "Details",
+ CellID->357121918],
+Cell[3115, 98, 117, 2, 70, "Details",
+ CellID->35949532],
+Cell[3235, 102, 133, 2, 70, "Details",
+ CellID->929432370],
+Cell[3371, 106, 122, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3530, 113, 179, 2, 106, "Title",
  CellID->509267359],
-Cell[4156, 109, 11883, 210, 70, "TutorialJumpBox",ExpressionUUID->"622aeac7-67eb-4d48-ac50-76dd8f7f2229"],
-Cell[16042, 321, 441, 14, 70, "Text",ExpressionUUID->"c1d9e074-3507-4409-97c4-4c4a513e0a1b",
+Cell[3712, 117, 725, 16, 41, "Text",
  CellID->1534169418],
-Cell[16486, 337, 71, 1, 70, "MathCaption",ExpressionUUID->"c933fdbe-a9e4-4fed-8320-abfac325fcff",
+Cell[CellGroupData[{
+Cell[4462, 137, 192, 2, 39, "MathCaption",
  CellID->1517691727],
-Cell[16560, 340, 93, 3, 70, "Input",ExpressionUUID->"a766ba5d-7a62-4e6c-82e7-384cd9af584f",
- CellID->318520214],
-Cell[16656, 345, 941, 22, 70, "DefinitionBox",ExpressionUUID->"9d4679aa-477e-4f3b-9782-1fdaf2b01e4e",
+Cell[4657, 141, 243, 5, 24, "Input",
+ CellID->318520214]
+}, Open  ]],
+Cell[4915, 149, 1525, 30, 112, "DefinitionBox",
  CellID->403343531],
-Cell[17600, 369, 114, 3, 70, "Caption",ExpressionUUID->"0267918e-f61e-413d-88b6-a2423117461e",
+Cell[6443, 181, 237, 4, 29, "Caption",
  CellID->1536335585],
 Cell[CellGroupData[{
-Cell[17739, 376, 81, 1, 70, "Section",ExpressionUUID->"46eef204-6609-4b42-b8c9-72c318edb1b5",
+Cell[6705, 189, 301, 4, 43, "Section",
  CellID->761365812],
-Cell[17823, 379, 393, 12, 70, "Text",ExpressionUUID->"cb4d4731-c2bf-4093-8633-315ec45beb3c",
+Cell[7009, 195, 718, 16, 41, "Text",
  CellID->1187032095],
-Cell[18219, 393, 66992, 1107, 70, "Text",ExpressionUUID->"45dd6726-e0b8-4b81-8d27-3264f01e6362",
+Cell[7730, 213, 67088, 1108, 196, "Text",
  CellID->1043338550],
-Cell[85214, 1502, 367, 12, 70, "Text",ExpressionUUID->"7f0f605c-be0d-4abc-9bdd-fb0fdfe4c85f",
+Cell[CellGroupData[{
+Cell[74843, 1325, 551, 12, 70, "Text",
  CellID->684771842],
 Cell[CellGroupData[{
-Cell[85606, 1518, 114, 3, 70, "Input",ExpressionUUID->"96e00469-dd4d-4b9f-9cc4-d22e8b7cf87b",
+Cell[75419, 1341, 235, 4, 70, "Input",
  CellID->1061390852],
-Cell[85723, 1523, 4676, 71, 70, "Print",ExpressionUUID->"abc55f28-467d-4d58-bcc4-1df90022c517",
+Cell[75657, 1347, 4773, 72, 70, "Print",
  CellTags->"Info13741636490-1467218",
  CellID->747541625]
+}, Open  ]]
 }, Open  ]],
-Cell[90414, 1597, 162, 6, 70, "MathCaption",ExpressionUUID->"78f6392d-6bc4-45f6-b6f8-c8a329ddf9e4",
+Cell[CellGroupData[{
+Cell[80479, 1425, 441, 10, 70, "MathCaption",
  CellID->438563481],
 Cell[CellGroupData[{
-Cell[90601, 1607, 222, 6, 70, "Input",ExpressionUUID->"9cadf389-e11e-4e12-a36f-a38b4fe7f221",
+Cell[80945, 1439, 343, 7, 70, "Input",
  CellID->1678814965],
-Cell[90826, 1615, 1387, 50, 70, "Output",ExpressionUUID->"c11c8e75-ab76-492d-8c4a-85a5d2a615a4",
+Cell[81291, 1448, 1553, 52, 70, "Output",
  CellID->1152756425]
+}, Open  ]]
 }, Open  ]],
-Cell[92228, 1668, 142, 6, 70, "MathCaption",ExpressionUUID->"53cb7046-453f-42a3-b178-30b4bfcd796a",
+Cell[CellGroupData[{
+Cell[82893, 1506, 370, 9, 70, "MathCaption",
  CellID->73717974],
 Cell[CellGroupData[{
-Cell[92395, 1678, 248, 7, 70, "Input",ExpressionUUID->"10597f0d-3734-4c80-b411-2d6def022025",
+Cell[83288, 1519, 418, 9, 70, "Input",
  CellID->2027408346],
-Cell[92646, 1687, 592, 21, 70, "Output",ExpressionUUID->"324c566b-c59e-4c67-8738-65bcf5a0b4a9",
+Cell[83709, 1530, 780, 23, 70, "Output",
  CellID->1927255388]
+}, Open  ]]
 }, Open  ]],
-Cell[93253, 1711, 144, 6, 70, "MathCaption",ExpressionUUID->"6a6a92f8-2547-4a80-87dc-91c0bbc822a6",
+Cell[CellGroupData[{
+Cell[84538, 1559, 372, 9, 70, "MathCaption",
  CellID->2068364894],
 Cell[CellGroupData[{
-Cell[93422, 1721, 222, 6, 70, "Input",ExpressionUUID->"85023cfa-56f7-4e04-8ee6-e420e1503d1b",
+Cell[84935, 1572, 392, 8, 70, "Input",
  CellID->1690979469],
-Cell[93647, 1729, 591, 21, 70, "Output",ExpressionUUID->"2a616bbb-5bdf-4c14-b373-603988716e26",
+Cell[85330, 1582, 811, 24, 70, "Output",
  CellID->885458415]
+}, Open  ]]
 }, Open  ]],
-Cell[94253, 1753, 144, 6, 70, "MathCaption",ExpressionUUID->"b314b6ff-a890-4e09-8fa2-c7a4ee0aea76",
+Cell[CellGroupData[{
+Cell[86190, 1612, 420, 10, 70, "MathCaption",
  CellID->1699612251],
 Cell[CellGroupData[{
-Cell[94422, 1763, 248, 7, 70, "Input",ExpressionUUID->"c4207246-c0cb-484b-b1b0-9e21f963893e",
+Cell[86635, 1626, 467, 10, 70, "Input",
  CellID->1703113810],
-Cell[94673, 1772, 307, 11, 70, "Output",ExpressionUUID->"994cc2e6-2850-475f-83a8-be8be50da63d",
+Cell[87105, 1638, 520, 14, 70, "Output",
  CellID->1985390842]
+}, Open  ]]
 }, Open  ]],
-Cell[94995, 1786, 144, 6, 70, "MathCaption",ExpressionUUID->"4a246606-68b7-4f84-ae73-79d04e2f95b0",
+Cell[CellGroupData[{
+Cell[87674, 1658, 423, 10, 70, "MathCaption",
  CellID->1040113465],
 Cell[CellGroupData[{
-Cell[95164, 1796, 221, 6, 70, "Input",ExpressionUUID->"94ae7dc8-553e-4e6e-b34d-3d74d500d53d",
+Cell[88122, 1672, 442, 9, 70, "Input",
  CellID->670119675],
-Cell[95388, 1804, 306, 11, 70, "Output",ExpressionUUID->"32340704-3051-4538-b716-22957b25f532",
+Cell[88567, 1683, 521, 14, 70, "Output",
  CellID->862974408]
+}, Open  ]]
 }, Open  ]],
-Cell[95709, 1818, 230, 6, 70, "Text",ExpressionUUID->"2911a7e8-0a61-4c67-a540-2b036d4d0f06",
+Cell[89115, 1701, 351, 7, 70, "Text",
  CellID->89569258],
-Cell[95942, 1826, 290, 8, 70, "Text",ExpressionUUID->"2bc44db0-e27c-4b76-afe3-326ffeb76b6e",
+Cell[89469, 1710, 520, 11, 70, "Text",
  CellID->1839653472]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[96269, 1839, 84, 1, 70, "Section",ExpressionUUID->"ad4e0658-8cbb-4924-a432-0be6604601af",
+Cell[90026, 1726, 352, 4, 70, "Section",
  CellID->1225706792],
-Cell[96356, 1842, 544, 19, 70, "Text",ExpressionUUID->"7f7e8408-9f56-4b6f-8973-8dfd3efc4273",
+Cell[90381, 1732, 737, 17, 70, "Text",
  CellID->1388471068],
-Cell[96903, 1863, 502, 20, 70, "MathCaption",ExpressionUUID->"3c490f5b-b2c5-43b3-96b6-2c6949ca6ba8",
+Cell[CellGroupData[{
+Cell[91143, 1753, 838, 24, 70, "MathCaption",
  CellID->1014990181],
 Cell[CellGroupData[{
-Cell[97430, 1887, 219, 6, 70, "Input",ExpressionUUID->"d6eac41f-e0e7-4ba4-ae7a-4629532daa90",
+Cell[92006, 1781, 342, 7, 70, "Input",
  CellID->1938477741],
-Cell[97652, 1895, 1389, 48, 70, "Output",ExpressionUUID->"7a8d9db7-b368-4424-ab1e-eb27eaac4db8",
+Cell[92351, 1790, 1577, 50, 70, "Output",
  CellID->1294735199]
+}, Open  ]]
 }, Open  ]],
-Cell[99056, 1946, 136, 4, 70, "Text",ExpressionUUID->"9a083162-7a48-4ddf-8ed3-ccb36cd65613",
+Cell[93955, 1844, 357, 7, 70, "Text",
  CellID->140266419],
-Cell[99195, 1952, 117, 3, 70, "MathCaption",ExpressionUUID->"48b98d6b-e6c0-45e2-b8bc-e68502f68d8e",
+Cell[CellGroupData[{
+Cell[94337, 1855, 214, 4, 70, "MathCaption",
  CellID->105261536],
 Cell[CellGroupData[{
-Cell[99337, 1959, 119, 3, 70, "Input",ExpressionUUID->"f713d4b7-cdfd-4738-8eaa-f4622381ea0e",
+Cell[94576, 1863, 289, 5, 70, "Input",
  CellID->399130030],
-Cell[99459, 1964, 122, 2, 70, "Output",ExpressionUUID->"0df99534-c10c-4a18-b700-d797e4e34375",
+Cell[94868, 1870, 312, 4, 70, "Output",
  CellID->162694542]
+}, Open  ]]
 }, Open  ]],
-Cell[99596, 1969, 116, 3, 70, "MathCaption",ExpressionUUID->"b6626ee2-1670-4ec2-8471-ac2d29f72dbe",
+Cell[CellGroupData[{
+Cell[95229, 1880, 237, 4, 70, "MathCaption",
  CellID->1751594071],
 Cell[CellGroupData[{
-Cell[99737, 1976, 151, 4, 70, "Input",ExpressionUUID->"101c2b49-3360-4eba-b399-32550c7be457",
+Cell[95491, 1888, 327, 6, 70, "Input",
  CellID->1098351381],
-Cell[99891, 1982, 3698, 122, 70, "Output",ExpressionUUID->"35d29264-4461-4f0f-bcc8-a864d3b91924",
+Cell[95821, 1896, 3916, 125, 70, "Output",
  CellID->660484763]
+}, Open  ]]
 }, Open  ]],
-Cell[103604, 2107, 152, 4, 70, "MathCaption",ExpressionUUID->"52f4ab05-3f63-47aa-9c4d-a26f82bdf039",
+Cell[CellGroupData[{
+Cell[99786, 2027, 273, 5, 70, "MathCaption",
  CellID->1166300192],
 Cell[CellGroupData[{
-Cell[103781, 2115, 132, 4, 70, "Input",ExpressionUUID->"9ca848d0-9f01-4a68-b549-5034a5bb93b0",
+Cell[100084, 2036, 252, 5, 70, "Input",
  CellID->2139738416],
-Cell[103916, 2121, 303, 10, 70, "Output",ExpressionUUID->"45b10f53-45af-4065-bc5a-f510760379c9",
+Cell[100339, 2043, 491, 12, 70, "Output",
  CellID->424440398]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[104256, 2136, 186, 6, 70, "Input",ExpressionUUID->"5e2e29d2-5bfd-4dee-b883-c3e898940ebe",
+Cell[100867, 2060, 309, 7, 70, "Input",
  CellID->1478680329],
-Cell[104445, 2144, 127, 4, 70, "Output",ExpressionUUID->"60546473-df81-489c-99e6-328c5201fa4b",
+Cell[101179, 2069, 321, 6, 70, "Output",
  CellID->1776577499]
+}, Open  ]]
 }, Open  ]],
-Cell[104587, 2151, 222, 7, 70, "MathCaption",ExpressionUUID->"6f8dfd44-bb76-491d-8fc1-6f5cc42b695c",
+Cell[CellGroupData[{
+Cell[101549, 2081, 452, 10, 70, "MathCaption",
  CellID->1206251172],
 Cell[CellGroupData[{
-Cell[104834, 2162, 380, 13, 70, "Input",ExpressionUUID->"ac1fd354-2b8b-4a2e-9044-ebeecd206fb4",
+Cell[102026, 2095, 500, 14, 70, "Input",
  CellID->295800779],
-Cell[105217, 2177, 1388, 48, 70, "Output",ExpressionUUID->"3a8e451b-527e-4d7a-82c9-2a02a5e2a49b",
+Cell[102529, 2111, 1607, 51, 70, "Output",
  CellID->325397805]
+}, Open  ]]
 }, Open  ]],
-Cell[106620, 2228, 368, 11, 70, "Text",ExpressionUUID->"28ab39b9-67cb-4d4b-b43b-49e1f3eeb5f4",
+Cell[104163, 2166, 501, 10, 70, "Text",
  CellID->266814320],
-Cell[106991, 2241, 353, 11, 70, "Text",ExpressionUUID->"6ff61191-ecfe-4094-977c-d699fe0e0056",
+Cell[104667, 2178, 491, 11, 70, "Text",
  CellID->769808448],
-Cell[107347, 2254, 130, 4, 70, "MathCaption",ExpressionUUID->"0103fbf6-64f3-48a1-a64c-2ecb06ac6a3d",
+Cell[CellGroupData[{
+Cell[105183, 2193, 302, 6, 70, "MathCaption",
  CellID->677762728],
 Cell[CellGroupData[{
-Cell[107502, 2262, 393, 13, 70, "Input",ExpressionUUID->"0d4d2ca1-e377-47cf-a7a6-1dcfc7022f9c",
+Cell[105510, 2203, 567, 15, 70, "Input",
  CellID->1379215848],
-Cell[107898, 2277, 75, 2, 70, "Output",ExpressionUUID->"4a3e5ca4-3341-4202-a4f7-9200c682d120",
+Cell[106080, 2220, 341, 6, 70, "Output",
  CellID->1467543373]
+}, Open  ]]
 }, Open  ]],
-Cell[107988, 2282, 106, 2, 70, "MathCaption",ExpressionUUID->"260f1102-c757-40e4-bf04-160dc9c14bb9",
+Cell[CellGroupData[{
+Cell[106470, 2232, 229, 3, 70, "MathCaption",
  CellID->1290520138],
 Cell[CellGroupData[{
-Cell[108119, 2288, 336, 10, 70, "Input",ExpressionUUID->"e04af5fd-8fef-42fa-b769-5297fb6066c3",
+Cell[106724, 2239, 485, 12, 70, "Input",
  CellID->1547213852],
-Cell[108458, 2300, 76, 2, 70, "Output",ExpressionUUID->"4b8a755c-b940-40be-a6fd-ac037bd6c832",
+Cell[107212, 2253, 271, 4, 70, "Output",
  CellID->1151784216]
+}, Open  ]]
 }, Open  ]],
-Cell[108549, 2305, 347, 11, 70, "MathCaption",ExpressionUUID->"f491f020-680f-4ba8-879d-1e4c3fee268a",
+Cell[CellGroupData[{
+Cell[107532, 2263, 484, 11, 70, "MathCaption",
  CellID->1887297709],
 Cell[CellGroupData[{
-Cell[108921, 2320, 476, 15, 70, "Input",ExpressionUUID->"75c8646e-4889-4cc5-92c4-f69982d5fb5d",
+Cell[108041, 2278, 625, 17, 70, "Input",
  CellID->63497252],
-Cell[109400, 2337, 74, 2, 70, "Output",ExpressionUUID->"1ffefdae-a49c-4380-80ea-53449c912a5b",
+Cell[108669, 2297, 245, 4, 70, "Output",
  CellID->619724254]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[109513, 2344, 23, 0, 70, "FooterCell",ExpressionUUID->"df2a9312-91e7-427e-94e5-3aafa9217f30"]
+Cell[CellGroupData[{
+Cell[108975, 2308, 120, 1, 70, "TutorialMoreAboutSection",
+ CellID->23220180],
+Cell[109098, 2311, 109, 1, 70, "TutorialMoreAbout",
+ CellID->1567025153]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[109244, 2317, 127, 1, 70, "RelatedTutorialsSection",
+ CellID->415694126],
+Cell[109374, 2320, 107, 1, 70, "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[109518, 2326, 153, 1, 70, "TutorialRelatedLinksSection",
+ CellID->415694148],
+Cell[109674, 2329, 111, 1, 70, "TutorialRelatedLinks",
+ CellID->415694149]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
